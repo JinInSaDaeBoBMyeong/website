@@ -1,2 +1,0 @@
-# Lorg/webrtc/PeerConnectionFactory;->nativeCreatePeerConnection(J Lorg/webrtc/PeerConnection$RTCConfiguration; Lorg/webrtc/MediaConstraints; J)J [access_flags=private static native]
-#

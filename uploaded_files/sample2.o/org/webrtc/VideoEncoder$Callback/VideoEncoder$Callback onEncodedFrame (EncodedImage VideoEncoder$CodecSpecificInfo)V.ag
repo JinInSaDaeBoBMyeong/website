@@ -1,2 +1,0 @@
-# Lorg/webrtc/VideoEncoder$Callback;->onEncodedFrame(Lorg/webrtc/EncodedImage; Lorg/webrtc/VideoEncoder$CodecSpecificInfo;)V [access_flags=public abstract]
-#

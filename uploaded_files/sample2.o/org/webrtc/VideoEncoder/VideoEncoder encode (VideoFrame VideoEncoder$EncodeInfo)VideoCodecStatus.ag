@@ -1,2 +1,0 @@
-# Lorg/webrtc/VideoEncoder;->encode(Lorg/webrtc/VideoFrame; Lorg/webrtc/VideoEncoder$EncodeInfo;)Lorg/webrtc/VideoCodecStatus; [access_flags=public abstract]
-#

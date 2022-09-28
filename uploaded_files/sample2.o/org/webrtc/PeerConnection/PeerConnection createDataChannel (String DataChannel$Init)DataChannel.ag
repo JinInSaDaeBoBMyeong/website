@@ -1,2 +1,0 @@
-# Lorg/webrtc/PeerConnection;->createDataChannel(Ljava/lang/String; Lorg/webrtc/DataChannel$Init;)Lorg/webrtc/DataChannel; [access_flags=public native]
-#
