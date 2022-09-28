@@ -1,0 +1,18 @@
+# Landroid/support/v4/view/ViewPager$2;->getInterpolation(F)F [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:float
+#
+# - return:float
+
+getInterpolation-BB@0x0 : 
+	0       (00000000) const/high16         v1, 16256 # [1.0]
+	1       (00000004) sub-float/2addr      v3, v1
+	2       (00000006) mul-float            v0, v3, v3
+	3       (0000000a) mul-float/2addr      v0, v3
+	4       (0000000c) mul-float/2addr      v0, v3
+	5       (0000000e) mul-float/2addr      v0, v3
+	6       (00000010) add-float/2addr      v0, v1
+	7       (00000012) return               v0
+

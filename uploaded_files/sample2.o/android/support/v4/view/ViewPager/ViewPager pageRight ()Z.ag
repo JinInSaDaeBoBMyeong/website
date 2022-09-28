@@ -1,0 +1,32 @@
+# Landroid/support/v4/view/ViewPager;->pageRight()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+pageRight-BB@0x0 : [ pageRight-BB@0xa pageRight-BB@0x32 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget-object          v1, v3, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	2       (00000006) if-eqz               v1, +16
+
+pageRight-BB@0xa : [ pageRight-BB@0x22 pageRight-BB@0x32 ]
+	3       (0000000a) iget                 v1, v3, Landroid/support/v4/view/ViewPager;->mCurItem I
+	4       (0000000e) iget-object          v2, v3, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	5       (00000012) invoke-virtual       v2, Landroid/support/v4/view/PagerAdapter;->getCount()I
+	6       (00000018) move-result          v2
+	7       (0000001a) add-int/lit8         v2, v2, -1
+	8       (0000001e) if-ge                v1, v2, +a
+
+pageRight-BB@0x22 : [ pageRight-BB@0x30 ]
+	9       (00000022) iget                 v1, v3, Landroid/support/v4/view/ViewPager;->mCurItem I
+	10      (00000026) add-int/lit8         v1, v1, 1
+	11      (0000002a) invoke-virtual       v3, v1, v0, Landroid/support/v4/view/ViewPager;->setCurrentItem(I Z)V
+
+pageRight-BB@0x30 : 
+	12      (00000030) return               v0
+
+pageRight-BB@0x32 : [ pageRight-BB@0x30 ]
+	13      (00000032) const/4              v0, 0
+	14      (00000034) goto                 -2
+

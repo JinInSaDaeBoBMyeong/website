@@ -1,0 +1,38 @@
+# Ltev/piqgahor/mhttxMbv4;->iSA1oW87Aph()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+iSA1oW87Aph-BB@0x0 : [ iSA1oW87Aph-BB@0x42 iSA1oW87Aph-BB@0x52 ]
+	0       (00000000) const/4              v0, 2
+	1       (00000002) new-array            v0, v0, [Ljava/lang/Object;
+	2       (00000006) const/4              v1, 0
+	3       (00000008) sget-object          v2, Ltev/piqgahor/mhttxMbv4;->rRiF79S95z Ljava/lang/String;
+	4       (0000000c) aput-object          v2, v0, v1
+	5       (00000010) const/4              v1, 1
+	6       (00000012) const/16             v2, 12
+	7       (00000016) new-array            v2, v2, [I
+	8       (0000001a) fill-array-data      v2, +1d (0x54)
+	9       (00000020) invoke-static        v2, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	10      (00000026) move-result-object   v2
+	11      (00000028) aput-object          v2, v0, v1
+	12      (0000002c) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->mvoGCr4741([Ljava/lang/Object;)Ljava/lang/String;
+	13      (00000032) move-result-object   v0
+	14      (00000034) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	15      (0000003a) iget-object          v0, v3, Ltev/piqgahor/mhttxMbv4;->OewkcTyd3471 Ltev/piqgahor/fxn1Y9;
+	16      (0000003e) if-eqz               v0, +a
+
+iSA1oW87Aph-BB@0x42 : [ iSA1oW87Aph-BB@0x52 ]
+	17      (00000042) iget-object          v0, v3, Ltev/piqgahor/mhttxMbv4;->OewkcTyd3471 Ltev/piqgahor/fxn1Y9;
+	18      (00000046) invoke-interface     v0, Ltev/piqgahor/fxn1Y9;->Id3M19bG21()V
+	19      (0000004c) const/4              v0, 0
+	20      (0000004e) iput-object          v0, v3, Ltev/piqgahor/mhttxMbv4;->OewkcTyd3471 Ltev/piqgahor/fxn1Y9;
+
+iSA1oW87Aph-BB@0x52 : 
+	21      (00000052) return-void          
+
+iSA1oW87Aph-BB@0x54 : 
+	22      (00000054) fill-array-data-payload bytearray(b'/\x00\x00\x00s\x00\x00\x00\x94\x00\x00\x00\xa2\x00\x00\x00\xa3\x00\x00\x00\xa1\x00\x00\x00\x9e\x00\x00\x00\xa8\x00\x00\x00O\x00\x00\x00P\x00\x00\x00P\x00\x00\x00P\x00\x00\x00') | \x2f\x00\x00\x00\x73\x00\x00\x00\x94\x00\x00\x00\xa2\x00\x00\x00\xa3\x00\x00\x00\xa1\x00\x00\x00\x9e\x00\x00\x00\xa8\x00\x00\x00\x4f\x00\x00\x00\x50\x00\x00\x00\x50\x00\x00\x00\x50\x00\x00\x00
+

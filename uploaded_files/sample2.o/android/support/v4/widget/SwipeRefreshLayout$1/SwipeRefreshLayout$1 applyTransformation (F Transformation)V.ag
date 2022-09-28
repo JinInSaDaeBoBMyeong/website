@@ -1,0 +1,58 @@
+# Landroid/support/v4/widget/SwipeRefreshLayout$1;->applyTransformation(F Landroid/view/animation/Transformation;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:float
+# - v8:android.view.animation.Transformation
+#
+# - return:void
+
+applyTransformation-BB@0x0 : [ applyTransformation-BB@0x1e applyTransformation-BB@0x4e ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-object          v3, v6, Landroid/support/v4/widget/SwipeRefreshLayout$1;->this$0 Landroid/support/v4/widget/SwipeRefreshLayout;
+	2       (00000006) invoke-static        v3, Landroid/support/v4/widget/SwipeRefreshLayout;->access$000(Landroid/support/v4/widget/SwipeRefreshLayout;)I
+	3       (0000000c) move-result          v3
+	4       (0000000e) iget-object          v4, v6, Landroid/support/v4/widget/SwipeRefreshLayout$1;->this$0 Landroid/support/v4/widget/SwipeRefreshLayout;
+	5       (00000012) invoke-static        v4, Landroid/support/v4/widget/SwipeRefreshLayout;->access$100(Landroid/support/v4/widget/SwipeRefreshLayout;)I
+	6       (00000018) move-result          v4
+	7       (0000001a) if-eq                v3, v4, +1a
+
+applyTransformation-BB@0x1e : [ applyTransformation-BB@0x4e ]
+	8       (0000001e) iget-object          v3, v6, Landroid/support/v4/widget/SwipeRefreshLayout$1;->this$0 Landroid/support/v4/widget/SwipeRefreshLayout;
+	9       (00000022) invoke-static        v3, Landroid/support/v4/widget/SwipeRefreshLayout;->access$000(Landroid/support/v4/widget/SwipeRefreshLayout;)I
+	10      (00000028) move-result          v3
+	11      (0000002a) iget-object          v4, v6, Landroid/support/v4/widget/SwipeRefreshLayout$1;->this$0 Landroid/support/v4/widget/SwipeRefreshLayout;
+	12      (0000002e) invoke-static        v4, Landroid/support/v4/widget/SwipeRefreshLayout;->access$100(Landroid/support/v4/widget/SwipeRefreshLayout;)I
+	13      (00000034) move-result          v4
+	14      (00000036) iget-object          v5, v6, Landroid/support/v4/widget/SwipeRefreshLayout$1;->this$0 Landroid/support/v4/widget/SwipeRefreshLayout;
+	15      (0000003a) invoke-static        v5, Landroid/support/v4/widget/SwipeRefreshLayout;->access$000(Landroid/support/v4/widget/SwipeRefreshLayout;)I
+	16      (00000040) move-result          v5
+	17      (00000042) sub-int/2addr        v4, v5
+	18      (00000044) int-to-float         v4, v4
+	19      (00000046) mul-float/2addr      v4, v7
+	20      (00000048) float-to-int         v4, v4
+	21      (0000004a) add-int              v2, v3, v4
+
+applyTransformation-BB@0x4e : [ applyTransformation-BB@0x82 applyTransformation-BB@0x86 ]
+	22      (0000004e) iget-object          v3, v6, Landroid/support/v4/widget/SwipeRefreshLayout$1;->this$0 Landroid/support/v4/widget/SwipeRefreshLayout;
+	23      (00000052) invoke-static        v3, Landroid/support/v4/widget/SwipeRefreshLayout;->access$200(Landroid/support/v4/widget/SwipeRefreshLayout;)Landroid/view/View;
+	24      (00000058) move-result-object   v3
+	25      (0000005a) invoke-virtual       v3, Landroid/view/View;->getTop()I
+	26      (00000060) move-result          v3
+	27      (00000062) sub-int              v1, v2, v3
+	28      (00000066) iget-object          v3, v6, Landroid/support/v4/widget/SwipeRefreshLayout$1;->this$0 Landroid/support/v4/widget/SwipeRefreshLayout;
+	29      (0000006a) invoke-static        v3, Landroid/support/v4/widget/SwipeRefreshLayout;->access$200(Landroid/support/v4/widget/SwipeRefreshLayout;)Landroid/view/View;
+	30      (00000070) move-result-object   v3
+	31      (00000072) invoke-virtual       v3, Landroid/view/View;->getTop()I
+	32      (00000078) move-result          v0
+	33      (0000007a) add-int              v3, v1, v0
+	34      (0000007e) if-gez               v3, +4
+
+applyTransformation-BB@0x82 : [ applyTransformation-BB@0x86 ]
+	35      (00000082) rsub-int/lit8        v1, v0, 0
+
+applyTransformation-BB@0x86 : 
+	36      (00000086) iget-object          v3, v6, Landroid/support/v4/widget/SwipeRefreshLayout$1;->this$0 Landroid/support/v4/widget/SwipeRefreshLayout;
+	37      (0000008a) invoke-static        v3, v1, Landroid/support/v4/widget/SwipeRefreshLayout;->access$300(Landroid/support/v4/widget/SwipeRefreshLayout; I)V
+	38      (00000090) return-void          
+

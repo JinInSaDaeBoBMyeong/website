@@ -1,0 +1,35 @@
+# Landroid/support/v4/widget/ViewDragHelper;->clampMag(I I I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+# - v4:int
+#
+# - return:int
+
+clampMag-BB@0x0 : [ clampMag-BB@0xc clampMag-BB@0x10 ]
+	0       (00000000) invoke-static        v2, Ljava/lang/Math;->abs(I)I
+	1       (00000006) move-result          v0
+	2       (00000008) if-ge                v0, v3, +4
+
+clampMag-BB@0xc : [ clampMag-BB@0xe ]
+	3       (0000000c) const/4              v4, 0
+
+clampMag-BB@0xe : 
+	4       (0000000e) return               v4
+
+clampMag-BB@0x10 : [ clampMag-BB@0x14 clampMag-BB@0x1c ]
+	5       (00000010) if-le                v0, v4, +6
+
+clampMag-BB@0x14 : [ clampMag-BB@0x18 clampMag-BB@0xe ]
+	6       (00000014) if-gtz               v2, -3
+
+clampMag-BB@0x18 : [ clampMag-BB@0xe ]
+	7       (00000018) neg-int              v4, v4
+	8       (0000001a) goto                 -6
+
+clampMag-BB@0x1c : [ clampMag-BB@0xe ]
+	9       (0000001c) move                 v4, v2
+	10      (0000001e) goto                 -8
+

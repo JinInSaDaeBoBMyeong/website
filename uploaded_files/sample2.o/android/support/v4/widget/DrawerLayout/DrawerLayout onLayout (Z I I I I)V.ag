@@ -1,0 +1,252 @@
+# Landroid/support/v4/widget/DrawerLayout;->onLayout(Z I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v23
+# - v24:boolean
+# - v25:int
+# - v26:int
+# - v27:int
+# - v28:int
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0x1e ]
+	0       (00000000) const/16             v18, 1
+	1       (00000004) move/from16          v0, v18
+	2       (00000008) move-object/from16   v1, v23
+	3       (0000000c) iput-boolean         v0, v1, Landroid/support/v4/widget/DrawerLayout;->mInLayout Z
+	4       (00000010) sub-int              v17, v27, v25
+	5       (00000014) invoke-virtual/range v23, Landroid/support/v4/widget/DrawerLayout;->getChildCount()I
+	6       (0000001a) move-result          v6
+	7       (0000001c) const/4              v12, 0
+
+onLayout-BB@0x1e : [ onLayout-BB@0x22 onLayout-BB@0x292 ]
+	8       (0000001e) if-ge                v12, v6, +13a
+
+onLayout-BB@0x22 : [ onLayout-BB@0x46 onLayout-BB@0x4c ]
+	9       (00000022) move-object/from16   v0, v23
+	10      (00000026) invoke-virtual       v0, v12, Landroid/support/v4/widget/DrawerLayout;->getChildAt(I)Landroid/view/View;
+	11      (0000002c) move-result-object   v5
+	12      (0000002e) invoke-virtual       v5, Landroid/view/View;->getVisibility()I
+	13      (00000034) move-result          v18
+	14      (00000036) const/16             v19, 8
+	15      (0000003a) move/from16          v0, v18
+	16      (0000003e) move/from16          v1, v19
+	17      (00000042) if-ne                v0, v1, +5
+
+onLayout-BB@0x46 : [ onLayout-BB@0x1e ]
+	18      (00000046) add-int/lit8         v12, v12, 1
+	19      (0000004a) goto                 -16
+
+onLayout-BB@0x4c : [ onLayout-BB@0x68 onLayout-BB@0xb8 ]
+	20      (0000004c) invoke-virtual       v5, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	21      (00000052) move-result-object   v13
+	22      (00000054) check-cast           v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	23      (00000058) move-object/from16   v0, v23
+	24      (0000005c) invoke-virtual       v0, v5, Landroid/support/v4/widget/DrawerLayout;->isContentView(Landroid/view/View;)Z
+	25      (00000062) move-result          v18
+	26      (00000064) if-eqz               v18, +2a
+
+onLayout-BB@0x68 : [ onLayout-BB@0x46 ]
+	27      (00000068) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->leftMargin I
+	28      (0000006c) move/from16          v18, v0
+	29      (00000070) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->topMargin I
+	30      (00000074) move/from16          v19, v0
+	31      (00000078) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->leftMargin I
+	32      (0000007c) move/from16          v20, v0
+	33      (00000080) invoke-virtual       v5, Landroid/view/View;->getMeasuredWidth()I
+	34      (00000086) move-result          v21
+	35      (00000088) add-int              v20, v20, v21
+	36      (0000008c) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->topMargin I
+	37      (00000090) move/from16          v21, v0
+	38      (00000094) invoke-virtual       v5, Landroid/view/View;->getMeasuredHeight()I
+	39      (0000009a) move-result          v22
+	40      (0000009c) add-int              v21, v21, v22
+	41      (000000a0) move/from16          v0, v18
+	42      (000000a4) move/from16          v1, v19
+	43      (000000a8) move/from16          v2, v20
+	44      (000000ac) move/from16          v3, v21
+	45      (000000b0) invoke-virtual       v5, v0, v1, v2, v3, Landroid/view/View;->layout(I I I I)V
+	46      (000000b6) goto                 -38
+
+onLayout-BB@0xb8 : [ onLayout-BB@0xe0 onLayout-BB@0x1aa ]
+	47      (000000b8) invoke-virtual       v5, Landroid/view/View;->getMeasuredWidth()I
+	48      (000000be) move-result          v10
+	49      (000000c0) invoke-virtual       v5, Landroid/view/View;->getMeasuredHeight()I
+	50      (000000c6) move-result          v7
+	51      (000000c8) const/16             v18, 3
+	52      (000000cc) move-object/from16   v0, v23
+	53      (000000d0) move/from16          v1, v18
+	54      (000000d4) invoke-virtual       v0, v5, v1, Landroid/support/v4/widget/DrawerLayout;->checkDrawerViewAbsoluteGravity(Landroid/view/View; I)Z
+	55      (000000da) move-result          v18
+	56      (000000dc) if-eqz               v18, +67
+
+onLayout-BB@0xe0 : [ onLayout-BB@0x11e ]
+	57      (000000e0) neg-int              v0, v10
+	58      (000000e2) move/from16          v18, v0
+	59      (000000e6) int-to-float         v0, v10
+	60      (000000e8) move/from16          v19, v0
+	61      (000000ec) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->onScreen F
+	62      (000000f0) move/from16          v20, v0
+	63      (000000f4) mul-float            v19, v19, v20
+	64      (000000f8) move/from16          v0, v19
+	65      (000000fc) float-to-int         v0, v0
+	66      (000000fe) move/from16          v19, v0
+	67      (00000102) add-int              v8, v18, v19
+	68      (00000106) add-int              v18, v10, v8
+	69      (0000010a) move/from16          v0, v18
+	70      (0000010e) int-to-float         v0, v0
+	71      (00000110) move/from16          v18, v0
+	72      (00000114) int-to-float         v0, v10
+	73      (00000116) move/from16          v19, v0
+	74      (0000011a) div-float            v14, v18, v19
+
+onLayout-BB@0x11e : [ onLayout-BB@0x12e onLayout-BB@0x1e4 ]
+	75      (0000011e) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->onScreen F
+	76      (00000122) move/from16          v18, v0
+	77      (00000126) cmpl-float           v18, v14, v18
+	78      (0000012a) if-eqz               v18, +5d
+
+onLayout-BB@0x12e : [ onLayout-BB@0x130 ]
+	79      (0000012e) const/4              v4, 1
+
+onLayout-BB@0x130 : [ D:onLayout-BB@0x142 16:onLayout-BB@0x228 80:onLayout-BB@0x1e8 ]
+	80      (00000130) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->gravity I
+	81      (00000134) move/from16          v18, v0
+	82      (00000138) and-int/lit8         v16, v18, 112
+	83      (0000013c) sparse-switch        v16, +bc (0x2b4)
+
+onLayout-BB@0x142 : [ onLayout-BB@0x16c ]
+	84      (00000142) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->topMargin I
+	85      (00000146) move/from16          v18, v0
+	86      (0000014a) add-int              v19, v8, v10
+	87      (0000014e) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->topMargin I
+	88      (00000152) move/from16          v20, v0
+	89      (00000156) add-int              v20, v20, v7
+	90      (0000015a) move/from16          v0, v18
+	91      (0000015e) move/from16          v1, v19
+	92      (00000162) move/from16          v2, v20
+	93      (00000166) invoke-virtual       v5, v8, v0, v1, v2, Landroid/view/View;->layout(I I I I)V
+
+onLayout-BB@0x16c : [ onLayout-BB@0x170 onLayout-BB@0x17a ]
+	94      (0000016c) if-eqz               v4, +7
+
+onLayout-BB@0x170 : [ onLayout-BB@0x17a ]
+	95      (00000170) move-object/from16   v0, v23
+	96      (00000174) invoke-virtual       v0, v5, v14, Landroid/support/v4/widget/DrawerLayout;->setDrawerViewOffset(Landroid/view/View; F)V
+
+onLayout-BB@0x17a : [ onLayout-BB@0x18e onLayout-BB@0x28e ]
+	97      (0000017a) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->onScreen F
+	98      (0000017e) move/from16          v18, v0
+	99      (00000182) const/16             v19, 0
+	100     (00000186) cmpl-float           v18, v18, v19
+	101     (0000018a) if-lez               v18, +82
+
+onLayout-BB@0x18e : [ onLayout-BB@0x190 ]
+	102     (0000018e) const/4              v15, 0
+
+onLayout-BB@0x190 : [ onLayout-BB@0x1a0 onLayout-BB@0x46 ]
+	103     (00000190) invoke-virtual       v5, Landroid/view/View;->getVisibility()I
+	104     (00000196) move-result          v18
+	105     (00000198) move/from16          v0, v18
+	106     (0000019c) if-eq                v0, v15, -ab
+
+onLayout-BB@0x1a0 : [ onLayout-BB@0x46 ]
+	107     (000001a0) invoke-virtual       v5, v15, Landroid/view/View;->setVisibility(I)V
+	108     (000001a6) goto/16              -b0
+
+onLayout-BB@0x1aa : [ onLayout-BB@0x11e ]
+	109     (000001aa) int-to-float         v0, v10
+	110     (000001ac) move/from16          v18, v0
+	111     (000001b0) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->onScreen F
+	112     (000001b4) move/from16          v19, v0
+	113     (000001b8) mul-float            v18, v18, v19
+	114     (000001bc) move/from16          v0, v18
+	115     (000001c0) float-to-int         v0, v0
+	116     (000001c2) move/from16          v18, v0
+	117     (000001c6) sub-int              v8, v17, v18
+	118     (000001ca) sub-int              v18, v17, v8
+	119     (000001ce) move/from16          v0, v18
+	120     (000001d2) int-to-float         v0, v0
+	121     (000001d4) move/from16          v18, v0
+	122     (000001d8) int-to-float         v0, v10
+	123     (000001da) move/from16          v19, v0
+	124     (000001de) div-float            v14, v18, v19
+	125     (000001e2) goto                 -62
+
+onLayout-BB@0x1e4 : [ onLayout-BB@0x130 ]
+	126     (000001e4) const/4              v4, 0
+	127     (000001e6) goto                 -5b
+
+onLayout-BB@0x1e8 : [ onLayout-BB@0x16c ]
+	128     (000001e8) sub-int              v11, v28, v26
+	129     (000001ec) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->bottomMargin I
+	130     (000001f0) move/from16          v18, v0
+	131     (000001f4) sub-int              v18, v11, v18
+	132     (000001f8) invoke-virtual       v5, Landroid/view/View;->getMeasuredHeight()I
+	133     (000001fe) move-result          v19
+	134     (00000200) sub-int              v18, v18, v19
+	135     (00000204) add-int              v19, v8, v10
+	136     (00000208) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->bottomMargin I
+	137     (0000020c) move/from16          v20, v0
+	138     (00000210) sub-int              v20, v11, v20
+	139     (00000214) move/from16          v0, v18
+	140     (00000218) move/from16          v1, v19
+	141     (0000021c) move/from16          v2, v20
+	142     (00000220) invoke-virtual       v5, v8, v0, v1, v2, Landroid/view/View;->layout(I I I I)V
+	143     (00000226) goto                 -5d
+
+onLayout-BB@0x228 : [ onLayout-BB@0x244 onLayout-BB@0x260 ]
+	144     (00000228) sub-int              v11, v28, v26
+	145     (0000022c) sub-int              v18, v11, v7
+	146     (00000230) div-int/lit8         v9, v18, 2
+	147     (00000234) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->topMargin I
+	148     (00000238) move/from16          v18, v0
+	149     (0000023c) move/from16          v0, v18
+	150     (00000240) if-ge                v9, v0, +10
+
+onLayout-BB@0x244 : [ onLayout-BB@0x248 ]
+	151     (00000244) iget                 v9, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->topMargin I
+
+onLayout-BB@0x248 : [ onLayout-BB@0x16c ]
+	152     (00000248) add-int              v18, v8, v10
+	153     (0000024c) add-int              v19, v9, v7
+	154     (00000250) move/from16          v0, v18
+	155     (00000254) move/from16          v1, v19
+	156     (00000258) invoke-virtual       v5, v8, v9, v0, v1, Landroid/view/View;->layout(I I I I)V
+	157     (0000025e) goto                 -79
+
+onLayout-BB@0x260 : [ onLayout-BB@0x27c onLayout-BB@0x248 ]
+	158     (00000260) add-int              v18, v9, v7
+	159     (00000264) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->bottomMargin I
+	160     (00000268) move/from16          v19, v0
+	161     (0000026c) sub-int              v19, v11, v19
+	162     (00000270) move/from16          v0, v18
+	163     (00000274) move/from16          v1, v19
+	164     (00000278) if-le                v0, v1, -18
+
+onLayout-BB@0x27c : [ onLayout-BB@0x248 ]
+	165     (0000027c) iget                 v0, v13, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->bottomMargin I
+	166     (00000280) move/from16          v18, v0
+	167     (00000284) sub-int              v18, v11, v18
+	168     (00000288) sub-int              v9, v18, v7
+	169     (0000028c) goto                 -22
+
+onLayout-BB@0x28e : [ onLayout-BB@0x190 ]
+	170     (0000028e) const/4              v15, 4
+	171     (00000290) goto                 -80
+
+onLayout-BB@0x292 : 
+	172     (00000292) const/16             v18, 0
+	173     (00000296) move/from16          v0, v18
+	174     (0000029a) move-object/from16   v1, v23
+	175     (0000029e) iput-boolean         v0, v1, Landroid/support/v4/widget/DrawerLayout;->mInLayout Z
+	176     (000002a2) const/16             v18, 0
+	177     (000002a6) move/from16          v0, v18
+	178     (000002aa) move-object/from16   v1, v23
+	179     (000002ae) iput-boolean         v0, v1, Landroid/support/v4/widget/DrawerLayout;->mFirstLayout Z
+	180     (000002b2) return-void          
+
+onLayout-BB@0x2b4 : 
+	181     (000002b4) sparse-switch-payload 10 50
+

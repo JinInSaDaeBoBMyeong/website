@@ -1,0 +1,24 @@
+# Landroid/support/v4/widget/CursorAdapter;->runQueryOnBackgroundThread(Ljava/lang/CharSequence;)Landroid/database/Cursor; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.CharSequence
+#
+# - return:android.database.Cursor
+
+runQueryOnBackgroundThread-BB@0x0 : [ runQueryOnBackgroundThread-BB@0x8 runQueryOnBackgroundThread-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/widget/CursorAdapter;->mFilterQueryProvider Landroid/widget/FilterQueryProvider;
+	1       (00000004) if-eqz               v0, +9
+
+runQueryOnBackgroundThread-BB@0x8 : [ runQueryOnBackgroundThread-BB@0x14 ]
+	2       (00000008) iget-object          v0, v1, Landroid/support/v4/widget/CursorAdapter;->mFilterQueryProvider Landroid/widget/FilterQueryProvider;
+	3       (0000000c) invoke-interface     v0, v2, Landroid/widget/FilterQueryProvider;->runQuery(Ljava/lang/CharSequence;)Landroid/database/Cursor;
+	4       (00000012) move-result-object   v0
+
+runQueryOnBackgroundThread-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+runQueryOnBackgroundThread-BB@0x16 : [ runQueryOnBackgroundThread-BB@0x14 ]
+	6       (00000016) iget-object          v0, v1, Landroid/support/v4/widget/CursorAdapter;->mCursor Landroid/database/Cursor;
+	7       (0000001a) goto                 -3
+

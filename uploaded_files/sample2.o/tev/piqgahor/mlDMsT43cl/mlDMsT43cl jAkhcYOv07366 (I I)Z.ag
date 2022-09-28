@@ -1,0 +1,25 @@
+# Ltev/piqgahor/mlDMsT43cl;->jAkhcYOv07366(I I)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+# - v2:int
+#
+# - return:boolean
+
+jAkhcYOv07366-BB@0x0 : [ jAkhcYOv07366-BB@0x8 jAkhcYOv07366-BB@0xc ]
+	0       (00000000) sget-object          v0, Ltev/piqgahor/mlDMsT43cl;->Fy7oXM9c Ltev/piqgahor/fxn1Y9;
+	1       (00000004) if-nez               v0, +4
+
+jAkhcYOv07366-BB@0x8 : [ jAkhcYOv07366-BB@0xa ]
+	2       (00000008) const/4              v0, 0
+
+jAkhcYOv07366-BB@0xa : 
+	3       (0000000a) return               v0
+
+jAkhcYOv07366-BB@0xc : [ jAkhcYOv07366-BB@0xa ]
+	4       (0000000c) sget-object          v0, Ltev/piqgahor/mlDMsT43cl;->Fy7oXM9c Ltev/piqgahor/fxn1Y9;
+	5       (00000010) invoke-interface     v0, v1, v2, Ltev/piqgahor/fxn1Y9;->IC1239112(I I)V
+	6       (00000016) const/4              v0, 1
+	7       (00000018) goto                 -7
+

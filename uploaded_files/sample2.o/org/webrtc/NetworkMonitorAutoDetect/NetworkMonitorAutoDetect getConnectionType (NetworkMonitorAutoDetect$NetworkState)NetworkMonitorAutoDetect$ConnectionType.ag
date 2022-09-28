@@ -1,0 +1,69 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect;->getConnectionType(Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;)Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.NetworkMonitorAutoDetect$NetworkState
+#
+# - return:org.webrtc.NetworkMonitorAutoDetect$ConnectionType
+
+getConnectionType-BB@0x0 : [ getConnectionType-BB@0xc getConnectionType-BB@0x12 ]
+	0       (00000000) invoke-virtual       v1, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;->isConnected()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +5
+
+getConnectionType-BB@0xc : [ getConnectionType-BB@0x10 ]
+	3       (0000000c) sget-object          v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_NONE Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+
+getConnectionType-BB@0x10 : 
+	4       (00000010) return-object        v0
+
+getConnectionType-BB@0x12 : [ D:getConnectionType-BB@0x20 0:getConnectionType-BB@0x3e 1:getConnectionType-BB@0x2c 2:getConnectionType-BB@0x20 3:getConnectionType-BB@0x20 4:getConnectionType-BB@0x20 5:getConnectionType-BB@0x20 6:getConnectionType-BB@0x32 7:getConnectionType-BB@0x38 8:getConnectionType-BB@0x20 9:getConnectionType-BB@0x26 ]
+	5       (00000012) invoke-virtual       v1, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;->getNetworkType()I
+	6       (00000018) move-result          v0
+	7       (0000001a) packed-switch        v0, +25 (0x64)
+
+getConnectionType-BB@0x20 : [ getConnectionType-BB@0x10 ]
+	8       (00000020) sget-object          v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_UNKNOWN Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	9       (00000024) goto                 -a
+
+getConnectionType-BB@0x26 : [ getConnectionType-BB@0x10 ]
+	10      (00000026) sget-object          v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_ETHERNET Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	11      (0000002a) goto                 -d
+
+getConnectionType-BB@0x2c : [ getConnectionType-BB@0x10 ]
+	12      (0000002c) sget-object          v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_WIFI Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	13      (00000030) goto                 -10
+
+getConnectionType-BB@0x32 : [ getConnectionType-BB@0x10 ]
+	14      (00000032) sget-object          v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_4G Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	15      (00000036) goto                 -13
+
+getConnectionType-BB@0x38 : [ getConnectionType-BB@0x10 ]
+	16      (00000038) sget-object          v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_BLUETOOTH Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	17      (0000003c) goto                 -16
+
+getConnectionType-BB@0x3e : [ D:getConnectionType-BB@0x4c 1:getConnectionType-BB@0x52 2:getConnectionType-BB@0x52 3:getConnectionType-BB@0x58 4:getConnectionType-BB@0x52 5:getConnectionType-BB@0x58 6:getConnectionType-BB@0x58 7:getConnectionType-BB@0x52 8:getConnectionType-BB@0x58 9:getConnectionType-BB@0x58 10:getConnectionType-BB@0x58 11:getConnectionType-BB@0x52 12:getConnectionType-BB@0x58 13:getConnectionType-BB@0x5e 14:getConnectionType-BB@0x58 15:getConnectionType-BB@0x58 ]
+	18      (0000003e) invoke-virtual       v1, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;->getNetworkSubType()I
+	19      (00000044) move-result          v0
+	20      (00000046) packed-switch        v0, +27 (0x94)
+
+getConnectionType-BB@0x4c : [ getConnectionType-BB@0x10 ]
+	21      (0000004c) sget-object          v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_UNKNOWN_CELLULAR Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	22      (00000050) goto                 -20
+
+getConnectionType-BB@0x52 : [ getConnectionType-BB@0x10 ]
+	23      (00000052) sget-object          v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_2G Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	24      (00000056) goto                 -23
+
+getConnectionType-BB@0x58 : [ getConnectionType-BB@0x10 ]
+	25      (00000058) sget-object          v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_3G Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	26      (0000005c) goto                 -26
+
+getConnectionType-BB@0x5e : [ getConnectionType-BB@0x10 ]
+	27      (0000005e) sget-object          v0, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_4G Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	28      (00000062) goto                 -29
+
+getConnectionType-BB@0x64 : 
+	29      (00000064) packed-switch-payload 0 1 2 3 4 5 6 7 8 9
+	30      (00000094) packed-switch-payload 1 2 3 4 5 6 7 8 9 a b c d e f
+

@@ -1,0 +1,14 @@
+# Lorg/webrtc/BaseBitrateAdjuster;-><init>()V [access_flags=constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	2       (00000008) iput                 v0, v1, Lorg/webrtc/BaseBitrateAdjuster;->targetBitrateBps I
+	3       (0000000c) iput                 v0, v1, Lorg/webrtc/BaseBitrateAdjuster;->targetFps I
+	4       (00000010) return-void          
+

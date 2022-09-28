@@ -1,0 +1,49 @@
+# Ltev/piqgahor/fe7C818;->onActivityResult(I I Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+# - v5:android.content.Intent
+#
+# - return:void
+
+onActivityResult-BB@0x0 : [ onActivityResult-BB@0xa onActivityResult-BB@0x50 ]
+	0       (00000000) const/16             v1, 25
+	1       (00000004) const/4              v0, -1
+	2       (00000006) if-ne                v4, v0, +25
+
+onActivityResult-BB@0xa : [ onActivityResult-BB@0x24 ]
+	3       (0000000a) invoke-virtual       v5, Landroid/content/Intent;->clone()Ljava/lang/Object;
+	4       (00000010) move-result-object   v0
+	5       (00000012) check-cast           v0, Landroid/content/Intent;
+	6       (00000016) invoke-static        v0, Ltev/piqgahor/mlDMsT43cl;->pUnXkBa9201(Landroid/content/Intent;)V
+	7       (0000001c) const/4              v0, 4
+	8       (0000001e) invoke-static        v1, v0, Ltev/piqgahor/mlDMsT43cl;->jAkhcYOv07366(I I)Z
+
+onActivityResult-BB@0x24 : 
+	9       (00000024) invoke-virtual       v2, Ltev/piqgahor/fe7C818;->getApplicationContext()Landroid/content/Context;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) const/16             v1, 10
+	12      (00000030) new-array            v1, v1, [I
+	13      (00000034) fill-array-data      v1, +1a (0x68)
+	14      (0000003a) invoke-static        v1, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	15      (00000040) move-result-object   v1
+	16      (00000042) invoke-static        v0, v1, v4, Ltev/piqgahor/jzVO9lP4;->yStpazw33441uh(Landroid/content/Context; Ljava/lang/String; I)V
+	17      (00000048) invoke-virtual       v2, Ltev/piqgahor/fe7C818;->finish()V
+	18      (0000004e) return-void          
+
+onActivityResult-BB@0x50 : [ onActivityResult-BB@0x54 onActivityResult-BB@0x24 ]
+	19      (00000050) if-nez               v4, -16
+
+onActivityResult-BB@0x54 : [ onActivityResult-BB@0x24 ]
+	20      (00000054) const/4              v0, 0
+	21      (00000056) invoke-static        v0, Ltev/piqgahor/mlDMsT43cl;->pUnXkBa9201(Landroid/content/Intent;)V
+	22      (0000005c) const/4              v0, 5
+	23      (0000005e) invoke-static        v1, v0, Ltev/piqgahor/mlDMsT43cl;->jAkhcYOv07366(I I)Z
+	24      (00000064) goto                 -20
+
+onActivityResult-BB@0x66 : 
+	25      (00000066) nop                  
+	26      (00000068) fill-array-data-payload bytearray(b'$\x00\x00\x00w\x00\x00\x00\x87\x00\x00\x00\x96\x00\x00\x00\x89\x00\x00\x00\x89\x00\x00\x00\x92\x00\x00\x00g\x00\x00\x00\x85\x00\x00\x00\x94\x00\x00\x00') | \x24\x00\x00\x00\x77\x00\x00\x00\x87\x00\x00\x00\x96\x00\x00\x00\x89\x00\x00\x00\x89\x00\x00\x00\x92\x00\x00\x00\x67\x00\x00\x00\x85\x00\x00\x00\x94\x00\x00\x00
+

@@ -1,0 +1,33 @@
+# Lorg/webrtc/MediaCodecVideoEncoder;->isVp8HwSupportedUsingTextures()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isVp8HwSupportedUsingTextures-BB@0x0 : [ isVp8HwSupportedUsingTextures-BB@0x14 isVp8HwSupportedUsingTextures-BB@0x34 ]
+	0       (00000000) sget-object          v0, Lorg/webrtc/MediaCodecVideoEncoder;->hwEncoderDisabledTypes Ljava/util/Set;
+	1       (00000004) const-string         v1, 'video/x-vnd.on2.vp8'
+	2       (00000008) invoke-interface     v0, v1, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +12
+
+isVp8HwSupportedUsingTextures-BB@0x14 : [ isVp8HwSupportedUsingTextures-BB@0x30 isVp8HwSupportedUsingTextures-BB@0x34 ]
+	5       (00000014) const-string         v0, 'video/x-vnd.on2.vp8'
+	6       (00000018) invoke-static        Lorg/webrtc/MediaCodecVideoEncoder;->vp8HwList()[Lorg/webrtc/MediaCodecVideoEncoder$MediaCodecProperties;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) sget-object          v2, Lorg/webrtc/MediaCodecVideoEncoder;->supportedSurfaceColorList [I
+	9       (00000024) invoke-static        v0, v1, v2, Lorg/webrtc/MediaCodecVideoEncoder;->findHwEncoder(Ljava/lang/String; [Lorg/webrtc/MediaCodecVideoEncoder$MediaCodecProperties; [I)Lorg/webrtc/MediaCodecVideoEncoder$EncoderProperties;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) if-eqz               v0, +4
+
+isVp8HwSupportedUsingTextures-BB@0x30 : [ isVp8HwSupportedUsingTextures-BB@0x32 ]
+	12      (00000030) const/4              v0, 1
+
+isVp8HwSupportedUsingTextures-BB@0x32 : 
+	13      (00000032) return               v0
+
+isVp8HwSupportedUsingTextures-BB@0x34 : [ isVp8HwSupportedUsingTextures-BB@0x32 ]
+	14      (00000034) const/4              v0, 0
+	15      (00000036) goto                 -2
+

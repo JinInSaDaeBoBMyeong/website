@@ -1,0 +1,13 @@
+# Ltev/piqgahor/omxcjy744W;->wlWiGSVH3310(Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+#
+# - return:void
+
+wlWiGSVH3310-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-direct        v1, v2, v0, Ltev/piqgahor/omxcjy744W;->wlWiGSVH3310(Ljava/lang/String; Z)V
+	2       (00000008) return-void          
+

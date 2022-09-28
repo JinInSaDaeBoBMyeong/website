@@ -1,0 +1,15 @@
+# Landroid/support/v4/app/Fragment;->instantiate(Landroid/content/Context; Ljava/lang/String;)Landroid/support/v4/app/Fragment; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Context
+# - v2:java.lang.String
+#
+# - return:android.support.v4.app.Fragment
+
+instantiate-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-static        v1, v2, v0, Landroid/support/v4/app/Fragment;->instantiate(Landroid/content/Context; Ljava/lang/String; Landroid/os/Bundle;)Landroid/support/v4/app/Fragment;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) return-object        v0
+

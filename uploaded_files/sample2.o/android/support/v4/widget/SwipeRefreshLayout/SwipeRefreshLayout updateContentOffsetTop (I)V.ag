@@ -1,0 +1,33 @@
+# Landroid/support/v4/widget/SwipeRefreshLayout;->updateContentOffsetTop(I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+updateContentOffsetTop-BB@0x0 : [ updateContentOffsetTop-BB@0x1a updateContentOffsetTop-BB@0x2c ]
+	0       (00000000) iget-object          v1, v3, Landroid/support/v4/widget/SwipeRefreshLayout;->mTarget Landroid/view/View;
+	1       (00000004) invoke-virtual       v1, Landroid/view/View;->getTop()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) int-to-float         v1, v4
+	4       (0000000e) iget                 v2, v3, Landroid/support/v4/widget/SwipeRefreshLayout;->mDistanceToTriggerSync F
+	5       (00000012) cmpl-float           v1, v1, v2
+	6       (00000016) if-lez               v1, +b
+
+updateContentOffsetTop-BB@0x1a : [ updateContentOffsetTop-BB@0x20 ]
+	7       (0000001a) iget                 v1, v3, Landroid/support/v4/widget/SwipeRefreshLayout;->mDistanceToTriggerSync F
+	8       (0000001e) float-to-int         v4, v1
+
+updateContentOffsetTop-BB@0x20 : 
+	9       (00000020) sub-int              v1, v4, v0
+	10      (00000024) invoke-direct        v3, v1, Landroid/support/v4/widget/SwipeRefreshLayout;->setTargetOffsetTopAndBottom(I)V
+	11      (0000002a) return-void          
+
+updateContentOffsetTop-BB@0x2c : [ updateContentOffsetTop-BB@0x30 updateContentOffsetTop-BB@0x20 ]
+	12      (0000002c) if-gez               v4, -6
+
+updateContentOffsetTop-BB@0x30 : [ updateContentOffsetTop-BB@0x20 ]
+	13      (00000030) const/4              v4, 0
+	14      (00000032) goto                 -9
+

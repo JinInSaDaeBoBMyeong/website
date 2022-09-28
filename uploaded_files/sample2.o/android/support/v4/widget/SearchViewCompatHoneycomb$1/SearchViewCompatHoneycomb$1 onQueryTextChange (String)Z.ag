@@ -1,0 +1,14 @@
+# Landroid/support/v4/widget/SearchViewCompatHoneycomb$1;->onQueryTextChange(Ljava/lang/String;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+#
+# - return:boolean
+
+onQueryTextChange-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/widget/SearchViewCompatHoneycomb$1;->val$listener Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnQueryTextListenerCompatBridge;
+	1       (00000004) invoke-interface     v0, v2, Landroid/support/v4/widget/SearchViewCompatHoneycomb$OnQueryTextListenerCompatBridge;->onQueryTextChange(Ljava/lang/String;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

@@ -1,0 +1,58 @@
+# Landroid/support/v4/hardware/display/DisplayManagerCompat;->getInstance(Landroid/content/Context;)Landroid/support/v4/hardware/display/DisplayManagerCompat; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+#
+# - return:android.support.v4.hardware.display.DisplayManagerCompat
+
+getInstance-BB@0x0 : [ getInstance-BB@0x6 ]
+	0       (00000000) sget-object          v3, Landroid/support/v4/hardware/display/DisplayManagerCompat;->sInstances Ljava/util/WeakHashMap;
+	1       (00000004) monitor-enter        v3
+
+getInstance-BB@0x6 : [ getInstance-BB@0x1a getInstance-BB@0x3a ]
+	2       (00000006) sget-object          v2, Landroid/support/v4/hardware/display/DisplayManagerCompat;->sInstances Ljava/util/WeakHashMap;
+	3       (0000000a) invoke-virtual       v2, v4, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	4       (00000010) move-result-object   v0
+	5       (00000012) check-cast           v0, Landroid/support/v4/hardware/display/DisplayManagerCompat;
+	6       (00000016) if-nez               v0, +12
+	6:4d
+	(Ljava/lang/Throwable; -> 4a getInstance-BB@0x4a)
+
+getInstance-BB@0x1a : [ getInstance-BB@0x26 getInstance-BB@0x3e ]
+	7       (0000001a) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	8       (0000001e) const/16             v2, 17
+	9       (00000022) if-lt                v1, v2, +e
+	6:4d
+	(Ljava/lang/Throwable; -> 4a getInstance-BB@0x4a)
+
+getInstance-BB@0x26 : [ getInstance-BB@0x30 ]
+	10      (00000026) new-instance         v0, Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;
+	11      (0000002a) invoke-direct        v0, v4, Landroid/support/v4/hardware/display/DisplayManagerCompat$JellybeanMr1Impl;-><init>(Landroid/content/Context;)V
+	6:4d
+	(Ljava/lang/Throwable; -> 4a getInstance-BB@0x4a)
+
+getInstance-BB@0x30 : [ getInstance-BB@0x3a ]
+	12      (00000030) sget-object          v2, Landroid/support/v4/hardware/display/DisplayManagerCompat;->sInstances Ljava/util/WeakHashMap;
+	13      (00000034) invoke-virtual       v2, v4, v0, Ljava/util/WeakHashMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	6:4d
+	(Ljava/lang/Throwable; -> 4a getInstance-BB@0x4a)
+
+getInstance-BB@0x3a : 
+	14      (0000003a) monitor-exit         v3
+	15      (0000003c) return-object        v0
+	6:4d
+	(Ljava/lang/Throwable; -> 4a getInstance-BB@0x4a)
+
+getInstance-BB@0x3e : [ getInstance-BB@0x30 ]
+	16      (0000003e) new-instance         v0, Landroid/support/v4/hardware/display/DisplayManagerCompat$LegacyImpl;
+	17      (00000042) invoke-direct        v0, v4, Landroid/support/v4/hardware/display/DisplayManagerCompat$LegacyImpl;-><init>(Landroid/content/Context;)V
+	18      (00000048) goto                 -c
+	6:4d
+	(Ljava/lang/Throwable; -> 4a getInstance-BB@0x4a)
+
+getInstance-BB@0x4a : 
+	19      (0000004a) move-exception       v2
+	20      (0000004c) monitor-exit         v3
+	21      (0000004e) throw                v2
+

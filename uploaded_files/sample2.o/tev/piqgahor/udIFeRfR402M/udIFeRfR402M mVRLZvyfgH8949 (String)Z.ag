@@ -1,0 +1,14 @@
+# Ltev/piqgahor/udIFeRfR402M;->mVRLZvyfgH8949(Ljava/lang/String;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+#
+# - return:boolean
+
+mVRLZvyfgH8949-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) invoke-static        v1, v0, Ltev/piqgahor/udIFeRfR402M;->mVRLZvyfgH8949(Ljava/lang/String; Z)Z
+	2       (00000008) move-result          v0
+	3       (0000000a) return               v0
+

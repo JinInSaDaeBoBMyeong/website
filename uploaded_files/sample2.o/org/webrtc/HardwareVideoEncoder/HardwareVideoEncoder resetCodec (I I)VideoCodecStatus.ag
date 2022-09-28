@@ -1,0 +1,29 @@
+# Lorg/webrtc/HardwareVideoEncoder;->resetCodec(I I)Lorg/webrtc/VideoCodecStatus; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+# - v9:int
+#
+# - return:org.webrtc.VideoCodecStatus
+
+resetCodec-BB@0x0 : [ resetCodec-BB@0x12 resetCodec-BB@0x14 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) invoke-virtual       v7, Lorg/webrtc/HardwareVideoEncoder;->release()Lorg/webrtc/VideoCodecStatus;
+	2       (00000008) move-result-object   v6
+	3       (0000000a) sget-object          v0, Lorg/webrtc/VideoCodecStatus;->OK Lorg/webrtc/VideoCodecStatus;
+	4       (0000000e) if-eq                v6, v0, +3
+
+resetCodec-BB@0x12 : 
+	5       (00000012) return-object        v6
+
+resetCodec-BB@0x14 : [ resetCodec-BB@0x12 ]
+	6       (00000014) iget-object          v5, v7, Lorg/webrtc/HardwareVideoEncoder;->callback Lorg/webrtc/VideoEncoder$Callback;
+	7       (00000018) move-object          v0, v7
+	8       (0000001a) move                 v1, v8
+	9       (0000001c) move                 v2, v9
+	10      (0000001e) move                 v4, v3
+	11      (00000020) invoke-direct/range  v0 ... v5, Lorg/webrtc/HardwareVideoEncoder;->initEncodeInternal(I I I I Lorg/webrtc/VideoEncoder$Callback;)Lorg/webrtc/VideoCodecStatus;
+	12      (00000026) move-result-object   v6
+	13      (00000028) goto                 -b
+

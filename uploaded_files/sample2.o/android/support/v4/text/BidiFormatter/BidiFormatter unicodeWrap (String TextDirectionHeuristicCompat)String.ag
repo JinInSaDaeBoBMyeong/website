@@ -1,0 +1,15 @@
+# Landroid/support/v4/text/BidiFormatter;->unicodeWrap(Ljava/lang/String; Landroid/support/v4/text/TextDirectionHeuristicCompat;)Ljava/lang/String; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:android.support.v4.text.TextDirectionHeuristicCompat
+#
+# - return:java.lang.String
+
+unicodeWrap-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) invoke-virtual       v1, v2, v3, v0, Landroid/support/v4/text/BidiFormatter;->unicodeWrap(Ljava/lang/String; Landroid/support/v4/text/TextDirectionHeuristicCompat; Z)Ljava/lang/String;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) return-object        v0
+

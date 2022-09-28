@@ -1,0 +1,15 @@
+# Landroid/support/v4/app/ShareCompat$IntentBuilder;->createChooserIntent()Landroid/content/Intent; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.content.Intent
+
+createChooserIntent-BB@0x0 : 
+	0       (00000000) invoke-virtual       v2, Landroid/support/v4/app/ShareCompat$IntentBuilder;->getIntent()Landroid/content/Intent;
+	1       (00000006) move-result-object   v0
+	2       (00000008) iget-object          v1, v2, Landroid/support/v4/app/ShareCompat$IntentBuilder;->mChooserTitle Ljava/lang/CharSequence;
+	3       (0000000c) invoke-static        v0, v1, Landroid/content/Intent;->createChooser(Landroid/content/Intent; Ljava/lang/CharSequence;)Landroid/content/Intent;
+	4       (00000012) move-result-object   v0
+	5       (00000014) return-object        v0
+

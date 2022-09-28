@@ -1,0 +1,13 @@
+# Landroid/support/v4/print/PrintHelperKitkat$2$1;->onCancelled(Ljava/lang/Object;)V [access_flags=protected bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+#
+# - return:void
+
+onCancelled-BB@0x0 : 
+	0       (00000000) check-cast           v1, Landroid/graphics/Bitmap;
+	1       (00000004) invoke-virtual       v0, v1, Landroid/support/v4/print/PrintHelperKitkat$2$1;->onCancelled(Landroid/graphics/Bitmap;)V
+	2       (0000000a) return-void          
+

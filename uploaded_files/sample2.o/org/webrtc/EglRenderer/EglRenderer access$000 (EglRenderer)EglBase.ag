@@ -1,0 +1,12 @@
+# Lorg/webrtc/EglRenderer;->access$000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/EglBase; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.EglRenderer
+#
+# - return:org.webrtc.EglBase
+
+access$000-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/EglRenderer;->eglBase Lorg/webrtc/EglBase;
+	1       (00000004) return-object        v0
+

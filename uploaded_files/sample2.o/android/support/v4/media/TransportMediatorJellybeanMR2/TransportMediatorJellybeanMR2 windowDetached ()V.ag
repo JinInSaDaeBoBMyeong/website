@@ -1,0 +1,25 @@
+# Landroid/support/v4/media/TransportMediatorJellybeanMR2;->windowDetached()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+windowDetached-BB@0x0 : [ windowDetached-BB@0x10 windowDetached-BB@0x30 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-virtual       v3, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->loseFocus()V
+	2       (00000008) iget-object          v0, v3, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mPendingIntent Landroid/app/PendingIntent;
+	3       (0000000c) if-eqz               v0, +12
+
+windowDetached-BB@0x10 : [ windowDetached-BB@0x30 ]
+	4       (00000010) iget-object          v0, v3, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mContext Landroid/content/Context;
+	5       (00000014) iget-object          v1, v3, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mMediaButtonReceiver Landroid/content/BroadcastReceiver;
+	6       (00000018) invoke-virtual       v0, v1, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+	7       (0000001e) iget-object          v0, v3, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mPendingIntent Landroid/app/PendingIntent;
+	8       (00000022) invoke-virtual       v0, Landroid/app/PendingIntent;->cancel()V
+	9       (00000028) iput-object          v2, v3, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mPendingIntent Landroid/app/PendingIntent;
+	10      (0000002c) iput-object          v2, v3, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mRemoteControl Landroid/media/RemoteControlClient;
+
+windowDetached-BB@0x30 : 
+	11      (00000030) return-void          
+

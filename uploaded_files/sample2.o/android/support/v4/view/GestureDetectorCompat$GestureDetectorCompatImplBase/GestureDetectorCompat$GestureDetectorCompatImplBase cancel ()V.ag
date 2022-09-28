@@ -1,0 +1,36 @@
+# Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->cancel()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+cancel-BB@0x0 : [ cancel-BB@0x52 cancel-BB@0x56 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-object          v0, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler Landroid/os/Handler;
+	2       (00000006) const/4              v1, 1
+	3       (00000008) invoke-virtual       v0, v1, Landroid/os/Handler;->removeMessages(I)V
+	4       (0000000e) iget-object          v0, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler Landroid/os/Handler;
+	5       (00000012) const/4              v1, 2
+	6       (00000014) invoke-virtual       v0, v1, Landroid/os/Handler;->removeMessages(I)V
+	7       (0000001a) iget-object          v0, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler Landroid/os/Handler;
+	8       (0000001e) const/4              v1, 3
+	9       (00000020) invoke-virtual       v0, v1, Landroid/os/Handler;->removeMessages(I)V
+	10      (00000026) iget-object          v0, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker Landroid/view/VelocityTracker;
+	11      (0000002a) invoke-virtual       v0, Landroid/view/VelocityTracker;->recycle()V
+	12      (00000030) const/4              v0, 0
+	13      (00000032) iput-object          v0, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker Landroid/view/VelocityTracker;
+	14      (00000036) iput-boolean         v2, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsDoubleTapping Z
+	15      (0000003a) iput-boolean         v2, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mStillDown Z
+	16      (0000003e) iput-boolean         v2, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInTapRegion Z
+	17      (00000042) iput-boolean         v2, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInBiggerTapRegion Z
+	18      (00000046) iput-boolean         v2, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDeferConfirmSingleTap Z
+	19      (0000004a) iget-boolean         v0, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mInLongPress Z
+	20      (0000004e) if-eqz               v0, +4
+
+cancel-BB@0x52 : [ cancel-BB@0x56 ]
+	21      (00000052) iput-boolean         v2, v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mInLongPress Z
+
+cancel-BB@0x56 : 
+	22      (00000056) return-void          
+

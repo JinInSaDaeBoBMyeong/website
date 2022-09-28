@@ -1,0 +1,29 @@
+# Landroid/support/v4/widget/ScrollerCompat;->fling(I I I I I I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:int
+# - v12:int
+# - v13:int
+# - v14:int
+# - v15:int
+# - v16:int
+# - v17:int
+# - v18:int
+#
+# - return:void
+
+fling-BB@0x0 : 
+	0       (00000000) iget-object          v0, v10, Landroid/support/v4/widget/ScrollerCompat;->mImpl Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+	1       (00000004) iget-object          v1, v10, Landroid/support/v4/widget/ScrollerCompat;->mScroller Ljava/lang/Object;
+	2       (00000008) move                 v2, v11
+	3       (0000000a) move                 v3, v12
+	4       (0000000c) move                 v4, v13
+	5       (0000000e) move                 v5, v14
+	6       (00000010) move                 v6, v15
+	7       (00000012) move/from16          v7, v16
+	8       (00000016) move/from16          v8, v17
+	9       (0000001a) move/from16          v9, v18
+	10      (0000001e) invoke-interface/range v0 ... v9, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->fling(Ljava/lang/Object; I I I I I I I I)V
+	11      (00000024) return-void          
+

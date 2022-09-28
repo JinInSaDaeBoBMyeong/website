@@ -1,0 +1,25 @@
+# Landroid/support/v4/view/ViewPager;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) new-array            v0, v0, [I
+	2       (00000006) const/4              v1, 0
+	3       (00000008) const                v2, 16842931 # [2.369405967361196e-38]
+	4       (0000000e) aput                 v2, v0, v1
+	5       (00000012) sput-object          v0, Landroid/support/v4/view/ViewPager;->LAYOUT_ATTRS [I
+	6       (00000016) new-instance         v0, Landroid/support/v4/view/ViewPager$1;
+	7       (0000001a) invoke-direct        v0, Landroid/support/v4/view/ViewPager$1;-><init>()V
+	8       (00000020) sput-object          v0, Landroid/support/v4/view/ViewPager;->COMPARATOR Ljava/util/Comparator;
+	9       (00000024) new-instance         v0, Landroid/support/v4/view/ViewPager$2;
+	10      (00000028) invoke-direct        v0, Landroid/support/v4/view/ViewPager$2;-><init>()V
+	11      (0000002e) sput-object          v0, Landroid/support/v4/view/ViewPager;->sInterpolator Landroid/view/animation/Interpolator;
+	12      (00000032) new-instance         v0, Landroid/support/v4/view/ViewPager$ViewPositionComparator;
+	13      (00000036) invoke-direct        v0, Landroid/support/v4/view/ViewPager$ViewPositionComparator;-><init>()V
+	14      (0000003c) sput-object          v0, Landroid/support/v4/view/ViewPager;->sPositionComparator Landroid/support/v4/view/ViewPager$ViewPositionComparator;
+	15      (00000040) return-void          
+

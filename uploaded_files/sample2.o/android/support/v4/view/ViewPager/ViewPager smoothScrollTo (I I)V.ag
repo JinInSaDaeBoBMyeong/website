@@ -1,0 +1,14 @@
+# Landroid/support/v4/view/ViewPager;->smoothScrollTo(I I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:void
+
+smoothScrollTo-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-virtual       v1, v2, v3, v0, Landroid/support/v4/view/ViewPager;->smoothScrollTo(I I I)V
+	2       (00000008) return-void          
+

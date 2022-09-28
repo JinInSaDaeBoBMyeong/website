@@ -1,0 +1,11 @@
+# Landroid/support/v4/app/DialogFragment;->getDialog()Landroid/app/Dialog; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.app.Dialog
+
+getDialog-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/DialogFragment;->mDialog Landroid/app/Dialog;
+	1       (00000004) return-object        v0
+

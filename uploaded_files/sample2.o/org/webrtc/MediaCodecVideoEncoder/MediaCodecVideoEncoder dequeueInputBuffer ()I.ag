@@ -1,0 +1,29 @@
+# Lorg/webrtc/MediaCodecVideoEncoder;->dequeueInputBuffer()I [access_flags=]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:int
+
+dequeueInputBuffer-BB@0x0 : [ dequeueInputBuffer-BB@0x6 ]
+	0       (00000000) invoke-direct        v4, Lorg/webrtc/MediaCodecVideoEncoder;->checkOnMediaCodecThread()V
+
+dequeueInputBuffer-BB@0x6 : [ dequeueInputBuffer-BB@0x16 ]
+	1       (00000006) iget-object          v1, v4, Lorg/webrtc/MediaCodecVideoEncoder;->mediaCodec Landroid/media/MediaCodec;
+	2       (0000000a) const-wide/16        v2, 0 # [0.0]
+	3       (0000000e) invoke-virtual       v1, v2, v3, Landroid/media/MediaCodec;->dequeueInputBuffer(J)I
+	4       (00000014) move-result          v1
+	6:13
+	(Ljava/lang/IllegalStateException; -> 18 dequeueInputBuffer-BB@0x18)
+
+dequeueInputBuffer-BB@0x16 : 
+	5       (00000016) return               v1
+
+dequeueInputBuffer-BB@0x18 : [ dequeueInputBuffer-BB@0x16 ]
+	6       (00000018) move-exception       v0
+	7       (0000001a) const-string         v1, 'MediaCodecVideoEncoder'
+	8       (0000001e) const-string         v2, 'dequeueIntputBuffer failed'
+	9       (00000022) invoke-static        v1, v2, v0, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	10      (00000028) const/4              v1, -2
+	11      (0000002a) goto                 -a
+

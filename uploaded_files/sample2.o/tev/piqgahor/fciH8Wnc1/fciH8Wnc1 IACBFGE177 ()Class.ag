@@ -1,0 +1,11 @@
+# Ltev/piqgahor/fciH8Wnc1;->IACBFGE177()Ljava/lang/Class; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.lang.Class
+
+IACBFGE177-BB@0x0 : 
+	0       (00000000) const-class          v0, Ltev/piqgahor/uuaYG97Z1i9;
+	1       (00000004) return-object        v0
+

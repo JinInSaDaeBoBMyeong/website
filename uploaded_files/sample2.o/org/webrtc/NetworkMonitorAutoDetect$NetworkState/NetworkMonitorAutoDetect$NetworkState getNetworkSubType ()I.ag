@@ -1,0 +1,11 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;->getNetworkSubType()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getNetworkSubType-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;->subtype I
+	1       (00000004) return               v0
+

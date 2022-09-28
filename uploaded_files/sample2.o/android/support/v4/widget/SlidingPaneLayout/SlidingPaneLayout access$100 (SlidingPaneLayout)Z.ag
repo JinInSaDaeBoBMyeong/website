@@ -1,0 +1,12 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->access$100(Landroid/support/v4/widget/SlidingPaneLayout;)Z [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.widget.SlidingPaneLayout
+#
+# - return:boolean
+
+access$100-BB@0x0 : 
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/v4/widget/SlidingPaneLayout;->mIsUnableToDrag Z
+	1       (00000004) return               v0
+

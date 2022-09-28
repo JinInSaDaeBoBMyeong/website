@@ -1,0 +1,54 @@
+# Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View; I Landroid/view/ViewGroup$LayoutParams;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.view.View
+# - v5:int
+# - v6:android.view.ViewGroup$LayoutParams
+#
+# - return:void
+
+addView-BB@0x0 : [ addView-BB@0xc addView-BB@0x14 ]
+	0       (00000000) invoke-virtual       v3, v6, Landroid/support/v4/view/ViewPager;->checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-nez               v1, +6
+
+addView-BB@0xc : [ addView-BB@0x14 ]
+	3       (0000000c) invoke-virtual       v3, v6, Landroid/support/v4/view/ViewPager;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;
+	4       (00000012) move-result-object   v6
+
+addView-BB@0x14 : [ addView-BB@0x30 addView-BB@0x5a ]
+	5       (00000014) move-object          v0, v6
+	6       (00000016) check-cast           v0, Landroid/support/v4/view/ViewPager$LayoutParams;
+	7       (0000001a) iget-boolean         v1, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor Z
+	8       (0000001e) instance-of          v2, v4, Landroid/support/v4/view/ViewPager$Decor;
+	9       (00000022) or-int/2addr         v1, v2
+	10      (00000024) iput-boolean         v1, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor Z
+	11      (00000028) iget-boolean         v1, v3, Landroid/support/v4/view/ViewPager;->mInLayout Z
+	12      (0000002c) if-eqz               v1, +17
+
+addView-BB@0x30 : [ addView-BB@0x34 addView-BB@0x4c ]
+	13      (00000030) if-eqz               v0, +e
+
+addView-BB@0x34 : [ addView-BB@0x3c addView-BB@0x4c ]
+	14      (00000034) iget-boolean         v1, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor Z
+	15      (00000038) if-eqz               v1, +a
+
+addView-BB@0x3c : 
+	16      (0000003c) new-instance         v1, Ljava/lang/IllegalStateException;
+	17      (00000040) const-string         v2, 'Cannot add pager decor view during layout'
+	18      (00000044) invoke-direct        v1, v2, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	19      (0000004a) throw                v1
+
+addView-BB@0x4c : [ addView-BB@0x58 ]
+	20      (0000004c) const/4              v1, 1
+	21      (0000004e) iput-boolean         v1, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->needsMeasure Z
+	22      (00000052) invoke-virtual       v3, v4, v5, v6, Landroid/support/v4/view/ViewPager;->addViewInLayout(Landroid/view/View; I Landroid/view/ViewGroup$LayoutParams;)Z
+
+addView-BB@0x58 : 
+	23      (00000058) return-void          
+
+addView-BB@0x5a : [ addView-BB@0x58 ]
+	24      (0000005a) invoke-super         v3, v4, v5, v6, Landroid/view/ViewGroup;->addView(Landroid/view/View; I Landroid/view/ViewGroup$LayoutParams;)V
+	25      (00000060) goto                 -4
+

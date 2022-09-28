@@ -1,0 +1,23 @@
+# Landroid/support/v4/app/NotificationCompatKitKat;->getActionCount(Landroid/app/Notification;)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.app.Notification
+#
+# - return:int
+
+getActionCount-BB@0x0 : [ getActionCount-BB@0x8 getActionCount-BB@0x10 ]
+	0       (00000000) iget-object          v0, v1, Landroid/app/Notification;->actions [Landroid/app/Notification$Action;
+	1       (00000004) if-eqz               v0, +6
+
+getActionCount-BB@0x8 : [ getActionCount-BB@0xe ]
+	2       (00000008) iget-object          v0, v1, Landroid/app/Notification;->actions [Landroid/app/Notification$Action;
+	3       (0000000c) array-length         v0, v0
+
+getActionCount-BB@0xe : 
+	4       (0000000e) return               v0
+
+getActionCount-BB@0x10 : [ getActionCount-BB@0xe ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -2
+

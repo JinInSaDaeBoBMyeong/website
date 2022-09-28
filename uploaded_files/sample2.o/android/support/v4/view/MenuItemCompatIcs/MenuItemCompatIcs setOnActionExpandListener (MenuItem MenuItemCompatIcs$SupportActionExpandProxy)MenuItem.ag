@@ -1,0 +1,16 @@
+# Landroid/support/v4/view/MenuItemCompatIcs;->setOnActionExpandListener(Landroid/view/MenuItem; Landroid/support/v4/view/MenuItemCompatIcs$SupportActionExpandProxy;)Landroid/view/MenuItem; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.MenuItem
+# - v2:android.support.v4.view.MenuItemCompatIcs$SupportActionExpandProxy
+#
+# - return:android.view.MenuItem
+
+setOnActionExpandListener-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/support/v4/view/MenuItemCompatIcs$OnActionExpandListenerWrapper;
+	1       (00000004) invoke-direct        v0, v2, Landroid/support/v4/view/MenuItemCompatIcs$OnActionExpandListenerWrapper;-><init>(Landroid/support/v4/view/MenuItemCompatIcs$SupportActionExpandProxy;)V
+	2       (0000000a) invoke-interface     v1, v0, Landroid/view/MenuItem;->setOnActionExpandListener(Landroid/view/MenuItem$OnActionExpandListener;)Landroid/view/MenuItem;
+	3       (00000010) move-result-object   v0
+	4       (00000012) return-object        v0
+

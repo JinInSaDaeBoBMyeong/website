@@ -1,0 +1,32 @@
+# Lorg/webrtc/Camera2Enumerator;->convertSizes([Landroid/util/Size;)Ljava/util/List; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.util.Size[]
+#
+# - return:java.util.List
+
+convertSizes-BB@0x0 : [ convertSizes-BB@0xe ]
+	0       (00000000) new-instance         v1, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) array-length         v3, v7
+	3       (0000000c) const/4              v2, 0
+
+convertSizes-BB@0xe : [ convertSizes-BB@0x12 convertSizes-BB@0x3c ]
+	4       (0000000e) if-ge                v2, v3, +17
+
+convertSizes-BB@0x12 : [ convertSizes-BB@0xe ]
+	5       (00000012) aget-object          v0, v7, v2
+	6       (00000016) new-instance         v4, Lorg/webrtc/Size;
+	7       (0000001a) invoke-virtual       v0, Landroid/util/Size;->getWidth()I
+	8       (00000020) move-result          v5
+	9       (00000022) invoke-virtual       v0, Landroid/util/Size;->getHeight()I
+	10      (00000028) move-result          v6
+	11      (0000002a) invoke-direct        v4, v5, v6, Lorg/webrtc/Size;-><init>(I I)V
+	12      (00000030) invoke-interface     v1, v4, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	13      (00000036) add-int/lit8         v2, v2, 1
+	14      (0000003a) goto                 -16
+
+convertSizes-BB@0x3c : 
+	15      (0000003c) return-object        v1
+

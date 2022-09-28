@@ -1,0 +1,55 @@
+# Lorg/webrtc/Camera2Session;->reportError(Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:void
+
+reportError-BB@0x0 : [ reportError-BB@0x3e reportError-BB@0x6e ]
+	0       (00000000) invoke-direct        v4, Lorg/webrtc/Camera2Session;->checkIsOnCameraThread()V
+	1       (00000006) const-string         v1, 'Camera2Session'
+	2       (0000000a) new-instance         v2, Ljava/lang/StringBuilder;
+	3       (0000000e) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	4       (00000014) const-string         v3, 'Error: '
+	5       (00000018) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001e) move-result-object   v2
+	7       (00000020) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000026) move-result-object   v2
+	9       (00000028) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	10      (0000002e) move-result-object   v2
+	11      (00000030) invoke-static        v1, v2, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	12      (00000036) iget-object          v1, v4, Lorg/webrtc/Camera2Session;->captureSession Landroid/hardware/camera2/CameraCaptureSession;
+	13      (0000003a) if-nez               v1, +1a
+
+reportError-BB@0x3e : [ reportError-BB@0x4a reportError-BB@0x6e ]
+	14      (0000003e) iget-object          v1, v4, Lorg/webrtc/Camera2Session;->state Lorg/webrtc/Camera2Session$SessionState;
+	15      (00000042) sget-object          v2, Lorg/webrtc/Camera2Session$SessionState;->STOPPED Lorg/webrtc/Camera2Session$SessionState;
+	16      (00000046) if-eq                v1, v2, +14
+
+reportError-BB@0x4a : [ reportError-BB@0x4c ]
+	17      (0000004a) const/4              v0, 1
+
+reportError-BB@0x4c : [ reportError-BB@0x5e reportError-BB@0x72 ]
+	18      (0000004c) sget-object          v1, Lorg/webrtc/Camera2Session$SessionState;->STOPPED Lorg/webrtc/Camera2Session$SessionState;
+	19      (00000050) iput-object          v1, v4, Lorg/webrtc/Camera2Session;->state Lorg/webrtc/Camera2Session$SessionState;
+	20      (00000054) invoke-direct        v4, Lorg/webrtc/Camera2Session;->stopInternal()V
+	21      (0000005a) if-eqz               v0, +c
+
+reportError-BB@0x5e : [ reportError-BB@0x6c ]
+	22      (0000005e) iget-object          v1, v4, Lorg/webrtc/Camera2Session;->callback Lorg/webrtc/CameraSession$CreateSessionCallback;
+	23      (00000062) sget-object          v2, Lorg/webrtc/CameraSession$FailureType;->ERROR Lorg/webrtc/CameraSession$FailureType;
+	24      (00000066) invoke-interface     v1, v2, v5, Lorg/webrtc/CameraSession$CreateSessionCallback;->onFailure(Lorg/webrtc/CameraSession$FailureType; Ljava/lang/String;)V
+
+reportError-BB@0x6c : 
+	25      (0000006c) return-void          
+
+reportError-BB@0x6e : [ reportError-BB@0x4c ]
+	26      (0000006e) const/4              v0, 0
+	27      (00000070) goto                 -12
+
+reportError-BB@0x72 : [ reportError-BB@0x6c ]
+	28      (00000072) iget-object          v1, v4, Lorg/webrtc/Camera2Session;->events Lorg/webrtc/CameraSession$Events;
+	29      (00000076) invoke-interface     v1, v4, v5, Lorg/webrtc/CameraSession$Events;->onCameraError(Lorg/webrtc/CameraSession; Ljava/lang/String;)V
+	30      (0000007c) goto                 -8
+

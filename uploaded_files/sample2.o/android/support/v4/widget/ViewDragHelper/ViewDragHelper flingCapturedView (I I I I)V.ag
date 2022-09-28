@@ -1,0 +1,48 @@
+# Landroid/support/v4/widget/ViewDragHelper;->flingCapturedView(I I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:int
+# - v11:int
+# - v12:int
+# - v13:int
+#
+# - return:void
+
+flingCapturedView-BB@0x0 : [ flingCapturedView-BB@0x8 flingCapturedView-BB@0x18 ]
+	0       (00000000) iget-boolean         v0, v9, Landroid/support/v4/widget/ViewDragHelper;->mReleaseInProgress Z
+	1       (00000004) if-nez               v0, +a
+
+flingCapturedView-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/IllegalStateException;
+	3       (0000000c) const-string         v1, 'Cannot flingCapturedView outside of a call to Callback#onViewReleased'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+flingCapturedView-BB@0x18 : 
+	6       (00000018) iget-object          v0, v9, Landroid/support/v4/widget/ViewDragHelper;->mScroller Landroid/support/v4/widget/ScrollerCompat;
+	7       (0000001c) iget-object          v1, v9, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	8       (00000020) invoke-virtual       v1, Landroid/view/View;->getLeft()I
+	9       (00000026) move-result          v1
+	10      (00000028) iget-object          v2, v9, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	11      (0000002c) invoke-virtual       v2, Landroid/view/View;->getTop()I
+	12      (00000032) move-result          v2
+	13      (00000034) iget-object          v3, v9, Landroid/support/v4/widget/ViewDragHelper;->mVelocityTracker Landroid/view/VelocityTracker;
+	14      (00000038) iget                 v4, v9, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	15      (0000003c) invoke-static        v3, v4, Landroid/support/v4/view/VelocityTrackerCompat;->getXVelocity(Landroid/view/VelocityTracker; I)F
+	16      (00000042) move-result          v3
+	17      (00000044) float-to-int         v3, v3
+	18      (00000046) iget-object          v4, v9, Landroid/support/v4/widget/ViewDragHelper;->mVelocityTracker Landroid/view/VelocityTracker;
+	19      (0000004a) iget                 v5, v9, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	20      (0000004e) invoke-static        v4, v5, Landroid/support/v4/view/VelocityTrackerCompat;->getYVelocity(Landroid/view/VelocityTracker; I)F
+	21      (00000054) move-result          v4
+	22      (00000056) float-to-int         v4, v4
+	23      (00000058) move                 v5, v10
+	24      (0000005a) move                 v6, v12
+	25      (0000005c) move                 v7, v11
+	26      (0000005e) move                 v8, v13
+	27      (00000060) invoke-virtual/range v0 ... v8, Landroid/support/v4/widget/ScrollerCompat;->fling(I I I I I I I I)V
+	28      (00000066) const/4              v0, 2
+	29      (00000068) invoke-virtual       v9, v0, Landroid/support/v4/widget/ViewDragHelper;->setDragState(I)V
+	30      (0000006e) return-void          
+

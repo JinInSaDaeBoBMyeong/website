@@ -1,0 +1,32 @@
+# Lorg/webrtc/MediaCodecVideoEncoder;->isH264HwSupported()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isH264HwSupported-BB@0x0 : [ isH264HwSupported-BB@0x14 isH264HwSupported-BB@0x30 ]
+	0       (00000000) sget-object          v0, Lorg/webrtc/MediaCodecVideoEncoder;->hwEncoderDisabledTypes Ljava/util/Set;
+	1       (00000004) const-string         v1, 'video/avc'
+	2       (00000008) invoke-interface     v0, v1, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +10
+
+isH264HwSupported-BB@0x14 : [ isH264HwSupported-BB@0x2c isH264HwSupported-BB@0x30 ]
+	5       (00000014) const-string         v0, 'video/avc'
+	6       (00000018) sget-object          v1, Lorg/webrtc/MediaCodecVideoEncoder;->h264HwList [Lorg/webrtc/MediaCodecVideoEncoder$MediaCodecProperties;
+	7       (0000001c) sget-object          v2, Lorg/webrtc/MediaCodecVideoEncoder;->supportedColorList [I
+	8       (00000020) invoke-static        v0, v1, v2, Lorg/webrtc/MediaCodecVideoEncoder;->findHwEncoder(Ljava/lang/String; [Lorg/webrtc/MediaCodecVideoEncoder$MediaCodecProperties; [I)Lorg/webrtc/MediaCodecVideoEncoder$EncoderProperties;
+	9       (00000026) move-result-object   v0
+	10      (00000028) if-eqz               v0, +4
+
+isH264HwSupported-BB@0x2c : [ isH264HwSupported-BB@0x2e ]
+	11      (0000002c) const/4              v0, 1
+
+isH264HwSupported-BB@0x2e : 
+	12      (0000002e) return               v0
+
+isH264HwSupported-BB@0x30 : [ isH264HwSupported-BB@0x2e ]
+	13      (00000030) const/4              v0, 0
+	14      (00000032) goto                 -2
+

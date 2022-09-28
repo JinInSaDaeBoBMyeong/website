@@ -1,0 +1,25 @@
+# Lorg/webrtc/NetworkMonitor;->isOnline()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isOnline-BB@0x0 : [ isOnline-BB@0x18 isOnline-BB@0x1c ]
+	0       (00000000) invoke-static        Lorg/webrtc/NetworkMonitor;->getInstance()Lorg/webrtc/NetworkMonitor;
+	1       (00000006) move-result-object   v1
+	2       (00000008) invoke-direct        v1, Lorg/webrtc/NetworkMonitor;->getCurrentConnectionType()Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) sget-object          v1, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;->CONNECTION_NONE Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	5       (00000014) if-eq                v0, v1, +4
+
+isOnline-BB@0x18 : [ isOnline-BB@0x1a ]
+	6       (00000018) const/4              v1, 1
+
+isOnline-BB@0x1a : 
+	7       (0000001a) return               v1
+
+isOnline-BB@0x1c : [ isOnline-BB@0x1a ]
+	8       (0000001c) const/4              v1, 0
+	9       (0000001e) goto                 -2
+

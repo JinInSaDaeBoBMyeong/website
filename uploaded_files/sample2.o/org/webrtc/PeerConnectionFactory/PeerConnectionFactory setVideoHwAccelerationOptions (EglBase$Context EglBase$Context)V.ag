@@ -1,0 +1,48 @@
+# Lorg/webrtc/PeerConnectionFactory;->setVideoHwAccelerationOptions(Lorg/webrtc/EglBase$Context; Lorg/webrtc/EglBase$Context;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:org.webrtc.EglBase$Context
+# - v6:org.webrtc.EglBase$Context
+#
+# - return:void
+
+setVideoHwAccelerationOptions-BB@0x0 : [ setVideoHwAccelerationOptions-BB@0x8 setVideoHwAccelerationOptions-BB@0x20 ]
+	0       (00000000) iget-object          v0, v4, Lorg/webrtc/PeerConnectionFactory;->localEglbase Lorg/webrtc/EglBase;
+	1       (00000004) if-eqz               v0, +e
+
+setVideoHwAccelerationOptions-BB@0x8 : [ setVideoHwAccelerationOptions-BB@0x20 ]
+	2       (00000008) const-string         v0, 'PeerConnectionFactory'
+	3       (0000000c) const-string         v1, 'Egl context already set.'
+	4       (00000010) invoke-static        v0, v1, Lorg/webrtc/Logging;->w(Ljava/lang/String; Ljava/lang/String;)V
+	5       (00000016) iget-object          v0, v4, Lorg/webrtc/PeerConnectionFactory;->localEglbase Lorg/webrtc/EglBase;
+	6       (0000001a) invoke-virtual       v0, Lorg/webrtc/EglBase;->release()V
+
+setVideoHwAccelerationOptions-BB@0x20 : [ setVideoHwAccelerationOptions-BB@0x28 setVideoHwAccelerationOptions-BB@0x40 ]
+	7       (00000020) iget-object          v0, v4, Lorg/webrtc/PeerConnectionFactory;->remoteEglbase Lorg/webrtc/EglBase;
+	8       (00000024) if-eqz               v0, +e
+
+setVideoHwAccelerationOptions-BB@0x28 : [ setVideoHwAccelerationOptions-BB@0x40 ]
+	9       (00000028) const-string         v0, 'PeerConnectionFactory'
+	10      (0000002c) const-string         v1, 'Egl context already set.'
+	11      (00000030) invoke-static        v0, v1, Lorg/webrtc/Logging;->w(Ljava/lang/String; Ljava/lang/String;)V
+	12      (00000036) iget-object          v0, v4, Lorg/webrtc/PeerConnectionFactory;->remoteEglbase Lorg/webrtc/EglBase;
+	13      (0000003a) invoke-virtual       v0, Lorg/webrtc/EglBase;->release()V
+
+setVideoHwAccelerationOptions-BB@0x40 : 
+	14      (00000040) invoke-static        v5, Lorg/webrtc/EglBase;->create(Lorg/webrtc/EglBase$Context;)Lorg/webrtc/EglBase;
+	15      (00000046) move-result-object   v0
+	16      (00000048) iput-object          v0, v4, Lorg/webrtc/PeerConnectionFactory;->localEglbase Lorg/webrtc/EglBase;
+	17      (0000004c) invoke-static        v6, Lorg/webrtc/EglBase;->create(Lorg/webrtc/EglBase$Context;)Lorg/webrtc/EglBase;
+	18      (00000052) move-result-object   v0
+	19      (00000054) iput-object          v0, v4, Lorg/webrtc/PeerConnectionFactory;->remoteEglbase Lorg/webrtc/EglBase;
+	20      (00000058) iget-wide            v0, v4, Lorg/webrtc/PeerConnectionFactory;->nativeFactory J
+	21      (0000005c) iget-object          v2, v4, Lorg/webrtc/PeerConnectionFactory;->localEglbase Lorg/webrtc/EglBase;
+	22      (00000060) invoke-virtual       v2, Lorg/webrtc/EglBase;->getEglBaseContext()Lorg/webrtc/EglBase$Context;
+	23      (00000066) move-result-object   v2
+	24      (00000068) iget-object          v3, v4, Lorg/webrtc/PeerConnectionFactory;->remoteEglbase Lorg/webrtc/EglBase;
+	25      (0000006c) invoke-virtual       v3, Lorg/webrtc/EglBase;->getEglBaseContext()Lorg/webrtc/EglBase$Context;
+	26      (00000072) move-result-object   v3
+	27      (00000074) invoke-static        v0, v1, v2, v3, Lorg/webrtc/PeerConnectionFactory;->nativeSetVideoHwAccelerationOptions(J Ljava/lang/Object; Ljava/lang/Object;)V
+	28      (0000007a) return-void          
+

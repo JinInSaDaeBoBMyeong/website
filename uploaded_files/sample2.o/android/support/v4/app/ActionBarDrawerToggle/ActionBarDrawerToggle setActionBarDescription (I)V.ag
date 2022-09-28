@@ -1,0 +1,28 @@
+# Landroid/support/v4/app/ActionBarDrawerToggle;->setActionBarDescription(I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+setActionBarDescription-BB@0x0 : [ setActionBarDescription-BB@0x8 setActionBarDescription-BB@0x14 ]
+	0       (00000000) iget-object          v0, v3, Landroid/support/v4/app/ActionBarDrawerToggle;->mActivityImpl Landroid/support/v4/app/ActionBarDrawerToggle$Delegate;
+	1       (00000004) if-eqz               v0, +8
+
+setActionBarDescription-BB@0x8 : [ setActionBarDescription-BB@0x12 ]
+	2       (00000008) iget-object          v0, v3, Landroid/support/v4/app/ActionBarDrawerToggle;->mActivityImpl Landroid/support/v4/app/ActionBarDrawerToggle$Delegate;
+	3       (0000000c) invoke-interface     v0, v4, Landroid/support/v4/app/ActionBarDrawerToggle$Delegate;->setActionBarDescription(I)V
+
+setActionBarDescription-BB@0x12 : 
+	4       (00000012) return-void          
+
+setActionBarDescription-BB@0x14 : [ setActionBarDescription-BB@0x12 ]
+	5       (00000014) sget-object          v0, Landroid/support/v4/app/ActionBarDrawerToggle;->IMPL Landroid/support/v4/app/ActionBarDrawerToggle$ActionBarDrawerToggleImpl;
+	6       (00000018) iget-object          v1, v3, Landroid/support/v4/app/ActionBarDrawerToggle;->mSetIndicatorInfo Ljava/lang/Object;
+	7       (0000001c) iget-object          v2, v3, Landroid/support/v4/app/ActionBarDrawerToggle;->mActivity Landroid/app/Activity;
+	8       (00000020) invoke-interface     v0, v1, v2, v4, Landroid/support/v4/app/ActionBarDrawerToggle$ActionBarDrawerToggleImpl;->setActionBarDescription(Ljava/lang/Object; Landroid/app/Activity; I)Ljava/lang/Object;
+	9       (00000026) move-result-object   v0
+	10      (00000028) iput-object          v0, v3, Landroid/support/v4/app/ActionBarDrawerToggle;->mSetIndicatorInfo Ljava/lang/Object;
+	11      (0000002c) goto                 -d
+

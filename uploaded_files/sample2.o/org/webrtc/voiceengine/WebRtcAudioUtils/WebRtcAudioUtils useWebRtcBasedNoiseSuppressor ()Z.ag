@@ -1,0 +1,34 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioUtils;->useWebRtcBasedNoiseSuppressor()Z [access_flags=public static synchronized]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+useWebRtcBasedNoiseSuppressor-BB@0x0 : [ useWebRtcBasedNoiseSuppressor-BB@0x6 ]
+	0       (00000000) const-class          v1, Lorg/webrtc/voiceengine/WebRtcAudioUtils;
+	1       (00000004) monitor-enter        v1
+
+useWebRtcBasedNoiseSuppressor-BB@0x6 : [ useWebRtcBasedNoiseSuppressor-BB@0xe useWebRtcBasedNoiseSuppressor-BB@0x1c ]
+	2       (00000006) sget-boolean         v0, Lorg/webrtc/voiceengine/WebRtcAudioUtils;->useWebRtcBasedNoiseSuppressor Z
+	3       (0000000a) if-eqz               v0, +9
+	6:1f
+	(Ljava/lang/Throwable; -> 24 useWebRtcBasedNoiseSuppressor-BB@0x24)
+
+useWebRtcBasedNoiseSuppressor-BB@0xe : [ useWebRtcBasedNoiseSuppressor-BB@0x1c ]
+	4       (0000000e) const-string         v0, 'WebRtcAudioUtils'
+	5       (00000012) const-string         v2, 'Overriding default behavior; now using WebRTC NS!'
+	6       (00000016) invoke-static        v0, v2, Lorg/webrtc/Logging;->w(Ljava/lang/String; Ljava/lang/String;)V
+	6:1f
+	(Ljava/lang/Throwable; -> 24 useWebRtcBasedNoiseSuppressor-BB@0x24)
+
+useWebRtcBasedNoiseSuppressor-BB@0x1c : 
+	7       (0000001c) sget-boolean         v0, Lorg/webrtc/voiceengine/WebRtcAudioUtils;->useWebRtcBasedNoiseSuppressor Z
+	8       (00000020) monitor-exit         v1
+	9       (00000022) return               v0
+
+useWebRtcBasedNoiseSuppressor-BB@0x24 : 
+	10      (00000024) move-exception       v0
+	11      (00000026) monitor-exit         v1
+	12      (00000028) throw                v0
+

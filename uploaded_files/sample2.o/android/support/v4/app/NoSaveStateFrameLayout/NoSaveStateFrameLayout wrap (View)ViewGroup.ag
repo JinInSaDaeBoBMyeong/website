@@ -1,0 +1,28 @@
+# Landroid/support/v4/app/NoSaveStateFrameLayout;->wrap(Landroid/view/View;)Landroid/view/ViewGroup; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.View
+#
+# - return:android.view.ViewGroup
+
+wrap-BB@0x0 : [ wrap-BB@0x20 wrap-BB@0x26 ]
+	0       (00000000) const/4              v4, -1
+	1       (00000002) new-instance         v2, Landroid/support/v4/app/NoSaveStateFrameLayout;
+	2       (00000006) invoke-virtual       v5, Landroid/view/View;->getContext()Landroid/content/Context;
+	3       (0000000c) move-result-object   v3
+	4       (0000000e) invoke-direct        v2, v3, Landroid/support/v4/app/NoSaveStateFrameLayout;-><init>(Landroid/content/Context;)V
+	5       (00000014) invoke-virtual       v5, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) if-eqz               v0, +5
+
+wrap-BB@0x20 : [ wrap-BB@0x26 ]
+	8       (00000020) invoke-virtual       v2, v0, Landroid/support/v4/app/NoSaveStateFrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+wrap-BB@0x26 : 
+	9       (00000026) new-instance         v1, Landroid/widget/FrameLayout$LayoutParams;
+	10      (0000002a) invoke-direct        v1, v4, v4, Landroid/widget/FrameLayout$LayoutParams;-><init>(I I)V
+	11      (00000030) invoke-virtual       v5, v1, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+	12      (00000036) invoke-virtual       v2, v5, Landroid/support/v4/app/NoSaveStateFrameLayout;->addView(Landroid/view/View;)V
+	13      (0000003c) return-object        v2
+

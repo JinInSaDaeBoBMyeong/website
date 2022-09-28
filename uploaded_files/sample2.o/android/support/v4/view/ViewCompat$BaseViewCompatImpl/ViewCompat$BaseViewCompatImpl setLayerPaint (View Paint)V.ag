@@ -1,0 +1,12 @@
+# Landroid/support/v4/view/ViewCompat$BaseViewCompatImpl;->setLayerPaint(Landroid/view/View; Landroid/graphics/Paint;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.View
+# - v2:android.graphics.Paint
+#
+# - return:void
+
+setLayerPaint-BB@0x0 : 
+	0       (00000000) return-void          
+

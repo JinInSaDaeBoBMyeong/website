@@ -1,0 +1,35 @@
+# Landroid/support/v4/widget/ViewDragHelper;->checkTouchSlop(I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:boolean
+
+checkTouchSlop-BB@0x0 : [ checkTouchSlop-BB@0x8 ]
+	0       (00000000) iget-object          v2, v3, Landroid/support/v4/widget/ViewDragHelper;->mInitialMotionX [F
+	1       (00000004) array-length         v0, v2
+	2       (00000006) const/4              v1, 0
+
+checkTouchSlop-BB@0x8 : [ checkTouchSlop-BB@0xc checkTouchSlop-BB@0x22 ]
+	3       (00000008) if-ge                v1, v0, +d
+
+checkTouchSlop-BB@0xc : [ checkTouchSlop-BB@0x18 checkTouchSlop-BB@0x1c ]
+	4       (0000000c) invoke-virtual       v3, v4, v1, Landroid/support/v4/widget/ViewDragHelper;->checkTouchSlop(I I)Z
+	5       (00000012) move-result          v2
+	6       (00000014) if-eqz               v2, +4
+
+checkTouchSlop-BB@0x18 : [ checkTouchSlop-BB@0x1a ]
+	7       (00000018) const/4              v2, 1
+
+checkTouchSlop-BB@0x1a : 
+	8       (0000001a) return               v2
+
+checkTouchSlop-BB@0x1c : [ checkTouchSlop-BB@0x8 ]
+	9       (0000001c) add-int/lit8         v1, v1, 1
+	10      (00000020) goto                 -c
+
+checkTouchSlop-BB@0x22 : [ checkTouchSlop-BB@0x1a ]
+	11      (00000022) const/4              v2, 0
+	12      (00000024) goto                 -5
+

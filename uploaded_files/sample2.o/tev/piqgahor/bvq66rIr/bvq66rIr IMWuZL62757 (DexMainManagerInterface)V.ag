@@ -1,0 +1,26 @@
+# Ltev/piqgahor/bvq66rIr;->IMWuZL62757(Ltev/piqgahor/DexMainManagerInterface;)V [access_flags=public static synchronized]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:tev.piqgahor.DexMainManagerInterface
+#
+# - return:void
+
+IMWuZL62757-BB@0x0 : [ IMWuZL62757-BB@0x6 ]
+	0       (00000000) const-class          v1, Ltev/piqgahor/bvq66rIr;
+	1       (00000004) monitor-enter        v1
+
+IMWuZL62757-BB@0x6 : 
+	2       (00000006) invoke-interface     v2, Ltev/piqgahor/DexMainManagerInterface;->Module()Ltev/piqgahor/fxn1Y9;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) sput-object          v0, Ltev/piqgahor/bvq66rIr;->AuE3Evy9TaI Ltev/piqgahor/fxn1Y9;
+	5       (00000012) monitor-exit         v1
+	6       (00000014) return-void          
+	6:11
+	(Ljava/lang/Throwable; -> 16 IMWuZL62757-BB@0x16)
+
+IMWuZL62757-BB@0x16 : 
+	7       (00000016) move-exception       v0
+	8       (00000018) monitor-exit         v1
+	9       (0000001a) throw                v0
+

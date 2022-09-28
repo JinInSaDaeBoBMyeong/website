@@ -1,0 +1,30 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->openPane(Landroid/view/View; I)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+# - v4:int
+#
+# - return:boolean
+
+openPane-BB@0x0 : [ openPane-BB@0xa openPane-BB@0x1a ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget-boolean         v1, v2, Landroid/support/v4/widget/SlidingPaneLayout;->mFirstLayout Z
+	2       (00000006) if-nez               v1, +a
+
+openPane-BB@0xa : [ openPane-BB@0x1a openPane-BB@0x20 ]
+	3       (0000000a) const/high16         v1, 16256 # [1.0]
+	4       (0000000e) invoke-virtual       v2, v1, v4, Landroid/support/v4/widget/SlidingPaneLayout;->smoothSlideTo(F I)Z
+	5       (00000014) move-result          v1
+	6       (00000016) if-eqz               v1, +5
+
+openPane-BB@0x1a : [ openPane-BB@0x1e ]
+	7       (0000001a) iput-boolean         v0, v2, Landroid/support/v4/widget/SlidingPaneLayout;->mPreservedOpenState Z
+
+openPane-BB@0x1e : 
+	8       (0000001e) return               v0
+
+openPane-BB@0x20 : [ openPane-BB@0x1e ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -2
+

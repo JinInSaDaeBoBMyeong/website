@@ -1,0 +1,55 @@
+# Lorg/webrtc/HardwareVideoDecoder;->createBufferFromI420(Ljava/nio/ByteBuffer; I I I I I I)Lorg/webrtc/VideoFrame$I420Buffer; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v13
+# - v14:java.nio.ByteBuffer
+# - v15:int
+# - v16:int
+# - v17:int
+# - v18:int
+# - v19:int
+# - v20:int
+#
+# - return:org.webrtc.VideoFrame$I420Buffer
+
+createBufferFromI420-BB@0x0 : [ createBufferFromI420-BB@0x32 ]
+	0       (00000000) div-int/lit8         v9, v17, 2
+	1       (00000004) add-int/lit8         v0, v19, 1
+	2       (00000008) div-int/lit8         v12, v0, 2
+	3       (0000000c) add-int/lit8         v0, v20, 1
+	4       (00000010) div-int/lit8         v6, v0, 2
+	5       (00000014) move/from16          v3, v16
+	6       (00000018) mul-int              v0, v17, v18
+	7       (0000001c) add-int              v5, v3, v0
+	8       (00000020) mul-int              v0, v9, v18
+	9       (00000024) div-int/lit8         v0, v0, 2
+	10      (00000028) add-int              v7, v5, v0
+	11      (0000002c) iget-object          v1, v13, Lorg/webrtc/HardwareVideoDecoder;->activeOutputBuffersLock Ljava/lang/Object;
+	12      (00000030) monitor-enter        v1
+
+createBufferFromI420-BB@0x32 : 
+	13      (00000032) iget                 v0, v13, Lorg/webrtc/HardwareVideoDecoder;->activeOutputBuffers I
+	14      (00000036) add-int/lit8         v0, v0, 1
+	15      (0000003a) iput                 v0, v13, Lorg/webrtc/HardwareVideoDecoder;->activeOutputBuffers I
+	16      (0000003e) monitor-exit         v1
+	17      (00000040) new-instance         v0, Lorg/webrtc/HardwareVideoDecoder$2;
+	18      (00000044) move-object          v1, v13
+	19      (00000046) move-object          v2, v14
+	20      (00000048) move/from16          v4, v20
+	21      (0000004c) move/from16          v8, v17
+	22      (00000050) move/from16          v10, v19
+	23      (00000054) move                 v11, v15
+	24      (00000056) invoke-direct/range  v0 ... v11, Lorg/webrtc/HardwareVideoDecoder$2;-><init>(Lorg/webrtc/HardwareVideoDecoder; Ljava/nio/ByteBuffer; I I I I I I I I I)V
+	25      (0000005c) return-object        v0
+	32:3f
+	(Ljava/lang/Throwable; -> 5e createBufferFromI420-BB@0x5e)
+
+createBufferFromI420-BB@0x5e : [ createBufferFromI420-BB@0x60 ]
+	26      (0000005e) move-exception       v0
+
+createBufferFromI420-BB@0x60 : 
+	27      (00000060) monitor-exit         v1
+	28      (00000062) throw                v0
+	60:61
+	(Ljava/lang/Throwable; -> 5e createBufferFromI420-BB@0x5e)
+

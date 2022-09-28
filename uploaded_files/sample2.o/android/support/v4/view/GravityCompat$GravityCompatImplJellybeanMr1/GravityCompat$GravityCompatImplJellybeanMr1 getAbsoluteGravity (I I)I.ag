@@ -1,0 +1,14 @@
+# Landroid/support/v4/view/GravityCompat$GravityCompatImplJellybeanMr1;->getAbsoluteGravity(I I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:int
+
+getAbsoluteGravity-BB@0x0 : 
+	0       (00000000) invoke-static        v2, v3, Landroid/support/v4/view/GravityCompatJellybeanMr1;->getAbsoluteGravity(I I)I
+	1       (00000006) move-result          v0
+	2       (00000008) return               v0
+

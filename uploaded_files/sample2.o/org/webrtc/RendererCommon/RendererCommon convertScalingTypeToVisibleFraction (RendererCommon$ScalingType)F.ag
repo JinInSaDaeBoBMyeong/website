@@ -1,0 +1,38 @@
+# Lorg/webrtc/RendererCommon;->convertScalingTypeToVisibleFraction(Lorg/webrtc/RendererCommon$ScalingType;)F [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:org.webrtc.RendererCommon$ScalingType
+#
+# - return:float
+
+convertScalingTypeToVisibleFraction-BB@0x0 : [ D:convertScalingTypeToVisibleFraction-BB@0x16 1:convertScalingTypeToVisibleFraction-BB@0x22 2:convertScalingTypeToVisibleFraction-BB@0x28 3:convertScalingTypeToVisibleFraction-BB@0x2c ]
+	0       (00000000) sget-object          v0, Lorg/webrtc/RendererCommon$1;->$SwitchMap$org$webrtc$RendererCommon$ScalingType [I
+	1       (00000004) invoke-virtual       v2, Lorg/webrtc/RendererCommon$ScalingType;->ordinal()I
+	2       (0000000a) move-result          v1
+	3       (0000000c) aget                 v0, v0, v1
+	4       (00000010) packed-switch        v0, +12 (0x34)
+
+convertScalingTypeToVisibleFraction-BB@0x16 : 
+	5       (00000016) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	6       (0000001a) invoke-direct        v0, Ljava/lang/IllegalArgumentException;-><init>()V
+	7       (00000020) throw                v0
+
+convertScalingTypeToVisibleFraction-BB@0x22 : [ convertScalingTypeToVisibleFraction-BB@0x26 ]
+	8       (00000022) const/high16         v0, 16256 # [1.0]
+
+convertScalingTypeToVisibleFraction-BB@0x26 : 
+	9       (00000026) return               v0
+
+convertScalingTypeToVisibleFraction-BB@0x28 : [ convertScalingTypeToVisibleFraction-BB@0x26 ]
+	10      (00000028) const/4              v0, 0
+	11      (0000002a) goto                 -2
+
+convertScalingTypeToVisibleFraction-BB@0x2c : [ convertScalingTypeToVisibleFraction-BB@0x26 ]
+	12      (0000002c) sget                 v0, Lorg/webrtc/RendererCommon;->BALANCED_VISIBLE_FRACTION F
+	13      (00000030) goto                 -5
+
+convertScalingTypeToVisibleFraction-BB@0x32 : 
+	14      (00000032) nop                  
+	15      (00000034) packed-switch-payload 1 2 3
+

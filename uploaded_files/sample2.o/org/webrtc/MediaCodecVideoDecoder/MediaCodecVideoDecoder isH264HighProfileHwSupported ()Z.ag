@@ -1,0 +1,55 @@
+# Lorg/webrtc/MediaCodecVideoDecoder;->isH264HighProfileHwSupported()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+isH264HighProfileHwSupported-BB@0x0 : [ isH264HighProfileHwSupported-BB@0x18 isH264HighProfileHwSupported-BB@0x1a ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v0, 0
+	2       (00000004) sget-object          v2, Lorg/webrtc/MediaCodecVideoDecoder;->hwDecoderDisabledTypes Ljava/util/Set;
+	3       (00000008) const-string         v3, 'video/avc'
+	4       (0000000c) invoke-interface     v2, v3, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+	5       (00000012) move-result          v2
+	6       (00000014) if-eqz               v2, +3
+
+isH264HighProfileHwSupported-BB@0x18 : 
+	7       (00000018) return               v0
+
+isH264HighProfileHwSupported-BB@0x1a : [ isH264HighProfileHwSupported-BB@0x26 isH264HighProfileHwSupported-BB@0x46 ]
+	8       (0000001a) sget                 v2, Landroid/os/Build$VERSION;->SDK_INT I
+	9       (0000001e) const/16             v3, 21
+	10      (00000022) if-lt                v2, v3, +12
+
+isH264HighProfileHwSupported-BB@0x26 : [ isH264HighProfileHwSupported-BB@0x42 isH264HighProfileHwSupported-BB@0x46 ]
+	11      (00000026) const-string         v2, 'video/avc'
+	12      (0000002a) new-array            v3, v1, [Ljava/lang/String;
+	13      (0000002e) const-string         v4, 'OMX.qcom.'
+	14      (00000032) aput-object          v4, v3, v0
+	15      (00000036) invoke-static        v2, v3, Lorg/webrtc/MediaCodecVideoDecoder;->findDecoder(Ljava/lang/String; [Ljava/lang/String;)Lorg/webrtc/MediaCodecVideoDecoder$DecoderProperties;
+	16      (0000003c) move-result-object   v2
+	17      (0000003e) if-eqz               v2, +4
+
+isH264HighProfileHwSupported-BB@0x42 : [ isH264HighProfileHwSupported-BB@0x18 ]
+	18      (00000042) move                 v0, v1
+	19      (00000044) goto                 -16
+
+isH264HighProfileHwSupported-BB@0x46 : [ isH264HighProfileHwSupported-BB@0x52 isH264HighProfileHwSupported-BB@0x18 ]
+	20      (00000046) sget                 v2, Landroid/os/Build$VERSION;->SDK_INT I
+	21      (0000004a) const/16             v3, 23
+	22      (0000004e) if-lt                v2, v3, -1b
+
+isH264HighProfileHwSupported-BB@0x52 : [ isH264HighProfileHwSupported-BB@0x6e isH264HighProfileHwSupported-BB@0x18 ]
+	23      (00000052) const-string         v2, 'video/avc'
+	24      (00000056) new-array            v3, v1, [Ljava/lang/String;
+	25      (0000005a) const-string         v4, 'OMX.Exynos.'
+	26      (0000005e) aput-object          v4, v3, v0
+	27      (00000062) invoke-static        v2, v3, Lorg/webrtc/MediaCodecVideoDecoder;->findDecoder(Ljava/lang/String; [Ljava/lang/String;)Lorg/webrtc/MediaCodecVideoDecoder$DecoderProperties;
+	28      (00000068) move-result-object   v2
+	29      (0000006a) if-eqz               v2, -29
+
+isH264HighProfileHwSupported-BB@0x6e : [ isH264HighProfileHwSupported-BB@0x18 ]
+	30      (0000006e) move                 v0, v1
+	31      (00000070) goto                 -2c
+

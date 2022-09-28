@@ -1,0 +1,11 @@
+# Landroid/support/v4/widget/SimpleCursorAdapter;->getViewBinder()Landroid/support/v4/widget/SimpleCursorAdapter$ViewBinder; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.support.v4.widget.SimpleCursorAdapter$ViewBinder
+
+getViewBinder-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/widget/SimpleCursorAdapter;->mViewBinder Landroid/support/v4/widget/SimpleCursorAdapter$ViewBinder;
+	1       (00000004) return-object        v0
+

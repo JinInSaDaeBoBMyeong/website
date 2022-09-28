@@ -1,0 +1,25 @@
+# Landroid/support/v4/view/ActionProvider;->refreshVisibility()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+refreshVisibility-BB@0x0 : [ refreshVisibility-BB@0x8 refreshVisibility-BB@0x26 ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/view/ActionProvider;->mVisibilityListener Landroid/support/v4/view/ActionProvider$VisibilityListener;
+	1       (00000004) if-eqz               v0, +11
+
+refreshVisibility-BB@0x8 : [ refreshVisibility-BB@0x14 refreshVisibility-BB@0x26 ]
+	2       (00000008) invoke-virtual       v2, Landroid/support/v4/view/ActionProvider;->overridesItemVisibility()Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +b
+
+refreshVisibility-BB@0x14 : [ refreshVisibility-BB@0x26 ]
+	5       (00000014) iget-object          v0, v2, Landroid/support/v4/view/ActionProvider;->mVisibilityListener Landroid/support/v4/view/ActionProvider$VisibilityListener;
+	6       (00000018) invoke-virtual       v2, Landroid/support/v4/view/ActionProvider;->isVisible()Z
+	7       (0000001e) move-result          v1
+	8       (00000020) invoke-interface     v0, v1, Landroid/support/v4/view/ActionProvider$VisibilityListener;->onActionProviderVisibilityChanged(Z)V
+
+refreshVisibility-BB@0x26 : 
+	9       (00000026) return-void          
+

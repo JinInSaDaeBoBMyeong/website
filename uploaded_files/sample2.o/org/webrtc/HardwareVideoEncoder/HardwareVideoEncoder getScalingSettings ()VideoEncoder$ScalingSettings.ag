@@ -1,0 +1,11 @@
+# Lorg/webrtc/HardwareVideoEncoder;->getScalingSettings()Lorg/webrtc/VideoEncoder$ScalingSettings; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:org.webrtc.VideoEncoder$ScalingSettings
+
+getScalingSettings-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) return-object        v0
+

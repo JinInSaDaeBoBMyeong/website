@@ -1,0 +1,36 @@
+# Landroid/support/v4/app/Fragment;->setInitialSavedState(Landroid/support/v4/app/Fragment$SavedState;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.v4.app.Fragment$SavedState
+#
+# - return:void
+
+setInitialSavedState-BB@0x0 : [ setInitialSavedState-BB@0x8 setInitialSavedState-BB@0x18 ]
+	0       (00000000) iget                 v0, v2, Landroid/support/v4/app/Fragment;->mIndex I
+	1       (00000004) if-ltz               v0, +a
+
+setInitialSavedState-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/IllegalStateException;
+	3       (0000000c) const-string         v1, 'Fragment already active'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+setInitialSavedState-BB@0x18 : [ setInitialSavedState-BB@0x1c setInitialSavedState-BB@0x2e ]
+	6       (00000018) if-eqz               v3, +b
+
+setInitialSavedState-BB@0x1c : [ setInitialSavedState-BB@0x24 setInitialSavedState-BB@0x2e ]
+	7       (0000001c) iget-object          v0, v3, Landroid/support/v4/app/Fragment$SavedState;->mState Landroid/os/Bundle;
+	8       (00000020) if-eqz               v0, +7
+
+setInitialSavedState-BB@0x24 : [ setInitialSavedState-BB@0x28 ]
+	9       (00000024) iget-object          v0, v3, Landroid/support/v4/app/Fragment$SavedState;->mState Landroid/os/Bundle;
+
+setInitialSavedState-BB@0x28 : 
+	10      (00000028) iput-object          v0, v2, Landroid/support/v4/app/Fragment;->mSavedFragmentState Landroid/os/Bundle;
+	11      (0000002c) return-void          
+
+setInitialSavedState-BB@0x2e : [ setInitialSavedState-BB@0x28 ]
+	12      (0000002e) const/4              v0, 0
+	13      (00000030) goto                 -4
+

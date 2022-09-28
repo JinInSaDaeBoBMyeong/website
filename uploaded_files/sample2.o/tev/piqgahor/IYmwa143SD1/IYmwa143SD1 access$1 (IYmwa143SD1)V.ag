@@ -1,0 +1,12 @@
+# Ltev/piqgahor/IYmwa143SD1;->access$1(Ltev/piqgahor/IYmwa143SD1;)V [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:tev.piqgahor.IYmwa143SD1
+#
+# - return:void
+
+access$1-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ltev/piqgahor/IYmwa143SD1;->T6f74f()V
+	1       (00000006) return-void          
+

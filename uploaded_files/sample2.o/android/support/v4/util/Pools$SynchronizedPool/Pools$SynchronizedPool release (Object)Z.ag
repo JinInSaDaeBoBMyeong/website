@@ -1,0 +1,25 @@
+# Landroid/support/v4/util/Pools$SynchronizedPool;->release(Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:boolean
+
+release-BB@0x0 : [ release-BB@0x6 ]
+	0       (00000000) iget-object          v1, v2, Landroid/support/v4/util/Pools$SynchronizedPool;->mLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v1
+
+release-BB@0x6 : 
+	2       (00000006) invoke-super         v2, v3, Landroid/support/v4/util/Pools$SimplePool;->release(Ljava/lang/Object;)Z
+	3       (0000000c) move-result          v0
+	4       (0000000e) monitor-exit         v1
+	5       (00000010) return               v0
+	6:15
+	(Ljava/lang/Throwable; -> 12 release-BB@0x12)
+
+release-BB@0x12 : 
+	6       (00000012) move-exception       v0
+	7       (00000014) monitor-exit         v1
+	8       (00000016) throw                v0
+

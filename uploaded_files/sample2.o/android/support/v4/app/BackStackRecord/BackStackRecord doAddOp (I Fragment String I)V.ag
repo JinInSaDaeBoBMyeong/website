@@ -1,0 +1,102 @@
+# Landroid/support/v4/app/BackStackRecord;->doAddOp(I Landroid/support/v4/app/Fragment; Ljava/lang/String; I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:android.support.v4.app.Fragment
+# - v7:java.lang.String
+# - v8:int
+#
+# - return:void
+
+doAddOp-BB@0x0 : [ doAddOp-BB@0xc doAddOp-BB@0x86 ]
+	0       (00000000) iget-object          v1, v4, Landroid/support/v4/app/BackStackRecord;->mManager Landroid/support/v4/app/FragmentManagerImpl;
+	1       (00000004) iput-object          v1, v6, Landroid/support/v4/app/Fragment;->mFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	2       (00000008) if-eqz               v7, +3f
+
+doAddOp-BB@0xc : [ doAddOp-BB@0x14 doAddOp-BB@0x82 ]
+	3       (0000000c) iget-object          v1, v6, Landroid/support/v4/app/Fragment;->mTag Ljava/lang/String;
+	4       (00000010) if-eqz               v1, +39
+
+doAddOp-BB@0x14 : [ doAddOp-BB@0x24 doAddOp-BB@0x82 ]
+	5       (00000014) iget-object          v1, v6, Landroid/support/v4/app/Fragment;->mTag Ljava/lang/String;
+	6       (00000018) invoke-virtual       v7, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	7       (0000001e) move-result          v1
+	8       (00000020) if-nez               v1, +31
+
+doAddOp-BB@0x24 : 
+	9       (00000024) new-instance         v1, Ljava/lang/IllegalStateException;
+	10      (00000028) new-instance         v2, Ljava/lang/StringBuilder;
+	11      (0000002c) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	12      (00000032) const-string         v3, "Can't change tag of fragment "
+	13      (00000036) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003c) move-result-object   v2
+	15      (0000003e) invoke-virtual       v2, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v2
+	17      (00000046) const-string         v3, ': was '
+	18      (0000004a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (00000050) move-result-object   v2
+	20      (00000052) iget-object          v3, v6, Landroid/support/v4/app/Fragment;->mTag Ljava/lang/String;
+	21      (00000056) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (0000005c) move-result-object   v2
+	23      (0000005e) const-string         v3, ' now '
+	24      (00000062) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (00000068) move-result-object   v2
+	26      (0000006a) invoke-virtual       v2, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (00000070) move-result-object   v2
+	28      (00000072) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	29      (00000078) move-result-object   v2
+	30      (0000007a) invoke-direct        v1, v2, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	31      (00000080) throw                v1
+
+doAddOp-BB@0x82 : [ doAddOp-BB@0x86 ]
+	32      (00000082) iput-object          v7, v6, Landroid/support/v4/app/Fragment;->mTag Ljava/lang/String;
+
+doAddOp-BB@0x86 : [ doAddOp-BB@0x8a doAddOp-BB@0x100 ]
+	33      (00000086) if-eqz               v5, +3d
+
+doAddOp-BB@0x8a : [ doAddOp-BB@0x92 doAddOp-BB@0xf8 ]
+	34      (0000008a) iget                 v1, v6, Landroid/support/v4/app/Fragment;->mFragmentId I
+	35      (0000008e) if-eqz               v1, +35
+
+doAddOp-BB@0x92 : [ doAddOp-BB@0x9a doAddOp-BB@0xf8 ]
+	36      (00000092) iget                 v1, v6, Landroid/support/v4/app/Fragment;->mFragmentId I
+	37      (00000096) if-eq                v1, v5, +31
+
+doAddOp-BB@0x9a : 
+	38      (0000009a) new-instance         v1, Ljava/lang/IllegalStateException;
+	39      (0000009e) new-instance         v2, Ljava/lang/StringBuilder;
+	40      (000000a2) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	41      (000000a8) const-string         v3, "Can't change container ID of fragment "
+	42      (000000ac) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000b2) move-result-object   v2
+	44      (000000b4) invoke-virtual       v2, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	45      (000000ba) move-result-object   v2
+	46      (000000bc) const-string         v3, ': was '
+	47      (000000c0) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	48      (000000c6) move-result-object   v2
+	49      (000000c8) iget                 v3, v6, Landroid/support/v4/app/Fragment;->mFragmentId I
+	50      (000000cc) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	51      (000000d2) move-result-object   v2
+	52      (000000d4) const-string         v3, ' now '
+	53      (000000d8) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	54      (000000de) move-result-object   v2
+	55      (000000e0) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	56      (000000e6) move-result-object   v2
+	57      (000000e8) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	58      (000000ee) move-result-object   v2
+	59      (000000f0) invoke-direct        v1, v2, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	60      (000000f6) throw                v1
+
+doAddOp-BB@0xf8 : [ doAddOp-BB@0x100 ]
+	61      (000000f8) iput                 v5, v6, Landroid/support/v4/app/Fragment;->mFragmentId I
+	62      (000000fc) iput                 v5, v6, Landroid/support/v4/app/Fragment;->mContainerId I
+
+doAddOp-BB@0x100 : 
+	63      (00000100) new-instance         v0, Landroid/support/v4/app/BackStackRecord$Op;
+	64      (00000104) invoke-direct        v0, Landroid/support/v4/app/BackStackRecord$Op;-><init>()V
+	65      (0000010a) iput                 v8, v0, Landroid/support/v4/app/BackStackRecord$Op;->cmd I
+	66      (0000010e) iput-object          v6, v0, Landroid/support/v4/app/BackStackRecord$Op;->fragment Landroid/support/v4/app/Fragment;
+	67      (00000112) invoke-virtual       v4, v0, Landroid/support/v4/app/BackStackRecord;->addOp(Landroid/support/v4/app/BackStackRecord$Op;)V
+	68      (00000118) return-void          
+

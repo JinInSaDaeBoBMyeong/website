@@ -1,0 +1,34 @@
+# Landroid/support/v4/widget/ViewDragHelper;->settleCapturedViewAt(I I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:int
+#
+# - return:boolean
+
+settleCapturedViewAt-BB@0x0 : [ settleCapturedViewAt-BB@0x8 settleCapturedViewAt-BB@0x18 ]
+	0       (00000000) iget-boolean         v0, v3, Landroid/support/v4/widget/ViewDragHelper;->mReleaseInProgress Z
+	1       (00000004) if-nez               v0, +a
+
+settleCapturedViewAt-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/IllegalStateException;
+	3       (0000000c) const-string         v1, 'Cannot settleCapturedViewAt outside of a call to Callback#onViewReleased'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+settleCapturedViewAt-BB@0x18 : 
+	6       (00000018) iget-object          v0, v3, Landroid/support/v4/widget/ViewDragHelper;->mVelocityTracker Landroid/view/VelocityTracker;
+	7       (0000001c) iget                 v1, v3, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	8       (00000020) invoke-static        v0, v1, Landroid/support/v4/view/VelocityTrackerCompat;->getXVelocity(Landroid/view/VelocityTracker; I)F
+	9       (00000026) move-result          v0
+	10      (00000028) float-to-int         v0, v0
+	11      (0000002a) iget-object          v1, v3, Landroid/support/v4/widget/ViewDragHelper;->mVelocityTracker Landroid/view/VelocityTracker;
+	12      (0000002e) iget                 v2, v3, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	13      (00000032) invoke-static        v1, v2, Landroid/support/v4/view/VelocityTrackerCompat;->getYVelocity(Landroid/view/VelocityTracker; I)F
+	14      (00000038) move-result          v1
+	15      (0000003a) float-to-int         v1, v1
+	16      (0000003c) invoke-direct        v3, v4, v5, v0, v1, Landroid/support/v4/widget/ViewDragHelper;->forceSettleCapturedViewAt(I I I I)Z
+	17      (00000042) move-result          v0
+	18      (00000044) return               v0
+

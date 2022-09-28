@@ -1,0 +1,35 @@
+# Landroid/support/v4/database/DatabaseUtilsCompat;->appendSelectionArgs([Ljava/lang/String; [Ljava/lang/String;)[Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String[]
+# - v5:java.lang.String[]
+#
+# - return:java.lang.String[]
+
+appendSelectionArgs-BB@0x0 : [ appendSelectionArgs-BB@0x6 appendSelectionArgs-BB@0xc ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) if-eqz               v4, +5
+
+appendSelectionArgs-BB@0x6 : [ appendSelectionArgs-BB@0xc appendSelectionArgs-BB@0x10 ]
+	2       (00000006) array-length         v1, v4
+	3       (00000008) if-nez               v1, +4
+
+appendSelectionArgs-BB@0xc : [ appendSelectionArgs-BB@0xe ]
+	4       (0000000c) move-object          v0, v5
+
+appendSelectionArgs-BB@0xe : 
+	5       (0000000e) return-object        v0
+
+appendSelectionArgs-BB@0x10 : [ appendSelectionArgs-BB@0xe ]
+	6       (00000010) array-length         v1, v4
+	7       (00000012) array-length         v2, v5
+	8       (00000014) add-int/2addr        v1, v2
+	9       (00000016) new-array            v0, v1, [Ljava/lang/String;
+	10      (0000001a) array-length         v1, v4
+	11      (0000001c) invoke-static        v4, v3, v0, v3, v1, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	12      (00000022) array-length         v1, v4
+	13      (00000024) array-length         v2, v5
+	14      (00000026) invoke-static        v5, v3, v0, v1, v2, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	15      (0000002c) goto                 -f
+

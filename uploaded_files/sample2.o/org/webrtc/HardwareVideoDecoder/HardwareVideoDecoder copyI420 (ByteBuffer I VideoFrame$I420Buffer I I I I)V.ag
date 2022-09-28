@@ -1,0 +1,90 @@
+# Lorg/webrtc/HardwareVideoDecoder;->copyI420(Ljava/nio/ByteBuffer; I Lorg/webrtc/VideoFrame$I420Buffer; I I I I)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v16
+# - v17:java.nio.ByteBuffer
+# - v18:int
+# - v19:org.webrtc.VideoFrame$I420Buffer
+# - v20:int
+# - v21:int
+# - v22:int
+# - v23:int
+#
+# - return:void
+
+copyI420-BB@0x0 : [ copyI420-BB@0x14 copyI420-BB@0xf4 ]
+	0       (00000000) div-int/lit8         v15, v20, 2
+	1       (00000004) add-int/lit8         v0, v22, 1
+	2       (00000008) div-int/lit8         v8, v0, 2
+	3       (0000000c) rem-int/lit8         v0, v21, 2
+	4       (00000010) if-nez               v0, +72
+
+copyI420-BB@0x14 : [ copyI420-BB@0x1c ]
+	5       (00000014) add-int/lit8         v0, v23, 1
+	6       (00000018) div-int/lit8         v9, v0, 2
+
+copyI420-BB@0x1c : [ copyI420-BB@0xa6 copyI420-BB@0xf2 ]
+	7       (0000001c) move/from16          v1, v18
+	8       (00000020) mul-int              v0, v20, v21
+	9       (00000024) add-int              v14, v1, v0
+	10      (00000028) mul-int              v0, v15, v21
+	11      (0000002c) div-int/lit8         v0, v0, 2
+	12      (00000030) add-int              v16, v14, v0
+	13      (00000034) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getDataY()Ljava/nio/ByteBuffer;
+	14      (0000003a) move-result-object   v3
+	15      (0000003c) const/4              v4, 0
+	16      (0000003e) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideY()I
+	17      (00000044) move-result          v5
+	18      (00000046) move-object/from16   v0, v17
+	19      (0000004a) move/from16          v2, v20
+	20      (0000004e) move/from16          v6, v22
+	21      (00000052) move/from16          v7, v23
+	22      (00000056) invoke-static/range  v0 ... v7, Lorg/webrtc/HardwareVideoDecoder;->copyPlane(Ljava/nio/ByteBuffer; I I Ljava/nio/ByteBuffer; I I I I)V
+	23      (0000005c) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getDataU()Ljava/nio/ByteBuffer;
+	24      (00000062) move-result-object   v5
+	25      (00000064) const/4              v6, 0
+	26      (00000066) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideU()I
+	27      (0000006c) move-result          v7
+	28      (0000006e) move-object/from16   v2, v17
+	29      (00000072) move                 v3, v14
+	30      (00000074) move                 v4, v15
+	31      (00000076) invoke-static/range  v2 ... v9, Lorg/webrtc/HardwareVideoDecoder;->copyPlane(Ljava/nio/ByteBuffer; I I Ljava/nio/ByteBuffer; I I I I)V
+	32      (0000007c) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getDataV()Ljava/nio/ByteBuffer;
+	33      (00000082) move-result-object   v5
+	34      (00000084) const/4              v6, 0
+	35      (00000086) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideV()I
+	36      (0000008c) move-result          v7
+	37      (0000008e) move-object/from16   v2, v17
+	38      (00000092) move/from16          v3, v16
+	39      (00000096) move                 v4, v15
+	40      (00000098) invoke-static/range  v2 ... v9, Lorg/webrtc/HardwareVideoDecoder;->copyPlane(Ljava/nio/ByteBuffer; I I Ljava/nio/ByteBuffer; I I I I)V
+	41      (0000009e) rem-int/lit8         v0, v21, 2
+	42      (000000a2) if-eqz               v0, +28
+
+copyI420-BB@0xa6 : [ copyI420-BB@0xf2 ]
+	43      (000000a6) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideU()I
+	44      (000000ac) move-result          v12
+	45      (000000ae) mul-int              v10, v9, v12
+	46      (000000b2) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getDataU()Ljava/nio/ByteBuffer;
+	47      (000000b8) move-result-object   v0
+	48      (000000ba) sub-int              v2, v10, v12
+	49      (000000be) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getDataU()Ljava/nio/ByteBuffer;
+	50      (000000c4) move-result-object   v3
+	51      (000000c6) invoke-static        v0, v2, v3, v10, v8, Lorg/webrtc/HardwareVideoDecoder;->copyRow(Ljava/nio/ByteBuffer; I Ljava/nio/ByteBuffer; I I)V
+	52      (000000cc) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getStrideV()I
+	53      (000000d2) move-result          v13
+	54      (000000d4) mul-int              v11, v9, v13
+	55      (000000d8) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getDataV()Ljava/nio/ByteBuffer;
+	56      (000000de) move-result-object   v0
+	57      (000000e0) sub-int              v2, v11, v13
+	58      (000000e4) invoke-interface/range v19, Lorg/webrtc/VideoFrame$I420Buffer;->getDataV()Ljava/nio/ByteBuffer;
+	59      (000000ea) move-result-object   v3
+	60      (000000ec) invoke-static        v0, v2, v3, v11, v8, Lorg/webrtc/HardwareVideoDecoder;->copyRow(Ljava/nio/ByteBuffer; I Ljava/nio/ByteBuffer; I I)V
+
+copyI420-BB@0xf2 : 
+	61      (000000f2) return-void          
+
+copyI420-BB@0xf4 : [ copyI420-BB@0x1c ]
+	62      (000000f4) div-int/lit8         v9, v23, 2
+	63      (000000f8) goto                 -6e
+

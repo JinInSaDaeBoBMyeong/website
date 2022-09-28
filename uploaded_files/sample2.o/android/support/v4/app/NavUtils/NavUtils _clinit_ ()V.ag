@@ -1,0 +1,26 @@
+# Landroid/support/v4/app/NavUtils;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0xc <clinit>-BB@0x1c ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 16
+	2       (00000008) if-lt                v0, v1, +a
+
+<clinit>-BB@0xc : [ <clinit>-BB@0x1a ]
+	3       (0000000c) new-instance         v1, Landroid/support/v4/app/NavUtils$NavUtilsImplJB;
+	4       (00000010) invoke-direct        v1, Landroid/support/v4/app/NavUtils$NavUtilsImplJB;-><init>()V
+	5       (00000016) sput-object          v1, Landroid/support/v4/app/NavUtils;->IMPL Landroid/support/v4/app/NavUtils$NavUtilsImpl;
+
+<clinit>-BB@0x1a : 
+	6       (0000001a) return-void          
+
+<clinit>-BB@0x1c : [ <clinit>-BB@0x1a ]
+	7       (0000001c) new-instance         v1, Landroid/support/v4/app/NavUtils$NavUtilsImplBase;
+	8       (00000020) invoke-direct        v1, Landroid/support/v4/app/NavUtils$NavUtilsImplBase;-><init>()V
+	9       (00000026) sput-object          v1, Landroid/support/v4/app/NavUtils;->IMPL Landroid/support/v4/app/NavUtils$NavUtilsImpl;
+	10      (0000002a) goto                 -8
+

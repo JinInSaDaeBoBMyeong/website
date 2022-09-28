@@ -1,0 +1,12 @@
+# Landroid/support/v4/print/PrintHelperKitkat;->access$300(Landroid/support/v4/print/PrintHelperKitkat;)Ljava/lang/Object; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.print.PrintHelperKitkat
+#
+# - return:java.lang.Object
+
+access$300-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/print/PrintHelperKitkat;->mLock Ljava/lang/Object;
+	1       (00000004) return-object        v0
+

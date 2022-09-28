@@ -1,0 +1,33 @@
+# Landroid/support/v4/app/DialogFragment;->setStyle(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+setStyle-BB@0x0 : [ setStyle-BB@0xe setStyle-BB@0x18 ]
+	0       (00000000) iput                 v3, v2, Landroid/support/v4/app/DialogFragment;->mStyle I
+	1       (00000004) iget                 v0, v2, Landroid/support/v4/app/DialogFragment;->mStyle I
+	2       (00000008) const/4              v1, 2
+	3       (0000000a) if-eq                v0, v1, +7
+
+setStyle-BB@0xe : [ setStyle-BB@0x18 setStyle-BB@0x22 ]
+	4       (0000000e) iget                 v0, v2, Landroid/support/v4/app/DialogFragment;->mStyle I
+	5       (00000012) const/4              v1, 3
+	6       (00000014) if-ne                v0, v1, +7
+
+setStyle-BB@0x18 : [ setStyle-BB@0x22 ]
+	7       (00000018) const                v0, 16973913 # [2.4061149424520347e-38]
+	8       (0000001e) iput                 v0, v2, Landroid/support/v4/app/DialogFragment;->mTheme I
+
+setStyle-BB@0x22 : [ setStyle-BB@0x26 setStyle-BB@0x2a ]
+	9       (00000022) if-eqz               v4, +4
+
+setStyle-BB@0x26 : [ setStyle-BB@0x2a ]
+	10      (00000026) iput                 v4, v2, Landroid/support/v4/app/DialogFragment;->mTheme I
+
+setStyle-BB@0x2a : 
+	11      (0000002a) return-void          
+

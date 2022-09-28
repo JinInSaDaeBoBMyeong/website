@@ -1,0 +1,14 @@
+# Landroid/support/v4/widget/SlidingPaneLayout$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/widget/SlidingPaneLayout$SavedState; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Parcel
+#
+# - return:android.support.v4.widget.SlidingPaneLayout$SavedState
+
+createFromParcel-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/support/v4/widget/SlidingPaneLayout$SavedState;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-direct        v0, v3, v1, Landroid/support/v4/widget/SlidingPaneLayout$SavedState;-><init>(Landroid/os/Parcel; Landroid/support/v4/widget/SlidingPaneLayout$1;)V
+	3       (0000000c) return-object        v0
+

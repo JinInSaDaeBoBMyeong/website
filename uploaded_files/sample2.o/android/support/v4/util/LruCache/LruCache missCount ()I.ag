@@ -1,0 +1,22 @@
+# Landroid/support/v4/util/LruCache;->missCount()I [access_flags=public final synchronized]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+missCount-BB@0x0 : [ missCount-BB@0x2 ]
+	0       (00000000) monitor-enter        v1
+
+missCount-BB@0x2 : 
+	1       (00000002) iget                 v0, v1, Landroid/support/v4/util/LruCache;->missCount I
+	2       (00000006) monitor-exit         v1
+	3       (00000008) return               v0
+	2:5
+	(Ljava/lang/Throwable; -> a missCount-BB@0xa)
+
+missCount-BB@0xa : 
+	4       (0000000a) move-exception       v0
+	5       (0000000c) monitor-exit         v1
+	6       (0000000e) throw                v0
+

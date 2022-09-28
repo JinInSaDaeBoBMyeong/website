@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateStubImpl;->onPopulateAccessibilityEvent(Ljava/lang/Object; Landroid/view/View; Landroid/view/accessibility/AccessibilityEvent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+# - v2:android.view.View
+# - v3:android.view.accessibility.AccessibilityEvent
+#
+# - return:void
+
+onPopulateAccessibilityEvent-BB@0x0 : 
+	0       (00000000) return-void          
+

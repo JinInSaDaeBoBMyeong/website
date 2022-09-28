@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/accessibility/AccessibilityEventCompat$AccessibilityEventStubImpl;->getRecord(Landroid/view/accessibility/AccessibilityEvent; I)Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.accessibility.AccessibilityEvent
+# - v3:int
+#
+# - return:java.lang.Object
+
+getRecord-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) return-object        v0
+

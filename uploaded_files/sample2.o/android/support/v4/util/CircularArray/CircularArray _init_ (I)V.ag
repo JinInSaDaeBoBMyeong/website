@@ -1,0 +1,39 @@
+# Landroid/support/v4/util/CircularArray;-><init>(I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xc <init>-BB@0x1c ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) invoke-direct        v3, Ljava/lang/Object;-><init>()V
+	2       (00000008) if-gtz               v4, +a
+
+<init>-BB@0xc : 
+	3       (0000000c) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	4       (00000010) const-string         v2, 'capacity must be positive'
+	5       (00000014) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	6       (0000001a) throw                v1
+
+<init>-BB@0x1c : [ <init>-BB@0x2a <init>-BB@0x3a ]
+	7       (0000001c) move                 v0, v4
+	8       (0000001e) invoke-static        v4, Ljava/lang/Integer;->bitCount(I)I
+	9       (00000024) move-result          v1
+	10      (00000026) if-eq                v1, v2, +a
+
+<init>-BB@0x2a : [ <init>-BB@0x3a ]
+	11      (0000002a) invoke-static        v4, Ljava/lang/Integer;->highestOneBit(I)I
+	12      (00000030) move-result          v1
+	13      (00000032) add-int/lit8         v1, v1, 1
+	14      (00000036) shl-int              v0, v2, v1
+
+<init>-BB@0x3a : 
+	15      (0000003a) add-int/lit8         v1, v0, -1
+	16      (0000003e) iput                 v1, v3, Landroid/support/v4/util/CircularArray;->mCapacityBitmask I
+	17      (00000042) new-array            v1, v0, [Ljava/lang/Object;
+	18      (00000046) check-cast           v1, [Ljava/lang/Object;
+	19      (0000004a) iput-object          v1, v3, Landroid/support/v4/util/CircularArray;->mElements [Ljava/lang/Object;
+	20      (0000004e) return-void          
+

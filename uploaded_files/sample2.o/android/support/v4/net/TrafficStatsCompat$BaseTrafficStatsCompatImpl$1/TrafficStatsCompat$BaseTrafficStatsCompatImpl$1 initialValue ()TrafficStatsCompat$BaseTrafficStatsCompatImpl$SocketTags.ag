@@ -1,0 +1,13 @@
+# Landroid/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl$1;->initialValue()Landroid/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl$SocketTags; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.support.v4.net.TrafficStatsCompat$BaseTrafficStatsCompatImpl$SocketTags
+
+initialValue-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl$SocketTags;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-direct        v0, v1, Landroid/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl$SocketTags;-><init>(Landroid/support/v4/net/TrafficStatsCompat$1;)V
+	3       (0000000c) return-object        v0
+

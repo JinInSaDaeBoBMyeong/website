@@ -1,0 +1,22 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect;->registerReceiver()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+registerReceiver-BB@0x0 : [ registerReceiver-BB@0x8 registerReceiver-BB@0xa ]
+	0       (00000000) iget-boolean         v0, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->isRegistered Z
+	1       (00000004) if-eqz               v0, +3
+
+registerReceiver-BB@0x8 : 
+	2       (00000008) return-void          
+
+registerReceiver-BB@0xa : [ registerReceiver-BB@0x8 ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) iput-boolean         v0, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->isRegistered Z
+	5       (00000010) iget-object          v0, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->context Landroid/content/Context;
+	6       (00000014) iget-object          v1, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->intentFilter Landroid/content/IntentFilter;
+	7       (00000018) invoke-virtual       v0, v2, v1, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver; Landroid/content/IntentFilter;)Landroid/content/Intent;
+	8       (0000001e) goto                 -b
+

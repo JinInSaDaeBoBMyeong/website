@@ -1,0 +1,32 @@
+# Landroid/support/v4/app/NotificationManagerCompat;->notify(Ljava/lang/String; I Landroid/app/Notification;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:int
+# - v5:android.app.Notification
+#
+# - return:void
+
+notify-BB@0x0 : [ notify-BB@0xc notify-BB@0x2a ]
+	0       (00000000) invoke-static        v5, Landroid/support/v4/app/NotificationManagerCompat;->useSideChannelForNotification(Landroid/app/Notification;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +11
+
+notify-BB@0xc : [ notify-BB@0x28 ]
+	3       (0000000c) new-instance         v0, Landroid/support/v4/app/NotificationManagerCompat$NotifyTask;
+	4       (00000010) iget-object          v1, v2, Landroid/support/v4/app/NotificationManagerCompat;->mContext Landroid/content/Context;
+	5       (00000014) invoke-virtual       v1, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) invoke-direct        v0, v1, v4, v3, v5, Landroid/support/v4/app/NotificationManagerCompat$NotifyTask;-><init>(Ljava/lang/String; I Ljava/lang/String; Landroid/app/Notification;)V
+	8       (00000022) invoke-direct        v2, v0, Landroid/support/v4/app/NotificationManagerCompat;->pushSideChannelQueue(Landroid/support/v4/app/NotificationManagerCompat$Task;)V
+
+notify-BB@0x28 : 
+	9       (00000028) return-void          
+
+notify-BB@0x2a : [ notify-BB@0x28 ]
+	10      (0000002a) sget-object          v0, Landroid/support/v4/app/NotificationManagerCompat;->IMPL Landroid/support/v4/app/NotificationManagerCompat$Impl;
+	11      (0000002e) iget-object          v1, v2, Landroid/support/v4/app/NotificationManagerCompat;->mNotificationManager Landroid/app/NotificationManager;
+	12      (00000032) invoke-interface     v0, v1, v3, v4, v5, Landroid/support/v4/app/NotificationManagerCompat$Impl;->postNotification(Landroid/app/NotificationManager; Ljava/lang/String; I Landroid/app/Notification;)V
+	13      (00000038) goto                 -8
+

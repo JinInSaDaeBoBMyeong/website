@@ -1,0 +1,51 @@
+# Lorg/webrtc/EglRenderer;->clearImage(F F F F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:float
+# - v10:float
+# - v11:float
+# - v12:float
+#
+# - return:void
+
+clearImage-BB@0x0 : [ clearImage-BB@0x6 ]
+	0       (00000000) iget-object          v6, v8, Lorg/webrtc/EglRenderer;->handlerLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v6
+
+clearImage-BB@0x6 : [ clearImage-BB@0xe clearImage-BB@0x12 ]
+	2       (00000006) iget-object          v0, v8, Lorg/webrtc/EglRenderer;->renderThreadHandler Landroid/os/Handler;
+	3       (0000000a) if-nez               v0, +4
+	6:37
+	(Ljava/lang/Throwable; -> 34 clearImage-BB@0x34)
+
+clearImage-BB@0xe : [ clearImage-BB@0x10 ]
+	4       (0000000e) monitor-exit         v6
+	6:37
+	(Ljava/lang/Throwable; -> 34 clearImage-BB@0x34)
+
+clearImage-BB@0x10 : 
+	5       (00000010) return-void          
+	6:37
+	(Ljava/lang/Throwable; -> 34 clearImage-BB@0x34)
+
+clearImage-BB@0x12 : [ clearImage-BB@0x10 ]
+	6       (00000012) iget-object          v7, v8, Lorg/webrtc/EglRenderer;->renderThreadHandler Landroid/os/Handler;
+	7       (00000016) new-instance         v0, Lorg/webrtc/EglRenderer$9;
+	8       (0000001a) move-object          v1, v8
+	9       (0000001c) move                 v2, v9
+	10      (0000001e) move                 v3, v10
+	11      (00000020) move                 v4, v11
+	12      (00000022) move                 v5, v12
+	13      (00000024) invoke-direct/range  v0 ... v5, Lorg/webrtc/EglRenderer$9;-><init>(Lorg/webrtc/EglRenderer; F F F F)V
+	14      (0000002a) invoke-virtual       v7, v0, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
+	15      (00000030) monitor-exit         v6
+	16      (00000032) goto                 -11
+	6:37
+	(Ljava/lang/Throwable; -> 34 clearImage-BB@0x34)
+
+clearImage-BB@0x34 : 
+	17      (00000034) move-exception       v0
+	18      (00000036) monitor-exit         v6
+	19      (00000038) throw                v0
+

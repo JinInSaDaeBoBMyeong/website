@@ -1,0 +1,17 @@
+# Landroid/support/v4/widget/SlidingPaneLayout$SlidingPanelLayoutImplJBMR1;->invalidateChildRegion(Landroid/support/v4/widget/SlidingPaneLayout; Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.v4.widget.SlidingPaneLayout
+# - v3:android.view.View
+#
+# - return:void
+
+invalidateChildRegion-BB@0x0 : 
+	0       (00000000) invoke-virtual       v3, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	1       (00000006) move-result-object   v0
+	2       (00000008) check-cast           v0, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;
+	3       (0000000c) iget-object          v0, v0, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;->dimPaint Landroid/graphics/Paint;
+	4       (00000010) invoke-static        v3, v0, Landroid/support/v4/view/ViewCompat;->setLayerPaint(Landroid/view/View; Landroid/graphics/Paint;)V
+	5       (00000016) return-void          
+

@@ -1,0 +1,13 @@
+# Landroid/support/v4/widget/SearchViewCompat$SearchViewCompatStubImpl;->setQuery(Landroid/view/View; Ljava/lang/CharSequence; Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.View
+# - v2:java.lang.CharSequence
+# - v3:boolean
+#
+# - return:void
+
+setQuery-BB@0x0 : 
+	0       (00000000) return-void          
+

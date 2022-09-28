@@ -1,0 +1,35 @@
+# Lorg/webrtc/EglRenderer;->averageTimeAsString(J I)Ljava/lang/String; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:long
+# - v8:int
+#
+# - return:java.lang.String
+
+averageTimeAsString-BB@0x0 : [ averageTimeAsString-BB@0x4 averageTimeAsString-BB@0xa ]
+	0       (00000000) if-gtz               v8, +5
+
+averageTimeAsString-BB@0x4 : [ averageTimeAsString-BB@0x8 ]
+	1       (00000004) const-string         v0, 'NA'
+
+averageTimeAsString-BB@0x8 : 
+	2       (00000008) return-object        v0
+
+averageTimeAsString-BB@0xa : [ averageTimeAsString-BB@0x8 ]
+	3       (0000000a) new-instance         v0, Ljava/lang/StringBuilder;
+	4       (0000000e) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000014) sget-object          v1, Ljava/util/concurrent/TimeUnit;->NANOSECONDS Ljava/util/concurrent/TimeUnit;
+	6       (00000018) int-to-long          v2, v8
+	7       (0000001a) div-long             v2, v6, v2
+	8       (0000001e) invoke-virtual       v1, v2, v3, Ljava/util/concurrent/TimeUnit;->toMicros(J)J
+	9       (00000024) move-result-wide     v2
+	10      (00000026) invoke-virtual       v0, v2, v3, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) const-string         v1, ' μs'
+	13      (00000032) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (00000038) move-result-object   v0
+	15      (0000003a) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	16      (00000040) move-result-object   v0
+	17      (00000042) goto                 -1d
+

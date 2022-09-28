@@ -1,0 +1,22 @@
+# Landroid/support/v4/widget/ExploreByTouchHelper;->getAccessibilityNodeProvider(Landroid/view/View;)Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:android.support.v4.view.accessibility.AccessibilityNodeProviderCompat
+
+getAccessibilityNodeProvider-BB@0x0 : [ getAccessibilityNodeProvider-BB@0x8 getAccessibilityNodeProvider-BB@0x18 ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/widget/ExploreByTouchHelper;->mNodeProvider Landroid/support/v4/widget/ExploreByTouchHelper$ExploreByTouchNodeProvider;
+	1       (00000004) if-nez               v0, +a
+
+getAccessibilityNodeProvider-BB@0x8 : [ getAccessibilityNodeProvider-BB@0x18 ]
+	2       (00000008) new-instance         v0, Landroid/support/v4/widget/ExploreByTouchHelper$ExploreByTouchNodeProvider;
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) invoke-direct        v0, v2, v1, Landroid/support/v4/widget/ExploreByTouchHelper$ExploreByTouchNodeProvider;-><init>(Landroid/support/v4/widget/ExploreByTouchHelper; Landroid/support/v4/widget/ExploreByTouchHelper$1;)V
+	5       (00000014) iput-object          v0, v2, Landroid/support/v4/widget/ExploreByTouchHelper;->mNodeProvider Landroid/support/v4/widget/ExploreByTouchHelper$ExploreByTouchNodeProvider;
+
+getAccessibilityNodeProvider-BB@0x18 : 
+	6       (00000018) iget-object          v0, v2, Landroid/support/v4/widget/ExploreByTouchHelper;->mNodeProvider Landroid/support/v4/widget/ExploreByTouchHelper$ExploreByTouchNodeProvider;
+	7       (0000001c) return-object        v0
+

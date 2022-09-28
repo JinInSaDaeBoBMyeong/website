@@ -1,0 +1,41 @@
+# Lorg/webrtc/MediaSource$State;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v5, 3
+	1       (00000002) const/4              v4, 2
+	2       (00000004) const/4              v3, 1
+	3       (00000006) const/4              v2, 0
+	4       (00000008) new-instance         v0, Lorg/webrtc/MediaSource$State;
+	5       (0000000c) const-string         v1, 'INITIALIZING'
+	6       (00000010) invoke-direct        v0, v1, v2, Lorg/webrtc/MediaSource$State;-><init>(Ljava/lang/String; I)V
+	7       (00000016) sput-object          v0, Lorg/webrtc/MediaSource$State;->INITIALIZING Lorg/webrtc/MediaSource$State;
+	8       (0000001a) new-instance         v0, Lorg/webrtc/MediaSource$State;
+	9       (0000001e) const-string         v1, 'LIVE'
+	10      (00000022) invoke-direct        v0, v1, v3, Lorg/webrtc/MediaSource$State;-><init>(Ljava/lang/String; I)V
+	11      (00000028) sput-object          v0, Lorg/webrtc/MediaSource$State;->LIVE Lorg/webrtc/MediaSource$State;
+	12      (0000002c) new-instance         v0, Lorg/webrtc/MediaSource$State;
+	13      (00000030) const-string         v1, 'ENDED'
+	14      (00000034) invoke-direct        v0, v1, v4, Lorg/webrtc/MediaSource$State;-><init>(Ljava/lang/String; I)V
+	15      (0000003a) sput-object          v0, Lorg/webrtc/MediaSource$State;->ENDED Lorg/webrtc/MediaSource$State;
+	16      (0000003e) new-instance         v0, Lorg/webrtc/MediaSource$State;
+	17      (00000042) const-string         v1, 'MUTED'
+	18      (00000046) invoke-direct        v0, v1, v5, Lorg/webrtc/MediaSource$State;-><init>(Ljava/lang/String; I)V
+	19      (0000004c) sput-object          v0, Lorg/webrtc/MediaSource$State;->MUTED Lorg/webrtc/MediaSource$State;
+	20      (00000050) const/4              v0, 4
+	21      (00000052) new-array            v0, v0, [Lorg/webrtc/MediaSource$State;
+	22      (00000056) sget-object          v1, Lorg/webrtc/MediaSource$State;->INITIALIZING Lorg/webrtc/MediaSource$State;
+	23      (0000005a) aput-object          v1, v0, v2
+	24      (0000005e) sget-object          v1, Lorg/webrtc/MediaSource$State;->LIVE Lorg/webrtc/MediaSource$State;
+	25      (00000062) aput-object          v1, v0, v3
+	26      (00000066) sget-object          v1, Lorg/webrtc/MediaSource$State;->ENDED Lorg/webrtc/MediaSource$State;
+	27      (0000006a) aput-object          v1, v0, v4
+	28      (0000006e) sget-object          v1, Lorg/webrtc/MediaSource$State;->MUTED Lorg/webrtc/MediaSource$State;
+	29      (00000072) aput-object          v1, v0, v5
+	30      (00000076) sput-object          v0, Lorg/webrtc/MediaSource$State;->$VALUES [Lorg/webrtc/MediaSource$State;
+	31      (0000007a) return-void          
+

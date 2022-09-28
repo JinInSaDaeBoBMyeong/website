@@ -1,0 +1,70 @@
+# Landroid/support/v4/view/PagerTabStrip;->onDraw(Landroid/graphics/Canvas;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:android.graphics.Canvas
+#
+# - return:void
+
+onDraw-BB@0x0 : [ onDraw-BB@0x7c onDraw-BB@0xc8 ]
+	0       (00000000) const                v11, 16777215 # [2.3509885615147286e-38]
+	1       (00000006) invoke-super         v12, v13, Landroid/support/v4/view/PagerTitleStrip;->onDraw(Landroid/graphics/Canvas;)V
+	2       (0000000c) invoke-virtual       v12, Landroid/support/v4/view/PagerTabStrip;->getHeight()I
+	3       (00000012) move-result          v7
+	4       (00000014) move                 v6, v7
+	5       (00000016) iget-object          v0, v12, Landroid/support/v4/view/PagerTabStrip;->mCurrText Landroid/widget/TextView;
+	6       (0000001a) invoke-virtual       v0, Landroid/widget/TextView;->getLeft()I
+	7       (00000020) move-result          v0
+	8       (00000022) iget                 v1, v12, Landroid/support/v4/view/PagerTabStrip;->mTabPadding I
+	9       (00000026) sub-int              v8, v0, v1
+	10      (0000002a) iget-object          v0, v12, Landroid/support/v4/view/PagerTabStrip;->mCurrText Landroid/widget/TextView;
+	11      (0000002e) invoke-virtual       v0, Landroid/widget/TextView;->getRight()I
+	12      (00000034) move-result          v0
+	13      (00000036) iget                 v1, v12, Landroid/support/v4/view/PagerTabStrip;->mTabPadding I
+	14      (0000003a) add-int              v9, v0, v1
+	15      (0000003e) iget                 v0, v12, Landroid/support/v4/view/PagerTabStrip;->mIndicatorHeight I
+	16      (00000042) sub-int              v10, v6, v0
+	17      (00000046) iget-object          v0, v12, Landroid/support/v4/view/PagerTabStrip;->mTabPaint Landroid/graphics/Paint;
+	18      (0000004a) iget                 v1, v12, Landroid/support/v4/view/PagerTabStrip;->mTabAlpha I
+	19      (0000004e) shl-int/lit8         v1, v1, 24
+	20      (00000052) iget                 v2, v12, Landroid/support/v4/view/PagerTabStrip;->mIndicatorColor I
+	21      (00000056) and-int/2addr        v2, v11
+	22      (00000058) or-int/2addr         v1, v2
+	23      (0000005a) invoke-virtual       v0, v1, Landroid/graphics/Paint;->setColor(I)V
+	24      (00000060) int-to-float         v1, v8
+	25      (00000062) int-to-float         v2, v10
+	26      (00000064) int-to-float         v3, v9
+	27      (00000066) int-to-float         v4, v6
+	28      (00000068) iget-object          v5, v12, Landroid/support/v4/view/PagerTabStrip;->mTabPaint Landroid/graphics/Paint;
+	29      (0000006c) move-object          v0, v13
+	30      (0000006e) invoke-virtual/range v0 ... v5, Landroid/graphics/Canvas;->drawRect(F F F F Landroid/graphics/Paint;)V
+	31      (00000074) iget-boolean         v0, v12, Landroid/support/v4/view/PagerTabStrip;->mDrawFullUnderline Z
+	32      (00000078) if-eqz               v0, +28
+
+onDraw-BB@0x7c : [ onDraw-BB@0xc8 ]
+	33      (0000007c) iget-object          v0, v12, Landroid/support/v4/view/PagerTabStrip;->mTabPaint Landroid/graphics/Paint;
+	34      (00000080) const/high16         v1, -256 # [-1.7014118346046923e+38]
+	35      (00000084) iget                 v2, v12, Landroid/support/v4/view/PagerTabStrip;->mIndicatorColor I
+	36      (00000088) and-int/2addr        v2, v11
+	37      (0000008a) or-int/2addr         v1, v2
+	38      (0000008c) invoke-virtual       v0, v1, Landroid/graphics/Paint;->setColor(I)V
+	39      (00000092) invoke-virtual       v12, Landroid/support/v4/view/PagerTabStrip;->getPaddingLeft()I
+	40      (00000098) move-result          v0
+	41      (0000009a) int-to-float         v1, v0
+	42      (0000009c) iget                 v0, v12, Landroid/support/v4/view/PagerTabStrip;->mFullUnderlineHeight I
+	43      (000000a0) sub-int              v0, v7, v0
+	44      (000000a4) int-to-float         v2, v0
+	45      (000000a6) invoke-virtual       v12, Landroid/support/v4/view/PagerTabStrip;->getWidth()I
+	46      (000000ac) move-result          v0
+	47      (000000ae) invoke-virtual       v12, Landroid/support/v4/view/PagerTabStrip;->getPaddingRight()I
+	48      (000000b4) move-result          v3
+	49      (000000b6) sub-int/2addr        v0, v3
+	50      (000000b8) int-to-float         v3, v0
+	51      (000000ba) int-to-float         v4, v7
+	52      (000000bc) iget-object          v5, v12, Landroid/support/v4/view/PagerTabStrip;->mTabPaint Landroid/graphics/Paint;
+	53      (000000c0) move-object          v0, v13
+	54      (000000c2) invoke-virtual/range v0 ... v5, Landroid/graphics/Canvas;->drawRect(F F F F Landroid/graphics/Paint;)V
+
+onDraw-BB@0xc8 : 
+	55      (000000c8) return-void          
+

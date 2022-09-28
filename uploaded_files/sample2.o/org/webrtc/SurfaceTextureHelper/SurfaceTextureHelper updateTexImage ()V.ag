@@ -1,0 +1,24 @@
+# Lorg/webrtc/SurfaceTextureHelper;->updateTexImage()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+updateTexImage-BB@0x0 : [ updateTexImage-BB@0x6 ]
+	0       (00000000) sget-object          v1, Lorg/webrtc/EglBase;->lock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v1
+
+updateTexImage-BB@0x6 : 
+	2       (00000006) iget-object          v0, v2, Lorg/webrtc/SurfaceTextureHelper;->surfaceTexture Landroid/graphics/SurfaceTexture;
+	3       (0000000a) invoke-virtual       v0, Landroid/graphics/SurfaceTexture;->updateTexImage()V
+	4       (00000010) monitor-exit         v1
+	5       (00000012) return-void          
+	6:17
+	(Ljava/lang/Throwable; -> 14 updateTexImage-BB@0x14)
+
+updateTexImage-BB@0x14 : 
+	6       (00000014) move-exception       v0
+	7       (00000016) monitor-exit         v1
+	8       (00000018) throw                v0
+

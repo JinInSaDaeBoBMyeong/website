@@ -1,0 +1,23 @@
+# Landroid/support/v4/hardware/display/DisplayManagerCompat$LegacyImpl;->getDisplay(I)Landroid/view/Display; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:android.view.Display
+
+getDisplay-BB@0x0 : [ getDisplay-BB@0x18 getDisplay-BB@0x1a ]
+	0       (00000000) iget-object          v1, v2, Landroid/support/v4/hardware/display/DisplayManagerCompat$LegacyImpl;->mWindowManager Landroid/view/WindowManager;
+	1       (00000004) invoke-interface     v1, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v0, Landroid/view/Display;->getDisplayId()I
+	4       (00000012) move-result          v1
+	5       (00000014) if-ne                v1, v3, +3
+
+getDisplay-BB@0x18 : 
+	6       (00000018) return-object        v0
+
+getDisplay-BB@0x1a : [ getDisplay-BB@0x18 ]
+	7       (0000001a) const/4              v0, 0
+	8       (0000001c) goto                 -2
+

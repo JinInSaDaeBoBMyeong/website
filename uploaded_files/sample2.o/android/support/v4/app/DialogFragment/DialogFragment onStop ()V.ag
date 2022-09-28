@@ -1,0 +1,19 @@
+# Landroid/support/v4/app/DialogFragment;->onStop()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onStop-BB@0x0 : [ onStop-BB@0xe onStop-BB@0x18 ]
+	0       (00000000) invoke-super         v1, Landroid/support/v4/app/Fragment;->onStop()V
+	1       (00000006) iget-object          v0, v1, Landroid/support/v4/app/DialogFragment;->mDialog Landroid/app/Dialog;
+	2       (0000000a) if-eqz               v0, +7
+
+onStop-BB@0xe : [ onStop-BB@0x18 ]
+	3       (0000000e) iget-object          v0, v1, Landroid/support/v4/app/DialogFragment;->mDialog Landroid/app/Dialog;
+	4       (00000012) invoke-virtual       v0, Landroid/app/Dialog;->hide()V
+
+onStop-BB@0x18 : 
+	5       (00000018) return-void          
+

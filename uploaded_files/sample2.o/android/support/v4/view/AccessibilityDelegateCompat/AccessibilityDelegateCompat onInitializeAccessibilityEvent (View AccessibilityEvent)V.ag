@@ -1,0 +1,15 @@
+# Landroid/support/v4/view/AccessibilityDelegateCompat;->onInitializeAccessibilityEvent(Landroid/view/View; Landroid/view/accessibility/AccessibilityEvent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+# - v4:android.view.accessibility.AccessibilityEvent
+#
+# - return:void
+
+onInitializeAccessibilityEvent-BB@0x0 : 
+	0       (00000000) sget-object          v0, Landroid/support/v4/view/AccessibilityDelegateCompat;->IMPL Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateImpl;
+	1       (00000004) sget-object          v1, Landroid/support/v4/view/AccessibilityDelegateCompat;->DEFAULT_DELEGATE Ljava/lang/Object;
+	2       (00000008) invoke-interface     v0, v1, v3, v4, Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateImpl;->onInitializeAccessibilityEvent(Ljava/lang/Object; Landroid/view/View; Landroid/view/accessibility/AccessibilityEvent;)V
+	3       (0000000e) return-void          
+

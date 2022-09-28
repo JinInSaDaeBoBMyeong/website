@@ -1,0 +1,112 @@
+# Landroid/support/v4/view/ViewPager;->recomputeScrollPosition(I I I I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v14
+# - v15:int
+# - v16:int
+# - v17:int
+# - v18:int
+#
+# - return:void
+
+recomputeScrollPosition-BB@0x0 : [ recomputeScrollPosition-BB@0x4 recomputeScrollPosition-BB@0xbe ]
+	0       (00000000) if-lez               v16, +5f
+
+recomputeScrollPosition-BB@0x4 : [ recomputeScrollPosition-BB@0x14 recomputeScrollPosition-BB@0xbe ]
+	1       (00000004) iget-object          v0, v14, Landroid/support/v4/view/ViewPager;->mItems Ljava/util/ArrayList;
+	2       (00000008) invoke-virtual       v0, Ljava/util/ArrayList;->isEmpty()Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +57
+
+recomputeScrollPosition-BB@0x14 : [ recomputeScrollPosition-BB@0x7c recomputeScrollPosition-BB@0xbc ]
+	5       (00000014) invoke-virtual       v14, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
+	6       (0000001a) move-result          v0
+	7       (0000001c) sub-int              v0, v15, v0
+	8       (00000020) invoke-virtual       v14, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
+	9       (00000026) move-result          v2
+	10      (00000028) sub-int/2addr        v0, v2
+	11      (0000002a) add-int              v12, v0, v17
+	12      (0000002e) invoke-virtual       v14, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
+	13      (00000034) move-result          v0
+	14      (00000036) sub-int              v0, v16, v0
+	15      (0000003a) invoke-virtual       v14, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
+	16      (00000040) move-result          v2
+	17      (00000042) sub-int/2addr        v0, v2
+	18      (00000044) add-int              v7, v0, v18
+	19      (00000048) invoke-virtual       v14, Landroid/support/v4/view/ViewPager;->getScrollX()I
+	20      (0000004e) move-result          v13
+	21      (00000050) int-to-float         v0, v13
+	22      (00000052) int-to-float         v2, v7
+	23      (00000054) div-float            v8, v0, v2
+	24      (00000058) int-to-float         v0, v12
+	25      (0000005a) mul-float/2addr      v0, v8
+	26      (0000005c) float-to-int         v1, v0
+	27      (0000005e) invoke-virtual       v14, Landroid/support/v4/view/ViewPager;->getScrollY()I
+	28      (00000064) move-result          v0
+	29      (00000066) invoke-virtual       v14, v1, v0, Landroid/support/v4/view/ViewPager;->scrollTo(I I)V
+	30      (0000006c) iget-object          v0, v14, Landroid/support/v4/view/ViewPager;->mScroller Landroid/widget/Scroller;
+	31      (00000070) invoke-virtual       v0, Landroid/widget/Scroller;->isFinished()Z
+	32      (00000076) move-result          v0
+	33      (00000078) if-nez               v0, +22
+
+recomputeScrollPosition-BB@0x7c : [ recomputeScrollPosition-BB@0xbc ]
+	34      (0000007c) iget-object          v0, v14, Landroid/support/v4/view/ViewPager;->mScroller Landroid/widget/Scroller;
+	35      (00000080) invoke-virtual       v0, Landroid/widget/Scroller;->getDuration()I
+	36      (00000086) move-result          v0
+	37      (00000088) iget-object          v2, v14, Landroid/support/v4/view/ViewPager;->mScroller Landroid/widget/Scroller;
+	38      (0000008c) invoke-virtual       v2, Landroid/widget/Scroller;->timePassed()I
+	39      (00000092) move-result          v2
+	40      (00000094) sub-int              v5, v0, v2
+	41      (00000098) iget                 v0, v14, Landroid/support/v4/view/ViewPager;->mCurItem I
+	42      (0000009c) invoke-virtual       v14, v0, Landroid/support/v4/view/ViewPager;->infoForPosition(I)Landroid/support/v4/view/ViewPager$ItemInfo;
+	43      (000000a2) move-result-object   v11
+	44      (000000a4) iget-object          v0, v14, Landroid/support/v4/view/ViewPager;->mScroller Landroid/widget/Scroller;
+	45      (000000a8) const/4              v2, 0
+	46      (000000aa) iget                 v3, v11, Landroid/support/v4/view/ViewPager$ItemInfo;->offset F
+	47      (000000ae) int-to-float         v4, v15
+	48      (000000b0) mul-float/2addr      v3, v4
+	49      (000000b2) float-to-int         v3, v3
+	50      (000000b4) const/4              v4, 0
+	51      (000000b6) invoke-virtual/range v0 ... v5, Landroid/widget/Scroller;->startScroll(I I I I I)V
+
+recomputeScrollPosition-BB@0xbc : 
+	52      (000000bc) return-void          
+
+recomputeScrollPosition-BB@0xbe : [ recomputeScrollPosition-BB@0xce recomputeScrollPosition-BB@0x11e ]
+	53      (000000be) iget                 v0, v14, Landroid/support/v4/view/ViewPager;->mCurItem I
+	54      (000000c2) invoke-virtual       v14, v0, Landroid/support/v4/view/ViewPager;->infoForPosition(I)Landroid/support/v4/view/ViewPager$ItemInfo;
+	55      (000000c8) move-result-object   v6
+	56      (000000ca) if-eqz               v6, +2a
+
+recomputeScrollPosition-BB@0xce : [ recomputeScrollPosition-BB@0xde ]
+	57      (000000ce) iget                 v0, v6, Landroid/support/v4/view/ViewPager$ItemInfo;->offset F
+	58      (000000d2) iget                 v2, v14, Landroid/support/v4/view/ViewPager;->mLastOffset F
+	59      (000000d6) invoke-static        v0, v2, Ljava/lang/Math;->min(F F)F
+	60      (000000dc) move-result          v9
+
+recomputeScrollPosition-BB@0xde : [ recomputeScrollPosition-BB@0x106 recomputeScrollPosition-BB@0xbc ]
+	61      (000000de) invoke-virtual       v14, Landroid/support/v4/view/ViewPager;->getPaddingLeft()I
+	62      (000000e4) move-result          v0
+	63      (000000e6) sub-int              v0, v15, v0
+	64      (000000ea) invoke-virtual       v14, Landroid/support/v4/view/ViewPager;->getPaddingRight()I
+	65      (000000f0) move-result          v2
+	66      (000000f2) sub-int/2addr        v0, v2
+	67      (000000f4) int-to-float         v0, v0
+	68      (000000f6) mul-float/2addr      v0, v9
+	69      (000000f8) float-to-int         v10, v0
+	70      (000000fa) invoke-virtual       v14, Landroid/support/v4/view/ViewPager;->getScrollX()I
+	71      (00000100) move-result          v0
+	72      (00000102) if-eq                v10, v0, -23
+
+recomputeScrollPosition-BB@0x106 : [ recomputeScrollPosition-BB@0xbc ]
+	73      (00000106) const/4              v0, 0
+	74      (00000108) invoke-direct        v14, v0, Landroid/support/v4/view/ViewPager;->completeScroll(Z)V
+	75      (0000010e) invoke-virtual       v14, Landroid/support/v4/view/ViewPager;->getScrollY()I
+	76      (00000114) move-result          v0
+	77      (00000116) invoke-virtual       v14, v10, v0, Landroid/support/v4/view/ViewPager;->scrollTo(I I)V
+	78      (0000011c) goto                 -30
+
+recomputeScrollPosition-BB@0x11e : [ recomputeScrollPosition-BB@0xde ]
+	79      (0000011e) const/4              v9, 0
+	80      (00000120) goto                 -21
+

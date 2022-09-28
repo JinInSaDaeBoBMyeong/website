@@ -1,0 +1,87 @@
+# Landroid/support/v4/widget/ViewDragHelper;->computeSettleDuration(Landroid/view/View; I I I I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v14
+# - v15:android.view.View
+# - v16:int
+# - v17:int
+# - v18:int
+# - v19:int
+#
+# - return:int
+
+computeSettleDuration-BB@0x0 : [ computeSettleDuration-BB@0x5c computeSettleDuration-BB@0xb6 ]
+	0       (00000000) iget                 v12, v14, Landroid/support/v4/widget/ViewDragHelper;->mMinVelocity F
+	1       (00000004) float-to-int         v12, v12
+	2       (00000006) iget                 v13, v14, Landroid/support/v4/widget/ViewDragHelper;->mMaxVelocity F
+	3       (0000000a) float-to-int         v13, v13
+	4       (0000000c) move/from16          v0, v18
+	5       (00000010) invoke-direct        v14, v0, v12, v13, Landroid/support/v4/widget/ViewDragHelper;->clampMag(I I I)I
+	6       (00000016) move-result          v18
+	7       (00000018) iget                 v12, v14, Landroid/support/v4/widget/ViewDragHelper;->mMinVelocity F
+	8       (0000001c) float-to-int         v12, v12
+	9       (0000001e) iget                 v13, v14, Landroid/support/v4/widget/ViewDragHelper;->mMaxVelocity F
+	10      (00000022) float-to-int         v13, v13
+	11      (00000024) move/from16          v0, v19
+	12      (00000028) invoke-direct        v14, v0, v12, v13, Landroid/support/v4/widget/ViewDragHelper;->clampMag(I I I)I
+	13      (0000002e) move-result          v19
+	14      (00000030) invoke-static/range  v16, Ljava/lang/Math;->abs(I)I
+	15      (00000036) move-result          v2
+	16      (00000038) invoke-static/range  v17, Ljava/lang/Math;->abs(I)I
+	17      (0000003e) move-result          v3
+	18      (00000040) invoke-static/range  v18, Ljava/lang/Math;->abs(I)I
+	19      (00000046) move-result          v4
+	20      (00000048) invoke-static/range  v19, Ljava/lang/Math;->abs(I)I
+	21      (0000004e) move-result          v5
+	22      (00000050) add-int              v7, v4, v5
+	23      (00000054) add-int              v6, v2, v3
+	24      (00000058) if-eqz               v18, +2f
+
+computeSettleDuration-BB@0x5c : [ computeSettleDuration-BB@0x64 ]
+	25      (0000005c) int-to-float         v12, v4
+	26      (0000005e) int-to-float         v13, v7
+	27      (00000060) div-float            v9, v12, v13
+
+computeSettleDuration-BB@0x64 : [ computeSettleDuration-BB@0x68 computeSettleDuration-BB@0xc0 ]
+	28      (00000064) if-eqz               v19, +2e
+
+computeSettleDuration-BB@0x68 : [ computeSettleDuration-BB@0x70 ]
+	29      (00000068) int-to-float         v12, v5
+	30      (0000006a) int-to-float         v13, v7
+	31      (0000006c) div-float            v11, v12, v13
+
+computeSettleDuration-BB@0x70 : 
+	32      (00000070) iget-object          v12, v14, Landroid/support/v4/widget/ViewDragHelper;->mCallback Landroid/support/v4/widget/ViewDragHelper$Callback;
+	33      (00000074) invoke-virtual       v12, v15, Landroid/support/v4/widget/ViewDragHelper$Callback;->getViewHorizontalDragRange(Landroid/view/View;)I
+	34      (0000007a) move-result          v12
+	35      (0000007c) move/from16          v0, v16
+	36      (00000080) move/from16          v1, v18
+	37      (00000084) invoke-direct        v14, v0, v1, v12, Landroid/support/v4/widget/ViewDragHelper;->computeAxisDuration(I I I)I
+	38      (0000008a) move-result          v8
+	39      (0000008c) iget-object          v12, v14, Landroid/support/v4/widget/ViewDragHelper;->mCallback Landroid/support/v4/widget/ViewDragHelper$Callback;
+	40      (00000090) invoke-virtual       v12, v15, Landroid/support/v4/widget/ViewDragHelper$Callback;->getViewVerticalDragRange(Landroid/view/View;)I
+	41      (00000096) move-result          v12
+	42      (00000098) move/from16          v0, v17
+	43      (0000009c) move/from16          v1, v19
+	44      (000000a0) invoke-direct        v14, v0, v1, v12, Landroid/support/v4/widget/ViewDragHelper;->computeAxisDuration(I I I)I
+	45      (000000a6) move-result          v10
+	46      (000000a8) int-to-float         v12, v8
+	47      (000000aa) mul-float/2addr      v12, v9
+	48      (000000ac) int-to-float         v13, v10
+	49      (000000ae) mul-float/2addr      v13, v11
+	50      (000000b0) add-float/2addr      v12, v13
+	51      (000000b2) float-to-int         v12, v12
+	52      (000000b4) return               v12
+
+computeSettleDuration-BB@0xb6 : [ computeSettleDuration-BB@0x64 ]
+	53      (000000b6) int-to-float         v12, v2
+	54      (000000b8) int-to-float         v13, v6
+	55      (000000ba) div-float            v9, v12, v13
+	56      (000000be) goto                 -2d
+
+computeSettleDuration-BB@0xc0 : [ computeSettleDuration-BB@0x70 ]
+	57      (000000c0) int-to-float         v12, v3
+	58      (000000c2) int-to-float         v13, v6
+	59      (000000c4) div-float            v11, v12, v13
+	60      (000000c8) goto                 -2c
+

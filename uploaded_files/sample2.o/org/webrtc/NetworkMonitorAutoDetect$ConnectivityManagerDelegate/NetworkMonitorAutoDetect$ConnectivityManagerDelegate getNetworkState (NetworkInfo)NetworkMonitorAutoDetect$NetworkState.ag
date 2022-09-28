@@ -1,0 +1,35 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->getNetworkState(Landroid/net/NetworkInfo;)Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.net.NetworkInfo
+#
+# - return:org.webrtc.NetworkMonitorAutoDetect$NetworkState
+
+getNetworkState-BB@0x0 : [ getNetworkState-BB@0x6 getNetworkState-BB@0x12 ]
+	0       (00000000) const/4              v2, -1
+	1       (00000002) if-eqz               v5, +8
+
+getNetworkState-BB@0x6 : [ getNetworkState-BB@0x12 getNetworkState-BB@0x20 ]
+	2       (00000006) invoke-virtual       v5, Landroid/net/NetworkInfo;->isConnected()Z
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-nez               v0, +9
+
+getNetworkState-BB@0x12 : [ getNetworkState-BB@0x1e ]
+	5       (00000012) new-instance         v0, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
+	6       (00000016) const/4              v1, 0
+	7       (00000018) invoke-direct        v0, v1, v2, v2, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(Z I I)V
+
+getNetworkState-BB@0x1e : 
+	8       (0000001e) return-object        v0
+
+getNetworkState-BB@0x20 : [ getNetworkState-BB@0x1e ]
+	9       (00000020) new-instance         v0, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;
+	10      (00000024) const/4              v1, 1
+	11      (00000026) invoke-virtual       v5, Landroid/net/NetworkInfo;->getType()I
+	12      (0000002c) move-result          v2
+	13      (0000002e) invoke-virtual       v5, Landroid/net/NetworkInfo;->getSubtype()I
+	14      (00000034) move-result          v3
+	15      (00000036) invoke-direct        v0, v1, v2, v3, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;-><init>(Z I I)V
+	16      (0000003c) goto                 -f
+

@@ -1,0 +1,37 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect;->destroy()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+destroy-BB@0x0 : [ destroy-BB@0x8 destroy-BB@0x16 ]
+	0       (00000000) iget-object          v0, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->allNetworkCallback Landroid/net/ConnectivityManager$NetworkCallback;
+	1       (00000004) if-eqz               v0, +9
+
+destroy-BB@0x8 : [ destroy-BB@0x16 ]
+	2       (00000008) iget-object          v0, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->connectivityManagerDelegate Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;
+	3       (0000000c) iget-object          v1, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->allNetworkCallback Landroid/net/ConnectivityManager$NetworkCallback;
+	4       (00000010) invoke-virtual       v0, v1, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->releaseCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
+
+destroy-BB@0x16 : [ destroy-BB@0x1e destroy-BB@0x2c ]
+	5       (00000016) iget-object          v0, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->mobileNetworkCallback Landroid/net/ConnectivityManager$NetworkCallback;
+	6       (0000001a) if-eqz               v0, +9
+
+destroy-BB@0x1e : [ destroy-BB@0x2c ]
+	7       (0000001e) iget-object          v0, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->connectivityManagerDelegate Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;
+	8       (00000022) iget-object          v1, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->mobileNetworkCallback Landroid/net/ConnectivityManager$NetworkCallback;
+	9       (00000026) invoke-virtual       v0, v1, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->releaseCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
+
+destroy-BB@0x2c : [ destroy-BB@0x34 destroy-BB@0x3e ]
+	10      (0000002c) iget-object          v0, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->wifiDirectManagerDelegate Lorg/webrtc/NetworkMonitorAutoDetect$WifiDirectManagerDelegate;
+	11      (00000030) if-eqz               v0, +7
+
+destroy-BB@0x34 : [ destroy-BB@0x3e ]
+	12      (00000034) iget-object          v0, v2, Lorg/webrtc/NetworkMonitorAutoDetect;->wifiDirectManagerDelegate Lorg/webrtc/NetworkMonitorAutoDetect$WifiDirectManagerDelegate;
+	13      (00000038) invoke-virtual       v0, Lorg/webrtc/NetworkMonitorAutoDetect$WifiDirectManagerDelegate;->release()V
+
+destroy-BB@0x3e : 
+	14      (0000003e) invoke-direct        v2, Lorg/webrtc/NetworkMonitorAutoDetect;->unregisterReceiver()V
+	15      (00000044) return-void          
+

@@ -1,0 +1,14 @@
+# Landroid/support/v4/app/ListFragment;->getSelectedItemId()J [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:long
+
+getSelectedItemId-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Landroid/support/v4/app/ListFragment;->ensureList()V
+	1       (00000006) iget-object          v0, v2, Landroid/support/v4/app/ListFragment;->mList Landroid/widget/ListView;
+	2       (0000000a) invoke-virtual       v0, Landroid/widget/ListView;->getSelectedItemId()J
+	3       (00000010) move-result-wide     v0
+	4       (00000012) return-wide          v0
+

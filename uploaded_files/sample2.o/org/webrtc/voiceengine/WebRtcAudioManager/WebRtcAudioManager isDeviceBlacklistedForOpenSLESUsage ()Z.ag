@@ -1,0 +1,39 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioManager;->isDeviceBlacklistedForOpenSLESUsage()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+isDeviceBlacklistedForOpenSLESUsage-BB@0x0 : [ isDeviceBlacklistedForOpenSLESUsage-BB@0x8 isDeviceBlacklistedForOpenSLESUsage-BB@0x46 ]
+	0       (00000000) sget-boolean         v1, Lorg/webrtc/voiceengine/WebRtcAudioManager;->blacklistDeviceForOpenSLESUsageIsOverridden Z
+	1       (00000004) if-eqz               v1, +21
+
+isDeviceBlacklistedForOpenSLESUsage-BB@0x8 : [ isDeviceBlacklistedForOpenSLESUsage-BB@0xc ]
+	2       (00000008) sget-boolean         v0, Lorg/webrtc/voiceengine/WebRtcAudioManager;->blacklistDeviceForOpenSLESUsage Z
+
+isDeviceBlacklistedForOpenSLESUsage-BB@0xc : [ isDeviceBlacklistedForOpenSLESUsage-BB@0x10 isDeviceBlacklistedForOpenSLESUsage-BB@0x44 ]
+	3       (0000000c) if-eqz               v0, +1c
+
+isDeviceBlacklistedForOpenSLESUsage-BB@0x10 : [ isDeviceBlacklistedForOpenSLESUsage-BB@0x44 ]
+	4       (00000010) const-string         v1, 'WebRtcAudioManager'
+	5       (00000014) new-instance         v2, Ljava/lang/StringBuilder;
+	6       (00000018) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	7       (0000001e) sget-object          v3, Landroid/os/Build;->MODEL Ljava/lang/String;
+	8       (00000022) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v2
+	10      (0000002a) const-string         v3, ' is blacklisted for OpenSL ES usage!'
+	11      (0000002e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003c) move-result-object   v2
+	15      (0000003e) invoke-static        v1, v2, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+
+isDeviceBlacklistedForOpenSLESUsage-BB@0x44 : 
+	16      (00000044) return               v0
+
+isDeviceBlacklistedForOpenSLESUsage-BB@0x46 : [ isDeviceBlacklistedForOpenSLESUsage-BB@0xc ]
+	17      (00000046) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->deviceIsBlacklistedForOpenSLESUsage()Z
+	18      (0000004c) move-result          v0
+	19      (0000004e) goto                 -21
+

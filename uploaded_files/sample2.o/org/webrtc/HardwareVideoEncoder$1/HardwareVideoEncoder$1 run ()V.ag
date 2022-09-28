@@ -1,0 +1,23 @@
+# Lorg/webrtc/HardwareVideoEncoder$1;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x10 run-BB@0x1c ]
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/HardwareVideoEncoder$1;->this$0 Lorg/webrtc/HardwareVideoEncoder;
+	1       (00000004) invoke-static        v0, Lorg/webrtc/HardwareVideoEncoder;->access$000(Lorg/webrtc/HardwareVideoEncoder;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +8
+
+run-BB@0x10 : [ run-BB@0x0 ]
+	4       (00000010) iget-object          v0, v1, Lorg/webrtc/HardwareVideoEncoder$1;->this$0 Lorg/webrtc/HardwareVideoEncoder;
+	5       (00000014) invoke-static        v0, Lorg/webrtc/HardwareVideoEncoder;->access$100(Lorg/webrtc/HardwareVideoEncoder;)V
+	6       (0000001a) goto                 -d
+
+run-BB@0x1c : 
+	7       (0000001c) iget-object          v0, v1, Lorg/webrtc/HardwareVideoEncoder$1;->this$0 Lorg/webrtc/HardwareVideoEncoder;
+	8       (00000020) invoke-static        v0, Lorg/webrtc/HardwareVideoEncoder;->access$200(Lorg/webrtc/HardwareVideoEncoder;)V
+	9       (00000026) return-void          
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td{
+	border : 1px solid black;
+}
+</style>
+<meta charset="UTF-8">
+<title>회원관리</title>
+</head>
+<body>
+<table>
+	<tr>
+		<th>idx</th>
+		<th>id</th>
+		<th>passwd</th>
+		<th>email</th>
+	</tr>
+		{% for acc in accountlist%}
+		<tr>
+			<td>{{acc.idx}}</td>
+			<td>{{acc.id}}</td>
+			<td>{{acc.passwd}}</td>
+			<td>{{acc.email}}</td>
+		</tr>
+		{% endfor %}    
+</table>
+<br><br><br>
+<form name="login" action="/register_execute" method="post">
+    아이디<br>
+    <input type="text" name="id" placeholder="아이디 입력" >
+    <input type="button" name="id_cert" value="아이디 확인">
+    <br>
+    비밀번호<br> 
+    <input type="password" name="passwd1" value="123456"><br>
+    비밀번호 재확인<br> 
+    <input type="password" name="passwd2" value="123456">
+    <input type="button" name="passwd_cert" value="비밀번호 재확인">
+    <br><br>
+    이메일<br><input type="email" name="email" placeholder="email@gmail.com"><br><br>
+    <input type="submit" name="" value="제출">
+  </form>
+</body>
+</html>

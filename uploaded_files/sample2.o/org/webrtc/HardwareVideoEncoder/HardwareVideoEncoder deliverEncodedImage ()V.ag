@@ -1,0 +1,206 @@
+# Lorg/webrtc/HardwareVideoEncoder;->deliverEncodedImage()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v12
+#
+# - return:void
+
+deliverEncodedImage-BB@0x0 : [ deliverEncodedImage-BB@0x2 ]
+	0       (00000000) const/4              v7, 0
+
+deliverEncodedImage-BB@0x2 : [ deliverEncodedImage-BB@0x22 deliverEncodedImage-BB@0x24 ]
+	1       (00000002) new-instance         v6, Landroid/media/MediaCodec$BufferInfo;
+	2       (00000006) invoke-direct        v6, Landroid/media/MediaCodec$BufferInfo;-><init>()V
+	3       (0000000c) iget-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->codec Landroid/media/MediaCodec;
+	4       (00000010) const-wide/32        v10, 100000 # [100000.0]
+	5       (00000016) invoke-virtual       v8, v6, v10, v11, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo; J)I
+	6       (0000001c) move-result          v5
+	7       (0000001e) if-gez               v5, +3
+	2:cb
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x22 : 
+	8       (00000022) return-void          
+	2:cb
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x24 : [ deliverEncodedImage-BB@0x5a deliverEncodedImage-BB@0xe0 ]
+	9       (00000024) iget-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->codec Landroid/media/MediaCodec;
+	10      (00000028) invoke-virtual       v8, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
+	11      (0000002e) move-result-object   v8
+	12      (00000030) aget-object          v1, v8, v5
+	13      (00000034) iget                 v8, v6, Landroid/media/MediaCodec$BufferInfo;->offset I
+	14      (00000038) invoke-virtual       v1, v8, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+	15      (0000003e) iget                 v8, v6, Landroid/media/MediaCodec$BufferInfo;->offset I
+	16      (00000042) iget                 v9, v6, Landroid/media/MediaCodec$BufferInfo;->size I
+	17      (00000046) add-int/2addr        v8, v9
+	18      (00000048) invoke-virtual       v1, v8, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+	19      (0000004e) iget                 v8, v6, Landroid/media/MediaCodec$BufferInfo;->flags I
+	20      (00000052) and-int/lit8         v8, v8, 2
+	21      (00000056) if-eqz               v8, +45
+	2:cb
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x5a : [ deliverEncodedImage-BB@0xc0 ]
+	22      (0000005a) const-string         v8, 'HardwareVideoEncoder'
+	23      (0000005e) new-instance         v9, Ljava/lang/StringBuilder;
+	24      (00000062) invoke-direct        v9, Ljava/lang/StringBuilder;-><init>()V
+	25      (00000068) const-string         v10, 'Config frame generated. Offset: '
+	26      (0000006c) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (00000072) move-result-object   v9
+	28      (00000074) iget                 v10, v6, Landroid/media/MediaCodec$BufferInfo;->offset I
+	29      (00000078) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	30      (0000007e) move-result-object   v9
+	31      (00000080) const-string         v10, '. Size: '
+	32      (00000084) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	33      (0000008a) move-result-object   v9
+	34      (0000008c) iget                 v10, v6, Landroid/media/MediaCodec$BufferInfo;->size I
+	35      (00000090) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	36      (00000096) move-result-object   v9
+	37      (00000098) invoke-virtual       v9, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	38      (0000009e) move-result-object   v9
+	39      (000000a0) invoke-static        v8, v9, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	40      (000000a6) iget                 v8, v6, Landroid/media/MediaCodec$BufferInfo;->size I
+	41      (000000aa) invoke-static        v8, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+	42      (000000b0) move-result-object   v8
+	43      (000000b2) iput-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->configBuffer Ljava/nio/ByteBuffer;
+	44      (000000b6) iget-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->configBuffer Ljava/nio/ByteBuffer;
+	45      (000000ba) invoke-virtual       v8, v1, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+	2:cb
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0xc0 : [ deliverEncodedImage-BB@0x22 ]
+	46      (000000c0) iget-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->codec Landroid/media/MediaCodec;
+	47      (000000c4) const/4              v9, 0
+	48      (000000c6) invoke-virtual       v8, v5, v9, Landroid/media/MediaCodec;->releaseOutputBuffer(I Z)V
+	49      (000000cc) goto                 -55
+
+deliverEncodedImage-BB@0xce : [ deliverEncodedImage-BB@0x22 ]
+	50      (000000ce) move-exception       v2
+	51      (000000d0) const-string         v8, 'HardwareVideoEncoder'
+	52      (000000d4) const-string         v9, 'deliverOutput failed'
+	53      (000000d8) invoke-static        v8, v9, v2, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	54      (000000de) goto                 -5e
+
+deliverEncodedImage-BB@0xe0 : [ deliverEncodedImage-BB@0x102 deliverEncodedImage-BB@0x108 ]
+	55      (000000e0) iget-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->bitrateAdjuster Lorg/webrtc/BitrateAdjuster;
+	56      (000000e4) iget                 v9, v6, Landroid/media/MediaCodec$BufferInfo;->size I
+	57      (000000e8) invoke-interface     v8, v9, Lorg/webrtc/BitrateAdjuster;->reportEncodedFrame(I)V
+	58      (000000ee) iget                 v8, v12, Lorg/webrtc/HardwareVideoEncoder;->adjustedBitrate I
+	59      (000000f2) iget-object          v9, v12, Lorg/webrtc/HardwareVideoEncoder;->bitrateAdjuster Lorg/webrtc/BitrateAdjuster;
+	60      (000000f6) invoke-interface     v9, Lorg/webrtc/BitrateAdjuster;->getAdjustedBitrateBps()I
+	61      (000000fc) move-result          v9
+	62      (000000fe) if-eq                v8, v9, +5
+	e0:22d
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x102 : [ deliverEncodedImage-BB@0x108 ]
+	63      (00000102) invoke-direct        v12, Lorg/webrtc/HardwareVideoEncoder;->updateBitrate()Lorg/webrtc/VideoCodecStatus;
+	e0:22d
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x108 : [ deliverEncodedImage-BB@0x114 deliverEncodedImage-BB@0x116 ]
+	64      (00000108) iget                 v8, v6, Landroid/media/MediaCodec$BufferInfo;->flags I
+	65      (0000010c) and-int/lit8         v8, v8, 1
+	66      (00000110) if-eqz               v8, +3
+	e0:22d
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x114 : [ deliverEncodedImage-BB@0x116 ]
+	67      (00000114) const/4              v7, 1
+	e0:22d
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x116 : [ deliverEncodedImage-BB@0x11a deliverEncodedImage-BB@0x224 ]
+	68      (00000116) if-eqz               v7, +87
+	e0:22d
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x11a : [ deliverEncodedImage-BB@0x126 deliverEncodedImage-BB@0x224 ]
+	69      (0000011a) iget-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->codecType Lorg/webrtc/VideoCodecType;
+	70      (0000011e) sget-object          v9, Lorg/webrtc/VideoCodecType;->H264 Lorg/webrtc/VideoCodecType;
+	71      (00000122) if-ne                v8, v9, +81
+	e0:22d
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x126 : [ deliverEncodedImage-BB@0x1c0 ]
+	72      (00000126) const-string         v8, 'HardwareVideoEncoder'
+	73      (0000012a) new-instance         v9, Ljava/lang/StringBuilder;
+	74      (0000012e) invoke-direct        v9, Ljava/lang/StringBuilder;-><init>()V
+	75      (00000134) const-string         v10, 'Prepending config frame of size '
+	76      (00000138) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	77      (0000013e) move-result-object   v9
+	78      (00000140) iget-object          v10, v12, Lorg/webrtc/HardwareVideoEncoder;->configBuffer Ljava/nio/ByteBuffer;
+	79      (00000144) invoke-virtual       v10, Ljava/nio/ByteBuffer;->capacity()I
+	80      (0000014a) move-result          v10
+	81      (0000014c) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	82      (00000152) move-result-object   v9
+	83      (00000154) const-string         v10, ' to output buffer with offset '
+	84      (00000158) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	85      (0000015e) move-result-object   v9
+	86      (00000160) iget                 v10, v6, Landroid/media/MediaCodec$BufferInfo;->offset I
+	87      (00000164) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	88      (0000016a) move-result-object   v9
+	89      (0000016c) const-string         v10, ', size '
+	90      (00000170) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	91      (00000176) move-result-object   v9
+	92      (00000178) iget                 v10, v6, Landroid/media/MediaCodec$BufferInfo;->size I
+	93      (0000017c) invoke-virtual       v9, v10, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	94      (00000182) move-result-object   v9
+	95      (00000184) invoke-virtual       v9, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	96      (0000018a) move-result-object   v9
+	97      (0000018c) invoke-static        v8, v9, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	98      (00000192) iget                 v8, v6, Landroid/media/MediaCodec$BufferInfo;->size I
+	99      (00000196) iget-object          v9, v12, Lorg/webrtc/HardwareVideoEncoder;->configBuffer Ljava/nio/ByteBuffer;
+	100     (0000019a) invoke-virtual       v9, Ljava/nio/ByteBuffer;->capacity()I
+	101     (000001a0) move-result          v9
+	102     (000001a2) add-int/2addr        v8, v9
+	103     (000001a4) invoke-static        v8, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+	104     (000001aa) move-result-object   v3
+	105     (000001ac) iget-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->configBuffer Ljava/nio/ByteBuffer;
+	106     (000001b0) invoke-virtual       v8, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+	107     (000001b6) iget-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->configBuffer Ljava/nio/ByteBuffer;
+	108     (000001ba) invoke-virtual       v3, v8, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+	e0:22d
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x1c0 : [ deliverEncodedImage-BB@0x1d4 deliverEncodedImage-BB@0x1e6 ]
+	109     (000001c0) invoke-virtual       v3, v1, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+	110     (000001c6) invoke-virtual       v3, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+	111     (000001cc) sget-object          v4, Lorg/webrtc/EncodedImage$FrameType;->VideoFrameDelta Lorg/webrtc/EncodedImage$FrameType;
+	112     (000001d0) if-eqz               v7, +b
+	e0:22d
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x1d4 : [ deliverEncodedImage-BB@0x1e6 ]
+	113     (000001d4) const-string         v8, 'HardwareVideoEncoder'
+	114     (000001d8) const-string         v9, 'Sync frame generated'
+	115     (000001dc) invoke-static        v8, v9, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	116     (000001e2) sget-object          v4, Lorg/webrtc/EncodedImage$FrameType;->VideoFrameKey Lorg/webrtc/EncodedImage$FrameType;
+	e0:22d
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x1e6 : [ deliverEncodedImage-BB@0xc0 ]
+	117     (000001e6) iget-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->outputBuilders Ljava/util/Deque;
+	118     (000001ea) invoke-interface     v8, Ljava/util/Deque;->poll()Ljava/lang/Object;
+	119     (000001f0) move-result-object   v0
+	120     (000001f2) check-cast           v0, Lorg/webrtc/EncodedImage$Builder;
+	121     (000001f6) invoke-virtual       v0, v3, Lorg/webrtc/EncodedImage$Builder;->setBuffer(Ljava/nio/ByteBuffer;)Lorg/webrtc/EncodedImage$Builder;
+	122     (000001fc) move-result-object   v8
+	123     (000001fe) invoke-virtual       v8, v4, Lorg/webrtc/EncodedImage$Builder;->setFrameType(Lorg/webrtc/EncodedImage$FrameType;)Lorg/webrtc/EncodedImage$Builder;
+	124     (00000204) iget-object          v8, v12, Lorg/webrtc/HardwareVideoEncoder;->callback Lorg/webrtc/VideoEncoder$Callback;
+	125     (00000208) invoke-virtual       v0, Lorg/webrtc/EncodedImage$Builder;->createEncodedImage()Lorg/webrtc/EncodedImage;
+	126     (0000020e) move-result-object   v9
+	127     (00000210) new-instance         v10, Lorg/webrtc/VideoEncoder$CodecSpecificInfo;
+	128     (00000214) invoke-direct        v10, Lorg/webrtc/VideoEncoder$CodecSpecificInfo;-><init>()V
+	129     (0000021a) invoke-interface     v8, v9, v10, Lorg/webrtc/VideoEncoder$Callback;->onEncodedFrame(Lorg/webrtc/EncodedImage; Lorg/webrtc/VideoEncoder$CodecSpecificInfo;)V
+	130     (00000220) goto/16              -b0
+	e0:22d
+	(Ljava/lang/IllegalStateException; -> ce deliverEncodedImage-BB@0xce)
+
+deliverEncodedImage-BB@0x224 : [ deliverEncodedImage-BB@0x1c0 ]
+	131     (00000224) iget                 v8, v6, Landroid/media/MediaCodec$BufferInfo;->size I
+	132     (00000228) invoke-static        v8, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+	133     (0000022e) move-result-object   v3
+	134     (00000230) goto                 -38
+

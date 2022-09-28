@@ -1,0 +1,21 @@
+# Landroid/support/v4/app/ActionBarDrawerToggleJellybeanMR2;->setActionBarDescription(Ljava/lang/Object; Landroid/app/Activity; I)Ljava/lang/Object; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+# - v2:android.app.Activity
+# - v3:int
+#
+# - return:java.lang.Object
+
+setActionBarDescription-BB@0x0 : [ setActionBarDescription-BB@0xc setActionBarDescription-BB@0x12 ]
+	0       (00000000) invoke-virtual       v2, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +5
+
+setActionBarDescription-BB@0xc : [ setActionBarDescription-BB@0x12 ]
+	3       (0000000c) invoke-virtual       v0, v3, Landroid/app/ActionBar;->setHomeActionContentDescription(I)V
+
+setActionBarDescription-BB@0x12 : 
+	4       (00000012) return-object        v1
+

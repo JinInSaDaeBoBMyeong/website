@@ -1,0 +1,51 @@
+# Lorg/webrtc/HardwareVideoDecoder;-><init>(Ljava/lang/String; Lorg/webrtc/VideoCodecType; I)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+# - v5:org.webrtc.VideoCodecType
+# - v6:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x42 <init>-BB@0x74 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const/4              v1, 0
+	2       (00000004) invoke-direct        v3, Ljava/lang/Object;-><init>()V
+	3       (0000000a) iput-boolean         v1, v3, Lorg/webrtc/HardwareVideoDecoder;->running Z
+	4       (0000000e) iput-object          v2, v3, Lorg/webrtc/HardwareVideoDecoder;->shutdownException Ljava/lang/Exception;
+	5       (00000012) new-instance         v0, Ljava/lang/Object;
+	6       (00000016) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	7       (0000001c) iput-object          v0, v3, Lorg/webrtc/HardwareVideoDecoder;->activeOutputBuffersLock Ljava/lang/Object;
+	8       (00000020) iput                 v1, v3, Lorg/webrtc/HardwareVideoDecoder;->activeOutputBuffers I
+	9       (00000024) new-instance         v0, Ljava/lang/Object;
+	10      (00000028) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	11      (0000002e) iput-object          v0, v3, Lorg/webrtc/HardwareVideoDecoder;->dimensionLock Ljava/lang/Object;
+	12      (00000032) iput-object          v2, v3, Lorg/webrtc/HardwareVideoDecoder;->codec Landroid/media/MediaCodec;
+	13      (00000036) invoke-direct        v3, v6, Lorg/webrtc/HardwareVideoDecoder;->isSupportedColorFormat(I)Z
+	14      (0000003c) move-result          v0
+	15      (0000003e) if-nez               v0, +1b
+
+<init>-BB@0x42 : 
+	16      (00000042) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	17      (00000046) new-instance         v1, Ljava/lang/StringBuilder;
+	18      (0000004a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	19      (00000050) const-string         v2, 'Unsupported color format: '
+	20      (00000054) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (0000005a) move-result-object   v1
+	22      (0000005c) invoke-virtual       v1, v6, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	23      (00000062) move-result-object   v1
+	24      (00000064) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	25      (0000006a) move-result-object   v1
+	26      (0000006c) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	27      (00000072) throw                v0
+
+<init>-BB@0x74 : 
+	28      (00000074) iput-object          v4, v3, Lorg/webrtc/HardwareVideoDecoder;->codecName Ljava/lang/String;
+	29      (00000078) iput-object          v5, v3, Lorg/webrtc/HardwareVideoDecoder;->codecType Lorg/webrtc/VideoCodecType;
+	30      (0000007c) iput                 v6, v3, Lorg/webrtc/HardwareVideoDecoder;->colorFormat I
+	31      (00000080) new-instance         v0, Ljava/util/concurrent/LinkedBlockingDeque;
+	32      (00000084) invoke-direct        v0, Ljava/util/concurrent/LinkedBlockingDeque;-><init>()V
+	33      (0000008a) iput-object          v0, v3, Lorg/webrtc/HardwareVideoDecoder;->frameInfos Ljava/util/Deque;
+	34      (0000008e) return-void          
+

@@ -1,0 +1,18 @@
+# Lorg/webrtc/Histogram;->createCounts(Ljava/lang/String; I I I)Lorg/webrtc/Histogram; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+# - v5:int
+# - v6:int
+# - v7:int
+#
+# - return:org.webrtc.Histogram
+
+createCounts-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lorg/webrtc/Histogram;
+	1       (00000004) invoke-static        v4, v5, v6, v7, Lorg/webrtc/Histogram;->nativeCreateCounts(Ljava/lang/String; I I I)J
+	2       (0000000a) move-result-wide     v2
+	3       (0000000c) invoke-direct        v0, v2, v3, Lorg/webrtc/Histogram;-><init>(J)V
+	4       (00000012) return-object        v0
+

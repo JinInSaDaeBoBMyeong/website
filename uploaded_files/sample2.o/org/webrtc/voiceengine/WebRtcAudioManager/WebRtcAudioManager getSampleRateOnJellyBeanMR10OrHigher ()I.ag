@@ -1,0 +1,26 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioManager;->getSampleRateOnJellyBeanMR10OrHigher()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:int
+
+getSampleRateOnJellyBeanMR10OrHigher-BB@0x0 : [ getSampleRateOnJellyBeanMR10OrHigher-BB@0x14 getSampleRateOnJellyBeanMR10OrHigher-BB@0x1e ]
+	0       (00000000) iget-object          v1, v3, Lorg/webrtc/voiceengine/WebRtcAudioManager;->audioManager Landroid/media/AudioManager;
+	1       (00000004) const-string         v2, 'android.media.property.OUTPUT_SAMPLE_RATE'
+	2       (00000008) invoke-virtual       v1, v2, Landroid/media/AudioManager;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) if-nez               v0, +7
+
+getSampleRateOnJellyBeanMR10OrHigher-BB@0x14 : [ getSampleRateOnJellyBeanMR10OrHigher-BB@0x1c ]
+	5       (00000014) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->getDefaultSampleRateHz()I
+	6       (0000001a) move-result          v1
+
+getSampleRateOnJellyBeanMR10OrHigher-BB@0x1c : 
+	7       (0000001c) return               v1
+
+getSampleRateOnJellyBeanMR10OrHigher-BB@0x1e : [ getSampleRateOnJellyBeanMR10OrHigher-BB@0x1c ]
+	8       (0000001e) invoke-static        v0, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	9       (00000024) move-result          v1
+	10      (00000026) goto                 -5
+

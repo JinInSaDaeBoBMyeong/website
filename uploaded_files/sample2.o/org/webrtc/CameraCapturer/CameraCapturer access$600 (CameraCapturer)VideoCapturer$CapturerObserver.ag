@@ -1,0 +1,12 @@
+# Lorg/webrtc/CameraCapturer;->access$600(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/VideoCapturer$CapturerObserver; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.CameraCapturer
+#
+# - return:org.webrtc.VideoCapturer$CapturerObserver
+
+access$600-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/CameraCapturer;->capturerObserver Lorg/webrtc/VideoCapturer$CapturerObserver;
+	1       (00000004) return-object        v0
+

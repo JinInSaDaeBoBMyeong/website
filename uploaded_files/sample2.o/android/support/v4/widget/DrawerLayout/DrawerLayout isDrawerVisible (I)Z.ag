@@ -1,0 +1,24 @@
+# Landroid/support/v4/widget/DrawerLayout;->isDrawerVisible(I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:boolean
+
+isDrawerVisible-BB@0x0 : [ isDrawerVisible-BB@0xc isDrawerVisible-BB@0x16 ]
+	0       (00000000) invoke-virtual       v2, v3, Landroid/support/v4/widget/DrawerLayout;->findDrawerWithGravity(I)Landroid/view/View;
+	1       (00000006) move-result-object   v0
+	2       (00000008) if-eqz               v0, +7
+
+isDrawerVisible-BB@0xc : [ isDrawerVisible-BB@0x14 ]
+	3       (0000000c) invoke-virtual       v2, v0, Landroid/support/v4/widget/DrawerLayout;->isDrawerVisible(Landroid/view/View;)Z
+	4       (00000012) move-result          v1
+
+isDrawerVisible-BB@0x14 : 
+	5       (00000014) return               v1
+
+isDrawerVisible-BB@0x16 : [ isDrawerVisible-BB@0x14 ]
+	6       (00000016) const/4              v1, 0
+	7       (00000018) goto                 -2
+

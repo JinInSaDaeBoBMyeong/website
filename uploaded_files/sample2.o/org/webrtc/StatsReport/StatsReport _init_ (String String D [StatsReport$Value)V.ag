@@ -1,0 +1,19 @@
+# Lorg/webrtc/StatsReport;-><init>(Ljava/lang/String; Ljava/lang/String; D [Lorg/webrtc/StatsReport$Value;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:java.lang.String
+# - v5:double
+# - v6:org.webrtc.StatsReport$Value[]
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v2, v1, Lorg/webrtc/StatsReport;->id Ljava/lang/String;
+	2       (0000000a) iput-object          v3, v1, Lorg/webrtc/StatsReport;->type Ljava/lang/String;
+	3       (0000000e) iput-wide            v4, v1, Lorg/webrtc/StatsReport;->timestamp D
+	4       (00000012) iput-object          v6, v1, Lorg/webrtc/StatsReport;->values [Lorg/webrtc/StatsReport$Value;
+	5       (00000016) return-void          
+

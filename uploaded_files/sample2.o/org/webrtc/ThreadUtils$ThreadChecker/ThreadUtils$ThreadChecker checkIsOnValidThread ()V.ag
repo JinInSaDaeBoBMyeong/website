@@ -1,0 +1,31 @@
+# Lorg/webrtc/ThreadUtils$ThreadChecker;->checkIsOnValidThread()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+checkIsOnValidThread-BB@0x0 : [ checkIsOnValidThread-BB@0x8 checkIsOnValidThread-BB@0x14 ]
+	0       (00000000) iget-object          v0, v2, Lorg/webrtc/ThreadUtils$ThreadChecker;->thread Ljava/lang/Thread;
+	1       (00000004) if-nez               v0, +8
+
+checkIsOnValidThread-BB@0x8 : [ checkIsOnValidThread-BB@0x14 ]
+	2       (00000008) invoke-static        Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) iput-object          v0, v2, Lorg/webrtc/ThreadUtils$ThreadChecker;->thread Ljava/lang/Thread;
+
+checkIsOnValidThread-BB@0x14 : [ checkIsOnValidThread-BB@0x24 checkIsOnValidThread-BB@0x34 ]
+	5       (00000014) invoke-static        Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) iget-object          v1, v2, Lorg/webrtc/ThreadUtils$ThreadChecker;->thread Ljava/lang/Thread;
+	8       (00000020) if-eq                v0, v1, +a
+
+checkIsOnValidThread-BB@0x24 : 
+	9       (00000024) new-instance         v0, Ljava/lang/IllegalStateException;
+	10      (00000028) const-string         v1, 'Wrong thread'
+	11      (0000002c) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	12      (00000032) throw                v0
+
+checkIsOnValidThread-BB@0x34 : 
+	13      (00000034) return-void          
+

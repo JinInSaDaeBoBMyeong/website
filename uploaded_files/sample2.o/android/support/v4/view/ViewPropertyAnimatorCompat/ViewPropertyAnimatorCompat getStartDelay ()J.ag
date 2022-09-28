@@ -1,0 +1,26 @@
+# Landroid/support/v4/view/ViewPropertyAnimatorCompat;->getStartDelay()J [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:long
+
+getStartDelay-BB@0x0 : [ getStartDelay-BB@0x14 getStartDelay-BB@0x22 ]
+	0       (00000000) iget-object          v1, v4, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->mView Ljava/lang/ref/WeakReference;
+	1       (00000004) invoke-virtual       v1, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Landroid/view/View;
+	4       (00000010) if-eqz               v0, +9
+
+getStartDelay-BB@0x14 : [ getStartDelay-BB@0x20 ]
+	5       (00000014) sget-object          v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->IMPL Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+	6       (00000018) invoke-interface     v1, v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->getStartDelay(Landroid/view/View;)J
+	7       (0000001e) move-result-wide     v2
+
+getStartDelay-BB@0x20 : 
+	8       (00000020) return-wide          v2
+
+getStartDelay-BB@0x22 : [ getStartDelay-BB@0x20 ]
+	9       (00000022) const-wide/16        v2, 0 # [0.0]
+	10      (00000026) goto                 -3
+

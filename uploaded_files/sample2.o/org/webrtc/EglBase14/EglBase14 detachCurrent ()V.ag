@@ -1,0 +1,53 @@
+# Lorg/webrtc/EglBase14;->detachCurrent()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+detachCurrent-BB@0x0 : [ detachCurrent-BB@0x6 ]
+	0       (00000000) sget-object          v1, Lorg/webrtc/EglBase;->lock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v1
+
+detachCurrent-BB@0x6 : [ detachCurrent-BB@0x22 detachCurrent-BB@0x6a ]
+	2       (00000006) iget-object          v0, v5, Lorg/webrtc/EglBase14;->eglDisplay Landroid/opengl/EGLDisplay;
+	3       (0000000a) sget-object          v2, Landroid/opengl/EGL14;->EGL_NO_SURFACE Landroid/opengl/EGLSurface;
+	4       (0000000e) sget-object          v3, Landroid/opengl/EGL14;->EGL_NO_SURFACE Landroid/opengl/EGLSurface;
+	5       (00000012) sget-object          v4, Landroid/opengl/EGL14;->EGL_NO_CONTEXT Landroid/opengl/EGLContext;
+	6       (00000016) invoke-static        v0, v2, v3, v4, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay; Landroid/opengl/EGLSurface; Landroid/opengl/EGLSurface; Landroid/opengl/EGLContext;)Z
+	7       (0000001c) move-result          v0
+	8       (0000001e) if-nez               v0, +26
+	6:67
+	(Ljava/lang/Throwable; -> 64 detachCurrent-BB@0x64)
+
+detachCurrent-BB@0x22 : 
+	9       (00000022) new-instance         v0, Ljava/lang/RuntimeException;
+	10      (00000026) new-instance         v2, Ljava/lang/StringBuilder;
+	11      (0000002a) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	12      (00000030) const-string         v3, 'eglDetachCurrent failed: 0x'
+	13      (00000034) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003a) move-result-object   v2
+	15      (0000003c) invoke-static        Landroid/opengl/EGL14;->eglGetError()I
+	16      (00000042) move-result          v3
+	17      (00000044) invoke-static        v3, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	18      (0000004a) move-result-object   v3
+	19      (0000004c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000052) move-result-object   v2
+	21      (00000054) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	22      (0000005a) move-result-object   v2
+	23      (0000005c) invoke-direct        v0, v2, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	24      (00000062) throw                v0
+	6:67
+	(Ljava/lang/Throwable; -> 64 detachCurrent-BB@0x64)
+
+detachCurrent-BB@0x64 : 
+	25      (00000064) move-exception       v0
+	26      (00000066) monitor-exit         v1
+	27      (00000068) throw                v0
+
+detachCurrent-BB@0x6a : 
+	28      (0000006a) monitor-exit         v1
+	29      (0000006c) return-void          
+	6a:6b
+	(Ljava/lang/Throwable; -> 64 detachCurrent-BB@0x64)
+

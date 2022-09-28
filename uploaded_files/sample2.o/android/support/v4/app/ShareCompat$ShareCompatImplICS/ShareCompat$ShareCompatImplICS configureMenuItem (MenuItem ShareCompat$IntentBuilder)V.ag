@@ -1,0 +1,27 @@
+# Landroid/support/v4/app/ShareCompat$ShareCompatImplICS;->configureMenuItem(Landroid/view/MenuItem; Landroid/support/v4/app/ShareCompat$IntentBuilder;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.MenuItem
+# - v4:android.support.v4.app.ShareCompat$IntentBuilder
+#
+# - return:void
+
+configureMenuItem-BB@0x0 : [ configureMenuItem-BB@0x22 configureMenuItem-BB@0x30 ]
+	0       (00000000) invoke-virtual       v4, Landroid/support/v4/app/ShareCompat$IntentBuilder;->getActivity()Landroid/app/Activity;
+	1       (00000006) move-result-object   v0
+	2       (00000008) invoke-virtual       v4, Landroid/support/v4/app/ShareCompat$IntentBuilder;->getIntent()Landroid/content/Intent;
+	3       (0000000e) move-result-object   v1
+	4       (00000010) invoke-static        v3, v0, v1, Landroid/support/v4/app/ShareCompatICS;->configureMenuItem(Landroid/view/MenuItem; Landroid/app/Activity; Landroid/content/Intent;)V
+	5       (00000016) invoke-virtual       v2, v3, Landroid/support/v4/app/ShareCompat$ShareCompatImplICS;->shouldAddChooserIntent(Landroid/view/MenuItem;)Z
+	6       (0000001c) move-result          v0
+	7       (0000001e) if-eqz               v0, +9
+
+configureMenuItem-BB@0x22 : [ configureMenuItem-BB@0x30 ]
+	8       (00000022) invoke-virtual       v4, Landroid/support/v4/app/ShareCompat$IntentBuilder;->createChooserIntent()Landroid/content/Intent;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) invoke-interface     v3, v0, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
+
+configureMenuItem-BB@0x30 : 
+	11      (00000030) return-void          
+

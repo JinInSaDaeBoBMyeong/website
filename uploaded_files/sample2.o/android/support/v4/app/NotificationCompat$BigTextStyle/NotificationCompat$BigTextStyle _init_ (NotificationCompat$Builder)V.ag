@@ -1,0 +1,13 @@
+# Landroid/support/v4/app/NotificationCompat$BigTextStyle;-><init>(Landroid/support/v4/app/NotificationCompat$Builder;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.app.NotificationCompat$Builder
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Landroid/support/v4/app/NotificationCompat$Style;-><init>()V
+	1       (00000006) invoke-virtual       v0, v1, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->setBuilder(Landroid/support/v4/app/NotificationCompat$Builder;)V
+	2       (0000000c) return-void          
+

@@ -1,0 +1,22 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->onSizeChanged(I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+# - v4:int
+# - v5:int
+#
+# - return:void
+
+onSizeChanged-BB@0x0 : [ onSizeChanged-BB@0xa onSizeChanged-BB@0x10 ]
+	0       (00000000) invoke-super         v1, v2, v3, v4, v5, Landroid/view/ViewGroup;->onSizeChanged(I I I I)V
+	1       (00000006) if-eq                v2, v4, +5
+
+onSizeChanged-BB@0xa : [ onSizeChanged-BB@0x10 ]
+	2       (0000000a) const/4              v0, 1
+	3       (0000000c) iput-boolean         v0, v1, Landroid/support/v4/widget/SlidingPaneLayout;->mFirstLayout Z
+
+onSizeChanged-BB@0x10 : 
+	4       (00000010) return-void          
+

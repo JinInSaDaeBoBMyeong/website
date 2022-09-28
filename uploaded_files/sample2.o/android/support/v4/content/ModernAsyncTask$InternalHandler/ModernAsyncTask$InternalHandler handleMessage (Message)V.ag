@@ -1,0 +1,35 @@
+# Landroid/support/v4/content/ModernAsyncTask$InternalHandler;->handleMessage(Landroid/os/Message;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.os.Message
+#
+# - return:void
+
+handleMessage-BB@0x0 : [ D:handleMessage-BB@0x12 1:handleMessage-BB@0x14 2:handleMessage-BB@0x2a ]
+	0       (00000000) iget-object          v0, v5, Landroid/os/Message;->obj Ljava/lang/Object;
+	1       (00000004) check-cast           v0, Landroid/support/v4/content/ModernAsyncTask$AsyncTaskResult;
+	2       (00000008) iget                 v1, v5, Landroid/os/Message;->what I
+	3       (0000000c) packed-switch        v1, +18 (0x3c)
+
+handleMessage-BB@0x12 : 
+	4       (00000012) return-void          
+
+handleMessage-BB@0x14 : [ handleMessage-BB@0x12 ]
+	5       (00000014) iget-object          v1, v0, Landroid/support/v4/content/ModernAsyncTask$AsyncTaskResult;->mTask Landroid/support/v4/content/ModernAsyncTask;
+	6       (00000018) iget-object          v2, v0, Landroid/support/v4/content/ModernAsyncTask$AsyncTaskResult;->mData [Ljava/lang/Object;
+	7       (0000001c) const/4              v3, 0
+	8       (0000001e) aget-object          v2, v2, v3
+	9       (00000022) invoke-static        v1, v2, Landroid/support/v4/content/ModernAsyncTask;->access$500(Landroid/support/v4/content/ModernAsyncTask; Ljava/lang/Object;)V
+	10      (00000028) goto                 -b
+
+handleMessage-BB@0x2a : [ handleMessage-BB@0x12 ]
+	11      (0000002a) iget-object          v1, v0, Landroid/support/v4/content/ModernAsyncTask$AsyncTaskResult;->mTask Landroid/support/v4/content/ModernAsyncTask;
+	12      (0000002e) iget-object          v2, v0, Landroid/support/v4/content/ModernAsyncTask$AsyncTaskResult;->mData [Ljava/lang/Object;
+	13      (00000032) invoke-virtual       v1, v2, Landroid/support/v4/content/ModernAsyncTask;->onProgressUpdate([Ljava/lang/Object;)V
+	14      (00000038) goto                 -13
+
+handleMessage-BB@0x3a : 
+	15      (0000003a) nop                  
+	16      (0000003c) packed-switch-payload 1 2
+

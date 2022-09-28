@@ -1,0 +1,31 @@
+# Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;-><init>(Landroid/content/Context;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v0, Ljava/util/HashMap;
+	2       (0000000a) invoke-direct        v0, Ljava/util/HashMap;-><init>()V
+	3       (00000010) iput-object          v0, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->mRecordMap Ljava/util/Map;
+	4       (00000014) new-instance         v0, Ljava/util/HashSet;
+	5       (00000018) invoke-direct        v0, Ljava/util/HashSet;-><init>()V
+	6       (0000001e) iput-object          v0, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->mCachedEnabledPackages Ljava/util/Set;
+	7       (00000022) iput-object          v3, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->mContext Landroid/content/Context;
+	8       (00000026) new-instance         v0, Landroid/os/HandlerThread;
+	9       (0000002a) const-string         v1, 'NotificationManagerCompat'
+	10      (0000002e) invoke-direct        v0, v1, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+	11      (00000034) iput-object          v0, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->mHandlerThread Landroid/os/HandlerThread;
+	12      (00000038) iget-object          v0, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->mHandlerThread Landroid/os/HandlerThread;
+	13      (0000003c) invoke-virtual       v0, Landroid/os/HandlerThread;->start()V
+	14      (00000042) new-instance         v0, Landroid/os/Handler;
+	15      (00000046) iget-object          v1, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->mHandlerThread Landroid/os/HandlerThread;
+	16      (0000004a) invoke-virtual       v1, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+	17      (00000050) move-result-object   v1
+	18      (00000052) invoke-direct        v0, v1, v2, Landroid/os/Handler;-><init>(Landroid/os/Looper; Landroid/os/Handler$Callback;)V
+	19      (00000058) iput-object          v0, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->mHandler Landroid/os/Handler;
+	20      (0000005c) return-void          
+

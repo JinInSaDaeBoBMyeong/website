@@ -1,0 +1,113 @@
+# Landroid/support/v4/view/ViewPager;->smoothScrollTo(I I I)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v15
+# - v16:int
+# - v17:int
+# - v18:int
+#
+# - return:void
+
+smoothScrollTo-BB@0x0 : [ smoothScrollTo-BB@0xc smoothScrollTo-BB@0x16 ]
+	0       (00000000) invoke-virtual       v15, Landroid/support/v4/view/ViewPager;->getChildCount()I
+	1       (00000006) move-result          v1
+	2       (00000008) if-nez               v1, +7
+
+smoothScrollTo-BB@0xc : [ smoothScrollTo-BB@0x14 ]
+	3       (0000000c) const/4              v1, 0
+	4       (0000000e) invoke-direct        v15, v1, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
+
+smoothScrollTo-BB@0x14 : 
+	5       (00000014) return-void          
+
+smoothScrollTo-BB@0x16 : [ smoothScrollTo-BB@0x32 smoothScrollTo-BB@0x4e ]
+	6       (00000016) invoke-virtual       v15, Landroid/support/v4/view/ViewPager;->getScrollX()I
+	7       (0000001c) move-result          v2
+	8       (0000001e) invoke-virtual       v15, Landroid/support/v4/view/ViewPager;->getScrollY()I
+	9       (00000024) move-result          v3
+	10      (00000026) sub-int              v4, v16, v2
+	11      (0000002a) sub-int              v5, v17, v3
+	12      (0000002e) if-nez               v4, +10
+
+smoothScrollTo-BB@0x32 : [ smoothScrollTo-BB@0x36 smoothScrollTo-BB@0x4e ]
+	13      (00000032) if-nez               v5, +e
+
+smoothScrollTo-BB@0x36 : [ smoothScrollTo-BB@0x14 ]
+	14      (00000036) const/4              v1, 0
+	15      (00000038) invoke-direct        v15, v1, Landroid/support/v4/view/ViewPager;->completeScroll(Z)V
+	16      (0000003e) invoke-virtual       v15, Landroid/support/v4/view/ViewPager;->populate()V
+	17      (00000044) const/4              v1, 0
+	18      (00000046) invoke-direct        v15, v1, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
+	19      (0000004c) goto                 -1c
+
+smoothScrollTo-BB@0x4e : [ smoothScrollTo-BB@0xaa smoothScrollTo-BB@0xec ]
+	20      (0000004e) const/4              v1, 1
+	21      (00000050) invoke-direct        v15, v1, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
+	22      (00000056) const/4              v1, 2
+	23      (00000058) invoke-direct        v15, v1, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
+	24      (0000005e) invoke-direct        v15, Landroid/support/v4/view/ViewPager;->getClientWidth()I
+	25      (00000064) move-result          v12
+	26      (00000066) div-int/lit8         v9, v12, 2
+	27      (0000006a) const/high16         v1, 16256 # [1.0]
+	28      (0000006e) const/high16         v13, 16256 # [1.0]
+	29      (00000072) invoke-static        v4, Ljava/lang/Math;->abs(I)I
+	30      (00000078) move-result          v14
+	31      (0000007a) int-to-float         v14, v14
+	32      (0000007c) mul-float/2addr      v13, v14
+	33      (0000007e) int-to-float         v14, v12
+	34      (00000080) div-float/2addr      v13, v14
+	35      (00000082) invoke-static        v1, v13, Ljava/lang/Math;->min(F F)F
+	36      (00000088) move-result          v8
+	37      (0000008a) int-to-float         v1, v9
+	38      (0000008c) int-to-float         v13, v9
+	39      (0000008e) invoke-virtual       v15, v8, Landroid/support/v4/view/ViewPager;->distanceInfluenceForSnapDuration(F)F
+	40      (00000094) move-result          v14
+	41      (00000096) mul-float/2addr      v13, v14
+	42      (00000098) add-float            v7, v1, v13
+	43      (0000009c) const/4              v6, 0
+	44      (0000009e) invoke-static/range  v18, Ljava/lang/Math;->abs(I)I
+	45      (000000a4) move-result          v18
+	46      (000000a6) if-lez               v18, +23
+
+smoothScrollTo-BB@0xaa : [ smoothScrollTo-BB@0xce ]
+	47      (000000aa) const/high16         v1, 17530 # [1000.0]
+	48      (000000ae) move/from16          v0, v18
+	49      (000000b2) int-to-float         v13, v0
+	50      (000000b4) div-float            v13, v7, v13
+	51      (000000b8) invoke-static        v13, Ljava/lang/Math;->abs(F)F
+	52      (000000be) move-result          v13
+	53      (000000c0) mul-float/2addr      v1, v13
+	54      (000000c2) invoke-static        v1, Ljava/lang/Math;->round(F)I
+	55      (000000c8) move-result          v1
+	56      (000000ca) mul-int/lit8         v6, v1, 4
+
+smoothScrollTo-BB@0xce : [ smoothScrollTo-BB@0x14 ]
+	57      (000000ce) const/16             v1, 600
+	58      (000000d2) invoke-static        v6, v1, Ljava/lang/Math;->min(I I)I
+	59      (000000d8) move-result          v6
+	60      (000000da) iget-object          v1, v15, Landroid/support/v4/view/ViewPager;->mScroller Landroid/widget/Scroller;
+	61      (000000de) invoke-virtual/range v1 ... v6, Landroid/widget/Scroller;->startScroll(I I I I I)V
+	62      (000000e4) invoke-static        v15, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
+	63      (000000ea) goto                 -6b
+
+smoothScrollTo-BB@0xec : [ smoothScrollTo-BB@0xce ]
+	64      (000000ec) int-to-float         v1, v12
+	65      (000000ee) iget-object          v13, v15, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	66      (000000f2) iget                 v14, v15, Landroid/support/v4/view/ViewPager;->mCurItem I
+	67      (000000f6) invoke-virtual       v13, v14, Landroid/support/v4/view/PagerAdapter;->getPageWidth(I)F
+	68      (000000fc) move-result          v13
+	69      (000000fe) mul-float            v11, v1, v13
+	70      (00000102) invoke-static        v4, Ljava/lang/Math;->abs(I)I
+	71      (00000108) move-result          v1
+	72      (0000010a) int-to-float         v1, v1
+	73      (0000010c) iget                 v13, v15, Landroid/support/v4/view/ViewPager;->mPageMargin I
+	74      (00000110) int-to-float         v13, v13
+	75      (00000112) add-float/2addr      v13, v11
+	76      (00000114) div-float            v10, v1, v13
+	77      (00000118) const/high16         v1, 16256 # [1.0]
+	78      (0000011c) add-float/2addr      v1, v10
+	79      (0000011e) const/high16         v13, 17096 # [100.0]
+	80      (00000122) mul-float/2addr      v1, v13
+	81      (00000124) float-to-int         v6, v1
+	82      (00000126) goto                 -2c
+

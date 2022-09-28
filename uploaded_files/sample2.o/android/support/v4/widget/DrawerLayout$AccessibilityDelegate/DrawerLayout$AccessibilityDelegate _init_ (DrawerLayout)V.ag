@@ -1,0 +1,16 @@
+# Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;-><init>(Landroid/support/v4/widget/DrawerLayout;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.v4.widget.DrawerLayout
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v2, v1, Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;->this$0 Landroid/support/v4/widget/DrawerLayout;
+	1       (00000004) invoke-direct        v1, Landroid/support/v4/view/AccessibilityDelegateCompat;-><init>()V
+	2       (0000000a) new-instance         v0, Landroid/graphics/Rect;
+	3       (0000000e) invoke-direct        v0, Landroid/graphics/Rect;-><init>()V
+	4       (00000014) iput-object          v0, v1, Landroid/support/v4/widget/DrawerLayout$AccessibilityDelegate;->mTmpRect Landroid/graphics/Rect;
+	5       (00000018) return-void          
+

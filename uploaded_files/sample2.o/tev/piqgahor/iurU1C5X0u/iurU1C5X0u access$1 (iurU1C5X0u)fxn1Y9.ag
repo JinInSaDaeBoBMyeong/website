@@ -1,0 +1,12 @@
+# Ltev/piqgahor/iurU1C5X0u;->access$1(Ltev/piqgahor/iurU1C5X0u;)Ltev/piqgahor/fxn1Y9; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:tev.piqgahor.iurU1C5X0u
+#
+# - return:tev.piqgahor.fxn1Y9
+
+access$1-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Ltev/piqgahor/iurU1C5X0u;->PJaveCi5UQ5 Ltev/piqgahor/fxn1Y9;
+	1       (00000004) return-object        v0
+

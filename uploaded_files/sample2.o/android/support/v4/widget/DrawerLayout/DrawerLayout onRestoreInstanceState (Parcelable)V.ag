@@ -1,0 +1,35 @@
+# Landroid/support/v4/widget/DrawerLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.os.Parcelable
+#
+# - return:void
+
+onRestoreInstanceState-BB@0x0 : [ onRestoreInstanceState-BB@0x1c onRestoreInstanceState-BB@0x32 ]
+	0       (00000000) move-object          v0, v5
+	1       (00000002) check-cast           v0, Landroid/support/v4/widget/DrawerLayout$SavedState;
+	2       (00000006) invoke-virtual       v0, Landroid/support/v4/widget/DrawerLayout$SavedState;->getSuperState()Landroid/os/Parcelable;
+	3       (0000000c) move-result-object   v2
+	4       (0000000e) invoke-super         v4, v2, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+	5       (00000014) iget                 v2, v0, Landroid/support/v4/widget/DrawerLayout$SavedState;->openDrawerGravity I
+	6       (00000018) if-eqz               v2, +d
+
+onRestoreInstanceState-BB@0x1c : [ onRestoreInstanceState-BB@0x2c onRestoreInstanceState-BB@0x32 ]
+	7       (0000001c) iget                 v2, v0, Landroid/support/v4/widget/DrawerLayout$SavedState;->openDrawerGravity I
+	8       (00000020) invoke-virtual       v4, v2, Landroid/support/v4/widget/DrawerLayout;->findDrawerWithGravity(I)Landroid/view/View;
+	9       (00000026) move-result-object   v1
+	10      (00000028) if-eqz               v1, +5
+
+onRestoreInstanceState-BB@0x2c : [ onRestoreInstanceState-BB@0x32 ]
+	11      (0000002c) invoke-virtual       v4, v1, Landroid/support/v4/widget/DrawerLayout;->openDrawer(Landroid/view/View;)V
+
+onRestoreInstanceState-BB@0x32 : 
+	12      (00000032) iget                 v2, v0, Landroid/support/v4/widget/DrawerLayout$SavedState;->lockModeLeft I
+	13      (00000036) const/4              v3, 3
+	14      (00000038) invoke-virtual       v4, v2, v3, Landroid/support/v4/widget/DrawerLayout;->setDrawerLockMode(I I)V
+	15      (0000003e) iget                 v2, v0, Landroid/support/v4/widget/DrawerLayout$SavedState;->lockModeRight I
+	16      (00000042) const/4              v3, 5
+	17      (00000044) invoke-virtual       v4, v2, v3, Landroid/support/v4/widget/DrawerLayout;->setDrawerLockMode(I I)V
+	18      (0000004a) return-void          
+

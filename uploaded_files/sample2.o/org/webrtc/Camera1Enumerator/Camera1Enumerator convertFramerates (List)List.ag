@@ -1,0 +1,35 @@
+# Lorg/webrtc/Camera1Enumerator;->convertFramerates(Ljava/util/List;)Ljava/util/List; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.util.List
+#
+# - return:java.util.List
+
+convertFramerates-BB@0x0 : [ convertFramerates-BB@0x12 ]
+	0       (00000000) new-instance         v1, Ljava/util/ArrayList;
+	1       (00000004) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	2       (0000000a) invoke-interface     v6, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	3       (00000010) move-result-object   v2
+
+convertFramerates-BB@0x12 : [ convertFramerates-BB@0x1e convertFramerates-BB@0x48 ]
+	4       (00000012) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	5       (00000018) move-result          v3
+	6       (0000001a) if-eqz               v3, +17
+
+convertFramerates-BB@0x1e : [ convertFramerates-BB@0x12 ]
+	7       (0000001e) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	8       (00000024) move-result-object   v0
+	9       (00000026) check-cast           v0, [I
+	10      (0000002a) new-instance         v3, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;
+	11      (0000002e) const/4              v4, 0
+	12      (00000030) aget                 v4, v0, v4
+	13      (00000034) const/4              v5, 1
+	14      (00000036) aget                 v5, v0, v5
+	15      (0000003a) invoke-direct        v3, v4, v5, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;-><init>(I I)V
+	16      (00000040) invoke-interface     v1, v3, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	17      (00000046) goto                 -1a
+
+convertFramerates-BB@0x48 : 
+	18      (00000048) return-object        v1
+

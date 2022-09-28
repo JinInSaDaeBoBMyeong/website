@@ -1,0 +1,38 @@
+# Landroid/support/v4/widget/AutoScrollHelper;->shouldAnimate()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+shouldAnimate-BB@0x0 : [ shouldAnimate-BB@0x18 shouldAnimate-BB@0x24 ]
+	0       (00000000) iget-object          v1, v4, Landroid/support/v4/widget/AutoScrollHelper;->mScroller Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	1       (00000004) invoke-virtual       v1, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->getVerticalDirection()I
+	2       (0000000a) move-result          v2
+	3       (0000000c) invoke-virtual       v1, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->getHorizontalDirection()I
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v2, +8
+
+shouldAnimate-BB@0x18 : [ shouldAnimate-BB@0x24 shouldAnimate-BB@0x34 ]
+	6       (00000018) invoke-virtual       v4, v2, Landroid/support/v4/widget/AutoScrollHelper;->canTargetScrollVertically(I)Z
+	7       (0000001e) move-result          v3
+	8       (00000020) if-nez               v3, +a
+
+shouldAnimate-BB@0x24 : [ shouldAnimate-BB@0x28 shouldAnimate-BB@0x38 ]
+	9       (00000024) if-eqz               v0, +a
+
+shouldAnimate-BB@0x28 : [ shouldAnimate-BB@0x34 shouldAnimate-BB@0x38 ]
+	10      (00000028) invoke-virtual       v4, v0, Landroid/support/v4/widget/AutoScrollHelper;->canTargetScrollHorizontally(I)Z
+	11      (0000002e) move-result          v3
+	12      (00000030) if-eqz               v3, +4
+
+shouldAnimate-BB@0x34 : [ shouldAnimate-BB@0x36 ]
+	13      (00000034) const/4              v3, 1
+
+shouldAnimate-BB@0x36 : 
+	14      (00000036) return               v3
+
+shouldAnimate-BB@0x38 : [ shouldAnimate-BB@0x36 ]
+	15      (00000038) const/4              v3, 0
+	16      (0000003a) goto                 -2
+

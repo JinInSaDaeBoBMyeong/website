@@ -1,0 +1,35 @@
+# Landroid/support/v4/app/FragmentActivity;->onReallyStop()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onReallyStop-BB@0x0 : [ onReallyStop-BB@0x8 onReallyStop-BB@0x28 ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/v4/app/FragmentActivity;->mLoadersStarted Z
+	1       (00000004) if-eqz               v0, +12
+
+onReallyStop-BB@0x8 : [ onReallyStop-BB@0x16 onReallyStop-BB@0x28 ]
+	2       (00000008) const/4              v0, 0
+	3       (0000000a) iput-boolean         v0, v1, Landroid/support/v4/app/FragmentActivity;->mLoadersStarted Z
+	4       (0000000e) iget-object          v0, v1, Landroid/support/v4/app/FragmentActivity;->mLoaderManager Landroid/support/v4/app/LoaderManagerImpl;
+	5       (00000012) if-eqz               v0, +b
+
+onReallyStop-BB@0x16 : [ onReallyStop-BB@0x1e onReallyStop-BB@0x34 ]
+	6       (00000016) iget-boolean         v0, v1, Landroid/support/v4/app/FragmentActivity;->mRetaining Z
+	7       (0000001a) if-nez               v0, +d
+
+onReallyStop-BB@0x1e : [ onReallyStop-BB@0x28 ]
+	8       (0000001e) iget-object          v0, v1, Landroid/support/v4/app/FragmentActivity;->mLoaderManager Landroid/support/v4/app/LoaderManagerImpl;
+	9       (00000022) invoke-virtual       v0, Landroid/support/v4/app/LoaderManagerImpl;->doStop()V
+
+onReallyStop-BB@0x28 : 
+	10      (00000028) iget-object          v0, v1, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	11      (0000002c) invoke-virtual       v0, Landroid/support/v4/app/FragmentManagerImpl;->dispatchReallyStop()V
+	12      (00000032) return-void          
+
+onReallyStop-BB@0x34 : [ onReallyStop-BB@0x28 ]
+	13      (00000034) iget-object          v0, v1, Landroid/support/v4/app/FragmentActivity;->mLoaderManager Landroid/support/v4/app/LoaderManagerImpl;
+	14      (00000038) invoke-virtual       v0, Landroid/support/v4/app/LoaderManagerImpl;->doRetain()V
+	15      (0000003e) goto                 -b
+

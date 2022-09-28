@@ -1,0 +1,12 @@
+# Landroid/support/v4/widget/SwipeRefreshLayout;->access$1300(Landroid/support/v4/widget/SwipeRefreshLayout;)Landroid/view/animation/Animation; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.widget.SwipeRefreshLayout
+#
+# - return:android.view.animation.Animation
+
+access$1300-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/widget/SwipeRefreshLayout;->mShrinkTrigger Landroid/view/animation/Animation;
+	1       (00000004) return-object        v0
+

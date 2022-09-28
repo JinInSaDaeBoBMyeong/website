@@ -1,0 +1,56 @@
+# Landroid/support/v4/print/PrintHelperKitkat;->getMatrix(I I Landroid/graphics/RectF; I)Landroid/graphics/Matrix; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+# - v9:int
+# - v10:android.graphics.RectF
+# - v11:int
+#
+# - return:android.graphics.Matrix
+
+getMatrix-BB@0x0 : [ getMatrix-BB@0x22 getMatrix-BB@0x68 ]
+	0       (00000000) const/high16         v6, 16384 # [2.0]
+	1       (00000004) new-instance         v0, Landroid/graphics/Matrix;
+	2       (00000008) invoke-direct        v0, Landroid/graphics/Matrix;-><init>()V
+	3       (0000000e) invoke-virtual       v10, Landroid/graphics/RectF;->width()F
+	4       (00000014) move-result          v4
+	5       (00000016) int-to-float         v5, v8
+	6       (00000018) div-float            v1, v4, v5
+	7       (0000001c) const/4              v4, 2
+	8       (0000001e) if-ne                v11, v4, +25
+
+getMatrix-BB@0x22 : [ getMatrix-BB@0x36 ]
+	9       (00000022) invoke-virtual       v10, Landroid/graphics/RectF;->height()F
+	10      (00000028) move-result          v4
+	11      (0000002a) int-to-float         v5, v9
+	12      (0000002c) div-float/2addr      v4, v5
+	13      (0000002e) invoke-static        v1, v4, Ljava/lang/Math;->max(F F)F
+	14      (00000034) move-result          v1
+
+getMatrix-BB@0x36 : 
+	15      (00000036) invoke-virtual       v0, v1, v1, Landroid/graphics/Matrix;->postScale(F F)Z
+	16      (0000003c) invoke-virtual       v10, Landroid/graphics/RectF;->width()F
+	17      (00000042) move-result          v4
+	18      (00000044) int-to-float         v5, v8
+	19      (00000046) mul-float/2addr      v5, v1
+	20      (00000048) sub-float/2addr      v4, v5
+	21      (0000004a) div-float            v2, v4, v6
+	22      (0000004e) invoke-virtual       v10, Landroid/graphics/RectF;->height()F
+	23      (00000054) move-result          v4
+	24      (00000056) int-to-float         v5, v9
+	25      (00000058) mul-float/2addr      v5, v1
+	26      (0000005a) sub-float/2addr      v4, v5
+	27      (0000005c) div-float            v3, v4, v6
+	28      (00000060) invoke-virtual       v0, v2, v3, Landroid/graphics/Matrix;->postTranslate(F F)Z
+	29      (00000066) return-object        v0
+
+getMatrix-BB@0x68 : [ getMatrix-BB@0x36 ]
+	30      (00000068) invoke-virtual       v10, Landroid/graphics/RectF;->height()F
+	31      (0000006e) move-result          v4
+	32      (00000070) int-to-float         v5, v9
+	33      (00000072) div-float/2addr      v4, v5
+	34      (00000074) invoke-static        v1, v4, Ljava/lang/Math;->min(F F)F
+	35      (0000007a) move-result          v1
+	36      (0000007c) goto                 -23
+

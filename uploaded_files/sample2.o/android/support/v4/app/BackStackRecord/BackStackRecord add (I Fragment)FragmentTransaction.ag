@@ -1,0 +1,15 @@
+# Landroid/support/v4/app/BackStackRecord;->add(I Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:android.support.v4.app.Fragment
+#
+# - return:android.support.v4.app.FragmentTransaction
+
+add-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const/4              v1, 1
+	2       (00000004) invoke-direct        v2, v3, v4, v0, v1, Landroid/support/v4/app/BackStackRecord;->doAddOp(I Landroid/support/v4/app/Fragment; Ljava/lang/String; I)V
+	3       (0000000a) return-object        v2
+

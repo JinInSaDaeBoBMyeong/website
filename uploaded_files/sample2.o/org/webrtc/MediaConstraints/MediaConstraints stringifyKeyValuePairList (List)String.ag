@@ -1,0 +1,47 @@
+# Lorg/webrtc/MediaConstraints;->stringifyKeyValuePairList(Ljava/util/List;)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.util.List
+#
+# - return:java.lang.String
+
+stringifyKeyValuePairList-BB@0x0 : [ stringifyKeyValuePairList-BB@0x16 ]
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) const-string         v2, '['
+	2       (00000008) invoke-direct        v0, v2, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	3       (0000000e) invoke-interface     v5, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	4       (00000014) move-result-object   v2
+
+stringifyKeyValuePairList-BB@0x16 : [ stringifyKeyValuePairList-BB@0x22 stringifyKeyValuePairList-BB@0x56 ]
+	5       (00000016) invoke-interface     v2, Ljava/util/Iterator;->hasNext()Z
+	6       (0000001c) move-result          v3
+	7       (0000001e) if-eqz               v3, +1c
+
+stringifyKeyValuePairList-BB@0x22 : [ stringifyKeyValuePairList-BB@0x3c stringifyKeyValuePairList-BB@0x46 ]
+	8       (00000022) invoke-interface     v2, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) check-cast           v1, Lorg/webrtc/MediaConstraints$KeyValuePair;
+	11      (0000002e) invoke-virtual       v0, Ljava/lang/StringBuilder;->length()I
+	12      (00000034) move-result          v3
+	13      (00000036) const/4              v4, 1
+	14      (00000038) if-le                v3, v4, +7
+
+stringifyKeyValuePairList-BB@0x3c : [ stringifyKeyValuePairList-BB@0x46 ]
+	15      (0000003c) const-string         v3, ', '
+	16      (00000040) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+stringifyKeyValuePairList-BB@0x46 : [ stringifyKeyValuePairList-BB@0x16 ]
+	17      (00000046) invoke-virtual       v1, Lorg/webrtc/MediaConstraints$KeyValuePair;->toString()Ljava/lang/String;
+	18      (0000004c) move-result-object   v3
+	19      (0000004e) invoke-virtual       v0, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000054) goto                 -1f
+
+stringifyKeyValuePairList-BB@0x56 : 
+	21      (00000056) const-string         v2, ']'
+	22      (0000005a) invoke-virtual       v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000060) move-result-object   v2
+	24      (00000062) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	25      (00000068) move-result-object   v2
+	26      (0000006a) return-object        v2
+

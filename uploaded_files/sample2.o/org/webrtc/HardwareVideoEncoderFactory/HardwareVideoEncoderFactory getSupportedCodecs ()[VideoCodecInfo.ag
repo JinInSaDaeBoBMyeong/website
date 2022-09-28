@@ -1,0 +1,71 @@
+# Lorg/webrtc/HardwareVideoEncoderFactory;->getSupportedCodecs()[Lorg/webrtc/VideoCodecInfo; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v11
+#
+# - return:org.webrtc.VideoCodecInfo[]
+
+getSupportedCodecs-BB@0x0 : [ getSupportedCodecs-BB@0x32 ]
+	0       (00000000) const/4              v10, 1
+	1       (00000002) const/4              v5, 0
+	2       (00000004) new-instance         v2, Ljava/util/ArrayList;
+	3       (00000008) invoke-direct        v2, Ljava/util/ArrayList;-><init>()V
+	4       (0000000e) const/4              v4, 3
+	5       (00000010) new-array            v6, v4, [Lorg/webrtc/VideoCodecType;
+	6       (00000014) sget-object          v4, Lorg/webrtc/VideoCodecType;->VP8 Lorg/webrtc/VideoCodecType;
+	7       (00000018) aput-object          v4, v6, v5
+	8       (0000001c) sget-object          v4, Lorg/webrtc/VideoCodecType;->VP9 Lorg/webrtc/VideoCodecType;
+	9       (00000020) aput-object          v4, v6, v10
+	10      (00000024) const/4              v4, 2
+	11      (00000026) sget-object          v7, Lorg/webrtc/VideoCodecType;->H264 Lorg/webrtc/VideoCodecType;
+	12      (0000002a) aput-object          v7, v6, v4
+	13      (0000002e) array-length         v7, v6
+	14      (00000030) move                 v4, v5
+
+getSupportedCodecs-BB@0x32 : [ getSupportedCodecs-BB@0x36 getSupportedCodecs-BB@0x98 ]
+	15      (00000032) if-ge                v4, v7, +33
+
+getSupportedCodecs-BB@0x36 : [ getSupportedCodecs-BB@0x46 getSupportedCodecs-BB@0x92 ]
+	16      (00000036) aget-object          v3, v6, v4
+	17      (0000003a) invoke-direct        v11, v3, Lorg/webrtc/HardwareVideoEncoderFactory;->findCodecForType(Lorg/webrtc/VideoCodecType;)Landroid/media/MediaCodecInfo;
+	18      (00000040) move-result-object   v0
+	19      (00000042) if-eqz               v0, +28
+
+getSupportedCodecs-BB@0x46 : [ getSupportedCodecs-BB@0x56 getSupportedCodecs-BB@0x7a ]
+	20      (00000046) invoke-virtual       v3, Lorg/webrtc/VideoCodecType;->name()Ljava/lang/String;
+	21      (0000004c) move-result-object   v1
+	22      (0000004e) sget-object          v8, Lorg/webrtc/VideoCodecType;->H264 Lorg/webrtc/VideoCodecType;
+	23      (00000052) if-ne                v3, v8, +14
+
+getSupportedCodecs-BB@0x56 : [ getSupportedCodecs-BB@0x62 getSupportedCodecs-BB@0x7a ]
+	24      (00000056) invoke-direct        v11, v0, Lorg/webrtc/HardwareVideoEncoderFactory;->isH264HighProfileSupported(Landroid/media/MediaCodecInfo;)Z
+	25      (0000005c) move-result          v8
+	26      (0000005e) if-eqz               v8, +e
+
+getSupportedCodecs-BB@0x62 : [ getSupportedCodecs-BB@0x7a ]
+	27      (00000062) new-instance         v8, Lorg/webrtc/VideoCodecInfo;
+	28      (00000066) invoke-direct        v11, v3, v10, Lorg/webrtc/HardwareVideoEncoderFactory;->getCodecProperties(Lorg/webrtc/VideoCodecType; Z)Ljava/util/Map;
+	29      (0000006c) move-result-object   v9
+	30      (0000006e) invoke-direct        v8, v5, v1, v9, Lorg/webrtc/VideoCodecInfo;-><init>(I Ljava/lang/String; Ljava/util/Map;)V
+	31      (00000074) invoke-interface     v2, v8, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+getSupportedCodecs-BB@0x7a : [ getSupportedCodecs-BB@0x92 ]
+	32      (0000007a) new-instance         v8, Lorg/webrtc/VideoCodecInfo;
+	33      (0000007e) invoke-direct        v11, v3, v5, Lorg/webrtc/HardwareVideoEncoderFactory;->getCodecProperties(Lorg/webrtc/VideoCodecType; Z)Ljava/util/Map;
+	34      (00000084) move-result-object   v9
+	35      (00000086) invoke-direct        v8, v5, v1, v9, Lorg/webrtc/VideoCodecInfo;-><init>(I Ljava/lang/String; Ljava/util/Map;)V
+	36      (0000008c) invoke-interface     v2, v8, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+getSupportedCodecs-BB@0x92 : [ getSupportedCodecs-BB@0x32 ]
+	37      (00000092) add-int/lit8         v4, v4, 1
+	38      (00000096) goto                 -32
+
+getSupportedCodecs-BB@0x98 : 
+	39      (00000098) invoke-interface     v2, Ljava/util/List;->size()I
+	40      (0000009e) move-result          v4
+	41      (000000a0) new-array            v4, v4, [Lorg/webrtc/VideoCodecInfo;
+	42      (000000a4) invoke-interface     v2, v4, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+	43      (000000aa) move-result-object   v4
+	44      (000000ac) check-cast           v4, [Lorg/webrtc/VideoCodecInfo;
+	45      (000000b0) return-object        v4
+

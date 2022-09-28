@@ -1,0 +1,33 @@
+# Landroid/support/v4/util/SparseArrayCompat;-><init>(I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x10 <init>-BB@0x26 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	2       (00000008) iput-boolean         v1, v2, Landroid/support/v4/util/SparseArrayCompat;->mGarbage Z
+	3       (0000000c) if-nez               v3, +d
+
+<init>-BB@0x10 : [ <init>-BB@0x20 ]
+	4       (00000010) sget-object          v0, Landroid/support/v4/util/ContainerHelpers;->EMPTY_INTS [I
+	5       (00000014) iput-object          v0, v2, Landroid/support/v4/util/SparseArrayCompat;->mKeys [I
+	6       (00000018) sget-object          v0, Landroid/support/v4/util/ContainerHelpers;->EMPTY_OBJECTS [Ljava/lang/Object;
+	7       (0000001c) iput-object          v0, v2, Landroid/support/v4/util/SparseArrayCompat;->mValues [Ljava/lang/Object;
+
+<init>-BB@0x20 : 
+	8       (00000020) iput                 v1, v2, Landroid/support/v4/util/SparseArrayCompat;->mSize I
+	9       (00000024) return-void          
+
+<init>-BB@0x26 : [ <init>-BB@0x20 ]
+	10      (00000026) invoke-static        v3, Landroid/support/v4/util/ContainerHelpers;->idealIntArraySize(I)I
+	11      (0000002c) move-result          v3
+	12      (0000002e) new-array            v0, v3, [I
+	13      (00000032) iput-object          v0, v2, Landroid/support/v4/util/SparseArrayCompat;->mKeys [I
+	14      (00000036) new-array            v0, v3, [Ljava/lang/Object;
+	15      (0000003a) iput-object          v0, v2, Landroid/support/v4/util/SparseArrayCompat;->mValues [Ljava/lang/Object;
+	16      (0000003e) goto                 -f
+

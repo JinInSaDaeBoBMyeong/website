@@ -1,0 +1,27 @@
+# Landroid/support/v4/view/ViewPager;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.graphics.drawable.Drawable
+#
+# - return:boolean
+
+verifyDrawable-BB@0x0 : [ verifyDrawable-BB@0xc verifyDrawable-BB@0x14 ]
+	0       (00000000) invoke-super         v1, v2, Landroid/view/ViewGroup;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +6
+
+verifyDrawable-BB@0xc : [ verifyDrawable-BB@0x14 verifyDrawable-BB@0x18 ]
+	3       (0000000c) iget-object          v0, v1, Landroid/support/v4/view/ViewPager;->mMarginDrawable Landroid/graphics/drawable/Drawable;
+	4       (00000010) if-ne                v2, v0, +4
+
+verifyDrawable-BB@0x14 : [ verifyDrawable-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+verifyDrawable-BB@0x16 : 
+	6       (00000016) return               v0
+
+verifyDrawable-BB@0x18 : [ verifyDrawable-BB@0x16 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -2
+

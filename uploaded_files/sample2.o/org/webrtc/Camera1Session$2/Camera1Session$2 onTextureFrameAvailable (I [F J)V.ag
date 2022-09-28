@@ -1,0 +1,90 @@
+# Lorg/webrtc/Camera1Session$2;->onTextureFrameAvailable(I [F J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v12
+# - v13:int
+# - v14:float[]
+# - v15:long
+#
+# - return:void
+
+onTextureFrameAvailable-BB@0x0 : [ onTextureFrameAvailable-BB@0x20 onTextureFrameAvailable-BB@0x42 ]
+	0       (00000000) const/4              v6, 1
+	1       (00000002) iget-object          v1, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	2       (00000006) invoke-static        v1, Lorg/webrtc/Camera1Session;->access$200(Lorg/webrtc/Camera1Session;)V
+	3       (0000000c) iget-object          v1, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	4       (00000010) invoke-static        v1, Lorg/webrtc/Camera1Session;->access$300(Lorg/webrtc/Camera1Session;)Lorg/webrtc/Camera1Session$SessionState;
+	5       (00000016) move-result-object   v1
+	6       (00000018) sget-object          v2, Lorg/webrtc/Camera1Session$SessionState;->RUNNING Lorg/webrtc/Camera1Session$SessionState;
+	7       (0000001c) if-eq                v1, v2, +13
+
+onTextureFrameAvailable-BB@0x20 : [ onTextureFrameAvailable-BB@0x40 ]
+	8       (00000020) const-string         v1, 'Camera1Session'
+	9       (00000024) const-string         v2, 'Texture frame captured but camera is no longer running.'
+	10      (00000028) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	11      (0000002e) iget-object          v1, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	12      (00000032) invoke-static        v1, Lorg/webrtc/Camera1Session;->access$400(Lorg/webrtc/Camera1Session;)Lorg/webrtc/SurfaceTextureHelper;
+	13      (00000038) move-result-object   v1
+	14      (0000003a) invoke-virtual       v1, Lorg/webrtc/SurfaceTextureHelper;->returnTextureFrame()V
+
+onTextureFrameAvailable-BB@0x40 : 
+	15      (00000040) return-void          
+
+onTextureFrameAvailable-BB@0x42 : [ onTextureFrameAvailable-BB@0x52 onTextureFrameAvailable-BB@0x8e ]
+	16      (00000042) iget-object          v1, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	17      (00000046) invoke-static        v1, Lorg/webrtc/Camera1Session;->access$500(Lorg/webrtc/Camera1Session;)Z
+	18      (0000004c) move-result          v1
+	19      (0000004e) if-nez               v1, +20
+
+onTextureFrameAvailable-BB@0x52 : [ onTextureFrameAvailable-BB@0x8e ]
+	20      (00000052) sget-object          v1, Ljava/util/concurrent/TimeUnit;->NANOSECONDS Ljava/util/concurrent/TimeUnit;
+	21      (00000056) invoke-static        Ljava/lang/System;->nanoTime()J
+	22      (0000005c) move-result-wide     v2
+	23      (0000005e) iget-object          v4, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	24      (00000062) invoke-static        v4, Lorg/webrtc/Camera1Session;->access$600(Lorg/webrtc/Camera1Session;)J
+	25      (00000068) move-result-wide     v4
+	26      (0000006a) sub-long/2addr       v2, v4
+	27      (0000006c) invoke-virtual       v1, v2, v3, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+	28      (00000072) move-result-wide     v2
+	29      (00000074) long-to-int          v0, v2
+	30      (00000076) invoke-static        Lorg/webrtc/Camera1Session;->access$700()Lorg/webrtc/Histogram;
+	31      (0000007c) move-result-object   v1
+	32      (0000007e) invoke-virtual       v1, v0, Lorg/webrtc/Histogram;->addSample(I)V
+	33      (00000084) iget-object          v1, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	34      (00000088) invoke-static        v1, v6, Lorg/webrtc/Camera1Session;->access$502(Lorg/webrtc/Camera1Session; Z)Z
+
+onTextureFrameAvailable-BB@0x8e : [ onTextureFrameAvailable-BB@0xae onTextureFrameAvailable-BB@0xbe ]
+	35      (0000008e) iget-object          v1, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	36      (00000092) invoke-static        v1, Lorg/webrtc/Camera1Session;->access$800(Lorg/webrtc/Camera1Session;)I
+	37      (00000098) move-result          v7
+	38      (0000009a) iget-object          v1, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	39      (0000009e) invoke-static        v1, Lorg/webrtc/Camera1Session;->access$900(Lorg/webrtc/Camera1Session;)Landroid/hardware/Camera$CameraInfo;
+	40      (000000a4) move-result-object   v1
+	41      (000000a6) iget                 v1, v1, Landroid/hardware/Camera$CameraInfo;->facing I
+	42      (000000aa) if-ne                v1, v6, +a
+
+onTextureFrameAvailable-BB@0xae : [ onTextureFrameAvailable-BB@0xbe ]
+	43      (000000ae) invoke-static        Lorg/webrtc/RendererCommon;->horizontalFlipMatrix()[F
+	44      (000000b4) move-result-object   v1
+	45      (000000b6) invoke-static        v13, v1, Lorg/webrtc/RendererCommon;->multiplyMatrices([F [F)[F
+	46      (000000bc) move-result-object   v13
+
+onTextureFrameAvailable-BB@0xbe : [ onTextureFrameAvailable-BB@0x40 ]
+	47      (000000be) iget-object          v1, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	48      (000000c2) invoke-static        v1, Lorg/webrtc/Camera1Session;->access$100(Lorg/webrtc/Camera1Session;)Lorg/webrtc/CameraSession$Events;
+	49      (000000c8) move-result-object   v1
+	50      (000000ca) iget-object          v2, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	51      (000000ce) iget-object          v3, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	52      (000000d2) invoke-static        v3, Lorg/webrtc/Camera1Session;->access$1000(Lorg/webrtc/Camera1Session;)Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;
+	53      (000000d8) move-result-object   v3
+	54      (000000da) iget                 v3, v3, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;->width I
+	55      (000000de) iget-object          v4, v11, Lorg/webrtc/Camera1Session$2;->this$0 Lorg/webrtc/Camera1Session;
+	56      (000000e2) invoke-static        v4, Lorg/webrtc/Camera1Session;->access$1000(Lorg/webrtc/Camera1Session;)Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;
+	57      (000000e8) move-result-object   v4
+	58      (000000ea) iget                 v4, v4, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;->height I
+	59      (000000ee) move                 v5, v12
+	60      (000000f0) move-object          v6, v13
+	61      (000000f2) move-wide            v8, v14
+	62      (000000f4) invoke-interface/range v1 ... v9, Lorg/webrtc/CameraSession$Events;->onTextureFrameCaptured(Lorg/webrtc/CameraSession; I I I [F I J)V
+	63      (000000fa) goto                 -5d
+

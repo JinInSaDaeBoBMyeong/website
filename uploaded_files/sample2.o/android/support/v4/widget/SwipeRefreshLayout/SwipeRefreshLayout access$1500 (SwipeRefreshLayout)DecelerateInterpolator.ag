@@ -1,0 +1,12 @@
+# Landroid/support/v4/widget/SwipeRefreshLayout;->access$1500(Landroid/support/v4/widget/SwipeRefreshLayout;)Landroid/view/animation/DecelerateInterpolator; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.widget.SwipeRefreshLayout
+#
+# - return:android.view.animation.DecelerateInterpolator
+
+access$1500-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/widget/SwipeRefreshLayout;->mDecelerateInterpolator Landroid/view/animation/DecelerateInterpolator;
+	1       (00000004) return-object        v0
+

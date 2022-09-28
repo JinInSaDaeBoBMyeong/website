@@ -1,0 +1,22 @@
+# Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View; I I I I)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.view.View
+# - v7:int
+# - v8:int
+# - v9:int
+# - v10:int
+#
+# - return:void
+
+postInvalidateOnAnimation-BB@0x0 : 
+	0       (00000000) sget-object          v0, Landroid/support/v4/view/ViewCompat;->IMPL Landroid/support/v4/view/ViewCompat$ViewCompatImpl;
+	1       (00000004) move-object          v1, v6
+	2       (00000006) move                 v2, v7
+	3       (00000008) move                 v3, v8
+	4       (0000000a) move                 v4, v9
+	5       (0000000c) move                 v5, v10
+	6       (0000000e) invoke-interface/range v0 ... v5, Landroid/support/v4/view/ViewCompat$ViewCompatImpl;->postInvalidateOnAnimation(Landroid/view/View; I I I I)V
+	7       (00000014) return-void          
+

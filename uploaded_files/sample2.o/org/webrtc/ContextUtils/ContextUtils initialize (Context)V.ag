@@ -1,0 +1,30 @@
+# Lorg/webrtc/ContextUtils;->initialize(Landroid/content/Context;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+#
+# - return:void
+
+initialize-BB@0x0 : [ initialize-BB@0x8 initialize-BB@0x16 ]
+	0       (00000000) sget-object          v0, Lorg/webrtc/ContextUtils;->applicationContext Landroid/content/Context;
+	1       (00000004) if-eqz               v0, +9
+
+initialize-BB@0x8 : [ initialize-BB@0x16 ]
+	2       (00000008) const-string         v0, 'ContextUtils'
+	3       (0000000c) const-string         v1, 'Calling ContextUtils.initialize multiple times, this will crash in the future!'
+	4       (00000010) invoke-static        v0, v1, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+
+initialize-BB@0x16 : [ initialize-BB@0x1a initialize-BB@0x2a ]
+	5       (00000016) if-nez               v2, +a
+
+initialize-BB@0x1a : 
+	6       (0000001a) new-instance         v0, Ljava/lang/RuntimeException;
+	7       (0000001e) const-string         v1, 'Application context cannot be null for ContextUtils.initialize.'
+	8       (00000022) invoke-direct        v0, v1, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	9       (00000028) throw                v0
+
+initialize-BB@0x2a : 
+	10      (0000002a) sput-object          v2, Lorg/webrtc/ContextUtils;->applicationContext Landroid/content/Context;
+	11      (0000002e) return-void          
+

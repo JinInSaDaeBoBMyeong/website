@@ -1,0 +1,104 @@
+# Lorg/webrtc/EglRenderer$EglSurfaceCreation;->run()V [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x2 ]
+	0       (00000000) monitor-enter        v3
+
+run-BB@0x2 : [ run-BB@0xa run-BB@0x76 ]
+	1       (00000002) iget-object          v0, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->surface Ljava/lang/Object;
+	2       (00000006) if-eqz               v0, +38
+	2:75
+	(Ljava/lang/Throwable; -> a2 run-BB@0xa2)
+
+run-BB@0xa : [ run-BB@0x1a run-BB@0x76 ]
+	3       (0000000a) iget-object          v0, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->this$0 Lorg/webrtc/EglRenderer;
+	4       (0000000e) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/EglBase;
+	5       (00000014) move-result-object   v0
+	6       (00000016) if-eqz               v0, +30
+	2:75
+	(Ljava/lang/Throwable; -> a2 run-BB@0xa2)
+
+run-BB@0x1a : [ run-BB@0x32 run-BB@0x76 ]
+	7       (0000001a) iget-object          v0, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->this$0 Lorg/webrtc/EglRenderer;
+	8       (0000001e) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/EglBase;
+	9       (00000024) move-result-object   v0
+	10      (00000026) invoke-virtual       v0, Lorg/webrtc/EglBase;->hasSurface()Z
+	11      (0000002c) move-result          v0
+	12      (0000002e) if-nez               v0, +24
+	2:75
+	(Ljava/lang/Throwable; -> a2 run-BB@0xa2)
+
+run-BB@0x32 : [ run-BB@0x3e run-BB@0x7a ]
+	13      (00000032) iget-object          v0, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->surface Ljava/lang/Object;
+	14      (00000036) instance-of          v0, v0, Landroid/view/Surface;
+	15      (0000003a) if-eqz               v0, +20
+	2:75
+	(Ljava/lang/Throwable; -> a2 run-BB@0xa2)
+
+run-BB@0x3e : [ run-BB@0x58 ]
+	16      (0000003e) iget-object          v0, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->this$0 Lorg/webrtc/EglRenderer;
+	17      (00000042) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/EglBase;
+	18      (00000048) move-result-object   v1
+	19      (0000004a) iget-object          v0, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->surface Ljava/lang/Object;
+	20      (0000004e) check-cast           v0, Landroid/view/Surface;
+	21      (00000052) invoke-virtual       v1, v0, Lorg/webrtc/EglBase;->createSurface(Landroid/view/Surface;)V
+	2:75
+	(Ljava/lang/Throwable; -> a2 run-BB@0xa2)
+
+run-BB@0x58 : [ run-BB@0x76 ]
+	22      (00000058) iget-object          v0, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->this$0 Lorg/webrtc/EglRenderer;
+	23      (0000005c) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/EglBase;
+	24      (00000062) move-result-object   v0
+	25      (00000064) invoke-virtual       v0, Lorg/webrtc/EglBase;->makeCurrent()V
+	26      (0000006a) const/16             v0, 3317
+	27      (0000006e) const/4              v1, 1
+	28      (00000070) invoke-static        v0, v1, Landroid/opengl/GLES20;->glPixelStorei(I I)V
+	2:75
+	(Ljava/lang/Throwable; -> a2 run-BB@0xa2)
+
+run-BB@0x76 : 
+	29      (00000076) monitor-exit         v3
+	30      (00000078) return-void          
+
+run-BB@0x7a : [ run-BB@0x86 run-BB@0xa8 ]
+	31      (0000007a) iget-object          v0, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->surface Ljava/lang/Object;
+	32      (0000007e) instance-of          v0, v0, Landroid/graphics/SurfaceTexture;
+	33      (00000082) if-eqz               v0, +13
+	7a:9f
+	(Ljava/lang/Throwable; -> a2 run-BB@0xa2)
+
+run-BB@0x86 : [ run-BB@0x58 ]
+	34      (00000086) iget-object          v0, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->this$0 Lorg/webrtc/EglRenderer;
+	35      (0000008a) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/EglBase;
+	36      (00000090) move-result-object   v1
+	37      (00000092) iget-object          v0, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->surface Ljava/lang/Object;
+	38      (00000096) check-cast           v0, Landroid/graphics/SurfaceTexture;
+	39      (0000009a) invoke-virtual       v1, v0, Lorg/webrtc/EglBase;->createSurface(Landroid/graphics/SurfaceTexture;)V
+	40      (000000a0) goto                 -24
+
+run-BB@0xa2 : 
+	41      (000000a2) move-exception       v0
+	42      (000000a4) monitor-exit         v3
+	43      (000000a6) throw                v0
+
+run-BB@0xa8 : 
+	44      (000000a8) new-instance         v0, Ljava/lang/IllegalStateException;
+	45      (000000ac) new-instance         v1, Ljava/lang/StringBuilder;
+	46      (000000b0) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	47      (000000b6) const-string         v2, 'Invalid surface: '
+	48      (000000ba) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	49      (000000c0) move-result-object   v1
+	50      (000000c2) iget-object          v2, v3, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->surface Ljava/lang/Object;
+	51      (000000c6) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	52      (000000cc) move-result-object   v1
+	53      (000000ce) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	54      (000000d4) move-result-object   v1
+	55      (000000d6) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	56      (000000dc) throw                v0
+	a8:dd
+	(Ljava/lang/Throwable; -> a2 run-BB@0xa2)
+

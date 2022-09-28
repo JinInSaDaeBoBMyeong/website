@@ -1,0 +1,38 @@
+# Landroid/support/v4/widget/DrawerLayout;->hasPeekingDrawer()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+hasPeekingDrawer-BB@0x0 : [ hasPeekingDrawer-BB@0xa ]
+	0       (00000000) invoke-virtual       v4, Landroid/support/v4/widget/DrawerLayout;->getChildCount()I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, 0
+
+hasPeekingDrawer-BB@0xa : [ hasPeekingDrawer-BB@0xe hasPeekingDrawer-BB@0x34 ]
+	3       (0000000a) if-ge                v1, v0, +15
+
+hasPeekingDrawer-BB@0xe : [ hasPeekingDrawer-BB@0x2a hasPeekingDrawer-BB@0x2e ]
+	4       (0000000e) invoke-virtual       v4, v1, Landroid/support/v4/widget/DrawerLayout;->getChildAt(I)Landroid/view/View;
+	5       (00000014) move-result-object   v3
+	6       (00000016) invoke-virtual       v3, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	7       (0000001c) move-result-object   v2
+	8       (0000001e) check-cast           v2, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	9       (00000022) iget-boolean         v3, v2, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->isPeeking Z
+	10      (00000026) if-eqz               v3, +4
+
+hasPeekingDrawer-BB@0x2a : [ hasPeekingDrawer-BB@0x2c ]
+	11      (0000002a) const/4              v3, 1
+
+hasPeekingDrawer-BB@0x2c : 
+	12      (0000002c) return               v3
+
+hasPeekingDrawer-BB@0x2e : [ hasPeekingDrawer-BB@0xa ]
+	13      (0000002e) add-int/lit8         v1, v1, 1
+	14      (00000032) goto                 -14
+
+hasPeekingDrawer-BB@0x34 : [ hasPeekingDrawer-BB@0x2c ]
+	15      (00000034) const/4              v3, 0
+	16      (00000036) goto                 -5
+

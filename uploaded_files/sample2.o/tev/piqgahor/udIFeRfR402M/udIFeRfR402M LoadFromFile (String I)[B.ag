@@ -1,0 +1,124 @@
+# Ltev/piqgahor/udIFeRfR402M;->LoadFromFile(Ljava/lang/String; I)[B [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+# - v6:int
+#
+# - return:byte[]
+
+LoadFromFile-BB@0x0 : [ LoadFromFile-BB@0x6 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) new-array            v0, v6, [B
+
+LoadFromFile-BB@0x6 : [ LoadFromFile-BB@0x12 ]
+	2       (00000006) new-instance         v2, Ljava/io/FileInputStream;
+	3       (0000000a) invoke-direct        v2, v5, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
+	4       (00000010) const/4              v3, 0
+	6:f
+	(Ljava/lang/Throwable; -> 3e LoadFromFile-BB@0x3e)
+	(Ljava/lang/Exception; -> 2c LoadFromFile-BB@0x2c)
+
+LoadFromFile-BB@0x12 : [ LoadFromFile-BB@0x1e LoadFromFile-BB@0x4e ]
+	5       (00000012) invoke-virtual       v2, v0, v3, v6, Ljava/io/InputStream;->read([B I I)I
+	6       (00000018) move-result          v3
+	7       (0000001a) if-ne                v3, v6, +1a
+	12:17
+	(Ljava/lang/Throwable; -> 6c LoadFromFile-BB@0x6c)
+	(Ljava/lang/Exception; -> 72 LoadFromFile-BB@0x72)
+
+LoadFromFile-BB@0x1e : [ LoadFromFile-BB@0x22 LoadFromFile-BB@0x7c ]
+	8       (0000001e) if-eqz               v2, +2f
+
+LoadFromFile-BB@0x22 : [ LoadFromFile-BB@0x28 ]
+	9       (00000022) invoke-virtual       v2, Ljava/io/InputStream;->close()V
+	22:27
+	(Ljava/io/IOException; -> 5c LoadFromFile-BB@0x5c)
+
+LoadFromFile-BB@0x28 : [ LoadFromFile-BB@0x2a ]
+	10      (00000028) const/4              v1, 0
+
+LoadFromFile-BB@0x2a : 
+	11      (0000002a) return-object        v0
+
+LoadFromFile-BB@0x2c : [ LoadFromFile-BB@0x2e ]
+	12      (0000002c) move-exception       v3
+
+LoadFromFile-BB@0x2e : [ LoadFromFile-BB@0x32 LoadFromFile-BB@0x3a ]
+	13      (0000002e) if-eqz               v1, +6
+
+LoadFromFile-BB@0x32 : [ LoadFromFile-BB@0x38 ]
+	14      (00000032) invoke-virtual       v1, Ljava/io/InputStream;->close()V
+	32:37
+	(Ljava/io/IOException; -> 60 LoadFromFile-BB@0x60)
+
+LoadFromFile-BB@0x38 : [ LoadFromFile-BB@0x3a ]
+	15      (00000038) const/4              v1, 0
+
+LoadFromFile-BB@0x3a : [ LoadFromFile-BB@0x2a ]
+	16      (0000003a) const/4              v0, 0
+	17      (0000003c) goto                 -9
+
+LoadFromFile-BB@0x3e : [ LoadFromFile-BB@0x40 ]
+	18      (0000003e) move-exception       v3
+
+LoadFromFile-BB@0x40 : [ LoadFromFile-BB@0x44 LoadFromFile-BB@0x4c ]
+	19      (00000040) if-eqz               v1, +6
+
+LoadFromFile-BB@0x44 : [ LoadFromFile-BB@0x4a ]
+	20      (00000044) invoke-virtual       v1, Ljava/io/InputStream;->close()V
+	44:49
+	(Ljava/io/IOException; -> 64 LoadFromFile-BB@0x64)
+
+LoadFromFile-BB@0x4a : [ LoadFromFile-BB@0x4c ]
+	21      (0000004a) const/4              v1, 0
+
+LoadFromFile-BB@0x4c : 
+	22      (0000004c) throw                v3
+
+LoadFromFile-BB@0x4e : [ LoadFromFile-BB@0x52 LoadFromFile-BB@0x78 ]
+	23      (0000004e) if-eqz               v2, +15
+
+LoadFromFile-BB@0x52 : [ LoadFromFile-BB@0x58 ]
+	24      (00000052) invoke-virtual       v2, Ljava/io/InputStream;->close()V
+	52:57
+	(Ljava/io/IOException; -> 68 LoadFromFile-BB@0x68)
+
+LoadFromFile-BB@0x58 : [ LoadFromFile-BB@0x3a ]
+	25      (00000058) const/4              v1, 0
+	26      (0000005a) goto                 -10
+
+LoadFromFile-BB@0x5c : [ LoadFromFile-BB@0x28 ]
+	27      (0000005c) move-exception       v3
+	28      (0000005e) goto                 -1b
+
+LoadFromFile-BB@0x60 : [ LoadFromFile-BB@0x38 ]
+	29      (00000060) move-exception       v3
+	30      (00000062) goto                 -15
+
+LoadFromFile-BB@0x64 : [ LoadFromFile-BB@0x4a ]
+	31      (00000064) move-exception       v4
+	32      (00000066) goto                 -e
+
+LoadFromFile-BB@0x68 : [ LoadFromFile-BB@0x58 ]
+	33      (00000068) move-exception       v3
+	34      (0000006a) goto                 -9
+
+LoadFromFile-BB@0x6c : [ LoadFromFile-BB@0x40 ]
+	35      (0000006c) move-exception       v3
+	36      (0000006e) move-object          v1, v2
+	37      (00000070) goto                 -18
+
+LoadFromFile-BB@0x72 : [ LoadFromFile-BB@0x2e ]
+	38      (00000072) move-exception       v3
+	39      (00000074) move-object          v1, v2
+	40      (00000076) goto                 -24
+
+LoadFromFile-BB@0x78 : [ LoadFromFile-BB@0x3a ]
+	41      (00000078) move-object          v1, v2
+	42      (0000007a) goto                 -20
+
+LoadFromFile-BB@0x7c : [ LoadFromFile-BB@0x2a ]
+	43      (0000007c) move-object          v1, v2
+	44      (0000007e) goto                 -2a
+

@@ -1,0 +1,38 @@
+# Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->release()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+release-BB@0x0 : [ release-BB@0x10 ]
+	0       (00000000) iget-object          v0, v2, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->surfaceTextureHelper Lorg/webrtc/SurfaceTextureHelper;
+	1       (00000004) invoke-virtual       v0, Lorg/webrtc/SurfaceTextureHelper;->stopListening()V
+	2       (0000000a) iget-object          v1, v2, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->newFrameLock Ljava/lang/Object;
+	3       (0000000e) monitor-enter        v1
+
+release-BB@0x10 : [ release-BB@0x18 release-BB@0x28 ]
+	4       (00000010) iget-object          v0, v2, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->renderedBuffer Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;
+	5       (00000014) if-eqz               v0, +a
+	10:2f
+	(Ljava/lang/Throwable; -> 2c release-BB@0x2c)
+
+release-BB@0x18 : [ release-BB@0x28 ]
+	6       (00000018) iget-object          v0, v2, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->surfaceTextureHelper Lorg/webrtc/SurfaceTextureHelper;
+	7       (0000001c) invoke-virtual       v0, Lorg/webrtc/SurfaceTextureHelper;->returnTextureFrame()V
+	8       (00000022) const/4              v0, 0
+	9       (00000024) iput-object          v0, v2, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->renderedBuffer Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;
+	10:2f
+	(Ljava/lang/Throwable; -> 2c release-BB@0x2c)
+
+release-BB@0x28 : 
+	10      (00000028) monitor-exit         v1
+	11      (0000002a) return-void          
+	10:2f
+	(Ljava/lang/Throwable; -> 2c release-BB@0x2c)
+
+release-BB@0x2c : 
+	12      (0000002c) move-exception       v0
+	13      (0000002e) monitor-exit         v1
+	14      (00000030) throw                v0
+

@@ -1,0 +1,31 @@
+# Lorg/webrtc/HardwareVideoEncoder;->shouldForceKeyFrame(J)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:long
+#
+# - return:boolean
+
+shouldForceKeyFrame-BB@0x0 : [ shouldForceKeyFrame-BB@0x10 shouldForceKeyFrame-BB@0x26 ]
+	0       (00000000) iget-wide            v0, v5, Lorg/webrtc/HardwareVideoEncoder;->forcedKeyFrameMs J
+	1       (00000004) const-wide/16        v2, 0 # [0.0]
+	2       (00000008) cmp-long             v0, v0, v2
+	3       (0000000c) if-lez               v0, +d
+
+shouldForceKeyFrame-BB@0x10 : [ shouldForceKeyFrame-BB@0x22 shouldForceKeyFrame-BB@0x26 ]
+	4       (00000010) iget-wide            v0, v5, Lorg/webrtc/HardwareVideoEncoder;->lastKeyFrameMs J
+	5       (00000014) iget-wide            v2, v5, Lorg/webrtc/HardwareVideoEncoder;->forcedKeyFrameMs J
+	6       (00000018) add-long/2addr       v0, v2
+	7       (0000001a) cmp-long             v0, v6, v0
+	8       (0000001e) if-lez               v0, +4
+
+shouldForceKeyFrame-BB@0x22 : [ shouldForceKeyFrame-BB@0x24 ]
+	9       (00000022) const/4              v0, 1
+
+shouldForceKeyFrame-BB@0x24 : 
+	10      (00000024) return               v0
+
+shouldForceKeyFrame-BB@0x26 : [ shouldForceKeyFrame-BB@0x24 ]
+	11      (00000026) const/4              v0, 0
+	12      (00000028) goto                 -2
+

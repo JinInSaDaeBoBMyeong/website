@@ -1,0 +1,13 @@
+# Lorg/webrtc/NetworkMonitor;->updateCurrentConnectionType(Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.NetworkMonitorAutoDetect$ConnectionType
+#
+# - return:void
+
+updateCurrentConnectionType-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lorg/webrtc/NetworkMonitor;->currentConnectionType Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;
+	1       (00000004) invoke-direct        v0, v1, Lorg/webrtc/NetworkMonitor;->notifyObserversOfConnectionTypeChange(Lorg/webrtc/NetworkMonitorAutoDetect$ConnectionType;)V
+	2       (0000000a) return-void          
+

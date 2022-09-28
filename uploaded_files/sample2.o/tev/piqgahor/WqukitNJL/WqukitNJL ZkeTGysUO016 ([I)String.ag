@@ -1,0 +1,46 @@
+# Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String; [access_flags=public static varargs]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int[]
+#
+# - return:java.lang.String
+
+ZkeTGysUO016-BB@0x0 : [ ZkeTGysUO016-BB@0x8 ZkeTGysUO016-BB@0xc ]
+	0       (00000000) array-length         v3, v7
+	1       (00000002) const/4              v4, 2
+	2       (00000004) if-ge                v3, v4, +4
+
+ZkeTGysUO016-BB@0x8 : [ ZkeTGysUO016-BB@0xa ]
+	3       (00000008) const/4              v4, 0
+
+ZkeTGysUO016-BB@0xa : 
+	4       (0000000a) return-object        v4
+
+ZkeTGysUO016-BB@0xc : [ ZkeTGysUO016-BB@0x1c ]
+	5       (0000000c) add-int/lit8         v4, v3, -1
+	6       (00000010) new-array            v0, v4, [C
+	7       (00000014) const/4              v4, 0
+	8       (00000016) aget                 v2, v7, v4
+	9       (0000001a) const/4              v1, 1
+
+ZkeTGysUO016-BB@0x1c : [ ZkeTGysUO016-BB@0x20 ZkeTGysUO016-BB@0x2a ]
+	10      (0000001c) if-lt                v1, v3, +7
+
+ZkeTGysUO016-BB@0x20 : [ ZkeTGysUO016-BB@0xa ]
+	11      (00000020) invoke-static        v0, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
+	12      (00000026) move-result-object   v4
+	13      (00000028) goto                 -f
+
+ZkeTGysUO016-BB@0x2a : [ ZkeTGysUO016-BB@0x1c ]
+	14      (0000002a) add-int/lit8         v4, v1, -1
+	15      (0000002e) aget                 v5, v7, v1
+	16      (00000032) add-int/lit16        v5, v5, 128
+	17      (00000036) rem-int/lit16        v6, v2, 128
+	18      (0000003a) sub-int/2addr        v5, v6
+	19      (0000003c) rem-int/lit16        v5, v5, 128
+	20      (00000040) int-to-char          v5, v5
+	21      (00000042) aput-char            v5, v0, v4
+	22      (00000046) add-int/lit8         v1, v1, 1
+	23      (0000004a) goto                 -17
+

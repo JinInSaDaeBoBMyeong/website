@@ -1,0 +1,36 @@
+# Landroid/support/v4/util/SimpleArrayMap;->containsKey(Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object
+#
+# - return:boolean
+
+containsKey-BB@0x0 : [ containsKey-BB@0x8 containsKey-BB@0x1a ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) if-nez               v4, +b
+
+containsKey-BB@0x8 : [ containsKey-BB@0x14 containsKey-BB@0x16 ]
+	3       (00000008) invoke-virtual       v3, Landroid/support/v4/util/SimpleArrayMap;->indexOfNull()I
+	4       (0000000e) move-result          v2
+	5       (00000010) if-ltz               v2, +3
+
+containsKey-BB@0x14 : 
+	6       (00000014) return               v0
+
+containsKey-BB@0x16 : [ containsKey-BB@0x14 ]
+	7       (00000016) move                 v0, v1
+	8       (00000018) goto                 -2
+
+containsKey-BB@0x1a : [ containsKey-BB@0x2e containsKey-BB@0x14 ]
+	9       (0000001a) invoke-virtual       v4, Ljava/lang/Object;->hashCode()I
+	10      (00000020) move-result          v2
+	11      (00000022) invoke-virtual       v3, v4, v2, Landroid/support/v4/util/SimpleArrayMap;->indexOf(Ljava/lang/Object; I)I
+	12      (00000028) move-result          v2
+	13      (0000002a) if-gez               v2, -b
+
+containsKey-BB@0x2e : [ containsKey-BB@0x14 ]
+	14      (0000002e) move                 v0, v1
+	15      (00000030) goto                 -e
+

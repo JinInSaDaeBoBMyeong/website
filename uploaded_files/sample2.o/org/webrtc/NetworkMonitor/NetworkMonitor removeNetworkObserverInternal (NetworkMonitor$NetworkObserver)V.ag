@@ -1,0 +1,13 @@
+# Lorg/webrtc/NetworkMonitor;->removeNetworkObserverInternal(Lorg/webrtc/NetworkMonitor$NetworkObserver;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:org.webrtc.NetworkMonitor$NetworkObserver
+#
+# - return:void
+
+removeNetworkObserverInternal-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/NetworkMonitor;->networkObservers Ljava/util/ArrayList;
+	1       (00000004) invoke-virtual       v0, v2, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+	2       (0000000a) return-void          
+

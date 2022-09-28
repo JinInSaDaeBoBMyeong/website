@@ -1,0 +1,59 @@
+# Landroid/support/v4/app/FragmentManagerImpl;->transitToStyleIndex(I Z)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+# - v2:boolean
+#
+# - return:int
+
+transitToStyleIndex-BB@0x0 : [ D:transitToStyleIndex-BB@0x8 4097:transitToStyleIndex-BB@0xa 4099:transitToStyleIndex-BB@0x22 8194:transitToStyleIndex-BB@0x16 ]
+	0       (00000000) const/4              v0, -1
+	1       (00000002) sparse-switch        v1, +17 (0x30)
+
+transitToStyleIndex-BB@0x8 : 
+	2       (00000008) return               v0
+
+transitToStyleIndex-BB@0xa : [ transitToStyleIndex-BB@0xe transitToStyleIndex-BB@0x12 ]
+	3       (0000000a) if-eqz               v2, +4
+
+transitToStyleIndex-BB@0xe : [ transitToStyleIndex-BB@0x10 ]
+	4       (0000000e) const/4              v0, 1
+
+transitToStyleIndex-BB@0x10 : [ transitToStyleIndex-BB@0x8 ]
+	5       (00000010) goto                 -4
+
+transitToStyleIndex-BB@0x12 : [ transitToStyleIndex-BB@0x10 ]
+	6       (00000012) const/4              v0, 2
+	7       (00000014) goto                 -2
+
+transitToStyleIndex-BB@0x16 : [ transitToStyleIndex-BB@0x1a transitToStyleIndex-BB@0x1e ]
+	8       (00000016) if-eqz               v2, +4
+
+transitToStyleIndex-BB@0x1a : [ transitToStyleIndex-BB@0x1c ]
+	9       (0000001a) const/4              v0, 3
+
+transitToStyleIndex-BB@0x1c : [ transitToStyleIndex-BB@0x8 ]
+	10      (0000001c) goto                 -a
+
+transitToStyleIndex-BB@0x1e : [ transitToStyleIndex-BB@0x1c ]
+	11      (0000001e) const/4              v0, 4
+	12      (00000020) goto                 -2
+
+transitToStyleIndex-BB@0x22 : [ transitToStyleIndex-BB@0x26 transitToStyleIndex-BB@0x2a ]
+	13      (00000022) if-eqz               v2, +4
+
+transitToStyleIndex-BB@0x26 : [ transitToStyleIndex-BB@0x28 ]
+	14      (00000026) const/4              v0, 5
+
+transitToStyleIndex-BB@0x28 : [ transitToStyleIndex-BB@0x8 ]
+	15      (00000028) goto                 -10
+
+transitToStyleIndex-BB@0x2a : [ transitToStyleIndex-BB@0x28 ]
+	16      (0000002a) const/4              v0, 6
+	17      (0000002c) goto                 -2
+
+transitToStyleIndex-BB@0x2e : 
+	18      (0000002e) nop                  
+	19      (00000030) sparse-switch-payload 1001 1003 2002
+

@@ -1,0 +1,38 @@
+# Landroid/support/v4/util/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.Object
+#
+# - return:java.lang.Object
+
+get-BB@0x0 : [ get-BB@0x4 get-BB@0x22 ]
+	0       (00000000) if-nez               v4, +11
+
+get-BB@0x4 : [ get-BB@0xc ]
+	1       (00000004) invoke-virtual       v3, Landroid/support/v4/util/SimpleArrayMap;->indexOfNull()I
+	2       (0000000a) move-result          v0
+
+get-BB@0xc : [ get-BB@0x10 get-BB@0x34 ]
+	3       (0000000c) if-ltz               v0, +14
+
+get-BB@0x10 : [ get-BB@0x20 ]
+	4       (00000010) iget-object          v1, v3, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	5       (00000014) shl-int/lit8         v2, v0, 1
+	6       (00000018) add-int/lit8         v2, v2, 1
+	7       (0000001c) aget-object          v1, v1, v2
+
+get-BB@0x20 : 
+	8       (00000020) return-object        v1
+
+get-BB@0x22 : [ get-BB@0xc ]
+	9       (00000022) invoke-virtual       v4, Ljava/lang/Object;->hashCode()I
+	10      (00000028) move-result          v1
+	11      (0000002a) invoke-virtual       v3, v4, v1, Landroid/support/v4/util/SimpleArrayMap;->indexOf(Ljava/lang/Object; I)I
+	12      (00000030) move-result          v0
+	13      (00000032) goto                 -13
+
+get-BB@0x34 : [ get-BB@0x20 ]
+	14      (00000034) const/4              v1, 0
+	15      (00000036) goto                 -b
+

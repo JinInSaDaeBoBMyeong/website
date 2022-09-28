@@ -1,0 +1,17 @@
+# Landroid/support/v4/app/ActivityOptionsCompatJB;->makeCustomAnimation(Landroid/content/Context; I I)Landroid/support/v4/app/ActivityOptionsCompatJB; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:int
+# - v4:int
+#
+# - return:android.support.v4.app.ActivityOptionsCompatJB
+
+makeCustomAnimation-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/support/v4/app/ActivityOptionsCompatJB;
+	1       (00000004) invoke-static        v2, v3, v4, Landroid/app/ActivityOptions;->makeCustomAnimation(Landroid/content/Context; I I)Landroid/app/ActivityOptions;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-direct        v0, v1, Landroid/support/v4/app/ActivityOptionsCompatJB;-><init>(Landroid/app/ActivityOptions;)V
+	4       (00000012) return-object        v0
+

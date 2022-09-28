@@ -1,0 +1,27 @@
+# Lorg/webrtc/MediaCodecVideoDecoder$DecodedOutputBuffer;-><init>(I I I J J J J J)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:int
+# - v8:int
+# - v9:long
+# - v10:long
+# - v11:long
+# - v12:long
+# - v13:long
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput                 v1, v0, Lorg/webrtc/MediaCodecVideoDecoder$DecodedOutputBuffer;->index I
+	2       (0000000a) iput                 v2, v0, Lorg/webrtc/MediaCodecVideoDecoder$DecodedOutputBuffer;->offset I
+	3       (0000000e) iput                 v3, v0, Lorg/webrtc/MediaCodecVideoDecoder$DecodedOutputBuffer;->size I
+	4       (00000012) iput-wide            v4, v0, Lorg/webrtc/MediaCodecVideoDecoder$DecodedOutputBuffer;->presentationTimeStampMs J
+	5       (00000016) iput-wide            v6, v0, Lorg/webrtc/MediaCodecVideoDecoder$DecodedOutputBuffer;->timeStampMs J
+	6       (0000001a) iput-wide            v8, v0, Lorg/webrtc/MediaCodecVideoDecoder$DecodedOutputBuffer;->ntpTimeStampMs J
+	7       (0000001e) iput-wide            v10, v0, Lorg/webrtc/MediaCodecVideoDecoder$DecodedOutputBuffer;->decodeTimeMs J
+	8       (00000022) iput-wide            v12, v0, Lorg/webrtc/MediaCodecVideoDecoder$DecodedOutputBuffer;->endDecodeTimeMs J
+	9       (00000026) return-void          
+

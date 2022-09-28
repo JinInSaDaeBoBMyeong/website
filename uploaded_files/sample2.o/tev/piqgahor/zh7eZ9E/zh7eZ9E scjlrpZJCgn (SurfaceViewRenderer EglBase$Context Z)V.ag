@@ -1,0 +1,22 @@
+# Ltev/piqgahor/zh7eZ9E;->scjlrpZJCgn(Lorg/webrtc/SurfaceViewRenderer; Lorg/webrtc/EglBase$Context; Z)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.SurfaceViewRenderer
+# - v2:org.webrtc.EglBase$Context
+# - v3:boolean
+#
+# - return:void
+
+scjlrpZJCgn-BB@0x0 : [ scjlrpZJCgn-BB@0x8 scjlrpZJCgn-BB@0xa ]
+	0       (00000000) sget-object          v0, Ltev/piqgahor/zh7eZ9E;->PbyoI5671 Ltev/piqgahor/Wq1vZ2;
+	1       (00000004) if-nez               v0, +3
+
+scjlrpZJCgn-BB@0x8 : 
+	2       (00000008) return-void          
+
+scjlrpZJCgn-BB@0xa : [ scjlrpZJCgn-BB@0x8 ]
+	3       (0000000a) sget-object          v0, Ltev/piqgahor/zh7eZ9E;->PbyoI5671 Ltev/piqgahor/Wq1vZ2;
+	4       (0000000e) invoke-virtual       v0, v1, v2, v3, Ltev/piqgahor/Wq1vZ2;->sBbbDSBQg993(Lorg/webrtc/SurfaceViewRenderer; Lorg/webrtc/EglBase$Context; Z)V
+	5       (00000014) goto                 -6
+

@@ -1,0 +1,12 @@
+# Landroid/support/v4/app/LoaderManager;->enableDebugLogging(Z)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:boolean
+#
+# - return:void
+
+enableDebugLogging-BB@0x0 : 
+	0       (00000000) sput-boolean         v0, Landroid/support/v4/app/LoaderManagerImpl;->DEBUG Z
+	1       (00000004) return-void          
+

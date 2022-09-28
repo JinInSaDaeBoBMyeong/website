@@ -1,0 +1,13 @@
+# Landroid/support/v4/widget/ViewDragHelper$2;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+run-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/widget/ViewDragHelper$2;->this$0 Landroid/support/v4/widget/ViewDragHelper;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-virtual       v0, v1, Landroid/support/v4/widget/ViewDragHelper;->setDragState(I)V
+	3       (0000000c) return-void          
+

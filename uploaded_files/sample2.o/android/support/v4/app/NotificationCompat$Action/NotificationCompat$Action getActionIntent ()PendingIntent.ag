@@ -1,0 +1,11 @@
+# Landroid/support/v4/app/NotificationCompat$Action;->getActionIntent()Landroid/app/PendingIntent; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.app.PendingIntent
+
+getActionIntent-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/NotificationCompat$Action;->actionIntent Landroid/app/PendingIntent;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,33 @@
+# Landroid/support/v4/content/Loader;->unregisterListener(Landroid/support/v4/content/Loader$OnLoadCompleteListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.v4.content.Loader$OnLoadCompleteListener
+#
+# - return:void
+
+unregisterListener-BB@0x0 : [ unregisterListener-BB@0x8 unregisterListener-BB@0x18 ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/content/Loader;->mListener Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+	1       (00000004) if-nez               v0, +a
+
+unregisterListener-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/IllegalStateException;
+	3       (0000000c) const-string         v1, 'No listener register'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+unregisterListener-BB@0x18 : [ unregisterListener-BB@0x20 unregisterListener-BB@0x30 ]
+	6       (00000018) iget-object          v0, v2, Landroid/support/v4/content/Loader;->mListener Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+	7       (0000001c) if-eq                v0, v3, +a
+
+unregisterListener-BB@0x20 : 
+	8       (00000020) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	9       (00000024) const-string         v1, 'Attempting to unregister the wrong listener'
+	10      (00000028) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	11      (0000002e) throw                v0
+
+unregisterListener-BB@0x30 : 
+	12      (00000030) const/4              v0, 0
+	13      (00000032) iput-object          v0, v2, Landroid/support/v4/content/Loader;->mListener Landroid/support/v4/content/Loader$OnLoadCompleteListener;
+	14      (00000036) return-void          
+

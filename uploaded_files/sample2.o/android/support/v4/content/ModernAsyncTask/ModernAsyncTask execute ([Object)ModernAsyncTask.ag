@@ -1,0 +1,14 @@
+# Landroid/support/v4/content/ModernAsyncTask;->execute([Ljava/lang/Object;)Landroid/support/v4/content/ModernAsyncTask; [access_flags=public final varargs]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object[]
+#
+# - return:android.support.v4.content.ModernAsyncTask
+
+execute-BB@0x0 : 
+	0       (00000000) sget-object          v0, Landroid/support/v4/content/ModernAsyncTask;->sDefaultExecutor Ljava/util/concurrent/Executor;
+	1       (00000004) invoke-virtual       v1, v0, v2, Landroid/support/v4/content/ModernAsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor; [Ljava/lang/Object;)Landroid/support/v4/content/ModernAsyncTask;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

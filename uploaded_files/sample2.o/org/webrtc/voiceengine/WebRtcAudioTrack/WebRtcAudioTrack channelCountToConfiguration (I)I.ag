@@ -1,0 +1,22 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioTrack;->channelCountToConfiguration(I)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:int
+
+channelCountToConfiguration-BB@0x0 : [ channelCountToConfiguration-BB@0x6 channelCountToConfiguration-BB@0xa ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) if-ne                v2, v0, +4
+
+channelCountToConfiguration-BB@0x6 : [ channelCountToConfiguration-BB@0x8 ]
+	2       (00000006) const/4              v0, 4
+
+channelCountToConfiguration-BB@0x8 : 
+	3       (00000008) return               v0
+
+channelCountToConfiguration-BB@0xa : [ channelCountToConfiguration-BB@0x8 ]
+	4       (0000000a) const/16             v0, 12
+	5       (0000000e) goto                 -3
+

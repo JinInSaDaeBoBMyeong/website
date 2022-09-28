@@ -1,0 +1,24 @@
+# Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplBase;->createScroller(Landroid/content/Context; Landroid/view/animation/Interpolator;)Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:android.view.animation.Interpolator
+#
+# - return:java.lang.Object
+
+createScroller-BB@0x0 : [ createScroller-BB@0x4 createScroller-BB@0x10 ]
+	0       (00000000) if-eqz               v3, +8
+
+createScroller-BB@0x4 : [ createScroller-BB@0xe ]
+	1       (00000004) new-instance         v0, Landroid/widget/Scroller;
+	2       (00000008) invoke-direct        v0, v2, v3, Landroid/widget/Scroller;-><init>(Landroid/content/Context; Landroid/view/animation/Interpolator;)V
+
+createScroller-BB@0xe : 
+	3       (0000000e) return-object        v0
+
+createScroller-BB@0x10 : [ createScroller-BB@0xe ]
+	4       (00000010) new-instance         v0, Landroid/widget/Scroller;
+	5       (00000014) invoke-direct        v0, v2, Landroid/widget/Scroller;-><init>(Landroid/content/Context;)V
+	6       (0000001a) goto                 -6
+

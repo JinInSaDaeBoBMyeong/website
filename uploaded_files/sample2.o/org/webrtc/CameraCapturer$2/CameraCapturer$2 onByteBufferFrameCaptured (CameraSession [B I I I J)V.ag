@@ -1,0 +1,85 @@
+# Lorg/webrtc/CameraCapturer$2;->onByteBufferFrameCaptured(Lorg/webrtc/CameraSession; [B I I I J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:org.webrtc.CameraSession
+# - v13:byte[]
+# - v14:int
+# - v15:int
+# - v16:int
+# - v17:long
+#
+# - return:void
+
+onByteBufferFrameCaptured-BB@0x0 : [ onByteBufferFrameCaptured-BB@0x18 ]
+	0       (00000000) iget-object          v0, v10, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	1       (00000004) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$000(Lorg/webrtc/CameraCapturer;)V
+	2       (0000000a) iget-object          v0, v10, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	3       (0000000e) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$500(Lorg/webrtc/CameraCapturer;)Ljava/lang/Object;
+	4       (00000014) move-result-object   v8
+	5       (00000016) monitor-enter        v8
+
+onByteBufferFrameCaptured-BB@0x18 : [ onByteBufferFrameCaptured-BB@0x28 onByteBufferFrameCaptured-BB@0x3a ]
+	6       (00000018) iget-object          v0, v10, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	7       (0000001c) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$800(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraSession;
+	8       (00000022) move-result-object   v0
+	9       (00000024) if-eq                v11, v0, +b
+	18:9f
+	(Ljava/lang/Throwable; -> 9c onByteBufferFrameCaptured-BB@0x9c)
+
+onByteBufferFrameCaptured-BB@0x28 : [ onByteBufferFrameCaptured-BB@0x38 ]
+	10      (00000028) const-string         v0, 'CameraCapturer'
+	11      (0000002c) const-string         v1, 'onByteBufferFrameCaptured from another session.'
+	12      (00000030) invoke-static        v0, v1, Lorg/webrtc/Logging;->w(Ljava/lang/String; Ljava/lang/String;)V
+	13      (00000036) monitor-exit         v8
+	18:9f
+	(Ljava/lang/Throwable; -> 9c onByteBufferFrameCaptured-BB@0x9c)
+
+onByteBufferFrameCaptured-BB@0x38 : 
+	14      (00000038) return-void          
+	18:9f
+	(Ljava/lang/Throwable; -> 9c onByteBufferFrameCaptured-BB@0x9c)
+
+onByteBufferFrameCaptured-BB@0x3a : [ onByteBufferFrameCaptured-BB@0x4a onByteBufferFrameCaptured-BB@0x68 ]
+	15      (0000003a) iget-object          v0, v10, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	16      (0000003e) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$1200(Lorg/webrtc/CameraCapturer;)Z
+	17      (00000044) move-result          v0
+	18      (00000046) if-nez               v0, +11
+	18:9f
+	(Ljava/lang/Throwable; -> 9c onByteBufferFrameCaptured-BB@0x9c)
+
+onByteBufferFrameCaptured-BB@0x4a : [ onByteBufferFrameCaptured-BB@0x68 ]
+	19      (0000004a) iget-object          v0, v10, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	20      (0000004e) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$1100(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;
+	21      (00000054) move-result-object   v0
+	22      (00000056) invoke-interface     v0, Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;->onFirstFrameAvailable()V
+	23      (0000005c) iget-object          v0, v10, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	24      (00000060) const/4              v1, 1
+	25      (00000062) invoke-static        v0, v1, Lorg/webrtc/CameraCapturer;->access$1202(Lorg/webrtc/CameraCapturer; Z)Z
+	18:9f
+	(Ljava/lang/Throwable; -> 9c onByteBufferFrameCaptured-BB@0x9c)
+
+onByteBufferFrameCaptured-BB@0x68 : [ onByteBufferFrameCaptured-BB@0x38 ]
+	26      (00000068) iget-object          v0, v10, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	27      (0000006c) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$900(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	28      (00000072) move-result-object   v0
+	29      (00000074) invoke-virtual       v0, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->addFrame()V
+	30      (0000007a) iget-object          v0, v10, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	31      (0000007e) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$600(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/VideoCapturer$CapturerObserver;
+	32      (00000084) move-result-object   v1
+	33      (00000086) move-object          v2, v12
+	34      (00000088) move                 v3, v13
+	35      (0000008a) move                 v4, v14
+	36      (0000008c) move                 v5, v15
+	37      (0000008e) move-wide/from16     v6, v16
+	38      (00000092) invoke-interface/range v1 ... v7, Lorg/webrtc/VideoCapturer$CapturerObserver;->onByteBufferFrameCaptured([B I I I J)V
+	39      (00000098) monitor-exit         v8
+	40      (0000009a) goto                 -31
+	18:9f
+	(Ljava/lang/Throwable; -> 9c onByteBufferFrameCaptured-BB@0x9c)
+
+onByteBufferFrameCaptured-BB@0x9c : 
+	41      (0000009c) move-exception       v0
+	42      (0000009e) monitor-exit         v8
+	43      (000000a0) throw                v0
+

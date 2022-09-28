@@ -1,0 +1,19 @@
+# Lorg/webrtc/ThreadUtils$4;-><init>(Lorg/webrtc/ThreadUtils$1Result; Ljava/util/concurrent/Callable; Lorg/webrtc/ThreadUtils$1CaughtException; Ljava/util/concurrent/CountDownLatch;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.ThreadUtils$1Result
+# - v2:java.util.concurrent.Callable
+# - v3:org.webrtc.ThreadUtils$1CaughtException
+# - v4:java.util.concurrent.CountDownLatch
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lorg/webrtc/ThreadUtils$4;->val$result Lorg/webrtc/ThreadUtils$1Result;
+	1       (00000004) iput-object          v2, v0, Lorg/webrtc/ThreadUtils$4;->val$callable Ljava/util/concurrent/Callable;
+	2       (00000008) iput-object          v3, v0, Lorg/webrtc/ThreadUtils$4;->val$caughtException Lorg/webrtc/ThreadUtils$1CaughtException;
+	3       (0000000c) iput-object          v4, v0, Lorg/webrtc/ThreadUtils$4;->val$barrier Ljava/util/concurrent/CountDownLatch;
+	4       (00000010) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	5       (00000016) return-void          
+

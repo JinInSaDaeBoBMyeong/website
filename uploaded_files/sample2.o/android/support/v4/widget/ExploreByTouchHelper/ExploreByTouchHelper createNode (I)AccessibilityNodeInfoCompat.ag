@@ -1,0 +1,27 @@
+# Landroid/support/v4/widget/ExploreByTouchHelper;->createNode(I)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:android.support.v4.view.accessibility.AccessibilityNodeInfoCompat
+
+createNode-BB@0x0 : [ D:createNode-BB@0x6 -1:createNode-BB@0x10 ]
+	0       (00000000) packed-switch        v2, +e (0x1c)
+
+createNode-BB@0x6 : [ createNode-BB@0xe ]
+	1       (00000006) invoke-direct        v1, v2, Landroid/support/v4/widget/ExploreByTouchHelper;->createNodeForChild(I)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	2       (0000000c) move-result-object   v0
+
+createNode-BB@0xe : 
+	3       (0000000e) return-object        v0
+
+createNode-BB@0x10 : [ createNode-BB@0xe ]
+	4       (00000010) invoke-direct        v1, Landroid/support/v4/widget/ExploreByTouchHelper;->createNodeForHost()Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
+	5       (00000016) move-result-object   v0
+	6       (00000018) goto                 -5
+
+createNode-BB@0x1a : 
+	7       (0000001a) nop                  
+	8       (0000001c) packed-switch-payload -1
+

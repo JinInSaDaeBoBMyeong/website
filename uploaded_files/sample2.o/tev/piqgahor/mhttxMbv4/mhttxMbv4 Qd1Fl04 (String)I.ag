@@ -1,0 +1,115 @@
+# Ltev/piqgahor/mhttxMbv4;->Qd1Fl04(Ljava/lang/String;)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:java.lang.String
+#
+# - return:int
+
+Qd1Fl04-BB@0x0 : [ Qd1Fl04-BB@0x4c ]
+	0       (00000000) const/4              v11, 2
+	1       (00000002) const/4              v10, 1
+	2       (00000004) const/4              v9, 3
+	3       (00000006) const/4              v5, 0
+	4       (00000008) new-array            v6, v9, [Ljava/lang/Object;
+	5       (0000000c) const/16             v7, 13
+	6       (00000010) new-array            v7, v7, [I
+	7       (00000014) fill-array-data      v7, +90 (0x134)
+	8       (0000001a) invoke-static        v7, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	9       (00000020) move-result-object   v7
+	10      (00000022) aput-object          v7, v6, v5
+	11      (00000026) aput-object          v12, v6, v10
+	12      (0000002a) new-array            v7, v9, [I
+	13      (0000002e) fill-array-data      v7, +a1 (0x170)
+	14      (00000034) invoke-static        v7, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	15      (0000003a) move-result-object   v7
+	16      (0000003c) aput-object          v7, v6, v11
+	17      (00000040) invoke-static        v6, Ltev/piqgahor/WqukitNJL;->mvoGCr4741([Ljava/lang/Object;)Ljava/lang/String;
+	18      (00000046) move-result-object   v4
+	19      (00000048) const/16             v6, 8
+
+Qd1Fl04-BB@0x4c : [ Qd1Fl04-BB@0x72 Qd1Fl04-BB@0xbc ]
+	20      (0000004c) invoke-static        v12, v6, Ltev/piqgahor/udIFeRfR402M;->LoadFromFile(Ljava/lang/String; I)[B
+	21      (00000052) move-result-object   v1
+	22      (00000054) new-instance         v0, Ljava/lang/String;
+	23      (00000058) invoke-direct        v0, v1, Ljava/lang/String;-><init>([B)V
+	24      (0000005e) const/4              v1, 0
+	25      (00000060) invoke-static        v0, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	26      (00000066) move-result          v2
+	27      (00000068) const                v6, 20201111 # [3.310568462746459e-38]
+	28      (0000006e) if-ge                v2, v6, +27
+	4c:101
+	(Ljava/lang/Exception; -> 104 Qd1Fl04-BB@0x104)
+
+Qd1Fl04-BB@0x72 : [ Qd1Fl04-BB@0xba ]
+	29      (00000072) const/4              v6, 4
+	30      (00000074) new-array            v6, v6, [Ljava/lang/Object;
+	31      (00000078) const/4              v7, 0
+	32      (0000007a) sget-object          v8, Ltev/piqgahor/mhttxMbv4;->rRiF79S95z Ljava/lang/String;
+	33      (0000007e) aput-object          v8, v6, v7
+	34      (00000082) const/4              v7, 1
+	35      (00000084) aput-object          v4, v6, v7
+	36      (00000088) const/4              v7, 2
+	37      (0000008a) const/16             v8, 22
+	38      (0000008e) new-array            v8, v8, [I
+	39      (00000092) fill-array-data      v8, +79 (0x184)
+	40      (00000098) invoke-static        v8, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	41      (0000009e) move-result-object   v8
+	42      (000000a0) aput-object          v8, v6, v7
+	43      (000000a4) const/4              v7, 3
+	44      (000000a6) aput-object          v0, v6, v7
+	45      (000000aa) invoke-static        v6, Ltev/piqgahor/WqukitNJL;->mvoGCr4741([Ljava/lang/Object;)Ljava/lang/String;
+	46      (000000b0) move-result-object   v6
+	47      (000000b2) invoke-static        v6, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	48      (000000b8) move                 v2, v5
+	4c:101
+	(Ljava/lang/Exception; -> 104 Qd1Fl04-BB@0x104)
+
+Qd1Fl04-BB@0xba : 
+	49      (000000ba) return               v2
+	4c:101
+	(Ljava/lang/Exception; -> 104 Qd1Fl04-BB@0x104)
+
+Qd1Fl04-BB@0xbc : [ Qd1Fl04-BB@0xba ]
+	50      (000000bc) const/4              v6, 4
+	51      (000000be) new-array            v6, v6, [Ljava/lang/Object;
+	52      (000000c2) const/4              v7, 0
+	53      (000000c4) sget-object          v8, Ltev/piqgahor/mhttxMbv4;->rRiF79S95z Ljava/lang/String;
+	54      (000000c8) aput-object          v8, v6, v7
+	55      (000000cc) const/4              v7, 1
+	56      (000000ce) aput-object          v4, v6, v7
+	57      (000000d2) const/4              v7, 2
+	58      (000000d4) const/16             v8, 19
+	59      (000000d8) new-array            v8, v8, [I
+	60      (000000dc) fill-array-data      v8, +84 (0x1e4)
+	61      (000000e2) invoke-static        v8, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	62      (000000e8) move-result-object   v8
+	63      (000000ea) aput-object          v8, v6, v7
+	64      (000000ee) const/4              v7, 3
+	65      (000000f0) aput-object          v0, v6, v7
+	66      (000000f4) invoke-static        v6, Ltev/piqgahor/WqukitNJL;->mvoGCr4741([Ljava/lang/Object;)Ljava/lang/String;
+	67      (000000fa) move-result-object   v6
+	68      (000000fc) invoke-static        v6, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	69      (00000102) goto                 -24
+
+Qd1Fl04-BB@0x104 : [ Qd1Fl04-BB@0xba ]
+	70      (00000104) move-exception       v3
+	71      (00000106) new-array            v6, v9, [Ljava/lang/Object;
+	72      (0000010a) sget-object          v7, Ltev/piqgahor/mhttxMbv4;->rRiF79S95z Ljava/lang/String;
+	73      (0000010e) aput-object          v7, v6, v5
+	74      (00000112) aput-object          v4, v6, v10
+	75      (00000116) invoke-virtual       v3, Ljava/lang/Exception;->toString()Ljava/lang/String;
+	76      (0000011c) move-result-object   v7
+	77      (0000011e) aput-object          v7, v6, v11
+	78      (00000122) invoke-static        v6, Ltev/piqgahor/WqukitNJL;->mvoGCr4741([Ljava/lang/Object;)Ljava/lang/String;
+	79      (00000128) move-result-object   v6
+	80      (0000012a) invoke-static        v6, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	81      (00000130) move                 v2, v5
+	82      (00000132) goto                 -3c
+
+Qd1Fl04-BB@0x134 : 
+	83      (00000134) fill-array-data-payload bytearray(b'\x07\x00\x00\x00S\x00\x00\x00v\x00\x00\x00h\x00\x00\x00k\x00\x00\x00M\x00\x00\x00p\x00\x00\x00s\x00\x00\x00l\x00\x00\x00]\x00\x00\x00l\x00\x00\x00y\x00\x00\x00b\x00\x00\x00') | \x07\x00\x00\x00\x53\x00\x00\x00\x76\x00\x00\x00\x68\x00\x00\x00\x6b\x00\x00\x00\x4d\x00\x00\x00\x70\x00\x00\x00\x73\x00\x00\x00\x6c\x00\x00\x00\x5d\x00\x00\x00\x6c\x00\x00\x00\x79\x00\x00\x00\x62\x00\x00\x00
+	84      (00000170) fill-array-data-payload bytearray(b'\n\x00\x00\x00g\x00\x00\x00*\x00\x00\x00') | \x0a\x00\x00\x00\x67\x00\x00\x00\x2a\x00\x00\x00
+	85      (00000184) fill-array-data-payload bytearray(b'\x1b\x00\x00\x00`\x00\x00\x00m\x00\x00\x00m\x00\x00\x00j\x00\x00\x00m\x00\x00\x00;\x00\x00\x00<\x00\x00\x00<\x00\x00\x00<\x00\x00\x00;\x00\x00\x00\x81\x00\x00\x00\x84\x00\x00\x00\x87\x00\x00\x00\x80\x00\x00\x00z\x00\x00\x00\x91\x00\x00\x00\x80\x00\x00\x00\x8d\x00\x00\x00;\x00\x00\x00X\x00\x00\x00;\x00\x00\x00') | \x1b\x00\x00\x00\x60\x00\x00\x00\x6d\x00\x00\x00\x6d\x00\x00\x00\x6a\x00\x00\x00\x6d\x00\x00\x00\x3b\x00\x00\x00\x3c\x00\x00\x00\x3c\x00\x00\x00\x3c\x00\x00\x00\x3b\x00\x00\x00\x81\x00\x00\x00\x84\x00\x00\x00\x87\x00\x00\x00\x80\x00\x00\x00\x7a\x00\x00\x00\x91\x00\x00\x00\x80\x00\x00\x00\x8d\x00\x00\x00\x3b\x00\x00\x00\x58\x00\x00\x00\x3b\x00\x00\x00
+	86      (000001e4) fill-array-data-payload bytearray(b"\x07\x00\x00\x00V\x00\x00\x00R\x00\x00\x00\'\x00\x00\x00(\x00\x00\x00(\x00\x00\x00(\x00\x00\x00\'\x00\x00\x00m\x00\x00\x00p\x00\x00\x00s\x00\x00\x00l\x00\x00\x00f\x00\x00\x00}\x00\x00\x00l\x00\x00\x00y\x00\x00\x00\'\x00\x00\x00D\x00\x00\x00\'\x00\x00\x00") | \x07\x00\x00\x00\x56\x00\x00\x00\x52\x00\x00\x00\x27\x00\x00\x00\x28\x00\x00\x00\x28\x00\x00\x00\x28\x00\x00\x00\x27\x00\x00\x00\x6d\x00\x00\x00\x70\x00\x00\x00\x73\x00\x00\x00\x6c\x00\x00\x00\x66\x00\x00\x00\x7d\x00\x00\x00\x6c\x00\x00\x00\x79\x00\x00\x00\x27\x00\x00\x00\x44\x00\x00\x00\x27\x00\x00\x00
+

@@ -1,0 +1,17 @@
+# Lorg/webrtc/Camera2Session$CaptureSessionCallback;->onConfigureFailed(Landroid/hardware/camera2/CameraCaptureSession;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.hardware.camera2.CameraCaptureSession
+#
+# - return:void
+
+onConfigureFailed-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->this$0 Lorg/webrtc/Camera2Session;
+	1       (00000004) invoke-static        v0, Lorg/webrtc/Camera2Session;->access$000(Lorg/webrtc/Camera2Session;)V
+	2       (0000000a) invoke-virtual       v3, Landroid/hardware/camera2/CameraCaptureSession;->close()V
+	3       (00000010) iget-object          v0, v2, Lorg/webrtc/Camera2Session$CaptureSessionCallback;->this$0 Lorg/webrtc/Camera2Session;
+	4       (00000014) const-string         v1, 'Failed to configure capture session.'
+	5       (00000018) invoke-static        v0, v1, Lorg/webrtc/Camera2Session;->access$600(Lorg/webrtc/Camera2Session; Ljava/lang/String;)V
+	6       (0000001e) return-void          
+

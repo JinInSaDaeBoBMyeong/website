@@ -1,0 +1,14 @@
+# Landroid/support/v4/app/Fragment;->getLayoutInflater(Landroid/os/Bundle;)Landroid/view/LayoutInflater; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.os.Bundle
+#
+# - return:android.view.LayoutInflater
+
+getLayoutInflater-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/Fragment;->mActivity Landroid/support/v4/app/FragmentActivity;
+	1       (00000004) invoke-virtual       v0, Landroid/support/v4/app/FragmentActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

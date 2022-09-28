@@ -1,0 +1,55 @@
+# Landroid/support/v4/view/ViewPager;->endFakeDrag()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v12
+#
+# - return:void
+
+endFakeDrag-BB@0x0 : [ endFakeDrag-BB@0xa endFakeDrag-BB@0x1a ]
+	0       (00000000) const/4              v11, 1
+	1       (00000002) iget-boolean         v9, v12, Landroid/support/v4/view/ViewPager;->mFakeDragging Z
+	2       (00000006) if-nez               v9, +a
+
+endFakeDrag-BB@0xa : 
+	3       (0000000a) new-instance         v9, Ljava/lang/IllegalStateException;
+	4       (0000000e) const-string         v10, 'No fake drag in progress. Call beginFakeDrag first.'
+	5       (00000012) invoke-direct        v9, v10, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	6       (00000018) throw                v9
+
+endFakeDrag-BB@0x1a : 
+	7       (0000001a) iget-object          v7, v12, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+	8       (0000001e) const/16             v9, 1000
+	9       (00000022) iget                 v10, v12, Landroid/support/v4/view/ViewPager;->mMaximumVelocity I
+	10      (00000026) int-to-float         v10, v10
+	11      (00000028) invoke-virtual       v7, v9, v10, Landroid/view/VelocityTracker;->computeCurrentVelocity(I F)V
+	12      (0000002e) iget                 v9, v12, Landroid/support/v4/view/ViewPager;->mActivePointerId I
+	13      (00000032) invoke-static        v7, v9, Landroid/support/v4/view/VelocityTrackerCompat;->getXVelocity(Landroid/view/VelocityTracker; I)F
+	14      (00000038) move-result          v9
+	15      (0000003a) float-to-int         v2, v9
+	16      (0000003c) iput-boolean         v11, v12, Landroid/support/v4/view/ViewPager;->mPopulatePending Z
+	17      (00000040) invoke-direct        v12, Landroid/support/v4/view/ViewPager;->getClientWidth()I
+	18      (00000046) move-result          v8
+	19      (00000048) invoke-virtual       v12, Landroid/support/v4/view/ViewPager;->getScrollX()I
+	20      (0000004e) move-result          v5
+	21      (00000050) invoke-direct        v12, Landroid/support/v4/view/ViewPager;->infoForCurrentScrollPosition()Landroid/support/v4/view/ViewPager$ItemInfo;
+	22      (00000056) move-result-object   v1
+	23      (00000058) iget                 v0, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->position I
+	24      (0000005c) int-to-float         v9, v5
+	25      (0000005e) int-to-float         v10, v8
+	26      (00000060) div-float/2addr      v9, v10
+	27      (00000062) iget                 v10, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->offset F
+	28      (00000066) sub-float/2addr      v9, v10
+	29      (00000068) iget                 v10, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor F
+	30      (0000006c) div-float            v4, v9, v10
+	31      (00000070) iget                 v9, v12, Landroid/support/v4/view/ViewPager;->mLastMotionX F
+	32      (00000074) iget                 v10, v12, Landroid/support/v4/view/ViewPager;->mInitialMotionX F
+	33      (00000078) sub-float/2addr      v9, v10
+	34      (0000007a) float-to-int         v6, v9
+	35      (0000007c) invoke-direct        v12, v0, v4, v2, v6, Landroid/support/v4/view/ViewPager;->determineTargetPage(I F I I)I
+	36      (00000082) move-result          v3
+	37      (00000084) invoke-virtual       v12, v3, v11, v11, v2, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(I Z Z I)V
+	38      (0000008a) invoke-direct        v12, Landroid/support/v4/view/ViewPager;->endDrag()V
+	39      (00000090) const/4              v9, 0
+	40      (00000092) iput-boolean         v9, v12, Landroid/support/v4/view/ViewPager;->mFakeDragging Z
+	41      (00000096) return-void          
+

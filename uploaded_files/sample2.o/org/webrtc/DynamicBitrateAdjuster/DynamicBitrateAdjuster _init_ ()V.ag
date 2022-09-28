@@ -1,0 +1,16 @@
+# Lorg/webrtc/DynamicBitrateAdjuster;-><init>()V [access_flags=constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const-wide/16        v0, 0 # [0.0]
+	1       (00000004) invoke-direct        v2, Lorg/webrtc/BaseBitrateAdjuster;-><init>()V
+	2       (0000000a) iput-wide            v0, v2, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	3       (0000000e) iput-wide            v0, v2, Lorg/webrtc/DynamicBitrateAdjuster;->timeSinceLastAdjustmentMs D
+	4       (00000012) const/4              v0, 0
+	5       (00000014) iput                 v0, v2, Lorg/webrtc/DynamicBitrateAdjuster;->bitrateAdjustmentScaleExp I
+	6       (00000018) return-void          
+

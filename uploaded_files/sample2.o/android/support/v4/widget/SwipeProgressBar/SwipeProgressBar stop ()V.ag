@@ -1,0 +1,25 @@
+# Landroid/support/v4/widget/SwipeProgressBar;->stop()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+stop-BB@0x0 : [ stop-BB@0x8 stop-BB@0x2a ]
+	0       (00000000) iget-boolean         v0, v2, Landroid/support/v4/widget/SwipeProgressBar;->mRunning Z
+	1       (00000004) if-eqz               v0, +13
+
+stop-BB@0x8 : [ stop-BB@0x2a ]
+	2       (00000008) const/4              v0, 0
+	3       (0000000a) iput                 v0, v2, Landroid/support/v4/widget/SwipeProgressBar;->mTriggerPercentage F
+	4       (0000000e) invoke-static        Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
+	5       (00000014) move-result-wide     v0
+	6       (00000016) iput-wide            v0, v2, Landroid/support/v4/widget/SwipeProgressBar;->mFinishTime J
+	7       (0000001a) const/4              v0, 0
+	8       (0000001c) iput-boolean         v0, v2, Landroid/support/v4/widget/SwipeProgressBar;->mRunning Z
+	9       (00000020) iget-object          v0, v2, Landroid/support/v4/widget/SwipeProgressBar;->mParent Landroid/view/View;
+	10      (00000024) invoke-virtual       v0, Landroid/view/View;->postInvalidate()V
+
+stop-BB@0x2a : 
+	11      (0000002a) return-void          
+

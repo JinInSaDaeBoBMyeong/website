@@ -1,0 +1,14 @@
+# Lorg/webrtc/EglBase;->create(Lorg/webrtc/EglBase$Context;)Lorg/webrtc/EglBase; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.EglBase$Context
+#
+# - return:org.webrtc.EglBase
+
+create-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lorg/webrtc/EglBase;->CONFIG_PLAIN [I
+	1       (00000004) invoke-static        v1, v0, Lorg/webrtc/EglBase;->create(Lorg/webrtc/EglBase$Context; [I)Lorg/webrtc/EglBase;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

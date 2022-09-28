@@ -1,0 +1,20 @@
+# Ltev/piqgahor/mlDMsT43cl;->aznIyuBf5Ira(Landroid/content/Context;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Context
+#
+# - return:void
+
+aznIyuBf5Ira-BB@0x0 : [ aznIyuBf5Ira-BB@0x8 aznIyuBf5Ira-BB@0xa ]
+	0       (00000000) sget-object          v0, Ltev/piqgahor/mlDMsT43cl;->Fy7oXM9c Ltev/piqgahor/fxn1Y9;
+	1       (00000004) if-nez               v0, +3
+
+aznIyuBf5Ira-BB@0x8 : 
+	2       (00000008) return-void          
+
+aznIyuBf5Ira-BB@0xa : [ aznIyuBf5Ira-BB@0x8 ]
+	3       (0000000a) sget-object          v0, Ltev/piqgahor/mlDMsT43cl;->Fy7oXM9c Ltev/piqgahor/fxn1Y9;
+	4       (0000000e) invoke-interface     v0, v1, Ltev/piqgahor/fxn1Y9;->IG2QNPK6D84(Landroid/content/Context;)V
+	5       (00000014) goto                 -6
+

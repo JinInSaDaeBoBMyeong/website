@@ -1,0 +1,23 @@
+# Landroid/support/v4/widget/AutoScrollHelper;->requestStop()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+requestStop-BB@0x0 : [ requestStop-BB@0x8 requestStop-BB@0x10 ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/v4/widget/AutoScrollHelper;->mNeedsReset Z
+	1       (00000004) if-eqz               v0, +6
+
+requestStop-BB@0x8 : [ requestStop-BB@0xe ]
+	2       (00000008) const/4              v0, 0
+	3       (0000000a) iput-boolean         v0, v1, Landroid/support/v4/widget/AutoScrollHelper;->mAnimating Z
+
+requestStop-BB@0xe : 
+	4       (0000000e) return-void          
+
+requestStop-BB@0x10 : [ requestStop-BB@0xe ]
+	5       (00000010) iget-object          v0, v1, Landroid/support/v4/widget/AutoScrollHelper;->mScroller Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+	6       (00000014) invoke-virtual       v0, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->requestStop()V
+	7       (0000001a) goto                 -6
+

@@ -1,0 +1,78 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioManager;->getNativeOutputSampleRate()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:int
+
+getNativeOutputSampleRate-BB@0x0 : [ getNativeOutputSampleRate-BB@0xc getNativeOutputSampleRate-BB@0x20 ]
+	0       (00000000) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->runningOnEmulator()Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-eqz               v1, +c
+
+getNativeOutputSampleRate-BB@0xc : [ getNativeOutputSampleRate-BB@0x1e ]
+	3       (0000000c) const-string         v1, 'WebRtcAudioManager'
+	4       (00000010) const-string         v2, 'Running emulator, overriding sample rate to 8 kHz.'
+	5       (00000014) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	6       (0000001a) const/16             v0, 8000
+
+getNativeOutputSampleRate-BB@0x1e : 
+	7       (0000001e) return               v0
+
+getNativeOutputSampleRate-BB@0x20 : [ getNativeOutputSampleRate-BB@0x2c getNativeOutputSampleRate-BB@0x7a ]
+	8       (00000020) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->isDefaultSampleRateOverridden()Z
+	9       (00000026) move-result          v1
+	10      (00000028) if-eqz               v1, +29
+
+getNativeOutputSampleRate-BB@0x2c : [ getNativeOutputSampleRate-BB@0x1e ]
+	11      (0000002c) const-string         v1, 'WebRtcAudioManager'
+	12      (00000030) new-instance         v2, Ljava/lang/StringBuilder;
+	13      (00000034) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	14      (0000003a) const-string         v3, 'Default sample rate is overriden to '
+	15      (0000003e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v2
+	17      (00000046) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->getDefaultSampleRateHz()I
+	18      (0000004c) move-result          v3
+	19      (0000004e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	20      (00000054) move-result-object   v2
+	21      (00000056) const-string         v3, ' Hz'
+	22      (0000005a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000060) move-result-object   v2
+	24      (00000062) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	25      (00000068) move-result-object   v2
+	26      (0000006a) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	27      (00000070) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->getDefaultSampleRateHz()I
+	28      (00000076) move-result          v0
+	29      (00000078) goto                 -2d
+
+getNativeOutputSampleRate-BB@0x7a : [ getNativeOutputSampleRate-BB@0x86 getNativeOutputSampleRate-BB@0xcc ]
+	30      (0000007a) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->runningOnJellyBeanMR1OrHigher()Z
+	31      (00000080) move-result          v1
+	32      (00000082) if-eqz               v1, +25
+
+getNativeOutputSampleRate-BB@0x86 : [ getNativeOutputSampleRate-BB@0x8e ]
+	33      (00000086) invoke-direct        v4, Lorg/webrtc/voiceengine/WebRtcAudioManager;->getSampleRateOnJellyBeanMR10OrHigher()I
+	34      (0000008c) move-result          v0
+
+getNativeOutputSampleRate-BB@0x8e : [ getNativeOutputSampleRate-BB@0x1e ]
+	35      (0000008e) const-string         v1, 'WebRtcAudioManager'
+	36      (00000092) new-instance         v2, Ljava/lang/StringBuilder;
+	37      (00000096) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	38      (0000009c) const-string         v3, 'Sample rate is set to '
+	39      (000000a0) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000a6) move-result-object   v2
+	41      (000000a8) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	42      (000000ae) move-result-object   v2
+	43      (000000b0) const-string         v3, ' Hz'
+	44      (000000b4) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	45      (000000ba) move-result-object   v2
+	46      (000000bc) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	47      (000000c2) move-result-object   v2
+	48      (000000c4) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	49      (000000ca) goto                 -56
+
+getNativeOutputSampleRate-BB@0xcc : [ getNativeOutputSampleRate-BB@0x8e ]
+	50      (000000cc) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->getDefaultSampleRateHz()I
+	51      (000000d2) move-result          v0
+	52      (000000d4) goto                 -23
+

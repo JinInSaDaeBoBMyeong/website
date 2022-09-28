@@ -1,0 +1,24 @@
+# Lorg/webrtc/PeerConnectionFactory;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x10 ]
+	0       (00000000) const-string         v1, 'jingle_peerconnection_so'
+	1       (00000004) invoke-static        v1, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+	2       (0000000a) const/4              v1, 1
+	3       (0000000c) sput-boolean         v1, Lorg/webrtc/PeerConnectionFactory;->nativeLibLoaded Z
+	0:f
+	(Ljava/lang/UnsatisfiedLinkError; -> 12 <clinit>-BB@0x12)
+
+<clinit>-BB@0x10 : 
+	4       (00000010) return-void          
+
+<clinit>-BB@0x12 : [ <clinit>-BB@0x10 ]
+	5       (00000012) move-exception       v0
+	6       (00000014) const/4              v1, 0
+	7       (00000016) sput-boolean         v1, Lorg/webrtc/PeerConnectionFactory;->nativeLibLoaded Z
+	8       (0000001a) goto                 -5
+

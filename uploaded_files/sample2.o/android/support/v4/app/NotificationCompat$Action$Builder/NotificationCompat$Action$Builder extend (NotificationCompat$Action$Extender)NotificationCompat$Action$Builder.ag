@@ -1,0 +1,12 @@
+# Landroid/support/v4/app/NotificationCompat$Action$Builder;->extend(Landroid/support/v4/app/NotificationCompat$Action$Extender;)Landroid/support/v4/app/NotificationCompat$Action$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.app.NotificationCompat$Action$Extender
+#
+# - return:android.support.v4.app.NotificationCompat$Action$Builder
+
+extend-BB@0x0 : 
+	0       (00000000) invoke-interface     v1, v0, Landroid/support/v4/app/NotificationCompat$Action$Extender;->extend(Landroid/support/v4/app/NotificationCompat$Action$Builder;)Landroid/support/v4/app/NotificationCompat$Action$Builder;
+	1       (00000006) return-object        v0
+

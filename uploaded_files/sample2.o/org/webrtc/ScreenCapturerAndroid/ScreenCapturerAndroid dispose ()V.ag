@@ -1,0 +1,23 @@
+# Lorg/webrtc/ScreenCapturerAndroid;->dispose()V [access_flags=public synchronized]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+dispose-BB@0x0 : [ dispose-BB@0x4 ]
+	0       (00000000) monitor-enter        v1
+	1       (00000002) const/4              v0, 1
+
+dispose-BB@0x4 : 
+	2       (00000004) iput-boolean         v0, v1, Lorg/webrtc/ScreenCapturerAndroid;->isDisposed Z
+	3       (00000008) monitor-exit         v1
+	4       (0000000a) return-void          
+	4:7
+	(Ljava/lang/Throwable; -> c dispose-BB@0xc)
+
+dispose-BB@0xc : 
+	5       (0000000c) move-exception       v0
+	6       (0000000e) monitor-exit         v1
+	7       (00000010) throw                v0
+

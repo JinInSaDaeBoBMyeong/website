@@ -1,0 +1,26 @@
+# Landroid/support/v4/text/ICUCompat;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0xc <clinit>-BB@0x1c ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 14
+	2       (00000008) if-lt                v0, v1, +a
+
+<clinit>-BB@0xc : [ <clinit>-BB@0x1a ]
+	3       (0000000c) new-instance         v1, Landroid/support/v4/text/ICUCompat$ICUCompatImplIcs;
+	4       (00000010) invoke-direct        v1, Landroid/support/v4/text/ICUCompat$ICUCompatImplIcs;-><init>()V
+	5       (00000016) sput-object          v1, Landroid/support/v4/text/ICUCompat;->IMPL Landroid/support/v4/text/ICUCompat$ICUCompatImpl;
+
+<clinit>-BB@0x1a : 
+	6       (0000001a) return-void          
+
+<clinit>-BB@0x1c : [ <clinit>-BB@0x1a ]
+	7       (0000001c) new-instance         v1, Landroid/support/v4/text/ICUCompat$ICUCompatImplBase;
+	8       (00000020) invoke-direct        v1, Landroid/support/v4/text/ICUCompat$ICUCompatImplBase;-><init>()V
+	9       (00000026) sput-object          v1, Landroid/support/v4/text/ICUCompat;->IMPL Landroid/support/v4/text/ICUCompat$ICUCompatImpl;
+	10      (0000002a) goto                 -8
+

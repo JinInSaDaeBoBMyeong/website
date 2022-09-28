@@ -1,0 +1,23 @@
+# Landroid/support/v4/text/BidiFormatter$Builder;->getDefaultInstanceFromContext(Z)Landroid/support/v4/text/BidiFormatter; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:boolean
+#
+# - return:android.support.v4.text.BidiFormatter
+
+getDefaultInstanceFromContext-BB@0x0 : [ getDefaultInstanceFromContext-BB@0x4 getDefaultInstanceFromContext-BB@0xe ]
+	0       (00000000) if-eqz               v1, +7
+
+getDefaultInstanceFromContext-BB@0x4 : [ getDefaultInstanceFromContext-BB@0xc ]
+	1       (00000004) invoke-static        Landroid/support/v4/text/BidiFormatter;->access$200()Landroid/support/v4/text/BidiFormatter;
+	2       (0000000a) move-result-object   v0
+
+getDefaultInstanceFromContext-BB@0xc : 
+	3       (0000000c) return-object        v0
+
+getDefaultInstanceFromContext-BB@0xe : [ getDefaultInstanceFromContext-BB@0xc ]
+	4       (0000000e) invoke-static        Landroid/support/v4/text/BidiFormatter;->access$300()Landroid/support/v4/text/BidiFormatter;
+	5       (00000014) move-result-object   v0
+	6       (00000016) goto                 -5
+

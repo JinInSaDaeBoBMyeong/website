@@ -1,0 +1,14 @@
+# Landroid/support/v4/content/LocalBroadcastManager$1;-><init>(Landroid/support/v4/content/LocalBroadcastManager; Landroid/os/Looper;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.content.LocalBroadcastManager
+# - v2:android.os.Looper
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroid/support/v4/content/LocalBroadcastManager$1;->this$0 Landroid/support/v4/content/LocalBroadcastManager;
+	1       (00000004) invoke-direct        v0, v2, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+	2       (0000000a) return-void          
+

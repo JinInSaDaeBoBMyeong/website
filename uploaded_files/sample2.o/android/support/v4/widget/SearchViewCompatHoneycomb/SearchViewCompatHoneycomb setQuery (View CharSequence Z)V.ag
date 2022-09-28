@@ -1,0 +1,15 @@
+# Landroid/support/v4/widget/SearchViewCompatHoneycomb;->setQuery(Landroid/view/View; Ljava/lang/CharSequence; Z)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:android.view.View
+# - v1:java.lang.CharSequence
+# - v2:boolean
+#
+# - return:void
+
+setQuery-BB@0x0 : 
+	0       (00000000) check-cast           v0, Landroid/widget/SearchView;
+	1       (00000004) invoke-virtual       v0, v1, v2, Landroid/widget/SearchView;->setQuery(Ljava/lang/CharSequence; Z)V
+	2       (0000000a) return-void          
+

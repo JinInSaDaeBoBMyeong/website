@@ -1,0 +1,28 @@
+# Lorg/webrtc/CameraEnumerationAndroid$1;->diff(Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;)I [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:org.webrtc.CameraEnumerationAndroid$CaptureFormat$FramerateRange
+#
+# - return:int
+
+diff-BB@0x0 : 
+	0       (00000000) const/4              v5, 1
+	1       (00000002) iget                 v2, v7, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->min I
+	2       (00000006) const/16             v3, 8000
+	3       (0000000a) const/4              v4, 4
+	4       (0000000c) invoke-direct        v6, v2, v3, v5, v4, Lorg/webrtc/CameraEnumerationAndroid$1;->progressivePenalty(I I I I)I
+	5       (00000012) move-result          v1
+	6       (00000014) iget                 v2, v6, Lorg/webrtc/CameraEnumerationAndroid$1;->val$requestedFps I
+	7       (00000018) mul-int/lit16        v2, v2, 1000
+	8       (0000001c) iget                 v3, v7, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->max I
+	9       (00000020) sub-int/2addr        v2, v3
+	10      (00000022) invoke-static        v2, Ljava/lang/Math;->abs(I)I
+	11      (00000028) move-result          v2
+	12      (0000002a) const/16             v3, 5000
+	13      (0000002e) const/4              v4, 3
+	14      (00000030) invoke-direct        v6, v2, v3, v5, v4, Lorg/webrtc/CameraEnumerationAndroid$1;->progressivePenalty(I I I I)I
+	15      (00000036) move-result          v0
+	16      (00000038) add-int              v2, v1, v0
+	17      (0000003c) return               v2
+

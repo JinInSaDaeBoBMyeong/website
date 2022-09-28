@@ -1,0 +1,15 @@
+# Lorg/webrtc/MediaCodecVideoEncoder;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) sget-object          v0, Lorg/webrtc/MediaCodecVideoEncoder$BitrateAdjustmentType;->NO_ADJUSTMENT Lorg/webrtc/MediaCodecVideoEncoder$BitrateAdjustmentType;
+	2       (0000000a) iput-object          v0, v1, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentType Lorg/webrtc/MediaCodecVideoEncoder$BitrateAdjustmentType;
+	3       (0000000e) const/4              v0, 0
+	4       (00000010) iput-object          v0, v1, Lorg/webrtc/MediaCodecVideoEncoder;->configData Ljava/nio/ByteBuffer;
+	5       (00000014) return-void          
+

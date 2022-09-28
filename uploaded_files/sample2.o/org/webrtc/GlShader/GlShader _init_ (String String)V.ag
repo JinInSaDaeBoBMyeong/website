@@ -1,0 +1,85 @@
+# Lorg/webrtc/GlShader;-><init>(Ljava/lang/String; Ljava/lang/String;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+# - v9:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x3a <init>-BB@0x74 ]
+	0       (00000000) const/4              v6, 1
+	1       (00000002) const/4              v5, 0
+	2       (00000004) invoke-direct        v7, Ljava/lang/Object;-><init>()V
+	3       (0000000a) const                v3, 35633 # [4.993246817928621e-41]
+	4       (00000010) invoke-static        v3, v8, Lorg/webrtc/GlShader;->compileShader(I Ljava/lang/String;)I
+	5       (00000016) move-result          v2
+	6       (00000018) const                v3, 35632 # [4.993106688082188e-41]
+	7       (0000001e) invoke-static        v3, v9, Lorg/webrtc/GlShader;->compileShader(I Ljava/lang/String;)I
+	8       (00000024) move-result          v0
+	9       (00000026) invoke-static        Landroid/opengl/GLES20;->glCreateProgram()I
+	10      (0000002c) move-result          v3
+	11      (0000002e) iput                 v3, v7, Lorg/webrtc/GlShader;->program I
+	12      (00000032) iget                 v3, v7, Lorg/webrtc/GlShader;->program I
+	13      (00000036) if-nez               v3, +1f
+
+<init>-BB@0x3a : 
+	14      (0000003a) new-instance         v3, Ljava/lang/RuntimeException;
+	15      (0000003e) new-instance         v4, Ljava/lang/StringBuilder;
+	16      (00000042) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	17      (00000048) const-string         v5, 'glCreateProgram() failed. GLES20 error: '
+	18      (0000004c) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (00000052) move-result-object   v4
+	20      (00000054) invoke-static        Landroid/opengl/GLES20;->glGetError()I
+	21      (0000005a) move-result          v5
+	22      (0000005c) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	23      (00000062) move-result-object   v4
+	24      (00000064) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	25      (0000006a) move-result-object   v4
+	26      (0000006c) invoke-direct        v3, v4, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	27      (00000072) throw                v3
+
+<init>-BB@0x74 : [ <init>-BB@0xb2 <init>-BB@0x106 ]
+	28      (00000074) iget                 v3, v7, Lorg/webrtc/GlShader;->program I
+	29      (00000078) invoke-static        v3, v2, Landroid/opengl/GLES20;->glAttachShader(I I)V
+	30      (0000007e) iget                 v3, v7, Lorg/webrtc/GlShader;->program I
+	31      (00000082) invoke-static        v3, v0, Landroid/opengl/GLES20;->glAttachShader(I I)V
+	32      (00000088) iget                 v3, v7, Lorg/webrtc/GlShader;->program I
+	33      (0000008c) invoke-static        v3, Landroid/opengl/GLES20;->glLinkProgram(I)V
+	34      (00000092) new-array            v1, v6, [I
+	35      (00000096) aput                 v5, v1, v5
+	36      (0000009a) iget                 v3, v7, Lorg/webrtc/GlShader;->program I
+	37      (0000009e) const                v4, 35714 # [5.004597335489652e-41]
+	38      (000000a4) invoke-static        v3, v4, v1, v5, Landroid/opengl/GLES20;->glGetProgramiv(I I [I I)V
+	39      (000000aa) aget                 v3, v1, v5
+	40      (000000ae) if-eq                v3, v6, +2c
+
+<init>-BB@0xb2 : 
+	41      (000000b2) const-string         v3, 'GlShader'
+	42      (000000b6) new-instance         v4, Ljava/lang/StringBuilder;
+	43      (000000ba) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	44      (000000c0) const-string         v5, 'Could not link program: '
+	45      (000000c4) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	46      (000000ca) move-result-object   v4
+	47      (000000cc) iget                 v5, v7, Lorg/webrtc/GlShader;->program I
+	48      (000000d0) invoke-static        v5, Landroid/opengl/GLES20;->glGetProgramInfoLog(I)Ljava/lang/String;
+	49      (000000d6) move-result-object   v5
+	50      (000000d8) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	51      (000000de) move-result-object   v4
+	52      (000000e0) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	53      (000000e6) move-result-object   v4
+	54      (000000e8) invoke-static        v3, v4, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	55      (000000ee) new-instance         v3, Ljava/lang/RuntimeException;
+	56      (000000f2) iget                 v4, v7, Lorg/webrtc/GlShader;->program I
+	57      (000000f6) invoke-static        v4, Landroid/opengl/GLES20;->glGetProgramInfoLog(I)Ljava/lang/String;
+	58      (000000fc) move-result-object   v4
+	59      (000000fe) invoke-direct        v3, v4, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	60      (00000104) throw                v3
+
+<init>-BB@0x106 : 
+	61      (00000106) invoke-static        v2, Landroid/opengl/GLES20;->glDeleteShader(I)V
+	62      (0000010c) invoke-static        v0, Landroid/opengl/GLES20;->glDeleteShader(I)V
+	63      (00000112) const-string         v3, 'Creating GlShader'
+	64      (00000116) invoke-static        v3, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
+	65      (0000011c) return-void          
+

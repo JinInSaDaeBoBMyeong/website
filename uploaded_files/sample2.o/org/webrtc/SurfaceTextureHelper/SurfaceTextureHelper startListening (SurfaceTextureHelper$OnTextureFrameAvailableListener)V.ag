@@ -1,0 +1,29 @@
+# Lorg/webrtc/SurfaceTextureHelper;->startListening(Lorg/webrtc/SurfaceTextureHelper$OnTextureFrameAvailableListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:org.webrtc.SurfaceTextureHelper$OnTextureFrameAvailableListener
+#
+# - return:void
+
+startListening-BB@0x0 : [ startListening-BB@0x8 startListening-BB@0x10 ]
+	0       (00000000) iget-object          v0, v2, Lorg/webrtc/SurfaceTextureHelper;->listener Lorg/webrtc/SurfaceTextureHelper$OnTextureFrameAvailableListener;
+	1       (00000004) if-nez               v0, +6
+
+startListening-BB@0x8 : [ startListening-BB@0x10 startListening-BB@0x20 ]
+	2       (00000008) iget-object          v0, v2, Lorg/webrtc/SurfaceTextureHelper;->pendingListener Lorg/webrtc/SurfaceTextureHelper$OnTextureFrameAvailableListener;
+	3       (0000000c) if-eqz               v0, +a
+
+startListening-BB@0x10 : 
+	4       (00000010) new-instance         v0, Ljava/lang/IllegalStateException;
+	5       (00000014) const-string         v1, 'SurfaceTextureHelper listener has already been set.'
+	6       (00000018) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	7       (0000001e) throw                v0
+
+startListening-BB@0x20 : 
+	8       (00000020) iput-object          v3, v2, Lorg/webrtc/SurfaceTextureHelper;->pendingListener Lorg/webrtc/SurfaceTextureHelper$OnTextureFrameAvailableListener;
+	9       (00000024) iget-object          v0, v2, Lorg/webrtc/SurfaceTextureHelper;->handler Landroid/os/Handler;
+	10      (00000028) iget-object          v1, v2, Lorg/webrtc/SurfaceTextureHelper;->setListenerRunnable Ljava/lang/Runnable;
+	11      (0000002c) invoke-virtual       v0, v1, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+	12      (00000032) return-void          
+

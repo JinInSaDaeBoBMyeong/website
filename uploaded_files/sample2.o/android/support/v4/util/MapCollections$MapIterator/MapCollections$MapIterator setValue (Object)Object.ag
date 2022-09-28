@@ -1,0 +1,25 @@
+# Landroid/support/v4/util/MapCollections$MapIterator;->setValue(Ljava/lang/Object;)Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:java.lang.Object
+
+setValue-BB@0x0 : [ setValue-BB@0x8 setValue-BB@0x18 ]
+	0       (00000000) iget-boolean         v0, v2, Landroid/support/v4/util/MapCollections$MapIterator;->mEntryValid Z
+	1       (00000004) if-nez               v0, +a
+
+setValue-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/IllegalStateException;
+	3       (0000000c) const-string         v1, 'This container does not support retaining Map.Entry objects'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+setValue-BB@0x18 : 
+	6       (00000018) iget-object          v0, v2, Landroid/support/v4/util/MapCollections$MapIterator;->this$0 Landroid/support/v4/util/MapCollections;
+	7       (0000001c) iget                 v1, v2, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex I
+	8       (00000020) invoke-virtual       v0, v1, v3, Landroid/support/v4/util/MapCollections;->colSetValue(I Ljava/lang/Object;)Ljava/lang/Object;
+	9       (00000026) move-result-object   v0
+	10      (00000028) return-object        v0
+

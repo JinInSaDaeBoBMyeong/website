@@ -1,0 +1,175 @@
+# Lorg/webrtc/YuvConverter;->convert(Ljava/nio/ByteBuffer; I I I I [F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v13
+# - v14:java.nio.ByteBuffer
+# - v15:int
+# - v16:int
+# - v17:int
+# - v18:int
+# - v19:float[]
+#
+# - return:void
+
+convert-BB@0x0 : [ convert-BB@0x12 convert-BB@0x22 ]
+	0       (00000000) iget-object          v1, v13, Lorg/webrtc/YuvConverter;->threadChecker Lorg/webrtc/ThreadUtils$ThreadChecker;
+	1       (00000004) invoke-virtual       v1, Lorg/webrtc/ThreadUtils$ThreadChecker;->checkIsOnValidThread()V
+	2       (0000000a) iget-boolean         v1, v13, Lorg/webrtc/YuvConverter;->released Z
+	3       (0000000e) if-eqz               v1, +a
+
+convert-BB@0x12 : 
+	4       (00000012) new-instance         v1, Ljava/lang/IllegalStateException;
+	5       (00000016) const-string         v2, 'YuvConverter.convert called on released object'
+	6       (0000001a) invoke-direct        v1, v2, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	7       (00000020) throw                v1
+
+convert-BB@0x22 : [ convert-BB@0x2a convert-BB@0x3a ]
+	8       (00000022) rem-int/lit8         v1, v17, 8
+	9       (00000026) if-eqz               v1, +a
+
+convert-BB@0x2a : 
+	10      (0000002a) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	11      (0000002e) const-string         v2, 'Invalid stride, must be a multiple of 8'
+	12      (00000032) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	13      (00000038) throw                v1
+
+convert-BB@0x3a : [ convert-BB@0x42 convert-BB@0x52 ]
+	14      (0000003a) move/from16          v0, v17
+	15      (0000003e) if-ge                v0, v15, +a
+
+convert-BB@0x42 : 
+	16      (00000042) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	17      (00000046) const-string         v2, 'Invalid stride, must >= width'
+	18      (0000004a) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	19      (00000050) throw                v1
+
+convert-BB@0x52 : [ convert-BB@0x7e convert-BB@0x8e ]
+	20      (00000052) add-int/lit8         v1, v15, 3
+	21      (00000056) div-int/lit8         v12, v1, 4
+	22      (0000005a) add-int/lit8         v1, v15, 7
+	23      (0000005e) div-int/lit8         v11, v1, 8
+	24      (00000062) add-int/lit8         v1, v16, 1
+	25      (00000066) div-int/lit8         v10, v1, 2
+	26      (0000006a) add-int              v9, v16, v10
+	27      (0000006e) mul-int              v8, v17, v9
+	28      (00000072) invoke-virtual       v14, Ljava/nio/ByteBuffer;->capacity()I
+	29      (00000078) move-result          v1
+	30      (0000007a) if-ge                v1, v8, +a
+
+convert-BB@0x7e : 
+	31      (0000007e) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	32      (00000082) const-string         v2, 'YuvConverter.convert called with too small buffer'
+	33      (00000086) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	34      (0000008c) throw                v1
+
+convert-BB@0x8e : 
+	35      (0000008e) invoke-static        Lorg/webrtc/RendererCommon;->verticalFlipMatrix()[F
+	36      (00000094) move-result-object   v1
+	37      (00000096) move-object/from16   v0, v19
+	38      (0000009a) invoke-static        v0, v1, Lorg/webrtc/RendererCommon;->multiplyMatrices([F [F)[F
+	39      (000000a0) move-result-object   v19
+	40      (000000a2) div-int/lit8         v3, v17, 4
+	41      (000000a6) move                 v4, v9
+	42      (000000a8) iget-object          v1, v13, Lorg/webrtc/YuvConverter;->textureFrameBuffer Lorg/webrtc/GlTextureFrameBuffer;
+	43      (000000ac) invoke-virtual       v1, v3, v4, Lorg/webrtc/GlTextureFrameBuffer;->setSize(I I)V
+	44      (000000b2) const                v1, 36160 # [5.067095246998539e-41]
+	45      (000000b8) iget-object          v2, v13, Lorg/webrtc/YuvConverter;->textureFrameBuffer Lorg/webrtc/GlTextureFrameBuffer;
+	46      (000000bc) invoke-virtual       v2, Lorg/webrtc/GlTextureFrameBuffer;->getFrameBufferId()I
+	47      (000000c2) move-result          v2
+	48      (000000c4) invoke-static        v1, v2, Landroid/opengl/GLES20;->glBindFramebuffer(I I)V
+	49      (000000ca) const-string         v1, 'glBindFramebuffer'
+	50      (000000ce) invoke-static        v1, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
+	51      (000000d4) const                v1, 33984 # [4.762172701161458e-41]
+	52      (000000da) invoke-static        v1, Landroid/opengl/GLES20;->glActiveTexture(I)V
+	53      (000000e0) const                v1, 36197 # [5.07228005131654e-41]
+	54      (000000e6) move/from16          v0, v18
+	55      (000000ea) invoke-static        v1, v0, Landroid/opengl/GLES20;->glBindTexture(I I)V
+	56      (000000f0) iget                 v1, v13, Lorg/webrtc/YuvConverter;->texMatrixLoc I
+	57      (000000f4) const/4              v2, 1
+	58      (000000f6) const/4              v5, 0
+	59      (000000f8) const/4              v6, 0
+	60      (000000fa) move-object/from16   v0, v19
+	61      (000000fe) invoke-static        v1, v2, v5, v0, v6, Landroid/opengl/GLES20;->glUniformMatrix4fv(I I Z [F I)V
+	62      (00000104) const/4              v1, 0
+	63      (00000106) const/4              v2, 0
+	64      (00000108) move/from16          v0, v16
+	65      (0000010c) invoke-static        v1, v2, v12, v0, Landroid/opengl/GLES20;->glViewport(I I I I)V
+	66      (00000112) iget                 v1, v13, Lorg/webrtc/YuvConverter;->xUnitLoc I
+	67      (00000116) const/4              v2, 0
+	68      (00000118) aget                 v2, v19, v2
+	69      (0000011c) int-to-float         v5, v15
+	70      (0000011e) div-float/2addr      v2, v5
+	71      (00000120) const/4              v5, 1
+	72      (00000122) aget                 v5, v19, v5
+	73      (00000126) int-to-float         v6, v15
+	74      (00000128) div-float/2addr      v5, v6
+	75      (0000012a) invoke-static        v1, v2, v5, Landroid/opengl/GLES20;->glUniform2f(I F F)V
+	76      (00000130) iget                 v1, v13, Lorg/webrtc/YuvConverter;->coeffsLoc I
+	77      (00000134) const                v2, 1050220167 # [0.29899999499320984]
+	78      (0000013a) const                v5, 1058424226 # [0.5870000123977661]
+	79      (00000140) const                v6, 1038710997 # [0.11400000005960464]
+	80      (00000146) const/4              v7, 0
+	81      (00000148) invoke-static        v1, v2, v5, v6, v7, Landroid/opengl/GLES20;->glUniform4f(I F F F F)V
+	82      (0000014e) const/4              v1, 5
+	83      (00000150) const/4              v2, 0
+	84      (00000152) const/4              v5, 4
+	85      (00000154) invoke-static        v1, v2, v5, Landroid/opengl/GLES20;->glDrawArrays(I I I)V
+	86      (0000015a) const/4              v1, 0
+	87      (0000015c) move/from16          v0, v16
+	88      (00000160) invoke-static        v1, v0, v11, v10, Landroid/opengl/GLES20;->glViewport(I I I I)V
+	89      (00000166) iget                 v1, v13, Lorg/webrtc/YuvConverter;->xUnitLoc I
+	90      (0000016a) const/high16         v2, 16384 # [2.0]
+	91      (0000016e) const/4              v5, 0
+	92      (00000170) aget                 v5, v19, v5
+	93      (00000174) mul-float/2addr      v2, v5
+	94      (00000176) int-to-float         v5, v15
+	95      (00000178) div-float/2addr      v2, v5
+	96      (0000017a) const/high16         v5, 16384 # [2.0]
+	97      (0000017e) const/4              v6, 1
+	98      (00000180) aget                 v6, v19, v6
+	99      (00000184) mul-float/2addr      v5, v6
+	100     (00000186) int-to-float         v6, v15
+	101     (00000188) div-float/2addr      v5, v6
+	102     (0000018a) invoke-static        v1, v2, v5, Landroid/opengl/GLES20;->glUniform2f(I F F)V
+	103     (00000190) iget                 v1, v13, Lorg/webrtc/YuvConverter;->coeffsLoc I
+	104     (00000194) const                v2, -1104343466 # [-0.16899999976158142]
+	105     (0000019a) const                v5, -1096189739 # [-0.3310000002384186]
+	106     (000001a0) const                v6, 1056931054 # [0.49900001287460327]
+	107     (000001a6) const/high16         v7, 16128 # [0.5]
+	108     (000001aa) invoke-static        v1, v2, v5, v6, v7, Landroid/opengl/GLES20;->glUniform4f(I F F F F)V
+	109     (000001b0) const/4              v1, 5
+	110     (000001b2) const/4              v2, 0
+	111     (000001b4) const/4              v5, 4
+	112     (000001b6) invoke-static        v1, v2, v5, Landroid/opengl/GLES20;->glDrawArrays(I I I)V
+	113     (000001bc) div-int/lit8         v1, v17, 8
+	114     (000001c0) move/from16          v0, v16
+	115     (000001c4) invoke-static        v1, v0, v11, v10, Landroid/opengl/GLES20;->glViewport(I I I I)V
+	116     (000001ca) iget                 v1, v13, Lorg/webrtc/YuvConverter;->coeffsLoc I
+	117     (000001ce) const                v2, 1056931054 # [0.49900001287460327]
+	118     (000001d4) const                v5, -1093270503 # [-0.4180000126361847]
+	119     (000001da) const                v6, -1113161571 # [-0.08129999786615372]
+	120     (000001e0) const/high16         v7, 16128 # [0.5]
+	121     (000001e4) invoke-static        v1, v2, v5, v6, v7, Landroid/opengl/GLES20;->glUniform4f(I F F F F)V
+	122     (000001ea) const/4              v1, 5
+	123     (000001ec) const/4              v2, 0
+	124     (000001ee) const/4              v5, 4
+	125     (000001f0) invoke-static        v1, v2, v5, Landroid/opengl/GLES20;->glDrawArrays(I I I)V
+	126     (000001f6) const/4              v1, 0
+	127     (000001f8) const/4              v2, 0
+	128     (000001fa) const/16             v5, 6408
+	129     (000001fe) const/16             v6, 5121
+	130     (00000202) move-object          v7, v14
+	131     (00000204) invoke-static/range  v1 ... v7, Landroid/opengl/GLES20;->glReadPixels(I I I I I I Ljava/nio/Buffer;)V
+	132     (0000020a) const-string         v1, 'YuvConverter.convert'
+	133     (0000020e) invoke-static        v1, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
+	134     (00000214) const                v1, 36160 # [5.067095246998539e-41]
+	135     (0000021a) const/4              v2, 0
+	136     (0000021c) invoke-static        v1, v2, Landroid/opengl/GLES20;->glBindFramebuffer(I I)V
+	137     (00000222) const/16             v1, 3553
+	138     (00000226) const/4              v2, 0
+	139     (00000228) invoke-static        v1, v2, Landroid/opengl/GLES20;->glBindTexture(I I)V
+	140     (0000022e) const                v1, 36197 # [5.07228005131654e-41]
+	141     (00000234) const/4              v2, 0
+	142     (00000236) invoke-static        v1, v2, Landroid/opengl/GLES20;->glBindTexture(I I)V
+	143     (0000023c) return-void          
+

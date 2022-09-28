@@ -1,0 +1,70 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioUtils;->logDeviceInfo(Ljava/lang/String;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+#
+# - return:void
+
+logDeviceInfo-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) const-string         v1, 'Android SDK: '
+	3       (0000000e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	4       (00000014) move-result-object   v0
+	5       (00000016) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	6       (0000001a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v0
+	8       (00000022) const-string         v1, ', Release: '
+	9       (00000026) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v0
+	11      (0000002e) sget-object          v1, Landroid/os/Build$VERSION;->RELEASE Ljava/lang/String;
+	12      (00000032) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) const-string         v1, ', Brand: '
+	15      (0000003e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v0
+	17      (00000046) sget-object          v1, Landroid/os/Build;->BRAND Ljava/lang/String;
+	18      (0000004a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (00000050) move-result-object   v0
+	20      (00000052) const-string         v1, ', Device: '
+	21      (00000056) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	22      (0000005c) move-result-object   v0
+	23      (0000005e) sget-object          v1, Landroid/os/Build;->DEVICE Ljava/lang/String;
+	24      (00000062) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (00000068) move-result-object   v0
+	26      (0000006a) const-string         v1, ', Id: '
+	27      (0000006e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (00000074) move-result-object   v0
+	29      (00000076) sget-object          v1, Landroid/os/Build;->ID Ljava/lang/String;
+	30      (0000007a) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	31      (00000080) move-result-object   v0
+	32      (00000082) const-string         v1, ', Hardware: '
+	33      (00000086) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	34      (0000008c) move-result-object   v0
+	35      (0000008e) sget-object          v1, Landroid/os/Build;->HARDWARE Ljava/lang/String;
+	36      (00000092) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	37      (00000098) move-result-object   v0
+	38      (0000009a) const-string         v1, ', Manufacturer: '
+	39      (0000009e) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000a4) move-result-object   v0
+	41      (000000a6) sget-object          v1, Landroid/os/Build;->MANUFACTURER Ljava/lang/String;
+	42      (000000aa) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000b0) move-result-object   v0
+	44      (000000b2) const-string         v1, ', Model: '
+	45      (000000b6) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	46      (000000bc) move-result-object   v0
+	47      (000000be) sget-object          v1, Landroid/os/Build;->MODEL Ljava/lang/String;
+	48      (000000c2) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	49      (000000c8) move-result-object   v0
+	50      (000000ca) const-string         v1, ', Product: '
+	51      (000000ce) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	52      (000000d4) move-result-object   v0
+	53      (000000d6) sget-object          v1, Landroid/os/Build;->PRODUCT Ljava/lang/String;
+	54      (000000da) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	55      (000000e0) move-result-object   v0
+	56      (000000e2) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	57      (000000e8) move-result-object   v0
+	58      (000000ea) invoke-static        v2, v0, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	59      (000000f0) return-void          
+

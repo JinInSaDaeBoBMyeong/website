@@ -1,0 +1,31 @@
+# Lorg/webrtc/EglBase10;-><init>(Lorg/webrtc/EglBase10$Context; [I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:org.webrtc.EglBase10$Context
+# - v4:int[]
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Lorg/webrtc/EglBase;-><init>()V
+	1       (00000006) sget-object          v0, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_SURFACE Ljavax/microedition/khronos/egl/EGLSurface;
+	2       (0000000a) iput-object          v0, v2, Lorg/webrtc/EglBase10;->eglSurface Ljavax/microedition/khronos/egl/EGLSurface;
+	3       (0000000e) invoke-static        Ljavax/microedition/khronos/egl/EGLContext;->getEGL()Ljavax/microedition/khronos/egl/EGL;
+	4       (00000014) move-result-object   v0
+	5       (00000016) check-cast           v0, Ljavax/microedition/khronos/egl/EGL10;
+	6       (0000001a) iput-object          v0, v2, Lorg/webrtc/EglBase10;->egl Ljavax/microedition/khronos/egl/EGL10;
+	7       (0000001e) invoke-direct        v2, Lorg/webrtc/EglBase10;->getEglDisplay()Ljavax/microedition/khronos/egl/EGLDisplay;
+	8       (00000024) move-result-object   v0
+	9       (00000026) iput-object          v0, v2, Lorg/webrtc/EglBase10;->eglDisplay Ljavax/microedition/khronos/egl/EGLDisplay;
+	10      (0000002a) iget-object          v0, v2, Lorg/webrtc/EglBase10;->eglDisplay Ljavax/microedition/khronos/egl/EGLDisplay;
+	11      (0000002e) invoke-direct        v2, v0, v4, Lorg/webrtc/EglBase10;->getEglConfig(Ljavax/microedition/khronos/egl/EGLDisplay; [I)Ljavax/microedition/khronos/egl/EGLConfig;
+	12      (00000034) move-result-object   v0
+	13      (00000036) iput-object          v0, v2, Lorg/webrtc/EglBase10;->eglConfig Ljavax/microedition/khronos/egl/EGLConfig;
+	14      (0000003a) iget-object          v0, v2, Lorg/webrtc/EglBase10;->eglDisplay Ljavax/microedition/khronos/egl/EGLDisplay;
+	15      (0000003e) iget-object          v1, v2, Lorg/webrtc/EglBase10;->eglConfig Ljavax/microedition/khronos/egl/EGLConfig;
+	16      (00000042) invoke-direct        v2, v3, v0, v1, Lorg/webrtc/EglBase10;->createEglContext(Lorg/webrtc/EglBase10$Context; Ljavax/microedition/khronos/egl/EGLDisplay; Ljavax/microedition/khronos/egl/EGLConfig;)Ljavax/microedition/khronos/egl/EGLContext;
+	17      (00000048) move-result-object   v0
+	18      (0000004a) iput-object          v0, v2, Lorg/webrtc/EglBase10;->eglContext Ljavax/microedition/khronos/egl/EGLContext;
+	19      (0000004e) return-void          
+

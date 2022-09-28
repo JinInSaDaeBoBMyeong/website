@@ -1,0 +1,25 @@
+# Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:void
+
+setCurrentItem-BB@0x0 : [ setCurrentItem-BB@0xe setCurrentItem-BB@0x18 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) iput-boolean         v1, v2, Landroid/support/v4/view/ViewPager;->mPopulatePending Z
+	2       (00000006) iget-boolean         v0, v2, Landroid/support/v4/view/ViewPager;->mFirstLayout Z
+	3       (0000000a) if-nez               v0, +7
+
+setCurrentItem-BB@0xe : [ setCurrentItem-BB@0x10 ]
+	4       (0000000e) const/4              v0, 1
+
+setCurrentItem-BB@0x10 : 
+	5       (00000010) invoke-virtual       v2, v3, v0, v1, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(I Z Z)V
+	6       (00000016) return-void          
+
+setCurrentItem-BB@0x18 : [ setCurrentItem-BB@0x10 ]
+	7       (00000018) move                 v0, v1
+	8       (0000001a) goto                 -5
+

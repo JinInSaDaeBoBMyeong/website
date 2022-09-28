@@ -1,0 +1,19 @@
+# Lorg/webrtc/CameraCapturer;->addMediaRecorderToCamera(Landroid/media/MediaRecorder; Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.media.MediaRecorder
+# - v4:org.webrtc.CameraVideoCapturer$MediaRecorderHandler
+#
+# - return:void
+
+addMediaRecorderToCamera-BB@0x0 : 
+	0       (00000000) const-string         v0, 'CameraCapturer'
+	1       (00000004) const-string         v1, 'addMediaRecorderToCamera'
+	2       (00000008) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	3       (0000000e) iget-object          v0, v2, Lorg/webrtc/CameraCapturer;->cameraThreadHandler Landroid/os/Handler;
+	4       (00000012) new-instance         v1, Lorg/webrtc/CameraCapturer$8;
+	5       (00000016) invoke-direct        v1, v2, v3, v4, Lorg/webrtc/CameraCapturer$8;-><init>(Lorg/webrtc/CameraCapturer; Landroid/media/MediaRecorder; Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;)V
+	6       (0000001c) invoke-virtual       v0, v1, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+	7       (00000022) return-void          
+

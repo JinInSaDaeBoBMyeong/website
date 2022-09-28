@@ -1,0 +1,47 @@
+# Landroid/support/v4/view/PagerTitleStrip;->onAttachedToWindow()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+onAttachedToWindow-BB@0x0 : [ onAttachedToWindow-BB@0x16 onAttachedToWindow-BB@0x26 ]
+	0       (00000000) invoke-super         v5, Landroid/view/ViewGroup;->onAttachedToWindow()V
+	1       (00000006) invoke-virtual       v5, Landroid/support/v4/view/PagerTitleStrip;->getParent()Landroid/view/ViewParent;
+	2       (0000000c) move-result-object   v2
+	3       (0000000e) instance-of          v3, v2, Landroid/support/v4/view/ViewPager;
+	4       (00000012) if-nez               v3, +a
+
+onAttachedToWindow-BB@0x16 : 
+	5       (00000016) new-instance         v3, Ljava/lang/IllegalStateException;
+	6       (0000001a) const-string         v4, 'PagerTitleStrip must be a direct child of a ViewPager.'
+	7       (0000001e) invoke-direct        v3, v4, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	8       (00000024) throw                v3
+
+onAttachedToWindow-BB@0x26 : [ onAttachedToWindow-BB@0x54 onAttachedToWindow-BB@0x6c ]
+	9       (00000026) move-object          v1, v2
+	10      (00000028) check-cast           v1, Landroid/support/v4/view/ViewPager;
+	11      (0000002c) invoke-virtual       v1, Landroid/support/v4/view/ViewPager;->getAdapter()Landroid/support/v4/view/PagerAdapter;
+	12      (00000032) move-result-object   v0
+	13      (00000034) iget-object          v3, v5, Landroid/support/v4/view/PagerTitleStrip;->mPageListener Landroid/support/v4/view/PagerTitleStrip$PageListener;
+	14      (00000038) invoke-virtual       v1, v3, Landroid/support/v4/view/ViewPager;->setInternalPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+	15      (0000003e) iget-object          v3, v5, Landroid/support/v4/view/PagerTitleStrip;->mPageListener Landroid/support/v4/view/PagerTitleStrip$PageListener;
+	16      (00000042) invoke-virtual       v1, v3, Landroid/support/v4/view/ViewPager;->setOnAdapterChangeListener(Landroid/support/v4/view/ViewPager$OnAdapterChangeListener;)V
+	17      (00000048) iput-object          v1, v5, Landroid/support/v4/view/PagerTitleStrip;->mPager Landroid/support/v4/view/ViewPager;
+	18      (0000004c) iget-object          v3, v5, Landroid/support/v4/view/PagerTitleStrip;->mWatchingAdapter Ljava/lang/ref/WeakReference;
+	19      (00000050) if-eqz               v3, +e
+
+onAttachedToWindow-BB@0x54 : [ onAttachedToWindow-BB@0x64 ]
+	20      (00000054) iget-object          v3, v5, Landroid/support/v4/view/PagerTitleStrip;->mWatchingAdapter Ljava/lang/ref/WeakReference;
+	21      (00000058) invoke-virtual       v3, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	22      (0000005e) move-result-object   v3
+	23      (00000060) check-cast           v3, Landroid/support/v4/view/PagerAdapter;
+
+onAttachedToWindow-BB@0x64 : 
+	24      (00000064) invoke-virtual       v5, v3, v0, Landroid/support/v4/view/PagerTitleStrip;->updateAdapter(Landroid/support/v4/view/PagerAdapter; Landroid/support/v4/view/PagerAdapter;)V
+	25      (0000006a) return-void          
+
+onAttachedToWindow-BB@0x6c : [ onAttachedToWindow-BB@0x64 ]
+	26      (0000006c) const/4              v3, 0
+	27      (0000006e) goto                 -5
+

@@ -1,0 +1,27 @@
+# Landroid/support/v4/widget/SwipeProgressBar;->isRunning()Z [access_flags=]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+isRunning-BB@0x0 : [ isRunning-BB@0x8 isRunning-BB@0x18 ]
+	0       (00000000) iget-boolean         v0, v4, Landroid/support/v4/widget/SwipeProgressBar;->mRunning Z
+	1       (00000004) if-nez               v0, +a
+
+isRunning-BB@0x8 : [ isRunning-BB@0x18 isRunning-BB@0x1c ]
+	2       (00000008) iget-wide            v0, v4, Landroid/support/v4/widget/SwipeProgressBar;->mFinishTime J
+	3       (0000000c) const-wide/16        v2, 0 # [0.0]
+	4       (00000010) cmp-long             v0, v0, v2
+	5       (00000014) if-lez               v0, +4
+
+isRunning-BB@0x18 : [ isRunning-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+isRunning-BB@0x1a : 
+	7       (0000001a) return               v0
+
+isRunning-BB@0x1c : [ isRunning-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

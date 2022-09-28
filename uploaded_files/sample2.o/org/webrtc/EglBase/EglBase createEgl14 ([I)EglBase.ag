@@ -1,0 +1,14 @@
+# Lorg/webrtc/EglBase;->createEgl14([I)Lorg/webrtc/EglBase; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int[]
+#
+# - return:org.webrtc.EglBase
+
+createEgl14-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lorg/webrtc/EglBase14;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-direct        v0, v1, v2, Lorg/webrtc/EglBase14;-><init>(Lorg/webrtc/EglBase14$Context; [I)V
+	3       (0000000c) return-object        v0
+

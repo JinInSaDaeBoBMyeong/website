@@ -1,0 +1,28 @@
+# Lorg/webrtc/VideoRenderer;->renderFrameDone(Lorg/webrtc/VideoRenderer$I420Frame;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:org.webrtc.VideoRenderer$I420Frame
+#
+# - return:void
+
+renderFrameDone-BB@0x0 : [ renderFrameDone-BB@0x20 renderFrameDone-BB@0x34 ]
+	0       (00000000) const-wide/16        v2, 0 # [0.0]
+	1       (00000004) const/4              v0, 0
+	2       (00000006) iput-object          v0, v4, Lorg/webrtc/VideoRenderer$I420Frame;->yuvPlanes [Ljava/nio/ByteBuffer;
+	3       (0000000a) const/4              v0, 0
+	4       (0000000c) iput                 v0, v4, Lorg/webrtc/VideoRenderer$I420Frame;->textureId I
+	5       (00000010) invoke-static        v4, Lorg/webrtc/VideoRenderer$I420Frame;->access$000(Lorg/webrtc/VideoRenderer$I420Frame;)J
+	6       (00000016) move-result-wide     v0
+	7       (00000018) cmp-long             v0, v0, v2
+	8       (0000001c) if-eqz               v0, +c
+
+renderFrameDone-BB@0x20 : [ renderFrameDone-BB@0x34 ]
+	9       (00000020) invoke-static        v4, Lorg/webrtc/VideoRenderer$I420Frame;->access$000(Lorg/webrtc/VideoRenderer$I420Frame;)J
+	10      (00000026) move-result-wide     v0
+	11      (00000028) invoke-static        v0, v1, Lorg/webrtc/VideoRenderer;->releaseNativeFrame(J)V
+	12      (0000002e) invoke-static        v4, v2, v3, Lorg/webrtc/VideoRenderer$I420Frame;->access$002(Lorg/webrtc/VideoRenderer$I420Frame; J)J
+
+renderFrameDone-BB@0x34 : 
+	13      (00000034) return-void          
+

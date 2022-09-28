@@ -1,0 +1,46 @@
+# Lorg/webrtc/GlTextureFrameBuffer;-><init>(I)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:void
+
+<init>-BB@0x0 : [ D:<init>-BB@0x10 6407:<init>-BB@0x42 6408:<init>-BB@0x42 6409:<init>-BB@0x42 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) invoke-direct        v4, Ljava/lang/Object;-><init>()V
+	3       (0000000a) packed-switch        v5, +35 (0x74)
+
+<init>-BB@0x10 : 
+	4       (00000010) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	5       (00000014) new-instance         v2, Ljava/lang/StringBuilder;
+	6       (00000018) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	7       (0000001e) const-string         v3, 'Invalid pixel format: '
+	8       (00000022) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v2
+	10      (0000002a) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	11      (00000030) move-result-object   v2
+	12      (00000032) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	13      (00000038) move-result-object   v2
+	14      (0000003a) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	15      (00000040) throw                v1
+
+<init>-BB@0x42 : 
+	16      (00000042) iput                 v5, v4, Lorg/webrtc/GlTextureFrameBuffer;->pixelFormat I
+	17      (00000046) const/16             v1, 3553
+	18      (0000004a) invoke-static        v1, Lorg/webrtc/GlUtil;->generateTexture(I)I
+	19      (00000050) move-result          v1
+	20      (00000052) iput                 v1, v4, Lorg/webrtc/GlTextureFrameBuffer;->textureId I
+	21      (00000056) iput                 v2, v4, Lorg/webrtc/GlTextureFrameBuffer;->width I
+	22      (0000005a) iput                 v2, v4, Lorg/webrtc/GlTextureFrameBuffer;->height I
+	23      (0000005e) new-array            v0, v3, [I
+	24      (00000062) invoke-static        v3, v0, v2, Landroid/opengl/GLES20;->glGenFramebuffers(I [I I)V
+	25      (00000068) aget                 v1, v0, v2
+	26      (0000006c) iput                 v1, v4, Lorg/webrtc/GlTextureFrameBuffer;->frameBufferId I
+	27      (00000070) return-void          
+
+<init>-BB@0x72 : 
+	28      (00000072) nop                  
+	29      (00000074) packed-switch-payload 1907 1908 1909
+

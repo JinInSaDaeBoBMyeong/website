@@ -1,0 +1,20 @@
+# Lorg/webrtc/SurfaceViewRenderer;->surfaceCreated(Landroid/view/SurfaceHolder;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.SurfaceHolder
+#
+# - return:void
+
+surfaceCreated-BB@0x0 : 
+	0       (00000000) invoke-static        Lorg/webrtc/ThreadUtils;->checkIsOnMainThread()V
+	1       (00000006) iget-object          v0, v2, Lorg/webrtc/SurfaceViewRenderer;->eglRenderer Lorg/webrtc/EglRenderer;
+	2       (0000000a) invoke-interface     v3, Landroid/view/SurfaceHolder;->getSurface()Landroid/view/Surface;
+	3       (00000010) move-result-object   v1
+	4       (00000012) invoke-virtual       v0, v1, Lorg/webrtc/EglRenderer;->createEglSurface(Landroid/view/Surface;)V
+	5       (00000018) const/4              v0, 0
+	6       (0000001a) iput                 v0, v2, Lorg/webrtc/SurfaceViewRenderer;->surfaceHeight I
+	7       (0000001e) iput                 v0, v2, Lorg/webrtc/SurfaceViewRenderer;->surfaceWidth I
+	8       (00000022) invoke-direct        v2, Lorg/webrtc/SurfaceViewRenderer;->updateSurfaceSize()V
+	9       (00000028) return-void          
+

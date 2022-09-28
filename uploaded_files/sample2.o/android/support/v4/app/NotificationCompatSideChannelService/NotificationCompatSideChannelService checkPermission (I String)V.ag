@@ -1,0 +1,52 @@
+# Landroid/support/v4/app/NotificationCompatSideChannelService;->checkPermission(I Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+# - v9:java.lang.String
+#
+# - return:void
+
+checkPermission-BB@0x0 : [ checkPermission-BB@0x14 ]
+	0       (00000000) invoke-virtual       v7, Landroid/support/v4/app/NotificationCompatSideChannelService;->getPackageManager()Landroid/content/pm/PackageManager;
+	1       (00000006) move-result-object   v4
+	2       (00000008) invoke-virtual       v4, v8, Landroid/content/pm/PackageManager;->getPackagesForUid(I)[Ljava/lang/String;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) array-length         v2, v0
+	5       (00000012) const/4              v1, 0
+
+checkPermission-BB@0x14 : [ checkPermission-BB@0x18 checkPermission-BB@0x30 ]
+	6       (00000014) if-ge                v1, v2, +e
+
+checkPermission-BB@0x18 : [ checkPermission-BB@0x28 checkPermission-BB@0x2a ]
+	7       (00000018) aget-object          v3, v0, v1
+	8       (0000001c) invoke-virtual       v3, v9, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	9       (00000022) move-result          v4
+	10      (00000024) if-eqz               v4, +3
+
+checkPermission-BB@0x28 : 
+	11      (00000028) return-void          
+
+checkPermission-BB@0x2a : [ checkPermission-BB@0x14 ]
+	12      (0000002a) add-int/lit8         v1, v1, 1
+	13      (0000002e) goto                 -d
+
+checkPermission-BB@0x30 : 
+	14      (00000030) new-instance         v4, Ljava/lang/SecurityException;
+	15      (00000034) new-instance         v5, Ljava/lang/StringBuilder;
+	16      (00000038) invoke-direct        v5, Ljava/lang/StringBuilder;-><init>()V
+	17      (0000003e) const-string         v6, 'NotificationSideChannelService: Uid '
+	18      (00000042) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (00000048) move-result-object   v5
+	20      (0000004a) invoke-virtual       v5, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	21      (00000050) move-result-object   v5
+	22      (00000052) const-string         v6, ' is not authorized for package '
+	23      (00000056) invoke-virtual       v5, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (0000005c) move-result-object   v5
+	25      (0000005e) invoke-virtual       v5, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	26      (00000064) move-result-object   v5
+	27      (00000066) invoke-virtual       v5, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	28      (0000006c) move-result-object   v5
+	29      (0000006e) invoke-direct        v4, v5, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
+	30      (00000074) throw                v4
+

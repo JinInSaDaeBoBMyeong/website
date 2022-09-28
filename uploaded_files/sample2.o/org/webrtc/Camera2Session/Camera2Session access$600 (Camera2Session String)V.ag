@@ -1,0 +1,13 @@
+# Lorg/webrtc/Camera2Session;->access$600(Lorg/webrtc/Camera2Session; Ljava/lang/String;)V [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:org.webrtc.Camera2Session
+# - v1:java.lang.String
+#
+# - return:void
+
+access$600-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, v1, Lorg/webrtc/Camera2Session;->reportError(Ljava/lang/String;)V
+	1       (00000006) return-void          
+

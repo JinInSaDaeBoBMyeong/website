@@ -1,0 +1,22 @@
+# Landroid/support/v4/widget/DrawerLayout$ChildAccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View; Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:android.support.v4.view.accessibility.AccessibilityNodeInfoCompat
+#
+# - return:void
+
+onInitializeAccessibilityNodeInfo-BB@0x0 : [ onInitializeAccessibilityNodeInfo-BB@0x12 onInitializeAccessibilityNodeInfo-BB@0x1a ]
+	0       (00000000) invoke-super         v1, v2, v3, Landroid/support/v4/view/AccessibilityDelegateCompat;->onInitializeAccessibilityNodeInfo(Landroid/view/View; Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V
+	1       (00000006) invoke-static        v2, Landroid/support/v4/widget/DrawerLayout;->access$300(Landroid/view/View;)Z
+	2       (0000000c) move-result          v0
+	3       (0000000e) if-nez               v0, +6
+
+onInitializeAccessibilityNodeInfo-BB@0x12 : [ onInitializeAccessibilityNodeInfo-BB@0x1a ]
+	4       (00000012) const/4              v0, 0
+	5       (00000014) invoke-virtual       v3, v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setParent(Landroid/view/View;)V
+
+onInitializeAccessibilityNodeInfo-BB@0x1a : 
+	6       (0000001a) return-void          
+

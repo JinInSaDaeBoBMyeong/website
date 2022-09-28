@@ -1,0 +1,43 @@
+# Landroid/support/v4/app/FragmentActivity;->onMenuItemSelected(I Landroid/view/MenuItem;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:android.view.MenuItem
+#
+# - return:boolean
+
+onMenuItemSelected-BB@0x0 : [ onMenuItemSelected-BB@0xc onMenuItemSelected-BB@0x10 ]
+	0       (00000000) invoke-super         v1, v2, v3, Landroid/app/Activity;->onMenuItemSelected(I Landroid/view/MenuItem;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +4
+
+onMenuItemSelected-BB@0xc : [ onMenuItemSelected-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+onMenuItemSelected-BB@0xe : 
+	4       (0000000e) return               v0
+
+onMenuItemSelected-BB@0x10 : [ D:onMenuItemSelected-BB@0x16 0:onMenuItemSelected-BB@0x1a 6:onMenuItemSelected-BB@0x28 ]
+	5       (00000010) sparse-switch        v2, +14 (0x38)
+
+onMenuItemSelected-BB@0x16 : [ onMenuItemSelected-BB@0xe ]
+	6       (00000016) const/4              v0, 0
+	7       (00000018) goto                 -5
+
+onMenuItemSelected-BB@0x1a : [ onMenuItemSelected-BB@0xe ]
+	8       (0000001a) iget-object          v0, v1, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	9       (0000001e) invoke-virtual       v0, v3, Landroid/support/v4/app/FragmentManagerImpl;->dispatchOptionsItemSelected(Landroid/view/MenuItem;)Z
+	10      (00000024) move-result          v0
+	11      (00000026) goto                 -c
+
+onMenuItemSelected-BB@0x28 : [ onMenuItemSelected-BB@0xe ]
+	12      (00000028) iget-object          v0, v1, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	13      (0000002c) invoke-virtual       v0, v3, Landroid/support/v4/app/FragmentManagerImpl;->dispatchContextItemSelected(Landroid/view/MenuItem;)Z
+	14      (00000032) move-result          v0
+	15      (00000034) goto                 -13
+
+onMenuItemSelected-BB@0x36 : 
+	16      (00000036) nop                  
+	17      (00000038) sparse-switch-payload 0 6
+

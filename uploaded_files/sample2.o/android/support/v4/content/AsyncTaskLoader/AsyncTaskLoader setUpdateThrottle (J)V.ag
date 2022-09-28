@@ -1,0 +1,22 @@
+# Landroid/support/v4/content/AsyncTaskLoader;->setUpdateThrottle(J)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:long
+#
+# - return:void
+
+setUpdateThrottle-BB@0x0 : [ setUpdateThrottle-BB@0x10 setUpdateThrottle-BB@0x1e ]
+	0       (00000000) iput-wide            v4, v3, Landroid/support/v4/content/AsyncTaskLoader;->mUpdateThrottle J
+	1       (00000004) const-wide/16        v0, 0 # [0.0]
+	2       (00000008) cmp-long             v0, v4, v0
+	3       (0000000c) if-eqz               v0, +9
+
+setUpdateThrottle-BB@0x10 : [ setUpdateThrottle-BB@0x1e ]
+	4       (00000010) new-instance         v0, Landroid/os/Handler;
+	5       (00000014) invoke-direct        v0, Landroid/os/Handler;-><init>()V
+	6       (0000001a) iput-object          v0, v3, Landroid/support/v4/content/AsyncTaskLoader;->mHandler Landroid/os/Handler;
+
+setUpdateThrottle-BB@0x1e : 
+	7       (0000001e) return-void          
+

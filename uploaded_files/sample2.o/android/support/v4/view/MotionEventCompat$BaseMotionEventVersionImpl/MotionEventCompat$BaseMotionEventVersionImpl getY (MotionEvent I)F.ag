@@ -1,0 +1,23 @@
+# Landroid/support/v4/view/MotionEventCompat$BaseMotionEventVersionImpl;->getY(Landroid/view/MotionEvent; I)F [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.MotionEvent
+# - v4:int
+#
+# - return:float
+
+getY-BB@0x0 : [ getY-BB@0x4 getY-BB@0xe ]
+	0       (00000000) if-nez               v4, +7
+
+getY-BB@0x4 : 
+	1       (00000004) invoke-virtual       v3, Landroid/view/MotionEvent;->getY()F
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+
+getY-BB@0xe : 
+	4       (0000000e) new-instance         v0, Ljava/lang/IndexOutOfBoundsException;
+	5       (00000012) const-string         v1, 'Pre-Eclair does not support multiple pointers'
+	6       (00000016) invoke-direct        v0, v1, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+	7       (0000001c) throw                v0
+

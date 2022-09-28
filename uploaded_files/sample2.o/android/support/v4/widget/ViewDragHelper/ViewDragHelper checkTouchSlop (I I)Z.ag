@@ -1,0 +1,110 @@
+# Landroid/support/v4/widget/ViewDragHelper;->checkTouchSlop(I I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:int
+# - v11:int
+#
+# - return:boolean
+
+checkTouchSlop-BB@0x0 : [ checkTouchSlop-BB@0x10 checkTouchSlop-BB@0x14 ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) const/4              v5, 0
+	2       (00000004) invoke-virtual       v9, v11, Landroid/support/v4/widget/ViewDragHelper;->isPointerDown(I)Z
+	3       (0000000a) move-result          v6
+	4       (0000000c) if-nez               v6, +4
+
+checkTouchSlop-BB@0x10 : [ checkTouchSlop-BB@0x12 ]
+	5       (00000010) move                 v4, v5
+
+checkTouchSlop-BB@0x12 : 
+	6       (00000012) return               v4
+
+checkTouchSlop-BB@0x14 : [ checkTouchSlop-BB@0x1c checkTouchSlop-BB@0x7c ]
+	7       (00000014) and-int/lit8         v6, v10, 1
+	8       (00000018) if-ne                v6, v4, +32
+
+checkTouchSlop-BB@0x1c : [ checkTouchSlop-BB@0x1e ]
+	9       (0000001c) move                 v0, v4
+
+checkTouchSlop-BB@0x1e : [ checkTouchSlop-BB@0x28 checkTouchSlop-BB@0x80 ]
+	10      (0000001e) and-int/lit8         v6, v10, 2
+	11      (00000022) const/4              v7, 2
+	12      (00000024) if-ne                v6, v7, +2e
+
+checkTouchSlop-BB@0x28 : [ checkTouchSlop-BB@0x2a ]
+	13      (00000028) move                 v1, v4
+
+checkTouchSlop-BB@0x2a : [ checkTouchSlop-BB@0x56 checkTouchSlop-BB@0x84 ]
+	14      (0000002a) iget-object          v6, v9, Landroid/support/v4/widget/ViewDragHelper;->mLastMotionX [F
+	15      (0000002e) aget                 v6, v6, v11
+	16      (00000032) iget-object          v7, v9, Landroid/support/v4/widget/ViewDragHelper;->mInitialMotionX [F
+	17      (00000036) aget                 v7, v7, v11
+	18      (0000003a) sub-float            v2, v6, v7
+	19      (0000003e) iget-object          v6, v9, Landroid/support/v4/widget/ViewDragHelper;->mLastMotionY [F
+	20      (00000042) aget                 v6, v6, v11
+	21      (00000046) iget-object          v7, v9, Landroid/support/v4/widget/ViewDragHelper;->mInitialMotionY [F
+	22      (0000004a) aget                 v7, v7, v11
+	23      (0000004e) sub-float            v3, v6, v7
+	24      (00000052) if-eqz               v0, +19
+
+checkTouchSlop-BB@0x56 : [ checkTouchSlop-BB@0x5a checkTouchSlop-BB@0x84 ]
+	25      (00000056) if-eqz               v1, +17
+
+checkTouchSlop-BB@0x5a : [ checkTouchSlop-BB@0x78 checkTouchSlop-BB@0x12 ]
+	26      (0000005a) mul-float            v6, v2, v2
+	27      (0000005e) mul-float            v7, v3, v3
+	28      (00000062) add-float/2addr      v6, v7
+	29      (00000064) iget                 v7, v9, Landroid/support/v4/widget/ViewDragHelper;->mTouchSlop I
+	30      (00000068) iget                 v8, v9, Landroid/support/v4/widget/ViewDragHelper;->mTouchSlop I
+	31      (0000006c) mul-int/2addr        v7, v8
+	32      (0000006e) int-to-float         v7, v7
+	33      (00000070) cmpl-float           v6, v6, v7
+	34      (00000074) if-gtz               v6, -31
+
+checkTouchSlop-BB@0x78 : [ checkTouchSlop-BB@0x12 ]
+	35      (00000078) move                 v4, v5
+	36      (0000007a) goto                 -34
+
+checkTouchSlop-BB@0x7c : [ checkTouchSlop-BB@0x1e ]
+	37      (0000007c) move                 v0, v5
+	38      (0000007e) goto                 -30
+
+checkTouchSlop-BB@0x80 : [ checkTouchSlop-BB@0x2a ]
+	39      (00000080) move                 v1, v5
+	40      (00000082) goto                 -2c
+
+checkTouchSlop-BB@0x84 : [ checkTouchSlop-BB@0x88 checkTouchSlop-BB@0xa2 ]
+	41      (00000084) if-eqz               v0, +f
+
+checkTouchSlop-BB@0x88 : [ checkTouchSlop-BB@0x9e checkTouchSlop-BB@0x12 ]
+	42      (00000088) invoke-static        v2, Ljava/lang/Math;->abs(F)F
+	43      (0000008e) move-result          v6
+	44      (00000090) iget                 v7, v9, Landroid/support/v4/widget/ViewDragHelper;->mTouchSlop I
+	45      (00000094) int-to-float         v7, v7
+	46      (00000096) cmpl-float           v6, v6, v7
+	47      (0000009a) if-gtz               v6, -44
+
+checkTouchSlop-BB@0x9e : [ checkTouchSlop-BB@0x12 ]
+	48      (0000009e) move                 v4, v5
+	49      (000000a0) goto                 -47
+
+checkTouchSlop-BB@0xa2 : [ checkTouchSlop-BB@0xa6 checkTouchSlop-BB@0xc0 ]
+	50      (000000a2) if-eqz               v1, +f
+
+checkTouchSlop-BB@0xa6 : [ checkTouchSlop-BB@0xbc checkTouchSlop-BB@0x12 ]
+	51      (000000a6) invoke-static        v3, Ljava/lang/Math;->abs(F)F
+	52      (000000ac) move-result          v6
+	53      (000000ae) iget                 v7, v9, Landroid/support/v4/widget/ViewDragHelper;->mTouchSlop I
+	54      (000000b2) int-to-float         v7, v7
+	55      (000000b4) cmpl-float           v6, v6, v7
+	56      (000000b8) if-gtz               v6, -53
+
+checkTouchSlop-BB@0xbc : [ checkTouchSlop-BB@0x12 ]
+	57      (000000bc) move                 v4, v5
+	58      (000000be) goto                 -56
+
+checkTouchSlop-BB@0xc0 : [ checkTouchSlop-BB@0x12 ]
+	59      (000000c0) move                 v4, v5
+	60      (000000c2) goto                 -58
+

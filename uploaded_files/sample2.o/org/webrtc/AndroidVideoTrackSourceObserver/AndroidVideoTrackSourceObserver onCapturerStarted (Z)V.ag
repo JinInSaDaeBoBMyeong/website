@@ -1,0 +1,13 @@
+# Lorg/webrtc/AndroidVideoTrackSourceObserver;->onCapturerStarted(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+onCapturerStarted-BB@0x0 : 
+	0       (00000000) iget-wide            v0, v2, Lorg/webrtc/AndroidVideoTrackSourceObserver;->nativeSource J
+	1       (00000004) invoke-direct        v2, v0, v1, v3, Lorg/webrtc/AndroidVideoTrackSourceObserver;->nativeCapturerStarted(J Z)V
+	2       (0000000a) return-void          
+

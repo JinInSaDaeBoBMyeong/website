@@ -1,0 +1,12 @@
+# Lorg/webrtc/MediaCodecVideoDecoder;->access$000(Lorg/webrtc/MediaCodecVideoDecoder;)Landroid/media/MediaCodec; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.MediaCodecVideoDecoder
+#
+# - return:android.media.MediaCodec
+
+access$000-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/MediaCodecVideoDecoder;->mediaCodec Landroid/media/MediaCodec;
+	1       (00000004) return-object        v0
+

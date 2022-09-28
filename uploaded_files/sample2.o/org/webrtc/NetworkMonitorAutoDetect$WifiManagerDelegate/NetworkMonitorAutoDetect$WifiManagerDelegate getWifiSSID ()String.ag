@@ -1,0 +1,36 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect$WifiManagerDelegate;->getWifiSSID()Ljava/lang/String; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v7
+#
+# - return:java.lang.String
+
+getWifiSSID-BB@0x0 : [ getWifiSSID-BB@0x20 getWifiSSID-BB@0x42 ]
+	0       (00000000) iget-object          v3, v7, Lorg/webrtc/NetworkMonitorAutoDetect$WifiManagerDelegate;->context Landroid/content/Context;
+	1       (00000004) const/4              v4, 0
+	2       (00000006) new-instance         v5, Landroid/content/IntentFilter;
+	3       (0000000a) const-string         v6, 'android.net.wifi.STATE_CHANGE'
+	4       (0000000e) invoke-direct        v5, v6, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+	5       (00000014) invoke-virtual       v3, v4, v5, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver; Landroid/content/IntentFilter;)Landroid/content/Intent;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) if-eqz               v0, +13
+
+getWifiSSID-BB@0x20 : [ getWifiSSID-BB@0x34 getWifiSSID-BB@0x42 ]
+	8       (00000020) const-string         v3, 'wifiInfo'
+	9       (00000024) invoke-virtual       v0, v3, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+	10      (0000002a) move-result-object   v2
+	11      (0000002c) check-cast           v2, Landroid/net/wifi/WifiInfo;
+	12      (00000030) if-eqz               v2, +9
+
+getWifiSSID-BB@0x34 : [ getWifiSSID-BB@0x40 getWifiSSID-BB@0x42 ]
+	13      (00000034) invoke-virtual       v2, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;
+	14      (0000003a) move-result-object   v1
+	15      (0000003c) if-eqz               v1, +3
+
+getWifiSSID-BB@0x40 : 
+	16      (00000040) return-object        v1
+
+getWifiSSID-BB@0x42 : [ getWifiSSID-BB@0x40 ]
+	17      (00000042) const-string         v1, ''
+	18      (00000046) goto                 -3
+

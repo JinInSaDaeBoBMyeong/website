@@ -1,0 +1,29 @@
+# Landroid/support/v4/view/PagerTabStrip;->setBackgroundResource(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+setBackgroundResource-BB@0x0 : [ setBackgroundResource-BB@0xe setBackgroundResource-BB@0x18 ]
+	0       (00000000) invoke-super         v1, v2, Landroid/support/v4/view/PagerTitleStrip;->setBackgroundResource(I)V
+	1       (00000006) iget-boolean         v0, v1, Landroid/support/v4/view/PagerTabStrip;->mDrawFullUnderlineSet Z
+	2       (0000000a) if-nez               v0, +7
+
+setBackgroundResource-BB@0xe : [ setBackgroundResource-BB@0x12 setBackgroundResource-BB@0x1a ]
+	3       (0000000e) if-nez               v2, +6
+
+setBackgroundResource-BB@0x12 : [ setBackgroundResource-BB@0x14 ]
+	4       (00000012) const/4              v0, 1
+
+setBackgroundResource-BB@0x14 : [ setBackgroundResource-BB@0x18 ]
+	5       (00000014) iput-boolean         v0, v1, Landroid/support/v4/view/PagerTabStrip;->mDrawFullUnderline Z
+
+setBackgroundResource-BB@0x18 : 
+	6       (00000018) return-void          
+
+setBackgroundResource-BB@0x1a : [ setBackgroundResource-BB@0x14 ]
+	7       (0000001a) const/4              v0, 0
+	8       (0000001c) goto                 -4
+

@@ -1,0 +1,117 @@
+# Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:android.support.v4.view.PagerAdapter
+#
+# - return:void
+
+setAdapter-BB@0x0 : [ setAdapter-BB@0xe setAdapter-BB@0x84 ]
+	0       (00000000) const/4              v9, 1
+	1       (00000002) const/4              v8, 0
+	2       (00000004) const/4              v7, 0
+	3       (00000006) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	4       (0000000a) if-eqz               v4, +3d
+
+setAdapter-BB@0xe : [ setAdapter-BB@0x28 ]
+	5       (0000000e) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	6       (00000012) iget-object          v5, v10, Landroid/support/v4/view/ViewPager;->mObserver Landroid/support/v4/view/ViewPager$PagerObserver;
+	7       (00000016) invoke-virtual       v4, v5, Landroid/support/v4/view/PagerAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
+	8       (0000001c) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	9       (00000020) invoke-virtual       v4, v10, Landroid/support/v4/view/PagerAdapter;->startUpdate(Landroid/view/ViewGroup;)V
+	10      (00000026) const/4              v0, 0
+
+setAdapter-BB@0x28 : [ setAdapter-BB@0x38 setAdapter-BB@0x60 ]
+	11      (00000028) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mItems Ljava/util/ArrayList;
+	12      (0000002c) invoke-virtual       v4, Ljava/util/ArrayList;->size()I
+	13      (00000032) move-result          v4
+	14      (00000034) if-ge                v0, v4, +16
+
+setAdapter-BB@0x38 : [ setAdapter-BB@0x28 ]
+	15      (00000038) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mItems Ljava/util/ArrayList;
+	16      (0000003c) invoke-virtual       v4, v0, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	17      (00000042) move-result-object   v1
+	18      (00000044) check-cast           v1, Landroid/support/v4/view/ViewPager$ItemInfo;
+	19      (00000048) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	20      (0000004c) iget                 v5, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->position I
+	21      (00000050) iget-object          v6, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->object Ljava/lang/Object;
+	22      (00000054) invoke-virtual       v4, v10, v5, v6, Landroid/support/v4/view/PagerAdapter;->destroyItem(Landroid/view/ViewGroup; I Ljava/lang/Object;)V
+	23      (0000005a) add-int/lit8         v0, v0, 1
+	24      (0000005e) goto                 -1b
+
+setAdapter-BB@0x60 : [ setAdapter-BB@0x84 ]
+	25      (00000060) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	26      (00000064) invoke-virtual       v4, v10, Landroid/support/v4/view/PagerAdapter;->finishUpdate(Landroid/view/ViewGroup;)V
+	27      (0000006a) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mItems Ljava/util/ArrayList;
+	28      (0000006e) invoke-virtual       v4, Ljava/util/ArrayList;->clear()V
+	29      (00000074) invoke-direct        v10, Landroid/support/v4/view/ViewPager;->removeNonDecorViews()V
+	30      (0000007a) iput                 v7, v10, Landroid/support/v4/view/ViewPager;->mCurItem I
+	31      (0000007e) invoke-virtual       v10, v7, v7, Landroid/support/v4/view/ViewPager;->scrollTo(I I)V
+
+setAdapter-BB@0x84 : [ setAdapter-BB@0x98 setAdapter-BB@0x10a ]
+	32      (00000084) iget-object          v2, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	33      (00000088) iput-object          v11, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	34      (0000008c) iput                 v7, v10, Landroid/support/v4/view/ViewPager;->mExpectedAdapterCount I
+	35      (00000090) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	36      (00000094) if-eqz               v4, +3b
+
+setAdapter-BB@0x98 : [ setAdapter-BB@0xa0 setAdapter-BB@0xae ]
+	37      (00000098) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mObserver Landroid/support/v4/view/ViewPager$PagerObserver;
+	38      (0000009c) if-nez               v4, +9
+
+setAdapter-BB@0xa0 : [ setAdapter-BB@0xae ]
+	39      (000000a0) new-instance         v4, Landroid/support/v4/view/ViewPager$PagerObserver;
+	40      (000000a4) invoke-direct        v4, v10, v8, Landroid/support/v4/view/ViewPager$PagerObserver;-><init>(Landroid/support/v4/view/ViewPager; Landroid/support/v4/view/ViewPager$1;)V
+	41      (000000aa) iput-object          v4, v10, Landroid/support/v4/view/ViewPager;->mObserver Landroid/support/v4/view/ViewPager$PagerObserver;
+
+setAdapter-BB@0xae : [ setAdapter-BB@0xe0 setAdapter-BB@0x122 ]
+	42      (000000ae) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	43      (000000b2) iget-object          v5, v10, Landroid/support/v4/view/ViewPager;->mObserver Landroid/support/v4/view/ViewPager$PagerObserver;
+	44      (000000b6) invoke-virtual       v4, v5, Landroid/support/v4/view/PagerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
+	45      (000000bc) iput-boolean         v7, v10, Landroid/support/v4/view/ViewPager;->mPopulatePending Z
+	46      (000000c0) iget-boolean         v3, v10, Landroid/support/v4/view/ViewPager;->mFirstLayout Z
+	47      (000000c4) iput-boolean         v9, v10, Landroid/support/v4/view/ViewPager;->mFirstLayout Z
+	48      (000000c8) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	49      (000000cc) invoke-virtual       v4, Landroid/support/v4/view/PagerAdapter;->getCount()I
+	50      (000000d2) move-result          v4
+	51      (000000d4) iput                 v4, v10, Landroid/support/v4/view/ViewPager;->mExpectedAdapterCount I
+	52      (000000d8) iget                 v4, v10, Landroid/support/v4/view/ViewPager;->mRestoredCurItem I
+	53      (000000dc) if-ltz               v4, +23
+
+setAdapter-BB@0xe0 : [ setAdapter-BB@0x10a ]
+	54      (000000e0) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	55      (000000e4) iget-object          v5, v10, Landroid/support/v4/view/ViewPager;->mRestoredAdapterState Landroid/os/Parcelable;
+	56      (000000e8) iget-object          v6, v10, Landroid/support/v4/view/ViewPager;->mRestoredClassLoader Ljava/lang/ClassLoader;
+	57      (000000ec) invoke-virtual       v4, v5, v6, Landroid/support/v4/view/PagerAdapter;->restoreState(Landroid/os/Parcelable; Ljava/lang/ClassLoader;)V
+	58      (000000f2) iget                 v4, v10, Landroid/support/v4/view/ViewPager;->mRestoredCurItem I
+	59      (000000f6) invoke-virtual       v10, v4, v7, v9, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(I Z Z)V
+	60      (000000fc) const/4              v4, -1
+	61      (000000fe) iput                 v4, v10, Landroid/support/v4/view/ViewPager;->mRestoredCurItem I
+	62      (00000102) iput-object          v8, v10, Landroid/support/v4/view/ViewPager;->mRestoredAdapterState Landroid/os/Parcelable;
+	63      (00000106) iput-object          v8, v10, Landroid/support/v4/view/ViewPager;->mRestoredClassLoader Ljava/lang/ClassLoader;
+
+setAdapter-BB@0x10a : [ setAdapter-BB@0x112 setAdapter-BB@0x120 ]
+	64      (0000010a) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapterChangeListener Landroid/support/v4/view/ViewPager$OnAdapterChangeListener;
+	65      (0000010e) if-eqz               v4, +9
+
+setAdapter-BB@0x112 : [ setAdapter-BB@0x116 setAdapter-BB@0x120 ]
+	66      (00000112) if-eq                v2, v11, +7
+
+setAdapter-BB@0x116 : [ setAdapter-BB@0x120 ]
+	67      (00000116) iget-object          v4, v10, Landroid/support/v4/view/ViewPager;->mAdapterChangeListener Landroid/support/v4/view/ViewPager$OnAdapterChangeListener;
+	68      (0000011a) invoke-interface     v4, v2, v11, Landroid/support/v4/view/ViewPager$OnAdapterChangeListener;->onAdapterChanged(Landroid/support/v4/view/PagerAdapter; Landroid/support/v4/view/PagerAdapter;)V
+
+setAdapter-BB@0x120 : 
+	69      (00000120) return-void          
+
+setAdapter-BB@0x122 : [ setAdapter-BB@0x126 setAdapter-BB@0x12e ]
+	70      (00000122) if-nez               v3, +6
+
+setAdapter-BB@0x126 : [ setAdapter-BB@0x10a ]
+	71      (00000126) invoke-virtual       v10, Landroid/support/v4/view/ViewPager;->populate()V
+	72      (0000012c) goto                 -11
+
+setAdapter-BB@0x12e : [ setAdapter-BB@0x10a ]
+	73      (0000012e) invoke-virtual       v10, Landroid/support/v4/view/ViewPager;->requestLayout()V
+	74      (00000134) goto                 -15
+

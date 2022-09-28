@@ -1,0 +1,53 @@
+# Ltev/piqgahor/udIFeRfR402M;->Create(Landroid/content/Context;)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+#
+# - return:int
+
+Create-BB@0x0 : [ Create-BB@0x18 Create-BB@0x68 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const/4              v0, 0
+	2       (00000004) invoke-static        v4, Ltev/piqgahor/WqukitNJL;->kxWrVSHJ016(Z)Ljava/lang/String;
+	3       (0000000a) move-result-object   v2
+	4       (0000000c) invoke-static        v2, Ltev/piqgahor/udIFeRfR402M;->HvZasapDZ0858(Ljava/lang/String;)Z
+	5       (00000012) move-result          v2
+	6       (00000014) if-nez               v2, +2a
+
+Create-BB@0x18 : [ Create-BB@0x60 Create-BB@0x6a ]
+	7       (00000018) const/4              v2, 2
+	8       (0000001a) new-array            v2, v2, [Ljava/lang/Object;
+	9       (0000001e) invoke-virtual       v5, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+	10      (00000024) move-result-object   v3
+	11      (00000026) invoke-virtual       v3, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	12      (0000002c) move-result-object   v3
+	13      (0000002e) aput-object          v3, v2, v4
+	14      (00000032) const/4              v3, 1
+	15      (00000034) const/4              v4, 4
+	16      (00000036) new-array            v4, v4, [I
+	17      (0000003a) fill-array-data      v4, +1b (0x70)
+	18      (00000040) invoke-static        v4, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	19      (00000046) move-result-object   v4
+	20      (00000048) aput-object          v4, v2, v3
+	21      (0000004c) invoke-static        v2, Ltev/piqgahor/WqukitNJL;->mvoGCr4741([Ljava/lang/Object;)Ljava/lang/String;
+	22      (00000052) move-result-object   v1
+	23      (00000054) invoke-static        v1, Ltev/piqgahor/udIFeRfR402M;->HvZasapDZ0858(Ljava/lang/String;)Z
+	24      (0000005a) move-result          v2
+	25      (0000005c) if-eqz               v2, +7
+
+Create-BB@0x60 : [ Create-BB@0x68 ]
+	26      (00000060) invoke-static        v1, Ltev/piqgahor/WqukitNJL;->PBUpfnYzPuc2378(Ljava/lang/String;)V
+	27      (00000066) const/4              v0, 1
+
+Create-BB@0x68 : 
+	28      (00000068) return               v0
+
+Create-BB@0x6a : [ Create-BB@0x68 ]
+	29      (0000006a) const/4              v0, 2
+	30      (0000006c) goto                 -2
+
+Create-BB@0x6e : 
+	31      (0000006e) nop                  
+	32      (00000070) fill-array-data-payload bytearray(b'\x08\x00\x00\x007\x00\x00\x00i\x00\x00\x00u\x00\x00\x00') | \x08\x00\x00\x00\x37\x00\x00\x00\x69\x00\x00\x00\x75\x00\x00\x00
+

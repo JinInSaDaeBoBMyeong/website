@@ -1,0 +1,12 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioRecord;->access$100(Z)V [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:boolean
+#
+# - return:void
+
+access$100-BB@0x0 : 
+	0       (00000000) invoke-static        v0, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->assertTrue(Z)V
+	1       (00000006) return-void          
+

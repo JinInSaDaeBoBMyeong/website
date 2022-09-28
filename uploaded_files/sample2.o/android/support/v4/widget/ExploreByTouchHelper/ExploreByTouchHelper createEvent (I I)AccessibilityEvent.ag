@@ -1,0 +1,28 @@
+# Landroid/support/v4/widget/ExploreByTouchHelper;->createEvent(I I)Landroid/view/accessibility/AccessibilityEvent; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+#
+# - return:android.view.accessibility.AccessibilityEvent
+
+createEvent-BB@0x0 : [ D:createEvent-BB@0x6 -1:createEvent-BB@0x10 ]
+	0       (00000000) packed-switch        v2, +e (0x1c)
+
+createEvent-BB@0x6 : [ createEvent-BB@0xe ]
+	1       (00000006) invoke-direct        v1, v2, v3, Landroid/support/v4/widget/ExploreByTouchHelper;->createEventForChild(I I)Landroid/view/accessibility/AccessibilityEvent;
+	2       (0000000c) move-result-object   v0
+
+createEvent-BB@0xe : 
+	3       (0000000e) return-object        v0
+
+createEvent-BB@0x10 : [ createEvent-BB@0xe ]
+	4       (00000010) invoke-direct        v1, v3, Landroid/support/v4/widget/ExploreByTouchHelper;->createEventForHost(I)Landroid/view/accessibility/AccessibilityEvent;
+	5       (00000016) move-result-object   v0
+	6       (00000018) goto                 -5
+
+createEvent-BB@0x1a : 
+	7       (0000001a) nop                  
+	8       (0000001c) packed-switch-payload -1
+

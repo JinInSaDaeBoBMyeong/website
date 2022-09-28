@@ -1,0 +1,22 @@
+# Landroid/support/v4/app/ActionBarDrawerToggle;->onDrawerClosed(Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+onDrawerClosed-BB@0x0 : [ onDrawerClosed-BB@0x14 onDrawerClosed-BB@0x1e ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/app/ActionBarDrawerToggle;->mSlider Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-virtual       v0, v1, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->setPosition(F)V
+	3       (0000000c) iget-boolean         v0, v2, Landroid/support/v4/app/ActionBarDrawerToggle;->mDrawerIndicatorEnabled Z
+	4       (00000010) if-eqz               v0, +7
+
+onDrawerClosed-BB@0x14 : [ onDrawerClosed-BB@0x1e ]
+	5       (00000014) iget                 v0, v2, Landroid/support/v4/app/ActionBarDrawerToggle;->mOpenDrawerContentDescRes I
+	6       (00000018) invoke-virtual       v2, v0, Landroid/support/v4/app/ActionBarDrawerToggle;->setActionBarDescription(I)V
+
+onDrawerClosed-BB@0x1e : 
+	7       (0000001e) return-void          
+

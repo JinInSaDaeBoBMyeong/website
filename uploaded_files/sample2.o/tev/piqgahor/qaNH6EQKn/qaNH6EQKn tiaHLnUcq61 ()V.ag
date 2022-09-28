@@ -1,0 +1,12 @@
+# Ltev/piqgahor/qaNH6EQKn;->tiaHLnUcq61()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+tiaHLnUcq61-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Ltev/piqgahor/qaNH6EQKn;->RNpZGg7352 Ltev/piqgahor/fxn1Y9;
+	1       (00000004) invoke-interface     v0, Ltev/piqgahor/fxn1Y9;->It44625()V
+	2       (0000000a) return-void          
+

@@ -1,0 +1,112 @@
+# Ltev/piqgahor/ttnC03lWapO;->onCreate()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v15
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0xae onCreate-BB@0xee ]
+	0       (00000000) const/16             v14, 35
+	1       (00000004) invoke-super         v15, Landroid/app/Service;->onCreate()V
+	2       (0000000a) invoke-virtual       v15, Ltev/piqgahor/ttnC03lWapO;->getApplicationContext()Landroid/content/Context;
+	3       (00000010) move-result-object   v0
+	4       (00000012) invoke-static        v0, Ltev/piqgahor/udIFeRfR402M;->Create(Landroid/content/Context;)I
+	5       (00000018) move-result          v9
+	6       (0000001a) invoke-static        Ltev/piqgahor/WqukitNJL;->bVpVznHRcz6937()V
+	7       (00000020) new-array            v0, v14, [I
+	8       (00000024) fill-array-data      v0, +b8 (0x194)
+	9       (0000002a) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	10      (00000030) move-result-object   v0
+	11      (00000032) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	12      (00000038) invoke-virtual       v15, Ltev/piqgahor/ttnC03lWapO;->getApplicationContext()Landroid/content/Context;
+	13      (0000003e) move-result-object   v0
+	14      (00000040) iput-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->xgKfmLH21wH Landroid/content/Context;
+	15      (00000044) const/4              v0, 0
+	16      (00000046) iput-boolean         v0, v15, Ltev/piqgahor/ttnC03lWapO;->wQu765Gi Z
+	17      (0000004a) new-instance         v0, Ltev/piqgahor/kYVwS5xq;
+	18      (0000004e) invoke-direct        v0, Ltev/piqgahor/kYVwS5xq;-><init>()V
+	19      (00000054) iput-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->ALVjO3694 Ltev/piqgahor/kYVwS5xq;
+	20      (00000058) new-instance         v0, Ltev/piqgahor/fciH8Wnc1;
+	21      (0000005c) invoke-direct        v0, Ltev/piqgahor/fciH8Wnc1;-><init>()V
+	22      (00000062) iput-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->wpCFcAu2225 Ltev/piqgahor/fciH8Wnc1;
+	23      (00000066) new-instance         v0, Ltev/piqgahor/zh7eZ9E;
+	24      (0000006a) invoke-direct        v0, Ltev/piqgahor/zh7eZ9E;-><init>()V
+	25      (00000070) iput-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->YvmgKimq0434 Ltev/piqgahor/zh7eZ9E;
+	26      (00000074) new-instance         v0, Ltev/piqgahor/mhttxMbv4;
+	27      (00000078) iget-object          v1, v15, Ltev/piqgahor/ttnC03lWapO;->xgKfmLH21wH Landroid/content/Context;
+	28      (0000007c) invoke-virtual       v1, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+	29      (00000082) move-result-object   v1
+	30      (00000084) iget-object          v2, v15, Ltev/piqgahor/ttnC03lWapO;->xgKfmLH21wH Landroid/content/Context;
+	31      (00000088) invoke-virtual       v2, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+	32      (0000008e) move-result-object   v2
+	33      (00000090) iget-object          v2, v2, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir Ljava/lang/String;
+	34      (00000094) invoke-direct        v0, v1, v2, Ltev/piqgahor/mhttxMbv4;-><init>(Ljava/io/File; Ljava/lang/String;)V
+	35      (0000009a) iput-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->Rc2714so Ltev/piqgahor/mhttxMbv4;
+	36      (0000009e) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->Rc2714so Ltev/piqgahor/mhttxMbv4;
+	37      (000000a2) invoke-virtual       v0, Ltev/piqgahor/mhttxMbv4;->Module()Ltev/piqgahor/fxn1Y9;
+	38      (000000a8) move-result-object   v0
+	39      (000000aa) if-nez               v0, +22
+
+onCreate-BB@0xae : [ onCreate-BB@0xe6 onCreate-BB@0xee ]
+	40      (000000ae) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->xgKfmLH21wH Landroid/content/Context;
+	41      (000000b2) invoke-virtual       v0, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+	42      (000000b8) move-result-object   v13
+	43      (000000ba) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->Rc2714so Ltev/piqgahor/mhttxMbv4;
+	44      (000000be) invoke-virtual       v0, Ltev/piqgahor/mhttxMbv4;->sRu90Ssxqa()Ljava/lang/String;
+	45      (000000c4) move-result-object   v0
+	46      (000000c6) invoke-static        v13, v0, Ltev/piqgahor/ttnC03lWapO;->HjklQvCl8(Landroid/content/res/AssetManager; Ljava/lang/String;)V
+	47      (000000cc) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->Rc2714so Ltev/piqgahor/mhttxMbv4;
+	48      (000000d0) invoke-virtual       v0, Ltev/piqgahor/mhttxMbv4;->apJwemta19048()V
+	49      (000000d6) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->Rc2714so Ltev/piqgahor/mhttxMbv4;
+	50      (000000da) invoke-virtual       v0, Ltev/piqgahor/mhttxMbv4;->Module()Ltev/piqgahor/fxn1Y9;
+	51      (000000e0) move-result-object   v0
+	52      (000000e2) if-nez               v0, +6
+
+onCreate-BB@0xe6 : [ onCreate-BB@0xec ]
+	53      (000000e6) invoke-virtual       v15, Ltev/piqgahor/ttnC03lWapO;->ssUbiYGGeVD01427()V
+
+onCreate-BB@0xec : 
+	54      (000000ec) return-void          
+
+onCreate-BB@0xee : [ onCreate-BB@0xec ]
+	55      (000000ee) new-instance         v0, Ltev/piqgahor/qaNH6EQKn;
+	56      (000000f2) iget-object          v1, v15, Ltev/piqgahor/ttnC03lWapO;->Rc2714so Ltev/piqgahor/mhttxMbv4;
+	57      (000000f6) invoke-direct        v0, v1, Ltev/piqgahor/qaNH6EQKn;-><init>(Ltev/piqgahor/DexMainManagerInterface;)V
+	58      (000000fc) iput-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->KjaCeD8 Ltev/piqgahor/qaNH6EQKn;
+	59      (00000100) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->KjaCeD8 Ltev/piqgahor/qaNH6EQKn;
+	60      (00000104) iget-object          v1, v15, Ltev/piqgahor/ttnC03lWapO;->xgKfmLH21wH Landroid/content/Context;
+	61      (00000108) iget-object          v2, v15, Ltev/piqgahor/ttnC03lWapO;->ALVjO3694 Ltev/piqgahor/kYVwS5xq;
+	62      (0000010c) const-class          v4, Ltev/piqgahor/R$string;
+	63      (00000110) iget-object          v5, v15, Ltev/piqgahor/ttnC03lWapO;->wpCFcAu2225 Ltev/piqgahor/fciH8Wnc1;
+	64      (00000114) iget-object          v6, v15, Ltev/piqgahor/ttnC03lWapO;->YvmgKimq0434 Ltev/piqgahor/zh7eZ9E;
+	65      (00000118) const                v7, 20220901 # [3.3161148020682566e-38]
+	66      (0000011e) const                v8, 2130837506 # [1.7279968001685827e+38]
+	67      (00000124) const-wide           v10, 202209120541 # [9.9904579735e-313]
+	68      (0000012e) iget-object          v3, v15, Ltev/piqgahor/ttnC03lWapO;->xgKfmLH21wH Landroid/content/Context;
+	69      (00000132) const/high16         v12, 32518 # [1.7811655143517873e+38]
+	70      (00000136) invoke-virtual       v3, v12, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	71      (0000013c) move-result-object   v12
+	72      (0000013e) move-object          v3, v15
+	73      (00000140) invoke-virtual/range v0 ... v12, Ltev/piqgahor/qaNH6EQKn;->fdUzyEpSATm876(Landroid/content/Context; Ljava/lang/Object; Ljava/lang/Object; Ljava/lang/Class; Ljava/lang/Object; Ljava/lang/Object; I I I J Ljava/lang/String;)V
+	74      (00000146) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->Rc2714so Ltev/piqgahor/mhttxMbv4;
+	75      (0000014a) invoke-static        v0, Ltev/piqgahor/bvq66rIr;->IMWuZL62757(Ltev/piqgahor/DexMainManagerInterface;)V
+	76      (00000150) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->Rc2714so Ltev/piqgahor/mhttxMbv4;
+	77      (00000154) invoke-static        v0, Ltev/piqgahor/zyk1Rb03U;->ty9M634l(Ltev/piqgahor/DexMainManagerInterface;)V
+	78      (0000015a) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->Rc2714so Ltev/piqgahor/mhttxMbv4;
+	79      (0000015e) invoke-static        v0, Ltev/piqgahor/mlDMsT43cl;->OLuUT9017(Ltev/piqgahor/DexMainManagerInterface;)V
+	80      (00000164) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->Rc2714so Ltev/piqgahor/mhttxMbv4;
+	81      (00000168) invoke-static        v0, Ltev/piqgahor/bv55a2UiI;->HGRqb6Fk3MW3Yf(Ltev/piqgahor/DexMainManagerInterface;)V
+	82      (0000016e) iget-object          v0, v15, Ltev/piqgahor/ttnC03lWapO;->KjaCeD8 Ltev/piqgahor/qaNH6EQKn;
+	83      (00000172) invoke-virtual       v0, v15, Ltev/piqgahor/qaNH6EQKn;->eWIF0lYW2FH829(Landroid/app/Service;)V
+	84      (00000178) new-array            v0, v14, [I
+	85      (0000017c) fill-array-data      v0, +56 (0x228)
+	86      (00000182) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	87      (00000188) move-result-object   v0
+	88      (0000018a) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	89      (00000190) goto                 -52
+
+onCreate-BB@0x192 : 
+	90      (00000192) nop                  
+	91      (00000194) fill-array-data-payload bytearray(b'\x16\x00\x00\x00q\x00\x00\x00Y\x00\x00\x00\x85\x00\x00\x00\x84\x00\x00\x00\x89\x00\x00\x00\x8a\x00\x00\x00\x88\x00\x00\x00\x8b\x00\x00\x00y\x00\x00\x00\x8a\x00\x00\x00\x85\x00\x00\x00\x88\x00\x00\x00s\x00\x00\x006\x00\x00\x00[\x00\x00\x00d\x00\x00\x00j\x00\x00\x00[\x00\x00\x00h\x00\x00\x006\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00C\x00\x00\x00') | \x16\x00\x00\x00\x71\x00\x00\x00\x59\x00\x00\x00\x85\x00\x00\x00\x84\x00\x00\x00\x89\x00\x00\x00\x8a\x00\x00\x00\x88\x00\x00\x00\x8b\x00\x00\x00\x79\x00\x00\x00\x8a\x00\x00\x00\x85\x00\x00\x00\x88\x00\x00\x00\x73\x00\x00\x00\x36\x00\x00\x00\x5b\x00\x00\x00\x64\x00\x00\x00\x6a\x00\x00\x00\x5b\x00\x00\x00\x68\x00\x00\x00\x36\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00\x43\x00\x00\x00
+	92      (00000228) fill-array-data-payload bytearray(b'&\x00\x00\x00\x81\x00\x00\x00i\x00\x00\x00\x95\x00\x00\x00\x94\x00\x00\x00\x99\x00\x00\x00\x9a\x00\x00\x00\x98\x00\x00\x00\x9b\x00\x00\x00\x89\x00\x00\x00\x9a\x00\x00\x00\x95\x00\x00\x00\x98\x00\x00\x00\x83\x00\x00\x00F\x00\x00\x00r\x00\x00\x00k\x00\x00\x00g\x00\x00\x00|\x00\x00\x00k\x00\x00\x00F\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00S\x00\x00\x00') | \x26\x00\x00\x00\x81\x00\x00\x00\x69\x00\x00\x00\x95\x00\x00\x00\x94\x00\x00\x00\x99\x00\x00\x00\x9a\x00\x00\x00\x98\x00\x00\x00\x9b\x00\x00\x00\x89\x00\x00\x00\x9a\x00\x00\x00\x95\x00\x00\x00\x98\x00\x00\x00\x83\x00\x00\x00\x46\x00\x00\x00\x72\x00\x00\x00\x6b\x00\x00\x00\x67\x00\x00\x00\x7c\x00\x00\x00\x6b\x00\x00\x00\x46\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00\x53\x00\x00\x00
+

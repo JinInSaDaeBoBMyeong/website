@@ -1,0 +1,123 @@
+# Landroid/support/v4/app/NotificationCompatHoneycomb;->add(Landroid/content/Context; Landroid/app/Notification; Ljava/lang/CharSequence; Ljava/lang/CharSequence; Ljava/lang/CharSequence; Landroid/widget/RemoteViews; I Landroid/app/PendingIntent; Landroid/app/PendingIntent; Landroid/graphics/Bitmap;)Landroid/app/Notification; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.content.Context
+# - v6:android.app.Notification
+# - v7:java.lang.CharSequence
+# - v8:java.lang.CharSequence
+# - v9:java.lang.CharSequence
+# - v10:android.widget.RemoteViews
+# - v11:int
+# - v12:android.app.PendingIntent
+# - v13:android.app.PendingIntent
+# - v14:android.graphics.Bitmap
+#
+# - return:android.app.Notification
+
+add-BB@0x0 : [ add-BB@0x7a add-BB@0x118 ]
+	0       (00000000) new-instance         v1, Landroid/app/Notification$Builder;
+	1       (00000004) invoke-direct        v1, v5, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
+	2       (0000000a) iget-wide            v2, v6, Landroid/app/Notification;->when J
+	3       (0000000e) invoke-virtual       v1, v2, v3, Landroid/app/Notification$Builder;->setWhen(J)Landroid/app/Notification$Builder;
+	4       (00000014) move-result-object   v1
+	5       (00000016) iget                 v2, v6, Landroid/app/Notification;->icon I
+	6       (0000001a) iget                 v3, v6, Landroid/app/Notification;->iconLevel I
+	7       (0000001e) invoke-virtual       v1, v2, v3, Landroid/app/Notification$Builder;->setSmallIcon(I I)Landroid/app/Notification$Builder;
+	8       (00000024) move-result-object   v1
+	9       (00000026) iget-object          v2, v6, Landroid/app/Notification;->contentView Landroid/widget/RemoteViews;
+	10      (0000002a) invoke-virtual       v1, v2, Landroid/app/Notification$Builder;->setContent(Landroid/widget/RemoteViews;)Landroid/app/Notification$Builder;
+	11      (00000030) move-result-object   v1
+	12      (00000032) iget-object          v2, v6, Landroid/app/Notification;->tickerText Ljava/lang/CharSequence;
+	13      (00000036) invoke-virtual       v1, v2, v10, Landroid/app/Notification$Builder;->setTicker(Ljava/lang/CharSequence; Landroid/widget/RemoteViews;)Landroid/app/Notification$Builder;
+	14      (0000003c) move-result-object   v1
+	15      (0000003e) iget-object          v2, v6, Landroid/app/Notification;->sound Landroid/net/Uri;
+	16      (00000042) iget                 v3, v6, Landroid/app/Notification;->audioStreamType I
+	17      (00000046) invoke-virtual       v1, v2, v3, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri; I)Landroid/app/Notification$Builder;
+	18      (0000004c) move-result-object   v1
+	19      (0000004e) iget-object          v2, v6, Landroid/app/Notification;->vibrate [J
+	20      (00000052) invoke-virtual       v1, v2, Landroid/app/Notification$Builder;->setVibrate([J)Landroid/app/Notification$Builder;
+	21      (00000058) move-result-object   v1
+	22      (0000005a) iget                 v2, v6, Landroid/app/Notification;->ledARGB I
+	23      (0000005e) iget                 v3, v6, Landroid/app/Notification;->ledOnMS I
+	24      (00000062) iget                 v4, v6, Landroid/app/Notification;->ledOffMS I
+	25      (00000066) invoke-virtual       v1, v2, v3, v4, Landroid/app/Notification$Builder;->setLights(I I I)Landroid/app/Notification$Builder;
+	26      (0000006c) move-result-object   v2
+	27      (0000006e) iget                 v1, v6, Landroid/app/Notification;->flags I
+	28      (00000072) and-int/lit8         v1, v1, 2
+	29      (00000076) if-eqz               v1, +51
+
+add-BB@0x7a : [ add-BB@0x7c ]
+	30      (0000007a) const/4              v1, 1
+
+add-BB@0x7c : [ add-BB@0x90 add-BB@0x11c ]
+	31      (0000007c) invoke-virtual       v2, v1, Landroid/app/Notification$Builder;->setOngoing(Z)Landroid/app/Notification$Builder;
+	32      (00000082) move-result-object   v2
+	33      (00000084) iget                 v1, v6, Landroid/app/Notification;->flags I
+	34      (00000088) and-int/lit8         v1, v1, 8
+	35      (0000008c) if-eqz               v1, +48
+
+add-BB@0x90 : [ add-BB@0x92 ]
+	36      (00000090) const/4              v1, 1
+
+add-BB@0x92 : [ add-BB@0xa6 add-BB@0x120 ]
+	37      (00000092) invoke-virtual       v2, v1, Landroid/app/Notification$Builder;->setOnlyAlertOnce(Z)Landroid/app/Notification$Builder;
+	38      (00000098) move-result-object   v2
+	39      (0000009a) iget                 v1, v6, Landroid/app/Notification;->flags I
+	40      (0000009e) and-int/lit8         v1, v1, 16
+	41      (000000a2) if-eqz               v1, +3f
+
+add-BB@0xa6 : [ add-BB@0xa8 ]
+	42      (000000a6) const/4              v1, 1
+
+add-BB@0xa8 : [ add-BB@0xf4 add-BB@0x124 ]
+	43      (000000a8) invoke-virtual       v2, v1, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
+	44      (000000ae) move-result-object   v1
+	45      (000000b0) iget                 v2, v6, Landroid/app/Notification;->defaults I
+	46      (000000b4) invoke-virtual       v1, v2, Landroid/app/Notification$Builder;->setDefaults(I)Landroid/app/Notification$Builder;
+	47      (000000ba) move-result-object   v1
+	48      (000000bc) invoke-virtual       v1, v7, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+	49      (000000c2) move-result-object   v1
+	50      (000000c4) invoke-virtual       v1, v8, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+	51      (000000ca) move-result-object   v1
+	52      (000000cc) invoke-virtual       v1, v9, Landroid/app/Notification$Builder;->setContentInfo(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+	53      (000000d2) move-result-object   v1
+	54      (000000d4) invoke-virtual       v1, v12, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+	55      (000000da) move-result-object   v1
+	56      (000000dc) iget-object          v2, v6, Landroid/app/Notification;->deleteIntent Landroid/app/PendingIntent;
+	57      (000000e0) invoke-virtual       v1, v2, Landroid/app/Notification$Builder;->setDeleteIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+	58      (000000e6) move-result-object   v2
+	59      (000000e8) iget                 v1, v6, Landroid/app/Notification;->flags I
+	60      (000000ec) and-int/lit16        v1, v1, 128
+	61      (000000f0) if-eqz               v1, +1a
+
+add-BB@0xf4 : [ add-BB@0xf6 ]
+	62      (000000f4) const/4              v1, 1
+
+add-BB@0xf6 : 
+	63      (000000f6) invoke-virtual       v2, v13, v1, Landroid/app/Notification$Builder;->setFullScreenIntent(Landroid/app/PendingIntent; Z)Landroid/app/Notification$Builder;
+	64      (000000fc) move-result-object   v1
+	65      (000000fe) invoke-virtual       v1, v14, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$Builder;
+	66      (00000104) move-result-object   v1
+	67      (00000106) invoke-virtual       v1, v11, Landroid/app/Notification$Builder;->setNumber(I)Landroid/app/Notification$Builder;
+	68      (0000010c) move-result-object   v0
+	69      (0000010e) invoke-virtual       v0, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
+	70      (00000114) move-result-object   v1
+	71      (00000116) return-object        v1
+
+add-BB@0x118 : [ add-BB@0x7c ]
+	72      (00000118) const/4              v1, 0
+	73      (0000011a) goto                 -4f
+
+add-BB@0x11c : [ add-BB@0x92 ]
+	74      (0000011c) const/4              v1, 0
+	75      (0000011e) goto                 -46
+
+add-BB@0x120 : [ add-BB@0xa8 ]
+	76      (00000120) const/4              v1, 0
+	77      (00000122) goto                 -3d
+
+add-BB@0x124 : [ add-BB@0xf6 ]
+	78      (00000124) const/4              v1, 0
+	79      (00000126) goto                 -18
+

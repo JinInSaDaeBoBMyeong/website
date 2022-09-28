@@ -1,0 +1,17 @@
+# Lorg/webrtc/Camera1Capturer;-><init>(Ljava/lang/String; Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler; Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:org.webrtc.CameraVideoCapturer$CameraEventsHandler
+# - v4:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lorg/webrtc/Camera1Enumerator;
+	1       (00000004) invoke-direct        v0, v4, Lorg/webrtc/Camera1Enumerator;-><init>(Z)V
+	2       (0000000a) invoke-direct        v1, v2, v3, v0, Lorg/webrtc/CameraCapturer;-><init>(Ljava/lang/String; Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler; Lorg/webrtc/CameraEnumerator;)V
+	3       (00000010) iput-boolean         v4, v1, Lorg/webrtc/Camera1Capturer;->captureToTexture Z
+	4       (00000014) return-void          
+

@@ -1,0 +1,16 @@
+# Lorg/webrtc/PeerConnectionFactory;->onSignalingThreadReady()V [access_flags=private static]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onSignalingThreadReady-BB@0x0 : 
+	0       (00000000) invoke-static        Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+	1       (00000006) move-result-object   v0
+	2       (00000008) sput-object          v0, Lorg/webrtc/PeerConnectionFactory;->signalingThread Ljava/lang/Thread;
+	3       (0000000c) const-string         v0, 'PeerConnectionFactory'
+	4       (00000010) const-string         v1, 'onSignalingThreadReady'
+	5       (00000014) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	6       (0000001a) return-void          
+

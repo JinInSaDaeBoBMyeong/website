@@ -1,0 +1,13 @@
+# Lorg/webrtc/SurfaceTextureHelper;->access$902(Lorg/webrtc/SurfaceTextureHelper; Lorg/webrtc/YuvConverter;)Lorg/webrtc/YuvConverter; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:org.webrtc.SurfaceTextureHelper
+# - v1:org.webrtc.YuvConverter
+#
+# - return:org.webrtc.YuvConverter
+
+access$902-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lorg/webrtc/SurfaceTextureHelper;->yuvConverter Lorg/webrtc/YuvConverter;
+	1       (00000004) return-object        v1
+

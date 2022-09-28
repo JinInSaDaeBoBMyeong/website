@@ -1,0 +1,44 @@
+# Landroid/support/v4/widget/DrawerLayout;->dispatchOnDrawerOpened(Landroid/view/View;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.View
+#
+# - return:void
+
+dispatchOnDrawerOpened-BB@0x0 : [ dispatchOnDrawerOpened-BB@0x16 dispatchOnDrawerOpened-BB@0x58 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) invoke-virtual       v5, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	2       (00000008) move-result-object   v1
+	3       (0000000a) check-cast           v1, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	4       (0000000e) iget-boolean         v2, v1, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->knownOpen Z
+	5       (00000012) if-nez               v2, +23
+
+dispatchOnDrawerOpened-BB@0x16 : [ dispatchOnDrawerOpened-BB@0x22 dispatchOnDrawerOpened-BB@0x2c ]
+	6       (00000016) iput-boolean         v3, v1, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->knownOpen Z
+	7       (0000001a) iget-object          v2, v4, Landroid/support/v4/widget/DrawerLayout;->mListener Landroid/support/v4/widget/DrawerLayout$DrawerListener;
+	8       (0000001e) if-eqz               v2, +7
+
+dispatchOnDrawerOpened-BB@0x22 : [ dispatchOnDrawerOpened-BB@0x2c ]
+	9       (00000022) iget-object          v2, v4, Landroid/support/v4/widget/DrawerLayout;->mListener Landroid/support/v4/widget/DrawerLayout$DrawerListener;
+	10      (00000026) invoke-interface     v2, v5, Landroid/support/v4/widget/DrawerLayout$DrawerListener;->onDrawerOpened(Landroid/view/View;)V
+
+dispatchOnDrawerOpened-BB@0x2c : [ dispatchOnDrawerOpened-BB@0x3a dispatchOnDrawerOpened-BB@0x42 ]
+	11      (0000002c) const/4              v2, 0
+	12      (0000002e) invoke-virtual       v4, v2, Landroid/support/v4/widget/DrawerLayout;->getChildAt(I)Landroid/view/View;
+	13      (00000034) move-result-object   v0
+	14      (00000036) if-eqz               v0, +6
+
+dispatchOnDrawerOpened-BB@0x3a : [ dispatchOnDrawerOpened-BB@0x42 ]
+	15      (0000003a) const/4              v2, 4
+	16      (0000003c) invoke-static        v0, v2, Landroid/support/v4/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View; I)V
+
+dispatchOnDrawerOpened-BB@0x42 : [ dispatchOnDrawerOpened-BB@0x58 ]
+	17      (00000042) invoke-static        v5, v3, Landroid/support/v4/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View; I)V
+	18      (00000048) const/16             v2, 32
+	19      (0000004c) invoke-virtual       v4, v2, Landroid/support/v4/widget/DrawerLayout;->sendAccessibilityEvent(I)V
+	20      (00000052) invoke-virtual       v5, Landroid/view/View;->requestFocus()Z
+
+dispatchOnDrawerOpened-BB@0x58 : 
+	21      (00000058) return-void          
+

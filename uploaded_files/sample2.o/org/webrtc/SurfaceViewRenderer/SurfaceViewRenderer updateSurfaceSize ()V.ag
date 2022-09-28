@@ -1,0 +1,185 @@
+# Lorg/webrtc/SurfaceViewRenderer;->updateSurfaceSize()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v9
+#
+# - return:void
+
+updateSurfaceSize-BB@0x0 : [ updateSurfaceSize-BB@0xc ]
+	0       (00000000) invoke-static        Lorg/webrtc/ThreadUtils;->checkIsOnMainThread()V
+	1       (00000006) iget-object          v7, v9, Lorg/webrtc/SurfaceViewRenderer;->layoutLock Ljava/lang/Object;
+	2       (0000000a) monitor-enter        v7
+
+updateSurfaceSize-BB@0xc : [ updateSurfaceSize-BB@0x14 updateSurfaceSize-BB@0x1ae ]
+	3       (0000000c) iget-boolean         v6, v9, Lorg/webrtc/SurfaceViewRenderer;->enableFixedSize Z
+	4       (00000010) if-eqz               v6, +cf
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x14 : [ updateSurfaceSize-BB@0x1c updateSurfaceSize-BB@0x1ae ]
+	5       (00000014) iget                 v6, v9, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameWidth I
+	6       (00000018) if-eqz               v6, +cb
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x1c : [ updateSurfaceSize-BB@0x24 updateSurfaceSize-BB@0x1ae ]
+	7       (0000001c) iget                 v6, v9, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameHeight I
+	8       (00000020) if-eqz               v6, +c7
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x24 : [ updateSurfaceSize-BB@0x30 updateSurfaceSize-BB@0x1ae ]
+	9       (00000024) invoke-virtual       v9, Lorg/webrtc/SurfaceViewRenderer;->getWidth()I
+	10      (0000002a) move-result          v6
+	11      (0000002c) if-eqz               v6, +c1
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x30 : [ updateSurfaceSize-BB@0x3c updateSurfaceSize-BB@0x1ae ]
+	12      (00000030) invoke-virtual       v9, Lorg/webrtc/SurfaceViewRenderer;->getHeight()I
+	13      (00000036) move-result          v6
+	14      (00000038) if-eqz               v6, +bb
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x3c : [ updateSurfaceSize-BB@0x6c updateSurfaceSize-BB@0x19c ]
+	15      (0000003c) invoke-virtual       v9, Lorg/webrtc/SurfaceViewRenderer;->getWidth()I
+	16      (00000042) move-result          v6
+	17      (00000044) int-to-float         v6, v6
+	18      (00000046) invoke-virtual       v9, Lorg/webrtc/SurfaceViewRenderer;->getHeight()I
+	19      (0000004c) move-result          v8
+	20      (0000004e) int-to-float         v8, v8
+	21      (00000050) div-float            v4, v6, v8
+	22      (00000054) iget                 v6, v9, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameWidth I
+	23      (00000058) int-to-float         v6, v6
+	24      (0000005a) iget                 v8, v9, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameHeight I
+	25      (0000005e) int-to-float         v8, v8
+	26      (00000060) div-float            v2, v6, v8
+	27      (00000064) cmpl-float           v6, v2, v4
+	28      (00000068) if-lez               v6, +9a
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x6c : [ updateSurfaceSize-BB@0x7a ]
+	29      (0000006c) iget                 v6, v9, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameHeight I
+	30      (00000070) int-to-float         v6, v6
+	31      (00000072) mul-float/2addr      v6, v4
+	32      (00000074) float-to-int         v1, v6
+	33      (00000076) iget                 v0, v9, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameHeight I
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x7a : [ updateSurfaceSize-BB@0x17a updateSurfaceSize-BB@0x182 ]
+	34      (0000007a) invoke-virtual       v9, Lorg/webrtc/SurfaceViewRenderer;->getWidth()I
+	35      (00000080) move-result          v6
+	36      (00000082) invoke-static        v6, v1, Ljava/lang/Math;->min(I I)I
+	37      (00000088) move-result          v5
+	38      (0000008a) invoke-virtual       v9, Lorg/webrtc/SurfaceViewRenderer;->getHeight()I
+	39      (00000090) move-result          v6
+	40      (00000092) invoke-static        v6, v0, Ljava/lang/Math;->min(I I)I
+	41      (00000098) move-result          v3
+	42      (0000009a) new-instance         v6, Ljava/lang/StringBuilder;
+	43      (0000009e) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	44      (000000a4) const-string         v8, 'updateSurfaceSize. Layout size: '
+	45      (000000a8) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	46      (000000ae) move-result-object   v6
+	47      (000000b0) invoke-virtual       v9, Lorg/webrtc/SurfaceViewRenderer;->getWidth()I
+	48      (000000b6) move-result          v8
+	49      (000000b8) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	50      (000000be) move-result-object   v6
+	51      (000000c0) const-string         v8, 'x'
+	52      (000000c4) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	53      (000000ca) move-result-object   v6
+	54      (000000cc) invoke-virtual       v9, Lorg/webrtc/SurfaceViewRenderer;->getHeight()I
+	55      (000000d2) move-result          v8
+	56      (000000d4) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	57      (000000da) move-result-object   v6
+	58      (000000dc) const-string         v8, ', frame size: '
+	59      (000000e0) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	60      (000000e6) move-result-object   v6
+	61      (000000e8) iget                 v8, v9, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameWidth I
+	62      (000000ec) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	63      (000000f2) move-result-object   v6
+	64      (000000f4) const-string         v8, 'x'
+	65      (000000f8) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	66      (000000fe) move-result-object   v6
+	67      (00000100) iget                 v8, v9, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameHeight I
+	68      (00000104) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	69      (0000010a) move-result-object   v6
+	70      (0000010c) const-string         v8, ', requested surface size: '
+	71      (00000110) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	72      (00000116) move-result-object   v6
+	73      (00000118) invoke-virtual       v6, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	74      (0000011e) move-result-object   v6
+	75      (00000120) const-string         v8, 'x'
+	76      (00000124) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	77      (0000012a) move-result-object   v6
+	78      (0000012c) invoke-virtual       v6, v3, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	79      (00000132) move-result-object   v6
+	80      (00000134) const-string         v8, ', old surface size: '
+	81      (00000138) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	82      (0000013e) move-result-object   v6
+	83      (00000140) iget                 v8, v9, Lorg/webrtc/SurfaceViewRenderer;->surfaceWidth I
+	84      (00000144) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	85      (0000014a) move-result-object   v6
+	86      (0000014c) const-string         v8, 'x'
+	87      (00000150) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	88      (00000156) move-result-object   v6
+	89      (00000158) iget                 v8, v9, Lorg/webrtc/SurfaceViewRenderer;->surfaceHeight I
+	90      (0000015c) invoke-virtual       v6, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	91      (00000162) move-result-object   v6
+	92      (00000164) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	93      (0000016a) move-result-object   v6
+	94      (0000016c) invoke-direct        v9, v6, Lorg/webrtc/SurfaceViewRenderer;->logD(Ljava/lang/String;)V
+	95      (00000172) iget                 v6, v9, Lorg/webrtc/SurfaceViewRenderer;->surfaceWidth I
+	96      (00000176) if-ne                v5, v6, +6
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x17a : [ updateSurfaceSize-BB@0x182 updateSurfaceSize-BB@0x198 ]
+	97      (0000017a) iget                 v6, v9, Lorg/webrtc/SurfaceViewRenderer;->surfaceHeight I
+	98      (0000017e) if-eq                v3, v6, +d
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x182 : [ updateSurfaceSize-BB@0x198 ]
+	99      (00000182) iput                 v5, v9, Lorg/webrtc/SurfaceViewRenderer;->surfaceWidth I
+	100     (00000186) iput                 v3, v9, Lorg/webrtc/SurfaceViewRenderer;->surfaceHeight I
+	101     (0000018a) invoke-virtual       v9, Lorg/webrtc/SurfaceViewRenderer;->getHolder()Landroid/view/SurfaceHolder;
+	102     (00000190) move-result-object   v6
+	103     (00000192) invoke-interface     v6, v5, v3, Landroid/view/SurfaceHolder;->setFixedSize(I I)V
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x198 : 
+	104     (00000198) monitor-exit         v7
+	105     (0000019a) return-void          
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x19c : [ updateSurfaceSize-BB@0x7a ]
+	106     (0000019c) iget                 v1, v9, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameWidth I
+	107     (000001a0) iget                 v6, v9, Lorg/webrtc/SurfaceViewRenderer;->rotatedFrameWidth I
+	108     (000001a4) int-to-float         v6, v6
+	109     (000001a6) div-float/2addr      v6, v4
+	110     (000001a8) float-to-int         v0, v6
+	111     (000001aa) goto/16              -98
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x1ae : [ updateSurfaceSize-BB@0x198 ]
+	112     (000001ae) const/4              v6, 0
+	113     (000001b0) iput                 v6, v9, Lorg/webrtc/SurfaceViewRenderer;->surfaceHeight I
+	114     (000001b4) iput                 v6, v9, Lorg/webrtc/SurfaceViewRenderer;->surfaceWidth I
+	115     (000001b8) invoke-virtual       v9, Lorg/webrtc/SurfaceViewRenderer;->getHolder()Landroid/view/SurfaceHolder;
+	116     (000001be) move-result-object   v6
+	117     (000001c0) invoke-interface     v6, Landroid/view/SurfaceHolder;->setSizeFromLayout()V
+	118     (000001c6) goto                 -17
+	c:1cb
+	(Ljava/lang/Throwable; -> 1c8 updateSurfaceSize-BB@0x1c8)
+
+updateSurfaceSize-BB@0x1c8 : 
+	119     (000001c8) move-exception       v6
+	120     (000001ca) monitor-exit         v7
+	121     (000001cc) throw                v6
+

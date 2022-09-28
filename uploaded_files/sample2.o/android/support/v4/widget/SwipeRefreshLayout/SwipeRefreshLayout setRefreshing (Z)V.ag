@@ -1,0 +1,32 @@
+# Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setRefreshing-BB@0x0 : [ setRefreshing-BB@0x8 setRefreshing-BB@0x2a ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/v4/widget/SwipeRefreshLayout;->mRefreshing Z
+	1       (00000004) if-eq                v0, v2, +13
+
+setRefreshing-BB@0x8 : [ setRefreshing-BB@0x20 setRefreshing-BB@0x2c ]
+	2       (00000008) invoke-direct        v1, Landroid/support/v4/widget/SwipeRefreshLayout;->ensureTarget()V
+	3       (0000000e) const/4              v0, 0
+	4       (00000010) iput                 v0, v1, Landroid/support/v4/widget/SwipeRefreshLayout;->mCurrPercentage F
+	5       (00000014) iput-boolean         v2, v1, Landroid/support/v4/widget/SwipeRefreshLayout;->mRefreshing Z
+	6       (00000018) iget-boolean         v0, v1, Landroid/support/v4/widget/SwipeRefreshLayout;->mRefreshing Z
+	7       (0000001c) if-eqz               v0, +8
+
+setRefreshing-BB@0x20 : [ setRefreshing-BB@0x2a ]
+	8       (00000020) iget-object          v0, v1, Landroid/support/v4/widget/SwipeRefreshLayout;->mProgressBar Landroid/support/v4/widget/SwipeProgressBar;
+	9       (00000024) invoke-virtual       v0, Landroid/support/v4/widget/SwipeProgressBar;->start()V
+
+setRefreshing-BB@0x2a : 
+	10      (0000002a) return-void          
+
+setRefreshing-BB@0x2c : [ setRefreshing-BB@0x2a ]
+	11      (0000002c) iget-object          v0, v1, Landroid/support/v4/widget/SwipeRefreshLayout;->mProgressBar Landroid/support/v4/widget/SwipeProgressBar;
+	12      (00000030) invoke-virtual       v0, Landroid/support/v4/widget/SwipeProgressBar;->stop()V
+	13      (00000036) goto                 -6
+

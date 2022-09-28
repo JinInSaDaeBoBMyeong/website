@@ -1,0 +1,12 @@
+# Landroid/support/v4/widget/SimpleCursorAdapter;->setViewBinder(Landroid/support/v4/widget/SimpleCursorAdapter$ViewBinder;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.widget.SimpleCursorAdapter$ViewBinder
+#
+# - return:void
+
+setViewBinder-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroid/support/v4/widget/SimpleCursorAdapter;->mViewBinder Landroid/support/v4/widget/SimpleCursorAdapter$ViewBinder;
+	1       (00000004) return-void          
+

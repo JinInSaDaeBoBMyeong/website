@@ -1,0 +1,11 @@
+# Landroid/support/v4/view/PagerTitleStrip;->getTextSpacing()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getTextSpacing-BB@0x0 : 
+	0       (00000000) iget                 v0, v1, Landroid/support/v4/view/PagerTitleStrip;->mScaledTextSpacing I
+	1       (00000004) return               v0
+

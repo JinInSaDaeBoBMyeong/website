@@ -1,0 +1,29 @@
+# Ltev/piqgahor/IEx3fn07c;->TKZWB7f6(Ljava/lang/Throwable;)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Throwable
+#
+# - return:java.lang.String
+
+TKZWB7f6-BB@0x0 : [ TKZWB7f6-BB@0x22 ]
+	0       (00000000) new-instance         v1, Ljava/io/StringWriter;
+	1       (00000004) invoke-direct        v1, Ljava/io/StringWriter;-><init>()V
+	2       (0000000a) new-instance         v2, Ljava/io/PrintWriter;
+	3       (0000000e) invoke-direct        v2, v1, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
+	4       (00000014) invoke-virtual       v3, v2, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
+	5       (0000001a) invoke-virtual       v1, Ljava/lang/Object;->toString()Ljava/lang/String;
+	6       (00000020) move-result-object   v0
+
+TKZWB7f6-BB@0x22 : [ TKZWB7f6-BB@0x28 ]
+	7       (00000022) invoke-virtual       v1, Ljava/io/Writer;->close()V
+	22:27
+	(Ljava/io/IOException; -> 2a TKZWB7f6-BB@0x2a)
+
+TKZWB7f6-BB@0x28 : 
+	8       (00000028) return-object        v0
+
+TKZWB7f6-BB@0x2a : [ TKZWB7f6-BB@0x28 ]
+	9       (0000002a) move-exception       v2
+	10      (0000002c) goto                 -2
+

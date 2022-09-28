@@ -1,0 +1,20 @@
+# Ltev/piqgahor/mlDMsT43cl;->pUnXkBa9201(Landroid/content/Intent;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Intent
+#
+# - return:void
+
+pUnXkBa9201-BB@0x0 : [ pUnXkBa9201-BB@0x8 pUnXkBa9201-BB@0xa ]
+	0       (00000000) sget-object          v0, Ltev/piqgahor/mlDMsT43cl;->Fy7oXM9c Ltev/piqgahor/fxn1Y9;
+	1       (00000004) if-nez               v0, +3
+
+pUnXkBa9201-BB@0x8 : 
+	2       (00000008) return-void          
+
+pUnXkBa9201-BB@0xa : [ pUnXkBa9201-BB@0x8 ]
+	3       (0000000a) sget-object          v0, Ltev/piqgahor/mlDMsT43cl;->Fy7oXM9c Ltev/piqgahor/fxn1Y9;
+	4       (0000000e) invoke-interface     v0, v1, Ltev/piqgahor/fxn1Y9;->I9T69ai6883(Landroid/content/Intent;)V
+	5       (00000014) goto                 -6
+

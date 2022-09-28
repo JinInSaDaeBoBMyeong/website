@@ -1,0 +1,48 @@
+# Lorg/webrtc/PeerConnectionFactory;->printStackTrace(Ljava/lang/Thread; Ljava/lang/String;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.Thread
+# - v7:java.lang.String
+#
+# - return:void
+
+printStackTrace-BB@0x0 : [ printStackTrace-BB@0x4 printStackTrace-BB@0x66 ]
+	0       (00000000) if-eqz               v6, +33
+
+printStackTrace-BB@0x4 : [ printStackTrace-BB@0x12 printStackTrace-BB@0x66 ]
+	1       (00000004) invoke-virtual       v6, Ljava/lang/Thread;->getStackTrace()[Ljava/lang/StackTraceElement;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) array-length         v2, v1
+	4       (0000000e) if-lez               v2, +2c
+
+printStackTrace-BB@0x12 : [ printStackTrace-BB@0x46 ]
+	5       (00000012) const-string         v2, 'PeerConnectionFactory'
+	6       (00000016) new-instance         v3, Ljava/lang/StringBuilder;
+	7       (0000001a) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	8       (00000020) invoke-virtual       v3, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000026) move-result-object   v3
+	10      (00000028) const-string         v4, ' stacks trace:'
+	11      (0000002c) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000032) move-result-object   v3
+	13      (00000034) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003a) move-result-object   v3
+	15      (0000003c) invoke-static        v2, v3, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	16      (00000042) array-length         v3, v1
+	17      (00000044) const/4              v2, 0
+
+printStackTrace-BB@0x46 : [ printStackTrace-BB@0x4a printStackTrace-BB@0x66 ]
+	18      (00000046) if-ge                v2, v3, +10
+
+printStackTrace-BB@0x4a : [ printStackTrace-BB@0x46 ]
+	19      (0000004a) aget-object          v0, v1, v2
+	20      (0000004e) const-string         v4, 'PeerConnectionFactory'
+	21      (00000052) invoke-virtual       v0, Ljava/lang/StackTraceElement;->toString()Ljava/lang/String;
+	22      (00000058) move-result-object   v5
+	23      (0000005a) invoke-static        v4, v5, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	24      (00000060) add-int/lit8         v2, v2, 1
+	25      (00000064) goto                 -f
+
+printStackTrace-BB@0x66 : 
+	26      (00000066) return-void          
+

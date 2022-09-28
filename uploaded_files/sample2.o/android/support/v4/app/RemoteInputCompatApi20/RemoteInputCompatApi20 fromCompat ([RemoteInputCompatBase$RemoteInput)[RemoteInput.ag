@@ -1,0 +1,54 @@
+# Landroid/support/v4/app/RemoteInputCompatApi20;->fromCompat([Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;)[Landroid/app/RemoteInput; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.support.v4.app.RemoteInputCompatBase$RemoteInput[]
+#
+# - return:android.app.RemoteInput[]
+
+fromCompat-BB@0x0 : [ fromCompat-BB@0x4 fromCompat-BB@0x8 ]
+	0       (00000000) if-nez               v5, +4
+
+fromCompat-BB@0x4 : [ fromCompat-BB@0x6 ]
+	1       (00000004) const/4              v1, 0
+
+fromCompat-BB@0x6 : 
+	2       (00000006) return-object        v1
+
+fromCompat-BB@0x8 : [ fromCompat-BB@0x10 ]
+	3       (00000008) array-length         v3, v5
+	4       (0000000a) new-array            v1, v3, [Landroid/app/RemoteInput;
+	5       (0000000e) const/4              v0, 0
+
+fromCompat-BB@0x10 : [ fromCompat-BB@0x16 fromCompat-BB@0x6 ]
+	6       (00000010) array-length         v3, v5
+	7       (00000012) if-ge                v0, v3, -6
+
+fromCompat-BB@0x16 : [ fromCompat-BB@0x10 ]
+	8       (00000016) aget-object          v2, v5, v0
+	9       (0000001a) new-instance         v3, Landroid/app/RemoteInput$Builder;
+	10      (0000001e) invoke-virtual       v2, Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;->getResultKey()Ljava/lang/String;
+	11      (00000024) move-result-object   v4
+	12      (00000026) invoke-direct        v3, v4, Landroid/app/RemoteInput$Builder;-><init>(Ljava/lang/String;)V
+	13      (0000002c) invoke-virtual       v2, Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;->getLabel()Ljava/lang/CharSequence;
+	14      (00000032) move-result-object   v4
+	15      (00000034) invoke-virtual       v3, v4, Landroid/app/RemoteInput$Builder;->setLabel(Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;
+	16      (0000003a) move-result-object   v3
+	17      (0000003c) invoke-virtual       v2, Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;->getChoices()[Ljava/lang/CharSequence;
+	18      (00000042) move-result-object   v4
+	19      (00000044) invoke-virtual       v3, v4, Landroid/app/RemoteInput$Builder;->setChoices([Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;
+	20      (0000004a) move-result-object   v3
+	21      (0000004c) invoke-virtual       v2, Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;->getAllowFreeFormInput()Z
+	22      (00000052) move-result          v4
+	23      (00000054) invoke-virtual       v3, v4, Landroid/app/RemoteInput$Builder;->setAllowFreeFormInput(Z)Landroid/app/RemoteInput$Builder;
+	24      (0000005a) move-result-object   v3
+	25      (0000005c) invoke-virtual       v2, Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;->getExtras()Landroid/os/Bundle;
+	26      (00000062) move-result-object   v4
+	27      (00000064) invoke-virtual       v3, v4, Landroid/app/RemoteInput$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/RemoteInput$Builder;
+	28      (0000006a) move-result-object   v3
+	29      (0000006c) invoke-virtual       v3, Landroid/app/RemoteInput$Builder;->build()Landroid/app/RemoteInput;
+	30      (00000072) move-result-object   v3
+	31      (00000074) aput-object          v3, v1, v0
+	32      (00000078) add-int/lit8         v0, v0, 1
+	33      (0000007c) goto                 -36
+

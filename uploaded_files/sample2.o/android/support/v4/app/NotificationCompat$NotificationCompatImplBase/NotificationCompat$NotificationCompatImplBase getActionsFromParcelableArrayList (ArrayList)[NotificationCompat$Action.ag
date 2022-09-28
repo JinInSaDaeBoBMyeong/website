@@ -1,0 +1,12 @@
+# Landroid/support/v4/app/NotificationCompat$NotificationCompatImplBase;->getActionsFromParcelableArrayList(Ljava/util/ArrayList;)[Landroid/support/v4/app/NotificationCompat$Action; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.util.ArrayList
+#
+# - return:android.support.v4.app.NotificationCompat$Action[]
+
+getActionsFromParcelableArrayList-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) return-object        v0
+

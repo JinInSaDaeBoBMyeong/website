@@ -1,0 +1,20 @@
+# Landroid/support/v4/util/SparseArrayCompat;->valueAt(I)Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:java.lang.Object
+
+valueAt-BB@0x0 : [ valueAt-BB@0x8 valueAt-BB@0xe ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/v4/util/SparseArrayCompat;->mGarbage Z
+	1       (00000004) if-eqz               v0, +5
+
+valueAt-BB@0x8 : [ valueAt-BB@0xe ]
+	2       (00000008) invoke-direct        v1, Landroid/support/v4/util/SparseArrayCompat;->gc()V
+
+valueAt-BB@0xe : 
+	3       (0000000e) iget-object          v0, v1, Landroid/support/v4/util/SparseArrayCompat;->mValues [Ljava/lang/Object;
+	4       (00000012) aget-object          v0, v0, v2
+	5       (00000016) return-object        v0
+

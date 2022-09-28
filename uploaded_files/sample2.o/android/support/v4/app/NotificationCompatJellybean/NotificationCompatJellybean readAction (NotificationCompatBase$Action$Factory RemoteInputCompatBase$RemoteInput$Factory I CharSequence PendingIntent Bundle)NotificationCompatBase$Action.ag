@@ -1,0 +1,34 @@
+# Landroid/support/v4/app/NotificationCompatJellybean;->readAction(Landroid/support/v4/app/NotificationCompatBase$Action$Factory; Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput$Factory; I Ljava/lang/CharSequence; Landroid/app/PendingIntent; Landroid/os/Bundle;)Landroid/support/v4/app/NotificationCompatBase$Action; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.support.v4.app.NotificationCompatBase$Action$Factory
+# - v7:android.support.v4.app.RemoteInputCompatBase$RemoteInput$Factory
+# - v8:int
+# - v9:java.lang.CharSequence
+# - v10:android.app.PendingIntent
+# - v11:android.os.Bundle
+#
+# - return:android.support.v4.app.NotificationCompatBase$Action
+
+readAction-BB@0x0 : [ readAction-BB@0x6 readAction-BB@0x1a ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) if-eqz               v11, +c
+
+readAction-BB@0x6 : [ readAction-BB@0x1a ]
+	2       (00000006) const-string         v0, 'android.support.remoteInputs'
+	3       (0000000a) invoke-static        v11, v0, Landroid/support/v4/app/BundleUtil;->getBundleArrayFromBundle(Landroid/os/Bundle; Ljava/lang/String;)[Landroid/os/Bundle;
+	4       (00000010) move-result-object   v0
+	5       (00000012) invoke-static        v0, v7, Landroid/support/v4/app/RemoteInputCompatJellybean;->fromBundleArray([Landroid/os/Bundle; Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput$Factory;)[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;
+	6       (00000018) move-result-object   v5
+
+readAction-BB@0x1a : 
+	7       (0000001a) move-object          v0, v6
+	8       (0000001c) move                 v1, v8
+	9       (0000001e) move-object          v2, v9
+	10      (00000020) move-object          v3, v10
+	11      (00000022) move-object          v4, v11
+	12      (00000024) invoke-interface/range v0 ... v5, Landroid/support/v4/app/NotificationCompatBase$Action$Factory;->build(I Ljava/lang/CharSequence; Landroid/app/PendingIntent; Landroid/os/Bundle; [Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;)Landroid/support/v4/app/NotificationCompatBase$Action;
+	13      (0000002a) move-result-object   v0
+	14      (0000002c) return-object        v0
+

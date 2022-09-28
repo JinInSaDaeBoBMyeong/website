@@ -1,0 +1,11 @@
+# Landroid/support/v4/app/Fragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.support.v4.app.FragmentManager
+
+getFragmentManager-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/Fragment;->mFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	1       (00000004) return-object        v0
+

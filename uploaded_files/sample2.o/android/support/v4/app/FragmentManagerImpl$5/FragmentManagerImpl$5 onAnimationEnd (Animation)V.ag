@@ -1,0 +1,29 @@
+# Landroid/support/v4/app/FragmentManagerImpl$5;->onAnimationEnd(Landroid/view/animation/Animation;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.view.animation.Animation
+#
+# - return:void
+
+onAnimationEnd-BB@0x0 : [ onAnimationEnd-BB@0xe onAnimationEnd-BB@0x32 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v0, v6, Landroid/support/v4/app/FragmentManagerImpl$5;->val$fragment Landroid/support/v4/app/Fragment;
+	2       (00000006) iget-object          v0, v0, Landroid/support/v4/app/Fragment;->mAnimatingAway Landroid/view/View;
+	3       (0000000a) if-eqz               v0, +14
+
+onAnimationEnd-BB@0xe : [ onAnimationEnd-BB@0x32 ]
+	4       (0000000e) iget-object          v0, v6, Landroid/support/v4/app/FragmentManagerImpl$5;->val$fragment Landroid/support/v4/app/Fragment;
+	5       (00000012) const/4              v1, 0
+	6       (00000014) iput-object          v1, v0, Landroid/support/v4/app/Fragment;->mAnimatingAway Landroid/view/View;
+	7       (00000018) iget-object          v0, v6, Landroid/support/v4/app/FragmentManagerImpl$5;->this$0 Landroid/support/v4/app/FragmentManagerImpl;
+	8       (0000001c) iget-object          v1, v6, Landroid/support/v4/app/FragmentManagerImpl$5;->val$fragment Landroid/support/v4/app/Fragment;
+	9       (00000020) iget-object          v2, v6, Landroid/support/v4/app/FragmentManagerImpl$5;->val$fragment Landroid/support/v4/app/Fragment;
+	10      (00000024) iget                 v2, v2, Landroid/support/v4/app/Fragment;->mStateAfterAnimating I
+	11      (00000028) move                 v4, v3
+	12      (0000002a) move                 v5, v3
+	13      (0000002c) invoke-virtual/range v0 ... v5, Landroid/support/v4/app/FragmentManagerImpl;->moveToState(Landroid/support/v4/app/Fragment; I I I Z)V
+
+onAnimationEnd-BB@0x32 : 
+	14      (00000032) return-void          
+

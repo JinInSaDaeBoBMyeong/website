@@ -1,0 +1,15 @@
+# Lorg/webrtc/ThreadUtils;->invokeAtFrontUninterruptibly(Landroid/os/Handler; Ljava/lang/Runnable;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.os.Handler
+# - v2:java.lang.Runnable
+#
+# - return:void
+
+invokeAtFrontUninterruptibly-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lorg/webrtc/ThreadUtils$5;
+	1       (00000004) invoke-direct        v0, v2, Lorg/webrtc/ThreadUtils$5;-><init>(Ljava/lang/Runnable;)V
+	2       (0000000a) invoke-static        v1, v0, Lorg/webrtc/ThreadUtils;->invokeAtFrontUninterruptibly(Landroid/os/Handler; Ljava/util/concurrent/Callable;)Ljava/lang/Object;
+	3       (00000010) return-void          
+

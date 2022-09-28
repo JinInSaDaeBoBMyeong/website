@@ -1,0 +1,13 @@
+# Lorg/webrtc/EglBase10;->getEglBaseContext()Lorg/webrtc/EglBase$Context; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:org.webrtc.EglBase$Context
+
+getEglBaseContext-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lorg/webrtc/EglBase10$Context;
+	1       (00000004) iget-object          v1, v2, Lorg/webrtc/EglBase10;->eglContext Ljavax/microedition/khronos/egl/EGLContext;
+	2       (00000008) invoke-direct        v0, v1, Lorg/webrtc/EglBase10$Context;-><init>(Ljavax/microedition/khronos/egl/EGLContext;)V
+	3       (0000000e) return-object        v0
+

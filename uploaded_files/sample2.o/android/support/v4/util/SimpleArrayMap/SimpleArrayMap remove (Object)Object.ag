@@ -1,0 +1,36 @@
+# Landroid/support/v4/util/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:java.lang.Object
+
+remove-BB@0x0 : [ remove-BB@0x4 remove-BB@0x1a ]
+	0       (00000000) if-nez               v3, +d
+
+remove-BB@0x4 : [ remove-BB@0xc ]
+	1       (00000004) invoke-virtual       v2, Landroid/support/v4/util/SimpleArrayMap;->indexOfNull()I
+	2       (0000000a) move-result          v0
+
+remove-BB@0xc : [ remove-BB@0x10 remove-BB@0x2c ]
+	3       (0000000c) if-ltz               v0, +10
+
+remove-BB@0x10 : [ remove-BB@0x18 ]
+	4       (00000010) invoke-virtual       v2, v0, Landroid/support/v4/util/SimpleArrayMap;->removeAt(I)Ljava/lang/Object;
+	5       (00000016) move-result-object   v1
+
+remove-BB@0x18 : 
+	6       (00000018) return-object        v1
+
+remove-BB@0x1a : [ remove-BB@0xc ]
+	7       (0000001a) invoke-virtual       v3, Ljava/lang/Object;->hashCode()I
+	8       (00000020) move-result          v1
+	9       (00000022) invoke-virtual       v2, v3, v1, Landroid/support/v4/util/SimpleArrayMap;->indexOf(Ljava/lang/Object; I)I
+	10      (00000028) move-result          v0
+	11      (0000002a) goto                 -f
+
+remove-BB@0x2c : [ remove-BB@0x18 ]
+	12      (0000002c) const/4              v1, 0
+	13      (0000002e) goto                 -b
+

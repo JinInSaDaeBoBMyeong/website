@@ -1,0 +1,15 @@
+# Landroid/support/v4/app/FragmentManagerImpl;->dispatchStop()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+dispatchStop-BB@0x0 : 
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iput-boolean         v0, v2, Landroid/support/v4/app/FragmentManagerImpl;->mStateSaved Z
+	2       (00000006) const/4              v0, 3
+	3       (00000008) const/4              v1, 0
+	4       (0000000a) invoke-virtual       v2, v0, v1, Landroid/support/v4/app/FragmentManagerImpl;->moveToState(I Z)V
+	5       (00000010) return-void          
+

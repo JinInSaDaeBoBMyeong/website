@@ -1,0 +1,27 @@
+# Lorg/webrtc/Camera1Session$SessionState;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v3, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) new-instance         v0, Lorg/webrtc/Camera1Session$SessionState;
+	3       (00000008) const-string         v1, 'RUNNING'
+	4       (0000000c) invoke-direct        v0, v1, v2, Lorg/webrtc/Camera1Session$SessionState;-><init>(Ljava/lang/String; I)V
+	5       (00000012) sput-object          v0, Lorg/webrtc/Camera1Session$SessionState;->RUNNING Lorg/webrtc/Camera1Session$SessionState;
+	6       (00000016) new-instance         v0, Lorg/webrtc/Camera1Session$SessionState;
+	7       (0000001a) const-string         v1, 'STOPPED'
+	8       (0000001e) invoke-direct        v0, v1, v3, Lorg/webrtc/Camera1Session$SessionState;-><init>(Ljava/lang/String; I)V
+	9       (00000024) sput-object          v0, Lorg/webrtc/Camera1Session$SessionState;->STOPPED Lorg/webrtc/Camera1Session$SessionState;
+	10      (00000028) const/4              v0, 2
+	11      (0000002a) new-array            v0, v0, [Lorg/webrtc/Camera1Session$SessionState;
+	12      (0000002e) sget-object          v1, Lorg/webrtc/Camera1Session$SessionState;->RUNNING Lorg/webrtc/Camera1Session$SessionState;
+	13      (00000032) aput-object          v1, v0, v2
+	14      (00000036) sget-object          v1, Lorg/webrtc/Camera1Session$SessionState;->STOPPED Lorg/webrtc/Camera1Session$SessionState;
+	15      (0000003a) aput-object          v1, v0, v3
+	16      (0000003e) sput-object          v0, Lorg/webrtc/Camera1Session$SessionState;->$VALUES [Lorg/webrtc/Camera1Session$SessionState;
+	17      (00000042) return-void          
+

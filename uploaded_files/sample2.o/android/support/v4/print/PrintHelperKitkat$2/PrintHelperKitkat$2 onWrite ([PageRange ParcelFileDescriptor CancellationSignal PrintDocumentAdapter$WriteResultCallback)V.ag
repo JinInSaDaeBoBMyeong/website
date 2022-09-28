@@ -1,0 +1,119 @@
+# Landroid/support/v4/print/PrintHelperKitkat$2;->onWrite([Landroid/print/PageRange; Landroid/os/ParcelFileDescriptor; Landroid/os/CancellationSignal; Landroid/print/PrintDocumentAdapter$WriteResultCallback;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.print.PageRange[]
+# - v11:android.os.ParcelFileDescriptor
+# - v12:android.os.CancellationSignal
+# - v13:android.print.PrintDocumentAdapter$WriteResultCallback
+#
+# - return:void
+
+onWrite-BB@0x0 : [ onWrite-BB@0x18 ]
+	0       (00000000) new-instance         v4, Landroid/print/pdf/PrintedPdfDocument;
+	1       (00000004) iget-object          v5, v9, Landroid/support/v4/print/PrintHelperKitkat$2;->this$0 Landroid/support/v4/print/PrintHelperKitkat;
+	2       (00000008) iget-object          v5, v5, Landroid/support/v4/print/PrintHelperKitkat;->mContext Landroid/content/Context;
+	3       (0000000c) iget-object          v6, v9, Landroid/support/v4/print/PrintHelperKitkat$2;->mAttributes Landroid/print/PrintAttributes;
+	4       (00000010) invoke-direct        v4, v5, v6, Landroid/print/pdf/PrintedPdfDocument;-><init>(Landroid/content/Context; Landroid/print/PrintAttributes;)V
+	5       (00000016) const/4              v5, 1
+
+onWrite-BB@0x18 : [ onWrite-BB@0x7c ]
+	6       (00000018) invoke-virtual       v4, v5, Landroid/print/pdf/PrintedPdfDocument;->startPage(I)Landroid/graphics/pdf/PdfDocument$Page;
+	7       (0000001e) move-result-object   v3
+	8       (00000020) new-instance         v0, Landroid/graphics/RectF;
+	9       (00000024) invoke-virtual       v3, Landroid/graphics/pdf/PdfDocument$Page;->getInfo()Landroid/graphics/pdf/PdfDocument$PageInfo;
+	10      (0000002a) move-result-object   v5
+	11      (0000002c) invoke-virtual       v5, Landroid/graphics/pdf/PdfDocument$PageInfo;->getContentRect()Landroid/graphics/Rect;
+	12      (00000032) move-result-object   v5
+	13      (00000034) invoke-direct        v0, v5, Landroid/graphics/RectF;-><init>(Landroid/graphics/Rect;)V
+	14      (0000003a) iget-object          v5, v9, Landroid/support/v4/print/PrintHelperKitkat$2;->this$0 Landroid/support/v4/print/PrintHelperKitkat;
+	15      (0000003e) iget-object          v6, v9, Landroid/support/v4/print/PrintHelperKitkat$2;->mBitmap Landroid/graphics/Bitmap;
+	16      (00000042) invoke-virtual       v6, Landroid/graphics/Bitmap;->getWidth()I
+	17      (00000048) move-result          v6
+	18      (0000004a) iget-object          v7, v9, Landroid/support/v4/print/PrintHelperKitkat$2;->mBitmap Landroid/graphics/Bitmap;
+	19      (0000004e) invoke-virtual       v7, Landroid/graphics/Bitmap;->getHeight()I
+	20      (00000054) move-result          v7
+	21      (00000056) iget                 v8, v9, Landroid/support/v4/print/PrintHelperKitkat$2;->val$fittingMode I
+	22      (0000005a) invoke-static        v5, v6, v7, v0, v8, Landroid/support/v4/print/PrintHelperKitkat;->access$000(Landroid/support/v4/print/PrintHelperKitkat; I I Landroid/graphics/RectF; I)Landroid/graphics/Matrix;
+	23      (00000060) move-result-object   v2
+	24      (00000062) invoke-virtual       v3, Landroid/graphics/pdf/PdfDocument$Page;->getCanvas()Landroid/graphics/Canvas;
+	25      (00000068) move-result-object   v5
+	26      (0000006a) iget-object          v6, v9, Landroid/support/v4/print/PrintHelperKitkat$2;->mBitmap Landroid/graphics/Bitmap;
+	27      (0000006e) const/4              v7, 0
+	28      (00000070) invoke-virtual       v5, v6, v2, v7, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap; Landroid/graphics/Matrix; Landroid/graphics/Paint;)V
+	29      (00000076) invoke-virtual       v4, v3, Landroid/print/pdf/PrintedPdfDocument;->finishPage(Landroid/graphics/pdf/PdfDocument$Page;)V
+	18:7b
+	(Ljava/lang/Throwable; -> da onWrite-BB@0xda)
+
+onWrite-BB@0x7c : [ onWrite-BB@0xaa ]
+	30      (0000007c) new-instance         v5, Ljava/io/FileOutputStream;
+	31      (00000080) invoke-virtual       v11, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
+	32      (00000086) move-result-object   v6
+	33      (00000088) invoke-direct        v5, v6, Ljava/io/FileOutputStream;-><init>(Ljava/io/FileDescriptor;)V
+	34      (0000008e) invoke-virtual       v4, v5, Landroid/print/pdf/PrintedPdfDocument;->writeTo(Ljava/io/OutputStream;)V
+	35      (00000094) const/4              v5, 1
+	36      (00000096) new-array            v5, v5, [Landroid/print/PageRange;
+	37      (0000009a) const/4              v6, 0
+	38      (0000009c) sget-object          v7, Landroid/print/PageRange;->ALL_PAGES Landroid/print/PageRange;
+	39      (000000a0) aput-object          v7, v5, v6
+	40      (000000a4) invoke-virtual       v13, v5, Landroid/print/PrintDocumentAdapter$WriteResultCallback;->onWriteFinished([Landroid/print/PageRange;)V
+	7c:a9
+	(Ljava/lang/Throwable; -> da onWrite-BB@0xda)
+	(Ljava/io/IOException; -> c0 onWrite-BB@0xc0)
+
+onWrite-BB@0xaa : [ onWrite-BB@0xae onWrite-BB@0xb4 ]
+	41      (000000aa) if-eqz               v4, +5
+
+onWrite-BB@0xae : [ onWrite-BB@0xb4 ]
+	42      (000000ae) invoke-virtual       v4, Landroid/print/pdf/PrintedPdfDocument;->close()V
+
+onWrite-BB@0xb4 : [ onWrite-BB@0xb8 onWrite-BB@0xbe ]
+	43      (000000b4) if-eqz               v11, +5
+
+onWrite-BB@0xb8 : [ onWrite-BB@0xbe ]
+	44      (000000b8) invoke-virtual       v11, Landroid/os/ParcelFileDescriptor;->close()V
+	b8:bd
+	(Ljava/io/IOException; -> f2 onWrite-BB@0xf2)
+
+onWrite-BB@0xbe : 
+	45      (000000be) return-void          
+
+onWrite-BB@0xc0 : [ onWrite-BB@0xc2 ]
+	46      (000000c0) move-exception       v1
+
+onWrite-BB@0xc2 : [ onWrite-BB@0xaa ]
+	47      (000000c2) const-string         v5, 'PrintHelperKitkat'
+	48      (000000c6) const-string         v6, 'Error writing printed content'
+	49      (000000ca) invoke-static        v5, v6, v1, Landroid/util/Log;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+	50      (000000d0) const/4              v5, 0
+	51      (000000d2) invoke-virtual       v13, v5, Landroid/print/PrintDocumentAdapter$WriteResultCallback;->onWriteFailed(Ljava/lang/CharSequence;)V
+	52      (000000d8) goto                 -17
+	c2:d7
+	(Ljava/lang/Throwable; -> da onWrite-BB@0xda)
+
+onWrite-BB@0xda : [ onWrite-BB@0xe0 onWrite-BB@0xe6 ]
+	53      (000000da) move-exception       v5
+	54      (000000dc) if-eqz               v4, +5
+
+onWrite-BB@0xe0 : [ onWrite-BB@0xe6 ]
+	55      (000000e0) invoke-virtual       v4, Landroid/print/pdf/PrintedPdfDocument;->close()V
+
+onWrite-BB@0xe6 : [ onWrite-BB@0xea onWrite-BB@0xf0 ]
+	56      (000000e6) if-eqz               v11, +5
+
+onWrite-BB@0xea : [ onWrite-BB@0xf0 ]
+	57      (000000ea) invoke-virtual       v11, Landroid/os/ParcelFileDescriptor;->close()V
+	ea:ef
+	(Ljava/io/IOException; -> f6 onWrite-BB@0xf6)
+
+onWrite-BB@0xf0 : 
+	58      (000000f0) throw                v5
+
+onWrite-BB@0xf2 : [ onWrite-BB@0xbe ]
+	59      (000000f2) move-exception       v5
+	60      (000000f4) goto                 -1b
+
+onWrite-BB@0xf6 : [ onWrite-BB@0xf0 ]
+	61      (000000f6) move-exception       v6
+	62      (000000f8) goto                 -4
+

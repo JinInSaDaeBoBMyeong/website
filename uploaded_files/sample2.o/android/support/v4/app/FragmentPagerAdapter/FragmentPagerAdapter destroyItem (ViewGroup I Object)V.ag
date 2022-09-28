@@ -1,0 +1,26 @@
+# Landroid/support/v4/app/FragmentPagerAdapter;->destroyItem(Landroid/view/ViewGroup; I Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.ViewGroup
+# - v3:int
+# - v4:java.lang.Object
+#
+# - return:void
+
+destroyItem-BB@0x0 : [ destroyItem-BB@0x8 destroyItem-BB@0x18 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/FragmentPagerAdapter;->mCurTransaction Landroid/support/v4/app/FragmentTransaction;
+	1       (00000004) if-nez               v0, +a
+
+destroyItem-BB@0x8 : [ destroyItem-BB@0x18 ]
+	2       (00000008) iget-object          v0, v1, Landroid/support/v4/app/FragmentPagerAdapter;->mFragmentManager Landroid/support/v4/app/FragmentManager;
+	3       (0000000c) invoke-virtual       v0, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
+	4       (00000012) move-result-object   v0
+	5       (00000014) iput-object          v0, v1, Landroid/support/v4/app/FragmentPagerAdapter;->mCurTransaction Landroid/support/v4/app/FragmentTransaction;
+
+destroyItem-BB@0x18 : 
+	6       (00000018) iget-object          v0, v1, Landroid/support/v4/app/FragmentPagerAdapter;->mCurTransaction Landroid/support/v4/app/FragmentTransaction;
+	7       (0000001c) check-cast           v4, Landroid/support/v4/app/Fragment;
+	8       (00000020) invoke-virtual       v0, v4, Landroid/support/v4/app/FragmentTransaction;->detach(Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
+	9       (00000026) return-void          
+

@@ -1,0 +1,30 @@
+# Landroid/support/v4/util/TimeUtils;->formatDuration(J Ljava/lang/StringBuilder;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:long
+# - v6:java.lang.StringBuilder
+#
+# - return:void
+
+formatDuration-BB@0x0 : [ formatDuration-BB@0x8 ]
+	0       (00000000) sget-object          v2, Landroid/support/v4/util/TimeUtils;->sFormatSync Ljava/lang/Object;
+	1       (00000004) monitor-enter        v2
+	2       (00000006) const/4              v1, 0
+
+formatDuration-BB@0x8 : 
+	3       (00000008) invoke-static        v4, v5, v1, Landroid/support/v4/util/TimeUtils;->formatDurationLocked(J I)I
+	4       (0000000e) move-result          v0
+	5       (00000010) sget-object          v1, Landroid/support/v4/util/TimeUtils;->sFormatStr [C
+	6       (00000014) const/4              v3, 0
+	7       (00000016) invoke-virtual       v6, v1, v3, v0, Ljava/lang/StringBuilder;->append([C I I)Ljava/lang/StringBuilder;
+	8       (0000001c) monitor-exit         v2
+	9       (0000001e) return-void          
+	8:23
+	(Ljava/lang/Throwable; -> 20 formatDuration-BB@0x20)
+
+formatDuration-BB@0x20 : 
+	10      (00000020) move-exception       v1
+	11      (00000022) monitor-exit         v2
+	12      (00000024) throw                v1
+

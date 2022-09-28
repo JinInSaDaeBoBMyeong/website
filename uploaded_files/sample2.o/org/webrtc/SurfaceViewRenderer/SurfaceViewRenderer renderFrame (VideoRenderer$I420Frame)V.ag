@@ -1,0 +1,14 @@
+# Lorg/webrtc/SurfaceViewRenderer;->renderFrame(Lorg/webrtc/VideoRenderer$I420Frame;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:org.webrtc.VideoRenderer$I420Frame
+#
+# - return:void
+
+renderFrame-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, Lorg/webrtc/SurfaceViewRenderer;->updateFrameDimensionsAndReportEvents(Lorg/webrtc/VideoRenderer$I420Frame;)V
+	1       (00000006) iget-object          v0, v1, Lorg/webrtc/SurfaceViewRenderer;->eglRenderer Lorg/webrtc/EglRenderer;
+	2       (0000000a) invoke-virtual       v0, v2, Lorg/webrtc/EglRenderer;->renderFrame(Lorg/webrtc/VideoRenderer$I420Frame;)V
+	3       (00000010) return-void          
+

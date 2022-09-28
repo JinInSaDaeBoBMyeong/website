@@ -1,0 +1,14 @@
+# Landroid/support/v4/media/TransportMediatorJellybeanMR2$4;->onAudioFocusChange(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:void
+
+onAudioFocusChange-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/media/TransportMediatorJellybeanMR2$4;->this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	1       (00000004) iget-object          v0, v0, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mTransportCallback Landroid/support/v4/media/TransportMediatorCallback;
+	2       (00000008) invoke-interface     v0, v2, Landroid/support/v4/media/TransportMediatorCallback;->handleAudioFocusChange(I)V
+	3       (0000000e) return-void          
+

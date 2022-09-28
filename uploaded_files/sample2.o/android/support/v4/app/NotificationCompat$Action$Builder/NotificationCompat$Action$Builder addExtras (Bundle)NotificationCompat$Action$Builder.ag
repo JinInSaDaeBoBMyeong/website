@@ -1,0 +1,18 @@
+# Landroid/support/v4/app/NotificationCompat$Action$Builder;->addExtras(Landroid/os/Bundle;)Landroid/support/v4/app/NotificationCompat$Action$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.os.Bundle
+#
+# - return:android.support.v4.app.NotificationCompat$Action$Builder
+
+addExtras-BB@0x0 : [ addExtras-BB@0x4 addExtras-BB@0xe ]
+	0       (00000000) if-eqz               v2, +7
+
+addExtras-BB@0x4 : [ addExtras-BB@0xe ]
+	1       (00000004) iget-object          v0, v1, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mExtras Landroid/os/Bundle;
+	2       (00000008) invoke-virtual       v0, v2, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+
+addExtras-BB@0xe : 
+	3       (0000000e) return-object        v1
+

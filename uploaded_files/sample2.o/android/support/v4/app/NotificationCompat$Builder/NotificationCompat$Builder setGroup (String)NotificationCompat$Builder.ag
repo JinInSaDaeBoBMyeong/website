@@ -1,0 +1,12 @@
+# Landroid/support/v4/app/NotificationCompat$Builder;->setGroup(Ljava/lang/String;)Landroid/support/v4/app/NotificationCompat$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+#
+# - return:android.support.v4.app.NotificationCompat$Builder
+
+setGroup-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroid/support/v4/app/NotificationCompat$Builder;->mGroupKey Ljava/lang/String;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,37 @@
+# Landroid/support/v4/content/FileProvider;->attachInfo(Landroid/content/Context; Landroid/content/pm/ProviderInfo;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:android.content.pm.ProviderInfo
+#
+# - return:void
+
+attachInfo-BB@0x0 : [ attachInfo-BB@0xe attachInfo-BB@0x1e ]
+	0       (00000000) invoke-super         v2, v3, v4, Landroid/content/ContentProvider;->attachInfo(Landroid/content/Context; Landroid/content/pm/ProviderInfo;)V
+	1       (00000006) iget-boolean         v0, v4, Landroid/content/pm/ProviderInfo;->exported Z
+	2       (0000000a) if-eqz               v0, +a
+
+attachInfo-BB@0xe : 
+	3       (0000000e) new-instance         v0, Ljava/lang/SecurityException;
+	4       (00000012) const-string         v1, 'Provider must not be exported'
+	5       (00000016) invoke-direct        v0, v1, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
+	6       (0000001c) throw                v0
+
+attachInfo-BB@0x1e : [ attachInfo-BB@0x26 attachInfo-BB@0x36 ]
+	7       (0000001e) iget-boolean         v0, v4, Landroid/content/pm/ProviderInfo;->grantUriPermissions Z
+	8       (00000022) if-nez               v0, +a
+
+attachInfo-BB@0x26 : 
+	9       (00000026) new-instance         v0, Ljava/lang/SecurityException;
+	10      (0000002a) const-string         v1, 'Provider must grant uri permissions'
+	11      (0000002e) invoke-direct        v0, v1, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
+	12      (00000034) throw                v0
+
+attachInfo-BB@0x36 : 
+	13      (00000036) iget-object          v0, v4, Landroid/content/pm/ProviderInfo;->authority Ljava/lang/String;
+	14      (0000003a) invoke-static        v3, v0, Landroid/support/v4/content/FileProvider;->getPathStrategy(Landroid/content/Context; Ljava/lang/String;)Landroid/support/v4/content/FileProvider$PathStrategy;
+	15      (00000040) move-result-object   v0
+	16      (00000042) iput-object          v0, v2, Landroid/support/v4/content/FileProvider;->mStrategy Landroid/support/v4/content/FileProvider$PathStrategy;
+	17      (00000046) return-void          
+

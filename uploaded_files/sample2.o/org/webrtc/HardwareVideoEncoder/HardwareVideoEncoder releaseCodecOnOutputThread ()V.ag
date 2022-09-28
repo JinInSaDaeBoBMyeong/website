@@ -1,0 +1,45 @@
+# Lorg/webrtc/HardwareVideoEncoder;->releaseCodecOnOutputThread()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+releaseCodecOnOutputThread-BB@0x0 : [ releaseCodecOnOutputThread-BB@0xe ]
+	0       (00000000) const-string         v1, 'HardwareVideoEncoder'
+	1       (00000004) const-string         v2, 'Releasing MediaCodec on output thread'
+	2       (00000008) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+
+releaseCodecOnOutputThread-BB@0xe : [ releaseCodecOnOutputThread-BB@0x18 ]
+	3       (0000000e) iget-object          v1, v3, Lorg/webrtc/HardwareVideoEncoder;->codec Landroid/media/MediaCodec;
+	4       (00000012) invoke-virtual       v1, Landroid/media/MediaCodec;->stop()V
+	e:17
+	(Ljava/lang/Exception; -> 32 releaseCodecOnOutputThread-BB@0x32)
+
+releaseCodecOnOutputThread-BB@0x18 : [ releaseCodecOnOutputThread-BB@0x22 ]
+	5       (00000018) iget-object          v1, v3, Lorg/webrtc/HardwareVideoEncoder;->codec Landroid/media/MediaCodec;
+	6       (0000001c) invoke-virtual       v1, Landroid/media/MediaCodec;->release()V
+	18:21
+	(Ljava/lang/Exception; -> 44 releaseCodecOnOutputThread-BB@0x44)
+
+releaseCodecOnOutputThread-BB@0x22 : 
+	7       (00000022) const-string         v1, 'HardwareVideoEncoder'
+	8       (00000026) const-string         v2, 'Release on output thread done'
+	9       (0000002a) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	10      (00000030) return-void          
+
+releaseCodecOnOutputThread-BB@0x32 : [ releaseCodecOnOutputThread-BB@0x18 ]
+	11      (00000032) move-exception       v0
+	12      (00000034) const-string         v1, 'HardwareVideoEncoder'
+	13      (00000038) const-string         v2, 'Media encoder stop failed'
+	14      (0000003c) invoke-static        v1, v2, v0, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	15      (00000042) goto                 -15
+
+releaseCodecOnOutputThread-BB@0x44 : [ releaseCodecOnOutputThread-BB@0x22 ]
+	16      (00000044) move-exception       v0
+	17      (00000046) const-string         v1, 'HardwareVideoEncoder'
+	18      (0000004a) const-string         v2, 'Media encoder release failed'
+	19      (0000004e) invoke-static        v1, v2, v0, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	20      (00000054) iput-object          v0, v3, Lorg/webrtc/HardwareVideoEncoder;->shutdownException Ljava/lang/Exception;
+	21      (00000058) goto                 -1b
+

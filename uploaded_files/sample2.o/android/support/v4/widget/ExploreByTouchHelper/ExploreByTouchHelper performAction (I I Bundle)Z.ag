@@ -1,0 +1,29 @@
+# Landroid/support/v4/widget/ExploreByTouchHelper;->performAction(I I Landroid/os/Bundle;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+# - v4:android.os.Bundle
+#
+# - return:boolean
+
+performAction-BB@0x0 : [ D:performAction-BB@0x6 -1:performAction-BB@0x10 ]
+	0       (00000000) packed-switch        v2, +e (0x1c)
+
+performAction-BB@0x6 : [ performAction-BB@0xe ]
+	1       (00000006) invoke-direct        v1, v2, v3, v4, Landroid/support/v4/widget/ExploreByTouchHelper;->performActionForChild(I I Landroid/os/Bundle;)Z
+	2       (0000000c) move-result          v0
+
+performAction-BB@0xe : 
+	3       (0000000e) return               v0
+
+performAction-BB@0x10 : [ performAction-BB@0xe ]
+	4       (00000010) invoke-direct        v1, v3, v4, Landroid/support/v4/widget/ExploreByTouchHelper;->performActionForHost(I Landroid/os/Bundle;)Z
+	5       (00000016) move-result          v0
+	6       (00000018) goto                 -5
+
+performAction-BB@0x1a : 
+	7       (0000001a) nop                  
+	8       (0000001c) packed-switch-payload -1
+

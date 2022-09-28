@@ -1,0 +1,15 @@
+# Landroid/support/v4/view/ViewPager$1;->compare(Landroid/support/v4/view/ViewPager$ItemInfo; Landroid/support/v4/view/ViewPager$ItemInfo;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.v4.view.ViewPager$ItemInfo
+# - v4:android.support.v4.view.ViewPager$ItemInfo
+#
+# - return:int
+
+compare-BB@0x0 : 
+	0       (00000000) iget                 v0, v3, Landroid/support/v4/view/ViewPager$ItemInfo;->position I
+	1       (00000004) iget                 v1, v4, Landroid/support/v4/view/ViewPager$ItemInfo;->position I
+	2       (00000008) sub-int/2addr        v0, v1
+	3       (0000000a) return               v0
+

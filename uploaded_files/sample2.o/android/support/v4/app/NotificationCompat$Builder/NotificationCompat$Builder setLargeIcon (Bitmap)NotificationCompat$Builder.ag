@@ -1,0 +1,12 @@
+# Landroid/support/v4/app/NotificationCompat$Builder;->setLargeIcon(Landroid/graphics/Bitmap;)Landroid/support/v4/app/NotificationCompat$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.graphics.Bitmap
+#
+# - return:android.support.v4.app.NotificationCompat$Builder
+
+setLargeIcon-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroid/support/v4/app/NotificationCompat$Builder;->mLargeIcon Landroid/graphics/Bitmap;
+	1       (00000004) return-object        v0
+

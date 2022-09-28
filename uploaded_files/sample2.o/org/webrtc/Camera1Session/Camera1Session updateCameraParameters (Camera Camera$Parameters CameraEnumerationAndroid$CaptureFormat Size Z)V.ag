@@ -1,0 +1,56 @@
+# Lorg/webrtc/Camera1Session;->updateCameraParameters(Landroid/hardware/Camera; Landroid/hardware/Camera$Parameters; Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat; Lorg/webrtc/Size; Z)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.hardware.Camera
+# - v4:android.hardware.Camera$Parameters
+# - v5:org.webrtc.CameraEnumerationAndroid$CaptureFormat
+# - v6:org.webrtc.Size
+# - v7:boolean
+#
+# - return:void
+
+updateCameraParameters-BB@0x0 : [ updateCameraParameters-BB@0x3e updateCameraParameters-BB@0x4e ]
+	0       (00000000) invoke-virtual       v4, Landroid/hardware/Camera$Parameters;->getSupportedFocusModes()Ljava/util/List;
+	1       (00000006) move-result-object   v0
+	2       (00000008) iget-object          v1, v5, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;->framerate Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;
+	3       (0000000c) iget                 v1, v1, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->min I
+	4       (00000010) iget-object          v2, v5, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;->framerate Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;
+	5       (00000014) iget                 v2, v2, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->max I
+	6       (00000018) invoke-virtual       v4, v1, v2, Landroid/hardware/Camera$Parameters;->setPreviewFpsRange(I I)V
+	7       (0000001e) iget                 v1, v5, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;->width I
+	8       (00000022) iget                 v2, v5, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;->height I
+	9       (00000026) invoke-virtual       v4, v1, v2, Landroid/hardware/Camera$Parameters;->setPreviewSize(I I)V
+	10      (0000002c) iget                 v1, v6, Lorg/webrtc/Size;->width I
+	11      (00000030) iget                 v2, v6, Lorg/webrtc/Size;->height I
+	12      (00000034) invoke-virtual       v4, v1, v2, Landroid/hardware/Camera$Parameters;->setPictureSize(I I)V
+	13      (0000003a) if-nez               v7, +a
+
+updateCameraParameters-BB@0x3e : [ updateCameraParameters-BB@0x4e ]
+	14      (0000003e) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	15      (00000044) const/16             v1, 17
+	16      (00000048) invoke-virtual       v4, v1, Landroid/hardware/Camera$Parameters;->setPreviewFormat(I)V
+
+updateCameraParameters-BB@0x4e : [ updateCameraParameters-BB@0x5a updateCameraParameters-BB@0x62 ]
+	17      (0000004e) invoke-virtual       v4, Landroid/hardware/Camera$Parameters;->isVideoStabilizationSupported()Z
+	18      (00000054) move-result          v1
+	19      (00000056) if-eqz               v1, +6
+
+updateCameraParameters-BB@0x5a : [ updateCameraParameters-BB@0x62 ]
+	20      (0000005a) const/4              v1, 1
+	21      (0000005c) invoke-virtual       v4, v1, Landroid/hardware/Camera$Parameters;->setVideoStabilization(Z)V
+
+updateCameraParameters-BB@0x62 : [ updateCameraParameters-BB@0x72 updateCameraParameters-BB@0x7c ]
+	22      (00000062) const-string         v1, 'continuous-video'
+	23      (00000066) invoke-interface     v0, v1, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+	24      (0000006c) move-result          v1
+	25      (0000006e) if-eqz               v1, +7
+
+updateCameraParameters-BB@0x72 : [ updateCameraParameters-BB@0x7c ]
+	26      (00000072) const-string         v1, 'continuous-video'
+	27      (00000076) invoke-virtual       v4, v1, Landroid/hardware/Camera$Parameters;->setFocusMode(Ljava/lang/String;)V
+
+updateCameraParameters-BB@0x7c : 
+	28      (0000007c) invoke-virtual       v3, v4, Landroid/hardware/Camera;->setParameters(Landroid/hardware/Camera$Parameters;)V
+	29      (00000082) return-void          
+

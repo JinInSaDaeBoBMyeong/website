@@ -1,0 +1,29 @@
+# Landroid/support/v4/util/AtomicFile;->sync(Ljava/io/FileOutputStream;)Z [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.FileOutputStream
+#
+# - return:boolean
+
+sync-BB@0x0 : [ sync-BB@0x4 sync-BB@0x12 ]
+	0       (00000000) if-eqz               v1, +9
+
+sync-BB@0x4 : [ sync-BB@0x12 ]
+	1       (00000004) invoke-virtual       v1, Ljava/io/FileOutputStream;->getFD()Ljava/io/FileDescriptor;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v0, Ljava/io/FileDescriptor;->sync()V
+	4:11
+	(Ljava/io/IOException; -> 16 sync-BB@0x16)
+
+sync-BB@0x12 : [ sync-BB@0x14 ]
+	4       (00000012) const/4              v0, 1
+
+sync-BB@0x14 : 
+	5       (00000014) return               v0
+
+sync-BB@0x16 : [ sync-BB@0x14 ]
+	6       (00000016) move-exception       v0
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -3
+

@@ -1,0 +1,72 @@
+# Landroid/support/v4/util/SparseArrayCompat;->append(I Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:int
+# - v9:java.lang.Object
+#
+# - return:void
+
+append-BB@0x0 : [ append-BB@0xa append-BB@0x26 ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) iget                 v4, v7, Landroid/support/v4/util/SparseArrayCompat;->mSize I
+	2       (00000006) if-eqz               v4, +10
+
+append-BB@0xa : [ append-BB@0x1e append-BB@0x26 ]
+	3       (0000000a) iget-object          v4, v7, Landroid/support/v4/util/SparseArrayCompat;->mKeys [I
+	4       (0000000e) iget                 v5, v7, Landroid/support/v4/util/SparseArrayCompat;->mSize I
+	5       (00000012) add-int/lit8         v5, v5, -1
+	6       (00000016) aget                 v4, v4, v5
+	7       (0000001a) if-gt                v8, v4, +6
+
+append-BB@0x1e : [ append-BB@0x24 ]
+	8       (0000001e) invoke-virtual       v7, v8, v9, Landroid/support/v4/util/SparseArrayCompat;->put(I Ljava/lang/Object;)V
+
+append-BB@0x24 : 
+	9       (00000024) return-void          
+
+append-BB@0x26 : [ append-BB@0x2e append-BB@0x42 ]
+	10      (00000026) iget-boolean         v4, v7, Landroid/support/v4/util/SparseArrayCompat;->mGarbage Z
+	11      (0000002a) if-eqz               v4, +c
+
+append-BB@0x2e : [ append-BB@0x3c append-BB@0x42 ]
+	12      (0000002e) iget                 v4, v7, Landroid/support/v4/util/SparseArrayCompat;->mSize I
+	13      (00000032) iget-object          v5, v7, Landroid/support/v4/util/SparseArrayCompat;->mKeys [I
+	14      (00000036) array-length         v5, v5
+	15      (00000038) if-lt                v4, v5, +5
+
+append-BB@0x3c : [ append-BB@0x42 ]
+	16      (0000003c) invoke-direct        v7, Landroid/support/v4/util/SparseArrayCompat;->gc()V
+
+append-BB@0x42 : [ append-BB@0x50 append-BB@0x8c ]
+	17      (00000042) iget                 v3, v7, Landroid/support/v4/util/SparseArrayCompat;->mSize I
+	18      (00000046) iget-object          v4, v7, Landroid/support/v4/util/SparseArrayCompat;->mKeys [I
+	19      (0000004a) array-length         v4, v4
+	20      (0000004c) if-lt                v3, v4, +20
+
+append-BB@0x50 : [ append-BB@0x8c ]
+	21      (00000050) add-int/lit8         v4, v3, 1
+	22      (00000054) invoke-static        v4, Landroid/support/v4/util/ContainerHelpers;->idealIntArraySize(I)I
+	23      (0000005a) move-result          v0
+	24      (0000005c) new-array            v1, v0, [I
+	25      (00000060) new-array            v2, v0, [Ljava/lang/Object;
+	26      (00000064) iget-object          v4, v7, Landroid/support/v4/util/SparseArrayCompat;->mKeys [I
+	27      (00000068) iget-object          v5, v7, Landroid/support/v4/util/SparseArrayCompat;->mKeys [I
+	28      (0000006c) array-length         v5, v5
+	29      (0000006e) invoke-static        v4, v6, v1, v6, v5, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	30      (00000074) iget-object          v4, v7, Landroid/support/v4/util/SparseArrayCompat;->mValues [Ljava/lang/Object;
+	31      (00000078) iget-object          v5, v7, Landroid/support/v4/util/SparseArrayCompat;->mValues [Ljava/lang/Object;
+	32      (0000007c) array-length         v5, v5
+	33      (0000007e) invoke-static        v4, v6, v2, v6, v5, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	34      (00000084) iput-object          v1, v7, Landroid/support/v4/util/SparseArrayCompat;->mKeys [I
+	35      (00000088) iput-object          v2, v7, Landroid/support/v4/util/SparseArrayCompat;->mValues [Ljava/lang/Object;
+
+append-BB@0x8c : [ append-BB@0x24 ]
+	36      (0000008c) iget-object          v4, v7, Landroid/support/v4/util/SparseArrayCompat;->mKeys [I
+	37      (00000090) aput                 v8, v4, v3
+	38      (00000094) iget-object          v4, v7, Landroid/support/v4/util/SparseArrayCompat;->mValues [Ljava/lang/Object;
+	39      (00000098) aput-object          v9, v4, v3
+	40      (0000009c) add-int/lit8         v4, v3, 1
+	41      (000000a0) iput                 v4, v7, Landroid/support/v4/util/SparseArrayCompat;->mSize I
+	42      (000000a4) goto                 -40
+

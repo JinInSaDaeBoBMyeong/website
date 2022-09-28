@@ -1,0 +1,10 @@
+# Lorg/webrtc/WrappedNativeI420Buffer;->toI420()Lorg/webrtc/VideoFrame$I420Buffer; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:org.webrtc.VideoFrame$I420Buffer
+
+toI420-BB@0x0 : 
+	0       (00000000) return-object        v0
+

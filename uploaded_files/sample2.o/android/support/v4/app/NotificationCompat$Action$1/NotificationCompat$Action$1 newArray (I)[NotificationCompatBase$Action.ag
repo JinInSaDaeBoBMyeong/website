@@ -1,0 +1,13 @@
+# Landroid/support/v4/app/NotificationCompat$Action$1;->newArray(I)[Landroid/support/v4/app/NotificationCompatBase$Action; [access_flags=public bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+#
+# - return:android.support.v4.app.NotificationCompatBase$Action[]
+
+newArray-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, v2, Landroid/support/v4/app/NotificationCompat$Action$1;->newArray(I)[Landroid/support/v4/app/NotificationCompat$Action;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+

@@ -1,0 +1,21 @@
+# Lorg/webrtc/GlRectDrawer$Shader;-><init>(Ljava/lang/String;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v0, Lorg/webrtc/GlShader;
+	2       (0000000a) const-string         v1, 'varying vec2 interp_tc;\nattribute vec4 in_pos;\nattribute vec4 in_tc;\n\nuniform mat4 texMatrix;\n\nvoid main() {\n    gl_Position = in_pos;\n    interp_tc = (texMatrix * in_tc).xy;\n}\n'
+	3       (0000000e) invoke-direct        v0, v1, v3, Lorg/webrtc/GlShader;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	4       (00000014) iput-object          v0, v2, Lorg/webrtc/GlRectDrawer$Shader;->glShader Lorg/webrtc/GlShader;
+	5       (00000018) iget-object          v0, v2, Lorg/webrtc/GlRectDrawer$Shader;->glShader Lorg/webrtc/GlShader;
+	6       (0000001c) const-string         v1, 'texMatrix'
+	7       (00000020) invoke-virtual       v0, v1, Lorg/webrtc/GlShader;->getUniformLocation(Ljava/lang/String;)I
+	8       (00000026) move-result          v0
+	9       (00000028) iput                 v0, v2, Lorg/webrtc/GlRectDrawer$Shader;->texMatrixLocation I
+	10      (0000002c) return-void          
+

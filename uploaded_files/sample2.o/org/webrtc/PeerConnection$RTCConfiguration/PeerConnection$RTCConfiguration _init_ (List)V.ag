@@ -1,0 +1,41 @@
+# Lorg/webrtc/PeerConnection$RTCConfiguration;-><init>(Ljava/util/List;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.util.List
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v2, -1
+	1       (00000002) const/4              v1, 0
+	2       (00000004) invoke-direct        v3, Ljava/lang/Object;-><init>()V
+	3       (0000000a) sget-object          v0, Lorg/webrtc/PeerConnection$IceTransportsType;->ALL Lorg/webrtc/PeerConnection$IceTransportsType;
+	4       (0000000e) iput-object          v0, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->iceTransportsType Lorg/webrtc/PeerConnection$IceTransportsType;
+	5       (00000012) sget-object          v0, Lorg/webrtc/PeerConnection$BundlePolicy;->BALANCED Lorg/webrtc/PeerConnection$BundlePolicy;
+	6       (00000016) iput-object          v0, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->bundlePolicy Lorg/webrtc/PeerConnection$BundlePolicy;
+	7       (0000001a) sget-object          v0, Lorg/webrtc/PeerConnection$RtcpMuxPolicy;->REQUIRE Lorg/webrtc/PeerConnection$RtcpMuxPolicy;
+	8       (0000001e) iput-object          v0, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->rtcpMuxPolicy Lorg/webrtc/PeerConnection$RtcpMuxPolicy;
+	9       (00000022) sget-object          v0, Lorg/webrtc/PeerConnection$TcpCandidatePolicy;->ENABLED Lorg/webrtc/PeerConnection$TcpCandidatePolicy;
+	10      (00000026) iput-object          v0, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->tcpCandidatePolicy Lorg/webrtc/PeerConnection$TcpCandidatePolicy;
+	11      (0000002a) iget-object          v0, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->candidateNetworkPolicy Lorg/webrtc/PeerConnection$CandidateNetworkPolicy;
+	12      (0000002e) sget-object          v0, Lorg/webrtc/PeerConnection$CandidateNetworkPolicy;->ALL Lorg/webrtc/PeerConnection$CandidateNetworkPolicy;
+	13      (00000032) iput-object          v0, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->candidateNetworkPolicy Lorg/webrtc/PeerConnection$CandidateNetworkPolicy;
+	14      (00000036) iput-object          v4, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->iceServers Ljava/util/List;
+	15      (0000003a) const/16             v0, 50
+	16      (0000003e) iput                 v0, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->audioJitterBufferMaxPackets I
+	17      (00000042) iput-boolean         v1, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->audioJitterBufferFastAccelerate Z
+	18      (00000046) iput                 v2, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->iceConnectionReceivingTimeout I
+	19      (0000004a) iput                 v2, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->iceBackupCandidatePairPingInterval I
+	20      (0000004e) sget-object          v0, Lorg/webrtc/PeerConnection$KeyType;->ECDSA Lorg/webrtc/PeerConnection$KeyType;
+	21      (00000052) iput-object          v0, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->keyType Lorg/webrtc/PeerConnection$KeyType;
+	22      (00000056) sget-object          v0, Lorg/webrtc/PeerConnection$ContinualGatheringPolicy;->GATHER_ONCE Lorg/webrtc/PeerConnection$ContinualGatheringPolicy;
+	23      (0000005a) iput-object          v0, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->continualGatheringPolicy Lorg/webrtc/PeerConnection$ContinualGatheringPolicy;
+	24      (0000005e) iput                 v1, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->iceCandidatePoolSize I
+	25      (00000062) iput-boolean         v1, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->pruneTurnPorts Z
+	26      (00000066) iput-boolean         v1, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->presumeWritableWhenFullyRelayed Z
+	27      (0000006a) const/4              v0, 0
+	28      (0000006c) iput-object          v0, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->iceCheckMinInterval Ljava/lang/Integer;
+	29      (00000070) iput-boolean         v1, v3, Lorg/webrtc/PeerConnection$RTCConfiguration;->disableIPv6OnWifi Z
+	30      (00000074) return-void          
+

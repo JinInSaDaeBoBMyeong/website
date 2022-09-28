@@ -1,0 +1,19 @@
+# Landroid/support/v4/app/FragmentActivity;->onBackPressed()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onBackPressed-BB@0x0 : [ onBackPressed-BB@0x10 onBackPressed-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	1       (00000004) invoke-virtual       v0, Landroid/support/v4/app/FragmentManagerImpl;->popBackStackImmediate()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +5
+
+onBackPressed-BB@0x10 : [ onBackPressed-BB@0x16 ]
+	4       (00000010) invoke-virtual       v1, Landroid/support/v4/app/FragmentActivity;->finish()V
+
+onBackPressed-BB@0x16 : 
+	5       (00000016) return-void          
+

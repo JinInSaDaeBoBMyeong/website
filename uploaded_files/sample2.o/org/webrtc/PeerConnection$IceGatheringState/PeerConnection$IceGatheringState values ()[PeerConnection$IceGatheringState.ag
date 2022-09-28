@@ -1,0 +1,14 @@
+# Lorg/webrtc/PeerConnection$IceGatheringState;->values()[Lorg/webrtc/PeerConnection$IceGatheringState; [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:org.webrtc.PeerConnection$IceGatheringState[]
+
+values-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lorg/webrtc/PeerConnection$IceGatheringState;->$VALUES [Lorg/webrtc/PeerConnection$IceGatheringState;
+	1       (00000004) invoke-virtual       v0, [Lorg/webrtc/PeerConnection$IceGatheringState;->clone()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, [Lorg/webrtc/PeerConnection$IceGatheringState;
+	4       (00000010) return-object        v0
+

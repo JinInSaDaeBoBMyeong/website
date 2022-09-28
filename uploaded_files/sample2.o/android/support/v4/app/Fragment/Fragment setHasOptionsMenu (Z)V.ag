@@ -1,0 +1,30 @@
+# Landroid/support/v4/app/Fragment;->setHasOptionsMenu(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setHasOptionsMenu-BB@0x0 : [ setHasOptionsMenu-BB@0x8 setHasOptionsMenu-BB@0x2e ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/v4/app/Fragment;->mHasMenu Z
+	1       (00000004) if-eq                v0, v2, +15
+
+setHasOptionsMenu-BB@0x8 : [ setHasOptionsMenu-BB@0x18 setHasOptionsMenu-BB@0x2e ]
+	2       (00000008) iput-boolean         v2, v1, Landroid/support/v4/app/Fragment;->mHasMenu Z
+	3       (0000000c) invoke-virtual       v1, Landroid/support/v4/app/Fragment;->isAdded()Z
+	4       (00000012) move-result          v0
+	5       (00000014) if-eqz               v0, +d
+
+setHasOptionsMenu-BB@0x18 : [ setHasOptionsMenu-BB@0x24 setHasOptionsMenu-BB@0x2e ]
+	6       (00000018) invoke-virtual       v1, Landroid/support/v4/app/Fragment;->isHidden()Z
+	7       (0000001e) move-result          v0
+	8       (00000020) if-nez               v0, +7
+
+setHasOptionsMenu-BB@0x24 : [ setHasOptionsMenu-BB@0x2e ]
+	9       (00000024) iget-object          v0, v1, Landroid/support/v4/app/Fragment;->mActivity Landroid/support/v4/app/FragmentActivity;
+	10      (00000028) invoke-virtual       v0, Landroid/support/v4/app/FragmentActivity;->supportInvalidateOptionsMenu()V
+
+setHasOptionsMenu-BB@0x2e : 
+	11      (0000002e) return-void          
+

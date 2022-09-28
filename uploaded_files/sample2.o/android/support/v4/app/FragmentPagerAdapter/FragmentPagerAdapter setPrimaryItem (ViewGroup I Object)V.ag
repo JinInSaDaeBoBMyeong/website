@@ -1,0 +1,41 @@
+# Landroid/support/v4/app/FragmentPagerAdapter;->setPrimaryItem(Landroid/view/ViewGroup; I Ljava/lang/Object;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.view.ViewGroup
+# - v6:int
+# - v7:java.lang.Object
+#
+# - return:void
+
+setPrimaryItem-BB@0x0 : [ setPrimaryItem-BB@0x12 setPrimaryItem-BB@0x42 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) move-object          v0, v7
+	3       (00000006) check-cast           v0, Landroid/support/v4/app/Fragment;
+	4       (0000000a) iget-object          v1, v4, Landroid/support/v4/app/FragmentPagerAdapter;->mCurrentPrimaryItem Landroid/support/v4/app/Fragment;
+	5       (0000000e) if-eq                v0, v1, +1a
+
+setPrimaryItem-BB@0x12 : [ setPrimaryItem-BB@0x1a setPrimaryItem-BB@0x2e ]
+	6       (00000012) iget-object          v1, v4, Landroid/support/v4/app/FragmentPagerAdapter;->mCurrentPrimaryItem Landroid/support/v4/app/Fragment;
+	7       (00000016) if-eqz               v1, +c
+
+setPrimaryItem-BB@0x1a : [ setPrimaryItem-BB@0x2e ]
+	8       (0000001a) iget-object          v1, v4, Landroid/support/v4/app/FragmentPagerAdapter;->mCurrentPrimaryItem Landroid/support/v4/app/Fragment;
+	9       (0000001e) invoke-virtual       v1, v2, Landroid/support/v4/app/Fragment;->setMenuVisibility(Z)V
+	10      (00000024) iget-object          v1, v4, Landroid/support/v4/app/FragmentPagerAdapter;->mCurrentPrimaryItem Landroid/support/v4/app/Fragment;
+	11      (00000028) invoke-virtual       v1, v2, Landroid/support/v4/app/Fragment;->setUserVisibleHint(Z)V
+
+setPrimaryItem-BB@0x2e : [ setPrimaryItem-BB@0x32 setPrimaryItem-BB@0x3e ]
+	12      (0000002e) if-eqz               v0, +8
+
+setPrimaryItem-BB@0x32 : [ setPrimaryItem-BB@0x3e ]
+	13      (00000032) invoke-virtual       v0, v3, Landroid/support/v4/app/Fragment;->setMenuVisibility(Z)V
+	14      (00000038) invoke-virtual       v0, v3, Landroid/support/v4/app/Fragment;->setUserVisibleHint(Z)V
+
+setPrimaryItem-BB@0x3e : [ setPrimaryItem-BB@0x42 ]
+	15      (0000003e) iput-object          v0, v4, Landroid/support/v4/app/FragmentPagerAdapter;->mCurrentPrimaryItem Landroid/support/v4/app/Fragment;
+
+setPrimaryItem-BB@0x42 : 
+	16      (00000042) return-void          
+

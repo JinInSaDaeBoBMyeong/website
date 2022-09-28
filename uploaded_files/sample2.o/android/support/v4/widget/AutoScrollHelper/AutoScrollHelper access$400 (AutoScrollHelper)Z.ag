@@ -1,0 +1,13 @@
+# Landroid/support/v4/widget/AutoScrollHelper;->access$400(Landroid/support/v4/widget/AutoScrollHelper;)Z [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.widget.AutoScrollHelper
+#
+# - return:boolean
+
+access$400-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Landroid/support/v4/widget/AutoScrollHelper;->shouldAnimate()Z
+	1       (00000006) move-result          v0
+	2       (00000008) return               v0
+

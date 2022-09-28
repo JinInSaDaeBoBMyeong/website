@@ -1,0 +1,19 @@
+# Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) invoke-static        Landroid/view/ViewConfiguration;->getLongPressTimeout()I
+	1       (00000006) move-result          v0
+	2       (00000008) sput                 v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->LONGPRESS_TIMEOUT I
+	3       (0000000c) invoke-static        Landroid/view/ViewConfiguration;->getTapTimeout()I
+	4       (00000012) move-result          v0
+	5       (00000014) sput                 v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->TAP_TIMEOUT I
+	6       (00000018) invoke-static        Landroid/view/ViewConfiguration;->getDoubleTapTimeout()I
+	7       (0000001e) move-result          v0
+	8       (00000020) sput                 v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->DOUBLE_TAP_TIMEOUT I
+	9       (00000024) return-void          
+

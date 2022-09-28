@@ -1,0 +1,14 @@
+# Lorg/webrtc/PeerConnectionFactory;->initializeAndroidGlobals(Landroid/content/Context; Z)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:android.content.Context
+# - v1:boolean
+#
+# - return:void
+
+initializeAndroidGlobals-BB@0x0 : 
+	0       (00000000) invoke-static        v0, Lorg/webrtc/ContextUtils;->initialize(Landroid/content/Context;)V
+	1       (00000006) invoke-static        v0, v1, Lorg/webrtc/PeerConnectionFactory;->nativeInitializeAndroidGlobals(Landroid/content/Context; Z)V
+	2       (0000000c) return-void          
+

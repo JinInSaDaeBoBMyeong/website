@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/ViewCompatHC;->setTranslationY(Landroid/view/View; F)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:android.view.View
+# - v1:float
+#
+# - return:void
+
+setTranslationY-BB@0x0 : 
+	0       (00000000) invoke-virtual       v0, v1, Landroid/view/View;->setTranslationY(F)V
+	1       (00000006) return-void          
+

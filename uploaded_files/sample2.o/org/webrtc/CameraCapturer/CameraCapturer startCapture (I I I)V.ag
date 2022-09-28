@@ -1,0 +1,91 @@
+# Lorg/webrtc/CameraCapturer;->startCapture(I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+startCapture-BB@0x0 : [ startCapture-BB@0x60 startCapture-BB@0x70 ]
+	0       (00000000) const-string         v0, 'CameraCapturer'
+	1       (00000004) new-instance         v1, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000e) const-string         v2, 'startCapture: '
+	4       (00000012) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v1, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v1
+	8       (00000022) const-string         v2, 'x'
+	9       (00000026) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) invoke-virtual       v1, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v1
+	13      (00000036) const-string         v2, '@'
+	14      (0000003a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (00000040) move-result-object   v1
+	16      (00000042) invoke-virtual       v1, v6, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	17      (00000048) move-result-object   v1
+	18      (0000004a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	19      (00000050) move-result-object   v1
+	20      (00000052) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	21      (00000058) iget-object          v0, v3, Lorg/webrtc/CameraCapturer;->applicationContext Landroid/content/Context;
+	22      (0000005c) if-nez               v0, +a
+
+startCapture-BB@0x60 : 
+	23      (00000060) new-instance         v0, Ljava/lang/RuntimeException;
+	24      (00000064) const-string         v1, 'CameraCapturer must be initialized before calling startCapture.'
+	25      (00000068) invoke-direct        v0, v1, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	26      (0000006e) throw                v0
+
+startCapture-BB@0x70 : [ startCapture-BB@0x76 ]
+	27      (00000070) iget-object          v1, v3, Lorg/webrtc/CameraCapturer;->stateLock Ljava/lang/Object;
+	28      (00000074) monitor-enter        v1
+
+startCapture-BB@0x76 : [ startCapture-BB@0x7e startCapture-BB@0x86 ]
+	29      (00000076) iget-boolean         v0, v3, Lorg/webrtc/CameraCapturer;->sessionOpening Z
+	30      (0000007a) if-nez               v0, +6
+	76:c1
+	(Ljava/lang/Throwable; -> be startCapture-BB@0xbe)
+
+startCapture-BB@0x7e : [ startCapture-BB@0x86 startCapture-BB@0x98 ]
+	31      (0000007e) iget-object          v0, v3, Lorg/webrtc/CameraCapturer;->currentSession Lorg/webrtc/CameraSession;
+	32      (00000082) if-eqz               v0, +b
+	76:c1
+	(Ljava/lang/Throwable; -> be startCapture-BB@0xbe)
+
+startCapture-BB@0x86 : [ startCapture-BB@0x96 ]
+	33      (00000086) const-string         v0, 'CameraCapturer'
+	34      (0000008a) const-string         v2, 'Session already open'
+	35      (0000008e) invoke-static        v0, v2, Lorg/webrtc/Logging;->w(Ljava/lang/String; Ljava/lang/String;)V
+	36      (00000094) monitor-exit         v1
+	76:c1
+	(Ljava/lang/Throwable; -> be startCapture-BB@0xbe)
+
+startCapture-BB@0x96 : 
+	37      (00000096) return-void          
+	76:c1
+	(Ljava/lang/Throwable; -> be startCapture-BB@0xbe)
+
+startCapture-BB@0x98 : [ startCapture-BB@0x96 ]
+	38      (00000098) iput                 v4, v3, Lorg/webrtc/CameraCapturer;->width I
+	39      (0000009c) iput                 v5, v3, Lorg/webrtc/CameraCapturer;->height I
+	40      (000000a0) iput                 v6, v3, Lorg/webrtc/CameraCapturer;->framerate I
+	41      (000000a4) const/4              v0, 1
+	42      (000000a6) iput-boolean         v0, v3, Lorg/webrtc/CameraCapturer;->sessionOpening Z
+	43      (000000aa) const/4              v0, 3
+	44      (000000ac) iput                 v0, v3, Lorg/webrtc/CameraCapturer;->openAttemptsRemaining I
+	45      (000000b0) const/4              v0, 0
+	46      (000000b2) const/4              v2, 0
+	47      (000000b4) invoke-direct        v3, v0, v2, Lorg/webrtc/CameraCapturer;->createSessionInternal(I Landroid/media/MediaRecorder;)V
+	48      (000000ba) monitor-exit         v1
+	49      (000000bc) goto                 -13
+	76:c1
+	(Ljava/lang/Throwable; -> be startCapture-BB@0xbe)
+
+startCapture-BB@0xbe : 
+	50      (000000be) move-exception       v0
+	51      (000000c0) monitor-exit         v1
+	52      (000000c2) throw                v0
+

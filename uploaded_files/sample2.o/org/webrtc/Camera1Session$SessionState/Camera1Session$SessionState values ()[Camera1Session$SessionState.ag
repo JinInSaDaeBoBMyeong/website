@@ -1,0 +1,14 @@
+# Lorg/webrtc/Camera1Session$SessionState;->values()[Lorg/webrtc/Camera1Session$SessionState; [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:org.webrtc.Camera1Session$SessionState[]
+
+values-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lorg/webrtc/Camera1Session$SessionState;->$VALUES [Lorg/webrtc/Camera1Session$SessionState;
+	1       (00000004) invoke-virtual       v0, [Lorg/webrtc/Camera1Session$SessionState;->clone()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, [Lorg/webrtc/Camera1Session$SessionState;
+	4       (00000010) return-object        v0
+

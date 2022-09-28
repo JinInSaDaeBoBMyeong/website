@@ -1,0 +1,49 @@
+# Landroid/support/v4/print/PrintHelperKitkat$2$1;->onPostExecute(Landroid/graphics/Bitmap;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.graphics.Bitmap
+#
+# - return:void
+
+onPostExecute-BB@0x0 : [ onPostExecute-BB@0x14 onPostExecute-BB@0x62 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) invoke-super         v4, v5, Landroid/os/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
+	2       (00000008) iget-object          v2, v4, Landroid/support/v4/print/PrintHelperKitkat$2$1;->this$1 Landroid/support/v4/print/PrintHelperKitkat$2;
+	3       (0000000c) iput-object          v5, v2, Landroid/support/v4/print/PrintHelperKitkat$2;->mBitmap Landroid/graphics/Bitmap;
+	4       (00000010) if-eqz               v5, +29
+
+onPostExecute-BB@0x14 : [ onPostExecute-BB@0x52 onPostExecute-BB@0x5e ]
+	5       (00000014) new-instance         v2, Landroid/print/PrintDocumentInfo$Builder;
+	6       (00000018) iget-object          v3, v4, Landroid/support/v4/print/PrintHelperKitkat$2$1;->this$1 Landroid/support/v4/print/PrintHelperKitkat$2;
+	7       (0000001c) iget-object          v3, v3, Landroid/support/v4/print/PrintHelperKitkat$2;->val$jobName Ljava/lang/String;
+	8       (00000020) invoke-direct        v2, v3, Landroid/print/PrintDocumentInfo$Builder;-><init>(Ljava/lang/String;)V
+	9       (00000026) invoke-virtual       v2, v0, Landroid/print/PrintDocumentInfo$Builder;->setContentType(I)Landroid/print/PrintDocumentInfo$Builder;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) invoke-virtual       v2, v0, Landroid/print/PrintDocumentInfo$Builder;->setPageCount(I)Landroid/print/PrintDocumentInfo$Builder;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-virtual       v2, Landroid/print/PrintDocumentInfo$Builder;->build()Landroid/print/PrintDocumentInfo;
+	14      (0000003c) move-result-object   v1
+	15      (0000003e) iget-object          v2, v4, Landroid/support/v4/print/PrintHelperKitkat$2$1;->val$newPrintAttributes Landroid/print/PrintAttributes;
+	16      (00000042) iget-object          v3, v4, Landroid/support/v4/print/PrintHelperKitkat$2$1;->val$oldPrintAttributes Landroid/print/PrintAttributes;
+	17      (00000046) invoke-virtual       v2, v3, Landroid/print/PrintAttributes;->equals(Ljava/lang/Object;)Z
+	18      (0000004c) move-result          v2
+	19      (0000004e) if-nez               v2, +8
+
+onPostExecute-BB@0x52 : [ onPostExecute-BB@0x5c ]
+	20      (00000052) iget-object          v2, v4, Landroid/support/v4/print/PrintHelperKitkat$2$1;->val$layoutResultCallback Landroid/print/PrintDocumentAdapter$LayoutResultCallback;
+	21      (00000056) invoke-virtual       v2, v1, v0, Landroid/print/PrintDocumentAdapter$LayoutResultCallback;->onLayoutFinished(Landroid/print/PrintDocumentInfo; Z)V
+
+onPostExecute-BB@0x5c : 
+	22      (0000005c) return-void          
+
+onPostExecute-BB@0x5e : [ onPostExecute-BB@0x52 ]
+	23      (0000005e) const/4              v0, 0
+	24      (00000060) goto                 -7
+
+onPostExecute-BB@0x62 : [ onPostExecute-BB@0x5c ]
+	25      (00000062) iget-object          v2, v4, Landroid/support/v4/print/PrintHelperKitkat$2$1;->val$layoutResultCallback Landroid/print/PrintDocumentAdapter$LayoutResultCallback;
+	26      (00000066) const/4              v3, 0
+	27      (00000068) invoke-virtual       v2, v3, Landroid/print/PrintDocumentAdapter$LayoutResultCallback;->onLayoutFailed(Ljava/lang/CharSequence;)V
+	28      (0000006e) goto                 -9
+

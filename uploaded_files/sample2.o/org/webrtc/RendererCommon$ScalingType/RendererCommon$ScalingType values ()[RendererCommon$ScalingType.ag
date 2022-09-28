@@ -1,0 +1,14 @@
+# Lorg/webrtc/RendererCommon$ScalingType;->values()[Lorg/webrtc/RendererCommon$ScalingType; [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:org.webrtc.RendererCommon$ScalingType[]
+
+values-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lorg/webrtc/RendererCommon$ScalingType;->$VALUES [Lorg/webrtc/RendererCommon$ScalingType;
+	1       (00000004) invoke-virtual       v0, [Lorg/webrtc/RendererCommon$ScalingType;->clone()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, [Lorg/webrtc/RendererCommon$ScalingType;
+	4       (00000010) return-object        v0
+

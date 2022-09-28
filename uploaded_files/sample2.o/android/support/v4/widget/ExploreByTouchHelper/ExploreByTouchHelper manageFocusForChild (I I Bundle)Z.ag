@@ -1,0 +1,33 @@
+# Landroid/support/v4/widget/ExploreByTouchHelper;->manageFocusForChild(I I Landroid/os/Bundle;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:int
+# - v4:android.os.Bundle
+#
+# - return:boolean
+
+manageFocusForChild-BB@0x0 : [ D:manageFocusForChild-BB@0x6 64:manageFocusForChild-BB@0xa 128:manageFocusForChild-BB@0x14 ]
+	0       (00000000) sparse-switch        v3, +10 (0x20)
+
+manageFocusForChild-BB@0x6 : [ manageFocusForChild-BB@0x8 ]
+	1       (00000006) const/4              v0, 0
+
+manageFocusForChild-BB@0x8 : 
+	2       (00000008) return               v0
+
+manageFocusForChild-BB@0xa : [ manageFocusForChild-BB@0x8 ]
+	3       (0000000a) invoke-direct        v1, v2, Landroid/support/v4/widget/ExploreByTouchHelper;->requestAccessibilityFocus(I)Z
+	4       (00000010) move-result          v0
+	5       (00000012) goto                 -5
+
+manageFocusForChild-BB@0x14 : [ manageFocusForChild-BB@0x8 ]
+	6       (00000014) invoke-direct        v1, v2, Landroid/support/v4/widget/ExploreByTouchHelper;->clearAccessibilityFocus(I)Z
+	7       (0000001a) move-result          v0
+	8       (0000001c) goto                 -a
+
+manageFocusForChild-BB@0x1e : 
+	9       (0000001e) nop                  
+	10      (00000020) sparse-switch-payload 40 80
+

@@ -1,0 +1,13 @@
+# Landroid/support/v4/accessibilityservice/AccessibilityServiceInfoCompatIcs;->getResolveInfo(Landroid/accessibilityservice/AccessibilityServiceInfo;)Landroid/content/pm/ResolveInfo; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.accessibilityservice.AccessibilityServiceInfo
+#
+# - return:android.content.pm.ResolveInfo
+
+getResolveInfo-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Landroid/accessibilityservice/AccessibilityServiceInfo;->getResolveInfo()Landroid/content/pm/ResolveInfo;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+

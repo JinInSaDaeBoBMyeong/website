@@ -1,0 +1,56 @@
+# Lorg/webrtc/HardwareVideoEncoderFactory;->findCodecForType(Lorg/webrtc/VideoCodecType;)Landroid/media/MediaCodecInfo; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:org.webrtc.VideoCodecType
+#
+# - return:android.media.MediaCodecInfo
+
+findCodecForType-BB@0x0 : [ findCodecForType-BB@0x2 ]
+	0       (00000000) const/4              v1, 0
+
+findCodecForType-BB@0x2 : [ findCodecForType-BB@0xe findCodecForType-BB@0x4e ]
+	1       (00000002) invoke-static        Landroid/media/MediaCodecList;->getCodecCount()I
+	2       (00000008) move-result          v3
+	3       (0000000a) if-ge                v1, v3, +22
+
+findCodecForType-BB@0xe : [ findCodecForType-BB@0x10 ]
+	4       (0000000e) const/4              v2, 0
+
+findCodecForType-BB@0x10 : [ findCodecForType-BB@0x18 ]
+	5       (00000010) invoke-static        v1, Landroid/media/MediaCodecList;->getCodecInfoAt(I)Landroid/media/MediaCodecInfo;
+	6       (00000016) move-result-object   v2
+	10:15
+	(Ljava/lang/IllegalArgumentException; -> 2e findCodecForType-BB@0x2e)
+
+findCodecForType-BB@0x18 : [ findCodecForType-BB@0x1c findCodecForType-BB@0x28 ]
+	7       (00000018) if-eqz               v2, +8
+
+findCodecForType-BB@0x1c : [ findCodecForType-BB@0x28 findCodecForType-BB@0x40 ]
+	8       (0000001c) invoke-virtual       v2, Landroid/media/MediaCodecInfo;->isEncoder()Z
+	9       (00000022) move-result          v3
+	10      (00000024) if-nez               v3, +e
+
+findCodecForType-BB@0x28 : [ findCodecForType-BB@0x2 ]
+	11      (00000028) add-int/lit8         v1, v1, 1
+	12      (0000002c) goto                 -15
+
+findCodecForType-BB@0x2e : [ findCodecForType-BB@0x18 ]
+	13      (0000002e) move-exception       v0
+	14      (00000030) const-string         v3, 'HardwareVideoEncoderFactory'
+	15      (00000034) const-string         v4, 'Cannot retrieve encoder codec info'
+	16      (00000038) invoke-static        v3, v4, v0, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	17      (0000003e) goto                 -13
+
+findCodecForType-BB@0x40 : [ findCodecForType-BB@0x4c findCodecForType-BB@0x28 ]
+	18      (00000040) invoke-direct        v5, v2, v6, Lorg/webrtc/HardwareVideoEncoderFactory;->isSupportedCodec(Landroid/media/MediaCodecInfo; Lorg/webrtc/VideoCodecType;)Z
+	19      (00000046) move-result          v3
+	20      (00000048) if-eqz               v3, -10
+
+findCodecForType-BB@0x4c : 
+	21      (0000004c) return-object        v2
+
+findCodecForType-BB@0x4e : [ findCodecForType-BB@0x4c ]
+	22      (0000004e) const/4              v2, 0
+	23      (00000050) goto                 -2
+

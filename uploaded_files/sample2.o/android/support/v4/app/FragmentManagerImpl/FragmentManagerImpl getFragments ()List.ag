@@ -1,0 +1,11 @@
+# Landroid/support/v4/app/FragmentManagerImpl;->getFragments()Ljava/util/List; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.util.List
+
+getFragments-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/FragmentManagerImpl;->mActive Ljava/util/ArrayList;
+	1       (00000004) return-object        v0
+

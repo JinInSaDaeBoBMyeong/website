@@ -1,0 +1,27 @@
+# Landroid/support/v4/view/PagerTitleStrip;->onDetachedFromWindow()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onDetachedFromWindow-BB@0x0 : [ onDetachedFromWindow-BB@0x10 onDetachedFromWindow-BB@0x3a ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-super         v2, Landroid/view/ViewGroup;->onDetachedFromWindow()V
+	2       (00000008) iget-object          v0, v2, Landroid/support/v4/view/PagerTitleStrip;->mPager Landroid/support/v4/view/ViewPager;
+	3       (0000000c) if-eqz               v0, +17
+
+onDetachedFromWindow-BB@0x10 : [ onDetachedFromWindow-BB@0x3a ]
+	4       (00000010) iget-object          v0, v2, Landroid/support/v4/view/PagerTitleStrip;->mPager Landroid/support/v4/view/ViewPager;
+	5       (00000014) invoke-virtual       v0, Landroid/support/v4/view/ViewPager;->getAdapter()Landroid/support/v4/view/PagerAdapter;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) invoke-virtual       v2, v0, v1, Landroid/support/v4/view/PagerTitleStrip;->updateAdapter(Landroid/support/v4/view/PagerAdapter; Landroid/support/v4/view/PagerAdapter;)V
+	8       (00000022) iget-object          v0, v2, Landroid/support/v4/view/PagerTitleStrip;->mPager Landroid/support/v4/view/ViewPager;
+	9       (00000026) invoke-virtual       v0, v1, Landroid/support/v4/view/ViewPager;->setInternalPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)Landroid/support/v4/view/ViewPager$OnPageChangeListener;
+	10      (0000002c) iget-object          v0, v2, Landroid/support/v4/view/PagerTitleStrip;->mPager Landroid/support/v4/view/ViewPager;
+	11      (00000030) invoke-virtual       v0, v1, Landroid/support/v4/view/ViewPager;->setOnAdapterChangeListener(Landroid/support/v4/view/ViewPager$OnAdapterChangeListener;)V
+	12      (00000036) iput-object          v1, v2, Landroid/support/v4/view/PagerTitleStrip;->mPager Landroid/support/v4/view/ViewPager;
+
+onDetachedFromWindow-BB@0x3a : 
+	13      (0000003a) return-void          
+

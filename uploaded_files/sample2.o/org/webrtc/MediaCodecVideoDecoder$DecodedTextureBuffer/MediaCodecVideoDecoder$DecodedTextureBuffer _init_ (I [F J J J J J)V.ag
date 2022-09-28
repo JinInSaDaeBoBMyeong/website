@@ -1,0 +1,25 @@
+# Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;-><init>(I [F J J J J J)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+# - v8:float[]
+# - v9:long
+# - v10:long
+# - v11:long
+# - v12:long
+# - v13:long
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput                 v2, v1, Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;->textureID I
+	2       (0000000a) iput-object          v3, v1, Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;->transformMatrix [F
+	3       (0000000e) iput-wide            v4, v1, Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;->presentationTimeStampMs J
+	4       (00000012) iput-wide            v6, v1, Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;->timeStampMs J
+	5       (00000016) iput-wide            v8, v1, Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;->ntpTimeStampMs J
+	6       (0000001a) iput-wide            v10, v1, Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;->decodeTimeMs J
+	7       (0000001e) iput-wide            v12, v1, Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;->frameDelayMs J
+	8       (00000022) return-void          
+

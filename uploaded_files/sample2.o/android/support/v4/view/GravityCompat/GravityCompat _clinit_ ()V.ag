@@ -1,0 +1,26 @@
+# Landroid/support/v4/view/GravityCompat;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0xc <clinit>-BB@0x1c ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 17
+	2       (00000008) if-lt                v0, v1, +a
+
+<clinit>-BB@0xc : [ <clinit>-BB@0x1a ]
+	3       (0000000c) new-instance         v1, Landroid/support/v4/view/GravityCompat$GravityCompatImplJellybeanMr1;
+	4       (00000010) invoke-direct        v1, Landroid/support/v4/view/GravityCompat$GravityCompatImplJellybeanMr1;-><init>()V
+	5       (00000016) sput-object          v1, Landroid/support/v4/view/GravityCompat;->IMPL Landroid/support/v4/view/GravityCompat$GravityCompatImpl;
+
+<clinit>-BB@0x1a : 
+	6       (0000001a) return-void          
+
+<clinit>-BB@0x1c : [ <clinit>-BB@0x1a ]
+	7       (0000001c) new-instance         v1, Landroid/support/v4/view/GravityCompat$GravityCompatImplBase;
+	8       (00000020) invoke-direct        v1, Landroid/support/v4/view/GravityCompat$GravityCompatImplBase;-><init>()V
+	9       (00000026) sput-object          v1, Landroid/support/v4/view/GravityCompat;->IMPL Landroid/support/v4/view/GravityCompat$GravityCompatImpl;
+	10      (0000002a) goto                 -8
+

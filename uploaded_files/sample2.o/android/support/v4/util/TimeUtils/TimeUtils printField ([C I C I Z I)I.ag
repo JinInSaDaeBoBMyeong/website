@@ -1,0 +1,74 @@
+# Landroid/support/v4/util/TimeUtils;->printField([C I C I Z I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:char[]
+# - v4:int
+# - v5:char
+# - v6:int
+# - v7:boolean
+# - v8:int
+#
+# - return:int
+
+printField-BB@0x0 : [ printField-BB@0x4 printField-BB@0x8 ]
+	0       (00000000) if-nez               v7, +4
+
+printField-BB@0x4 : [ printField-BB@0x8 printField-BB@0x78 ]
+	1       (00000004) if-lez               v4, +3a
+
+printField-BB@0x8 : [ printField-BB@0xe printField-BB@0x14 ]
+	2       (00000008) move                 v1, v6
+	3       (0000000a) if-eqz               v7, +5
+
+printField-BB@0xe : [ printField-BB@0x14 printField-BB@0x1c ]
+	4       (0000000e) const/4              v2, 3
+	5       (00000010) if-ge                v8, v2, +6
+
+printField-BB@0x14 : [ printField-BB@0x1c printField-BB@0x34 ]
+	6       (00000014) const/16             v2, 99
+	7       (00000018) if-le                v4, v2, +e
+
+printField-BB@0x1c : [ printField-BB@0x34 ]
+	8       (0000001c) div-int/lit8         v0, v4, 100
+	9       (00000020) add-int/lit8         v2, v0, 48
+	10      (00000024) int-to-char          v2, v2
+	11      (00000026) aput-char            v2, v3, v6
+	12      (0000002a) add-int/lit8         v6, v6, 1
+	13      (0000002e) mul-int/lit8         v2, v0, 100
+	14      (00000032) sub-int/2addr        v4, v2
+
+printField-BB@0x34 : [ printField-BB@0x38 printField-BB@0x3e ]
+	15      (00000034) if-eqz               v7, +5
+
+printField-BB@0x38 : [ printField-BB@0x3e printField-BB@0x4a ]
+	16      (00000038) const/4              v2, 2
+	17      (0000003a) if-ge                v8, v2, +8
+
+printField-BB@0x3e : [ printField-BB@0x46 printField-BB@0x4a ]
+	18      (0000003e) const/16             v2, 9
+	19      (00000042) if-gt                v4, v2, +4
+
+printField-BB@0x46 : [ printField-BB@0x4a printField-BB@0x62 ]
+	20      (00000046) if-eq                v1, v6, +e
+
+printField-BB@0x4a : [ printField-BB@0x62 ]
+	21      (0000004a) div-int/lit8         v0, v4, 10
+	22      (0000004e) add-int/lit8         v2, v0, 48
+	23      (00000052) int-to-char          v2, v2
+	24      (00000054) aput-char            v2, v3, v6
+	25      (00000058) add-int/lit8         v6, v6, 1
+	26      (0000005c) mul-int/lit8         v2, v0, 10
+	27      (00000060) sub-int/2addr        v4, v2
+
+printField-BB@0x62 : [ printField-BB@0x78 ]
+	28      (00000062) add-int/lit8         v2, v4, 48
+	29      (00000066) int-to-char          v2, v2
+	30      (00000068) aput-char            v2, v3, v6
+	31      (0000006c) add-int/lit8         v6, v6, 1
+	32      (00000070) aput-char            v5, v3, v6
+	33      (00000074) add-int/lit8         v6, v6, 1
+
+printField-BB@0x78 : 
+	34      (00000078) return               v6
+

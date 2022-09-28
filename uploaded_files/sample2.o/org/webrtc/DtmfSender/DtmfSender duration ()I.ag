@@ -1,0 +1,13 @@
+# Lorg/webrtc/DtmfSender;->duration()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+duration-BB@0x0 : 
+	0       (00000000) iget-wide            v0, v2, Lorg/webrtc/DtmfSender;->nativeDtmfSender J
+	1       (00000004) invoke-static        v0, v1, Lorg/webrtc/DtmfSender;->nativeDuration(J)I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

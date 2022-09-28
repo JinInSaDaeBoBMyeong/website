@@ -1,0 +1,61 @@
+# Landroid/support/v4/app/FragmentState;->writeToParcel(Landroid/os/Parcel; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.os.Parcel
+# - v5:int
+#
+# - return:void
+
+writeToParcel-BB@0x0 : [ writeToParcel-BB@0x20 writeToParcel-BB@0x7a ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) iget-object          v0, v3, Landroid/support/v4/app/FragmentState;->mClassName Ljava/lang/String;
+	3       (00000008) invoke-virtual       v4, v0, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+	4       (0000000e) iget                 v0, v3, Landroid/support/v4/app/FragmentState;->mIndex I
+	5       (00000012) invoke-virtual       v4, v0, Landroid/os/Parcel;->writeInt(I)V
+	6       (00000018) iget-boolean         v0, v3, Landroid/support/v4/app/FragmentState;->mFromLayout Z
+	7       (0000001c) if-eqz               v0, +2f
+
+writeToParcel-BB@0x20 : [ writeToParcel-BB@0x22 ]
+	8       (00000020) move                 v0, v1
+
+writeToParcel-BB@0x22 : [ writeToParcel-BB@0x4e writeToParcel-BB@0x7e ]
+	9       (00000022) invoke-virtual       v4, v0, Landroid/os/Parcel;->writeInt(I)V
+	10      (00000028) iget                 v0, v3, Landroid/support/v4/app/FragmentState;->mFragmentId I
+	11      (0000002c) invoke-virtual       v4, v0, Landroid/os/Parcel;->writeInt(I)V
+	12      (00000032) iget                 v0, v3, Landroid/support/v4/app/FragmentState;->mContainerId I
+	13      (00000036) invoke-virtual       v4, v0, Landroid/os/Parcel;->writeInt(I)V
+	14      (0000003c) iget-object          v0, v3, Landroid/support/v4/app/FragmentState;->mTag Ljava/lang/String;
+	15      (00000040) invoke-virtual       v4, v0, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+	16      (00000046) iget-boolean         v0, v3, Landroid/support/v4/app/FragmentState;->mRetainInstance Z
+	17      (0000004a) if-eqz               v0, +1a
+
+writeToParcel-BB@0x4e : [ writeToParcel-BB@0x50 ]
+	18      (0000004e) move                 v0, v1
+
+writeToParcel-BB@0x50 : [ writeToParcel-BB@0x5e writeToParcel-BB@0x82 ]
+	19      (00000050) invoke-virtual       v4, v0, Landroid/os/Parcel;->writeInt(I)V
+	20      (00000056) iget-boolean         v0, v3, Landroid/support/v4/app/FragmentState;->mDetached Z
+	21      (0000005a) if-eqz               v0, +14
+
+writeToParcel-BB@0x5e : 
+	22      (0000005e) invoke-virtual       v4, v1, Landroid/os/Parcel;->writeInt(I)V
+	23      (00000064) iget-object          v0, v3, Landroid/support/v4/app/FragmentState;->mArguments Landroid/os/Bundle;
+	24      (00000068) invoke-virtual       v4, v0, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
+	25      (0000006e) iget-object          v0, v3, Landroid/support/v4/app/FragmentState;->mSavedFragmentState Landroid/os/Bundle;
+	26      (00000072) invoke-virtual       v4, v0, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
+	27      (00000078) return-void          
+
+writeToParcel-BB@0x7a : [ writeToParcel-BB@0x22 ]
+	28      (0000007a) move                 v0, v2
+	29      (0000007c) goto                 -2d
+
+writeToParcel-BB@0x7e : [ writeToParcel-BB@0x50 ]
+	30      (0000007e) move                 v0, v2
+	31      (00000080) goto                 -18
+
+writeToParcel-BB@0x82 : [ writeToParcel-BB@0x5e ]
+	32      (00000082) move                 v1, v2
+	33      (00000084) goto                 -13
+

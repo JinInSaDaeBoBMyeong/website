@@ -1,0 +1,12 @@
+# Lorg/webrtc/Camera1Session;->access$1000(Lorg/webrtc/Camera1Session;)Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.Camera1Session
+#
+# - return:org.webrtc.CameraEnumerationAndroid$CaptureFormat
+
+access$1000-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/Camera1Session;->captureFormat Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;
+	1       (00000004) return-object        v0
+

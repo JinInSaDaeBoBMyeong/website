@@ -1,0 +1,12 @@
+# Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$200(Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.CameraVideoCapturer$CameraStatistics
+#
+# - return:org.webrtc.CameraVideoCapturer$CameraEventsHandler
+
+access$200-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->eventsHandler Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;
+	1       (00000004) return-object        v0
+

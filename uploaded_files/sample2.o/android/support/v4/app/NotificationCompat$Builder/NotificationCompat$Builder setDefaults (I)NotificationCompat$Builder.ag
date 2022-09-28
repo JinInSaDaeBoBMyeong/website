@@ -1,0 +1,23 @@
+# Landroid/support/v4/app/NotificationCompat$Builder;->setDefaults(I)Landroid/support/v4/app/NotificationCompat$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:android.support.v4.app.NotificationCompat$Builder
+
+setDefaults-BB@0x0 : [ setDefaults-BB@0x10 setDefaults-BB@0x20 ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification Landroid/app/Notification;
+	1       (00000004) iput                 v3, v0, Landroid/app/Notification;->defaults I
+	2       (00000008) and-int/lit8         v0, v3, 4
+	3       (0000000c) if-eqz               v0, +a
+
+setDefaults-BB@0x10 : [ setDefaults-BB@0x20 ]
+	4       (00000010) iget-object          v0, v2, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification Landroid/app/Notification;
+	5       (00000014) iget                 v1, v0, Landroid/app/Notification;->flags I
+	6       (00000018) or-int/lit8          v1, v1, 1
+	7       (0000001c) iput                 v1, v0, Landroid/app/Notification;->flags I
+
+setDefaults-BB@0x20 : 
+	8       (00000020) return-object        v2
+

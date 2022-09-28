@@ -1,0 +1,13 @@
+# Ltev/piqgahor/ttnC03lWapO;->ssUbiYGGeVD01427()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+ssUbiYGGeVD01427-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-static        v0, Ljava/lang/System;->exit(I)V
+	2       (00000008) invoke-virtual       v1, Ltev/piqgahor/ttnC03lWapO;->stopSelf()V
+	3       (0000000e) return-void          
+

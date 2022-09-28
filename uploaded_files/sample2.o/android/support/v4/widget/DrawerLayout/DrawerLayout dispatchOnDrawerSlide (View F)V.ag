@@ -1,0 +1,20 @@
+# Landroid/support/v4/widget/DrawerLayout;->dispatchOnDrawerSlide(Landroid/view/View; F)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:float
+#
+# - return:void
+
+dispatchOnDrawerSlide-BB@0x0 : [ dispatchOnDrawerSlide-BB@0x8 dispatchOnDrawerSlide-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/widget/DrawerLayout;->mListener Landroid/support/v4/widget/DrawerLayout$DrawerListener;
+	1       (00000004) if-eqz               v0, +7
+
+dispatchOnDrawerSlide-BB@0x8 : [ dispatchOnDrawerSlide-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroid/support/v4/widget/DrawerLayout;->mListener Landroid/support/v4/widget/DrawerLayout$DrawerListener;
+	3       (0000000c) invoke-interface     v0, v2, v3, Landroid/support/v4/widget/DrawerLayout$DrawerListener;->onDrawerSlide(Landroid/view/View; F)V
+
+dispatchOnDrawerSlide-BB@0x12 : 
+	4       (00000012) return-void          
+

@@ -1,0 +1,15 @@
+# Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->performAction(Ljava/lang/Object; I)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+# - v2:int
+#
+# - return:boolean
+
+performAction-BB@0x0 : 
+	0       (00000000) check-cast           v1, Landroid/view/accessibility/AccessibilityNodeInfo;
+	1       (00000004) invoke-virtual       v1, v2, Landroid/view/accessibility/AccessibilityNodeInfo;->performAction(I)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

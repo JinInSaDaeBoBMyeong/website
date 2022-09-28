@@ -1,0 +1,90 @@
+# Landroid/support/v4/view/ViewPager;->completeScroll(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:boolean
+#
+# - return:void
+
+completeScroll-BB@0x0 : [ completeScroll-BB@0xc completeScroll-BB@0x92 ]
+	0       (00000000) const/4              v7, 0
+	1       (00000002) iget                 v8, v10, Landroid/support/v4/view/ViewPager;->mScrollState I
+	2       (00000006) const/4              v9, 2
+	3       (00000008) if-ne                v8, v9, +45
+
+completeScroll-BB@0xc : [ completeScroll-BB@0xe ]
+	4       (0000000c) const/4              v2, 1
+
+completeScroll-BB@0xe : [ completeScroll-BB@0x12 completeScroll-BB@0x58 ]
+	5       (0000000e) if-eqz               v2, +25
+
+completeScroll-BB@0x12 : [ completeScroll-BB@0x4e completeScroll-BB@0x52 ]
+	6       (00000012) invoke-direct        v10, v7, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
+	7       (00000018) iget-object          v8, v10, Landroid/support/v4/view/ViewPager;->mScroller Landroid/widget/Scroller;
+	8       (0000001c) invoke-virtual       v8, Landroid/widget/Scroller;->abortAnimation()V
+	9       (00000022) invoke-virtual       v10, Landroid/support/v4/view/ViewPager;->getScrollX()I
+	10      (00000028) move-result          v3
+	11      (0000002a) invoke-virtual       v10, Landroid/support/v4/view/ViewPager;->getScrollY()I
+	12      (00000030) move-result          v4
+	13      (00000032) iget-object          v8, v10, Landroid/support/v4/view/ViewPager;->mScroller Landroid/widget/Scroller;
+	14      (00000036) invoke-virtual       v8, Landroid/widget/Scroller;->getCurrX()I
+	15      (0000003c) move-result          v5
+	16      (0000003e) iget-object          v8, v10, Landroid/support/v4/view/ViewPager;->mScroller Landroid/widget/Scroller;
+	17      (00000042) invoke-virtual       v8, Landroid/widget/Scroller;->getCurrY()I
+	18      (00000048) move-result          v6
+	19      (0000004a) if-ne                v3, v5, +4
+
+completeScroll-BB@0x4e : [ completeScroll-BB@0x52 completeScroll-BB@0x58 ]
+	20      (0000004e) if-eq                v4, v6, +5
+
+completeScroll-BB@0x52 : [ completeScroll-BB@0x58 ]
+	21      (00000052) invoke-virtual       v10, v5, v6, Landroid/support/v4/view/ViewPager;->scrollTo(I I)V
+
+completeScroll-BB@0x58 : [ completeScroll-BB@0x5e ]
+	22      (00000058) iput-boolean         v7, v10, Landroid/support/v4/view/ViewPager;->mPopulatePending Z
+	23      (0000005c) const/4              v0, 0
+
+completeScroll-BB@0x5e : [ completeScroll-BB@0x6e completeScroll-BB@0x96 ]
+	24      (0000005e) iget-object          v8, v10, Landroid/support/v4/view/ViewPager;->mItems Ljava/util/ArrayList;
+	25      (00000062) invoke-virtual       v8, Ljava/util/ArrayList;->size()I
+	26      (00000068) move-result          v8
+	27      (0000006a) if-ge                v0, v8, +16
+
+completeScroll-BB@0x6e : [ completeScroll-BB@0x86 completeScroll-BB@0x8c ]
+	28      (0000006e) iget-object          v8, v10, Landroid/support/v4/view/ViewPager;->mItems Ljava/util/ArrayList;
+	29      (00000072) invoke-virtual       v8, v0, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	30      (00000078) move-result-object   v1
+	31      (0000007a) check-cast           v1, Landroid/support/v4/view/ViewPager$ItemInfo;
+	32      (0000007e) iget-boolean         v8, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->scrolling Z
+	33      (00000082) if-eqz               v8, +5
+
+completeScroll-BB@0x86 : [ completeScroll-BB@0x8c ]
+	34      (00000086) const/4              v2, 1
+	35      (00000088) iput-boolean         v7, v1, Landroid/support/v4/view/ViewPager$ItemInfo;->scrolling Z
+
+completeScroll-BB@0x8c : [ completeScroll-BB@0x5e ]
+	36      (0000008c) add-int/lit8         v0, v0, 1
+	37      (00000090) goto                 -19
+
+completeScroll-BB@0x92 : [ completeScroll-BB@0xe ]
+	38      (00000092) move                 v2, v7
+	39      (00000094) goto                 -43
+
+completeScroll-BB@0x96 : [ completeScroll-BB@0x9a completeScroll-BB@0xa8 ]
+	40      (00000096) if-eqz               v2, +9
+
+completeScroll-BB@0x9a : [ completeScroll-BB@0x9e completeScroll-BB@0xaa ]
+	41      (0000009a) if-eqz               v11, +8
+
+completeScroll-BB@0x9e : [ completeScroll-BB@0xa8 ]
+	42      (0000009e) iget-object          v7, v10, Landroid/support/v4/view/ViewPager;->mEndScrollRunnable Ljava/lang/Runnable;
+	43      (000000a2) invoke-static        v10, v7, Landroid/support/v4/view/ViewCompat;->postOnAnimation(Landroid/view/View; Ljava/lang/Runnable;)V
+
+completeScroll-BB@0xa8 : 
+	44      (000000a8) return-void          
+
+completeScroll-BB@0xaa : [ completeScroll-BB@0xa8 ]
+	45      (000000aa) iget-object          v7, v10, Landroid/support/v4/view/ViewPager;->mEndScrollRunnable Ljava/lang/Runnable;
+	46      (000000ae) invoke-interface     v7, Ljava/lang/Runnable;->run()V
+	47      (000000b4) goto                 -6
+

@@ -1,0 +1,12 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioRecord;->access$400(Lorg/webrtc/voiceengine/WebRtcAudioRecord;)[B [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.voiceengine.WebRtcAudioRecord
+#
+# - return:byte[]
+
+access$400-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->emptyBytes [B
+	1       (00000004) return-object        v0
+

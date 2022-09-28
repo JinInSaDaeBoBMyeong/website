@@ -1,0 +1,16 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioUtils;->deviceIsBlacklistedForOpenSLESUsage()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+deviceIsBlacklistedForOpenSLESUsage-BB@0x0 : 
+	0       (00000000) sget-object          v1, Lorg/webrtc/voiceengine/WebRtcAudioUtils;->BLACKLISTED_OPEN_SL_ES_MODELS [Ljava/lang/String;
+	1       (00000004) invoke-static        v1, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) sget-object          v1, Landroid/os/Build;->MODEL Ljava/lang/String;
+	4       (00000010) invoke-interface     v0, v1, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+	5       (00000016) move-result          v1
+	6       (00000018) return               v1
+

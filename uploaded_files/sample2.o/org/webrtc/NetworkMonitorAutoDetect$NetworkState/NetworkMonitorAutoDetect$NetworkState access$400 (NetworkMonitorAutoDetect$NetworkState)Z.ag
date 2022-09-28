@@ -1,0 +1,12 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;->access$400(Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;)Z [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.NetworkMonitorAutoDetect$NetworkState
+#
+# - return:boolean
+
+access$400-BB@0x0 : 
+	0       (00000000) iget-boolean         v0, v1, Lorg/webrtc/NetworkMonitorAutoDetect$NetworkState;->connected Z
+	1       (00000004) return               v0
+

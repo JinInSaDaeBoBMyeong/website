@@ -1,0 +1,29 @@
+# Landroid/support/v4/view/ViewPager$MyAccessibilityDelegate;->canScroll()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+canScroll-BB@0x0 : [ canScroll-BB@0x12 canScroll-BB@0x2c ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget-object          v1, v2, Landroid/support/v4/view/ViewPager$MyAccessibilityDelegate;->this$0 Landroid/support/v4/view/ViewPager;
+	2       (00000006) invoke-static        v1, Landroid/support/v4/view/ViewPager;->access$200(Landroid/support/v4/view/ViewPager;)Landroid/support/v4/view/PagerAdapter;
+	3       (0000000c) move-result-object   v1
+	4       (0000000e) if-eqz               v1, +f
+
+canScroll-BB@0x12 : [ canScroll-BB@0x2a canScroll-BB@0x2c ]
+	5       (00000012) iget-object          v1, v2, Landroid/support/v4/view/ViewPager$MyAccessibilityDelegate;->this$0 Landroid/support/v4/view/ViewPager;
+	6       (00000016) invoke-static        v1, Landroid/support/v4/view/ViewPager;->access$200(Landroid/support/v4/view/ViewPager;)Landroid/support/v4/view/PagerAdapter;
+	7       (0000001c) move-result-object   v1
+	8       (0000001e) invoke-virtual       v1, Landroid/support/v4/view/PagerAdapter;->getCount()I
+	9       (00000024) move-result          v1
+	10      (00000026) if-le                v1, v0, +3
+
+canScroll-BB@0x2a : 
+	11      (0000002a) return               v0
+
+canScroll-BB@0x2c : [ canScroll-BB@0x2a ]
+	12      (0000002c) const/4              v0, 0
+	13      (0000002e) goto                 -2
+

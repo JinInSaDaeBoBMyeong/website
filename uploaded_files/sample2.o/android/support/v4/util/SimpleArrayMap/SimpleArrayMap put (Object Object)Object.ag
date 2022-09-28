@@ -1,0 +1,123 @@
+# Landroid/support/v4/util/SimpleArrayMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:java.lang.Object
+# - v13:java.lang.Object
+#
+# - return:java.lang.Object
+
+put-BB@0x0 : [ put-BB@0xc put-BB@0x34 ]
+	0       (00000000) const/16             v2, 8
+	1       (00000004) const/4              v6, 4
+	2       (00000006) const/4              v9, 0
+	3       (00000008) if-nez               v12, +16
+
+put-BB@0xc : [ put-BB@0x16 ]
+	4       (0000000c) const/4              v0, 0
+	5       (0000000e) invoke-virtual       v11, Landroid/support/v4/util/SimpleArrayMap;->indexOfNull()I
+	6       (00000014) move-result          v1
+
+put-BB@0x16 : [ put-BB@0x1a put-BB@0x46 ]
+	7       (00000016) if-ltz               v1, +18
+
+put-BB@0x1a : [ put-BB@0x32 ]
+	8       (0000001a) shl-int/lit8         v6, v1, 1
+	9       (0000001e) add-int/lit8         v1, v6, 1
+	10      (00000022) iget-object          v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	11      (00000026) aget-object          v5, v6, v1
+	12      (0000002a) iget-object          v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	13      (0000002e) aput-object          v13, v6, v1
+
+put-BB@0x32 : 
+	14      (00000032) return-object        v5
+
+put-BB@0x34 : [ put-BB@0x16 ]
+	15      (00000034) invoke-virtual       v12, Ljava/lang/Object;->hashCode()I
+	16      (0000003a) move-result          v0
+	17      (0000003c) invoke-virtual       v11, v12, v0, Landroid/support/v4/util/SimpleArrayMap;->indexOf(Ljava/lang/Object; I)I
+	18      (00000042) move-result          v1
+	19      (00000044) goto                 -17
+
+put-BB@0x46 : [ put-BB@0x58 put-BB@0xaa ]
+	20      (00000046) xor-int/lit8         v1, v1, -1
+	21      (0000004a) iget                 v7, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	22      (0000004e) iget-object          v8, v11, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	23      (00000052) array-length         v8, v8
+	24      (00000054) if-lt                v7, v8, +2b
+
+put-BB@0x58 : [ put-BB@0x60 put-BB@0x122 ]
+	25      (00000058) iget                 v7, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	26      (0000005c) if-lt                v7, v2, +63
+
+put-BB@0x60 : [ put-BB@0x70 ]
+	27      (00000060) iget                 v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	28      (00000064) iget                 v7, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	29      (00000068) shr-int/lit8         v7, v7, 1
+	30      (0000006c) add-int              v2, v6, v7
+
+put-BB@0x70 : [ put-BB@0x88 put-BB@0xa0 ]
+	31      (00000070) iget-object          v4, v11, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	32      (00000074) iget-object          v3, v11, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	33      (00000078) invoke-direct        v11, v2, Landroid/support/v4/util/SimpleArrayMap;->allocArrays(I)V
+	34      (0000007e) iget-object          v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	35      (00000082) array-length         v6, v6
+	36      (00000084) if-lez               v6, +e
+
+put-BB@0x88 : [ put-BB@0xa0 ]
+	37      (00000088) iget-object          v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	38      (0000008c) array-length         v7, v4
+	39      (0000008e) invoke-static        v4, v9, v6, v9, v7, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	40      (00000094) iget-object          v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	41      (00000098) array-length         v7, v3
+	42      (0000009a) invoke-static        v3, v9, v6, v9, v7, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+
+put-BB@0xa0 : [ put-BB@0xaa ]
+	43      (000000a0) iget                 v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	44      (000000a4) invoke-static        v4, v3, v6, Landroid/support/v4/util/SimpleArrayMap;->freeArrays([I [Ljava/lang/Object; I)V
+
+put-BB@0xaa : [ put-BB@0xb2 put-BB@0xee ]
+	45      (000000aa) iget                 v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	46      (000000ae) if-ge                v1, v6, +20
+
+put-BB@0xb2 : [ put-BB@0xee ]
+	47      (000000b2) iget-object          v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	48      (000000b6) iget-object          v7, v11, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	49      (000000ba) add-int/lit8         v8, v1, 1
+	50      (000000be) iget                 v9, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	51      (000000c2) sub-int/2addr        v9, v1
+	52      (000000c4) invoke-static        v6, v1, v7, v8, v9, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	53      (000000ca) iget-object          v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	54      (000000ce) shl-int/lit8         v7, v1, 1
+	55      (000000d2) iget-object          v8, v11, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	56      (000000d6) add-int/lit8         v9, v1, 1
+	57      (000000da) shl-int/lit8         v9, v9, 1
+	58      (000000de) iget                 v10, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	59      (000000e2) sub-int/2addr        v10, v1
+	60      (000000e4) shl-int/lit8         v10, v10, 1
+	61      (000000e8) invoke-static        v6, v7, v8, v9, v10, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+
+put-BB@0xee : [ put-BB@0x32 ]
+	62      (000000ee) iget-object          v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	63      (000000f2) aput                 v0, v6, v1
+	64      (000000f6) iget-object          v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	65      (000000fa) shl-int/lit8         v7, v1, 1
+	66      (000000fe) aput-object          v12, v6, v7
+	67      (00000102) iget-object          v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	68      (00000106) shl-int/lit8         v7, v1, 1
+	69      (0000010a) add-int/lit8         v7, v7, 1
+	70      (0000010e) aput-object          v13, v6, v7
+	71      (00000112) iget                 v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	72      (00000116) add-int/lit8         v6, v6, 1
+	73      (0000011a) iput                 v6, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	74      (0000011e) const/4              v5, 0
+	75      (00000120) goto                 -77
+
+put-BB@0x122 : [ put-BB@0x12a put-BB@0x70 ]
+	76      (00000122) iget                 v7, v11, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	77      (00000126) if-ge                v7, v6, -5b
+
+put-BB@0x12a : [ put-BB@0x70 ]
+	78      (0000012a) move                 v2, v6
+	79      (0000012c) goto                 -5e
+

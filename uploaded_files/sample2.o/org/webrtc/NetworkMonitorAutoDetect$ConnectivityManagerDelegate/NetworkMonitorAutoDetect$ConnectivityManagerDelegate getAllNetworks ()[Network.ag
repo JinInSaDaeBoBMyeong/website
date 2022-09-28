@@ -1,0 +1,24 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->getAllNetworks()[Landroid/net/Network; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.net.Network[]
+
+getAllNetworks-BB@0x0 : [ getAllNetworks-BB@0x8 getAllNetworks-BB@0x10 ]
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->connectivityManager Landroid/net/ConnectivityManager;
+	1       (00000004) if-nez               v0, +6
+
+getAllNetworks-BB@0x8 : [ getAllNetworks-BB@0xe ]
+	2       (00000008) const/4              v0, 0
+	3       (0000000a) new-array            v0, v0, [Landroid/net/Network;
+
+getAllNetworks-BB@0xe : 
+	4       (0000000e) return-object        v0
+
+getAllNetworks-BB@0x10 : [ getAllNetworks-BB@0xe ]
+	5       (00000010) iget-object          v0, v1, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->connectivityManager Landroid/net/ConnectivityManager;
+	6       (00000014) invoke-virtual       v0, Landroid/net/ConnectivityManager;->getAllNetworks()[Landroid/net/Network;
+	7       (0000001a) move-result-object   v0
+	8       (0000001c) goto                 -7
+

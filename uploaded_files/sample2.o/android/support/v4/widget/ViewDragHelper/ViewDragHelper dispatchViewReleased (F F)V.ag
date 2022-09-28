@@ -1,0 +1,26 @@
+# Landroid/support/v4/widget/ViewDragHelper;->dispatchViewReleased(F F)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:float
+# - v6:float
+#
+# - return:void
+
+dispatchViewReleased-BB@0x0 : [ dispatchViewReleased-BB@0x22 dispatchViewReleased-BB@0x28 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) iput-boolean         v3, v4, Landroid/support/v4/widget/ViewDragHelper;->mReleaseInProgress Z
+	3       (00000008) iget-object          v0, v4, Landroid/support/v4/widget/ViewDragHelper;->mCallback Landroid/support/v4/widget/ViewDragHelper$Callback;
+	4       (0000000c) iget-object          v1, v4, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	5       (00000010) invoke-virtual       v0, v1, v5, v6, Landroid/support/v4/widget/ViewDragHelper$Callback;->onViewReleased(Landroid/view/View; F F)V
+	6       (00000016) iput-boolean         v2, v4, Landroid/support/v4/widget/ViewDragHelper;->mReleaseInProgress Z
+	7       (0000001a) iget                 v0, v4, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	8       (0000001e) if-ne                v0, v3, +5
+
+dispatchViewReleased-BB@0x22 : [ dispatchViewReleased-BB@0x28 ]
+	9       (00000022) invoke-virtual       v4, v2, Landroid/support/v4/widget/ViewDragHelper;->setDragState(I)V
+
+dispatchViewReleased-BB@0x28 : 
+	10      (00000028) return-void          
+

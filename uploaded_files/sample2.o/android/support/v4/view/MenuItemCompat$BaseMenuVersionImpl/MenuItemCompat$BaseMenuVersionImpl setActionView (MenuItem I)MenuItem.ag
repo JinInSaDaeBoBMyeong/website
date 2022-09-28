@@ -1,0 +1,12 @@
+# Landroid/support/v4/view/MenuItemCompat$BaseMenuVersionImpl;->setActionView(Landroid/view/MenuItem; I)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.MenuItem
+# - v2:int
+#
+# - return:android.view.MenuItem
+
+setActionView-BB@0x0 : 
+	0       (00000000) return-object        v1
+

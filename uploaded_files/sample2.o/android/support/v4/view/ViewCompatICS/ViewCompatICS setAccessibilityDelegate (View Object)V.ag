@@ -1,0 +1,14 @@
+# Landroid/support/v4/view/ViewCompatICS;->setAccessibilityDelegate(Landroid/view/View; Ljava/lang/Object;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:android.view.View
+# - v1:java.lang.Object
+#
+# - return:void
+
+setAccessibilityDelegate-BB@0x0 : 
+	0       (00000000) check-cast           v1, Landroid/view/View$AccessibilityDelegate;
+	1       (00000004) invoke-virtual       v0, v1, Landroid/view/View;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
+	2       (0000000a) return-void          
+

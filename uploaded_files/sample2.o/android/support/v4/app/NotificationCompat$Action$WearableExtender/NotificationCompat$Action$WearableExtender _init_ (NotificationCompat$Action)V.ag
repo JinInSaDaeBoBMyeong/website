@@ -1,0 +1,28 @@
+# Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;-><init>(Landroid/support/v4/app/NotificationCompat$Action;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.support.v4.app.NotificationCompat$Action
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x24 <init>-BB@0x34 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) invoke-direct        v4, Ljava/lang/Object;-><init>()V
+	2       (00000008) iput                 v3, v4, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags I
+	3       (0000000c) invoke-virtual       v5, Landroid/support/v4/app/NotificationCompat$Action;->getExtras()Landroid/os/Bundle;
+	4       (00000012) move-result-object   v1
+	5       (00000014) const-string         v2, 'android.wearable.EXTENSIONS'
+	6       (00000018) invoke-virtual       v1, v2, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) if-eqz               v0, +a
+
+<init>-BB@0x24 : [ <init>-BB@0x34 ]
+	9       (00000024) const-string         v1, 'flags'
+	10      (00000028) invoke-virtual       v0, v1, v3, Landroid/os/Bundle;->getInt(Ljava/lang/String; I)I
+	11      (0000002e) move-result          v1
+	12      (00000030) iput                 v1, v4, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags I
+
+<init>-BB@0x34 : 
+	13      (00000034) return-void          
+

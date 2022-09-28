@@ -1,0 +1,24 @@
+# Lorg/webrtc/VideoTrack;->removeRenderer(Lorg/webrtc/VideoRenderer;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:org.webrtc.VideoRenderer
+#
+# - return:void
+
+removeRenderer-BB@0x0 : [ removeRenderer-BB@0x10 removeRenderer-BB@0x12 ]
+	0       (00000000) iget-object          v0, v4, Lorg/webrtc/VideoTrack;->renderers Ljava/util/LinkedList;
+	1       (00000004) invoke-virtual       v0, v5, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +3
+
+removeRenderer-BB@0x10 : 
+	4       (00000010) return-void          
+
+removeRenderer-BB@0x12 : [ removeRenderer-BB@0x10 ]
+	5       (00000012) iget-wide            v0, v4, Lorg/webrtc/VideoTrack;->nativeTrack J
+	6       (00000016) iget-wide            v2, v5, Lorg/webrtc/VideoRenderer;->nativeVideoRenderer J
+	7       (0000001a) invoke-static        v0, v1, v2, v3, Lorg/webrtc/VideoTrack;->nativeRemoveRenderer(J J)V
+	8       (00000020) invoke-virtual       v5, Lorg/webrtc/VideoRenderer;->dispose()V
+	9       (00000026) goto                 -b
+

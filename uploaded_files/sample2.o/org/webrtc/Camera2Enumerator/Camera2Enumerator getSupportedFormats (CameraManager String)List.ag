@@ -1,0 +1,291 @@
+# Lorg/webrtc/Camera2Enumerator;->getSupportedFormats(Landroid/hardware/camera2/CameraManager; Ljava/lang/String;)Ljava/util/List; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v27
+# - v28:android.hardware.camera2.CameraManager
+# - v29:java.lang.String
+#
+# - return:java.util.List
+
+getSupportedFormats-BB@0x0 : [ getSupportedFormats-BB@0x6 ]
+	0       (00000000) sget-object          v22, Lorg/webrtc/Camera2Enumerator;->cachedSupportedFormats Ljava/util/Map;
+	1       (00000004) monitor-enter        v22
+
+getSupportedFormats-BB@0x6 : [ getSupportedFormats-BB@0x1e getSupportedFormats-BB@0x3a ]
+	2       (00000006) sget-object          v21, Lorg/webrtc/Camera2Enumerator;->cachedSupportedFormats Ljava/util/Map;
+	3       (0000000a) move-object/from16   v0, v21
+	4       (0000000e) move-object/from16   v1, v29
+	5       (00000012) invoke-interface     v0, v1, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+	6       (00000018) move-result          v21
+	7       (0000001a) if-eqz               v21, +10
+	6:8b
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0x1e : [ getSupportedFormats-BB@0x38 ]
+	8       (0000001e) sget-object          v21, Lorg/webrtc/Camera2Enumerator;->cachedSupportedFormats Ljava/util/Map;
+	9       (00000022) move-object/from16   v0, v21
+	10      (00000026) move-object/from16   v1, v29
+	11      (0000002a) invoke-interface     v0, v1, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	12      (00000030) move-result-object   v21
+	13      (00000032) check-cast           v21, Ljava/util/List;
+	14      (00000036) monitor-exit         v22
+	6:8b
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0x38 : 
+	15      (00000038) return-object        v21
+	6:8b
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0x3a : [ getSupportedFormats-BB@0x8e ]
+	16      (0000003a) const-string         v21, 'Camera2Enumerator'
+	17      (0000003e) new-instance         v23, Ljava/lang/StringBuilder;
+	18      (00000042) invoke-direct/range  v23, Ljava/lang/StringBuilder;-><init>()V
+	19      (00000048) const-string         v24, 'Get supported formats for camera index '
+	20      (0000004c) invoke-virtual/range v23 ... v24, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000052) move-result-object   v23
+	22      (00000054) move-object/from16   v0, v23
+	23      (00000058) move-object/from16   v1, v29
+	24      (0000005c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (00000062) move-result-object   v23
+	26      (00000064) const-string         v24, '.'
+	27      (00000068) invoke-virtual/range v23 ... v24, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	28      (0000006e) move-result-object   v23
+	29      (00000070) invoke-virtual/range v23, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	30      (00000076) move-result-object   v23
+	31      (00000078) move-object/from16   v0, v21
+	32      (0000007c) move-object/from16   v1, v23
+	33      (00000080) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	34      (00000086) invoke-static        Landroid/os/SystemClock;->elapsedRealtime()J
+	35      (0000008c) move-result-wide     v18
+
+getSupportedFormats-BB@0x8e : [ getSupportedFormats-BB@0x96 ]
+	36      (0000008e) invoke-virtual/range v28 ... v29, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
+	37      (00000094) move-result-object   v4
+	8e:93
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+	(Ljava/lang/Exception; -> 112 getSupportedFormats-BB@0x112)
+
+getSupportedFormats-BB@0x96 : [ getSupportedFormats-BB@0xe4 ]
+	38      (00000096) sget-object          v21, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_STREAM_CONFIGURATION_MAP Landroid/hardware/camera2/CameraCharacteristics$Key;
+	39      (0000009a) move-object/from16   v0, v21
+	40      (0000009e) invoke-virtual       v4, v0, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+	41      (000000a4) move-result-object   v20
+	42      (000000a6) check-cast           v20, Landroid/hardware/camera2/params/StreamConfigurationMap;
+	43      (000000aa) sget-object          v21, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES Landroid/hardware/camera2/CameraCharacteristics$Key;
+	44      (000000ae) move-object/from16   v0, v21
+	45      (000000b2) invoke-virtual       v4, v0, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+	46      (000000b8) move-result-object   v10
+	47      (000000ba) check-cast           v10, [Landroid/util/Range;
+	48      (000000be) invoke-static        v10, Lorg/webrtc/Camera2Enumerator;->getFpsUnitFactor([Landroid/util/Range;)I
+	49      (000000c4) move-result          v21
+	50      (000000c6) move/from16          v0, v21
+	51      (000000ca) invoke-static        v10, v0, Lorg/webrtc/Camera2Enumerator;->convertFramerates([Landroid/util/Range; I)Ljava/util/List;
+	52      (000000d0) move-result-object   v12
+	53      (000000d2) invoke-static        v4, Lorg/webrtc/Camera2Enumerator;->getSupportedSizes(Landroid/hardware/camera2/CameraCharacteristics;)Ljava/util/List;
+	54      (000000d8) move-result-object   v17
+	55      (000000da) const/4              v5, 0
+	56      (000000dc) invoke-interface     v12, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	57      (000000e2) move-result-object   v21
+	96:163
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0xe4 : [ getSupportedFormats-BB@0xf0 getSupportedFormats-BB@0x166 ]
+	58      (000000e4) invoke-interface/range v21, Ljava/util/Iterator;->hasNext()Z
+	59      (000000ea) move-result          v23
+	60      (000000ec) if-eqz               v23, +3d
+	96:163
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0xf0 : [ getSupportedFormats-BB@0xe4 ]
+	61      (000000f0) invoke-interface/range v21, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	62      (000000f6) move-result-object   v11
+	63      (000000f8) check-cast           v11, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;
+	64      (000000fc) iget                 v0, v11, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->max I
+	65      (00000100) move/from16          v23, v0
+	66      (00000104) move/from16          v0, v23
+	67      (00000108) invoke-static        v5, v0, Ljava/lang/Math;->max(I I)I
+	68      (0000010e) move-result          v5
+	69      (00000110) goto                 -16
+	96:163
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0x112 : [ getSupportedFormats-BB@0x38 ]
+	70      (00000112) move-exception       v8
+	71      (00000114) const-string         v21, 'Camera2Enumerator'
+	72      (00000118) new-instance         v23, Ljava/lang/StringBuilder;
+	73      (0000011c) invoke-direct/range  v23, Ljava/lang/StringBuilder;-><init>()V
+	74      (00000122) const-string         v24, 'getCameraCharacteristics(): '
+	75      (00000126) invoke-virtual/range v23 ... v24, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	76      (0000012c) move-result-object   v23
+	77      (0000012e) move-object/from16   v0, v23
+	78      (00000132) invoke-virtual       v0, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	79      (00000138) move-result-object   v23
+	80      (0000013a) invoke-virtual/range v23, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	81      (00000140) move-result-object   v23
+	82      (00000142) move-object/from16   v0, v21
+	83      (00000146) move-object/from16   v1, v23
+	84      (0000014a) invoke-static        v0, v1, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	85      (00000150) new-instance         v21, Ljava/util/ArrayList;
+	86      (00000154) invoke-direct/range  v21, Ljava/util/ArrayList;-><init>()V
+	87      (0000015a) monitor-exit         v22
+	88      (0000015c) goto/16              -92
+	96:163
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0x160 : 
+	89      (00000160) move-exception       v21
+	90      (00000162) monitor-exit         v22
+	91      (00000164) throw                v21
+
+getSupportedFormats-BB@0x166 : [ getSupportedFormats-BB@0x178 ]
+	92      (00000166) new-instance         v9, Ljava/util/ArrayList;
+	93      (0000016a) invoke-direct        v9, Ljava/util/ArrayList;-><init>()V
+	94      (00000170) invoke-interface/range v17, Ljava/util/List;->iterator()Ljava/util/Iterator;
+	95      (00000176) move-result-object   v21
+	166:18f
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0x178 : [ getSupportedFormats-BB@0x184 getSupportedFormats-BB@0x2c4 ]
+	96      (00000178) invoke-interface/range v21, Ljava/util/Iterator;->hasNext()Z
+	97      (0000017e) move-result          v23
+	98      (00000180) if-eqz               v23, +a2
+	166:18f
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0x184 : [ getSupportedFormats-BB@0x194 ]
+	99      (00000184) invoke-interface/range v21, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	100     (0000018a) move-result-object   v16
+	101     (0000018c) check-cast           v16, Lorg/webrtc/Size;
+	102     (00000190) const-wide/16        v14, 0 # [0.0]
+
+getSupportedFormats-BB@0x194 : [ getSupportedFormats-BB@0x1ce ]
+	103     (00000194) const-class          v23, Landroid/graphics/SurfaceTexture;
+	104     (00000198) new-instance         v24, Landroid/util/Size;
+	105     (0000019c) move-object/from16   v0, v16
+	106     (000001a0) iget                 v0, v0, Lorg/webrtc/Size;->width I
+	107     (000001a4) move/from16          v25, v0
+	108     (000001a8) move-object/from16   v0, v16
+	109     (000001ac) iget                 v0, v0, Lorg/webrtc/Size;->height I
+	110     (000001b0) move/from16          v26, v0
+	111     (000001b4) invoke-direct/range  v24 ... v26, Landroid/util/Size;-><init>(I I)V
+	112     (000001ba) move-object/from16   v0, v20
+	113     (000001be) move-object/from16   v1, v23
+	114     (000001c2) move-object/from16   v2, v24
+	115     (000001c6) invoke-virtual       v0, v1, v2, Landroid/hardware/camera2/params/StreamConfigurationMap;->getOutputMinFrameDuration(Ljava/lang/Class; Landroid/util/Size;)J
+	116     (000001cc) move-result-wide     v14
+	194:1cb
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+	(Ljava/lang/Exception; -> 34c getSupportedFormats-BB@0x34c)
+
+getSupportedFormats-BB@0x1ce : [ getSupportedFormats-BB@0x1da getSupportedFormats-BB@0x294 ]
+	117     (000001ce) const-wide/16        v24, 0 # [0.0]
+	118     (000001d2) cmp-long             v23, v14, v24
+	119     (000001d6) if-nez               v23, +5f
+
+getSupportedFormats-BB@0x1da : [ getSupportedFormats-BB@0x1dc ]
+	120     (000001da) move                 v13, v5
+
+getSupportedFormats-BB@0x1dc : [ getSupportedFormats-BB@0x178 ]
+	121     (000001dc) new-instance         v23, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;
+	122     (000001e0) move-object/from16   v0, v16
+	123     (000001e4) iget                 v0, v0, Lorg/webrtc/Size;->width I
+	124     (000001e8) move/from16          v24, v0
+	125     (000001ec) move-object/from16   v0, v16
+	126     (000001f0) iget                 v0, v0, Lorg/webrtc/Size;->height I
+	127     (000001f4) move/from16          v25, v0
+	128     (000001f8) const/16             v26, 0
+	129     (000001fc) move-object/from16   v0, v23
+	130     (00000200) move/from16          v1, v24
+	131     (00000204) move/from16          v2, v25
+	132     (00000208) move/from16          v3, v26
+	133     (0000020c) invoke-direct        v0, v1, v2, v3, v13, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;-><init>(I I I I)V
+	134     (00000212) move-object/from16   v0, v23
+	135     (00000216) invoke-interface     v9, v0, Ljava/util/List;->add(Ljava/lang/Object;)Z
+	136     (0000021c) const-string         v23, 'Camera2Enumerator'
+	137     (00000220) new-instance         v24, Ljava/lang/StringBuilder;
+	138     (00000224) invoke-direct/range  v24, Ljava/lang/StringBuilder;-><init>()V
+	139     (0000022a) const-string         v25, 'Format: '
+	140     (0000022e) invoke-virtual/range v24 ... v25, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	141     (00000234) move-result-object   v24
+	142     (00000236) move-object/from16   v0, v16
+	143     (0000023a) iget                 v0, v0, Lorg/webrtc/Size;->width I
+	144     (0000023e) move/from16          v25, v0
+	145     (00000242) invoke-virtual/range v24 ... v25, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	146     (00000248) move-result-object   v24
+	147     (0000024a) const-string         v25, 'x'
+	148     (0000024e) invoke-virtual/range v24 ... v25, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	149     (00000254) move-result-object   v24
+	150     (00000256) move-object/from16   v0, v16
+	151     (0000025a) iget                 v0, v0, Lorg/webrtc/Size;->height I
+	152     (0000025e) move/from16          v25, v0
+	153     (00000262) invoke-virtual/range v24 ... v25, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	154     (00000268) move-result-object   v24
+	155     (0000026a) const-string         v25, '@'
+	156     (0000026e) invoke-virtual/range v24 ... v25, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	157     (00000274) move-result-object   v24
+	158     (00000276) move-object/from16   v0, v24
+	159     (0000027a) invoke-virtual       v0, v13, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	160     (00000280) move-result-object   v24
+	161     (00000282) invoke-virtual/range v24, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	162     (00000288) move-result-object   v24
+	163     (0000028a) invoke-static/range  v23 ... v24, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	164     (00000290) goto/16              -8c
+	1dc:343
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0x294 : [ getSupportedFormats-BB@0x1dc ]
+	165     (00000294) const-wide           v24, 4741671816366391296 # [1000000000.0]
+	166     (0000029e) long-to-double       v0, v14
+	167     (000002a0) move-wide/from16     v26, v0
+	168     (000002a4) div-double           v24, v24, v26
+	169     (000002a8) invoke-static/range  v24 ... v25, Ljava/lang/Math;->round(D)J
+	170     (000002ae) move-result-wide     v24
+	171     (000002b0) move-wide/from16     v0, v24
+	172     (000002b4) long-to-int          v0, v0
+	173     (000002b6) move/from16          v23, v0
+	174     (000002ba) move/from16          v0, v23
+	175     (000002be) mul-int/lit16        v13, v0, 1000
+	176     (000002c2) goto                 -73
+	1dc:343
+	(Ljava/lang/Throwable; -> 160 getSupportedFormats-BB@0x160)
+
+getSupportedFormats-BB@0x2c4 : [ getSupportedFormats-BB@0x38 ]
+	177     (000002c4) sget-object          v21, Lorg/webrtc/Camera2Enumerator;->cachedSupportedFormats Ljava/util/Map;
+	178     (000002c8) move-object/from16   v0, v21
+	179     (000002cc) move-object/from16   v1, v29
+	180     (000002d0) invoke-interface     v0, v1, v9, Ljava/util/Map;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+	181     (000002d6) invoke-static        Landroid/os/SystemClock;->elapsedRealtime()J
+	182     (000002dc) move-result-wide     v6
+	183     (000002de) const-string         v21, 'Camera2Enumerator'
+	184     (000002e2) new-instance         v23, Ljava/lang/StringBuilder;
+	185     (000002e6) invoke-direct/range  v23, Ljava/lang/StringBuilder;-><init>()V
+	186     (000002ec) const-string         v24, 'Get supported formats for camera index '
+	187     (000002f0) invoke-virtual/range v23 ... v24, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	188     (000002f6) move-result-object   v23
+	189     (000002f8) move-object/from16   v0, v23
+	190     (000002fc) move-object/from16   v1, v29
+	191     (00000300) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	192     (00000306) move-result-object   v23
+	193     (00000308) const-string         v24, ' done. Time spent: '
+	194     (0000030c) invoke-virtual/range v23 ... v24, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	195     (00000312) move-result-object   v23
+	196     (00000314) sub-long             v24, v6, v18
+	197     (00000318) invoke-virtual/range v23 ... v25, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+	198     (0000031e) move-result-object   v23
+	199     (00000320) const-string         v24, ' ms.'
+	200     (00000324) invoke-virtual/range v23 ... v24, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	201     (0000032a) move-result-object   v23
+	202     (0000032c) invoke-virtual/range v23, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	203     (00000332) move-result-object   v23
+	204     (00000334) move-object/from16   v0, v21
+	205     (00000338) move-object/from16   v1, v23
+	206     (0000033c) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	207     (00000342) monitor-exit         v22
+	208     (00000344) move-object/from16   v21, v9
+	209     (00000348) goto/16              -188
+
+getSupportedFormats-BB@0x34c : [ getSupportedFormats-BB@0x1ce ]
+	210     (0000034c) move-exception       v23
+	211     (0000034e) goto/16              -c0
+

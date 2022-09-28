@@ -1,0 +1,12 @@
+# Landroid/support/v4/content/AsyncTaskLoader$LoadTask;->access$000(Landroid/support/v4/content/AsyncTaskLoader$LoadTask;)Ljava/util/concurrent/CountDownLatch; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.content.AsyncTaskLoader$LoadTask
+#
+# - return:java.util.concurrent.CountDownLatch
+
+access$000-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/content/AsyncTaskLoader$LoadTask;->done Ljava/util/concurrent/CountDownLatch;
+	1       (00000004) return-object        v0
+

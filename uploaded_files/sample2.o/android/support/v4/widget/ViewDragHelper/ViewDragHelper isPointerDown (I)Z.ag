@@ -1,0 +1,22 @@
+# Landroid/support/v4/widget/ViewDragHelper;->isPointerDown(I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:boolean
+
+isPointerDown-BB@0x0 : [ isPointerDown-BB@0x10 isPointerDown-BB@0x12 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget                 v1, v3, Landroid/support/v4/widget/ViewDragHelper;->mPointersDown I
+	2       (00000006) shl-int              v2, v0, v4
+	3       (0000000a) and-int/2addr        v1, v2
+	4       (0000000c) if-eqz               v1, +3
+
+isPointerDown-BB@0x10 : 
+	5       (00000010) return               v0
+
+isPointerDown-BB@0x12 : [ isPointerDown-BB@0x10 ]
+	6       (00000012) const/4              v0, 0
+	7       (00000014) goto                 -2
+

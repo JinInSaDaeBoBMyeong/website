@@ -1,0 +1,29 @@
+# Lorg/webrtc/WrappedNativeI420Buffer;-><init>(I I Ljava/nio/ByteBuffer; I Ljava/nio/ByteBuffer; I Ljava/nio/ByteBuffer; I J)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+# - v5:java.nio.ByteBuffer
+# - v6:int
+# - v7:java.nio.ByteBuffer
+# - v8:int
+# - v9:java.nio.ByteBuffer
+# - v10:int
+# - v11:long
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput                 v2, v1, Lorg/webrtc/WrappedNativeI420Buffer;->width I
+	2       (0000000a) iput                 v3, v1, Lorg/webrtc/WrappedNativeI420Buffer;->height I
+	3       (0000000e) iput-object          v4, v1, Lorg/webrtc/WrappedNativeI420Buffer;->dataY Ljava/nio/ByteBuffer;
+	4       (00000012) iput                 v5, v1, Lorg/webrtc/WrappedNativeI420Buffer;->strideY I
+	5       (00000016) iput-object          v6, v1, Lorg/webrtc/WrappedNativeI420Buffer;->dataU Ljava/nio/ByteBuffer;
+	6       (0000001a) iput                 v7, v1, Lorg/webrtc/WrappedNativeI420Buffer;->strideU I
+	7       (0000001e) iput-object          v8, v1, Lorg/webrtc/WrappedNativeI420Buffer;->dataV Ljava/nio/ByteBuffer;
+	8       (00000022) iput                 v9, v1, Lorg/webrtc/WrappedNativeI420Buffer;->strideV I
+	9       (00000026) iput-wide            v10, v1, Lorg/webrtc/WrappedNativeI420Buffer;->nativeBuffer J
+	10      (0000002a) return-void          
+

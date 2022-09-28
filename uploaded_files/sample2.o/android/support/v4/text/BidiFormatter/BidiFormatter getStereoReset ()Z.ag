@@ -1,0 +1,22 @@
+# Landroid/support/v4/text/BidiFormatter;->getStereoReset()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+getStereoReset-BB@0x0 : [ getStereoReset-BB@0xc getStereoReset-BB@0x10 ]
+	0       (00000000) iget                 v0, v1, Landroid/support/v4/text/BidiFormatter;->mFlags I
+	1       (00000004) and-int/lit8         v0, v0, 2
+	2       (00000008) if-eqz               v0, +4
+
+getStereoReset-BB@0xc : [ getStereoReset-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+getStereoReset-BB@0xe : 
+	4       (0000000e) return               v0
+
+getStereoReset-BB@0x10 : [ getStereoReset-BB@0xe ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -2
+

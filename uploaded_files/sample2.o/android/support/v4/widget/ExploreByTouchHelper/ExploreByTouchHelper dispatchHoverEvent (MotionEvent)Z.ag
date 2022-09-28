@@ -1,0 +1,65 @@
+# Landroid/support/v4/widget/ExploreByTouchHelper;->dispatchHoverEvent(Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.view.MotionEvent
+#
+# - return:boolean
+
+dispatchHoverEvent-BB@0x0 : [ dispatchHoverEvent-BB@0x18 dispatchHoverEvent-BB@0x28 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) const/high16         v5, -32768 # [-0.0]
+	2       (00000006) const/4              v2, 0
+	3       (00000008) iget-object          v3, v6, Landroid/support/v4/widget/ExploreByTouchHelper;->mManager Landroid/view/accessibility/AccessibilityManager;
+	4       (0000000c) invoke-virtual       v3, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
+	5       (00000012) move-result          v3
+	6       (00000014) if-eqz               v3, +a
+
+dispatchHoverEvent-BB@0x18 : [ dispatchHoverEvent-BB@0x28 dispatchHoverEvent-BB@0x2a ]
+	7       (00000018) iget-object          v3, v6, Landroid/support/v4/widget/ExploreByTouchHelper;->mManager Landroid/view/accessibility/AccessibilityManager;
+	8       (0000001c) invoke-static        v3, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat;->isTouchExplorationEnabled(Landroid/view/accessibility/AccessibilityManager;)Z
+	9       (00000022) move-result          v3
+	10      (00000024) if-nez               v3, +3
+
+dispatchHoverEvent-BB@0x28 : 
+	11      (00000028) return               v2
+
+dispatchHoverEvent-BB@0x2a : [ D:dispatchHoverEvent-BB@0x38 7:dispatchHoverEvent-BB@0x3a 8:dispatchHoverEvent-BB@0x38 9:dispatchHoverEvent-BB@0x3a 10:dispatchHoverEvent-BB@0x64 ]
+	12      (0000002a) invoke-virtual       v7, Landroid/view/MotionEvent;->getAction()I
+	13      (00000030) move-result          v3
+	14      (00000032) packed-switch        v3, +23 (0x78)
+
+dispatchHoverEvent-BB@0x38 : [ dispatchHoverEvent-BB@0x28 ]
+	15      (00000038) goto                 -8
+
+dispatchHoverEvent-BB@0x3a : [ dispatchHoverEvent-BB@0x5c dispatchHoverEvent-BB@0x60 ]
+	16      (0000003a) invoke-virtual       v7, Landroid/view/MotionEvent;->getX()F
+	17      (00000040) move-result          v3
+	18      (00000042) invoke-virtual       v7, Landroid/view/MotionEvent;->getY()F
+	19      (00000048) move-result          v4
+	20      (0000004a) invoke-virtual       v6, v3, v4, Landroid/support/v4/widget/ExploreByTouchHelper;->getVirtualViewAt(F F)I
+	21      (00000050) move-result          v0
+	22      (00000052) invoke-direct        v6, v0, Landroid/support/v4/widget/ExploreByTouchHelper;->updateHoveredVirtualView(I)V
+	23      (00000058) if-eq                v0, v5, +4
+
+dispatchHoverEvent-BB@0x5c : [ dispatchHoverEvent-BB@0x28 ]
+	24      (0000005c) move                 v2, v1
+	25      (0000005e) goto                 -1b
+
+dispatchHoverEvent-BB@0x60 : [ dispatchHoverEvent-BB@0x5c ]
+	26      (00000060) move                 v1, v2
+	27      (00000062) goto                 -3
+
+dispatchHoverEvent-BB@0x64 : [ dispatchHoverEvent-BB@0x6c dispatchHoverEvent-BB@0x28 ]
+	28      (00000064) iget                 v3, v6, Landroid/support/v4/widget/ExploreByTouchHelper;->mFocusedVirtualViewId I
+	29      (00000068) if-eq                v3, v5, -20
+
+dispatchHoverEvent-BB@0x6c : [ dispatchHoverEvent-BB@0x28 ]
+	30      (0000006c) invoke-direct        v6, v5, Landroid/support/v4/widget/ExploreByTouchHelper;->updateHoveredVirtualView(I)V
+	31      (00000072) move                 v2, v1
+	32      (00000074) goto                 -26
+
+dispatchHoverEvent-BB@0x76 : 
+	33      (00000076) nop                  
+	34      (00000078) packed-switch-payload 7 8 9 a
+

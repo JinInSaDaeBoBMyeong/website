@@ -1,0 +1,27 @@
+# Landroid/support/v4/text/BidiFormatter$DirectionalityEstimator;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0xe ]
+	0       (00000000) const/16             v3, 1792
+	1       (00000004) new-array            v1, v3, [B
+	2       (00000008) sput-object          v1, Landroid/support/v4/text/BidiFormatter$DirectionalityEstimator;->DIR_TYPE_CACHE [B
+	3       (0000000c) const/4              v0, 0
+
+<clinit>-BB@0xe : [ <clinit>-BB@0x12 <clinit>-BB@0x28 ]
+	4       (0000000e) if-ge                v0, v3, +d
+
+<clinit>-BB@0x12 : [ <clinit>-BB@0xe ]
+	5       (00000012) sget-object          v1, Landroid/support/v4/text/BidiFormatter$DirectionalityEstimator;->DIR_TYPE_CACHE [B
+	6       (00000016) invoke-static        v0, Ljava/lang/Character;->getDirectionality(I)B
+	7       (0000001c) move-result          v2
+	8       (0000001e) aput-byte            v2, v1, v0
+	9       (00000022) add-int/lit8         v0, v0, 1
+	10      (00000026) goto                 -c
+
+<clinit>-BB@0x28 : 
+	11      (00000028) return-void          
+

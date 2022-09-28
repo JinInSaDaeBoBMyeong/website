@@ -1,0 +1,171 @@
+# Lorg/webrtc/MediaCodecVideoEncoder;->reportEncodedFrame(I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v14
+# - v15:int
+#
+# - return:void
+
+reportEncodedFrame-BB@0x0 : [ reportEncodedFrame-BB@0xc reportEncodedFrame-BB@0x18 ]
+	0       (00000000) const-wide/high16    v12, 16352 # [0.5]
+	1       (00000004) iget                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->targetFps I
+	2       (00000008) if-eqz               v6, +8
+
+reportEncodedFrame-BB@0xc : [ reportEncodedFrame-BB@0x18 reportEncodedFrame-BB@0x1a ]
+	3       (0000000c) iget-object          v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentType Lorg/webrtc/MediaCodecVideoEncoder$BitrateAdjustmentType;
+	4       (00000010) sget-object          v7, Lorg/webrtc/MediaCodecVideoEncoder$BitrateAdjustmentType;->DYNAMIC_ADJUSTMENT Lorg/webrtc/MediaCodecVideoEncoder$BitrateAdjustmentType;
+	5       (00000014) if-eq                v6, v7, +3
+
+reportEncodedFrame-BB@0x18 : 
+	6       (00000018) return-void          
+
+reportEncodedFrame-BB@0x1a : [ reportEncodedFrame-BB@0x9e reportEncodedFrame-BB@0x18 ]
+	7       (0000001a) iget                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->targetBitrateBps I
+	8       (0000001e) int-to-double        v6, v6
+	9       (00000020) const-wide/high16    v8, 16416 # [8.0]
+	10      (00000024) iget                 v10, v14, Lorg/webrtc/MediaCodecVideoEncoder;->targetFps I
+	11      (00000028) int-to-double        v10, v10
+	12      (0000002a) mul-double/2addr     v8, v10
+	13      (0000002c) div-double           v4, v6, v8
+	14      (00000030) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	15      (00000034) int-to-double        v8, v15
+	16      (00000036) sub-double/2addr     v8, v4
+	17      (00000038) add-double/2addr     v6, v8
+	18      (0000003a) iput-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	19      (0000003e) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateObservationTimeMs D
+	20      (00000042) const-wide           v8, 4652007308841189376 # [1000.0]
+	21      (0000004c) iget                 v10, v14, Lorg/webrtc/MediaCodecVideoEncoder;->targetFps I
+	22      (00000050) int-to-double        v10, v10
+	23      (00000052) div-double/2addr     v8, v10
+	24      (00000054) add-double/2addr     v6, v8
+	25      (00000056) iput-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateObservationTimeMs D
+	26      (0000005a) const-wide/high16    v6, 16392 # [3.0]
+	27      (0000005e) iget-wide            v8, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulatorMax D
+	28      (00000062) mul-double           v0, v6, v8
+	29      (00000066) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	30      (0000006a) invoke-static        v6, v7, v0, v1, Ljava/lang/Math;->min(D D)D
+	31      (00000070) move-result-wide     v6
+	32      (00000072) iput-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	33      (00000076) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	34      (0000007a) neg-double           v8, v0
+	35      (0000007c) invoke-static        v6, v7, v8, v9, Ljava/lang/Math;->max(D D)D
+	36      (00000082) move-result-wide     v6
+	37      (00000084) iput-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	38      (00000088) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateObservationTimeMs D
+	39      (0000008c) const-wide           v8, 4658815484840378368 # [3000.0]
+	40      (00000096) cmpl-double          v6, v6, v8
+	41      (0000009a) if-lez               v6, -41
+
+reportEncodedFrame-BB@0x9e : [ reportEncodedFrame-BB@0x118 reportEncodedFrame-BB@0x1d8 ]
+	42      (0000009e) const-string         v6, 'MediaCodecVideoEncoder'
+	43      (000000a2) new-instance         v7, Ljava/lang/StringBuilder;
+	44      (000000a6) invoke-direct        v7, Ljava/lang/StringBuilder;-><init>()V
+	45      (000000ac) const-string         v8, 'Acc: '
+	46      (000000b0) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	47      (000000b6) move-result-object   v7
+	48      (000000b8) iget-wide            v8, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	49      (000000bc) double-to-int        v8, v8
+	50      (000000be) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	51      (000000c4) move-result-object   v7
+	52      (000000c6) const-string         v8, '. Max: '
+	53      (000000ca) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	54      (000000d0) move-result-object   v7
+	55      (000000d2) iget-wide            v8, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulatorMax D
+	56      (000000d6) double-to-int        v8, v8
+	57      (000000d8) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	58      (000000de) move-result-object   v7
+	59      (000000e0) const-string         v8, '. ExpScale: '
+	60      (000000e4) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	61      (000000ea) move-result-object   v7
+	62      (000000ec) iget                 v8, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	63      (000000f0) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	64      (000000f6) move-result-object   v7
+	65      (000000f8) invoke-virtual       v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	66      (000000fe) move-result-object   v7
+	67      (00000100) invoke-static        v6, v7, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	68      (00000106) const/4              v3, 0
+	69      (00000108) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	70      (0000010c) iget-wide            v8, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulatorMax D
+	71      (00000110) cmpl-double          v6, v6, v8
+	72      (00000114) if-lez               v6, +62
+
+reportEncodedFrame-BB@0x118 : [ reportEncodedFrame-BB@0x13a ]
+	73      (00000118) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	74      (0000011c) iget-wide            v8, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulatorMax D
+	75      (00000120) div-double/2addr     v6, v8
+	76      (00000122) add-double/2addr     v6, v12
+	77      (00000124) double-to-int        v2, v6
+	78      (00000126) iget                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	79      (0000012a) sub-int/2addr        v6, v2
+	80      (0000012c) iput                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	81      (00000130) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulatorMax D
+	82      (00000134) iput-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	83      (00000138) const/4              v3, 1
+
+reportEncodedFrame-BB@0x13a : [ reportEncodedFrame-BB@0x13e reportEncodedFrame-BB@0x1cc ]
+	84      (0000013a) if-eqz               v3, +49
+
+reportEncodedFrame-BB@0x13e : [ reportEncodedFrame-BB@0x1cc ]
+	85      (0000013e) iget                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	86      (00000142) const/16             v7, 20
+	87      (00000146) invoke-static        v6, v7, Ljava/lang/Math;->min(I I)I
+	88      (0000014c) move-result          v6
+	89      (0000014e) iput                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	90      (00000152) iget                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	91      (00000156) const/16             v7, -20
+	92      (0000015a) invoke-static        v6, v7, Ljava/lang/Math;->max(I I)I
+	93      (00000160) move-result          v6
+	94      (00000162) iput                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	95      (00000166) const-string         v6, 'MediaCodecVideoEncoder'
+	96      (0000016a) new-instance         v7, Ljava/lang/StringBuilder;
+	97      (0000016e) invoke-direct        v7, Ljava/lang/StringBuilder;-><init>()V
+	98      (00000174) const-string         v8, 'Adjusting bitrate scale to '
+	99      (00000178) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	100     (0000017e) move-result-object   v7
+	101     (00000180) iget                 v8, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	102     (00000184) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	103     (0000018a) move-result-object   v7
+	104     (0000018c) const-string         v8, '. Value: '
+	105     (00000190) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	106     (00000196) move-result-object   v7
+	107     (00000198) iget                 v8, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	108     (0000019c) invoke-direct        v14, v8, Lorg/webrtc/MediaCodecVideoEncoder;->getBitrateScale(I)D
+	109     (000001a2) move-result-wide     v8
+	110     (000001a4) invoke-virtual       v7, v8, v9, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+	111     (000001aa) move-result-object   v7
+	112     (000001ac) invoke-virtual       v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	113     (000001b2) move-result-object   v7
+	114     (000001b4) invoke-static        v6, v7, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	115     (000001ba) iget                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->targetBitrateBps I
+	116     (000001be) div-int/lit16        v6, v6, 1000
+	117     (000001c2) iget                 v7, v14, Lorg/webrtc/MediaCodecVideoEncoder;->targetFps I
+	118     (000001c6) invoke-direct        v14, v6, v7, Lorg/webrtc/MediaCodecVideoEncoder;->setRates(I I)Z
+
+reportEncodedFrame-BB@0x1cc : [ reportEncodedFrame-BB@0x18 ]
+	119     (000001cc) const-wide/16        v6, 0 # [0.0]
+	120     (000001d0) iput-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateObservationTimeMs D
+	121     (000001d4) goto/16              -de
+
+reportEncodedFrame-BB@0x1d8 : [ reportEncodedFrame-BB@0x1ea reportEncodedFrame-BB@0x13a ]
+	122     (000001d8) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	123     (000001dc) iget-wide            v8, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulatorMax D
+	124     (000001e0) neg-double           v8, v8
+	125     (000001e2) cmpg-double          v6, v6, v8
+	126     (000001e6) if-gez               v6, -56
+
+reportEncodedFrame-BB@0x1ea : [ reportEncodedFrame-BB@0x13a ]
+	127     (000001ea) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	128     (000001ee) neg-double           v6, v6
+	129     (000001f0) iget-wide            v8, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulatorMax D
+	130     (000001f4) div-double/2addr     v6, v8
+	131     (000001f6) add-double/2addr     v6, v12
+	132     (000001f8) double-to-int        v2, v6
+	133     (000001fa) iget                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	134     (000001fe) add-int/2addr        v6, v2
+	135     (00000200) iput                 v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAdjustmentScaleExp I
+	136     (00000204) iget-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulatorMax D
+	137     (00000208) neg-double           v6, v6
+	138     (0000020a) iput-wide            v6, v14, Lorg/webrtc/MediaCodecVideoEncoder;->bitrateAccumulator D
+	139     (0000020e) const/4              v3, 1
+	140     (00000210) goto                 -6b
+

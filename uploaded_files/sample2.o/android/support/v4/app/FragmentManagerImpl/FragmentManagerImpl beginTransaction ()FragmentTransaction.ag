@@ -1,0 +1,12 @@
+# Landroid/support/v4/app/FragmentManagerImpl;->beginTransaction()Landroid/support/v4/app/FragmentTransaction; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.support.v4.app.FragmentTransaction
+
+beginTransaction-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/support/v4/app/BackStackRecord;
+	1       (00000004) invoke-direct        v0, v1, Landroid/support/v4/app/BackStackRecord;-><init>(Landroid/support/v4/app/FragmentManagerImpl;)V
+	2       (0000000a) return-object        v0
+

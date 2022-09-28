@@ -1,0 +1,19 @@
+# Lorg/webrtc/HardwareVideoDecoder;->initDecode(Lorg/webrtc/VideoDecoder$Settings; Lorg/webrtc/VideoDecoder$Callback;)Lorg/webrtc/VideoCodecStatus; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:org.webrtc.VideoDecoder$Settings
+# - v4:org.webrtc.VideoDecoder$Callback
+#
+# - return:org.webrtc.VideoCodecStatus
+
+initDecode-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lorg/webrtc/ThreadUtils$ThreadChecker;
+	1       (00000004) invoke-direct        v0, Lorg/webrtc/ThreadUtils$ThreadChecker;-><init>()V
+	2       (0000000a) iput-object          v0, v2, Lorg/webrtc/HardwareVideoDecoder;->decoderThreadChecker Lorg/webrtc/ThreadUtils$ThreadChecker;
+	3       (0000000e) iget                 v0, v3, Lorg/webrtc/VideoDecoder$Settings;->width I
+	4       (00000012) iget                 v1, v3, Lorg/webrtc/VideoDecoder$Settings;->height I
+	5       (00000016) invoke-direct        v2, v0, v1, v4, Lorg/webrtc/HardwareVideoDecoder;->initDecodeInternal(I I Lorg/webrtc/VideoDecoder$Callback;)Lorg/webrtc/VideoCodecStatus;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) return-object        v0
+

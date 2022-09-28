@@ -1,0 +1,14 @@
+# Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->setText(Ljava/lang/Object; Ljava/lang/CharSequence;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:java.lang.Object
+# - v1:java.lang.CharSequence
+#
+# - return:void
+
+setText-BB@0x0 : 
+	0       (00000000) check-cast           v0, Landroid/view/accessibility/AccessibilityNodeInfo;
+	1       (00000004) invoke-virtual       v0, v1, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
+	2       (0000000a) return-void          
+

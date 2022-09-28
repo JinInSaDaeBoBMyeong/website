@@ -1,0 +1,12 @@
+# Landroid/support/v4/widget/AutoScrollHelper;->access$600(Landroid/support/v4/widget/AutoScrollHelper;)V [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:android.support.v4.widget.AutoScrollHelper
+#
+# - return:void
+
+access$600-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Landroid/support/v4/widget/AutoScrollHelper;->cancelTargetTouch()V
+	1       (00000006) return-void          
+

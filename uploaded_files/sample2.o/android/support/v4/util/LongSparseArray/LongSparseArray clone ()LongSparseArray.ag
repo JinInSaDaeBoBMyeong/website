@@ -1,0 +1,36 @@
+# Landroid/support/v4/util/LongSparseArray;->clone()Landroid/support/v4/util/LongSparseArray; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:android.support.v4.util.LongSparseArray
+
+clone-BB@0x0 : [ clone-BB@0x2 ]
+	0       (00000000) const/4              v1, 0
+
+clone-BB@0x2 : [ clone-BB@0x3a ]
+	1       (00000002) invoke-super         v3, Ljava/lang/Object;->clone()Ljava/lang/Object;
+	2       (00000008) move-result-object   v2
+	3       (0000000a) move-object          v0, v2
+	4       (0000000c) check-cast           v0, Landroid/support/v4/util/LongSparseArray;
+	5       (00000010) move-object          v1, v0
+	6       (00000012) iget-object          v2, v3, Landroid/support/v4/util/LongSparseArray;->mKeys [J
+	7       (00000016) invoke-virtual       v2, [J->clone()Ljava/lang/Object;
+	8       (0000001c) move-result-object   v2
+	9       (0000001e) check-cast           v2, [J
+	10      (00000022) iput-object          v2, v1, Landroid/support/v4/util/LongSparseArray;->mKeys [J
+	11      (00000026) iget-object          v2, v3, Landroid/support/v4/util/LongSparseArray;->mValues [Ljava/lang/Object;
+	12      (0000002a) invoke-virtual       v2, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+	13      (00000030) move-result-object   v2
+	14      (00000032) check-cast           v2, [Ljava/lang/Object;
+	15      (00000036) iput-object          v2, v1, Landroid/support/v4/util/LongSparseArray;->mValues [Ljava/lang/Object;
+	2:39
+	(Ljava/lang/CloneNotSupportedException; -> 3c clone-BB@0x3c)
+
+clone-BB@0x3a : 
+	16      (0000003a) return-object        v1
+
+clone-BB@0x3c : [ clone-BB@0x3a ]
+	17      (0000003c) move-exception       v2
+	18      (0000003e) goto                 -2
+

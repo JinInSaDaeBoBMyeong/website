@@ -1,0 +1,42 @@
+# Landroid/support/v4/app/FragmentActivity;->getLoaderManager(Ljava/lang/String; Z Z)Landroid/support/v4/app/LoaderManagerImpl; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:boolean
+# - v5:boolean
+#
+# - return:android.support.v4.app.LoaderManagerImpl
+
+getLoaderManager-BB@0x0 : [ getLoaderManager-BB@0x8 getLoaderManager-BB@0x16 ]
+	0       (00000000) iget-object          v1, v2, Landroid/support/v4/app/FragmentActivity;->mAllLoaderManagers Landroid/support/v4/util/SimpleArrayMap;
+	1       (00000004) if-nez               v1, +9
+
+getLoaderManager-BB@0x8 : [ getLoaderManager-BB@0x16 ]
+	2       (00000008) new-instance         v1, Landroid/support/v4/util/SimpleArrayMap;
+	3       (0000000c) invoke-direct        v1, Landroid/support/v4/util/SimpleArrayMap;-><init>()V
+	4       (00000012) iput-object          v1, v2, Landroid/support/v4/app/FragmentActivity;->mAllLoaderManagers Landroid/support/v4/util/SimpleArrayMap;
+
+getLoaderManager-BB@0x16 : [ getLoaderManager-BB@0x2a getLoaderManager-BB@0x44 ]
+	5       (00000016) iget-object          v1, v2, Landroid/support/v4/app/FragmentActivity;->mAllLoaderManagers Landroid/support/v4/util/SimpleArrayMap;
+	6       (0000001a) invoke-virtual       v1, v3, Landroid/support/v4/util/SimpleArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	7       (00000020) move-result-object   v0
+	8       (00000022) check-cast           v0, Landroid/support/v4/app/LoaderManagerImpl;
+	9       (00000026) if-nez               v0, +f
+
+getLoaderManager-BB@0x2a : [ getLoaderManager-BB@0x2e getLoaderManager-BB@0x42 ]
+	10      (0000002a) if-eqz               v5, +c
+
+getLoaderManager-BB@0x2e : [ getLoaderManager-BB@0x42 ]
+	11      (0000002e) new-instance         v0, Landroid/support/v4/app/LoaderManagerImpl;
+	12      (00000032) invoke-direct        v0, v3, v2, v4, Landroid/support/v4/app/LoaderManagerImpl;-><init>(Ljava/lang/String; Landroid/support/v4/app/FragmentActivity; Z)V
+	13      (00000038) iget-object          v1, v2, Landroid/support/v4/app/FragmentActivity;->mAllLoaderManagers Landroid/support/v4/util/SimpleArrayMap;
+	14      (0000003c) invoke-virtual       v1, v3, v0, Landroid/support/v4/util/SimpleArrayMap;->put(Ljava/lang/Object; Ljava/lang/Object;)Ljava/lang/Object;
+
+getLoaderManager-BB@0x42 : 
+	15      (00000042) return-object        v0
+
+getLoaderManager-BB@0x44 : [ getLoaderManager-BB@0x42 ]
+	16      (00000044) invoke-virtual       v0, v2, Landroid/support/v4/app/LoaderManagerImpl;->updateActivity(Landroid/support/v4/app/FragmentActivity;)V
+	17      (0000004a) goto                 -4
+

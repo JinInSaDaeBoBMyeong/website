@@ -1,0 +1,191 @@
+# Landroid/support/v4/widget/ViewDragHelper;->shouldInterceptTouchEvent(Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v13
+# - v14:android.view.MotionEvent
+#
+# - return:boolean
+
+shouldInterceptTouchEvent-BB@0x0 : [ shouldInterceptTouchEvent-BB@0x14 shouldInterceptTouchEvent-BB@0x1a ]
+	0       (00000000) invoke-static        v14, Landroid/support/v4/view/MotionEventCompat;->getActionMasked(Landroid/view/MotionEvent;)I
+	1       (00000006) move-result          v0
+	2       (00000008) invoke-static        v14, Landroid/support/v4/view/MotionEventCompat;->getActionIndex(Landroid/view/MotionEvent;)I
+	3       (0000000e) move-result          v1
+	4       (00000010) if-nez               v0, +5
+
+shouldInterceptTouchEvent-BB@0x14 : [ shouldInterceptTouchEvent-BB@0x1a ]
+	5       (00000014) invoke-virtual       v13, Landroid/support/v4/widget/ViewDragHelper;->cancel()V
+
+shouldInterceptTouchEvent-BB@0x1a : [ shouldInterceptTouchEvent-BB@0x22 shouldInterceptTouchEvent-BB@0x2e ]
+	6       (0000001a) iget-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mVelocityTracker Landroid/view/VelocityTracker;
+	7       (0000001e) if-nez               v11, +8
+
+shouldInterceptTouchEvent-BB@0x22 : [ shouldInterceptTouchEvent-BB@0x2e ]
+	8       (00000022) invoke-static        Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
+	9       (00000028) move-result-object   v11
+	10      (0000002a) iput-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mVelocityTracker Landroid/view/VelocityTracker;
+
+shouldInterceptTouchEvent-BB@0x2e : [ D:shouldInterceptTouchEvent-BB@0x3e 0:shouldInterceptTouchEvent-BB@0x4c 1:shouldInterceptTouchEvent-BB@0x1bc 2:shouldInterceptTouchEvent-BB@0x124 3:shouldInterceptTouchEvent-BB@0x1bc 4:shouldInterceptTouchEvent-BB@0x3e 5:shouldInterceptTouchEvent-BB@0xb4 6:shouldInterceptTouchEvent-BB@0x1aa ]
+	11      (0000002e) iget-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mVelocityTracker Landroid/view/VelocityTracker;
+	12      (00000032) invoke-virtual       v11, v14, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+	13      (00000038) packed-switch        v0, +ca (0x1cc)
+
+shouldInterceptTouchEvent-BB@0x3e : [ shouldInterceptTouchEvent-BB@0x48 shouldInterceptTouchEvent-BB@0x1c6 ]
+	14      (0000003e) iget                 v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	15      (00000042) const/4              v12, 1
+	16      (00000044) if-ne                v11, v12, +c1
+
+shouldInterceptTouchEvent-BB@0x48 : [ shouldInterceptTouchEvent-BB@0x4a ]
+	17      (00000048) const/4              v11, 1
+
+shouldInterceptTouchEvent-BB@0x4a : 
+	18      (0000004a) return               v11
+
+shouldInterceptTouchEvent-BB@0x4c : [ shouldInterceptTouchEvent-BB@0x80 shouldInterceptTouchEvent-BB@0x90 ]
+	19      (0000004c) invoke-virtual       v14, Landroid/view/MotionEvent;->getX()F
+	20      (00000052) move-result          v9
+	21      (00000054) invoke-virtual       v14, Landroid/view/MotionEvent;->getY()F
+	22      (0000005a) move-result          v10
+	23      (0000005c) const/4              v11, 0
+	24      (0000005e) invoke-static        v14, v11, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	25      (00000064) move-result          v7
+	26      (00000066) invoke-direct        v13, v9, v10, v7, Landroid/support/v4/widget/ViewDragHelper;->saveInitialMotion(F F I)V
+	27      (0000006c) float-to-int         v11, v9
+	28      (0000006e) float-to-int         v12, v10
+	29      (00000070) invoke-virtual       v13, v11, v12, Landroid/support/v4/widget/ViewDragHelper;->findTopChildUnder(I I)Landroid/view/View;
+	30      (00000076) move-result-object   v8
+	31      (00000078) iget-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	32      (0000007c) if-ne                v8, v11, +a
+
+shouldInterceptTouchEvent-BB@0x80 : [ shouldInterceptTouchEvent-BB@0x8a shouldInterceptTouchEvent-BB@0x90 ]
+	33      (00000080) iget                 v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	34      (00000084) const/4              v12, 2
+	35      (00000086) if-ne                v11, v12, +5
+
+shouldInterceptTouchEvent-BB@0x8a : [ shouldInterceptTouchEvent-BB@0x90 ]
+	36      (0000008a) invoke-virtual       v13, v8, v7, Landroid/support/v4/widget/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View; I)Z
+
+shouldInterceptTouchEvent-BB@0x90 : [ shouldInterceptTouchEvent-BB@0xa2 shouldInterceptTouchEvent-BB@0x3e ]
+	37      (00000090) iget-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mInitialEdgesTouched [I
+	38      (00000094) aget                 v4, v11, v7
+	39      (00000098) iget                 v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mTrackingEdges I
+	40      (0000009c) and-int/2addr        v11, v4
+	41      (0000009e) if-eqz               v11, -30
+
+shouldInterceptTouchEvent-BB@0xa2 : [ shouldInterceptTouchEvent-BB@0x3e ]
+	42      (000000a2) iget-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mCallback Landroid/support/v4/widget/ViewDragHelper$Callback;
+	43      (000000a6) iget                 v12, v13, Landroid/support/v4/widget/ViewDragHelper;->mTrackingEdges I
+	44      (000000aa) and-int/2addr        v12, v4
+	45      (000000ac) invoke-virtual       v11, v12, v7, Landroid/support/v4/widget/ViewDragHelper$Callback;->onEdgeTouched(I I)V
+	46      (000000b2) goto                 -3a
+
+shouldInterceptTouchEvent-BB@0xb4 : [ shouldInterceptTouchEvent-BB@0xda shouldInterceptTouchEvent-BB@0xfe ]
+	47      (000000b4) invoke-static        v14, v1, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	48      (000000ba) move-result          v7
+	49      (000000bc) invoke-static        v14, v1, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	50      (000000c2) move-result          v9
+	51      (000000c4) invoke-static        v14, v1, Landroid/support/v4/view/MotionEventCompat;->getY(Landroid/view/MotionEvent; I)F
+	52      (000000ca) move-result          v10
+	53      (000000cc) invoke-direct        v13, v9, v10, v7, Landroid/support/v4/widget/ViewDragHelper;->saveInitialMotion(F F I)V
+	54      (000000d2) iget                 v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	55      (000000d6) if-nez               v11, +14
+
+shouldInterceptTouchEvent-BB@0xda : [ shouldInterceptTouchEvent-BB@0xec shouldInterceptTouchEvent-BB@0x3e ]
+	56      (000000da) iget-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mInitialEdgesTouched [I
+	57      (000000de) aget                 v4, v11, v7
+	58      (000000e2) iget                 v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mTrackingEdges I
+	59      (000000e6) and-int/2addr        v11, v4
+	60      (000000e8) if-eqz               v11, -55
+
+shouldInterceptTouchEvent-BB@0xec : [ shouldInterceptTouchEvent-BB@0x3e ]
+	61      (000000ec) iget-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mCallback Landroid/support/v4/widget/ViewDragHelper$Callback;
+	62      (000000f0) iget                 v12, v13, Landroid/support/v4/widget/ViewDragHelper;->mTrackingEdges I
+	63      (000000f4) and-int/2addr        v12, v4
+	64      (000000f6) invoke-virtual       v11, v12, v7, Landroid/support/v4/widget/ViewDragHelper$Callback;->onEdgeTouched(I I)V
+	65      (000000fc) goto                 -5f
+
+shouldInterceptTouchEvent-BB@0xfe : [ shouldInterceptTouchEvent-BB@0x108 shouldInterceptTouchEvent-BB@0x3e ]
+	66      (000000fe) iget                 v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	67      (00000102) const/4              v12, 2
+	68      (00000104) if-ne                v11, v12, -63
+
+shouldInterceptTouchEvent-BB@0x108 : [ shouldInterceptTouchEvent-BB@0x11c shouldInterceptTouchEvent-BB@0x3e ]
+	69      (00000108) float-to-int         v11, v9
+	70      (0000010a) float-to-int         v12, v10
+	71      (0000010c) invoke-virtual       v13, v11, v12, Landroid/support/v4/widget/ViewDragHelper;->findTopChildUnder(I I)Landroid/view/View;
+	72      (00000112) move-result-object   v8
+	73      (00000114) iget-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	74      (00000118) if-ne                v8, v11, -6d
+
+shouldInterceptTouchEvent-BB@0x11c : [ shouldInterceptTouchEvent-BB@0x3e ]
+	75      (0000011c) invoke-virtual       v13, v8, v7, Landroid/support/v4/widget/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View; I)Z
+	76      (00000122) goto                 -72
+
+shouldInterceptTouchEvent-BB@0x124 : [ shouldInterceptTouchEvent-BB@0x12e ]
+	77      (00000124) invoke-static        v14, Landroid/support/v4/view/MotionEventCompat;->getPointerCount(Landroid/view/MotionEvent;)I
+	78      (0000012a) move-result          v6
+	79      (0000012c) const/4              v5, 0
+
+shouldInterceptTouchEvent-BB@0x12e : [ shouldInterceptTouchEvent-BB@0x132 shouldInterceptTouchEvent-BB@0x172 ]
+	80      (0000012e) if-ge                v5, v6, +22
+
+shouldInterceptTouchEvent-BB@0x132 : [ shouldInterceptTouchEvent-BB@0x172 shouldInterceptTouchEvent-BB@0x17c ]
+	81      (00000132) invoke-static        v14, v5, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	82      (00000138) move-result          v7
+	83      (0000013a) invoke-static        v14, v5, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	84      (00000140) move-result          v9
+	85      (00000142) invoke-static        v14, v5, Landroid/support/v4/view/MotionEventCompat;->getY(Landroid/view/MotionEvent; I)F
+	86      (00000148) move-result          v10
+	87      (0000014a) iget-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mInitialMotionX [F
+	88      (0000014e) aget                 v11, v11, v7
+	89      (00000152) sub-float            v2, v9, v11
+	90      (00000156) iget-object          v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mInitialMotionY [F
+	91      (0000015a) aget                 v11, v11, v7
+	92      (0000015e) sub-float            v3, v10, v11
+	93      (00000162) invoke-direct        v13, v2, v3, v7, Landroid/support/v4/widget/ViewDragHelper;->reportNewEdgeDrags(F F I)V
+	94      (00000168) iget                 v11, v13, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	95      (0000016c) const/4              v12, 1
+	96      (0000016e) if-ne                v11, v12, +7
+
+shouldInterceptTouchEvent-BB@0x172 : [ shouldInterceptTouchEvent-BB@0x3e ]
+	97      (00000172) invoke-direct        v13, v14, Landroid/support/v4/widget/ViewDragHelper;->saveLastMotion(Landroid/view/MotionEvent;)V
+	98      (00000178) goto/16              -9d
+
+shouldInterceptTouchEvent-BB@0x17c : [ shouldInterceptTouchEvent-BB@0x18c shouldInterceptTouchEvent-BB@0x1a4 ]
+	99      (0000017c) float-to-int         v11, v9
+	100     (0000017e) float-to-int         v12, v10
+	101     (00000180) invoke-virtual       v13, v11, v12, Landroid/support/v4/widget/ViewDragHelper;->findTopChildUnder(I I)Landroid/view/View;
+	102     (00000186) move-result-object   v8
+	103     (00000188) if-eqz               v8, +e
+
+shouldInterceptTouchEvent-BB@0x18c : [ shouldInterceptTouchEvent-BB@0x198 shouldInterceptTouchEvent-BB@0x1a4 ]
+	104     (0000018c) invoke-direct        v13, v8, v2, v3, Landroid/support/v4/widget/ViewDragHelper;->checkTouchSlop(Landroid/view/View; F F)Z
+	105     (00000192) move-result          v11
+	106     (00000194) if-eqz               v11, +8
+
+shouldInterceptTouchEvent-BB@0x198 : [ shouldInterceptTouchEvent-BB@0x1a4 shouldInterceptTouchEvent-BB@0x172 ]
+	107     (00000198) invoke-virtual       v13, v8, v7, Landroid/support/v4/widget/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View; I)Z
+	108     (0000019e) move-result          v11
+	109     (000001a0) if-nez               v11, -17
+
+shouldInterceptTouchEvent-BB@0x1a4 : [ shouldInterceptTouchEvent-BB@0x12e ]
+	110     (000001a4) add-int/lit8         v5, v5, 1
+	111     (000001a8) goto                 -3d
+
+shouldInterceptTouchEvent-BB@0x1aa : [ shouldInterceptTouchEvent-BB@0x3e ]
+	112     (000001aa) invoke-static        v14, v1, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	113     (000001b0) move-result          v7
+	114     (000001b2) invoke-direct        v13, v7, Landroid/support/v4/widget/ViewDragHelper;->clearMotionHistory(I)V
+	115     (000001b8) goto/16              -bd
+
+shouldInterceptTouchEvent-BB@0x1bc : [ shouldInterceptTouchEvent-BB@0x3e ]
+	116     (000001bc) invoke-virtual       v13, Landroid/support/v4/widget/ViewDragHelper;->cancel()V
+	117     (000001c2) goto/16              -c2
+
+shouldInterceptTouchEvent-BB@0x1c6 : [ shouldInterceptTouchEvent-BB@0x4a ]
+	118     (000001c6) const/4              v11, 0
+	119     (000001c8) goto/16              -bf
+
+shouldInterceptTouchEvent-BB@0x1cc : 
+	120     (000001cc) packed-switch-payload 0 1 2 3 4 5 6
+

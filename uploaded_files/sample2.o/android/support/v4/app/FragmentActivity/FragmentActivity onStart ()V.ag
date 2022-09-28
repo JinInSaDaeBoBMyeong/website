@@ -1,0 +1,107 @@
+# Landroid/support/v4/app/FragmentActivity;->onStart()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+onStart-BB@0x0 : [ onStart-BB@0x24 onStart-BB@0x32 ]
+	0       (00000000) const/4              v7, 0
+	1       (00000002) const/4              v6, 1
+	2       (00000004) invoke-super         v8, Landroid/app/Activity;->onStart()V
+	3       (0000000a) iput-boolean         v7, v8, Landroid/support/v4/app/FragmentActivity;->mStopped Z
+	4       (0000000e) iput-boolean         v7, v8, Landroid/support/v4/app/FragmentActivity;->mReallyStopped Z
+	5       (00000012) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mHandler Landroid/os/Handler;
+	6       (00000016) invoke-virtual       v4, v6, Landroid/os/Handler;->removeMessages(I)V
+	7       (0000001c) iget-boolean         v4, v8, Landroid/support/v4/app/FragmentActivity;->mCreated Z
+	8       (00000020) if-nez               v4, +9
+
+onStart-BB@0x24 : [ onStart-BB@0x32 ]
+	9       (00000024) iput-boolean         v6, v8, Landroid/support/v4/app/FragmentActivity;->mCreated Z
+	10      (00000028) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	11      (0000002c) invoke-virtual       v4, Landroid/support/v4/app/FragmentManagerImpl;->dispatchActivityCreated()V
+
+onStart-BB@0x32 : [ onStart-BB@0x4e onStart-BB@0x68 ]
+	12      (00000032) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	13      (00000036) invoke-virtual       v4, Landroid/support/v4/app/FragmentManagerImpl;->noteStateNotSaved()V
+	14      (0000003c) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	15      (00000040) invoke-virtual       v4, Landroid/support/v4/app/FragmentManagerImpl;->execPendingActions()Z
+	16      (00000046) iget-boolean         v4, v8, Landroid/support/v4/app/FragmentActivity;->mLoadersStarted Z
+	17      (0000004a) if-nez               v4, +f
+
+onStart-BB@0x4e : [ onStart-BB@0x5a onStart-BB@0xac ]
+	18      (0000004e) iput-boolean         v6, v8, Landroid/support/v4/app/FragmentActivity;->mLoadersStarted Z
+	19      (00000052) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mLoaderManager Landroid/support/v4/app/LoaderManagerImpl;
+	20      (00000056) if-eqz               v4, +2b
+
+onStart-BB@0x5a : [ onStart-BB@0x64 ]
+	21      (0000005a) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mLoaderManager Landroid/support/v4/app/LoaderManagerImpl;
+	22      (0000005e) invoke-virtual       v4, Landroid/support/v4/app/LoaderManagerImpl;->doStart()V
+
+onStart-BB@0x64 : [ onStart-BB@0x68 ]
+	23      (00000064) iput-boolean         v6, v8, Landroid/support/v4/app/FragmentActivity;->mCheckedForLoaderManager Z
+
+onStart-BB@0x68 : [ onStart-BB@0x7a onStart-BB@0x104 ]
+	24      (00000068) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	25      (0000006c) invoke-virtual       v4, Landroid/support/v4/app/FragmentManagerImpl;->dispatchStart()V
+	26      (00000072) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mAllLoaderManagers Landroid/support/v4/util/SimpleArrayMap;
+	27      (00000076) if-eqz               v4, +47
+
+onStart-BB@0x7a : [ onStart-BB@0x8e ]
+	28      (0000007a) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mAllLoaderManagers Landroid/support/v4/util/SimpleArrayMap;
+	29      (0000007e) invoke-virtual       v4, Landroid/support/v4/util/SimpleArrayMap;->size()I
+	30      (00000084) move-result          v0
+	31      (00000086) new-array            v3, v0, [Landroid/support/v4/app/LoaderManagerImpl;
+	32      (0000008a) add-int/lit8         v1, v0, -1
+
+onStart-BB@0x8e : [ onStart-BB@0x92 onStart-BB@0xe8 ]
+	33      (0000008e) if-ltz               v1, +2d
+
+onStart-BB@0x92 : [ onStart-BB@0x8e ]
+	34      (00000092) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mAllLoaderManagers Landroid/support/v4/util/SimpleArrayMap;
+	35      (00000096) invoke-virtual       v4, v1, Landroid/support/v4/util/SimpleArrayMap;->valueAt(I)Ljava/lang/Object;
+	36      (0000009c) move-result-object   v4
+	37      (0000009e) check-cast           v4, Landroid/support/v4/app/LoaderManagerImpl;
+	38      (000000a2) aput-object          v4, v3, v1
+	39      (000000a6) add-int/lit8         v1, v1, -1
+	40      (000000aa) goto                 -e
+
+onStart-BB@0xac : [ onStart-BB@0xb4 onStart-BB@0x64 ]
+	41      (000000ac) iget-boolean         v4, v8, Landroid/support/v4/app/FragmentActivity;->mCheckedForLoaderManager Z
+	42      (000000b0) if-nez               v4, -26
+
+onStart-BB@0xb4 : [ onStart-BB@0xd0 onStart-BB@0x64 ]
+	43      (000000b4) const-string         v4, '(root)'
+	44      (000000b8) iget-boolean         v5, v8, Landroid/support/v4/app/FragmentActivity;->mLoadersStarted Z
+	45      (000000bc) invoke-virtual       v8, v4, v5, v7, Landroid/support/v4/app/FragmentActivity;->getLoaderManager(Ljava/lang/String; Z Z)Landroid/support/v4/app/LoaderManagerImpl;
+	46      (000000c2) move-result-object   v4
+	47      (000000c4) iput-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mLoaderManager Landroid/support/v4/app/LoaderManagerImpl;
+	48      (000000c8) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mLoaderManager Landroid/support/v4/app/LoaderManagerImpl;
+	49      (000000cc) if-eqz               v4, -34
+
+onStart-BB@0xd0 : [ onStart-BB@0xdc onStart-BB@0x64 ]
+	50      (000000d0) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mLoaderManager Landroid/support/v4/app/LoaderManagerImpl;
+	51      (000000d4) iget-boolean         v4, v4, Landroid/support/v4/app/LoaderManagerImpl;->mStarted Z
+	52      (000000d8) if-nez               v4, -3a
+
+onStart-BB@0xdc : [ onStart-BB@0x64 ]
+	53      (000000dc) iget-object          v4, v8, Landroid/support/v4/app/FragmentActivity;->mLoaderManager Landroid/support/v4/app/LoaderManagerImpl;
+	54      (000000e0) invoke-virtual       v4, Landroid/support/v4/app/LoaderManagerImpl;->doStart()V
+	55      (000000e6) goto                 -41
+
+onStart-BB@0xe8 : [ onStart-BB@0xea ]
+	56      (000000e8) const/4              v1, 0
+
+onStart-BB@0xea : [ onStart-BB@0xee onStart-BB@0x104 ]
+	57      (000000ea) if-ge                v1, v0, +d
+
+onStart-BB@0xee : [ onStart-BB@0xea ]
+	58      (000000ee) aget-object          v2, v3, v1
+	59      (000000f2) invoke-virtual       v2, Landroid/support/v4/app/LoaderManagerImpl;->finishRetain()V
+	60      (000000f8) invoke-virtual       v2, Landroid/support/v4/app/LoaderManagerImpl;->doReportStart()V
+	61      (000000fe) add-int/lit8         v1, v1, 1
+	62      (00000102) goto                 -c
+
+onStart-BB@0x104 : 
+	63      (00000104) return-void          
+

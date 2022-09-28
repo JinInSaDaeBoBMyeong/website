@@ -1,0 +1,74 @@
+# Lorg/webrtc/EglRenderer;->setFpsReduction(F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:float
+#
+# - return:void
+
+setFpsReduction-BB@0x0 : [ setFpsReduction-BB@0x32 ]
+	0       (00000000) new-instance         v2, Ljava/lang/StringBuilder;
+	1       (00000004) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	2       (0000000a) const-string         v3, 'setFpsReduction: '
+	3       (0000000e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	4       (00000014) move-result-object   v2
+	5       (00000016) invoke-virtual       v2, v7, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+	6       (0000001c) move-result-object   v2
+	7       (0000001e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	8       (00000024) move-result-object   v2
+	9       (00000026) invoke-direct        v6, v2, Lorg/webrtc/EglRenderer;->logD(Ljava/lang/String;)V
+	10      (0000002c) iget-object          v3, v6, Lorg/webrtc/EglRenderer;->fpsReductionLock Ljava/lang/Object;
+	11      (00000030) monitor-enter        v3
+
+setFpsReduction-BB@0x32 : [ setFpsReduction-BB@0x40 setFpsReduction-BB@0x6a ]
+	12      (00000032) iget-wide            v0, v6, Lorg/webrtc/EglRenderer;->minRenderPeriodNs J
+	13      (00000036) const/4              v2, 0
+	14      (00000038) cmpg-float           v2, v7, v2
+	15      (0000003c) if-gtz               v2, +17
+	32:89
+	(Ljava/lang/Throwable; -> 86 setFpsReduction-BB@0x86)
+
+setFpsReduction-BB@0x40 : [ setFpsReduction-BB@0x4e ]
+	16      (00000040) const-wide           v4, 9223372036854775807 # [nan]
+	17      (0000004a) iput-wide            v4, v6, Lorg/webrtc/EglRenderer;->minRenderPeriodNs J
+	32:89
+	(Ljava/lang/Throwable; -> 86 setFpsReduction-BB@0x86)
+
+setFpsReduction-BB@0x4e : [ setFpsReduction-BB@0x5a setFpsReduction-BB@0x66 ]
+	18      (0000004e) iget-wide            v4, v6, Lorg/webrtc/EglRenderer;->minRenderPeriodNs J
+	19      (00000052) cmp-long             v2, v4, v0
+	20      (00000056) if-eqz               v2, +8
+	32:89
+	(Ljava/lang/Throwable; -> 86 setFpsReduction-BB@0x86)
+
+setFpsReduction-BB@0x5a : [ setFpsReduction-BB@0x66 ]
+	21      (0000005a) invoke-static        Ljava/lang/System;->nanoTime()J
+	22      (00000060) move-result-wide     v4
+	23      (00000062) iput-wide            v4, v6, Lorg/webrtc/EglRenderer;->nextFrameTimeNs J
+	32:89
+	(Ljava/lang/Throwable; -> 86 setFpsReduction-BB@0x86)
+
+setFpsReduction-BB@0x66 : 
+	24      (00000066) monitor-exit         v3
+	25      (00000068) return-void          
+	32:89
+	(Ljava/lang/Throwable; -> 86 setFpsReduction-BB@0x86)
+
+setFpsReduction-BB@0x6a : [ setFpsReduction-BB@0x4e ]
+	26      (0000006a) sget-object          v2, Ljava/util/concurrent/TimeUnit;->SECONDS Ljava/util/concurrent/TimeUnit;
+	27      (0000006e) const-wide/16        v4, 1 # [1.0]
+	28      (00000072) invoke-virtual       v2, v4, v5, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+	29      (00000078) move-result-wide     v4
+	30      (0000007a) long-to-float        v2, v4
+	31      (0000007c) div-float/2addr      v2, v7
+	32      (0000007e) float-to-long        v4, v2
+	33      (00000080) iput-wide            v4, v6, Lorg/webrtc/EglRenderer;->minRenderPeriodNs J
+	34      (00000084) goto                 -1b
+	32:89
+	(Ljava/lang/Throwable; -> 86 setFpsReduction-BB@0x86)
+
+setFpsReduction-BB@0x86 : 
+	35      (00000086) move-exception       v2
+	36      (00000088) monitor-exit         v3
+	37      (0000008a) throw                v2
+

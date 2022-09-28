@@ -1,0 +1,41 @@
+# Landroid/support/v4/app/FragmentActivity;->startActivityFromFragment(Landroid/support/v4/app/Fragment; Landroid/content/Intent; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.v4.app.Fragment
+# - v4:android.content.Intent
+# - v5:int
+#
+# - return:void
+
+startActivityFromFragment-BB@0x0 : [ startActivityFromFragment-BB@0x6 startActivityFromFragment-BB@0xe ]
+	0       (00000000) const/4              v0, -1
+	1       (00000002) if-ne                v5, v0, +6
+
+startActivityFromFragment-BB@0x6 : [ startActivityFromFragment-BB@0xc ]
+	2       (00000006) invoke-super         v2, v4, v0, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent; I)V
+
+startActivityFromFragment-BB@0xc : 
+	3       (0000000c) return-void          
+
+startActivityFromFragment-BB@0xe : [ startActivityFromFragment-BB@0x18 startActivityFromFragment-BB@0x28 ]
+	4       (0000000e) const/high16         v0, -1 # [nan]
+	5       (00000012) and-int/2addr        v0, v5
+	6       (00000014) if-eqz               v0, +a
+
+startActivityFromFragment-BB@0x18 : 
+	7       (00000018) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	8       (0000001c) const-string         v1, 'Can only use lower 16 bits for requestCode'
+	9       (00000020) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	10      (00000026) throw                v0
+
+startActivityFromFragment-BB@0x28 : [ startActivityFromFragment-BB@0xc ]
+	11      (00000028) iget                 v0, v3, Landroid/support/v4/app/Fragment;->mIndex I
+	12      (0000002c) add-int/lit8         v0, v0, 1
+	13      (00000030) shl-int/lit8         v0, v0, 16
+	14      (00000034) const                v1, 65535 # [9.183409485952689e-41]
+	15      (0000003a) and-int/2addr        v1, v5
+	16      (0000003c) add-int/2addr        v0, v1
+	17      (0000003e) invoke-super         v2, v4, v0, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent; I)V
+	18      (00000044) goto                 -1c
+

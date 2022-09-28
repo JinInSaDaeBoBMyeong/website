@@ -1,0 +1,70 @@
+# Lorg/webrtc/EglBase14;->createSurfaceInternal(Ljava/lang/Object;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Object
+#
+# - return:void
+
+createSurfaceInternal-BB@0x0 : [ createSurfaceInternal-BB@0xa createSurfaceInternal-BB@0x22 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) instance-of          v1, v5, Landroid/view/Surface;
+	2       (00000006) if-nez               v1, +e
+
+createSurfaceInternal-BB@0xa : [ createSurfaceInternal-BB@0x12 createSurfaceInternal-BB@0x22 ]
+	3       (0000000a) instance-of          v1, v5, Landroid/graphics/SurfaceTexture;
+	4       (0000000e) if-nez               v1, +a
+
+createSurfaceInternal-BB@0x12 : 
+	5       (00000012) new-instance         v1, Ljava/lang/IllegalStateException;
+	6       (00000016) const-string         v2, 'Input must be either a Surface or SurfaceTexture'
+	7       (0000001a) invoke-direct        v1, v2, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	8       (00000020) throw                v1
+
+createSurfaceInternal-BB@0x22 : [ createSurfaceInternal-BB@0x34 createSurfaceInternal-BB@0x44 ]
+	9       (00000022) invoke-direct        v4, Lorg/webrtc/EglBase14;->checkIsNotReleased()V
+	10      (00000028) iget-object          v1, v4, Lorg/webrtc/EglBase14;->eglSurface Landroid/opengl/EGLSurface;
+	11      (0000002c) sget-object          v2, Landroid/opengl/EGL14;->EGL_NO_SURFACE Landroid/opengl/EGLSurface;
+	12      (00000030) if-eq                v1, v2, +a
+
+createSurfaceInternal-BB@0x34 : 
+	13      (00000034) new-instance         v1, Ljava/lang/RuntimeException;
+	14      (00000038) const-string         v2, 'Already has an EGLSurface'
+	15      (0000003c) invoke-direct        v1, v2, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	16      (00000042) throw                v1
+
+createSurfaceInternal-BB@0x44 : [ createSurfaceInternal-BB@0x72 createSurfaceInternal-BB@0xb4 ]
+	17      (00000044) const/4              v1, 1
+	18      (00000046) new-array            v0, v1, [I
+	19      (0000004a) const/16             v1, 12344
+	20      (0000004e) aput                 v1, v0, v3
+	21      (00000052) iget-object          v1, v4, Lorg/webrtc/EglBase14;->eglDisplay Landroid/opengl/EGLDisplay;
+	22      (00000056) iget-object          v2, v4, Lorg/webrtc/EglBase14;->eglConfig Landroid/opengl/EGLConfig;
+	23      (0000005a) invoke-static        v1, v2, v5, v0, v3, Landroid/opengl/EGL14;->eglCreateWindowSurface(Landroid/opengl/EGLDisplay; Landroid/opengl/EGLConfig; Ljava/lang/Object; [I I)Landroid/opengl/EGLSurface;
+	24      (00000060) move-result-object   v1
+	25      (00000062) iput-object          v1, v4, Lorg/webrtc/EglBase14;->eglSurface Landroid/opengl/EGLSurface;
+	26      (00000066) iget-object          v1, v4, Lorg/webrtc/EglBase14;->eglSurface Landroid/opengl/EGLSurface;
+	27      (0000006a) sget-object          v2, Landroid/opengl/EGL14;->EGL_NO_SURFACE Landroid/opengl/EGLSurface;
+	28      (0000006e) if-ne                v1, v2, +23
+
+createSurfaceInternal-BB@0x72 : 
+	29      (00000072) new-instance         v1, Ljava/lang/RuntimeException;
+	30      (00000076) new-instance         v2, Ljava/lang/StringBuilder;
+	31      (0000007a) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	32      (00000080) const-string         v3, 'Failed to create window surface: 0x'
+	33      (00000084) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	34      (0000008a) move-result-object   v2
+	35      (0000008c) invoke-static        Landroid/opengl/EGL14;->eglGetError()I
+	36      (00000092) move-result          v3
+	37      (00000094) invoke-static        v3, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	38      (0000009a) move-result-object   v3
+	39      (0000009c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	40      (000000a2) move-result-object   v2
+	41      (000000a4) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	42      (000000aa) move-result-object   v2
+	43      (000000ac) invoke-direct        v1, v2, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	44      (000000b2) throw                v1
+
+createSurfaceInternal-BB@0xb4 : 
+	45      (000000b4) return-void          
+

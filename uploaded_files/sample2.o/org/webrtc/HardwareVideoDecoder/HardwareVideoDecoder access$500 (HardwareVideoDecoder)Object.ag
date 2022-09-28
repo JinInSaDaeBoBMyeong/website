@@ -1,0 +1,12 @@
+# Lorg/webrtc/HardwareVideoDecoder;->access$500(Lorg/webrtc/HardwareVideoDecoder;)Ljava/lang/Object; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.HardwareVideoDecoder
+#
+# - return:java.lang.Object
+
+access$500-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/HardwareVideoDecoder;->activeOutputBuffersLock Ljava/lang/Object;
+	1       (00000004) return-object        v0
+

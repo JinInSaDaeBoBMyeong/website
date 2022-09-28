@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/ViewCompat$JBViewCompatImpl;->postOnAnimation(Landroid/view/View; Ljava/lang/Runnable;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.View
+# - v2:java.lang.Runnable
+#
+# - return:void
+
+postOnAnimation-BB@0x0 : 
+	0       (00000000) invoke-static        v1, v2, Landroid/support/v4/view/ViewCompatJB;->postOnAnimation(Landroid/view/View; Ljava/lang/Runnable;)V
+	1       (00000006) return-void          
+

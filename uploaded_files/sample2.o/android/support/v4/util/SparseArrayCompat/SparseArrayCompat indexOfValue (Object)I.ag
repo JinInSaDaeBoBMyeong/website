@@ -1,0 +1,38 @@
+# Landroid/support/v4/util/SparseArrayCompat;->indexOfValue(Ljava/lang/Object;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:int
+
+indexOfValue-BB@0x0 : [ indexOfValue-BB@0x8 indexOfValue-BB@0xe ]
+	0       (00000000) iget-boolean         v1, v2, Landroid/support/v4/util/SparseArrayCompat;->mGarbage Z
+	1       (00000004) if-eqz               v1, +5
+
+indexOfValue-BB@0x8 : [ indexOfValue-BB@0xe ]
+	2       (00000008) invoke-direct        v2, Landroid/support/v4/util/SparseArrayCompat;->gc()V
+
+indexOfValue-BB@0xe : [ indexOfValue-BB@0x10 ]
+	3       (0000000e) const/4              v0, 0
+
+indexOfValue-BB@0x10 : [ indexOfValue-BB@0x18 indexOfValue-BB@0x2c ]
+	4       (00000010) iget                 v1, v2, Landroid/support/v4/util/SparseArrayCompat;->mSize I
+	5       (00000014) if-ge                v0, v1, +c
+
+indexOfValue-BB@0x18 : [ indexOfValue-BB@0x24 indexOfValue-BB@0x26 ]
+	6       (00000018) iget-object          v1, v2, Landroid/support/v4/util/SparseArrayCompat;->mValues [Ljava/lang/Object;
+	7       (0000001c) aget-object          v1, v1, v0
+	8       (00000020) if-ne                v1, v3, +3
+
+indexOfValue-BB@0x24 : 
+	9       (00000024) return               v0
+
+indexOfValue-BB@0x26 : [ indexOfValue-BB@0x10 ]
+	10      (00000026) add-int/lit8         v0, v0, 1
+	11      (0000002a) goto                 -d
+
+indexOfValue-BB@0x2c : [ indexOfValue-BB@0x24 ]
+	12      (0000002c) const/4              v0, -1
+	13      (0000002e) goto                 -5
+

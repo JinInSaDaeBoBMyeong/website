@@ -1,0 +1,19 @@
+# Lorg/webrtc/ScreenCapturerAndroid;-><init>(Landroid/content/Intent; Landroid/media/projection/MediaProjection$Callback;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Intent
+# - v4:android.media.projection.MediaProjection$Callback
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) const-wide/16        v0, 0 # [0.0]
+	2       (0000000a) iput-wide            v0, v2, Lorg/webrtc/ScreenCapturerAndroid;->numCapturedFrames J
+	3       (0000000e) const/4              v0, 0
+	4       (00000010) iput-boolean         v0, v2, Lorg/webrtc/ScreenCapturerAndroid;->isDisposed Z
+	5       (00000014) iput-object          v3, v2, Lorg/webrtc/ScreenCapturerAndroid;->mediaProjectionPermissionResultData Landroid/content/Intent;
+	6       (00000018) iput-object          v4, v2, Lorg/webrtc/ScreenCapturerAndroid;->mediaProjectionCallback Landroid/media/projection/MediaProjection$Callback;
+	7       (0000001c) return-void          
+

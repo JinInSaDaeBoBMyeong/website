@@ -1,0 +1,18 @@
+# Ltev/piqgahor/jzVO9lP4;->yStpazw33441uh(Landroid/content/Context; Ljava/lang/String; Landroid/content/Intent;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:java.lang.String
+# - v4:android.content.Intent
+#
+# - return:void
+
+yStpazw33441uh-BB@0x0 : 
+	0       (00000000) invoke-static        v2, v3, Ltev/piqgahor/jzVO9lP4;->TqTSxKAK574(Landroid/content/Context; Ljava/lang/String;)Landroid/content/Intent;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const-string         v1, 'i'
+	3       (0000000c) invoke-virtual       v0, v1, v4, Landroid/content/Intent;->putExtra(Ljava/lang/String; Landroid/os/Parcelable;)Landroid/content/Intent;
+	4       (00000012) invoke-static        v2, v0, Ltev/piqgahor/jzVO9lP4;->IrBTahxSZ32p(Landroid/content/Context; Landroid/content/Intent;)V
+	5       (00000018) return-void          
+

@@ -1,0 +1,19 @@
+# Landroid/support/v4/app/Fragment;->performLowMemory()V [access_flags=]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+performLowMemory-BB@0x0 : [ performLowMemory-BB@0xe performLowMemory-BB@0x18 ]
+	0       (00000000) invoke-virtual       v1, Landroid/support/v4/app/Fragment;->onLowMemory()V
+	1       (00000006) iget-object          v0, v1, Landroid/support/v4/app/Fragment;->mChildFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	2       (0000000a) if-eqz               v0, +7
+
+performLowMemory-BB@0xe : [ performLowMemory-BB@0x18 ]
+	3       (0000000e) iget-object          v0, v1, Landroid/support/v4/app/Fragment;->mChildFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	4       (00000012) invoke-virtual       v0, Landroid/support/v4/app/FragmentManagerImpl;->dispatchLowMemory()V
+
+performLowMemory-BB@0x18 : 
+	5       (00000018) return-void          
+

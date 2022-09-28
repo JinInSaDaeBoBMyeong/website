@@ -1,0 +1,14 @@
+# Landroid/support/v4/content/ModernAsyncTask$3;-><init>(Landroid/support/v4/content/ModernAsyncTask; Ljava/util/concurrent/Callable;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.content.ModernAsyncTask
+# - v2:java.util.concurrent.Callable
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroid/support/v4/content/ModernAsyncTask$3;->this$0 Landroid/support/v4/content/ModernAsyncTask;
+	1       (00000004) invoke-direct        v0, v2, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
+	2       (0000000a) return-void          
+

@@ -1,0 +1,34 @@
+# Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->doCheck(Ljava/lang/CharSequence; I I)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.CharSequence
+# - v3:int
+# - v4:int
+#
+# - return:boolean
+
+doCheck-BB@0x0 : [ D:doCheck-BB@0x12 0:doCheck-BB@0x1c 1:doCheck-BB@0x20 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->mAlgorithm Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;
+	1       (00000004) invoke-interface     v0, v2, v3, v4, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;->checkRtl(Ljava/lang/CharSequence; I I)I
+	2       (0000000a) move-result          v0
+	3       (0000000c) packed-switch        v0, +c (0x24)
+
+doCheck-BB@0x12 : [ doCheck-BB@0x1a ]
+	4       (00000012) invoke-virtual       v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;->defaultIsRtl()Z
+	5       (00000018) move-result          v0
+
+doCheck-BB@0x1a : 
+	6       (0000001a) return               v0
+
+doCheck-BB@0x1c : [ doCheck-BB@0x1a ]
+	7       (0000001c) const/4              v0, 1
+	8       (0000001e) goto                 -2
+
+doCheck-BB@0x20 : [ doCheck-BB@0x1a ]
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -4
+
+doCheck-BB@0x24 : 
+	11      (00000024) packed-switch-payload 0 1
+

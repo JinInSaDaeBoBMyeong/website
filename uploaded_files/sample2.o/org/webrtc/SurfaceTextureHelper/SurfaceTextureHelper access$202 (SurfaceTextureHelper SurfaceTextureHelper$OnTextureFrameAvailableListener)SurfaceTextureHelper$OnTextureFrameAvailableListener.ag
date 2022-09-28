@@ -1,0 +1,13 @@
+# Lorg/webrtc/SurfaceTextureHelper;->access$202(Lorg/webrtc/SurfaceTextureHelper; Lorg/webrtc/SurfaceTextureHelper$OnTextureFrameAvailableListener;)Lorg/webrtc/SurfaceTextureHelper$OnTextureFrameAvailableListener; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:org.webrtc.SurfaceTextureHelper
+# - v1:org.webrtc.SurfaceTextureHelper$OnTextureFrameAvailableListener
+#
+# - return:org.webrtc.SurfaceTextureHelper$OnTextureFrameAvailableListener
+
+access$202-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lorg/webrtc/SurfaceTextureHelper;->listener Lorg/webrtc/SurfaceTextureHelper$OnTextureFrameAvailableListener;
+	1       (00000004) return-object        v1
+

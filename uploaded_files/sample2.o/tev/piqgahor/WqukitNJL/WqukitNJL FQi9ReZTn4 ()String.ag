@@ -1,0 +1,22 @@
+# Ltev/piqgahor/WqukitNJL;->FQi9ReZTn4()Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:java.lang.String
+
+FQi9ReZTn4-BB@0x0 : [ FQi9ReZTn4-BB@0x8 FQi9ReZTn4-BB@0x1c ]
+	0       (00000000) sget-object          v0, Ltev/piqgahor/WqukitNJL;->BDuJoAUs Ljava/lang/String;
+	1       (00000004) if-nez               v0, +c
+
+FQi9ReZTn4-BB@0x8 : [ FQi9ReZTn4-BB@0x1c ]
+	2       (00000008) invoke-static        Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) invoke-virtual       v0, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+	5       (00000016) move-result-object   v0
+	6       (00000018) sput-object          v0, Ltev/piqgahor/WqukitNJL;->BDuJoAUs Ljava/lang/String;
+
+FQi9ReZTn4-BB@0x1c : 
+	7       (0000001c) sget-object          v0, Ltev/piqgahor/WqukitNJL;->BDuJoAUs Ljava/lang/String;
+	8       (00000020) return-object        v0
+

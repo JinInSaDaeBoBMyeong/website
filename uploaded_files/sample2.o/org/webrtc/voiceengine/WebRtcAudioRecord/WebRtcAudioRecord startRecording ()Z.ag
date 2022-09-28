@@ -1,0 +1,116 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioRecord;->startRecording()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v9
+#
+# - return:boolean
+
+startRecording-BB@0x0 : [ startRecording-BB@0x26 startRecording-BB@0x70 ]
+	0       (00000000) const/4              v8, 3
+	1       (00000002) const/4              v3, 1
+	2       (00000004) const/4              v4, 0
+	3       (00000006) iget-object          v2, v9, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->threadChecker Lorg/webrtc/ThreadUtils$ThreadChecker;
+	4       (0000000a) invoke-virtual       v2, Lorg/webrtc/ThreadUtils$ThreadChecker;->checkIsOnValidThread()V
+	5       (00000010) const-string         v2, 'WebRtcAudioRecord'
+	6       (00000014) const-string         v5, 'startRecording'
+	7       (00000018) invoke-static        v2, v5, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	8       (0000001e) iget-object          v2, v9, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->audioRecord Landroid/media/AudioRecord;
+	9       (00000022) if-eqz               v2, +27
+
+startRecording-BB@0x26 : [ startRecording-BB@0x28 ]
+	10      (00000026) move                 v2, v3
+
+startRecording-BB@0x28 : [ startRecording-BB@0x36 startRecording-BB@0x74 ]
+	11      (00000028) invoke-static        v2, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->assertTrue(Z)V
+	12      (0000002e) iget-object          v2, v9, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->audioThread Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordThread;
+	13      (00000032) if-nez               v2, +21
+
+startRecording-BB@0x36 : [ startRecording-BB@0x38 ]
+	14      (00000036) move                 v2, v3
+
+startRecording-BB@0x38 : [ startRecording-BB@0x3e ]
+	15      (00000038) invoke-static        v2, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->assertTrue(Z)V
+
+startRecording-BB@0x3e : [ startRecording-BB@0x4a ]
+	16      (0000003e) iget-object          v2, v9, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->audioRecord Landroid/media/AudioRecord;
+	17      (00000042) invoke-virtual       v2, Landroid/media/AudioRecord;->startRecording()V
+	18      (00000048) const/4              v1, 0
+	3e:47
+	(Ljava/lang/IllegalStateException; -> 78 startRecording-BB@0x78)
+
+startRecording-BB@0x4a : [ startRecording-BB@0x5a startRecording-BB@0xb4 ]
+	19      (0000004a) iget-object          v2, v9, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->audioRecord Landroid/media/AudioRecord;
+	20      (0000004e) invoke-virtual       v2, Landroid/media/AudioRecord;->getRecordingState()I
+	21      (00000054) move-result          v2
+	22      (00000056) if-eq                v2, v8, +2f
+
+startRecording-BB@0x5a : [ startRecording-BB@0x64 startRecording-BB@0xb4 ]
+	23      (0000005a) add-int/lit8         v1, v1, 1
+	24      (0000005e) const/4              v2, 2
+	25      (00000060) if-ge                v1, v2, +2a
+
+startRecording-BB@0x64 : [ startRecording-BB@0x4a ]
+	26      (00000064) const-wide/16        v6, 200 # [200.0]
+	27      (00000068) invoke-direct        v9, v6, v7, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->threadSleep(J)V
+	28      (0000006e) goto                 -12
+
+startRecording-BB@0x70 : [ startRecording-BB@0x28 ]
+	29      (00000070) move                 v2, v4
+	30      (00000072) goto                 -25
+
+startRecording-BB@0x74 : [ startRecording-BB@0x38 ]
+	31      (00000074) move                 v2, v4
+	32      (00000076) goto                 -1f
+
+startRecording-BB@0x78 : [ startRecording-BB@0xb2 ]
+	33      (00000078) move-exception       v0
+	34      (0000007a) sget-object          v2, Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordStartErrorCode;->AUDIO_RECORD_START_EXCEPTION Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordStartErrorCode;
+	35      (0000007e) new-instance         v3, Ljava/lang/StringBuilder;
+	36      (00000082) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	37      (00000088) const-string         v5, 'AudioRecord.startRecording failed: '
+	38      (0000008c) invoke-virtual       v3, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	39      (00000092) move-result-object   v3
+	40      (00000094) invoke-virtual       v0, Ljava/lang/IllegalStateException;->getMessage()Ljava/lang/String;
+	41      (0000009a) move-result-object   v5
+	42      (0000009c) invoke-virtual       v3, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	43      (000000a2) move-result-object   v3
+	44      (000000a4) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	45      (000000aa) move-result-object   v3
+	46      (000000ac) invoke-direct        v9, v2, v3, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->reportWebRtcAudioRecordStartError(Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordStartErrorCode; Ljava/lang/String;)V
+
+startRecording-BB@0xb2 : 
+	47      (000000b2) return               v4
+
+startRecording-BB@0xb4 : [ startRecording-BB@0xc4 startRecording-BB@0x102 ]
+	48      (000000b4) iget-object          v2, v9, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->audioRecord Landroid/media/AudioRecord;
+	49      (000000b8) invoke-virtual       v2, Landroid/media/AudioRecord;->getRecordingState()I
+	50      (000000be) move-result          v2
+	51      (000000c0) if-eq                v2, v8, +21
+
+startRecording-BB@0xc4 : [ startRecording-BB@0xb2 ]
+	52      (000000c4) sget-object          v2, Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordStartErrorCode;->AUDIO_RECORD_START_STATE_MISMATCH Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordStartErrorCode;
+	53      (000000c8) new-instance         v3, Ljava/lang/StringBuilder;
+	54      (000000cc) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	55      (000000d2) const-string         v5, 'AudioRecord.startRecording failed - incorrect state :'
+	56      (000000d6) invoke-virtual       v3, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	57      (000000dc) move-result-object   v3
+	58      (000000de) iget-object          v5, v9, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->audioRecord Landroid/media/AudioRecord;
+	59      (000000e2) invoke-virtual       v5, Landroid/media/AudioRecord;->getRecordingState()I
+	60      (000000e8) move-result          v5
+	61      (000000ea) invoke-virtual       v3, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	62      (000000f0) move-result-object   v3
+	63      (000000f2) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	64      (000000f8) move-result-object   v3
+	65      (000000fa) invoke-direct        v9, v2, v3, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->reportWebRtcAudioRecordStartError(Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordStartErrorCode; Ljava/lang/String;)V
+	66      (00000100) goto                 -27
+
+startRecording-BB@0x102 : [ startRecording-BB@0xb2 ]
+	67      (00000102) new-instance         v2, Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordThread;
+	68      (00000106) const-string         v4, 'AudioRecordJavaThread'
+	69      (0000010a) invoke-direct        v2, v9, v4, Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordThread;-><init>(Lorg/webrtc/voiceengine/WebRtcAudioRecord; Ljava/lang/String;)V
+	70      (00000110) iput-object          v2, v9, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->audioThread Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordThread;
+	71      (00000114) iget-object          v2, v9, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->audioThread Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordThread;
+	72      (00000118) invoke-virtual       v2, Lorg/webrtc/voiceengine/WebRtcAudioRecord$AudioRecordThread;->start()V
+	73      (0000011e) move                 v4, v3
+	74      (00000120) goto                 -37
+

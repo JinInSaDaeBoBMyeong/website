@@ -1,0 +1,12 @@
+# Landroid/support/v4/widget/DrawerLayout;->closeDrawers()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+closeDrawers-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-virtual       v1, v0, Landroid/support/v4/widget/DrawerLayout;->closeDrawers(Z)V
+	2       (00000008) return-void          
+

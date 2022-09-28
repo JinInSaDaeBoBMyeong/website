@@ -1,0 +1,106 @@
+# Lorg/webrtc/DynamicBitrateAdjuster;->reportEncodedFrame(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v14
+# - v15:int
+#
+# - return:void
+
+reportEncodedFrame-BB@0x0 : [ reportEncodedFrame-BB@0x8 reportEncodedFrame-BB@0xa ]
+	0       (00000000) iget                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->targetFps I
+	1       (00000004) if-nez               v1, +3
+
+reportEncodedFrame-BB@0x8 : 
+	2       (00000008) return-void          
+
+reportEncodedFrame-BB@0xa : [ reportEncodedFrame-BB@0x98 reportEncodedFrame-BB@0x8 ]
+	3       (0000000a) iget                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->targetBitrateBps I
+	4       (0000000e) int-to-double        v8, v1
+	5       (00000010) const-wide/high16    v10, 16416 # [8.0]
+	6       (00000014) div-double/2addr     v8, v10
+	7       (00000016) iget                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->targetFps I
+	8       (0000001a) int-to-double        v10, v1
+	9       (0000001c) div-double           v6, v8, v10
+	10      (00000020) iget-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	11      (00000024) int-to-double        v10, v15
+	12      (00000026) sub-double/2addr     v10, v6
+	13      (00000028) add-double/2addr     v8, v10
+	14      (0000002a) iput-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	15      (0000002e) iget-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->timeSinceLastAdjustmentMs D
+	16      (00000032) const-wide           v10, 4652007308841189376 # [1000.0]
+	17      (0000003c) iget                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->targetFps I
+	18      (00000040) int-to-double        v12, v1
+	19      (00000042) div-double/2addr     v10, v12
+	20      (00000044) add-double/2addr     v8, v10
+	21      (00000046) iput-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->timeSinceLastAdjustmentMs D
+	22      (0000004a) iget                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->targetBitrateBps I
+	23      (0000004e) int-to-double        v8, v1
+	24      (00000050) const-wide/high16    v10, 16416 # [8.0]
+	25      (00000054) div-double           v4, v8, v10
+	26      (00000058) const-wide/high16    v8, 16392 # [3.0]
+	27      (0000005c) mul-double           v2, v8, v4
+	28      (00000060) iget-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	29      (00000064) invoke-static        v8, v9, v2, v3, Ljava/lang/Math;->min(D D)D
+	30      (0000006a) move-result-wide     v8
+	31      (0000006c) iput-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	32      (00000070) iget-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	33      (00000074) neg-double           v10, v2
+	34      (00000076) invoke-static        v8, v9, v10, v11, Ljava/lang/Math;->max(D D)D
+	35      (0000007c) move-result-wide     v8
+	36      (0000007e) iput-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	37      (00000082) iget-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->timeSinceLastAdjustmentMs D
+	38      (00000086) const-wide           v10, 4658815484840378368 # [3000.0]
+	39      (00000090) cmpg-double          v1, v8, v10
+	40      (00000094) if-lez               v1, -46
+
+reportEncodedFrame-BB@0x98 : [ reportEncodedFrame-BB@0xa4 reportEncodedFrame-BB@0xde ]
+	41      (00000098) iget-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	42      (0000009c) cmpl-double          v1, v8, v4
+	43      (000000a0) if-lez               v1, +1f
+
+reportEncodedFrame-BB@0xa4 : [ reportEncodedFrame-BB@0xd4 ]
+	44      (000000a4) iget-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	45      (000000a8) div-double/2addr     v8, v4
+	46      (000000aa) const-wide/high16    v10, 16352 # [0.5]
+	47      (000000ae) add-double/2addr     v8, v10
+	48      (000000b0) double-to-int        v0, v8
+	49      (000000b2) iget                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->bitrateAdjustmentScaleExp I
+	50      (000000b6) sub-int/2addr        v1, v0
+	51      (000000b8) iput                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->bitrateAdjustmentScaleExp I
+	52      (000000bc) iget                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->bitrateAdjustmentScaleExp I
+	53      (000000c0) const/16             v8, -20
+	54      (000000c4) invoke-static        v1, v8, Ljava/lang/Math;->max(I I)I
+	55      (000000ca) move-result          v1
+	56      (000000cc) iput                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->bitrateAdjustmentScaleExp I
+	57      (000000d0) iput-wide            v4, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+
+reportEncodedFrame-BB@0xd4 : [ reportEncodedFrame-BB@0x8 ]
+	58      (000000d4) const-wide/16        v8, 0 # [0.0]
+	59      (000000d8) iput-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->timeSinceLastAdjustmentMs D
+	60      (000000dc) goto                 -6a
+
+reportEncodedFrame-BB@0xde : [ reportEncodedFrame-BB@0xec reportEncodedFrame-BB@0xd4 ]
+	61      (000000de) iget-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	62      (000000e2) neg-double           v10, v4
+	63      (000000e4) cmpg-double          v1, v8, v10
+	64      (000000e8) if-gez               v1, -a
+
+reportEncodedFrame-BB@0xec : [ reportEncodedFrame-BB@0xd4 ]
+	65      (000000ec) iget-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	66      (000000f0) neg-double           v8, v8
+	67      (000000f2) div-double/2addr     v8, v4
+	68      (000000f4) const-wide/high16    v10, 16352 # [0.5]
+	69      (000000f8) add-double/2addr     v8, v10
+	70      (000000fa) double-to-int        v0, v8
+	71      (000000fc) iget                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->bitrateAdjustmentScaleExp I
+	72      (00000100) add-int/2addr        v1, v0
+	73      (00000102) iput                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->bitrateAdjustmentScaleExp I
+	74      (00000106) iget                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->bitrateAdjustmentScaleExp I
+	75      (0000010a) const/16             v8, 20
+	76      (0000010e) invoke-static        v1, v8, Ljava/lang/Math;->min(I I)I
+	77      (00000114) move-result          v1
+	78      (00000116) iput                 v1, v14, Lorg/webrtc/DynamicBitrateAdjuster;->bitrateAdjustmentScaleExp I
+	79      (0000011a) neg-double           v8, v4
+	80      (0000011c) iput-wide            v8, v14, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	81      (00000120) goto                 -26
+

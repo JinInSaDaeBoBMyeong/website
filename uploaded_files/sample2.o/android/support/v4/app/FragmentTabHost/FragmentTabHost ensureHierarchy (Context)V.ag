@@ -1,0 +1,54 @@
+# Landroid/support/v4/app/FragmentTabHost;->ensureHierarchy(Landroid/content/Context;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.content.Context
+#
+# - return:void
+
+ensureHierarchy-BB@0x0 : [ ensureHierarchy-BB@0x18 ensureHierarchy-BB@0xb8 ]
+	0       (00000000) const                v4, 16908307 # [2.387728225041936e-38]
+	1       (00000006) const/4              v7, 0
+	2       (00000008) const/4              v6, 0
+	3       (0000000a) const/4              v5, -1
+	4       (0000000c) invoke-virtual       v8, v4, Landroid/support/v4/app/FragmentTabHost;->findViewById(I)Landroid/view/View;
+	5       (00000012) move-result-object   v3
+	6       (00000014) if-nez               v3, +52
+
+ensureHierarchy-BB@0x18 : [ ensureHierarchy-BB@0xb8 ]
+	7       (00000018) new-instance         v1, Landroid/widget/LinearLayout;
+	8       (0000001c) invoke-direct        v1, v9, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+	9       (00000022) const/4              v3, 1
+	10      (00000024) invoke-virtual       v1, v3, Landroid/widget/LinearLayout;->setOrientation(I)V
+	11      (0000002a) new-instance         v3, Landroid/widget/FrameLayout$LayoutParams;
+	12      (0000002e) invoke-direct        v3, v5, v5, Landroid/widget/FrameLayout$LayoutParams;-><init>(I I)V
+	13      (00000034) invoke-virtual       v8, v1, v3, Landroid/support/v4/app/FragmentTabHost;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	14      (0000003a) new-instance         v2, Landroid/widget/TabWidget;
+	15      (0000003e) invoke-direct        v2, v9, Landroid/widget/TabWidget;-><init>(Landroid/content/Context;)V
+	16      (00000044) invoke-virtual       v2, v4, Landroid/widget/TabWidget;->setId(I)V
+	17      (0000004a) invoke-virtual       v2, v6, Landroid/widget/TabWidget;->setOrientation(I)V
+	18      (00000050) new-instance         v3, Landroid/widget/LinearLayout$LayoutParams;
+	19      (00000054) const/4              v4, -2
+	20      (00000056) invoke-direct        v3, v5, v4, v7, Landroid/widget/LinearLayout$LayoutParams;-><init>(I I F)V
+	21      (0000005c) invoke-virtual       v1, v2, v3, Landroid/widget/LinearLayout;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	22      (00000062) new-instance         v0, Landroid/widget/FrameLayout;
+	23      (00000066) invoke-direct        v0, v9, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+	24      (0000006c) const                v3, 16908305 # [2.38772766452255e-38]
+	25      (00000072) invoke-virtual       v0, v3, Landroid/widget/FrameLayout;->setId(I)V
+	26      (00000078) new-instance         v3, Landroid/widget/LinearLayout$LayoutParams;
+	27      (0000007c) invoke-direct        v3, v6, v6, v7, Landroid/widget/LinearLayout$LayoutParams;-><init>(I I F)V
+	28      (00000082) invoke-virtual       v1, v0, v3, Landroid/widget/LinearLayout;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+	29      (00000088) new-instance         v0, Landroid/widget/FrameLayout;
+	30      (0000008c) invoke-direct        v0, v9, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+	31      (00000092) iput-object          v0, v8, Landroid/support/v4/app/FragmentTabHost;->mRealTabContent Landroid/widget/FrameLayout;
+	32      (00000096) iget-object          v3, v8, Landroid/support/v4/app/FragmentTabHost;->mRealTabContent Landroid/widget/FrameLayout;
+	33      (0000009a) iget                 v4, v8, Landroid/support/v4/app/FragmentTabHost;->mContainerId I
+	34      (0000009e) invoke-virtual       v3, v4, Landroid/widget/FrameLayout;->setId(I)V
+	35      (000000a4) new-instance         v3, Landroid/widget/LinearLayout$LayoutParams;
+	36      (000000a8) const/high16         v4, 16256 # [1.0]
+	37      (000000ac) invoke-direct        v3, v5, v6, v4, Landroid/widget/LinearLayout$LayoutParams;-><init>(I I F)V
+	38      (000000b2) invoke-virtual       v1, v0, v3, Landroid/widget/LinearLayout;->addView(Landroid/view/View; Landroid/view/ViewGroup$LayoutParams;)V
+
+ensureHierarchy-BB@0xb8 : 
+	39      (000000b8) return-void          
+

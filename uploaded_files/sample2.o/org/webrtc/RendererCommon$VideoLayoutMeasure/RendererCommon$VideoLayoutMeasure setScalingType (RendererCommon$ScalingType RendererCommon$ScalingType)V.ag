@@ -1,0 +1,14 @@
+# Lorg/webrtc/RendererCommon$VideoLayoutMeasure;->setScalingType(Lorg/webrtc/RendererCommon$ScalingType; Lorg/webrtc/RendererCommon$ScalingType;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.RendererCommon$ScalingType
+# - v2:org.webrtc.RendererCommon$ScalingType
+#
+# - return:void
+
+setScalingType-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lorg/webrtc/RendererCommon$VideoLayoutMeasure;->scalingTypeMatchOrientation Lorg/webrtc/RendererCommon$ScalingType;
+	1       (00000004) iput-object          v2, v0, Lorg/webrtc/RendererCommon$VideoLayoutMeasure;->scalingTypeMismatchOrientation Lorg/webrtc/RendererCommon$ScalingType;
+	2       (00000008) return-void          
+

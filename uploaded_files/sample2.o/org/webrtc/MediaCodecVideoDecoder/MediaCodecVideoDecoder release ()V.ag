@@ -1,0 +1,82 @@
+# Lorg/webrtc/MediaCodecVideoDecoder;->release()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+release-BB@0x0 : [ release-BB@0x72 release-BB@0xd6 ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) const-string         v2, 'MediaCodecVideoDecoder'
+	2       (00000006) new-instance         v3, Ljava/lang/StringBuilder;
+	3       (0000000a) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	4       (00000010) const-string         v4, 'Java releaseDecoder. Total number of dropped frames: '
+	5       (00000014) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001a) move-result-object   v3
+	7       (0000001c) iget                 v4, v6, Lorg/webrtc/MediaCodecVideoDecoder;->droppedFrames I
+	8       (00000020) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	9       (00000026) move-result-object   v3
+	10      (00000028) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	11      (0000002e) move-result-object   v3
+	12      (00000030) invoke-static        v2, v3, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	13      (00000036) invoke-direct        v6, Lorg/webrtc/MediaCodecVideoDecoder;->checkOnMediaCodecThread()V
+	14      (0000003c) new-instance         v0, Ljava/util/concurrent/CountDownLatch;
+	15      (00000040) const/4              v2, 1
+	16      (00000042) invoke-direct        v0, v2, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+	17      (00000048) new-instance         v1, Lorg/webrtc/MediaCodecVideoDecoder$1;
+	18      (0000004c) invoke-direct        v1, v6, v0, Lorg/webrtc/MediaCodecVideoDecoder$1;-><init>(Lorg/webrtc/MediaCodecVideoDecoder; Ljava/util/concurrent/CountDownLatch;)V
+	19      (00000052) new-instance         v2, Ljava/lang/Thread;
+	20      (00000056) invoke-direct        v2, v1, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+	21      (0000005c) invoke-virtual       v2, Ljava/lang/Thread;->start()V
+	22      (00000062) const-wide/16        v2, 5000 # [5000.0]
+	23      (00000066) invoke-static        v0, v2, v3, Lorg/webrtc/ThreadUtils;->awaitUninterruptibly(Ljava/util/concurrent/CountDownLatch; J)Z
+	24      (0000006c) move-result          v2
+	25      (0000006e) if-nez               v2, +34
+
+release-BB@0x72 : [ release-BB@0x94 release-BB@0xd6 ]
+	26      (00000072) const-string         v2, 'MediaCodecVideoDecoder'
+	27      (00000076) const-string         v3, 'Media decoder release timeout'
+	28      (0000007a) invoke-static        v2, v3, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	29      (00000080) sget                 v2, Lorg/webrtc/MediaCodecVideoDecoder;->codecErrors I
+	30      (00000084) add-int/lit8         v2, v2, 1
+	31      (00000088) sput                 v2, Lorg/webrtc/MediaCodecVideoDecoder;->codecErrors I
+	32      (0000008c) sget-object          v2, Lorg/webrtc/MediaCodecVideoDecoder;->errorCallback Lorg/webrtc/MediaCodecVideoDecoder$MediaCodecVideoDecoderErrorCallback;
+	33      (00000090) if-eqz               v2, +23
+
+release-BB@0x94 : [ release-BB@0xd6 ]
+	34      (00000094) const-string         v2, 'MediaCodecVideoDecoder'
+	35      (00000098) new-instance         v3, Ljava/lang/StringBuilder;
+	36      (0000009c) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	37      (000000a2) const-string         v4, 'Invoke codec error callback. Errors: '
+	38      (000000a6) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	39      (000000ac) move-result-object   v3
+	40      (000000ae) sget                 v4, Lorg/webrtc/MediaCodecVideoDecoder;->codecErrors I
+	41      (000000b2) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	42      (000000b8) move-result-object   v3
+	43      (000000ba) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	44      (000000c0) move-result-object   v3
+	45      (000000c2) invoke-static        v2, v3, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	46      (000000c8) sget-object          v2, Lorg/webrtc/MediaCodecVideoDecoder;->errorCallback Lorg/webrtc/MediaCodecVideoDecoder$MediaCodecVideoDecoderErrorCallback;
+	47      (000000cc) sget                 v3, Lorg/webrtc/MediaCodecVideoDecoder;->codecErrors I
+	48      (000000d0) invoke-interface     v2, v3, Lorg/webrtc/MediaCodecVideoDecoder$MediaCodecVideoDecoderErrorCallback;->onMediaCodecVideoDecoderCriticalError(I)V
+
+release-BB@0xd6 : [ release-BB@0xea release-BB@0x102 ]
+	49      (000000d6) iput-object          v5, v6, Lorg/webrtc/MediaCodecVideoDecoder;->mediaCodec Landroid/media/MediaCodec;
+	50      (000000da) iput-object          v5, v6, Lorg/webrtc/MediaCodecVideoDecoder;->mediaCodecThread Ljava/lang/Thread;
+	51      (000000de) sput-object          v5, Lorg/webrtc/MediaCodecVideoDecoder;->runningInstance Lorg/webrtc/MediaCodecVideoDecoder;
+	52      (000000e2) iget-boolean         v2, v6, Lorg/webrtc/MediaCodecVideoDecoder;->useSurface Z
+	53      (000000e6) if-eqz               v2, +e
+
+release-BB@0xea : [ release-BB@0x102 ]
+	54      (000000ea) iget-object          v2, v6, Lorg/webrtc/MediaCodecVideoDecoder;->surface Landroid/view/Surface;
+	55      (000000ee) invoke-virtual       v2, Landroid/view/Surface;->release()V
+	56      (000000f4) iput-object          v5, v6, Lorg/webrtc/MediaCodecVideoDecoder;->surface Landroid/view/Surface;
+	57      (000000f8) iget-object          v2, v6, Lorg/webrtc/MediaCodecVideoDecoder;->textureListener Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;
+	58      (000000fc) invoke-virtual       v2, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->release()V
+
+release-BB@0x102 : 
+	59      (00000102) const-string         v2, 'MediaCodecVideoDecoder'
+	60      (00000106) const-string         v3, 'Java releaseDecoder done'
+	61      (0000010a) invoke-static        v2, v3, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	62      (00000110) return-void          
+

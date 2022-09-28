@@ -1,0 +1,26 @@
+# Landroid/support/v4/app/Fragment;->performSaveInstanceState(Landroid/os/Bundle;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Bundle
+#
+# - return:void
+
+performSaveInstanceState-BB@0x0 : [ performSaveInstanceState-BB@0xe performSaveInstanceState-BB@0x28 ]
+	0       (00000000) invoke-virtual       v2, v3, Landroid/support/v4/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
+	1       (00000006) iget-object          v1, v2, Landroid/support/v4/app/Fragment;->mChildFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	2       (0000000a) if-eqz               v1, +f
+
+performSaveInstanceState-BB@0xe : [ performSaveInstanceState-BB@0x1e performSaveInstanceState-BB@0x28 ]
+	3       (0000000e) iget-object          v1, v2, Landroid/support/v4/app/Fragment;->mChildFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	4       (00000012) invoke-virtual       v1, Landroid/support/v4/app/FragmentManagerImpl;->saveAllState()Landroid/os/Parcelable;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) if-eqz               v0, +7
+
+performSaveInstanceState-BB@0x1e : [ performSaveInstanceState-BB@0x28 ]
+	7       (0000001e) const-string         v1, 'android:support:fragments'
+	8       (00000022) invoke-virtual       v3, v1, v0, Landroid/os/Bundle;->putParcelable(Ljava/lang/String; Landroid/os/Parcelable;)V
+
+performSaveInstanceState-BB@0x28 : 
+	9       (00000028) return-void          
+

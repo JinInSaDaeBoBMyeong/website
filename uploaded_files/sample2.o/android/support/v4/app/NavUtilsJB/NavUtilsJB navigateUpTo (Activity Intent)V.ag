@@ -1,0 +1,13 @@
+# Landroid/support/v4/app/NavUtilsJB;->navigateUpTo(Landroid/app/Activity; Landroid/content/Intent;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:android.app.Activity
+# - v1:android.content.Intent
+#
+# - return:void
+
+navigateUpTo-BB@0x0 : 
+	0       (00000000) invoke-virtual       v0, v1, Landroid/app/Activity;->navigateUpTo(Landroid/content/Intent;)Z
+	1       (00000006) return-void          
+

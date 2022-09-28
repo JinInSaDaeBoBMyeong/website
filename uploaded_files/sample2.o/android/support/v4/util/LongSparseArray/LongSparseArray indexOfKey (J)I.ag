@@ -1,0 +1,22 @@
+# Landroid/support/v4/util/LongSparseArray;->indexOfKey(J)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:long
+#
+# - return:int
+
+indexOfKey-BB@0x0 : [ indexOfKey-BB@0x8 indexOfKey-BB@0xe ]
+	0       (00000000) iget-boolean         v0, v3, Landroid/support/v4/util/LongSparseArray;->mGarbage Z
+	1       (00000004) if-eqz               v0, +5
+
+indexOfKey-BB@0x8 : [ indexOfKey-BB@0xe ]
+	2       (00000008) invoke-direct        v3, Landroid/support/v4/util/LongSparseArray;->gc()V
+
+indexOfKey-BB@0xe : 
+	3       (0000000e) iget-object          v0, v3, Landroid/support/v4/util/LongSparseArray;->mKeys [J
+	4       (00000012) iget                 v1, v3, Landroid/support/v4/util/LongSparseArray;->mSize I
+	5       (00000016) invoke-static        v0, v1, v4, v5, Landroid/support/v4/util/ContainerHelpers;->binarySearch([J I J)I
+	6       (0000001c) move-result          v0
+	7       (0000001e) return               v0
+

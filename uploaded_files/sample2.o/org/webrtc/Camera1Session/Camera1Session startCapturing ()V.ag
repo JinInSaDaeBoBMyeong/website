@@ -1,0 +1,46 @@
+# Lorg/webrtc/Camera1Session;->startCapturing()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+startCapturing-BB@0x0 : [ startCapturing-BB@0x38 startCapturing-BB@0x4a ]
+	0       (00000000) const-string         v1, 'Camera1Session'
+	1       (00000004) const-string         v2, 'Start capturing'
+	2       (00000008) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	3       (0000000e) invoke-direct        v3, Lorg/webrtc/Camera1Session;->checkIsOnCameraThread()V
+	4       (00000014) sget-object          v1, Lorg/webrtc/Camera1Session$SessionState;->RUNNING Lorg/webrtc/Camera1Session$SessionState;
+	5       (00000018) iput-object          v1, v3, Lorg/webrtc/Camera1Session;->state Lorg/webrtc/Camera1Session$SessionState;
+	6       (0000001c) iget-object          v1, v3, Lorg/webrtc/Camera1Session;->camera Landroid/hardware/Camera;
+	7       (00000020) new-instance         v2, Lorg/webrtc/Camera1Session$1;
+	8       (00000024) invoke-direct        v2, v3, Lorg/webrtc/Camera1Session$1;-><init>(Lorg/webrtc/Camera1Session;)V
+	9       (0000002a) invoke-virtual       v1, v2, Landroid/hardware/Camera;->setErrorCallback(Landroid/hardware/Camera$ErrorCallback;)V
+	10      (00000030) iget-boolean         v1, v3, Lorg/webrtc/Camera1Session;->captureToTexture Z
+	11      (00000034) if-eqz               v1, +b
+
+startCapturing-BB@0x38 : [ startCapturing-BB@0x3e ]
+	12      (00000038) invoke-direct        v3, Lorg/webrtc/Camera1Session;->listenForTextureFrames()V
+
+startCapturing-BB@0x3e : [ startCapturing-BB@0x48 ]
+	13      (0000003e) iget-object          v1, v3, Lorg/webrtc/Camera1Session;->camera Landroid/hardware/Camera;
+	14      (00000042) invoke-virtual       v1, Landroid/hardware/Camera;->startPreview()V
+	3e:47
+	(Ljava/lang/RuntimeException; -> 52 startCapturing-BB@0x52)
+
+startCapturing-BB@0x48 : 
+	15      (00000048) return-void          
+
+startCapturing-BB@0x4a : [ startCapturing-BB@0x3e ]
+	16      (0000004a) invoke-direct        v3, Lorg/webrtc/Camera1Session;->listenForBytebufferFrames()V
+	17      (00000050) goto                 -9
+
+startCapturing-BB@0x52 : [ startCapturing-BB@0x48 ]
+	18      (00000052) move-exception       v0
+	19      (00000054) invoke-direct        v3, Lorg/webrtc/Camera1Session;->stopInternal()V
+	20      (0000005a) iget-object          v1, v3, Lorg/webrtc/Camera1Session;->events Lorg/webrtc/CameraSession$Events;
+	21      (0000005e) invoke-virtual       v0, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
+	22      (00000064) move-result-object   v2
+	23      (00000066) invoke-interface     v1, v3, v2, Lorg/webrtc/CameraSession$Events;->onCameraError(Lorg/webrtc/CameraSession; Ljava/lang/String;)V
+	24      (0000006c) goto                 -12
+

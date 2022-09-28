@@ -1,0 +1,23 @@
+# Landroid/support/v4/app/Fragment;->performCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View; [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.LayoutInflater
+# - v3:android.view.ViewGroup
+# - v4:android.os.Bundle
+#
+# - return:android.view.View
+
+performCreateView-BB@0x0 : [ performCreateView-BB@0x8 performCreateView-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/Fragment;->mChildFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	1       (00000004) if-eqz               v0, +7
+
+performCreateView-BB@0x8 : [ performCreateView-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroid/support/v4/app/Fragment;->mChildFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	3       (0000000c) invoke-virtual       v0, Landroid/support/v4/app/FragmentManagerImpl;->noteStateNotSaved()V
+
+performCreateView-BB@0x12 : 
+	4       (00000012) invoke-virtual       v1, v2, v3, v4, Landroid/support/v4/app/Fragment;->onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) return-object        v0
+

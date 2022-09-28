@@ -1,0 +1,42 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->getActiveNetworkList()Ljava/util/List; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:java.util.List
+
+getActiveNetworkList-BB@0x0 : [ getActiveNetworkList-BB@0xc getActiveNetworkList-BB@0x10 ]
+	0       (00000000) invoke-virtual       v6, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->supportNetworkCallback()Z
+	1       (00000006) move-result          v3
+	2       (00000008) if-nez               v3, +4
+
+getActiveNetworkList-BB@0xc : [ getActiveNetworkList-BB@0xe ]
+	3       (0000000c) const/4              v1, 0
+
+getActiveNetworkList-BB@0xe : 
+	4       (0000000e) return-object        v1
+
+getActiveNetworkList-BB@0x10 : [ getActiveNetworkList-BB@0x26 ]
+	5       (00000010) new-instance         v1, Ljava/util/ArrayList;
+	6       (00000014) invoke-direct        v1, Ljava/util/ArrayList;-><init>()V
+	7       (0000001a) invoke-virtual       v6, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->getAllNetworks()[Landroid/net/Network;
+	8       (00000020) move-result-object   v4
+	9       (00000022) array-length         v5, v4
+	10      (00000024) const/4              v3, 0
+
+getActiveNetworkList-BB@0x26 : [ getActiveNetworkList-BB@0x2a getActiveNetworkList-BB@0xe ]
+	11      (00000026) if-ge                v3, v5, -c
+
+getActiveNetworkList-BB@0x2a : [ getActiveNetworkList-BB@0x3a getActiveNetworkList-BB@0x40 ]
+	12      (0000002a) aget-object          v2, v4, v3
+	13      (0000002e) invoke-direct        v6, v2, Lorg/webrtc/NetworkMonitorAutoDetect$ConnectivityManagerDelegate;->networkToInfo(Landroid/net/Network;)Lorg/webrtc/NetworkMonitorAutoDetect$NetworkInformation;
+	14      (00000034) move-result-object   v0
+	15      (00000036) if-eqz               v0, +5
+
+getActiveNetworkList-BB@0x3a : [ getActiveNetworkList-BB@0x40 ]
+	16      (0000003a) invoke-virtual       v1, v0, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+getActiveNetworkList-BB@0x40 : [ getActiveNetworkList-BB@0x26 ]
+	17      (00000040) add-int/lit8         v3, v3, 1
+	18      (00000044) goto                 -f
+

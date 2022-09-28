@@ -1,0 +1,15 @@
+# Lorg/webrtc/VideoTrack;-><init>(J)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:long
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, v2, v3, Lorg/webrtc/MediaStreamTrack;-><init>(J)V
+	1       (00000006) new-instance         v0, Ljava/util/LinkedList;
+	2       (0000000a) invoke-direct        v0, Ljava/util/LinkedList;-><init>()V
+	3       (00000010) iput-object          v0, v1, Lorg/webrtc/VideoTrack;->renderers Ljava/util/LinkedList;
+	4       (00000014) return-void          
+

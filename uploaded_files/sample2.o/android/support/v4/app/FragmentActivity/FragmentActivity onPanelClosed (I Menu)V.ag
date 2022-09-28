@@ -1,0 +1,25 @@
+# Landroid/support/v4/app/FragmentActivity;->onPanelClosed(I Landroid/view/Menu;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:android.view.Menu
+#
+# - return:void
+
+onPanelClosed-BB@0x0 : [ D:onPanelClosed-BB@0x6 0:onPanelClosed-BB@0xe ]
+	0       (00000000) packed-switch        v2, +e (0x1c)
+
+onPanelClosed-BB@0x6 : 
+	1       (00000006) invoke-super         v1, v2, v3, Landroid/app/Activity;->onPanelClosed(I Landroid/view/Menu;)V
+	2       (0000000c) return-void          
+
+onPanelClosed-BB@0xe : [ onPanelClosed-BB@0x6 ]
+	3       (0000000e) iget-object          v0, v1, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	4       (00000012) invoke-virtual       v0, v3, Landroid/support/v4/app/FragmentManagerImpl;->dispatchOptionsMenuClosed(Landroid/view/Menu;)V
+	5       (00000018) goto                 -9
+
+onPanelClosed-BB@0x1a : 
+	6       (0000001a) nop                  
+	7       (0000001c) packed-switch-payload 0
+

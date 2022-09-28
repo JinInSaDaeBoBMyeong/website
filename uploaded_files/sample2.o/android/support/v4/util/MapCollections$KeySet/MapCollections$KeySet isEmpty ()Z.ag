@@ -1,0 +1,23 @@
+# Landroid/support/v4/util/MapCollections$KeySet;->isEmpty()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isEmpty-BB@0x0 : [ isEmpty-BB@0x10 isEmpty-BB@0x14 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/util/MapCollections$KeySet;->this$0 Landroid/support/v4/util/MapCollections;
+	1       (00000004) invoke-virtual       v0, Landroid/support/v4/util/MapCollections;->colGetSize()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +4
+
+isEmpty-BB@0x10 : [ isEmpty-BB@0x12 ]
+	4       (00000010) const/4              v0, 1
+
+isEmpty-BB@0x12 : 
+	5       (00000012) return               v0
+
+isEmpty-BB@0x14 : [ isEmpty-BB@0x12 ]
+	6       (00000014) const/4              v0, 0
+	7       (00000016) goto                 -2
+

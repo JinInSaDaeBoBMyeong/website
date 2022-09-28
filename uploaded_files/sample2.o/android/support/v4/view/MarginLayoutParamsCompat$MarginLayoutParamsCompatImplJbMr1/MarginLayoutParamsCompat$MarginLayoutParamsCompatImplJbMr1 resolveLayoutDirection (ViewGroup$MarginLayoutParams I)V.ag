@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/MarginLayoutParamsCompat$MarginLayoutParamsCompatImplJbMr1;->resolveLayoutDirection(Landroid/view/ViewGroup$MarginLayoutParams; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.ViewGroup$MarginLayoutParams
+# - v2:int
+#
+# - return:void
+
+resolveLayoutDirection-BB@0x0 : 
+	0       (00000000) invoke-static        v1, v2, Landroid/support/v4/view/MarginLayoutParamsCompatJellybeanMr1;->resolveLayoutDirection(Landroid/view/ViewGroup$MarginLayoutParams; I)V
+	1       (00000006) return-void          
+

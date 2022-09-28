@@ -1,0 +1,53 @@
+# Lorg/webrtc/MediaCodecVideoDecoder;->reset(I I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+reset-BB@0x0 : [ reset-BB@0xa reset-BB@0x12 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) iget-object          v0, v4, Lorg/webrtc/MediaCodecVideoDecoder;->mediaCodecThread Ljava/lang/Thread;
+	2       (00000006) if-eqz               v0, +6
+
+reset-BB@0xa : [ reset-BB@0x12 reset-BB@0x22 ]
+	3       (0000000a) iget-object          v0, v4, Lorg/webrtc/MediaCodecVideoDecoder;->mediaCodec Landroid/media/MediaCodec;
+	4       (0000000e) if-nez               v0, +a
+
+reset-BB@0x12 : 
+	5       (00000012) new-instance         v0, Ljava/lang/RuntimeException;
+	6       (00000016) const-string         v1, 'Incorrect reset call for non-initialized decoder.'
+	7       (0000001a) invoke-direct        v0, v1, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	8       (00000020) throw                v0
+
+reset-BB@0x22 : 
+	9       (00000022) const-string         v0, 'MediaCodecVideoDecoder'
+	10      (00000026) new-instance         v1, Ljava/lang/StringBuilder;
+	11      (0000002a) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	12      (00000030) const-string         v2, 'Java reset: '
+	13      (00000034) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003a) move-result-object   v1
+	15      (0000003c) invoke-virtual       v1, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	16      (00000042) move-result-object   v1
+	17      (00000044) const-string         v2, ' x '
+	18      (00000048) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (0000004e) move-result-object   v1
+	20      (00000050) invoke-virtual       v1, v6, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	21      (00000056) move-result-object   v1
+	22      (00000058) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (0000005e) move-result-object   v1
+	24      (00000060) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	25      (00000066) iget-object          v0, v4, Lorg/webrtc/MediaCodecVideoDecoder;->mediaCodec Landroid/media/MediaCodec;
+	26      (0000006a) invoke-virtual       v0, Landroid/media/MediaCodec;->flush()V
+	27      (00000070) iput                 v5, v4, Lorg/webrtc/MediaCodecVideoDecoder;->width I
+	28      (00000074) iput                 v6, v4, Lorg/webrtc/MediaCodecVideoDecoder;->height I
+	29      (00000078) iget-object          v0, v4, Lorg/webrtc/MediaCodecVideoDecoder;->decodeStartTimeMs Ljava/util/Queue;
+	30      (0000007c) invoke-interface     v0, Ljava/util/Queue;->clear()V
+	31      (00000082) iget-object          v0, v4, Lorg/webrtc/MediaCodecVideoDecoder;->dequeuedSurfaceOutputBuffers Ljava/util/Queue;
+	32      (00000086) invoke-interface     v0, Ljava/util/Queue;->clear()V
+	33      (0000008c) iput-boolean         v3, v4, Lorg/webrtc/MediaCodecVideoDecoder;->hasDecodedFirstFrame Z
+	34      (00000090) iput                 v3, v4, Lorg/webrtc/MediaCodecVideoDecoder;->droppedFrames I
+	35      (00000094) return-void          
+

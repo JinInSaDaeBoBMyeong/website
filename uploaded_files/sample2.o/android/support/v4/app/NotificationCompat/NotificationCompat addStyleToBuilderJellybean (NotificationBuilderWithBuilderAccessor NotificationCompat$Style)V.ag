@@ -1,0 +1,59 @@
+# Landroid/support/v4/app/NotificationCompat;->addStyleToBuilderJellybean(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor; Landroid/support/v4/app/NotificationCompat$Style;)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.support.v4.app.NotificationBuilderWithBuilderAccessor
+# - v11:android.support.v4.app.NotificationCompat$Style
+#
+# - return:void
+
+addStyleToBuilderJellybean-BB@0x0 : [ addStyleToBuilderJellybean-BB@0x4 addStyleToBuilderJellybean-BB@0x28 ]
+	0       (00000000) if-eqz               v11, +14
+
+addStyleToBuilderJellybean-BB@0x4 : [ addStyleToBuilderJellybean-BB@0xc addStyleToBuilderJellybean-BB@0x2a ]
+	1       (00000004) instance-of          v0, v11, Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+	2       (00000008) if-eqz               v0, +11
+
+addStyleToBuilderJellybean-BB@0xc : [ addStyleToBuilderJellybean-BB@0x28 ]
+	3       (0000000c) move-object          v8, v11
+	4       (0000000e) check-cast           v8, Landroid/support/v4/app/NotificationCompat$BigTextStyle;
+	5       (00000012) iget-object          v0, v8, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->mBigContentTitle Ljava/lang/CharSequence;
+	6       (00000016) iget-boolean         v1, v8, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->mSummaryTextSet Z
+	7       (0000001a) iget-object          v2, v8, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->mSummaryText Ljava/lang/CharSequence;
+	8       (0000001e) iget-object          v3, v8, Landroid/support/v4/app/NotificationCompat$BigTextStyle;->mBigText Ljava/lang/CharSequence;
+	9       (00000022) invoke-static        v10, v0, v1, v2, v3, Landroid/support/v4/app/NotificationCompatJellybean;->addBigTextStyle(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor; Ljava/lang/CharSequence; Z Ljava/lang/CharSequence; Ljava/lang/CharSequence;)V
+
+addStyleToBuilderJellybean-BB@0x28 : 
+	10      (00000028) return-void          
+
+addStyleToBuilderJellybean-BB@0x2a : [ addStyleToBuilderJellybean-BB@0x32 addStyleToBuilderJellybean-BB@0x50 ]
+	11      (0000002a) instance-of          v0, v11, Landroid/support/v4/app/NotificationCompat$InboxStyle;
+	12      (0000002e) if-eqz               v0, +11
+
+addStyleToBuilderJellybean-BB@0x32 : [ addStyleToBuilderJellybean-BB@0x28 ]
+	13      (00000032) move-object          v9, v11
+	14      (00000034) check-cast           v9, Landroid/support/v4/app/NotificationCompat$InboxStyle;
+	15      (00000038) iget-object          v0, v9, Landroid/support/v4/app/NotificationCompat$InboxStyle;->mBigContentTitle Ljava/lang/CharSequence;
+	16      (0000003c) iget-boolean         v1, v9, Landroid/support/v4/app/NotificationCompat$InboxStyle;->mSummaryTextSet Z
+	17      (00000040) iget-object          v2, v9, Landroid/support/v4/app/NotificationCompat$InboxStyle;->mSummaryText Ljava/lang/CharSequence;
+	18      (00000044) iget-object          v3, v9, Landroid/support/v4/app/NotificationCompat$InboxStyle;->mTexts Ljava/util/ArrayList;
+	19      (00000048) invoke-static        v10, v0, v1, v2, v3, Landroid/support/v4/app/NotificationCompatJellybean;->addInboxStyle(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor; Ljava/lang/CharSequence; Z Ljava/lang/CharSequence; Ljava/util/ArrayList;)V
+	20      (0000004e) goto                 -13
+
+addStyleToBuilderJellybean-BB@0x50 : [ addStyleToBuilderJellybean-BB@0x58 addStyleToBuilderJellybean-BB@0x28 ]
+	21      (00000050) instance-of          v0, v11, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+	22      (00000054) if-eqz               v0, -16
+
+addStyleToBuilderJellybean-BB@0x58 : [ addStyleToBuilderJellybean-BB@0x28 ]
+	23      (00000058) move-object          v7, v11
+	24      (0000005a) check-cast           v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;
+	25      (0000005e) iget-object          v1, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->mBigContentTitle Ljava/lang/CharSequence;
+	26      (00000062) iget-boolean         v2, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->mSummaryTextSet Z
+	27      (00000066) iget-object          v3, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->mSummaryText Ljava/lang/CharSequence;
+	28      (0000006a) iget-object          v4, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->mPicture Landroid/graphics/Bitmap;
+	29      (0000006e) iget-object          v5, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->mBigLargeIcon Landroid/graphics/Bitmap;
+	30      (00000072) iget-boolean         v6, v7, Landroid/support/v4/app/NotificationCompat$BigPictureStyle;->mBigLargeIconSet Z
+	31      (00000076) move-object          v0, v10
+	32      (00000078) invoke-static/range  v0 ... v6, Landroid/support/v4/app/NotificationCompatJellybean;->addBigPictureStyle(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor; Ljava/lang/CharSequence; Z Ljava/lang/CharSequence; Landroid/graphics/Bitmap; Landroid/graphics/Bitmap; Z)V
+	33      (0000007e) goto                 -2b
+

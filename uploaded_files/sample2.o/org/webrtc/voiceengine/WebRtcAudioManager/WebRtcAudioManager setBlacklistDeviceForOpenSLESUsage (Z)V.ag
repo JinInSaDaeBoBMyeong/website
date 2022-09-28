@@ -1,0 +1,26 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioManager;->setBlacklistDeviceForOpenSLESUsage(Z)V [access_flags=public static synchronized]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setBlacklistDeviceForOpenSLESUsage-BB@0x0 : [ setBlacklistDeviceForOpenSLESUsage-BB@0x8 ]
+	0       (00000000) const-class          v1, Lorg/webrtc/voiceengine/WebRtcAudioManager;
+	1       (00000004) monitor-enter        v1
+	2       (00000006) const/4              v0, 1
+
+setBlacklistDeviceForOpenSLESUsage-BB@0x8 : 
+	3       (00000008) sput-boolean         v0, Lorg/webrtc/voiceengine/WebRtcAudioManager;->blacklistDeviceForOpenSLESUsageIsOverridden Z
+	4       (0000000c) sput-boolean         v2, Lorg/webrtc/voiceengine/WebRtcAudioManager;->blacklistDeviceForOpenSLESUsage Z
+	5       (00000010) monitor-exit         v1
+	6       (00000012) return-void          
+	8:f
+	(Ljava/lang/Throwable; -> 14 setBlacklistDeviceForOpenSLESUsage-BB@0x14)
+
+setBlacklistDeviceForOpenSLESUsage-BB@0x14 : 
+	7       (00000014) move-exception       v0
+	8       (00000016) monitor-exit         v1
+	9       (00000018) throw                v0
+

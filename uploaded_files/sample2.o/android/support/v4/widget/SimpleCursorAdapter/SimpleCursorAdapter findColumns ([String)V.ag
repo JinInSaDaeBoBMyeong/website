@@ -1,0 +1,49 @@
+# Landroid/support/v4/widget/SimpleCursorAdapter;->findColumns([Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:java.lang.String[]
+#
+# - return:void
+
+findColumns-BB@0x0 : [ findColumns-BB@0x8 findColumns-BB@0x48 ]
+	0       (00000000) iget-object          v2, v5, Landroid/support/v4/widget/SimpleCursorAdapter;->mCursor Landroid/database/Cursor;
+	1       (00000004) if-eqz               v2, +22
+
+findColumns-BB@0x8 : [ findColumns-BB@0x12 findColumns-BB@0x1c ]
+	2       (00000008) array-length         v0, v6
+	3       (0000000a) iget-object          v2, v5, Landroid/support/v4/widget/SimpleCursorAdapter;->mFrom [I
+	4       (0000000e) if-eqz               v2, +7
+
+findColumns-BB@0x12 : [ findColumns-BB@0x1c findColumns-BB@0x24 ]
+	5       (00000012) iget-object          v2, v5, Landroid/support/v4/widget/SimpleCursorAdapter;->mFrom [I
+	6       (00000016) array-length         v2, v2
+	7       (00000018) if-eq                v2, v0, +6
+
+findColumns-BB@0x1c : [ findColumns-BB@0x24 ]
+	8       (0000001c) new-array            v2, v0, [I
+	9       (00000020) iput-object          v2, v5, Landroid/support/v4/widget/SimpleCursorAdapter;->mFrom [I
+
+findColumns-BB@0x24 : [ findColumns-BB@0x26 ]
+	10      (00000024) const/4              v1, 0
+
+findColumns-BB@0x26 : [ findColumns-BB@0x2a findColumns-BB@0x4e ]
+	11      (00000026) if-ge                v1, v0, +14
+
+findColumns-BB@0x2a : [ findColumns-BB@0x26 ]
+	12      (0000002a) iget-object          v2, v5, Landroid/support/v4/widget/SimpleCursorAdapter;->mFrom [I
+	13      (0000002e) iget-object          v3, v5, Landroid/support/v4/widget/SimpleCursorAdapter;->mCursor Landroid/database/Cursor;
+	14      (00000032) aget-object          v4, v6, v1
+	15      (00000036) invoke-interface     v3, v4, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+	16      (0000003c) move-result          v3
+	17      (0000003e) aput                 v3, v2, v1
+	18      (00000042) add-int/lit8         v1, v1, 1
+	19      (00000046) goto                 -10
+
+findColumns-BB@0x48 : [ findColumns-BB@0x4e ]
+	20      (00000048) const/4              v2, 0
+	21      (0000004a) iput-object          v2, v5, Landroid/support/v4/widget/SimpleCursorAdapter;->mFrom [I
+
+findColumns-BB@0x4e : 
+	22      (0000004e) return-void          
+

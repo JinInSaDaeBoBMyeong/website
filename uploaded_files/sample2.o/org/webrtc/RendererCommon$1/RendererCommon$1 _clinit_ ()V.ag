@@ -1,0 +1,59 @@
+# Lorg/webrtc/RendererCommon$1;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x12 ]
+	0       (00000000) invoke-static        Lorg/webrtc/RendererCommon$ScalingType;->values()[Lorg/webrtc/RendererCommon$ScalingType;
+	1       (00000006) move-result-object   v0
+	2       (00000008) array-length         v0, v0
+	3       (0000000a) new-array            v0, v0, [I
+	4       (0000000e) sput-object          v0, Lorg/webrtc/RendererCommon$1;->$SwitchMap$org$webrtc$RendererCommon$ScalingType [I
+
+<clinit>-BB@0x12 : [ <clinit>-BB@0x28 ]
+	5       (00000012) sget-object          v0, Lorg/webrtc/RendererCommon$1;->$SwitchMap$org$webrtc$RendererCommon$ScalingType [I
+	6       (00000016) sget-object          v1, Lorg/webrtc/RendererCommon$ScalingType;->SCALE_ASPECT_FIT Lorg/webrtc/RendererCommon$ScalingType;
+	7       (0000001a) invoke-virtual       v1, Lorg/webrtc/RendererCommon$ScalingType;->ordinal()I
+	8       (00000020) move-result          v1
+	9       (00000022) const/4              v2, 1
+	10      (00000024) aput                 v2, v0, v1
+	12:27
+	(Ljava/lang/NoSuchFieldError; -> 5e <clinit>-BB@0x5e)
+
+<clinit>-BB@0x28 : [ <clinit>-BB@0x3e ]
+	11      (00000028) sget-object          v0, Lorg/webrtc/RendererCommon$1;->$SwitchMap$org$webrtc$RendererCommon$ScalingType [I
+	12      (0000002c) sget-object          v1, Lorg/webrtc/RendererCommon$ScalingType;->SCALE_ASPECT_FILL Lorg/webrtc/RendererCommon$ScalingType;
+	13      (00000030) invoke-virtual       v1, Lorg/webrtc/RendererCommon$ScalingType;->ordinal()I
+	14      (00000036) move-result          v1
+	15      (00000038) const/4              v2, 2
+	16      (0000003a) aput                 v2, v0, v1
+	28:3d
+	(Ljava/lang/NoSuchFieldError; -> 5a <clinit>-BB@0x5a)
+
+<clinit>-BB@0x3e : [ <clinit>-BB@0x54 ]
+	17      (0000003e) sget-object          v0, Lorg/webrtc/RendererCommon$1;->$SwitchMap$org$webrtc$RendererCommon$ScalingType [I
+	18      (00000042) sget-object          v1, Lorg/webrtc/RendererCommon$ScalingType;->SCALE_ASPECT_BALANCED Lorg/webrtc/RendererCommon$ScalingType;
+	19      (00000046) invoke-virtual       v1, Lorg/webrtc/RendererCommon$ScalingType;->ordinal()I
+	20      (0000004c) move-result          v1
+	21      (0000004e) const/4              v2, 3
+	22      (00000050) aput                 v2, v0, v1
+	3e:53
+	(Ljava/lang/NoSuchFieldError; -> 56 <clinit>-BB@0x56)
+
+<clinit>-BB@0x54 : 
+	23      (00000054) return-void          
+
+<clinit>-BB@0x56 : [ <clinit>-BB@0x54 ]
+	24      (00000056) move-exception       v0
+	25      (00000058) goto                 -2
+
+<clinit>-BB@0x5a : [ <clinit>-BB@0x3e ]
+	26      (0000005a) move-exception       v0
+	27      (0000005c) goto                 -f
+
+<clinit>-BB@0x5e : [ <clinit>-BB@0x28 ]
+	28      (0000005e) move-exception       v0
+	29      (00000060) goto                 -1c
+

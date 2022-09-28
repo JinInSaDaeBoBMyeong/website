@@ -1,0 +1,28 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;->start()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+start-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/Timer;
+	1       (00000004) const-string         v1, 'WebRtcVolumeLevelLoggerThread'
+	2       (00000008) invoke-direct        v0, v1, Ljava/util/Timer;-><init>(Ljava/lang/String;)V
+	3       (0000000e) iput-object          v0, v6, Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;->timer Ljava/util/Timer;
+	4       (00000012) iget-object          v0, v6, Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;->timer Ljava/util/Timer;
+	5       (00000016) new-instance         v1, Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger$LogVolumeTask;
+	6       (0000001a) iget-object          v2, v6, Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;->audioManager Landroid/media/AudioManager;
+	7       (0000001e) const/4              v3, 2
+	8       (00000020) invoke-virtual       v2, v3, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
+	9       (00000026) move-result          v2
+	10      (00000028) iget-object          v3, v6, Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;->audioManager Landroid/media/AudioManager;
+	11      (0000002c) const/4              v4, 0
+	12      (0000002e) invoke-virtual       v3, v4, Landroid/media/AudioManager;->getStreamMaxVolume(I)I
+	13      (00000034) move-result          v3
+	14      (00000036) invoke-direct        v1, v6, v2, v3, Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger$LogVolumeTask;-><init>(Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger; I I)V
+	15      (0000003c) const-wide/16        v2, 0 # [0.0]
+	16      (00000040) const-wide/16        v4, 30000 # [30000.0]
+	17      (00000044) invoke-virtual/range v0 ... v5, Ljava/util/Timer;->schedule(Ljava/util/TimerTask; J J)V
+	18      (0000004a) return-void          
+

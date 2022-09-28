@@ -1,0 +1,35 @@
+# Landroid/support/v4/widget/DrawerLayout;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.ViewGroup$LayoutParams
+#
+# - return:android.view.ViewGroup$LayoutParams
+
+generateLayoutParams-BB@0x0 : [ generateLayoutParams-BB@0x8 generateLayoutParams-BB@0x18 ]
+	0       (00000000) instance-of          v0, v2, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	1       (00000004) if-eqz               v0, +a
+
+generateLayoutParams-BB@0x8 : [ generateLayoutParams-BB@0x16 ]
+	2       (00000008) new-instance         v0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	3       (0000000c) check-cast           v2, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	4       (00000010) invoke-direct        v0, v2, Landroid/support/v4/widget/DrawerLayout$LayoutParams;-><init>(Landroid/support/v4/widget/DrawerLayout$LayoutParams;)V
+
+generateLayoutParams-BB@0x16 : 
+	5       (00000016) return-object        v0
+
+generateLayoutParams-BB@0x18 : [ generateLayoutParams-BB@0x20 generateLayoutParams-BB@0x30 ]
+	6       (00000018) instance-of          v0, v2, Landroid/view/ViewGroup$MarginLayoutParams;
+	7       (0000001c) if-eqz               v0, +a
+
+generateLayoutParams-BB@0x20 : [ generateLayoutParams-BB@0x16 ]
+	8       (00000020) new-instance         v0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	9       (00000024) check-cast           v2, Landroid/view/ViewGroup$MarginLayoutParams;
+	10      (00000028) invoke-direct        v0, v2, Landroid/support/v4/widget/DrawerLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+	11      (0000002e) goto                 -c
+
+generateLayoutParams-BB@0x30 : [ generateLayoutParams-BB@0x16 ]
+	12      (00000030) new-instance         v0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	13      (00000034) invoke-direct        v0, v2, Landroid/support/v4/widget/DrawerLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+	14      (0000003a) goto                 -12
+

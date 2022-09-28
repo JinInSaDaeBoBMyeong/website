@@ -1,0 +1,41 @@
+# Lorg/webrtc/HardwareVideoEncoder$ColorFormat$2;->fillBufferFromI420(Ljava/nio/ByteBuffer; Lorg/webrtc/VideoFrame$I420Buffer;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.nio.ByteBuffer
+# - v6:org.webrtc.VideoFrame$I420Buffer
+#
+# - return:void
+
+fillBufferFromI420-BB@0x0 : [ fillBufferFromI420-BB@0x20 ]
+	0       (00000000) invoke-interface     v6, Lorg/webrtc/VideoFrame$I420Buffer;->getDataY()Ljava/nio/ByteBuffer;
+	1       (00000006) move-result-object   v3
+	2       (00000008) invoke-virtual       v5, v3, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+	3       (0000000e) invoke-interface     v6, Lorg/webrtc/VideoFrame$I420Buffer;->getDataU()Ljava/nio/ByteBuffer;
+	4       (00000014) move-result-object   v1
+	5       (00000016) invoke-interface     v6, Lorg/webrtc/VideoFrame$I420Buffer;->getDataV()Ljava/nio/ByteBuffer;
+	6       (0000001c) move-result-object   v2
+	7       (0000001e) const/4              v0, 0
+
+fillBufferFromI420-BB@0x20 : [ fillBufferFromI420-BB@0x2c fillBufferFromI420-BB@0x56 ]
+	8       (00000020) invoke-virtual       v1, Ljava/nio/ByteBuffer;->hasRemaining()Z
+	9       (00000026) move-result          v3
+	10      (00000028) if-eqz               v3, +17
+
+fillBufferFromI420-BB@0x2c : [ fillBufferFromI420-BB@0x38 fillBufferFromI420-BB@0x56 ]
+	11      (0000002c) invoke-virtual       v2, Ljava/nio/ByteBuffer;->hasRemaining()Z
+	12      (00000032) move-result          v3
+	13      (00000034) if-eqz               v3, +11
+
+fillBufferFromI420-BB@0x38 : [ fillBufferFromI420-BB@0x20 ]
+	14      (00000038) invoke-virtual       v1, Ljava/nio/ByteBuffer;->get()B
+	15      (0000003e) move-result          v3
+	16      (00000040) invoke-virtual       v5, v3, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
+	17      (00000046) invoke-virtual       v2, Ljava/nio/ByteBuffer;->get()B
+	18      (0000004c) move-result          v3
+	19      (0000004e) invoke-virtual       v5, v3, Ljava/nio/ByteBuffer;->put(B)Ljava/nio/ByteBuffer;
+	20      (00000054) goto                 -1a
+
+fillBufferFromI420-BB@0x56 : 
+	21      (00000056) return-void          
+

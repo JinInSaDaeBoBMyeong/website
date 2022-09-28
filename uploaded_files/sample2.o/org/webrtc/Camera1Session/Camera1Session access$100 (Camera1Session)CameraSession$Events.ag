@@ -1,0 +1,12 @@
+# Lorg/webrtc/Camera1Session;->access$100(Lorg/webrtc/Camera1Session;)Lorg/webrtc/CameraSession$Events; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.Camera1Session
+#
+# - return:org.webrtc.CameraSession$Events
+
+access$100-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/Camera1Session;->events Lorg/webrtc/CameraSession$Events;
+	1       (00000004) return-object        v0
+

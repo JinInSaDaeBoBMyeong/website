@@ -1,0 +1,35 @@
+# Lorg/webrtc/SurfaceViewRenderer;->surfaceChanged(Landroid/view/SurfaceHolder; I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.SurfaceHolder
+# - v4:int
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+surfaceChanged-BB@0x0 : 
+	0       (00000000) invoke-static        Lorg/webrtc/ThreadUtils;->checkIsOnMainThread()V
+	1       (00000006) new-instance         v0, Ljava/lang/StringBuilder;
+	2       (0000000a) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	3       (00000010) const-string         v1, 'surfaceChanged: format: '
+	4       (00000014) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (0000001a) move-result-object   v0
+	6       (0000001c) invoke-virtual       v0, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	7       (00000022) move-result-object   v0
+	8       (00000024) const-string         v1, ' size: '
+	9       (00000028) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002e) move-result-object   v0
+	11      (00000030) invoke-virtual       v0, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	12      (00000036) move-result-object   v0
+	13      (00000038) const-string         v1, 'x'
+	14      (0000003c) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (00000042) move-result-object   v0
+	16      (00000044) invoke-virtual       v0, v6, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	17      (0000004a) move-result-object   v0
+	18      (0000004c) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	19      (00000052) move-result-object   v0
+	20      (00000054) invoke-direct        v2, v0, Lorg/webrtc/SurfaceViewRenderer;->logD(Ljava/lang/String;)V
+	21      (0000005a) return-void          
+

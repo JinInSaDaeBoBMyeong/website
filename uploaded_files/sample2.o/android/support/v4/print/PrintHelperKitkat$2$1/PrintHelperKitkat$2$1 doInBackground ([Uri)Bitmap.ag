@@ -1,0 +1,27 @@
+# Landroid/support/v4/print/PrintHelperKitkat$2$1;->doInBackground([Landroid/net/Uri;)Landroid/graphics/Bitmap; [access_flags=protected varargs]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.net.Uri[]
+#
+# - return:android.graphics.Bitmap
+
+doInBackground-BB@0x0 : [ doInBackground-BB@0x1c ]
+	0       (00000000) iget-object          v0, v3, Landroid/support/v4/print/PrintHelperKitkat$2$1;->this$1 Landroid/support/v4/print/PrintHelperKitkat$2;
+	1       (00000004) iget-object          v0, v0, Landroid/support/v4/print/PrintHelperKitkat$2;->this$0 Landroid/support/v4/print/PrintHelperKitkat;
+	2       (00000008) iget-object          v1, v3, Landroid/support/v4/print/PrintHelperKitkat$2$1;->this$1 Landroid/support/v4/print/PrintHelperKitkat$2;
+	3       (0000000c) iget-object          v1, v1, Landroid/support/v4/print/PrintHelperKitkat$2;->val$imageFile Landroid/net/Uri;
+	4       (00000010) const/16             v2, 3500
+	5       (00000014) invoke-static        v0, v1, v2, Landroid/support/v4/print/PrintHelperKitkat;->access$200(Landroid/support/v4/print/PrintHelperKitkat; Landroid/net/Uri; I)Landroid/graphics/Bitmap;
+	6       (0000001a) move-result-object   v0
+	0:19
+	(Ljava/io/FileNotFoundException; -> 1e doInBackground-BB@0x1e)
+
+doInBackground-BB@0x1c : 
+	7       (0000001c) return-object        v0
+
+doInBackground-BB@0x1e : [ doInBackground-BB@0x1c ]
+	8       (0000001e) move-exception       v0
+	9       (00000020) const/4              v0, 0
+	10      (00000022) goto                 -3
+

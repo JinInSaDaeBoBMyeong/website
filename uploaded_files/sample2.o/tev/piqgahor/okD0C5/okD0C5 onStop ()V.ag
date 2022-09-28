@@ -1,0 +1,31 @@
+# Ltev/piqgahor/okD0C5;->onStop()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onStop-BB@0x0 : [ onStop-BB@0x2a onStop-BB@0x32 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) const/16             v0, 21
+	2       (00000006) new-array            v0, v0, [I
+	3       (0000000a) fill-array-data      v0, +19 (0x3c)
+	4       (00000010) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	7       (0000001e) invoke-static        Ltev/piqgahor/zh7eZ9E;->CVMRpM090()Z
+	8       (00000024) move-result          v0
+	9       (00000026) if-eqz               v0, +6
+
+onStop-BB@0x2a : [ onStop-BB@0x32 ]
+	10      (0000002a) const/4              v0, 0
+	11      (0000002c) invoke-static        v1, v1, v0, Ltev/piqgahor/zh7eZ9E;->scjlrpZJCgn(Lorg/webrtc/SurfaceViewRenderer; Lorg/webrtc/EglBase$Context; Z)V
+
+onStop-BB@0x32 : 
+	12      (00000032) invoke-super         v2, Landroid/app/Activity;->onStop()V
+	13      (00000038) return-void          
+
+onStop-BB@0x3a : 
+	14      (0000003a) nop                  
+	15      (0000003c) fill-array-data-payload bytearray(b'\x1a\x00\x00\x00u\x00\x00\x00q\x00\x00\x00\x7f\x00\x00\x00|\x00\x00\x00l\x00\x00\x00\x8e\x00\x00\x00}\x00\x00\x00q\x00\x00\x00\x88\x00\x00\x00~\x00\x00\x00w\x00\x00\x00:\x00\x00\x00m\x00\x00\x00\x8e\x00\x00\x00\x89\x00\x00\x00\x8a\x00\x00\x00:\x00\x00\x00;\x00\x00\x00;\x00\x00\x00;\x00\x00\x00') | \x1a\x00\x00\x00\x75\x00\x00\x00\x71\x00\x00\x00\x7f\x00\x00\x00\x7c\x00\x00\x00\x6c\x00\x00\x00\x8e\x00\x00\x00\x7d\x00\x00\x00\x71\x00\x00\x00\x88\x00\x00\x00\x7e\x00\x00\x00\x77\x00\x00\x00\x3a\x00\x00\x00\x6d\x00\x00\x00\x8e\x00\x00\x00\x89\x00\x00\x00\x8a\x00\x00\x00\x3a\x00\x00\x00\x3b\x00\x00\x00\x3b\x00\x00\x00\x3b\x00\x00\x00
+

@@ -1,0 +1,43 @@
+# Landroid/support/v4/app/BackStackState;-><init>(Landroid/os/Parcel;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.os.Parcel
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) invoke-virtual       v2, Landroid/os/Parcel;->createIntArray()[I
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) iput-object          v0, v1, Landroid/support/v4/app/BackStackState;->mOps [I
+	4       (00000012) invoke-virtual       v2, Landroid/os/Parcel;->readInt()I
+	5       (00000018) move-result          v0
+	6       (0000001a) iput                 v0, v1, Landroid/support/v4/app/BackStackState;->mTransition I
+	7       (0000001e) invoke-virtual       v2, Landroid/os/Parcel;->readInt()I
+	8       (00000024) move-result          v0
+	9       (00000026) iput                 v0, v1, Landroid/support/v4/app/BackStackState;->mTransitionStyle I
+	10      (0000002a) invoke-virtual       v2, Landroid/os/Parcel;->readString()Ljava/lang/String;
+	11      (00000030) move-result-object   v0
+	12      (00000032) iput-object          v0, v1, Landroid/support/v4/app/BackStackState;->mName Ljava/lang/String;
+	13      (00000036) invoke-virtual       v2, Landroid/os/Parcel;->readInt()I
+	14      (0000003c) move-result          v0
+	15      (0000003e) iput                 v0, v1, Landroid/support/v4/app/BackStackState;->mIndex I
+	16      (00000042) invoke-virtual       v2, Landroid/os/Parcel;->readInt()I
+	17      (00000048) move-result          v0
+	18      (0000004a) iput                 v0, v1, Landroid/support/v4/app/BackStackState;->mBreadCrumbTitleRes I
+	19      (0000004e) sget-object          v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR Landroid/os/Parcelable$Creator;
+	20      (00000052) invoke-interface     v0, v2, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+	21      (00000058) move-result-object   v0
+	22      (0000005a) check-cast           v0, Ljava/lang/CharSequence;
+	23      (0000005e) iput-object          v0, v1, Landroid/support/v4/app/BackStackState;->mBreadCrumbTitleText Ljava/lang/CharSequence;
+	24      (00000062) invoke-virtual       v2, Landroid/os/Parcel;->readInt()I
+	25      (00000068) move-result          v0
+	26      (0000006a) iput                 v0, v1, Landroid/support/v4/app/BackStackState;->mBreadCrumbShortTitleRes I
+	27      (0000006e) sget-object          v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR Landroid/os/Parcelable$Creator;
+	28      (00000072) invoke-interface     v0, v2, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+	29      (00000078) move-result-object   v0
+	30      (0000007a) check-cast           v0, Ljava/lang/CharSequence;
+	31      (0000007e) iput-object          v0, v1, Landroid/support/v4/app/BackStackState;->mBreadCrumbShortTitleText Ljava/lang/CharSequence;
+	32      (00000082) return-void          
+

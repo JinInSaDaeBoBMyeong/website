@@ -1,0 +1,45 @@
+# Landroid/support/v4/content/ModernAsyncTask$4;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0x12 ]
+	0       (00000000) invoke-static        Landroid/support/v4/content/ModernAsyncTask$Status;->values()[Landroid/support/v4/content/ModernAsyncTask$Status;
+	1       (00000006) move-result-object   v0
+	2       (00000008) array-length         v0, v0
+	3       (0000000a) new-array            v0, v0, [I
+	4       (0000000e) sput-object          v0, Landroid/support/v4/content/ModernAsyncTask$4;->$SwitchMap$android$support$v4$content$ModernAsyncTask$Status [I
+
+<clinit>-BB@0x12 : [ <clinit>-BB@0x28 ]
+	5       (00000012) sget-object          v0, Landroid/support/v4/content/ModernAsyncTask$4;->$SwitchMap$android$support$v4$content$ModernAsyncTask$Status [I
+	6       (00000016) sget-object          v1, Landroid/support/v4/content/ModernAsyncTask$Status;->RUNNING Landroid/support/v4/content/ModernAsyncTask$Status;
+	7       (0000001a) invoke-virtual       v1, Landroid/support/v4/content/ModernAsyncTask$Status;->ordinal()I
+	8       (00000020) move-result          v1
+	9       (00000022) const/4              v2, 1
+	10      (00000024) aput                 v2, v0, v1
+	12:27
+	(Ljava/lang/NoSuchFieldError; -> 44 <clinit>-BB@0x44)
+
+<clinit>-BB@0x28 : [ <clinit>-BB@0x3e ]
+	11      (00000028) sget-object          v0, Landroid/support/v4/content/ModernAsyncTask$4;->$SwitchMap$android$support$v4$content$ModernAsyncTask$Status [I
+	12      (0000002c) sget-object          v1, Landroid/support/v4/content/ModernAsyncTask$Status;->FINISHED Landroid/support/v4/content/ModernAsyncTask$Status;
+	13      (00000030) invoke-virtual       v1, Landroid/support/v4/content/ModernAsyncTask$Status;->ordinal()I
+	14      (00000036) move-result          v1
+	15      (00000038) const/4              v2, 2
+	16      (0000003a) aput                 v2, v0, v1
+	28:3d
+	(Ljava/lang/NoSuchFieldError; -> 40 <clinit>-BB@0x40)
+
+<clinit>-BB@0x3e : 
+	17      (0000003e) return-void          
+
+<clinit>-BB@0x40 : [ <clinit>-BB@0x3e ]
+	18      (00000040) move-exception       v0
+	19      (00000042) goto                 -2
+
+<clinit>-BB@0x44 : [ <clinit>-BB@0x28 ]
+	20      (00000044) move-exception       v0
+	21      (00000046) goto                 -f
+

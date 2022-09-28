@@ -1,0 +1,81 @@
+# Landroid/support/v4/app/NotificationCompat;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0xc <clinit>-BB@0x1c ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 20
+	2       (00000008) if-lt                v0, v1, +a
+
+<clinit>-BB@0xc : [ <clinit>-BB@0x1a ]
+	3       (0000000c) new-instance         v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplApi20;
+	4       (00000010) invoke-direct        v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplApi20;-><init>()V
+	5       (00000016) sput-object          v0, Landroid/support/v4/app/NotificationCompat;->IMPL Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
+
+<clinit>-BB@0x1a : 
+	6       (0000001a) return-void          
+
+<clinit>-BB@0x1c : [ <clinit>-BB@0x28 <clinit>-BB@0x38 ]
+	7       (0000001c) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	8       (00000020) const/16             v1, 19
+	9       (00000024) if-lt                v0, v1, +a
+
+<clinit>-BB@0x28 : [ <clinit>-BB@0x1a ]
+	10      (00000028) new-instance         v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplKitKat;
+	11      (0000002c) invoke-direct        v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplKitKat;-><init>()V
+	12      (00000032) sput-object          v0, Landroid/support/v4/app/NotificationCompat;->IMPL Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
+	13      (00000036) goto                 -e
+
+<clinit>-BB@0x38 : [ <clinit>-BB@0x44 <clinit>-BB@0x54 ]
+	14      (00000038) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	15      (0000003c) const/16             v1, 16
+	16      (00000040) if-lt                v0, v1, +a
+
+<clinit>-BB@0x44 : [ <clinit>-BB@0x1a ]
+	17      (00000044) new-instance         v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplJellybean;
+	18      (00000048) invoke-direct        v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplJellybean;-><init>()V
+	19      (0000004e) sput-object          v0, Landroid/support/v4/app/NotificationCompat;->IMPL Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
+	20      (00000052) goto                 -1c
+
+<clinit>-BB@0x54 : [ <clinit>-BB@0x60 <clinit>-BB@0x70 ]
+	21      (00000054) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	22      (00000058) const/16             v1, 14
+	23      (0000005c) if-lt                v0, v1, +a
+
+<clinit>-BB@0x60 : [ <clinit>-BB@0x1a ]
+	24      (00000060) new-instance         v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplIceCreamSandwich;
+	25      (00000064) invoke-direct        v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplIceCreamSandwich;-><init>()V
+	26      (0000006a) sput-object          v0, Landroid/support/v4/app/NotificationCompat;->IMPL Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
+	27      (0000006e) goto                 -2a
+
+<clinit>-BB@0x70 : [ <clinit>-BB@0x7c <clinit>-BB@0x8c ]
+	28      (00000070) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	29      (00000074) const/16             v1, 11
+	30      (00000078) if-lt                v0, v1, +a
+
+<clinit>-BB@0x7c : [ <clinit>-BB@0x1a ]
+	31      (0000007c) new-instance         v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplHoneycomb;
+	32      (00000080) invoke-direct        v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplHoneycomb;-><init>()V
+	33      (00000086) sput-object          v0, Landroid/support/v4/app/NotificationCompat;->IMPL Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
+	34      (0000008a) goto                 -38
+
+<clinit>-BB@0x8c : [ <clinit>-BB@0x98 <clinit>-BB@0xa8 ]
+	35      (0000008c) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	36      (00000090) const/16             v1, 9
+	37      (00000094) if-lt                v0, v1, +a
+
+<clinit>-BB@0x98 : [ <clinit>-BB@0x1a ]
+	38      (00000098) new-instance         v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplGingerbread;
+	39      (0000009c) invoke-direct        v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplGingerbread;-><init>()V
+	40      (000000a2) sput-object          v0, Landroid/support/v4/app/NotificationCompat;->IMPL Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
+	41      (000000a6) goto                 -46
+
+<clinit>-BB@0xa8 : [ <clinit>-BB@0x1a ]
+	42      (000000a8) new-instance         v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplBase;
+	43      (000000ac) invoke-direct        v0, Landroid/support/v4/app/NotificationCompat$NotificationCompatImplBase;-><init>()V
+	44      (000000b2) sput-object          v0, Landroid/support/v4/app/NotificationCompat;->IMPL Landroid/support/v4/app/NotificationCompat$NotificationCompatImpl;
+	45      (000000b6) goto                 -4e
+

@@ -1,0 +1,32 @@
+# Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->equals(Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.Object
+#
+# - return:boolean
+
+equals-BB@0x0 : [ equals-BB@0xa equals-BB@0xc ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) instance-of          v2, v5, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;
+	2       (00000006) if-nez               v2, +3
+
+equals-BB@0xa : 
+	3       (0000000a) return               v1
+
+equals-BB@0xc : [ equals-BB@0x1e equals-BB@0xa ]
+	4       (0000000c) move-object          v0, v5
+	5       (0000000e) check-cast           v0, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;
+	6       (00000012) iget                 v2, v4, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->min I
+	7       (00000016) iget                 v3, v0, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->min I
+	8       (0000001a) if-ne                v2, v3, -8
+
+equals-BB@0x1e : [ equals-BB@0x2a equals-BB@0xa ]
+	9       (0000001e) iget                 v2, v4, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->max I
+	10      (00000022) iget                 v3, v0, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->max I
+	11      (00000026) if-ne                v2, v3, -e
+
+equals-BB@0x2a : [ equals-BB@0xa ]
+	12      (0000002a) const/4              v1, 1
+	13      (0000002c) goto                 -11
+

@@ -1,0 +1,13 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect;->access$000(Landroid/net/Network;)J [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.net.Network
+#
+# - return:long
+
+access$000-BB@0x0 : 
+	0       (00000000) invoke-static        v2, Lorg/webrtc/NetworkMonitorAutoDetect;->networkToNetId(Landroid/net/Network;)J
+	1       (00000006) move-result-wide     v0
+	2       (00000008) return-wide          v0
+

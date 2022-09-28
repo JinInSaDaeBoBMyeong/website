@@ -1,0 +1,18 @@
+# Landroid/support/v4/app/FragmentManagerState;->writeToParcel(Landroid/os/Parcel; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.os.Parcel
+# - v3:int
+#
+# - return:void
+
+writeToParcel-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/FragmentManagerState;->mActive [Landroid/support/v4/app/FragmentState;
+	1       (00000004) invoke-virtual       v2, v0, v3, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable; I)V
+	2       (0000000a) iget-object          v0, v1, Landroid/support/v4/app/FragmentManagerState;->mAdded [I
+	3       (0000000e) invoke-virtual       v2, v0, Landroid/os/Parcel;->writeIntArray([I)V
+	4       (00000014) iget-object          v0, v1, Landroid/support/v4/app/FragmentManagerState;->mBackStack [Landroid/support/v4/app/BackStackState;
+	5       (00000018) invoke-virtual       v2, v0, v3, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable; I)V
+	6       (0000001e) return-void          
+

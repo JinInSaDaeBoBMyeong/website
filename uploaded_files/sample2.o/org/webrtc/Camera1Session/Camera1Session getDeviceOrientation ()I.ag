@@ -1,0 +1,42 @@
+# Lorg/webrtc/Camera1Session;->getDeviceOrientation()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:int
+
+getDeviceOrientation-BB@0x0 : [ D:getDeviceOrientation-BB@0x2c 1:getDeviceOrientation-BB@0x30 2:getDeviceOrientation-BB@0x36 3:getDeviceOrientation-BB@0x3c ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-object          v2, v4, Lorg/webrtc/Camera1Session;->applicationContext Landroid/content/Context;
+	2       (00000006) const-string         v3, 'window'
+	3       (0000000a) invoke-virtual       v2, v3, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	4       (00000010) move-result-object   v1
+	5       (00000012) check-cast           v1, Landroid/view/WindowManager;
+	6       (00000016) invoke-interface     v1, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+	7       (0000001c) move-result-object   v2
+	8       (0000001e) invoke-virtual       v2, Landroid/view/Display;->getRotation()I
+	9       (00000024) move-result          v2
+	10      (00000026) packed-switch        v2, +f (0x44)
+
+getDeviceOrientation-BB@0x2c : [ getDeviceOrientation-BB@0x2e ]
+	11      (0000002c) const/4              v0, 0
+
+getDeviceOrientation-BB@0x2e : 
+	12      (0000002e) return               v0
+
+getDeviceOrientation-BB@0x30 : [ getDeviceOrientation-BB@0x2e ]
+	13      (00000030) const/16             v0, 90
+	14      (00000034) goto                 -3
+
+getDeviceOrientation-BB@0x36 : [ getDeviceOrientation-BB@0x2e ]
+	15      (00000036) const/16             v0, 180
+	16      (0000003a) goto                 -6
+
+getDeviceOrientation-BB@0x3c : [ getDeviceOrientation-BB@0x2e ]
+	17      (0000003c) const/16             v0, 270
+	18      (00000040) goto                 -9
+
+getDeviceOrientation-BB@0x42 : 
+	19      (00000042) nop                  
+	20      (00000044) packed-switch-payload 1 2 3
+

@@ -1,0 +1,17 @@
+# Lorg/webrtc/VideoCodecInfo;-><init>(I Ljava/lang/String; Ljava/util/Map;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+# - v2:java.lang.String
+# - v3:java.util.Map
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput                 v1, v0, Lorg/webrtc/VideoCodecInfo;->payload I
+	2       (0000000a) iput-object          v2, v0, Lorg/webrtc/VideoCodecInfo;->name Ljava/lang/String;
+	3       (0000000e) iput-object          v3, v0, Lorg/webrtc/VideoCodecInfo;->params Ljava/util/Map;
+	4       (00000012) return-void          
+

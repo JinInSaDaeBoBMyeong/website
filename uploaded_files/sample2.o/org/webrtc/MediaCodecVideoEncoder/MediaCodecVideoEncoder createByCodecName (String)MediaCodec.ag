@@ -1,0 +1,22 @@
+# Lorg/webrtc/MediaCodecVideoEncoder;->createByCodecName(Ljava/lang/String;)Landroid/media/MediaCodec; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+#
+# - return:android.media.MediaCodec
+
+createByCodecName-BB@0x0 : [ createByCodecName-BB@0x8 ]
+	0       (00000000) invoke-static        v2, Landroid/media/MediaCodec;->createByCodecName(Ljava/lang/String;)Landroid/media/MediaCodec;
+	1       (00000006) move-result-object   v1
+	0:5
+	(Ljava/lang/Exception; -> a createByCodecName-BB@0xa)
+
+createByCodecName-BB@0x8 : 
+	2       (00000008) return-object        v1
+
+createByCodecName-BB@0xa : [ createByCodecName-BB@0x8 ]
+	3       (0000000a) move-exception       v0
+	4       (0000000c) const/4              v1, 0
+	5       (0000000e) goto                 -3
+

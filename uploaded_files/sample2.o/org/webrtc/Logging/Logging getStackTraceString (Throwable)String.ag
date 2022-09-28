@@ -1,0 +1,27 @@
+# Lorg/webrtc/Logging;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Throwable
+#
+# - return:java.lang.String
+
+getStackTraceString-BB@0x0 : [ getStackTraceString-BB@0x4 getStackTraceString-BB@0xa ]
+	0       (00000000) if-nez               v3, +5
+
+getStackTraceString-BB@0x4 : [ getStackTraceString-BB@0x8 ]
+	1       (00000004) const-string         v2, ''
+
+getStackTraceString-BB@0x8 : 
+	2       (00000008) return-object        v2
+
+getStackTraceString-BB@0xa : [ getStackTraceString-BB@0x8 ]
+	3       (0000000a) new-instance         v1, Ljava/io/StringWriter;
+	4       (0000000e) invoke-direct        v1, Ljava/io/StringWriter;-><init>()V
+	5       (00000014) new-instance         v0, Ljava/io/PrintWriter;
+	6       (00000018) invoke-direct        v0, v1, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
+	7       (0000001e) invoke-virtual       v3, v0, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
+	8       (00000024) invoke-virtual       v1, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+	9       (0000002a) move-result-object   v2
+	10      (0000002c) goto                 -12
+

@@ -1,0 +1,22 @@
+# Landroid/support/v4/app/NotificationCompat$WearableExtender;->getContentIntentAvailableOffline()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+getContentIntentAvailableOffline-BB@0x0 : [ getContentIntentAvailableOffline-BB@0xc getContentIntentAvailableOffline-BB@0x10 ]
+	0       (00000000) iget                 v0, v1, Landroid/support/v4/app/NotificationCompat$WearableExtender;->mFlags I
+	1       (00000004) and-int/lit8         v0, v0, 1
+	2       (00000008) if-eqz               v0, +4
+
+getContentIntentAvailableOffline-BB@0xc : [ getContentIntentAvailableOffline-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+getContentIntentAvailableOffline-BB@0xe : 
+	4       (0000000e) return               v0
+
+getContentIntentAvailableOffline-BB@0x10 : [ getContentIntentAvailableOffline-BB@0xe ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -2
+

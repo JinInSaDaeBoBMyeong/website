@@ -1,0 +1,25 @@
+# Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateJellyBeanImpl$1;->getAccessibilityNodeProvider(Landroid/view/View;)Ljava/lang/Object; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:java.lang.Object
+
+getAccessibilityNodeProvider-BB@0x0 : [ getAccessibilityNodeProvider-BB@0x10 getAccessibilityNodeProvider-BB@0x1a ]
+	0       (00000000) iget-object          v1, v2, Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateJellyBeanImpl$1;->val$compat Landroid/support/v4/view/AccessibilityDelegateCompat;
+	1       (00000004) invoke-virtual       v1, v3, Landroid/support/v4/view/AccessibilityDelegateCompat;->getAccessibilityNodeProvider(Landroid/view/View;)Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) if-eqz               v0, +7
+
+getAccessibilityNodeProvider-BB@0x10 : [ getAccessibilityNodeProvider-BB@0x18 ]
+	4       (00000010) invoke-virtual       v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->getProvider()Ljava/lang/Object;
+	5       (00000016) move-result-object   v1
+
+getAccessibilityNodeProvider-BB@0x18 : 
+	6       (00000018) return-object        v1
+
+getAccessibilityNodeProvider-BB@0x1a : [ getAccessibilityNodeProvider-BB@0x18 ]
+	7       (0000001a) const/4              v1, 0
+	8       (0000001c) goto                 -2
+

@@ -1,0 +1,15 @@
+# Ltev/piqgahor/qaNH6EQKn;->sefGulkJ66034(Landroid/content/Intent; Z)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Intent
+# - v3:boolean
+#
+# - return:int
+
+sefGulkJ66034-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Ltev/piqgahor/qaNH6EQKn;->RNpZGg7352 Ltev/piqgahor/fxn1Y9;
+	1       (00000004) invoke-interface     v0, v2, v3, Ltev/piqgahor/fxn1Y9;->IyW3y427(Landroid/content/Intent; Z)I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

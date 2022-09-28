@@ -1,0 +1,16 @@
+# Landroid/support/v4/app/NotificationCompat$Builder;->setProgress(I I Z)Landroid/support/v4/app/NotificationCompat$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+# - v2:int
+# - v3:boolean
+#
+# - return:android.support.v4.app.NotificationCompat$Builder
+
+setProgress-BB@0x0 : 
+	0       (00000000) iput                 v1, v0, Landroid/support/v4/app/NotificationCompat$Builder;->mProgressMax I
+	1       (00000004) iput                 v2, v0, Landroid/support/v4/app/NotificationCompat$Builder;->mProgress I
+	2       (00000008) iput-boolean         v3, v0, Landroid/support/v4/app/NotificationCompat$Builder;->mProgressIndeterminate Z
+	3       (0000000c) return-object        v0
+

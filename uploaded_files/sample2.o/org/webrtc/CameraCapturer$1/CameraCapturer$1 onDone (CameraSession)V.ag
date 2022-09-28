@@ -1,0 +1,209 @@
+# Lorg/webrtc/CameraCapturer$1;->onDone(Lorg/webrtc/CameraSession;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:org.webrtc.CameraSession
+#
+# - return:void
+
+onDone-BB@0x0 : [ onDone-BB@0x92 ]
+	0       (00000000) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	1       (00000004) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$000(Lorg/webrtc/CameraCapturer;)V
+	2       (0000000a) const-string         v0, 'CameraCapturer'
+	3       (0000000e) new-instance         v1, Ljava/lang/StringBuilder;
+	4       (00000012) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	5       (00000018) const-string         v2, 'Create session done. Switch state: '
+	6       (0000001c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000022) move-result-object   v1
+	8       (00000024) iget-object          v2, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	9       (00000028) invoke-static        v2, Lorg/webrtc/CameraCapturer;->access$100(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraCapturer$SwitchState;
+	10      (0000002e) move-result-object   v2
+	11      (00000030) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	12      (00000036) move-result-object   v1
+	13      (00000038) const-string         v2, '. MediaRecorder state: '
+	14      (0000003c) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (00000042) move-result-object   v1
+	16      (00000044) iget-object          v2, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	17      (00000048) invoke-static        v2, Lorg/webrtc/CameraCapturer;->access$200(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	18      (0000004e) move-result-object   v2
+	19      (00000050) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	20      (00000056) move-result-object   v1
+	21      (00000058) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	22      (0000005e) move-result-object   v1
+	23      (00000060) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	24      (00000066) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	25      (0000006a) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$400(Lorg/webrtc/CameraCapturer;)Landroid/os/Handler;
+	26      (00000070) move-result-object   v0
+	27      (00000072) iget-object          v1, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	28      (00000076) invoke-static        v1, Lorg/webrtc/CameraCapturer;->access$300(Lorg/webrtc/CameraCapturer;)Ljava/lang/Runnable;
+	29      (0000007c) move-result-object   v1
+	30      (0000007e) invoke-virtual       v0, v1, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+	31      (00000084) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	32      (00000088) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$500(Lorg/webrtc/CameraCapturer;)Ljava/lang/Object;
+	33      (0000008e) move-result-object   v1
+	34      (00000090) monitor-enter        v1
+
+onDone-BB@0x92 : [ onDone-BB@0x11a onDone-BB@0x1f2 ]
+	35      (00000092) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	36      (00000096) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$600(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/VideoCapturer$CapturerObserver;
+	37      (0000009c) move-result-object   v0
+	38      (0000009e) const/4              v2, 1
+	39      (000000a0) invoke-interface     v0, v2, Lorg/webrtc/VideoCapturer$CapturerObserver;->onCapturerStarted(Z)V
+	40      (000000a6) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	41      (000000aa) const/4              v2, 0
+	42      (000000ac) invoke-static        v0, v2, Lorg/webrtc/CameraCapturer;->access$702(Lorg/webrtc/CameraCapturer; Z)Z
+	43      (000000b2) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	44      (000000b6) invoke-static        v0, v6, Lorg/webrtc/CameraCapturer;->access$802(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraSession;)Lorg/webrtc/CameraSession;
+	45      (000000bc) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	46      (000000c0) new-instance         v2, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	47      (000000c4) iget-object          v3, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	48      (000000c8) invoke-static        v3, Lorg/webrtc/CameraCapturer;->access$1000(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/SurfaceTextureHelper;
+	49      (000000ce) move-result-object   v3
+	50      (000000d0) iget-object          v4, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	51      (000000d4) invoke-static        v4, Lorg/webrtc/CameraCapturer;->access$1100(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;
+	52      (000000da) move-result-object   v4
+	53      (000000dc) invoke-direct        v2, v3, v4, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;-><init>(Lorg/webrtc/SurfaceTextureHelper; Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;)V
+	54      (000000e2) invoke-static        v0, v2, Lorg/webrtc/CameraCapturer;->access$902(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	55      (000000e8) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	56      (000000ec) const/4              v2, 0
+	57      (000000ee) invoke-static        v0, v2, Lorg/webrtc/CameraCapturer;->access$1202(Lorg/webrtc/CameraCapturer; Z)Z
+	58      (000000f4) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	59      (000000f8) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$500(Lorg/webrtc/CameraCapturer;)Ljava/lang/Object;
+	60      (000000fe) move-result-object   v0
+	61      (00000100) invoke-virtual       v0, Ljava/lang/Object;->notifyAll()V
+	62      (00000106) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	63      (0000010a) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$100(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraCapturer$SwitchState;
+	64      (00000110) move-result-object   v0
+	65      (00000112) sget-object          v2, Lorg/webrtc/CameraCapturer$SwitchState;->IN_PROGRESS Lorg/webrtc/CameraCapturer$SwitchState;
+	66      (00000116) if-ne                v0, v2, +6e
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x11a : [ onDone-BB@0x12a onDone-BB@0x168 ]
+	67      (0000011a) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	68      (0000011e) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$1300(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;
+	69      (00000124) move-result-object   v0
+	70      (00000126) if-eqz               v0, +21
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x12a : [ onDone-BB@0x168 ]
+	71      (0000012a) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	72      (0000012e) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$1300(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;
+	73      (00000134) move-result-object   v0
+	74      (00000136) iget-object          v2, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	75      (0000013a) invoke-static        v2, Lorg/webrtc/CameraCapturer;->access$1500(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraEnumerator;
+	76      (00000140) move-result-object   v2
+	77      (00000142) iget-object          v3, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	78      (00000146) invoke-static        v3, Lorg/webrtc/CameraCapturer;->access$1400(Lorg/webrtc/CameraCapturer;)Ljava/lang/String;
+	79      (0000014c) move-result-object   v3
+	80      (0000014e) invoke-interface     v2, v3, Lorg/webrtc/CameraEnumerator;->isFrontFacing(Ljava/lang/String;)Z
+	81      (00000154) move-result          v2
+	82      (00000156) invoke-interface     v0, v2, Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;->onCameraSwitchDone(Z)V
+	83      (0000015c) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	84      (00000160) const/4              v2, 0
+	85      (00000162) invoke-static        v0, v2, Lorg/webrtc/CameraCapturer;->access$1302(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;)Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x168 : [ onDone-BB@0x176 ]
+	86      (00000168) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	87      (0000016c) sget-object          v2, Lorg/webrtc/CameraCapturer$SwitchState;->IDLE Lorg/webrtc/CameraCapturer$SwitchState;
+	88      (00000170) invoke-static        v0, v2, Lorg/webrtc/CameraCapturer;->access$102(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraCapturer$SwitchState;)Lorg/webrtc/CameraCapturer$SwitchState;
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x176 : [ onDone-BB@0x18a onDone-BB@0x19e ]
+	89      (00000176) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	90      (0000017a) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$200(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	91      (00000180) move-result-object   v0
+	92      (00000182) sget-object          v2, Lorg/webrtc/CameraCapturer$MediaRecorderState;->IDLE_TO_ACTIVE Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	93      (00000186) if-eq                v0, v2, +c
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x18a : [ onDone-BB@0x19e onDone-BB@0x1ee ]
+	94      (0000018a) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	95      (0000018e) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$200(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	96      (00000194) move-result-object   v0
+	97      (00000196) sget-object          v2, Lorg/webrtc/CameraCapturer$MediaRecorderState;->ACTIVE_TO_IDLE Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	98      (0000019a) if-ne                v0, v2, +2a
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x19e : [ onDone-BB@0x1ae onDone-BB@0x1cc ]
+	99      (0000019e) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	100     (000001a2) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$1700(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;
+	101     (000001a8) move-result-object   v0
+	102     (000001aa) if-eqz               v0, +11
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x1ae : [ onDone-BB@0x1cc ]
+	103     (000001ae) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	104     (000001b2) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$1700(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;
+	105     (000001b8) move-result-object   v0
+	106     (000001ba) invoke-interface     v0, Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;->onMediaRecorderSuccess()V
+	107     (000001c0) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	108     (000001c4) const/4              v2, 0
+	109     (000001c6) invoke-static        v0, v2, Lorg/webrtc/CameraCapturer;->access$1702(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;)Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x1cc : [ onDone-BB@0x1e0 onDone-BB@0x232 ]
+	110     (000001cc) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	111     (000001d0) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$200(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	112     (000001d6) move-result-object   v0
+	113     (000001d8) sget-object          v2, Lorg/webrtc/CameraCapturer$MediaRecorderState;->IDLE_TO_ACTIVE Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	114     (000001dc) if-ne                v0, v2, +2b
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x1e0 : [ onDone-BB@0x1ee ]
+	115     (000001e0) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	116     (000001e4) sget-object          v2, Lorg/webrtc/CameraCapturer$MediaRecorderState;->ACTIVE Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	117     (000001e8) invoke-static        v0, v2, Lorg/webrtc/CameraCapturer;->access$202(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraCapturer$MediaRecorderState;)Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x1ee : 
+	118     (000001ee) monitor-exit         v1
+	119     (000001f0) return-void          
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x1f2 : [ onDone-BB@0x206 onDone-BB@0x176 ]
+	120     (000001f2) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	121     (000001f6) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$100(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraCapturer$SwitchState;
+	122     (000001fc) move-result-object   v0
+	123     (000001fe) sget-object          v2, Lorg/webrtc/CameraCapturer$SwitchState;->PENDING Lorg/webrtc/CameraCapturer$SwitchState;
+	124     (00000202) if-ne                v0, v2, -46
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x206 : [ onDone-BB@0x176 ]
+	125     (00000206) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	126     (0000020a) sget-object          v2, Lorg/webrtc/CameraCapturer$SwitchState;->IDLE Lorg/webrtc/CameraCapturer$SwitchState;
+	127     (0000020e) invoke-static        v0, v2, Lorg/webrtc/CameraCapturer;->access$102(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraCapturer$SwitchState;)Lorg/webrtc/CameraCapturer$SwitchState;
+	128     (00000214) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	129     (00000218) iget-object          v2, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	130     (0000021c) invoke-static        v2, Lorg/webrtc/CameraCapturer;->access$1300(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;
+	131     (00000222) move-result-object   v2
+	132     (00000224) invoke-static        v0, v2, Lorg/webrtc/CameraCapturer;->access$1600(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;)V
+	133     (0000022a) goto                 -5a
+	92:22f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+
+onDone-BB@0x22c : 
+	134     (0000022c) move-exception       v0
+	135     (0000022e) monitor-exit         v1
+	136     (00000230) throw                v0
+
+onDone-BB@0x232 : [ onDone-BB@0x1ee ]
+	137     (00000232) iget-object          v0, v5, Lorg/webrtc/CameraCapturer$1;->this$0 Lorg/webrtc/CameraCapturer;
+	138     (00000236) sget-object          v2, Lorg/webrtc/CameraCapturer$MediaRecorderState;->IDLE Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	139     (0000023a) invoke-static        v0, v2, Lorg/webrtc/CameraCapturer;->access$202(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraCapturer$MediaRecorderState;)Lorg/webrtc/CameraCapturer$MediaRecorderState;
+	140     (00000240) goto                 -29
+	232:23f
+	(Ljava/lang/Throwable; -> 22c onDone-BB@0x22c)
+

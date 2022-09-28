@@ -1,0 +1,12 @@
+# Lorg/webrtc/CameraCapturer;->access$2200(Lorg/webrtc/CameraCapturer;)Landroid/content/Context; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.CameraCapturer
+#
+# - return:android.content.Context
+
+access$2200-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/CameraCapturer;->applicationContext Landroid/content/Context;
+	1       (00000004) return-object        v0
+

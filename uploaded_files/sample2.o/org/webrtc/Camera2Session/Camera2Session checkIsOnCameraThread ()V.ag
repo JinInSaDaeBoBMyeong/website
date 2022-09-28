@@ -1,0 +1,26 @@
+# Lorg/webrtc/Camera2Session;->checkIsOnCameraThread()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+checkIsOnCameraThread-BB@0x0 : [ checkIsOnCameraThread-BB@0x20 checkIsOnCameraThread-BB@0x30 ]
+	0       (00000000) invoke-static        Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+	1       (00000006) move-result-object   v0
+	2       (00000008) iget-object          v1, v2, Lorg/webrtc/Camera2Session;->cameraThreadHandler Landroid/os/Handler;
+	3       (0000000c) invoke-virtual       v1, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+	4       (00000012) move-result-object   v1
+	5       (00000014) invoke-virtual       v1, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) if-eq                v0, v1, +a
+
+checkIsOnCameraThread-BB@0x20 : 
+	8       (00000020) new-instance         v0, Ljava/lang/IllegalStateException;
+	9       (00000024) const-string         v1, 'Wrong thread'
+	10      (00000028) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	11      (0000002e) throw                v0
+
+checkIsOnCameraThread-BB@0x30 : 
+	12      (00000030) return-void          
+

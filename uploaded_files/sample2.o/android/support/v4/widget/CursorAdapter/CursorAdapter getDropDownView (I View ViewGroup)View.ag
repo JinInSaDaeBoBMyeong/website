@@ -1,0 +1,41 @@
+# Landroid/support/v4/widget/CursorAdapter;->getDropDownView(I Landroid/view/View; Landroid/view/ViewGroup;)Landroid/view/View; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:android.view.View
+# - v6:android.view.ViewGroup
+#
+# - return:android.view.View
+
+getDropDownView-BB@0x0 : [ getDropDownView-BB@0x8 getDropDownView-BB@0x3a ]
+	0       (00000000) iget-boolean         v1, v3, Landroid/support/v4/widget/CursorAdapter;->mDataValid Z
+	1       (00000004) if-eqz               v1, +1b
+
+getDropDownView-BB@0x8 : [ getDropDownView-BB@0x16 getDropDownView-BB@0x36 ]
+	2       (00000008) iget-object          v1, v3, Landroid/support/v4/widget/CursorAdapter;->mCursor Landroid/database/Cursor;
+	3       (0000000c) invoke-interface     v1, v4, Landroid/database/Cursor;->moveToPosition(I)Z
+	4       (00000012) if-nez               v5, +12
+
+getDropDownView-BB@0x16 : [ getDropDownView-BB@0x26 ]
+	5       (00000016) iget-object          v1, v3, Landroid/support/v4/widget/CursorAdapter;->mContext Landroid/content/Context;
+	6       (0000001a) iget-object          v2, v3, Landroid/support/v4/widget/CursorAdapter;->mCursor Landroid/database/Cursor;
+	7       (0000001e) invoke-virtual       v3, v1, v2, v6, Landroid/support/v4/widget/CursorAdapter;->newDropDownView(Landroid/content/Context; Landroid/database/Cursor; Landroid/view/ViewGroup;)Landroid/view/View;
+	8       (00000024) move-result-object   v0
+
+getDropDownView-BB@0x26 : [ getDropDownView-BB@0x34 ]
+	9       (00000026) iget-object          v1, v3, Landroid/support/v4/widget/CursorAdapter;->mContext Landroid/content/Context;
+	10      (0000002a) iget-object          v2, v3, Landroid/support/v4/widget/CursorAdapter;->mCursor Landroid/database/Cursor;
+	11      (0000002e) invoke-virtual       v3, v0, v1, v2, Landroid/support/v4/widget/CursorAdapter;->bindView(Landroid/view/View; Landroid/content/Context; Landroid/database/Cursor;)V
+
+getDropDownView-BB@0x34 : 
+	12      (00000034) return-object        v0
+
+getDropDownView-BB@0x36 : [ getDropDownView-BB@0x26 ]
+	13      (00000036) move-object          v0, v5
+	14      (00000038) goto                 -9
+
+getDropDownView-BB@0x3a : [ getDropDownView-BB@0x34 ]
+	15      (0000003a) const/4              v0, 0
+	16      (0000003c) goto                 -4
+

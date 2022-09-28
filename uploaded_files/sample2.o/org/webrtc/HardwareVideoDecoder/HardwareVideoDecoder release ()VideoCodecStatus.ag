@@ -1,0 +1,78 @@
+# Lorg/webrtc/HardwareVideoDecoder;->release()Lorg/webrtc/VideoCodecStatus; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:org.webrtc.VideoCodecStatus
+
+release-BB@0x0 : [ release-BB@0x4 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const/4              v0, 0
+
+release-BB@0x4 : [ release-BB@0x1c release-BB@0x50 ]
+	2       (00000004) iput-boolean         v0, v5, Lorg/webrtc/HardwareVideoDecoder;->running Z
+	3       (00000008) iget-object          v0, v5, Lorg/webrtc/HardwareVideoDecoder;->outputThread Ljava/lang/Thread;
+	4       (0000000c) const-wide/16        v2, 5000 # [5000.0]
+	5       (00000010) invoke-static        v0, v2, v3, Lorg/webrtc/ThreadUtils;->joinUninterruptibly(Ljava/lang/Thread; J)Z
+	6       (00000016) move-result          v0
+	7       (00000018) if-nez               v0, +1c
+	4:37
+	(Ljava/lang/Throwable; -> b2 release-BB@0xb2)
+
+release-BB@0x1c : [ release-BB@0x4e ]
+	8       (0000001c) const-string         v0, 'HardwareVideoDecoder'
+	9       (00000020) const-string         v1, 'Media encoder release timeout'
+	10      (00000024) new-instance         v2, Ljava/lang/RuntimeException;
+	11      (00000028) invoke-direct        v2, Ljava/lang/RuntimeException;-><init>()V
+	12      (0000002e) invoke-static        v0, v1, v2, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	13      (00000034) sget-object          v0, Lorg/webrtc/VideoCodecStatus;->TIMEOUT Lorg/webrtc/VideoCodecStatus;
+	14      (00000038) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->codec Landroid/media/MediaCodec;
+	15      (0000003c) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->callback Lorg/webrtc/VideoDecoder$Callback;
+	16      (00000040) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->outputThread Ljava/lang/Thread;
+	17      (00000044) iget-object          v1, v5, Lorg/webrtc/HardwareVideoDecoder;->frameInfos Ljava/util/Deque;
+	18      (00000048) invoke-interface     v1, Ljava/util/Deque;->clear()V
+
+release-BB@0x4e : 
+	19      (0000004e) return-object        v0
+
+release-BB@0x50 : [ release-BB@0x58 release-BB@0x96 ]
+	20      (00000050) iget-object          v0, v5, Lorg/webrtc/HardwareVideoDecoder;->shutdownException Ljava/lang/Exception;
+	21      (00000054) if-eqz               v0, +21
+	50:7d
+	(Ljava/lang/Throwable; -> b2 release-BB@0xb2)
+
+release-BB@0x58 : [ release-BB@0x4e ]
+	22      (00000058) const-string         v0, 'HardwareVideoDecoder'
+	23      (0000005c) const-string         v1, 'Media encoder release error'
+	24      (00000060) new-instance         v2, Ljava/lang/RuntimeException;
+	25      (00000064) iget-object          v3, v5, Lorg/webrtc/HardwareVideoDecoder;->shutdownException Ljava/lang/Exception;
+	26      (00000068) invoke-direct        v2, v3, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+	27      (0000006e) invoke-static        v0, v1, v2, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	28      (00000074) const/4              v0, 0
+	29      (00000076) iput-object          v0, v5, Lorg/webrtc/HardwareVideoDecoder;->shutdownException Ljava/lang/Exception;
+	30      (0000007a) sget-object          v0, Lorg/webrtc/VideoCodecStatus;->ERROR Lorg/webrtc/VideoCodecStatus;
+	31      (0000007e) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->codec Landroid/media/MediaCodec;
+	32      (00000082) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->callback Lorg/webrtc/VideoDecoder$Callback;
+	33      (00000086) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->outputThread Ljava/lang/Thread;
+	34      (0000008a) iget-object          v1, v5, Lorg/webrtc/HardwareVideoDecoder;->frameInfos Ljava/util/Deque;
+	35      (0000008e) invoke-interface     v1, Ljava/util/Deque;->clear()V
+	36      (00000094) goto                 -23
+
+release-BB@0x96 : [ release-BB@0x4e ]
+	37      (00000096) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->codec Landroid/media/MediaCodec;
+	38      (0000009a) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->callback Lorg/webrtc/VideoDecoder$Callback;
+	39      (0000009e) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->outputThread Ljava/lang/Thread;
+	40      (000000a2) iget-object          v0, v5, Lorg/webrtc/HardwareVideoDecoder;->frameInfos Ljava/util/Deque;
+	41      (000000a6) invoke-interface     v0, Ljava/util/Deque;->clear()V
+	42      (000000ac) sget-object          v0, Lorg/webrtc/VideoCodecStatus;->OK Lorg/webrtc/VideoCodecStatus;
+	43      (000000b0) goto                 -31
+
+release-BB@0xb2 : 
+	44      (000000b2) move-exception       v0
+	45      (000000b4) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->codec Landroid/media/MediaCodec;
+	46      (000000b8) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->callback Lorg/webrtc/VideoDecoder$Callback;
+	47      (000000bc) iput-object          v4, v5, Lorg/webrtc/HardwareVideoDecoder;->outputThread Ljava/lang/Thread;
+	48      (000000c0) iget-object          v1, v5, Lorg/webrtc/HardwareVideoDecoder;->frameInfos Ljava/util/Deque;
+	49      (000000c4) invoke-interface     v1, Ljava/util/Deque;->clear()V
+	50      (000000ca) throw                v0
+

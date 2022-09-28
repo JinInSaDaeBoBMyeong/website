@@ -1,0 +1,19 @@
+# Lorg/webrtc/MediaCodecVideoDecoder;-><init>()V [access_flags=public constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v0, Ljava/util/LinkedList;
+	2       (0000000a) invoke-direct        v0, Ljava/util/LinkedList;-><init>()V
+	3       (00000010) iput-object          v0, v1, Lorg/webrtc/MediaCodecVideoDecoder;->decodeStartTimeMs Ljava/util/Queue;
+	4       (00000014) const/4              v0, 0
+	5       (00000016) iput-object          v0, v1, Lorg/webrtc/MediaCodecVideoDecoder;->surface Landroid/view/Surface;
+	6       (0000001a) new-instance         v0, Ljava/util/LinkedList;
+	7       (0000001e) invoke-direct        v0, Ljava/util/LinkedList;-><init>()V
+	8       (00000024) iput-object          v0, v1, Lorg/webrtc/MediaCodecVideoDecoder;->dequeuedSurfaceOutputBuffers Ljava/util/Queue;
+	9       (00000028) return-void          
+

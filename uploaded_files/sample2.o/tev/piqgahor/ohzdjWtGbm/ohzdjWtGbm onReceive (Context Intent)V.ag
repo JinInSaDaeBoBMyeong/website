@@ -1,0 +1,30 @@
+# Ltev/piqgahor/ohzdjWtGbm;->onReceive(Landroid/content/Context; Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:android.content.Intent
+#
+# - return:void
+
+onReceive-BB@0x0 : [ onReceive-BB@0x4 onReceive-BB@0x8 ]
+	0       (00000000) if-eqz               v2, +4
+
+onReceive-BB@0x4 : [ onReceive-BB@0x8 onReceive-BB@0xa ]
+	1       (00000004) if-nez               v3, +3
+
+onReceive-BB@0x8 : 
+	2       (00000008) return-void          
+
+onReceive-BB@0xa : [ onReceive-BB@0x8 ]
+	3       (0000000a) const/16             v0, 11
+	4       (0000000e) new-array            v0, v0, [I
+	5       (00000012) fill-array-data      v0, +b (0x28)
+	6       (00000018) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) invoke-static        v2, v0, v3, Ltev/piqgahor/jzVO9lP4;->yStpazw33441uh(Landroid/content/Context; Ljava/lang/String; Landroid/content/Intent;)V
+	9       (00000026) goto                 -f
+
+onReceive-BB@0x28 : 
+	10      (00000028) fill-array-data-payload bytearray(b'\x10\x00\x00\x00`\x00\x00\x00q\x00\x00\x00s\x00\x00\x00{\x00\x00\x00q\x00\x00\x00w\x00\x00\x00u\x00\x00\x00Q\x00\x00\x00t\x00\x00\x00t\x00\x00\x00') | \x10\x00\x00\x00\x60\x00\x00\x00\x71\x00\x00\x00\x73\x00\x00\x00\x7b\x00\x00\x00\x71\x00\x00\x00\x77\x00\x00\x00\x75\x00\x00\x00\x51\x00\x00\x00\x74\x00\x00\x00\x74\x00\x00\x00
+

@@ -1,0 +1,21 @@
+# Lorg/webrtc/CameraCapturer;->reportUpdateMediaRecorderError(Ljava/lang/String; Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:org.webrtc.CameraVideoCapturer$MediaRecorderHandler
+#
+# - return:void
+
+reportUpdateMediaRecorderError-BB@0x0 : [ reportUpdateMediaRecorderError-BB@0x14 reportUpdateMediaRecorderError-BB@0x1a ]
+	0       (00000000) invoke-direct        v1, Lorg/webrtc/CameraCapturer;->checkIsOnCameraThread()V
+	1       (00000006) const-string         v0, 'CameraCapturer'
+	2       (0000000a) invoke-static        v0, v2, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	3       (00000010) if-eqz               v3, +5
+
+reportUpdateMediaRecorderError-BB@0x14 : [ reportUpdateMediaRecorderError-BB@0x1a ]
+	4       (00000014) invoke-interface     v3, v2, Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;->onMediaRecorderError(Ljava/lang/String;)V
+
+reportUpdateMediaRecorderError-BB@0x1a : 
+	5       (0000001a) return-void          
+

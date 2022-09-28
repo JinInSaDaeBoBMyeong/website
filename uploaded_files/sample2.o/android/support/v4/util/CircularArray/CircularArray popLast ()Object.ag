@@ -1,0 +1,30 @@
+# Landroid/support/v4/util/CircularArray;->popLast()Ljava/lang/Object; [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:java.lang.Object
+
+popLast-BB@0x0 : [ popLast-BB@0xc popLast-BB@0x18 ]
+	0       (00000000) iget                 v2, v4, Landroid/support/v4/util/CircularArray;->mHead I
+	1       (00000004) iget                 v3, v4, Landroid/support/v4/util/CircularArray;->mTail I
+	2       (00000008) if-ne                v2, v3, +8
+
+popLast-BB@0xc : 
+	3       (0000000c) new-instance         v2, Ljava/lang/ArrayIndexOutOfBoundsException;
+	4       (00000010) invoke-direct        v2, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
+	5       (00000016) throw                v2
+
+popLast-BB@0x18 : 
+	6       (00000018) iget                 v2, v4, Landroid/support/v4/util/CircularArray;->mTail I
+	7       (0000001c) add-int/lit8         v2, v2, -1
+	8       (00000020) iget                 v3, v4, Landroid/support/v4/util/CircularArray;->mCapacityBitmask I
+	9       (00000024) and-int              v1, v2, v3
+	10      (00000028) iget-object          v2, v4, Landroid/support/v4/util/CircularArray;->mElements [Ljava/lang/Object;
+	11      (0000002c) aget-object          v0, v2, v1
+	12      (00000030) iget-object          v2, v4, Landroid/support/v4/util/CircularArray;->mElements [Ljava/lang/Object;
+	13      (00000034) const/4              v3, 0
+	14      (00000036) aput-object          v3, v2, v1
+	15      (0000003a) iput                 v1, v4, Landroid/support/v4/util/CircularArray;->mTail I
+	16      (0000003e) return-object        v0
+

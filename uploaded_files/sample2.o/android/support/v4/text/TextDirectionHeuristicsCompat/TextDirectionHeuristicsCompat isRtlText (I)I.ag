@@ -1,0 +1,29 @@
+# Landroid/support/v4/text/TextDirectionHeuristicsCompat;->isRtlText(I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:int
+
+isRtlText-BB@0x0 : [ D:isRtlText-BB@0x6 0:isRtlText-BB@0xa 1:isRtlText-BB@0xe 2:isRtlText-BB@0xe ]
+	0       (00000000) packed-switch        v1, +a (0x14)
+
+isRtlText-BB@0x6 : [ isRtlText-BB@0x8 ]
+	1       (00000006) const/4              v0, 2
+
+isRtlText-BB@0x8 : 
+	2       (00000008) return               v0
+
+isRtlText-BB@0xa : [ isRtlText-BB@0x8 ]
+	3       (0000000a) const/4              v0, 1
+	4       (0000000c) goto                 -2
+
+isRtlText-BB@0xe : [ isRtlText-BB@0x8 ]
+	5       (0000000e) const/4              v0, 0
+	6       (00000010) goto                 -4
+
+isRtlText-BB@0x12 : 
+	7       (00000012) nop                  
+	8       (00000014) packed-switch-payload 0 1 2
+

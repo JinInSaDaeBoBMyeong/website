@@ -1,0 +1,34 @@
+# Landroid/support/v4/widget/DrawerLayout;->setDrawerShadow(Landroid/graphics/drawable/Drawable; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.graphics.drawable.Drawable
+# - v5:int
+#
+# - return:void
+
+setDrawerShadow-BB@0x0 : [ setDrawerShadow-BB@0x1a setDrawerShadow-BB@0x24 ]
+	0       (00000000) invoke-static        v3, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+	1       (00000006) move-result          v1
+	2       (00000008) invoke-static        v5, v1, Landroid/support/v4/view/GravityCompat;->getAbsoluteGravity(I I)I
+	3       (0000000e) move-result          v0
+	4       (00000010) and-int/lit8         v1, v0, 3
+	5       (00000014) const/4              v2, 3
+	6       (00000016) if-ne                v1, v2, +7
+
+setDrawerShadow-BB@0x1a : [ setDrawerShadow-BB@0x24 ]
+	7       (0000001a) iput-object          v4, v3, Landroid/support/v4/widget/DrawerLayout;->mShadowLeft Landroid/graphics/drawable/Drawable;
+	8       (0000001e) invoke-virtual       v3, Landroid/support/v4/widget/DrawerLayout;->invalidate()V
+
+setDrawerShadow-BB@0x24 : [ setDrawerShadow-BB@0x2e setDrawerShadow-BB@0x38 ]
+	9       (00000024) and-int/lit8         v1, v0, 5
+	10      (00000028) const/4              v2, 5
+	11      (0000002a) if-ne                v1, v2, +7
+
+setDrawerShadow-BB@0x2e : [ setDrawerShadow-BB@0x38 ]
+	12      (0000002e) iput-object          v4, v3, Landroid/support/v4/widget/DrawerLayout;->mShadowRight Landroid/graphics/drawable/Drawable;
+	13      (00000032) invoke-virtual       v3, Landroid/support/v4/widget/DrawerLayout;->invalidate()V
+
+setDrawerShadow-BB@0x38 : 
+	14      (00000038) return-void          
+

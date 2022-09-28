@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/GestureDetectorCompat;->setOnDoubleTapListener(Landroid/view/GestureDetector$OnDoubleTapListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.GestureDetector$OnDoubleTapListener
+#
+# - return:void
+
+setOnDoubleTapListener-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/view/GestureDetectorCompat;->mImpl Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImpl;
+	1       (00000004) invoke-interface     v0, v2, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImpl;->setOnDoubleTapListener(Landroid/view/GestureDetector$OnDoubleTapListener;)V
+	2       (0000000a) return-void          
+

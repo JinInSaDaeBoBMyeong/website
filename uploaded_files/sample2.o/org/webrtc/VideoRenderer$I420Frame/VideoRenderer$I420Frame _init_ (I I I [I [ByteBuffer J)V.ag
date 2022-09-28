@@ -1,0 +1,46 @@
+# Lorg/webrtc/VideoRenderer$I420Frame;-><init>(I I I [I [Ljava/nio/ByteBuffer; J)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:int
+# - v8:int
+# - v9:int[]
+# - v10:java.nio.ByteBuffer[]
+# - v11:long
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x2c <init>-BB@0x5e ]
+	0       (00000000) invoke-direct        v4, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput                 v5, v4, Lorg/webrtc/VideoRenderer$I420Frame;->width I
+	2       (0000000a) iput                 v6, v4, Lorg/webrtc/VideoRenderer$I420Frame;->height I
+	3       (0000000e) iput-object          v8, v4, Lorg/webrtc/VideoRenderer$I420Frame;->yuvStrides [I
+	4       (00000012) iput-object          v9, v4, Lorg/webrtc/VideoRenderer$I420Frame;->yuvPlanes [Ljava/nio/ByteBuffer;
+	5       (00000016) const/4              v0, 1
+	6       (00000018) iput-boolean         v0, v4, Lorg/webrtc/VideoRenderer$I420Frame;->yuvFrame Z
+	7       (0000001c) iput                 v7, v4, Lorg/webrtc/VideoRenderer$I420Frame;->rotationDegree I
+	8       (00000020) iput-wide            v10, v4, Lorg/webrtc/VideoRenderer$I420Frame;->nativeFramePointer J
+	9       (00000024) rem-int/lit8         v0, v7, 90
+	10      (00000028) if-eqz               v0, +1b
+
+<init>-BB@0x2c : 
+	11      (0000002c) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	12      (00000030) new-instance         v1, Ljava/lang/StringBuilder;
+	13      (00000034) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	14      (0000003a) const-string         v2, 'Rotation degree not multiple of 90: '
+	15      (0000003e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v1
+	17      (00000046) invoke-virtual       v1, v7, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	18      (0000004c) move-result-object   v1
+	19      (0000004e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	20      (00000054) move-result-object   v1
+	21      (00000056) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	22      (0000005c) throw                v0
+
+<init>-BB@0x5e : 
+	23      (0000005e) invoke-static        Lorg/webrtc/RendererCommon;->verticalFlipMatrix()[F
+	24      (00000064) move-result-object   v0
+	25      (00000066) iput-object          v0, v4, Lorg/webrtc/VideoRenderer$I420Frame;->samplingMatrix [F
+	26      (0000006a) return-void          
+

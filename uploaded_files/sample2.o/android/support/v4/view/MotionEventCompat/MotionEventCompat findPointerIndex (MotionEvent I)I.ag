@@ -1,0 +1,15 @@
+# Landroid/support/v4/view/MotionEventCompat;->findPointerIndex(Landroid/view/MotionEvent; I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.MotionEvent
+# - v2:int
+#
+# - return:int
+
+findPointerIndex-BB@0x0 : 
+	0       (00000000) sget-object          v0, Landroid/support/v4/view/MotionEventCompat;->IMPL Landroid/support/v4/view/MotionEventCompat$MotionEventVersionImpl;
+	1       (00000004) invoke-interface     v0, v1, v2, Landroid/support/v4/view/MotionEventCompat$MotionEventVersionImpl;->findPointerIndex(Landroid/view/MotionEvent; I)I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

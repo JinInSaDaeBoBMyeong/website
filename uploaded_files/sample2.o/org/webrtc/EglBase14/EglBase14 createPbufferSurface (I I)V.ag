@@ -1,0 +1,77 @@
+# Lorg/webrtc/EglBase14;->createPbufferSurface(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+createPbufferSurface-BB@0x0 : [ createPbufferSurface-BB@0x14 createPbufferSurface-BB@0x24 ]
+	0       (00000000) const/4              v3, 0
+	1       (00000002) invoke-direct        v4, Lorg/webrtc/EglBase14;->checkIsNotReleased()V
+	2       (00000008) iget-object          v1, v4, Lorg/webrtc/EglBase14;->eglSurface Landroid/opengl/EGLSurface;
+	3       (0000000c) sget-object          v2, Landroid/opengl/EGL14;->EGL_NO_SURFACE Landroid/opengl/EGLSurface;
+	4       (00000010) if-eq                v1, v2, +a
+
+createPbufferSurface-BB@0x14 : 
+	5       (00000014) new-instance         v1, Ljava/lang/RuntimeException;
+	6       (00000018) const-string         v2, 'Already has an EGLSurface'
+	7       (0000001c) invoke-direct        v1, v2, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	8       (00000022) throw                v1
+
+createPbufferSurface-BB@0x24 : [ createPbufferSurface-BB@0x72 createPbufferSurface-BB@0xdc ]
+	9       (00000024) const/4              v1, 5
+	10      (00000026) new-array            v0, v1, [I
+	11      (0000002a) const/16             v1, 12375
+	12      (0000002e) aput                 v1, v0, v3
+	13      (00000032) const/4              v1, 1
+	14      (00000034) aput                 v5, v0, v1
+	15      (00000038) const/4              v1, 2
+	16      (0000003a) const/16             v2, 12374
+	17      (0000003e) aput                 v2, v0, v1
+	18      (00000042) const/4              v1, 3
+	19      (00000044) aput                 v6, v0, v1
+	20      (00000048) const/4              v1, 4
+	21      (0000004a) const/16             v2, 12344
+	22      (0000004e) aput                 v2, v0, v1
+	23      (00000052) iget-object          v1, v4, Lorg/webrtc/EglBase14;->eglDisplay Landroid/opengl/EGLDisplay;
+	24      (00000056) iget-object          v2, v4, Lorg/webrtc/EglBase14;->eglConfig Landroid/opengl/EGLConfig;
+	25      (0000005a) invoke-static        v1, v2, v0, v3, Landroid/opengl/EGL14;->eglCreatePbufferSurface(Landroid/opengl/EGLDisplay; Landroid/opengl/EGLConfig; [I I)Landroid/opengl/EGLSurface;
+	26      (00000060) move-result-object   v1
+	27      (00000062) iput-object          v1, v4, Lorg/webrtc/EglBase14;->eglSurface Landroid/opengl/EGLSurface;
+	28      (00000066) iget-object          v1, v4, Lorg/webrtc/EglBase14;->eglSurface Landroid/opengl/EGLSurface;
+	29      (0000006a) sget-object          v2, Landroid/opengl/EGL14;->EGL_NO_SURFACE Landroid/opengl/EGLSurface;
+	30      (0000006e) if-ne                v1, v2, +37
+
+createPbufferSurface-BB@0x72 : 
+	31      (00000072) new-instance         v1, Ljava/lang/RuntimeException;
+	32      (00000076) new-instance         v2, Ljava/lang/StringBuilder;
+	33      (0000007a) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	34      (00000080) const-string         v3, 'Failed to create pixel buffer surface with size '
+	35      (00000084) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	36      (0000008a) move-result-object   v2
+	37      (0000008c) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	38      (00000092) move-result-object   v2
+	39      (00000094) const-string         v3, 'x'
+	40      (00000098) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	41      (0000009e) move-result-object   v2
+	42      (000000a0) invoke-virtual       v2, v6, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	43      (000000a6) move-result-object   v2
+	44      (000000a8) const-string         v3, ': 0x'
+	45      (000000ac) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	46      (000000b2) move-result-object   v2
+	47      (000000b4) invoke-static        Landroid/opengl/EGL14;->eglGetError()I
+	48      (000000ba) move-result          v3
+	49      (000000bc) invoke-static        v3, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	50      (000000c2) move-result-object   v3
+	51      (000000c4) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	52      (000000ca) move-result-object   v2
+	53      (000000cc) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	54      (000000d2) move-result-object   v2
+	55      (000000d4) invoke-direct        v1, v2, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	56      (000000da) throw                v1
+
+createPbufferSurface-BB@0xdc : 
+	57      (000000dc) return-void          
+

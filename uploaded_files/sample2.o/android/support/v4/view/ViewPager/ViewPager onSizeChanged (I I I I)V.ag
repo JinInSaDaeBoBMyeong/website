@@ -1,0 +1,23 @@
+# Landroid/support/v4/view/ViewPager;->onSizeChanged(I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:int
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+onSizeChanged-BB@0x0 : [ onSizeChanged-BB@0xa onSizeChanged-BB@0x18 ]
+	0       (00000000) invoke-super         v2, v3, v4, v5, v6, Landroid/view/ViewGroup;->onSizeChanged(I I I I)V
+	1       (00000006) if-eq                v3, v5, +9
+
+onSizeChanged-BB@0xa : [ onSizeChanged-BB@0x18 ]
+	2       (0000000a) iget                 v0, v2, Landroid/support/v4/view/ViewPager;->mPageMargin I
+	3       (0000000e) iget                 v1, v2, Landroid/support/v4/view/ViewPager;->mPageMargin I
+	4       (00000012) invoke-direct        v2, v3, v5, v0, v1, Landroid/support/v4/view/ViewPager;->recomputeScrollPosition(I I I I)V
+
+onSizeChanged-BB@0x18 : 
+	5       (00000018) return-void          
+

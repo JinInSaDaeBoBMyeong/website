@@ -1,0 +1,27 @@
+# Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->setFlag(I Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:boolean
+#
+# - return:void
+
+setFlag-BB@0x0 : [ setFlag-BB@0x4 setFlag-BB@0x10 ]
+	0       (00000000) if-eqz               v4, +8
+
+setFlag-BB@0x4 : [ setFlag-BB@0xe ]
+	1       (00000004) iget                 v0, v2, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags I
+	2       (00000008) or-int/2addr         v0, v3
+	3       (0000000a) iput                 v0, v2, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags I
+
+setFlag-BB@0xe : 
+	4       (0000000e) return-void          
+
+setFlag-BB@0x10 : [ setFlag-BB@0xe ]
+	5       (00000010) iget                 v0, v2, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags I
+	6       (00000014) xor-int/lit8         v1, v3, -1
+	7       (00000018) and-int/2addr        v0, v1
+	8       (0000001a) iput                 v0, v2, Landroid/support/v4/app/NotificationCompat$Action$WearableExtender;->mFlags I
+	9       (0000001e) goto                 -8
+

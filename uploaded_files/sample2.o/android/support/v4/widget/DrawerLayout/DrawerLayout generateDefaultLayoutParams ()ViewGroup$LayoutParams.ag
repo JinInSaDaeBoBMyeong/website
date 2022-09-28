@@ -1,0 +1,13 @@
+# Landroid/support/v4/widget/DrawerLayout;->generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:android.view.ViewGroup$LayoutParams
+
+generateDefaultLayoutParams-BB@0x0 : 
+	0       (00000000) const/4              v1, -1
+	1       (00000002) new-instance         v0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	2       (00000006) invoke-direct        v0, v1, v1, Landroid/support/v4/widget/DrawerLayout$LayoutParams;-><init>(I I)V
+	3       (0000000c) return-object        v0
+

@@ -1,0 +1,35 @@
+# Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;->checkRtl(Ljava/lang/CharSequence; I I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.CharSequence
+# - v6:int
+# - v7:int
+#
+# - return:int
+
+checkRtl-BB@0x0 : [ checkRtl-BB@0x8 ]
+	0       (00000000) const/4              v2, 2
+	1       (00000002) move                 v1, v6
+	2       (00000004) add-int              v0, v6, v7
+
+checkRtl-BB@0x8 : [ checkRtl-BB@0xc checkRtl-BB@0x30 ]
+	3       (00000008) if-ge                v1, v0, +14
+
+checkRtl-BB@0xc : [ checkRtl-BB@0x12 checkRtl-BB@0x30 ]
+	4       (0000000c) const/4              v3, 2
+	5       (0000000e) if-ne                v2, v3, +11
+
+checkRtl-BB@0x12 : [ checkRtl-BB@0x8 ]
+	6       (00000012) invoke-interface     v5, v1, Ljava/lang/CharSequence;->charAt(I)C
+	7       (00000018) move-result          v3
+	8       (0000001a) invoke-static        v3, Ljava/lang/Character;->getDirectionality(C)B
+	9       (00000020) move-result          v3
+	10      (00000022) invoke-static        v3, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->access$100(I)I
+	11      (00000028) move-result          v2
+	12      (0000002a) add-int/lit8         v1, v1, 1
+	13      (0000002e) goto                 -13
+
+checkRtl-BB@0x30 : 
+	14      (00000030) return               v2
+

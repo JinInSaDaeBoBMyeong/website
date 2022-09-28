@@ -1,0 +1,24 @@
+# Ltev/piqgahor/uhvpCP9tsX;->tLxLZU289(Ljava/io/InputStream; [B I I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.io.InputStream
+# - v2:byte[]
+# - v3:int
+# - v4:int
+#
+# - return:int
+
+tLxLZU289-BB@0x0 : [ tLxLZU289-BB@0x6 tLxLZU289-BB@0x10 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) if-lez               v3, +7
+
+tLxLZU289-BB@0x6 : 
+	2       (00000006) invoke-virtual       v1, v2, v0, v3, Ljava/io/InputStream;->read([B I I)I
+	3       (0000000c) move-result          v0
+	4       (0000000e) return               v0
+
+tLxLZU289-BB@0x10 : [ tLxLZU289-BB@0x6 ]
+	5       (00000010) move                 v3, v4
+	6       (00000012) goto                 -6
+

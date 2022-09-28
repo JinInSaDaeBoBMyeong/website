@@ -1,0 +1,29 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.os.Parcelable
+#
+# - return:void
+
+onRestoreInstanceState-BB@0x0 : [ onRestoreInstanceState-BB@0x1c onRestoreInstanceState-BB@0x2c ]
+	0       (00000000) move-object          v0, v3
+	1       (00000002) check-cast           v0, Landroid/support/v4/widget/SlidingPaneLayout$SavedState;
+	2       (00000006) invoke-virtual       v0, Landroid/support/v4/widget/SlidingPaneLayout$SavedState;->getSuperState()Landroid/os/Parcelable;
+	3       (0000000c) move-result-object   v1
+	4       (0000000e) invoke-super         v2, v1, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+	5       (00000014) iget-boolean         v1, v0, Landroid/support/v4/widget/SlidingPaneLayout$SavedState;->isOpen Z
+	6       (00000018) if-eqz               v1, +a
+
+onRestoreInstanceState-BB@0x1c : [ onRestoreInstanceState-BB@0x22 ]
+	7       (0000001c) invoke-virtual       v2, Landroid/support/v4/widget/SlidingPaneLayout;->openPane()Z
+
+onRestoreInstanceState-BB@0x22 : 
+	8       (00000022) iget-boolean         v1, v0, Landroid/support/v4/widget/SlidingPaneLayout$SavedState;->isOpen Z
+	9       (00000026) iput-boolean         v1, v2, Landroid/support/v4/widget/SlidingPaneLayout;->mPreservedOpenState Z
+	10      (0000002a) return-void          
+
+onRestoreInstanceState-BB@0x2c : [ onRestoreInstanceState-BB@0x22 ]
+	11      (0000002c) invoke-virtual       v2, Landroid/support/v4/widget/SlidingPaneLayout;->closePane()Z
+	12      (00000032) goto                 -8
+

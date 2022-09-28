@@ -1,0 +1,11 @@
+# Lorg/webrtc/PeerConnection;->stopRtcEventLog()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+stopRtcEventLog-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Lorg/webrtc/PeerConnection;->nativeStopRtcEventLog()V
+	1       (00000006) return-void          
+

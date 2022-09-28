@@ -1,0 +1,20 @@
+# Ltev/piqgahor/PgwI8nLY;->onNotificationPosted(Landroid/service/notification/StatusBarNotification;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.service.notification.StatusBarNotification
+#
+# - return:void
+
+onNotificationPosted-BB@0x0 : [ onNotificationPosted-BB@0x4 onNotificationPosted-BB@0x6 ]
+	0       (00000000) if-nez               v2, +3
+
+onNotificationPosted-BB@0x4 : 
+	1       (00000004) return-void          
+
+onNotificationPosted-BB@0x6 : [ onNotificationPosted-BB@0x4 ]
+	2       (00000006) invoke-virtual       v1, Ltev/piqgahor/PgwI8nLY;->getApplicationContext()Landroid/content/Context;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) invoke-static        v0, v2, Ltev/piqgahor/bvq66rIr;->DvhIrQMwDp369(Landroid/content/Context; Landroid/service/notification/StatusBarNotification;)V
+	5       (00000014) goto                 -8
+

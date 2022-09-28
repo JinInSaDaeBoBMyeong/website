@@ -1,0 +1,12 @@
+# Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->access$000(Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;)Landroid/view/MotionEvent; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.view.GestureDetectorCompat$GestureDetectorCompatImplBase
+#
+# - return:android.view.MotionEvent
+
+access$000-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent Landroid/view/MotionEvent;
+	1       (00000004) return-object        v0
+

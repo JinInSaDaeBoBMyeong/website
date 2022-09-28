@@ -1,0 +1,58 @@
+# Ltev/piqgahor/WqukitNJL;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v3, 5
+	1       (00000002) new-array            v0, v3, [I
+	2       (00000006) fill-array-data      v0, +53 (0xac)
+	3       (0000000c) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	4       (00000012) move-result-object   v0
+	5       (00000014) sput-object          v0, Ltev/piqgahor/WqukitNJL;->TonMS2977 Ljava/lang/String;
+	6       (00000018) const/16             v0, 8
+	7       (0000001c) new-array            v0, v0, [I
+	8       (00000020) fill-array-data      v0, +54 (0xc8)
+	9       (00000026) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	10      (0000002c) move-result-object   v0
+	11      (0000002e) sput-object          v0, Ltev/piqgahor/WqukitNJL;->flvZzU25 Ljava/lang/String;
+	12      (00000032) new-instance         v0, Ljava/text/SimpleDateFormat;
+	13      (00000036) const/16             v1, 20
+	14      (0000003a) new-array            v1, v1, [I
+	15      (0000003e) fill-array-data      v1, +59 (0xf0)
+	16      (00000044) invoke-static        v1, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	17      (0000004a) move-result-object   v1
+	18      (0000004c) sget-object          v2, Ljava/util/Locale;->US Ljava/util/Locale;
+	19      (00000050) invoke-direct        v0, v1, v2, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String; Ljava/util/Locale;)V
+	20      (00000056) sput-object          v0, Ltev/piqgahor/WqukitNJL;->FdAYGNXa014 Ljava/text/SimpleDateFormat;
+	21      (0000005a) const/4              v0, 3
+	22      (0000005c) new-array            v0, v0, [I
+	23      (00000060) fill-array-data      v0, +74 (0x148)
+	24      (00000066) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	25      (0000006c) move-result-object   v0
+	26      (0000006e) sput-object          v0, Ltev/piqgahor/WqukitNJL;->wqDYbk162 Ljava/lang/String;
+	27      (00000072) new-array            v0, v3, [I
+	28      (00000076) fill-array-data      v0, +73 (0x15c)
+	29      (0000007c) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	30      (00000082) move-result-object   v0
+	31      (00000084) sput-object          v0, Ltev/piqgahor/WqukitNJL;->drBuZ0660 Ljava/lang/String;
+	32      (00000088) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	33      (0000008e) move-result-wide     v0
+	34      (00000090) const-wide/16        v2, 1000 # [1000.0]
+	35      (00000094) rem-long/2addr       v0, v2
+	36      (00000096) invoke-static        v0, v1, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+	37      (0000009c) move-result-object   v0
+	38      (0000009e) sput-object          v0, Ltev/piqgahor/WqukitNJL;->tPoyEaXm8 Ljava/lang/String;
+	39      (000000a2) const-wide/16        v0, -1 # [-1.0]
+	40      (000000a6) sput-wide            v0, Ltev/piqgahor/WqukitNJL;->ZUt0Ztsbd1Q2 J
+	41      (000000aa) return-void          
+
+<clinit>-BB@0xac : 
+	42      (000000ac) fill-array-data-payload bytearray(b'\t\x00\x00\x008\x00\x00\x007\x00\x00\x00j\x00\x00\x00v\x00\x00\x00') | \x09\x00\x00\x00\x38\x00\x00\x00\x37\x00\x00\x00\x6a\x00\x00\x00\x76\x00\x00\x00
+	43      (000000c8) fill-array-data-payload bytearray(b'\x11\x00\x00\x00}\x00\x00\x00\x80\x00\x00\x00x\x00\x00\x00?\x00\x00\x00\x85\x00\x00\x00\x89\x00\x00\x00\x85\x00\x00\x00') | \x11\x00\x00\x00\x7d\x00\x00\x00\x80\x00\x00\x00\x78\x00\x00\x00\x3f\x00\x00\x00\x85\x00\x00\x00\x89\x00\x00\x00\x85\x00\x00\x00
+	44      (000000f0) fill-array-data-payload bytearray(b',\x00\x00\x00\x90\x00\x00\x00\x90\x00\x00\x00Z\x00\x00\x00y\x00\x00\x00y\x00\x00\x00Z\x00\x00\x00\xa5\x00\x00\x00\xa5\x00\x00\x00\xa5\x00\x00\x00\xa5\x00\x00\x00L\x00\x00\x00t\x00\x00\x00t\x00\x00\x00f\x00\x00\x00\x99\x00\x00\x00\x99\x00\x00\x00f\x00\x00\x00\x9f\x00\x00\x00\x9f\x00\x00\x00') | \x2c\x00\x00\x00\x90\x00\x00\x00\x90\x00\x00\x00\x5a\x00\x00\x00\x79\x00\x00\x00\x79\x00\x00\x00\x5a\x00\x00\x00\xa5\x00\x00\x00\xa5\x00\x00\x00\xa5\x00\x00\x00\xa5\x00\x00\x00\x4c\x00\x00\x00\x74\x00\x00\x00\x74\x00\x00\x00\x66\x00\x00\x00\x99\x00\x00\x00\x99\x00\x00\x00\x66\x00\x00\x00\x9f\x00\x00\x00\x9f\x00\x00\x00
+	45      (00000148) fill-array-data-payload bytearray(b'\x05\x00\x00\x00?\x00\x00\x00?\x00\x00\x00') | \x05\x00\x00\x00\x3f\x00\x00\x00\x3f\x00\x00\x00
+	46      (0000015c) fill-array-data-payload bytearray(b'-\x00\x00\x00g\x00\x00\x00g\x00\x00\x00g\x00\x00\x00M\x00\x00\x00') | \x2d\x00\x00\x00\x67\x00\x00\x00\x67\x00\x00\x00\x67\x00\x00\x00\x4d\x00\x00\x00
+

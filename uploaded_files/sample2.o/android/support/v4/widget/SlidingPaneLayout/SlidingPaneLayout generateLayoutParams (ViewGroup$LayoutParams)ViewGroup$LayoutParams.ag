@@ -1,0 +1,25 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.ViewGroup$LayoutParams
+#
+# - return:android.view.ViewGroup$LayoutParams
+
+generateLayoutParams-BB@0x0 : [ generateLayoutParams-BB@0x8 generateLayoutParams-BB@0x18 ]
+	0       (00000000) instance-of          v0, v2, Landroid/view/ViewGroup$MarginLayoutParams;
+	1       (00000004) if-eqz               v0, +a
+
+generateLayoutParams-BB@0x8 : [ generateLayoutParams-BB@0x16 ]
+	2       (00000008) new-instance         v0, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;
+	3       (0000000c) check-cast           v2, Landroid/view/ViewGroup$MarginLayoutParams;
+	4       (00000010) invoke-direct        v0, v2, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+
+generateLayoutParams-BB@0x16 : 
+	5       (00000016) return-object        v0
+
+generateLayoutParams-BB@0x18 : [ generateLayoutParams-BB@0x16 ]
+	6       (00000018) new-instance         v0, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;
+	7       (0000001c) invoke-direct        v0, v2, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+	8       (00000022) goto                 -6
+

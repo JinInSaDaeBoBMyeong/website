@@ -1,0 +1,11 @@
+# Lorg/webrtc/RTCStats;->getMembers()Ljava/util/Map; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.util.Map
+
+getMembers-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/RTCStats;->members Ljava/util/Map;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,12 @@
+# Lorg/webrtc/VideoFrame;->retain()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+retain-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/VideoFrame;->buffer Lorg/webrtc/VideoFrame$Buffer;
+	1       (00000004) invoke-interface     v0, Lorg/webrtc/VideoFrame$Buffer;->retain()V
+	2       (0000000a) return-void          
+

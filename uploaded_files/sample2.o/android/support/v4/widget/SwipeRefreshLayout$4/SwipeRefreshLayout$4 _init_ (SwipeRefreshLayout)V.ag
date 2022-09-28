@@ -1,0 +1,14 @@
+# Landroid/support/v4/widget/SwipeRefreshLayout$4;-><init>(Landroid/support/v4/widget/SwipeRefreshLayout;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.v4.widget.SwipeRefreshLayout
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v2, v1, Landroid/support/v4/widget/SwipeRefreshLayout$4;->this$0 Landroid/support/v4/widget/SwipeRefreshLayout;
+	1       (00000004) const/4              v0, 0
+	2       (00000006) invoke-direct        v1, v2, v0, Landroid/support/v4/widget/SwipeRefreshLayout$BaseAnimationListener;-><init>(Landroid/support/v4/widget/SwipeRefreshLayout; Landroid/support/v4/widget/SwipeRefreshLayout$1;)V
+	3       (0000000c) return-void          
+

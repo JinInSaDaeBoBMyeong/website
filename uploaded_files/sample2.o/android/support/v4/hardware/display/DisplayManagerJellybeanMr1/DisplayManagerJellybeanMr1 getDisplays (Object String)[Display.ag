@@ -1,0 +1,15 @@
+# Landroid/support/v4/hardware/display/DisplayManagerJellybeanMr1;->getDisplays(Ljava/lang/Object; Ljava/lang/String;)[Landroid/view/Display; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+# - v2:java.lang.String
+#
+# - return:android.view.Display[]
+
+getDisplays-BB@0x0 : 
+	0       (00000000) check-cast           v1, Landroid/hardware/display/DisplayManager;
+	1       (00000004) invoke-virtual       v1, v2, Landroid/hardware/display/DisplayManager;->getDisplays(Ljava/lang/String;)[Landroid/view/Display;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

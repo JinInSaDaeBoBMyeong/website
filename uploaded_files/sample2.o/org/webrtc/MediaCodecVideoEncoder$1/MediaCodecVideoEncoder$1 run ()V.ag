@@ -1,0 +1,52 @@
+# Lorg/webrtc/MediaCodecVideoEncoder$1;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0xe ]
+	0       (00000000) const-string         v1, 'MediaCodecVideoEncoder'
+	1       (00000004) const-string         v2, 'Java releaseEncoder on release thread'
+	2       (00000008) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+
+run-BB@0xe : [ run-BB@0x20 ]
+	3       (0000000e) iget-object          v1, v3, Lorg/webrtc/MediaCodecVideoEncoder$1;->this$0 Lorg/webrtc/MediaCodecVideoEncoder;
+	4       (00000012) invoke-static        v1, Lorg/webrtc/MediaCodecVideoEncoder;->access$000(Lorg/webrtc/MediaCodecVideoEncoder;)Landroid/media/MediaCodec;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v1, Landroid/media/MediaCodec;->stop()V
+	e:1f
+	(Ljava/lang/Exception; -> 4c run-BB@0x4c)
+
+run-BB@0x20 : [ run-BB@0x32 ]
+	7       (00000020) iget-object          v1, v3, Lorg/webrtc/MediaCodecVideoEncoder$1;->this$0 Lorg/webrtc/MediaCodecVideoEncoder;
+	8       (00000024) invoke-static        v1, Lorg/webrtc/MediaCodecVideoEncoder;->access$000(Lorg/webrtc/MediaCodecVideoEncoder;)Landroid/media/MediaCodec;
+	9       (0000002a) move-result-object   v1
+	10      (0000002c) invoke-virtual       v1, Landroid/media/MediaCodec;->release()V
+	20:31
+	(Ljava/lang/Exception; -> 5e run-BB@0x5e)
+
+run-BB@0x32 : 
+	11      (00000032) const-string         v1, 'MediaCodecVideoEncoder'
+	12      (00000036) const-string         v2, 'Java releaseEncoder on release thread done'
+	13      (0000003a) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	14      (00000040) iget-object          v1, v3, Lorg/webrtc/MediaCodecVideoEncoder$1;->val$releaseDone Ljava/util/concurrent/CountDownLatch;
+	15      (00000044) invoke-virtual       v1, Ljava/util/concurrent/CountDownLatch;->countDown()V
+	16      (0000004a) return-void          
+
+run-BB@0x4c : [ run-BB@0x20 ]
+	17      (0000004c) move-exception       v0
+	18      (0000004e) const-string         v1, 'MediaCodecVideoEncoder'
+	19      (00000052) const-string         v2, 'Media encoder stop failed'
+	20      (00000056) invoke-static        v1, v2, v0, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	21      (0000005c) goto                 -1e
+
+run-BB@0x5e : [ run-BB@0x32 ]
+	22      (0000005e) move-exception       v0
+	23      (00000060) const-string         v1, 'MediaCodecVideoEncoder'
+	24      (00000064) const-string         v2, 'Media encoder release failed'
+	25      (00000068) invoke-static        v1, v2, v0, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	26      (0000006e) iget-object          v1, v3, Lorg/webrtc/MediaCodecVideoEncoder$1;->val$caughtException Lorg/webrtc/MediaCodecVideoEncoder$1CaughtException;
+	27      (00000072) iput-object          v0, v1, Lorg/webrtc/MediaCodecVideoEncoder$1CaughtException;->e Ljava/lang/Exception;
+	28      (00000076) goto                 -22
+

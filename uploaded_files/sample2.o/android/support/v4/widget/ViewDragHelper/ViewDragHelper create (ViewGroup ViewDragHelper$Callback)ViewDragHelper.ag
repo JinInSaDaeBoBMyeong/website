@@ -1,0 +1,16 @@
+# Landroid/support/v4/widget/ViewDragHelper;->create(Landroid/view/ViewGroup; Landroid/support/v4/widget/ViewDragHelper$Callback;)Landroid/support/v4/widget/ViewDragHelper; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.ViewGroup
+# - v3:android.support.v4.widget.ViewDragHelper$Callback
+#
+# - return:android.support.v4.widget.ViewDragHelper
+
+create-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/support/v4/widget/ViewDragHelper;
+	1       (00000004) invoke-virtual       v2, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-direct        v0, v1, v2, v3, Landroid/support/v4/widget/ViewDragHelper;-><init>(Landroid/content/Context; Landroid/view/ViewGroup; Landroid/support/v4/widget/ViewDragHelper$Callback;)V
+	4       (00000012) return-object        v0
+

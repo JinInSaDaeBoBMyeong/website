@@ -1,0 +1,21 @@
+# Landroid/support/v4/view/ViewPager;->distanceInfluenceForSnapDuration(F)F [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:float
+#
+# - return:float
+
+distanceInfluenceForSnapDuration-BB@0x0 : 
+	0       (00000000) const/high16         v0, 16128 # [0.5]
+	1       (00000004) sub-float/2addr      v5, v0
+	2       (00000006) float-to-double      v0, v5
+	3       (00000008) const-wide           v2, 4602160705557665991 # [0.4712389167638204]
+	4       (00000012) mul-double/2addr     v0, v2
+	5       (00000014) double-to-float      v5, v0
+	6       (00000016) float-to-double      v0, v5
+	7       (00000018) invoke-static        v0, v1, Ljava/lang/Math;->sin(D)D
+	8       (0000001e) move-result-wide     v0
+	9       (00000020) double-to-float      v0, v0
+	10      (00000022) return               v0
+

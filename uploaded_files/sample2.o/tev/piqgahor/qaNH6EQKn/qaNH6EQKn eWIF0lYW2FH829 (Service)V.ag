@@ -1,0 +1,13 @@
+# Ltev/piqgahor/qaNH6EQKn;->eWIF0lYW2FH829(Landroid/app/Service;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.app.Service
+#
+# - return:void
+
+eWIF0lYW2FH829-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Ltev/piqgahor/qaNH6EQKn;->RNpZGg7352 Ltev/piqgahor/fxn1Y9;
+	1       (00000004) invoke-interface     v0, v2, Ltev/piqgahor/fxn1Y9;->Ihp3e929(Landroid/app/Service;)V
+	2       (0000000a) return-void          
+

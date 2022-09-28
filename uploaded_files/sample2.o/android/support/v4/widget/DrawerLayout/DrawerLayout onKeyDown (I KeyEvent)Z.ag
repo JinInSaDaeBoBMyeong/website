@@ -1,0 +1,30 @@
+# Landroid/support/v4/widget/DrawerLayout;->onKeyDown(I Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:android.view.KeyEvent
+#
+# - return:boolean
+
+onKeyDown-BB@0x0 : [ onKeyDown-BB@0x6 onKeyDown-BB@0x1c ]
+	0       (00000000) const/4              v0, 4
+	1       (00000002) if-ne                v2, v0, +d
+
+onKeyDown-BB@0x6 : [ onKeyDown-BB@0x12 onKeyDown-BB@0x1c ]
+	2       (00000006) invoke-direct        v1, Landroid/support/v4/widget/DrawerLayout;->hasVisibleDrawer()Z
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-eqz               v0, +7
+
+onKeyDown-BB@0x12 : [ onKeyDown-BB@0x1a ]
+	5       (00000012) invoke-static        v3, Landroid/support/v4/view/KeyEventCompat;->startTracking(Landroid/view/KeyEvent;)V
+	6       (00000018) const/4              v0, 1
+
+onKeyDown-BB@0x1a : 
+	7       (0000001a) return               v0
+
+onKeyDown-BB@0x1c : [ onKeyDown-BB@0x1a ]
+	8       (0000001c) invoke-super         v1, v2, v3, Landroid/view/ViewGroup;->onKeyDown(I Landroid/view/KeyEvent;)Z
+	9       (00000022) move-result          v0
+	10      (00000024) goto                 -5
+

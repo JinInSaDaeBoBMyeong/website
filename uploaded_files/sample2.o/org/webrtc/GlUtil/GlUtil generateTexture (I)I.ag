@@ -1,0 +1,29 @@
+# Lorg/webrtc/GlUtil;->generateTexture(I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+#
+# - return:int
+
+generateTexture-BB@0x0 : 
+	0       (00000000) const/4              v5, 1
+	1       (00000002) const/4              v2, 0
+	2       (00000004) const                v4, 1191259904 # [33071.0]
+	3       (0000000a) const                v3, 1175979008 # [9729.0]
+	4       (00000010) new-array            v0, v5, [I
+	5       (00000014) invoke-static        v5, v0, v2, Landroid/opengl/GLES20;->glGenTextures(I [I I)V
+	6       (0000001a) aget                 v1, v0, v2
+	7       (0000001e) invoke-static        v6, v1, Landroid/opengl/GLES20;->glBindTexture(I I)V
+	8       (00000024) const/16             v2, 10241
+	9       (00000028) invoke-static        v6, v2, v3, Landroid/opengl/GLES20;->glTexParameterf(I I F)V
+	10      (0000002e) const/16             v2, 10240
+	11      (00000032) invoke-static        v6, v2, v3, Landroid/opengl/GLES20;->glTexParameterf(I I F)V
+	12      (00000038) const/16             v2, 10242
+	13      (0000003c) invoke-static        v6, v2, v4, Landroid/opengl/GLES20;->glTexParameterf(I I F)V
+	14      (00000042) const/16             v2, 10243
+	15      (00000046) invoke-static        v6, v2, v4, Landroid/opengl/GLES20;->glTexParameterf(I I F)V
+	16      (0000004c) const-string         v2, 'generateTexture'
+	17      (00000050) invoke-static        v2, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
+	18      (00000056) return               v1
+

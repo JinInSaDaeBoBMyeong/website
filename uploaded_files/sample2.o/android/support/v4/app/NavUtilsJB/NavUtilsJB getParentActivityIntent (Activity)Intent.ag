@@ -1,0 +1,13 @@
+# Landroid/support/v4/app/NavUtilsJB;->getParentActivityIntent(Landroid/app/Activity;)Landroid/content/Intent; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.app.Activity
+#
+# - return:android.content.Intent
+
+getParentActivityIntent-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Landroid/app/Activity;->getParentActivityIntent()Landroid/content/Intent;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+

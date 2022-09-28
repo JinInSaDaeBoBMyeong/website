@@ -1,0 +1,76 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->smoothSlideTo(F I)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:float
+# - v11:int
+#
+# - return:boolean
+
+smoothSlideTo-BB@0x0 : [ smoothSlideTo-BB@0xa smoothSlideTo-BB@0xc ]
+	0       (00000000) const/4              v5, 0
+	1       (00000002) iget-boolean         v6, v9, Landroid/support/v4/widget/SlidingPaneLayout;->mCanSlide Z
+	2       (00000006) if-nez               v6, +3
+
+smoothSlideTo-BB@0xa : 
+	3       (0000000a) return               v5
+
+smoothSlideTo-BB@0xc : [ smoothSlideTo-BB@0x28 smoothSlideTo-BB@0x92 ]
+	4       (0000000c) invoke-direct        v9, Landroid/support/v4/widget/SlidingPaneLayout;->isLayoutRtlSupport()Z
+	5       (00000012) move-result          v1
+	6       (00000014) iget-object          v6, v9, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideableView Landroid/view/View;
+	7       (00000018) invoke-virtual       v6, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	8       (0000001e) move-result-object   v2
+	9       (00000020) check-cast           v2, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;
+	10      (00000024) if-eqz               v1, +37
+
+smoothSlideTo-BB@0x28 : [ smoothSlideTo-BB@0x62 ]
+	11      (00000028) invoke-virtual       v9, Landroid/support/v4/widget/SlidingPaneLayout;->getPaddingRight()I
+	12      (0000002e) move-result          v6
+	13      (00000030) iget                 v7, v2, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;->rightMargin I
+	14      (00000034) add-int              v3, v6, v7
+	15      (00000038) iget-object          v6, v9, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideableView Landroid/view/View;
+	16      (0000003c) invoke-virtual       v6, Landroid/view/View;->getWidth()I
+	17      (00000042) move-result          v0
+	18      (00000044) invoke-virtual       v9, Landroid/support/v4/widget/SlidingPaneLayout;->getWidth()I
+	19      (0000004a) move-result          v6
+	20      (0000004c) int-to-float         v6, v6
+	21      (0000004e) int-to-float         v7, v3
+	22      (00000050) iget                 v8, v9, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideRange I
+	23      (00000054) int-to-float         v8, v8
+	24      (00000056) mul-float/2addr      v8, v10
+	25      (00000058) add-float/2addr      v7, v8
+	26      (0000005a) int-to-float         v8, v0
+	27      (0000005c) add-float/2addr      v7, v8
+	28      (0000005e) sub-float/2addr      v6, v7
+	29      (00000060) float-to-int         v4, v6
+
+smoothSlideTo-BB@0x62 : [ smoothSlideTo-BB@0x82 smoothSlideTo-BB@0xa ]
+	30      (00000062) iget-object          v6, v9, Landroid/support/v4/widget/SlidingPaneLayout;->mDragHelper Landroid/support/v4/widget/ViewDragHelper;
+	31      (00000066) iget-object          v7, v9, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideableView Landroid/view/View;
+	32      (0000006a) iget-object          v8, v9, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideableView Landroid/view/View;
+	33      (0000006e) invoke-virtual       v8, Landroid/view/View;->getTop()I
+	34      (00000074) move-result          v8
+	35      (00000076) invoke-virtual       v6, v7, v4, v8, Landroid/support/v4/widget/ViewDragHelper;->smoothSlideViewTo(Landroid/view/View; I I)Z
+	36      (0000007c) move-result          v6
+	37      (0000007e) if-eqz               v6, -3a
+
+smoothSlideTo-BB@0x82 : [ smoothSlideTo-BB@0xa ]
+	38      (00000082) invoke-virtual       v9, Landroid/support/v4/widget/SlidingPaneLayout;->setAllChildrenVisible()V
+	39      (00000088) invoke-static        v9, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
+	40      (0000008e) const/4              v5, 1
+	41      (00000090) goto                 -43
+
+smoothSlideTo-BB@0x92 : [ smoothSlideTo-BB@0x62 ]
+	42      (00000092) invoke-virtual       v9, Landroid/support/v4/widget/SlidingPaneLayout;->getPaddingLeft()I
+	43      (00000098) move-result          v6
+	44      (0000009a) iget                 v7, v2, Landroid/support/v4/widget/SlidingPaneLayout$LayoutParams;->leftMargin I
+	45      (0000009e) add-int              v3, v6, v7
+	46      (000000a2) int-to-float         v6, v3
+	47      (000000a4) iget                 v7, v9, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideRange I
+	48      (000000a8) int-to-float         v7, v7
+	49      (000000aa) mul-float/2addr      v7, v10
+	50      (000000ac) add-float/2addr      v6, v7
+	51      (000000ae) float-to-int         v4, v6
+	52      (000000b0) goto                 -27
+

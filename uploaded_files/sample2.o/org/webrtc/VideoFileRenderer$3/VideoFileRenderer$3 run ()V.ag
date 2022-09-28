@@ -1,0 +1,24 @@
+# Lorg/webrtc/VideoFileRenderer$3;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+run-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/VideoFileRenderer$3;->this$0 Lorg/webrtc/VideoFileRenderer;
+	1       (00000004) invoke-static        v0, Lorg/webrtc/VideoFileRenderer;->access$100(Lorg/webrtc/VideoFileRenderer;)Lorg/webrtc/YuvConverter;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-virtual       v0, Lorg/webrtc/YuvConverter;->release()V
+	4       (00000012) iget-object          v0, v1, Lorg/webrtc/VideoFileRenderer$3;->this$0 Lorg/webrtc/VideoFileRenderer;
+	5       (00000016) invoke-static        v0, Lorg/webrtc/VideoFileRenderer;->access$000(Lorg/webrtc/VideoFileRenderer;)Lorg/webrtc/EglBase;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) invoke-virtual       v0, Lorg/webrtc/EglBase;->release()V
+	8       (00000024) iget-object          v0, v1, Lorg/webrtc/VideoFileRenderer$3;->this$0 Lorg/webrtc/VideoFileRenderer;
+	9       (00000028) invoke-static        v0, Lorg/webrtc/VideoFileRenderer;->access$300(Lorg/webrtc/VideoFileRenderer;)Landroid/os/HandlerThread;
+	10      (0000002e) move-result-object   v0
+	11      (00000030) invoke-virtual       v0, Landroid/os/HandlerThread;->quit()Z
+	12      (00000036) iget-object          v0, v1, Lorg/webrtc/VideoFileRenderer$3;->val$cleanupBarrier Ljava/util/concurrent/CountDownLatch;
+	13      (0000003a) invoke-virtual       v0, Ljava/util/concurrent/CountDownLatch;->countDown()V
+	14      (00000040) return-void          
+

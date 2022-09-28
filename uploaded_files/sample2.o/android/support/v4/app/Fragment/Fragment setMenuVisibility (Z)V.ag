@@ -1,0 +1,34 @@
+# Landroid/support/v4/app/Fragment;->setMenuVisibility(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+setMenuVisibility-BB@0x0 : [ setMenuVisibility-BB@0x8 setMenuVisibility-BB@0x36 ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/v4/app/Fragment;->mMenuVisible Z
+	1       (00000004) if-eq                v0, v2, +19
+
+setMenuVisibility-BB@0x8 : [ setMenuVisibility-BB@0x14 setMenuVisibility-BB@0x36 ]
+	2       (00000008) iput-boolean         v2, v1, Landroid/support/v4/app/Fragment;->mMenuVisible Z
+	3       (0000000c) iget-boolean         v0, v1, Landroid/support/v4/app/Fragment;->mHasMenu Z
+	4       (00000010) if-eqz               v0, +13
+
+setMenuVisibility-BB@0x14 : [ setMenuVisibility-BB@0x20 setMenuVisibility-BB@0x36 ]
+	5       (00000014) invoke-virtual       v1, Landroid/support/v4/app/Fragment;->isAdded()Z
+	6       (0000001a) move-result          v0
+	7       (0000001c) if-eqz               v0, +d
+
+setMenuVisibility-BB@0x20 : [ setMenuVisibility-BB@0x2c setMenuVisibility-BB@0x36 ]
+	8       (00000020) invoke-virtual       v1, Landroid/support/v4/app/Fragment;->isHidden()Z
+	9       (00000026) move-result          v0
+	10      (00000028) if-nez               v0, +7
+
+setMenuVisibility-BB@0x2c : [ setMenuVisibility-BB@0x36 ]
+	11      (0000002c) iget-object          v0, v1, Landroid/support/v4/app/Fragment;->mActivity Landroid/support/v4/app/FragmentActivity;
+	12      (00000030) invoke-virtual       v0, Landroid/support/v4/app/FragmentActivity;->supportInvalidateOptionsMenu()V
+
+setMenuVisibility-BB@0x36 : 
+	13      (00000036) return-void          
+

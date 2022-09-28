@@ -1,0 +1,33 @@
+# Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->isFinished()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:boolean
+
+isFinished-BB@0x0 : [ isFinished-BB@0x10 isFinished-BB@0x30 ]
+	0       (00000000) iget-wide            v0, v6, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->mStopTime J
+	1       (00000004) const-wide/16        v2, 0 # [0.0]
+	2       (00000008) cmp-long             v0, v0, v2
+	3       (0000000c) if-lez               v0, +12
+
+isFinished-BB@0x10 : [ isFinished-BB@0x2c isFinished-BB@0x30 ]
+	4       (00000010) invoke-static        Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
+	5       (00000016) move-result-wide     v0
+	6       (00000018) iget-wide            v2, v6, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->mStopTime J
+	7       (0000001c) iget                 v4, v6, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->mEffectiveRampDown I
+	8       (00000020) int-to-long          v4, v4
+	9       (00000022) add-long/2addr       v2, v4
+	10      (00000024) cmp-long             v0, v0, v2
+	11      (00000028) if-lez               v0, +4
+
+isFinished-BB@0x2c : [ isFinished-BB@0x2e ]
+	12      (0000002c) const/4              v0, 1
+
+isFinished-BB@0x2e : 
+	13      (0000002e) return               v0
+
+isFinished-BB@0x30 : [ isFinished-BB@0x2e ]
+	14      (00000030) const/4              v0, 0
+	15      (00000032) goto                 -2
+

@@ -1,0 +1,43 @@
+# Lorg/webrtc/MediaCodecVideoEncoder;->checkOnMediaCodecThread()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+checkOnMediaCodecThread-BB@0x0 : [ checkOnMediaCodecThread-BB@0x24 checkOnMediaCodecThread-BB@0x76 ]
+	0       (00000000) iget-object          v0, v4, Lorg/webrtc/MediaCodecVideoEncoder;->mediaCodecThread Ljava/lang/Thread;
+	1       (00000004) invoke-virtual       v0, Ljava/lang/Thread;->getId()J
+	2       (0000000a) move-result-wide     v0
+	3       (0000000c) invoke-static        Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+	4       (00000012) move-result-object   v2
+	5       (00000014) invoke-virtual       v2, Ljava/lang/Thread;->getId()J
+	6       (0000001a) move-result-wide     v2
+	7       (0000001c) cmp-long             v0, v0, v2
+	8       (00000020) if-eqz               v0, +2b
+
+checkOnMediaCodecThread-BB@0x24 : 
+	9       (00000024) new-instance         v0, Ljava/lang/RuntimeException;
+	10      (00000028) new-instance         v1, Ljava/lang/StringBuilder;
+	11      (0000002c) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	12      (00000032) const-string         v2, 'MediaCodecVideoEncoder previously operated on '
+	13      (00000036) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003c) move-result-object   v1
+	15      (0000003e) iget-object          v2, v4, Lorg/webrtc/MediaCodecVideoEncoder;->mediaCodecThread Ljava/lang/Thread;
+	16      (00000042) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	17      (00000048) move-result-object   v1
+	18      (0000004a) const-string         v2, ' but is now called on '
+	19      (0000004e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	20      (00000054) move-result-object   v1
+	21      (00000056) invoke-static        Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+	22      (0000005c) move-result-object   v2
+	23      (0000005e) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	24      (00000064) move-result-object   v1
+	25      (00000066) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	26      (0000006c) move-result-object   v1
+	27      (0000006e) invoke-direct        v0, v1, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	28      (00000074) throw                v0
+
+checkOnMediaCodecThread-BB@0x76 : 
+	29      (00000076) return-void          
+

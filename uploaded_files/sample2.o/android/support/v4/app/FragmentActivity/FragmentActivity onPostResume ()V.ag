@@ -1,0 +1,17 @@
+# Landroid/support/v4/app/FragmentActivity;->onPostResume()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onPostResume-BB@0x0 : 
+	0       (00000000) invoke-super         v2, Landroid/app/Activity;->onPostResume()V
+	1       (00000006) iget-object          v0, v2, Landroid/support/v4/app/FragmentActivity;->mHandler Landroid/os/Handler;
+	2       (0000000a) const/4              v1, 2
+	3       (0000000c) invoke-virtual       v0, v1, Landroid/os/Handler;->removeMessages(I)V
+	4       (00000012) invoke-virtual       v2, Landroid/support/v4/app/FragmentActivity;->onResumeFragments()V
+	5       (00000018) iget-object          v0, v2, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	6       (0000001c) invoke-virtual       v0, Landroid/support/v4/app/FragmentManagerImpl;->execPendingActions()Z
+	7       (00000022) return-void          
+

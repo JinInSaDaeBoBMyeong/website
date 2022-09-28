@@ -1,0 +1,359 @@
+# Lorg/webrtc/MediaCodecVideoEncoder;->dequeueOutputBuffer()Lorg/webrtc/MediaCodecVideoEncoder$OutputBufferInfo; [access_flags=]
+#
+# Parameters:
+# local registers: v0...v18
+#
+# - return:org.webrtc.MediaCodecVideoEncoder$OutputBufferInfo
+
+dequeueOutputBuffer-BB@0x0 : [ dequeueOutputBuffer-BB@0x6 ]
+	0       (00000000) invoke-direct/range  v18, Lorg/webrtc/MediaCodecVideoEncoder;->checkOnMediaCodecThread()V
+
+dequeueOutputBuffer-BB@0x6 : [ dequeueOutputBuffer-BB@0x28 dequeueOutputBuffer-BB@0x192 ]
+	1       (00000006) new-instance         v14, Landroid/media/MediaCodec$BufferInfo;
+	2       (0000000a) invoke-direct        v14, Landroid/media/MediaCodec$BufferInfo;-><init>()V
+	3       (00000010) move-object/from16   v0, v18
+	4       (00000014) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->mediaCodec Landroid/media/MediaCodec;
+	5       (00000018) const-wide/16        v6, 0 # [0.0]
+	6       (0000001c) invoke-virtual       v2, v14, v6, v7, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo; J)I
+	7       (00000022) move-result          v3
+	8       (00000024) if-ltz               v3, +b7
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x28 : [ dequeueOutputBuffer-BB@0x34 dequeueOutputBuffer-BB@0x154 ]
+	9       (00000028) iget                 v2, v14, Landroid/media/MediaCodec$BufferInfo;->flags I
+	10      (0000002c) and-int/lit8         v2, v2, 2
+	11      (00000030) if-eqz               v2, +92
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x34 : [ dequeueOutputBuffer-BB@0x36 ]
+	12      (00000034) const/4              v15, 1
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x36 : [ dequeueOutputBuffer-BB@0x3a dequeueOutputBuffer-BB@0x192 ]
+	13      (00000036) if-eqz               v15, +ae
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x3a : [ dequeueOutputBuffer-BB@0xec ]
+	14      (0000003a) const-string         v2, 'MediaCodecVideoEncoder'
+	15      (0000003e) new-instance         v6, Ljava/lang/StringBuilder;
+	16      (00000042) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	17      (00000048) const-string         v7, 'Config frame generated. Offset: '
+	18      (0000004c) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (00000052) move-result-object   v6
+	20      (00000054) iget                 v7, v14, Landroid/media/MediaCodec$BufferInfo;->offset I
+	21      (00000058) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	22      (0000005e) move-result-object   v6
+	23      (00000060) const-string         v7, '. Size: '
+	24      (00000064) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	25      (0000006a) move-result-object   v6
+	26      (0000006c) iget                 v7, v14, Landroid/media/MediaCodec$BufferInfo;->size I
+	27      (00000070) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	28      (00000076) move-result-object   v6
+	29      (00000078) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	30      (0000007e) move-result-object   v6
+	31      (00000080) invoke-static        v2, v6, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	32      (00000086) iget                 v2, v14, Landroid/media/MediaCodec$BufferInfo;->size I
+	33      (0000008a) invoke-static        v2, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+	34      (00000090) move-result-object   v2
+	35      (00000092) move-object/from16   v0, v18
+	36      (00000096) iput-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->configData Ljava/nio/ByteBuffer;
+	37      (0000009a) move-object/from16   v0, v18
+	38      (0000009e) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->outputBuffers [Ljava/nio/ByteBuffer;
+	39      (000000a2) aget-object          v2, v2, v3
+	40      (000000a6) iget                 v6, v14, Landroid/media/MediaCodec$BufferInfo;->offset I
+	41      (000000aa) invoke-virtual       v2, v6, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+	42      (000000b0) move-object/from16   v0, v18
+	43      (000000b4) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->outputBuffers [Ljava/nio/ByteBuffer;
+	44      (000000b8) aget-object          v2, v2, v3
+	45      (000000bc) iget                 v6, v14, Landroid/media/MediaCodec$BufferInfo;->offset I
+	46      (000000c0) iget                 v7, v14, Landroid/media/MediaCodec$BufferInfo;->size I
+	47      (000000c4) add-int/2addr        v6, v7
+	48      (000000c6) invoke-virtual       v2, v6, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+	49      (000000cc) move-object/from16   v0, v18
+	50      (000000d0) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->configData Ljava/nio/ByteBuffer;
+	51      (000000d4) move-object/from16   v0, v18
+	52      (000000d8) iget-object          v6, v0, Lorg/webrtc/MediaCodecVideoEncoder;->outputBuffers [Ljava/nio/ByteBuffer;
+	53      (000000dc) aget-object          v6, v6, v3
+	54      (000000e0) invoke-virtual       v2, v6, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+	55      (000000e6) const-string         v17, ''
+	56      (000000ea) const/4              v13, 0
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0xec : [ dequeueOutputBuffer-BB@0xf8 dequeueOutputBuffer-BB@0x15a ]
+	57      (000000ec) iget                 v2, v14, Landroid/media/MediaCodec$BufferInfo;->size I
+	58      (000000f0) const/16             v6, 8
+	59      (000000f4) if-ge                v2, v6, +33
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0xf8 : [ dequeueOutputBuffer-BB@0xfc ]
+	60      (000000f8) iget                 v2, v14, Landroid/media/MediaCodec$BufferInfo;->size I
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0xfc : [ dequeueOutputBuffer-BB@0x100 dequeueOutputBuffer-BB@0x160 ]
+	61      (000000fc) if-ge                v13, v2, +32
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x100 : [ dequeueOutputBuffer-BB@0xec ]
+	62      (00000100) new-instance         v2, Ljava/lang/StringBuilder;
+	63      (00000104) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	64      (0000010a) move-object/from16   v0, v17
+	65      (0000010e) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	66      (00000114) move-result-object   v2
+	67      (00000116) move-object/from16   v0, v18
+	68      (0000011a) iget-object          v6, v0, Lorg/webrtc/MediaCodecVideoEncoder;->configData Ljava/nio/ByteBuffer;
+	69      (0000011e) invoke-virtual       v6, v13, Ljava/nio/ByteBuffer;->get(I)B
+	70      (00000124) move-result          v6
+	71      (00000126) and-int/lit16        v6, v6, 255
+	72      (0000012a) invoke-static        v6, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	73      (00000130) move-result-object   v6
+	74      (00000132) invoke-virtual       v2, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	75      (00000138) move-result-object   v2
+	76      (0000013a) const-string         v6, ' '
+	77      (0000013e) invoke-virtual       v2, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	78      (00000144) move-result-object   v2
+	79      (00000146) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	80      (0000014c) move-result-object   v17
+	81      (0000014e) add-int/lit8         v13, v13, 1
+	82      (00000152) goto                 -33
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x154 : [ dequeueOutputBuffer-BB@0x36 ]
+	83      (00000154) const/4              v15, 0
+	84      (00000156) goto/16              -90
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x15a : [ dequeueOutputBuffer-BB@0xfc ]
+	85      (0000015a) const/16             v2, 8
+	86      (0000015e) goto                 -31
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x160 : [ dequeueOutputBuffer-BB@0x192 ]
+	87      (00000160) const-string         v2, 'MediaCodecVideoEncoder'
+	88      (00000164) move-object/from16   v0, v17
+	89      (00000168) invoke-static        v2, v0, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	90      (0000016e) move-object/from16   v0, v18
+	91      (00000172) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->mediaCodec Landroid/media/MediaCodec;
+	92      (00000176) const/4              v6, 0
+	93      (00000178) invoke-virtual       v2, v3, v6, Landroid/media/MediaCodec;->releaseOutputBuffer(I Z)V
+	94      (0000017e) move-object/from16   v0, v18
+	95      (00000182) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->mediaCodec Landroid/media/MediaCodec;
+	96      (00000186) const-wide/16        v6, 0 # [0.0]
+	97      (0000018a) invoke-virtual       v2, v14, v6, v7, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo; J)I
+	98      (00000190) move-result          v3
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x192 : [ dequeueOutputBuffer-BB@0x196 dequeueOutputBuffer-BB@0x322 ]
+	99      (00000192) if-ltz               v3, +c8
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x196 : [ dequeueOutputBuffer-BB@0x1e6 dequeueOutputBuffer-BB@0x2dc ]
+	100     (00000196) move-object/from16   v0, v18
+	101     (0000019a) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->outputBuffers [Ljava/nio/ByteBuffer;
+	102     (0000019e) aget-object          v2, v2, v3
+	103     (000001a2) invoke-virtual       v2, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
+	104     (000001a8) move-result-object   v16
+	105     (000001aa) iget                 v2, v14, Landroid/media/MediaCodec$BufferInfo;->offset I
+	106     (000001ae) move-object/from16   v0, v16
+	107     (000001b2) invoke-virtual       v0, v2, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+	108     (000001b8) iget                 v2, v14, Landroid/media/MediaCodec$BufferInfo;->offset I
+	109     (000001bc) iget                 v6, v14, Landroid/media/MediaCodec$BufferInfo;->size I
+	110     (000001c0) add-int/2addr        v2, v6
+	111     (000001c2) move-object/from16   v0, v16
+	112     (000001c6) invoke-virtual       v0, v2, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
+	113     (000001cc) iget                 v2, v14, Landroid/media/MediaCodec$BufferInfo;->size I
+	114     (000001d0) move-object/from16   v0, v18
+	115     (000001d4) invoke-direct        v0, v2, Lorg/webrtc/MediaCodecVideoEncoder;->reportEncodedFrame(I)V
+	116     (000001da) iget                 v2, v14, Landroid/media/MediaCodec$BufferInfo;->flags I
+	117     (000001de) and-int/lit8         v2, v2, 1
+	118     (000001e2) if-eqz               v2, +7d
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x1e6 : [ dequeueOutputBuffer-BB@0x1e8 ]
+	119     (000001e6) const/4              v5, 1
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x1e8 : [ dequeueOutputBuffer-BB@0x1ec dequeueOutputBuffer-BB@0x1fa ]
+	120     (000001e8) if-eqz               v5, +9
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x1ec : [ dequeueOutputBuffer-BB@0x1fa ]
+	121     (000001ec) const-string         v2, 'MediaCodecVideoEncoder'
+	122     (000001f0) const-string         v6, 'Sync frame generated'
+	123     (000001f4) invoke-static        v2, v6, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x1fa : [ dequeueOutputBuffer-BB@0x1fe dequeueOutputBuffer-BB@0x2e0 ]
+	124     (000001fa) if-eqz               v5, +73
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x1fe : [ dequeueOutputBuffer-BB@0x20e dequeueOutputBuffer-BB@0x2e0 ]
+	125     (000001fe) move-object/from16   v0, v18
+	126     (00000202) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->type Lorg/webrtc/MediaCodecVideoEncoder$VideoCodecType;
+	127     (00000206) sget-object          v6, Lorg/webrtc/MediaCodecVideoEncoder$VideoCodecType;->VIDEO_CODEC_H264 Lorg/webrtc/MediaCodecVideoEncoder$VideoCodecType;
+	128     (0000020a) if-ne                v2, v6, +6b
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x20e : [ dequeueOutputBuffer-BB@0x2da ]
+	129     (0000020e) const-string         v2, 'MediaCodecVideoEncoder'
+	130     (00000212) new-instance         v6, Ljava/lang/StringBuilder;
+	131     (00000216) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	132     (0000021c) const-string         v7, 'Appending config frame of size '
+	133     (00000220) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	134     (00000226) move-result-object   v6
+	135     (00000228) move-object/from16   v0, v18
+	136     (0000022c) iget-object          v7, v0, Lorg/webrtc/MediaCodecVideoEncoder;->configData Ljava/nio/ByteBuffer;
+	137     (00000230) invoke-virtual       v7, Ljava/nio/ByteBuffer;->capacity()I
+	138     (00000236) move-result          v7
+	139     (00000238) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	140     (0000023e) move-result-object   v6
+	141     (00000240) const-string         v7, ' to output buffer with offset '
+	142     (00000244) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	143     (0000024a) move-result-object   v6
+	144     (0000024c) iget                 v7, v14, Landroid/media/MediaCodec$BufferInfo;->offset I
+	145     (00000250) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	146     (00000256) move-result-object   v6
+	147     (00000258) const-string         v7, ', size '
+	148     (0000025c) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	149     (00000262) move-result-object   v6
+	150     (00000264) iget                 v7, v14, Landroid/media/MediaCodec$BufferInfo;->size I
+	151     (00000268) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	152     (0000026e) move-result-object   v6
+	153     (00000270) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	154     (00000276) move-result-object   v6
+	155     (00000278) invoke-static        v2, v6, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	156     (0000027e) move-object/from16   v0, v18
+	157     (00000282) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->configData Ljava/nio/ByteBuffer;
+	158     (00000286) invoke-virtual       v2, Ljava/nio/ByteBuffer;->capacity()I
+	159     (0000028c) move-result          v2
+	160     (0000028e) iget                 v6, v14, Landroid/media/MediaCodec$BufferInfo;->size I
+	161     (00000292) add-int/2addr        v2, v6
+	162     (00000294) invoke-static        v2, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+	163     (0000029a) move-result-object   v4
+	164     (0000029c) move-object/from16   v0, v18
+	165     (000002a0) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->configData Ljava/nio/ByteBuffer;
+	166     (000002a4) invoke-virtual       v2, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+	167     (000002aa) move-object/from16   v0, v18
+	168     (000002ae) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->configData Ljava/nio/ByteBuffer;
+	169     (000002b2) invoke-virtual       v4, v2, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+	170     (000002b8) move-object/from16   v0, v16
+	171     (000002bc) invoke-virtual       v4, v0, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+	172     (000002c2) const/4              v2, 0
+	173     (000002c4) invoke-virtual       v4, v2, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+	174     (000002ca) new-instance         v2, Lorg/webrtc/MediaCodecVideoEncoder$OutputBufferInfo;
+	175     (000002ce) iget-wide            v6, v14, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs J
+	176     (000002d2) invoke-direct/range  v2 ... v7, Lorg/webrtc/MediaCodecVideoEncoder$OutputBufferInfo;-><init>(I Ljava/nio/ByteBuffer; Z J)V
+	177     (000002d8) move-object          v6, v2
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x2da : 
+	178     (000002da) return-object        v6
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x2dc : [ dequeueOutputBuffer-BB@0x1e8 ]
+	179     (000002dc) const/4              v5, 0
+	180     (000002de) goto                 -7b
+	6:2f9
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x2e0 : [ dequeueOutputBuffer-BB@0x2da ]
+	181     (000002e0) new-instance         v6, Lorg/webrtc/MediaCodecVideoEncoder$OutputBufferInfo;
+	182     (000002e4) invoke-virtual/range v16, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
+	183     (000002ea) move-result-object   v8
+	184     (000002ec) iget-wide            v10, v14, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs J
+	185     (000002f0) move                 v7, v3
+	186     (000002f2) move                 v9, v5
+	187     (000002f4) invoke-direct/range  v6 ... v11, Lorg/webrtc/MediaCodecVideoEncoder$OutputBufferInfo;-><init>(I Ljava/nio/ByteBuffer; Z J)V
+	188     (000002fa) goto                 -10
+
+dequeueOutputBuffer-BB@0x2fc : [ dequeueOutputBuffer-BB@0x2da ]
+	189     (000002fc) move-exception       v12
+	190     (000002fe) const-string         v2, 'MediaCodecVideoEncoder'
+	191     (00000302) const-string         v6, 'dequeueOutputBuffer failed'
+	192     (00000306) invoke-static        v2, v6, v12, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	193     (0000030c) new-instance         v6, Lorg/webrtc/MediaCodecVideoEncoder$OutputBufferInfo;
+	194     (00000310) const/4              v7, -1
+	195     (00000312) const/4              v8, 0
+	196     (00000314) const/4              v9, 0
+	197     (00000316) const-wide/16        v10, -1 # [-1.0]
+	198     (0000031a) invoke-direct/range  v6 ... v11, Lorg/webrtc/MediaCodecVideoEncoder$OutputBufferInfo;-><init>(I Ljava/nio/ByteBuffer; Z J)V
+	199     (00000320) goto                 -23
+
+dequeueOutputBuffer-BB@0x322 : [ dequeueOutputBuffer-BB@0x328 dequeueOutputBuffer-BB@0x34a ]
+	200     (00000322) const/4              v2, -3
+	201     (00000324) if-ne                v3, v2, +13
+
+dequeueOutputBuffer-BB@0x328 : [ dequeueOutputBuffer-BB@0x2da ]
+	202     (00000328) move-object/from16   v0, v18
+	203     (0000032c) iget-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->mediaCodec Landroid/media/MediaCodec;
+	204     (00000330) invoke-virtual       v2, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
+	205     (00000336) move-result-object   v2
+	206     (00000338) move-object/from16   v0, v18
+	207     (0000033c) iput-object          v2, v0, Lorg/webrtc/MediaCodecVideoEncoder;->outputBuffers [Ljava/nio/ByteBuffer;
+	208     (00000340) invoke-virtual/range v18, Lorg/webrtc/MediaCodecVideoEncoder;->dequeueOutputBuffer()Lorg/webrtc/MediaCodecVideoEncoder$OutputBufferInfo;
+	209     (00000346) move-result-object   v6
+	210     (00000348) goto                 -37
+	328:395
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x34a : [ dequeueOutputBuffer-BB@0x350 dequeueOutputBuffer-BB@0x35a ]
+	211     (0000034a) const/4              v2, -2
+	212     (0000034c) if-ne                v3, v2, +7
+	328:395
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x350 : [ dequeueOutputBuffer-BB@0x2da ]
+	213     (00000350) invoke-virtual/range v18, Lorg/webrtc/MediaCodecVideoEncoder;->dequeueOutputBuffer()Lorg/webrtc/MediaCodecVideoEncoder$OutputBufferInfo;
+	214     (00000356) move-result-object   v6
+	215     (00000358) goto                 -3f
+	328:395
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x35a : [ dequeueOutputBuffer-BB@0x360 dequeueOutputBuffer-BB@0x364 ]
+	216     (0000035a) const/4              v2, -1
+	217     (0000035c) if-ne                v3, v2, +4
+	328:395
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x360 : [ dequeueOutputBuffer-BB@0x2da ]
+	218     (00000360) const/4              v6, 0
+	219     (00000362) goto                 -44
+	328:395
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+
+dequeueOutputBuffer-BB@0x364 : 
+	220     (00000364) new-instance         v2, Ljava/lang/RuntimeException;
+	221     (00000368) new-instance         v6, Ljava/lang/StringBuilder;
+	222     (0000036c) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	223     (00000372) const-string         v7, 'dequeueOutputBuffer: '
+	224     (00000376) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	225     (0000037c) move-result-object   v6
+	226     (0000037e) invoke-virtual       v6, v3, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	227     (00000384) move-result-object   v6
+	228     (00000386) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	229     (0000038c) move-result-object   v6
+	230     (0000038e) invoke-direct        v2, v6, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	231     (00000394) throw                v2
+	328:395
+	(Ljava/lang/IllegalStateException; -> 2fc dequeueOutputBuffer-BB@0x2fc)
+

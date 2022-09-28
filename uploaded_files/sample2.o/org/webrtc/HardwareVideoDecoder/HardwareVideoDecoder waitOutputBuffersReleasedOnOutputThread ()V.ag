@@ -1,0 +1,61 @@
+# Lorg/webrtc/HardwareVideoDecoder;->waitOutputBuffersReleasedOnOutputThread()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+waitOutputBuffersReleasedOnOutputThread-BB@0x0 : [ waitOutputBuffersReleasedOnOutputThread-BB@0x10 ]
+	0       (00000000) iget-object          v1, v4, Lorg/webrtc/HardwareVideoDecoder;->outputThreadChecker Lorg/webrtc/ThreadUtils$ThreadChecker;
+	1       (00000004) invoke-virtual       v1, Lorg/webrtc/ThreadUtils$ThreadChecker;->checkIsOnValidThread()V
+	2       (0000000a) iget-object          v2, v4, Lorg/webrtc/HardwareVideoDecoder;->activeOutputBuffersLock Ljava/lang/Object;
+	3       (0000000e) monitor-enter        v2
+
+waitOutputBuffersReleasedOnOutputThread-BB@0x10 : [ waitOutputBuffersReleasedOnOutputThread-BB@0x18 waitOutputBuffersReleasedOnOutputThread-BB@0x46 ]
+	4       (00000010) iget                 v1, v4, Lorg/webrtc/HardwareVideoDecoder;->activeOutputBuffers I
+	5       (00000014) if-lez               v1, +19
+	10:25
+	(Ljava/lang/Throwable; -> 4a waitOutputBuffersReleasedOnOutputThread-BB@0x4a)
+
+waitOutputBuffersReleasedOnOutputThread-BB@0x18 : [ waitOutputBuffersReleasedOnOutputThread-BB@0x26 ]
+	6       (00000018) const-string         v1, 'HardwareVideoDecoder'
+	7       (0000001c) const-string         v3, 'Waiting for all frames to be released.'
+	8       (00000020) invoke-static        v1, v3, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	10:25
+	(Ljava/lang/Throwable; -> 4a waitOutputBuffersReleasedOnOutputThread-BB@0x4a)
+
+waitOutputBuffersReleasedOnOutputThread-BB@0x26 : [ waitOutputBuffersReleasedOnOutputThread-BB@0x10 ]
+	9       (00000026) iget-object          v1, v4, Lorg/webrtc/HardwareVideoDecoder;->activeOutputBuffersLock Ljava/lang/Object;
+	10      (0000002a) invoke-virtual       v1, Ljava/lang/Object;->wait()V
+	11      (00000030) goto                 -10
+	26:2f
+	(Ljava/lang/Throwable; -> 4a waitOutputBuffersReleasedOnOutputThread-BB@0x4a)
+	(Ljava/lang/InterruptedException; -> 32 waitOutputBuffersReleasedOnOutputThread-BB@0x32)
+
+waitOutputBuffersReleasedOnOutputThread-BB@0x32 : [ waitOutputBuffersReleasedOnOutputThread-BB@0x34 ]
+	12      (00000032) move-exception       v0
+
+waitOutputBuffersReleasedOnOutputThread-BB@0x34 : [ waitOutputBuffersReleasedOnOutputThread-BB@0x44 ]
+	13      (00000034) const-string         v1, 'HardwareVideoDecoder'
+	14      (00000038) const-string         v3, 'Interrupted while waiting for output buffers to be released.'
+	15      (0000003c) invoke-static        v1, v3, v0, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	16      (00000042) monitor-exit         v2
+	34:4d
+	(Ljava/lang/Throwable; -> 4a waitOutputBuffersReleasedOnOutputThread-BB@0x4a)
+
+waitOutputBuffersReleasedOnOutputThread-BB@0x44 : 
+	17      (00000044) return-void          
+	34:4d
+	(Ljava/lang/Throwable; -> 4a waitOutputBuffersReleasedOnOutputThread-BB@0x4a)
+
+waitOutputBuffersReleasedOnOutputThread-BB@0x46 : [ waitOutputBuffersReleasedOnOutputThread-BB@0x44 ]
+	18      (00000046) monitor-exit         v2
+	19      (00000048) goto                 -2
+	34:4d
+	(Ljava/lang/Throwable; -> 4a waitOutputBuffersReleasedOnOutputThread-BB@0x4a)
+
+waitOutputBuffersReleasedOnOutputThread-BB@0x4a : 
+	20      (0000004a) move-exception       v1
+	21      (0000004c) monitor-exit         v2
+	22      (0000004e) throw                v1
+

@@ -1,0 +1,25 @@
+# Lorg/webrtc/GlShader;->useProgram()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+useProgram-BB@0x0 : [ useProgram-BB@0xa useProgram-BB@0x1a ]
+	0       (00000000) iget                 v0, v2, Lorg/webrtc/GlShader;->program I
+	1       (00000004) const/4              v1, -1
+	2       (00000006) if-ne                v0, v1, +a
+
+useProgram-BB@0xa : 
+	3       (0000000a) new-instance         v0, Ljava/lang/RuntimeException;
+	4       (0000000e) const-string         v1, 'The program has been released'
+	5       (00000012) invoke-direct        v0, v1, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	6       (00000018) throw                v0
+
+useProgram-BB@0x1a : 
+	7       (0000001a) iget                 v0, v2, Lorg/webrtc/GlShader;->program I
+	8       (0000001e) invoke-static        v0, Landroid/opengl/GLES20;->glUseProgram(I)V
+	9       (00000024) const-string         v0, 'glUseProgram'
+	10      (00000028) invoke-static        v0, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
+	11      (0000002e) return-void          
+

@@ -1,0 +1,33 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioRecord;->threadSleep(J)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:long
+#
+# - return:void
+
+threadSleep-BB@0x0 : [ threadSleep-BB@0x6 ]
+	0       (00000000) invoke-static        v6, v7, Ljava/lang/Thread;->sleep(J)V
+	0:5
+	(Ljava/lang/InterruptedException; -> 8 threadSleep-BB@0x8)
+
+threadSleep-BB@0x6 : 
+	1       (00000006) return-void          
+
+threadSleep-BB@0x8 : [ threadSleep-BB@0x6 ]
+	2       (00000008) move-exception       v0
+	3       (0000000a) const-string         v1, 'WebRtcAudioRecord'
+	4       (0000000e) new-instance         v2, Ljava/lang/StringBuilder;
+	5       (00000012) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	6       (00000018) const-string         v3, 'Thread.sleep failed: '
+	7       (0000001c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000022) move-result-object   v2
+	9       (00000024) invoke-virtual       v0, Ljava/lang/InterruptedException;->getMessage()Ljava/lang/String;
+	10      (0000002a) move-result-object   v3
+	11      (0000002c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	12      (00000032) move-result-object   v2
+	13      (00000034) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003a) move-result-object   v2
+	15      (0000003c) invoke-static        v1, v2, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	16      (00000042) goto                 -1e
+

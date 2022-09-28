@@ -1,0 +1,42 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioEffects;->isNoiseSuppressorExcludedByUUID()Z [access_flags=private static]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:boolean
+
+isNoiseSuppressorExcludedByUUID-BB@0x0 : [ isNoiseSuppressorExcludedByUUID-BB@0xe ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioEffects;->getAvailableEffects()[Landroid/media/audiofx/AudioEffect$Descriptor;
+	2       (00000008) move-result-object   v3
+	3       (0000000a) array-length         v4, v3
+	4       (0000000c) move                 v2, v1
+
+isNoiseSuppressorExcludedByUUID-BB@0xe : [ isNoiseSuppressorExcludedByUUID-BB@0x12 isNoiseSuppressorExcludedByUUID-BB@0x40 ]
+	5       (0000000e) if-ge                v2, v4, +19
+
+isNoiseSuppressorExcludedByUUID-BB@0x12 : [ isNoiseSuppressorExcludedByUUID-BB@0x2a isNoiseSuppressorExcludedByUUID-BB@0x42 ]
+	6       (00000012) aget-object          v0, v3, v2
+	7       (00000016) iget-object          v5, v0, Landroid/media/audiofx/AudioEffect$Descriptor;->type Ljava/util/UUID;
+	8       (0000001a) sget-object          v6, Landroid/media/audiofx/AudioEffect;->EFFECT_TYPE_NS Ljava/util/UUID;
+	9       (0000001e) invoke-virtual       v5, v6, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
+	10      (00000024) move-result          v5
+	11      (00000026) if-eqz               v5, +e
+
+isNoiseSuppressorExcludedByUUID-BB@0x2a : [ isNoiseSuppressorExcludedByUUID-BB@0x3e isNoiseSuppressorExcludedByUUID-BB@0x42 ]
+	12      (0000002a) iget-object          v5, v0, Landroid/media/audiofx/AudioEffect$Descriptor;->uuid Ljava/util/UUID;
+	13      (0000002e) sget-object          v6, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->AOSP_NOISE_SUPPRESSOR Ljava/util/UUID;
+	14      (00000032) invoke-virtual       v5, v6, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
+	15      (00000038) move-result          v5
+	16      (0000003a) if-eqz               v5, +4
+
+isNoiseSuppressorExcludedByUUID-BB@0x3e : [ isNoiseSuppressorExcludedByUUID-BB@0x40 ]
+	17      (0000003e) const/4              v1, 1
+
+isNoiseSuppressorExcludedByUUID-BB@0x40 : 
+	18      (00000040) return               v1
+
+isNoiseSuppressorExcludedByUUID-BB@0x42 : [ isNoiseSuppressorExcludedByUUID-BB@0xe ]
+	19      (00000042) add-int/lit8         v2, v2, 1
+	20      (00000046) goto                 -1c
+

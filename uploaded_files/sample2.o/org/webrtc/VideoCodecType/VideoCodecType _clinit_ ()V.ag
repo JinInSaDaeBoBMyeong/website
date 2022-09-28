@@ -1,0 +1,37 @@
+# Lorg/webrtc/VideoCodecType;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/4              v5, 2
+	1       (00000002) const/4              v4, 1
+	2       (00000004) const/4              v3, 0
+	3       (00000006) new-instance         v0, Lorg/webrtc/VideoCodecType;
+	4       (0000000a) const-string         v1, 'VP8'
+	5       (0000000e) const-string         v2, 'video/x-vnd.on2.vp8'
+	6       (00000012) invoke-direct        v0, v1, v3, v2, Lorg/webrtc/VideoCodecType;-><init>(Ljava/lang/String; I Ljava/lang/String;)V
+	7       (00000018) sput-object          v0, Lorg/webrtc/VideoCodecType;->VP8 Lorg/webrtc/VideoCodecType;
+	8       (0000001c) new-instance         v0, Lorg/webrtc/VideoCodecType;
+	9       (00000020) const-string         v1, 'VP9'
+	10      (00000024) const-string         v2, 'video/x-vnd.on2.vp9'
+	11      (00000028) invoke-direct        v0, v1, v4, v2, Lorg/webrtc/VideoCodecType;-><init>(Ljava/lang/String; I Ljava/lang/String;)V
+	12      (0000002e) sput-object          v0, Lorg/webrtc/VideoCodecType;->VP9 Lorg/webrtc/VideoCodecType;
+	13      (00000032) new-instance         v0, Lorg/webrtc/VideoCodecType;
+	14      (00000036) const-string         v1, 'H264'
+	15      (0000003a) const-string         v2, 'video/avc'
+	16      (0000003e) invoke-direct        v0, v1, v5, v2, Lorg/webrtc/VideoCodecType;-><init>(Ljava/lang/String; I Ljava/lang/String;)V
+	17      (00000044) sput-object          v0, Lorg/webrtc/VideoCodecType;->H264 Lorg/webrtc/VideoCodecType;
+	18      (00000048) const/4              v0, 3
+	19      (0000004a) new-array            v0, v0, [Lorg/webrtc/VideoCodecType;
+	20      (0000004e) sget-object          v1, Lorg/webrtc/VideoCodecType;->VP8 Lorg/webrtc/VideoCodecType;
+	21      (00000052) aput-object          v1, v0, v3
+	22      (00000056) sget-object          v1, Lorg/webrtc/VideoCodecType;->VP9 Lorg/webrtc/VideoCodecType;
+	23      (0000005a) aput-object          v1, v0, v4
+	24      (0000005e) sget-object          v1, Lorg/webrtc/VideoCodecType;->H264 Lorg/webrtc/VideoCodecType;
+	25      (00000062) aput-object          v1, v0, v5
+	26      (00000066) sput-object          v0, Lorg/webrtc/VideoCodecType;->$VALUES [Lorg/webrtc/VideoCodecType;
+	27      (0000006a) return-void          
+

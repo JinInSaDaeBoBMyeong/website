@@ -1,0 +1,20 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioEffects;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const-string         v0, 'bb392ec0-8d4d-11e0-a896-0002a5d5c51b'
+	1       (00000004) invoke-static        v0, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) sput-object          v0, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->AOSP_ACOUSTIC_ECHO_CANCELER Ljava/util/UUID;
+	4       (00000010) const-string         v0, 'c06c8400-8e06-11e0-9cb6-0002a5d5c51b'
+	5       (00000014) invoke-static        v0, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) sput-object          v0, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->AOSP_NOISE_SUPPRESSOR Ljava/util/UUID;
+	8       (00000020) const/4              v0, 0
+	9       (00000022) sput-object          v0, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->cachedEffects [Landroid/media/audiofx/AudioEffect$Descriptor;
+	10      (00000026) return-void          
+

@@ -1,0 +1,23 @@
+# Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;->onWindowFocusChanged(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+onWindowFocusChanged-BB@0x0 : [ onWindowFocusChanged-BB@0x4 onWindowFocusChanged-BB@0x10 ]
+	0       (00000000) if-eqz               v2, +8
+
+onWindowFocusChanged-BB@0x4 : [ onWindowFocusChanged-BB@0xe ]
+	1       (00000004) iget-object          v0, v1, Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;->this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	2       (00000008) invoke-virtual       v0, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->gainFocus()V
+
+onWindowFocusChanged-BB@0xe : 
+	3       (0000000e) return-void          
+
+onWindowFocusChanged-BB@0x10 : [ onWindowFocusChanged-BB@0xe ]
+	4       (00000010) iget-object          v0, v1, Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;->this$0 Landroid/support/v4/media/TransportMediatorJellybeanMR2;
+	5       (00000014) invoke-virtual       v0, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->loseFocus()V
+	6       (0000001a) goto                 -6
+

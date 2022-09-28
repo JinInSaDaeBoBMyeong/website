@@ -1,0 +1,30 @@
+# Lorg/webrtc/EglBase14;->checkIsNotReleased()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+checkIsNotReleased-BB@0x0 : [ checkIsNotReleased-BB@0xc checkIsNotReleased-BB@0x20 ]
+	0       (00000000) iget-object          v0, v2, Lorg/webrtc/EglBase14;->eglDisplay Landroid/opengl/EGLDisplay;
+	1       (00000004) sget-object          v1, Landroid/opengl/EGL14;->EGL_NO_DISPLAY Landroid/opengl/EGLDisplay;
+	2       (00000008) if-eq                v0, v1, +c
+
+checkIsNotReleased-BB@0xc : [ checkIsNotReleased-BB@0x18 checkIsNotReleased-BB@0x20 ]
+	3       (0000000c) iget-object          v0, v2, Lorg/webrtc/EglBase14;->eglContext Landroid/opengl/EGLContext;
+	4       (00000010) sget-object          v1, Landroid/opengl/EGL14;->EGL_NO_CONTEXT Landroid/opengl/EGLContext;
+	5       (00000014) if-eq                v0, v1, +6
+
+checkIsNotReleased-BB@0x18 : [ checkIsNotReleased-BB@0x20 checkIsNotReleased-BB@0x30 ]
+	6       (00000018) iget-object          v0, v2, Lorg/webrtc/EglBase14;->eglConfig Landroid/opengl/EGLConfig;
+	7       (0000001c) if-nez               v0, +a
+
+checkIsNotReleased-BB@0x20 : 
+	8       (00000020) new-instance         v0, Ljava/lang/RuntimeException;
+	9       (00000024) const-string         v1, 'This object has been released'
+	10      (00000028) invoke-direct        v0, v1, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	11      (0000002e) throw                v0
+
+checkIsNotReleased-BB@0x30 : 
+	12      (00000030) return-void          
+

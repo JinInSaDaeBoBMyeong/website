@@ -1,0 +1,2 @@
+# Lorg/webrtc/CameraCapturer;->createCameraSession(Lorg/webrtc/CameraSession$CreateSessionCallback; Lorg/webrtc/CameraSession$Events; Landroid/content/Context; Lorg/webrtc/SurfaceTextureHelper; Landroid/media/MediaRecorder; Ljava/lang/String; I I I)V [access_flags=protected abstract]
+#

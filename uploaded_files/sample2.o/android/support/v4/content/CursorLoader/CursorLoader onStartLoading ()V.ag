@@ -1,0 +1,30 @@
+# Landroid/support/v4/content/CursorLoader;->onStartLoading()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onStartLoading-BB@0x0 : [ onStartLoading-BB@0x8 onStartLoading-BB@0x12 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/content/CursorLoader;->mCursor Landroid/database/Cursor;
+	1       (00000004) if-eqz               v0, +7
+
+onStartLoading-BB@0x8 : [ onStartLoading-BB@0x12 ]
+	2       (00000008) iget-object          v0, v1, Landroid/support/v4/content/CursorLoader;->mCursor Landroid/database/Cursor;
+	3       (0000000c) invoke-virtual       v1, v0, Landroid/support/v4/content/CursorLoader;->deliverResult(Landroid/database/Cursor;)V
+
+onStartLoading-BB@0x12 : [ onStartLoading-BB@0x1e onStartLoading-BB@0x26 ]
+	4       (00000012) invoke-virtual       v1, Landroid/support/v4/content/CursorLoader;->takeContentChanged()Z
+	5       (00000018) move-result          v0
+	6       (0000001a) if-nez               v0, +6
+
+onStartLoading-BB@0x1e : [ onStartLoading-BB@0x26 onStartLoading-BB@0x2c ]
+	7       (0000001e) iget-object          v0, v1, Landroid/support/v4/content/CursorLoader;->mCursor Landroid/database/Cursor;
+	8       (00000022) if-nez               v0, +5
+
+onStartLoading-BB@0x26 : [ onStartLoading-BB@0x2c ]
+	9       (00000026) invoke-virtual       v1, Landroid/support/v4/content/CursorLoader;->forceLoad()V
+
+onStartLoading-BB@0x2c : 
+	10      (0000002c) return-void          
+

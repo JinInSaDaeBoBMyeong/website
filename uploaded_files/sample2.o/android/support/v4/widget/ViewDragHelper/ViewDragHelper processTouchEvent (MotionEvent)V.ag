@@ -1,0 +1,442 @@
+# Landroid/support/v4/widget/ViewDragHelper;->processTouchEvent(Landroid/view/MotionEvent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v21
+# - v22:android.view.MotionEvent
+#
+# - return:void
+
+processTouchEvent-BB@0x0 : [ processTouchEvent-BB@0x14 processTouchEvent-BB@0x1a ]
+	0       (00000000) invoke-static/range  v22, Landroid/support/v4/view/MotionEventCompat;->getActionMasked(Landroid/view/MotionEvent;)I
+	1       (00000006) move-result          v3
+	2       (00000008) invoke-static/range  v22, Landroid/support/v4/view/MotionEventCompat;->getActionIndex(Landroid/view/MotionEvent;)I
+	3       (0000000e) move-result          v4
+	4       (00000010) if-nez               v3, +5
+
+processTouchEvent-BB@0x14 : [ processTouchEvent-BB@0x1a ]
+	5       (00000014) invoke-virtual/range v21, Landroid/support/v4/widget/ViewDragHelper;->cancel()V
+
+processTouchEvent-BB@0x1a : [ processTouchEvent-BB@0x2a processTouchEvent-BB@0x3e ]
+	6       (0000001a) move-object/from16   v0, v21
+	7       (0000001e) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mVelocityTracker Landroid/view/VelocityTracker;
+	8       (00000022) move-object/from16   v19, v0
+	9       (00000026) if-nez               v19, +c
+
+processTouchEvent-BB@0x2a : [ processTouchEvent-BB@0x3e ]
+	10      (0000002a) invoke-static        Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
+	11      (00000030) move-result-object   v19
+	12      (00000032) move-object/from16   v0, v19
+	13      (00000036) move-object/from16   v1, v21
+	14      (0000003a) iput-object          v0, v1, Landroid/support/v4/widget/ViewDragHelper;->mVelocityTracker Landroid/view/VelocityTracker;
+
+processTouchEvent-BB@0x3e : [ D:processTouchEvent-BB@0x5e 0:processTouchEvent-BB@0x60 1:processTouchEvent-BB@0x50e 2:processTouchEvent-BB@0x234 3:processTouchEvent-BB@0x53a 4:processTouchEvent-BB@0x5e 5:processTouchEvent-BB@0x11c 6:processTouchEvent-BB@0x3fc ]
+	15      (0000003e) move-object/from16   v0, v21
+	16      (00000042) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mVelocityTracker Landroid/view/VelocityTracker;
+	17      (00000046) move-object/from16   v19, v0
+	18      (0000004a) move-object/from16   v0, v19
+	19      (0000004e) move-object/from16   v1, v22
+	20      (00000052) invoke-virtual       v0, v1, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+	21      (00000058) packed-switch        v3, +292 (0x57c)
+
+processTouchEvent-BB@0x5e : 
+	22      (0000005e) return-void          
+
+processTouchEvent-BB@0x60 : [ processTouchEvent-BB@0xf0 processTouchEvent-BB@0x5e ]
+	23      (00000060) invoke-virtual/range v22, Landroid/view/MotionEvent;->getX()F
+	24      (00000066) move-result          v17
+	25      (00000068) invoke-virtual/range v22, Landroid/view/MotionEvent;->getY()F
+	26      (0000006e) move-result          v18
+	27      (00000070) const/16             v19, 0
+	28      (00000074) move-object/from16   v0, v22
+	29      (00000078) move/from16          v1, v19
+	30      (0000007c) invoke-static        v0, v1, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	31      (00000082) move-result          v15
+	32      (00000084) move/from16          v0, v17
+	33      (00000088) float-to-int         v0, v0
+	34      (0000008a) move/from16          v19, v0
+	35      (0000008e) move/from16          v0, v18
+	36      (00000092) float-to-int         v0, v0
+	37      (00000094) move/from16          v20, v0
+	38      (00000098) move-object/from16   v0, v21
+	39      (0000009c) move/from16          v1, v19
+	40      (000000a0) move/from16          v2, v20
+	41      (000000a4) invoke-virtual       v0, v1, v2, Landroid/support/v4/widget/ViewDragHelper;->findTopChildUnder(I I)Landroid/view/View;
+	42      (000000aa) move-result-object   v16
+	43      (000000ac) move-object/from16   v0, v21
+	44      (000000b0) move/from16          v1, v17
+	45      (000000b4) move/from16          v2, v18
+	46      (000000b8) invoke-direct        v0, v1, v2, v15, Landroid/support/v4/widget/ViewDragHelper;->saveInitialMotion(F F I)V
+	47      (000000be) move-object/from16   v0, v21
+	48      (000000c2) move-object/from16   v1, v16
+	49      (000000c6) invoke-virtual       v0, v1, v15, Landroid/support/v4/widget/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View; I)Z
+	50      (000000cc) move-object/from16   v0, v21
+	51      (000000d0) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mInitialEdgesTouched [I
+	52      (000000d4) move-object/from16   v19, v0
+	53      (000000d8) aget                 v7, v19, v15
+	54      (000000dc) move-object/from16   v0, v21
+	55      (000000e0) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mTrackingEdges I
+	56      (000000e4) move/from16          v19, v0
+	57      (000000e8) and-int              v19, v19, v7
+	58      (000000ec) if-eqz               v19, -47
+
+processTouchEvent-BB@0xf0 : [ processTouchEvent-BB@0x5e ]
+	59      (000000f0) move-object/from16   v0, v21
+	60      (000000f4) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mCallback Landroid/support/v4/widget/ViewDragHelper$Callback;
+	61      (000000f8) move-object/from16   v19, v0
+	62      (000000fc) move-object/from16   v0, v21
+	63      (00000100) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mTrackingEdges I
+	64      (00000104) move/from16          v20, v0
+	65      (00000108) and-int              v20, v20, v7
+	66      (0000010c) move-object/from16   v0, v19
+	67      (00000110) move/from16          v1, v20
+	68      (00000114) invoke-virtual       v0, v1, v15, Landroid/support/v4/widget/ViewDragHelper$Callback;->onEdgeTouched(I I)V
+	69      (0000011a) goto                 -5e
+
+processTouchEvent-BB@0x11c : [ processTouchEvent-BB@0x162 processTouchEvent-BB@0x1ea ]
+	70      (0000011c) move-object/from16   v0, v22
+	71      (00000120) invoke-static        v0, v4, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	72      (00000126) move-result          v15
+	73      (00000128) move-object/from16   v0, v22
+	74      (0000012c) invoke-static        v0, v4, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	75      (00000132) move-result          v17
+	76      (00000134) move-object/from16   v0, v22
+	77      (00000138) invoke-static        v0, v4, Landroid/support/v4/view/MotionEventCompat;->getY(Landroid/view/MotionEvent; I)F
+	78      (0000013e) move-result          v18
+	79      (00000140) move-object/from16   v0, v21
+	80      (00000144) move/from16          v1, v17
+	81      (00000148) move/from16          v2, v18
+	82      (0000014c) invoke-direct        v0, v1, v2, v15, Landroid/support/v4/widget/ViewDragHelper;->saveInitialMotion(F F I)V
+	83      (00000152) move-object/from16   v0, v21
+	84      (00000156) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	85      (0000015a) move/from16          v19, v0
+	86      (0000015e) if-nez               v19, +46
+
+processTouchEvent-BB@0x162 : [ processTouchEvent-BB@0x1bc processTouchEvent-BB@0x5e ]
+	87      (00000162) move/from16          v0, v17
+	88      (00000166) float-to-int         v0, v0
+	89      (00000168) move/from16          v19, v0
+	90      (0000016c) move/from16          v0, v18
+	91      (00000170) float-to-int         v0, v0
+	92      (00000172) move/from16          v20, v0
+	93      (00000176) move-object/from16   v0, v21
+	94      (0000017a) move/from16          v1, v19
+	95      (0000017e) move/from16          v2, v20
+	96      (00000182) invoke-virtual       v0, v1, v2, Landroid/support/v4/widget/ViewDragHelper;->findTopChildUnder(I I)Landroid/view/View;
+	97      (00000188) move-result-object   v16
+	98      (0000018a) move-object/from16   v0, v21
+	99      (0000018e) move-object/from16   v1, v16
+	100     (00000192) invoke-virtual       v0, v1, v15, Landroid/support/v4/widget/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View; I)Z
+	101     (00000198) move-object/from16   v0, v21
+	102     (0000019c) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mInitialEdgesTouched [I
+	103     (000001a0) move-object/from16   v19, v0
+	104     (000001a4) aget                 v7, v19, v15
+	105     (000001a8) move-object/from16   v0, v21
+	106     (000001ac) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mTrackingEdges I
+	107     (000001b0) move/from16          v19, v0
+	108     (000001b4) and-int              v19, v19, v7
+	109     (000001b8) if-eqz               v19, -ad
+
+processTouchEvent-BB@0x1bc : [ processTouchEvent-BB@0x5e ]
+	110     (000001bc) move-object/from16   v0, v21
+	111     (000001c0) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mCallback Landroid/support/v4/widget/ViewDragHelper$Callback;
+	112     (000001c4) move-object/from16   v19, v0
+	113     (000001c8) move-object/from16   v0, v21
+	114     (000001cc) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mTrackingEdges I
+	115     (000001d0) move/from16          v20, v0
+	116     (000001d4) and-int              v20, v20, v7
+	117     (000001d8) move-object/from16   v0, v19
+	118     (000001dc) move/from16          v1, v20
+	119     (000001e0) invoke-virtual       v0, v1, v15, Landroid/support/v4/widget/ViewDragHelper$Callback;->onEdgeTouched(I I)V
+	120     (000001e6) goto/16              -c4
+
+processTouchEvent-BB@0x1ea : [ processTouchEvent-BB@0x216 processTouchEvent-BB@0x5e ]
+	121     (000001ea) move/from16          v0, v17
+	122     (000001ee) float-to-int         v0, v0
+	123     (000001f0) move/from16          v19, v0
+	124     (000001f4) move/from16          v0, v18
+	125     (000001f8) float-to-int         v0, v0
+	126     (000001fa) move/from16          v20, v0
+	127     (000001fe) move-object/from16   v0, v21
+	128     (00000202) move/from16          v1, v19
+	129     (00000206) move/from16          v2, v20
+	130     (0000020a) invoke-virtual       v0, v1, v2, Landroid/support/v4/widget/ViewDragHelper;->isCapturedViewUnder(I I)Z
+	131     (00000210) move-result          v19
+	132     (00000212) if-eqz               v19, -da
+
+processTouchEvent-BB@0x216 : [ processTouchEvent-BB@0x5e ]
+	133     (00000216) move-object/from16   v0, v21
+	134     (0000021a) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	135     (0000021e) move-object/from16   v19, v0
+	136     (00000222) move-object/from16   v0, v21
+	137     (00000226) move-object/from16   v1, v19
+	138     (0000022a) invoke-virtual       v0, v1, v15, Landroid/support/v4/widget/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View; I)Z
+	139     (00000230) goto/16              -e9
+
+processTouchEvent-BB@0x234 : [ processTouchEvent-BB@0x250 processTouchEvent-BB@0x31c ]
+	140     (00000234) move-object/from16   v0, v21
+	141     (00000238) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	142     (0000023c) move/from16          v19, v0
+	143     (00000240) const/16             v20, 1
+	144     (00000244) move/from16          v0, v19
+	145     (00000248) move/from16          v1, v20
+	146     (0000024c) if-ne                v0, v1, +68
+
+processTouchEvent-BB@0x250 : [ processTouchEvent-BB@0x5e ]
+	147     (00000250) move-object/from16   v0, v21
+	148     (00000254) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	149     (00000258) move/from16          v19, v0
+	150     (0000025c) move-object/from16   v0, v22
+	151     (00000260) move/from16          v1, v19
+	152     (00000264) invoke-static        v0, v1, Landroid/support/v4/view/MotionEventCompat;->findPointerIndex(Landroid/view/MotionEvent; I)I
+	153     (0000026a) move-result          v12
+	154     (0000026c) move-object/from16   v0, v22
+	155     (00000270) invoke-static        v0, v12, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	156     (00000276) move-result          v17
+	157     (00000278) move-object/from16   v0, v22
+	158     (0000027c) invoke-static        v0, v12, Landroid/support/v4/view/MotionEventCompat;->getY(Landroid/view/MotionEvent; I)F
+	159     (00000282) move-result          v18
+	160     (00000284) move-object/from16   v0, v21
+	161     (00000288) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mLastMotionX [F
+	162     (0000028c) move-object/from16   v19, v0
+	163     (00000290) move-object/from16   v0, v21
+	164     (00000294) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	165     (00000298) move/from16          v20, v0
+	166     (0000029c) aget                 v19, v19, v20
+	167     (000002a0) sub-float            v19, v17, v19
+	168     (000002a4) move/from16          v0, v19
+	169     (000002a8) float-to-int         v10, v0
+	170     (000002aa) move-object/from16   v0, v21
+	171     (000002ae) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mLastMotionY [F
+	172     (000002b2) move-object/from16   v19, v0
+	173     (000002b6) move-object/from16   v0, v21
+	174     (000002ba) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	175     (000002be) move/from16          v20, v0
+	176     (000002c2) aget                 v19, v19, v20
+	177     (000002c6) sub-float            v19, v18, v19
+	178     (000002ca) move/from16          v0, v19
+	179     (000002ce) float-to-int         v11, v0
+	180     (000002d0) move-object/from16   v0, v21
+	181     (000002d4) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	182     (000002d8) move-object/from16   v19, v0
+	183     (000002dc) invoke-virtual/range v19, Landroid/view/View;->getLeft()I
+	184     (000002e2) move-result          v19
+	185     (000002e4) add-int              v19, v19, v10
+	186     (000002e8) move-object/from16   v0, v21
+	187     (000002ec) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	188     (000002f0) move-object/from16   v20, v0
+	189     (000002f4) invoke-virtual/range v20, Landroid/view/View;->getTop()I
+	190     (000002fa) move-result          v20
+	191     (000002fc) add-int              v20, v20, v11
+	192     (00000300) move-object/from16   v0, v21
+	193     (00000304) move/from16          v1, v19
+	194     (00000308) move/from16          v2, v20
+	195     (0000030c) invoke-direct        v0, v1, v2, v10, v11, Landroid/support/v4/widget/ViewDragHelper;->dragTo(I I I I)V
+	196     (00000312) invoke-direct/range  v21 ... v22, Landroid/support/v4/widget/ViewDragHelper;->saveLastMotion(Landroid/view/MotionEvent;)V
+	197     (00000318) goto/16              -15d
+
+processTouchEvent-BB@0x31c : [ processTouchEvent-BB@0x326 ]
+	198     (0000031c) invoke-static/range  v22, Landroid/support/v4/view/MotionEventCompat;->getPointerCount(Landroid/view/MotionEvent;)I
+	199     (00000322) move-result          v14
+	200     (00000324) const/4              v8, 0
+
+processTouchEvent-BB@0x326 : [ processTouchEvent-BB@0x32a processTouchEvent-BB@0x39c ]
+	201     (00000326) if-ge                v8, v14, +3b
+
+processTouchEvent-BB@0x32a : [ processTouchEvent-BB@0x39c processTouchEvent-BB@0x3a6 ]
+	202     (0000032a) move-object/from16   v0, v22
+	203     (0000032e) invoke-static        v0, v8, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	204     (00000334) move-result          v15
+	205     (00000336) move-object/from16   v0, v22
+	206     (0000033a) invoke-static        v0, v8, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	207     (00000340) move-result          v17
+	208     (00000342) move-object/from16   v0, v22
+	209     (00000346) invoke-static        v0, v8, Landroid/support/v4/view/MotionEventCompat;->getY(Landroid/view/MotionEvent; I)F
+	210     (0000034c) move-result          v18
+	211     (0000034e) move-object/from16   v0, v21
+	212     (00000352) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mInitialMotionX [F
+	213     (00000356) move-object/from16   v19, v0
+	214     (0000035a) aget                 v19, v19, v15
+	215     (0000035e) sub-float            v5, v17, v19
+	216     (00000362) move-object/from16   v0, v21
+	217     (00000366) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mInitialMotionY [F
+	218     (0000036a) move-object/from16   v19, v0
+	219     (0000036e) aget                 v19, v19, v15
+	220     (00000372) sub-float            v6, v18, v19
+	221     (00000376) move-object/from16   v0, v21
+	222     (0000037a) invoke-direct        v0, v5, v6, v15, Landroid/support/v4/widget/ViewDragHelper;->reportNewEdgeDrags(F F I)V
+	223     (00000380) move-object/from16   v0, v21
+	224     (00000384) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	225     (00000388) move/from16          v19, v0
+	226     (0000038c) const/16             v20, 1
+	227     (00000390) move/from16          v0, v19
+	228     (00000394) move/from16          v1, v20
+	229     (00000398) if-ne                v0, v1, +7
+
+processTouchEvent-BB@0x39c : [ processTouchEvent-BB@0x5e ]
+	230     (0000039c) invoke-direct/range  v21 ... v22, Landroid/support/v4/widget/ViewDragHelper;->saveLastMotion(Landroid/view/MotionEvent;)V
+	231     (000003a2) goto/16              -1a2
+
+processTouchEvent-BB@0x3a6 : [ processTouchEvent-BB@0x3e2 processTouchEvent-BB@0x3f6 ]
+	232     (000003a6) move/from16          v0, v17
+	233     (000003aa) float-to-int         v0, v0
+	234     (000003ac) move/from16          v19, v0
+	235     (000003b0) move/from16          v0, v18
+	236     (000003b4) float-to-int         v0, v0
+	237     (000003b6) move/from16          v20, v0
+	238     (000003ba) move-object/from16   v0, v21
+	239     (000003be) move/from16          v1, v19
+	240     (000003c2) move/from16          v2, v20
+	241     (000003c6) invoke-virtual       v0, v1, v2, Landroid/support/v4/widget/ViewDragHelper;->findTopChildUnder(I I)Landroid/view/View;
+	242     (000003cc) move-result-object   v16
+	243     (000003ce) move-object/from16   v0, v21
+	244     (000003d2) move-object/from16   v1, v16
+	245     (000003d6) invoke-direct        v0, v1, v5, v6, Landroid/support/v4/widget/ViewDragHelper;->checkTouchSlop(Landroid/view/View; F F)Z
+	246     (000003dc) move-result          v19
+	247     (000003de) if-eqz               v19, +c
+
+processTouchEvent-BB@0x3e2 : [ processTouchEvent-BB@0x3f6 processTouchEvent-BB@0x39c ]
+	248     (000003e2) move-object/from16   v0, v21
+	249     (000003e6) move-object/from16   v1, v16
+	250     (000003ea) invoke-virtual       v0, v1, v15, Landroid/support/v4/widget/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View; I)Z
+	251     (000003f0) move-result          v19
+	252     (000003f2) if-nez               v19, -2b
+
+processTouchEvent-BB@0x3f6 : [ processTouchEvent-BB@0x326 ]
+	253     (000003f6) add-int/lit8         v8, v8, 1
+	254     (000003fa) goto                 -6a
+
+processTouchEvent-BB@0x3fc : [ processTouchEvent-BB@0x424 processTouchEvent-BB@0x500 ]
+	255     (000003fc) move-object/from16   v0, v22
+	256     (00000400) invoke-static        v0, v4, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	257     (00000406) move-result          v15
+	258     (00000408) move-object/from16   v0, v21
+	259     (0000040c) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	260     (00000410) move/from16          v19, v0
+	261     (00000414) const/16             v20, 1
+	262     (00000418) move/from16          v0, v19
+	263     (0000041c) move/from16          v1, v20
+	264     (00000420) if-ne                v0, v1, +70
+
+processTouchEvent-BB@0x424 : [ processTouchEvent-BB@0x438 processTouchEvent-BB@0x500 ]
+	265     (00000424) move-object/from16   v0, v21
+	266     (00000428) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	267     (0000042c) move/from16          v19, v0
+	268     (00000430) move/from16          v0, v19
+	269     (00000434) if-ne                v15, v0, +66
+
+processTouchEvent-BB@0x438 : [ processTouchEvent-BB@0x444 ]
+	270     (00000438) const/4              v13, -1
+	271     (0000043a) invoke-static/range  v22, Landroid/support/v4/view/MotionEventCompat;->getPointerCount(Landroid/view/MotionEvent;)I
+	272     (00000440) move-result          v14
+	273     (00000442) const/4              v8, 0
+
+processTouchEvent-BB@0x444 : [ processTouchEvent-BB@0x448 processTouchEvent-BB@0x4ee ]
+	274     (00000444) if-ge                v8, v14, +55
+
+processTouchEvent-BB@0x448 : [ processTouchEvent-BB@0x468 processTouchEvent-BB@0x46e ]
+	275     (00000448) move-object/from16   v0, v22
+	276     (0000044c) invoke-static        v0, v8, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	277     (00000452) move-result          v9
+	278     (00000454) move-object/from16   v0, v21
+	279     (00000458) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	280     (0000045c) move/from16          v19, v0
+	281     (00000460) move/from16          v0, v19
+	282     (00000464) if-ne                v9, v0, +5
+
+processTouchEvent-BB@0x468 : [ processTouchEvent-BB@0x444 ]
+	283     (00000468) add-int/lit8         v8, v8, 1
+	284     (0000046c) goto                 -14
+
+processTouchEvent-BB@0x46e : [ processTouchEvent-BB@0x4c6 processTouchEvent-BB@0x468 ]
+	285     (0000046e) move-object/from16   v0, v22
+	286     (00000472) invoke-static        v0, v8, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	287     (00000478) move-result          v17
+	288     (0000047a) move-object/from16   v0, v22
+	289     (0000047e) invoke-static        v0, v8, Landroid/support/v4/view/MotionEventCompat;->getY(Landroid/view/MotionEvent; I)F
+	290     (00000484) move-result          v18
+	291     (00000486) move/from16          v0, v17
+	292     (0000048a) float-to-int         v0, v0
+	293     (0000048c) move/from16          v19, v0
+	294     (00000490) move/from16          v0, v18
+	295     (00000494) float-to-int         v0, v0
+	296     (00000496) move/from16          v20, v0
+	297     (0000049a) move-object/from16   v0, v21
+	298     (0000049e) move/from16          v1, v19
+	299     (000004a2) move/from16          v2, v20
+	300     (000004a6) invoke-virtual       v0, v1, v2, Landroid/support/v4/widget/ViewDragHelper;->findTopChildUnder(I I)Landroid/view/View;
+	301     (000004ac) move-result-object   v19
+	302     (000004ae) move-object/from16   v0, v21
+	303     (000004b2) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	304     (000004b6) move-object/from16   v20, v0
+	305     (000004ba) move-object/from16   v0, v19
+	306     (000004be) move-object/from16   v1, v20
+	307     (000004c2) if-ne                v0, v1, -2d
+
+processTouchEvent-BB@0x4c6 : [ processTouchEvent-BB@0x4e6 processTouchEvent-BB@0x468 ]
+	308     (000004c6) move-object/from16   v0, v21
+	309     (000004ca) iget-object          v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	310     (000004ce) move-object/from16   v19, v0
+	311     (000004d2) move-object/from16   v0, v21
+	312     (000004d6) move-object/from16   v1, v19
+	313     (000004da) invoke-virtual       v0, v1, v9, Landroid/support/v4/widget/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View; I)Z
+	314     (000004e0) move-result          v19
+	315     (000004e2) if-eqz               v19, -3d
+
+processTouchEvent-BB@0x4e6 : [ processTouchEvent-BB@0x4ee ]
+	316     (000004e6) move-object/from16   v0, v21
+	317     (000004ea) iget                 v13, v0, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+
+processTouchEvent-BB@0x4ee : [ processTouchEvent-BB@0x4fa processTouchEvent-BB@0x500 ]
+	318     (000004ee) const/16             v19, -1
+	319     (000004f2) move/from16          v0, v19
+	320     (000004f6) if-ne                v13, v0, +5
+
+processTouchEvent-BB@0x4fa : [ processTouchEvent-BB@0x500 ]
+	321     (000004fa) invoke-direct/range  v21, Landroid/support/v4/widget/ViewDragHelper;->releaseViewForPointerUp()V
+
+processTouchEvent-BB@0x500 : [ processTouchEvent-BB@0x5e ]
+	322     (00000500) move-object/from16   v0, v21
+	323     (00000504) invoke-direct        v0, v15, Landroid/support/v4/widget/ViewDragHelper;->clearMotionHistory(I)V
+	324     (0000050a) goto/16              -256
+
+processTouchEvent-BB@0x50e : [ processTouchEvent-BB@0x52a processTouchEvent-BB@0x530 ]
+	325     (0000050e) move-object/from16   v0, v21
+	326     (00000512) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	327     (00000516) move/from16          v19, v0
+	328     (0000051a) const/16             v20, 1
+	329     (0000051e) move/from16          v0, v19
+	330     (00000522) move/from16          v1, v20
+	331     (00000526) if-ne                v0, v1, +5
+
+processTouchEvent-BB@0x52a : [ processTouchEvent-BB@0x530 ]
+	332     (0000052a) invoke-direct/range  v21, Landroid/support/v4/widget/ViewDragHelper;->releaseViewForPointerUp()V
+
+processTouchEvent-BB@0x530 : [ processTouchEvent-BB@0x5e ]
+	333     (00000530) invoke-virtual/range v21, Landroid/support/v4/widget/ViewDragHelper;->cancel()V
+	334     (00000536) goto/16              -26c
+
+processTouchEvent-BB@0x53a : [ processTouchEvent-BB@0x556 processTouchEvent-BB@0x570 ]
+	335     (0000053a) move-object/from16   v0, v21
+	336     (0000053e) iget                 v0, v0, Landroid/support/v4/widget/ViewDragHelper;->mDragState I
+	337     (00000542) move/from16          v19, v0
+	338     (00000546) const/16             v20, 1
+	339     (0000054a) move/from16          v0, v19
+	340     (0000054e) move/from16          v1, v20
+	341     (00000552) if-ne                v0, v1, +f
+
+processTouchEvent-BB@0x556 : [ processTouchEvent-BB@0x570 ]
+	342     (00000556) const/16             v19, 0
+	343     (0000055a) const/16             v20, 0
+	344     (0000055e) move-object/from16   v0, v21
+	345     (00000562) move/from16          v1, v19
+	346     (00000566) move/from16          v2, v20
+	347     (0000056a) invoke-direct        v0, v1, v2, Landroid/support/v4/widget/ViewDragHelper;->dispatchViewReleased(F F)V
+
+processTouchEvent-BB@0x570 : [ processTouchEvent-BB@0x5e ]
+	348     (00000570) invoke-virtual/range v21, Landroid/support/v4/widget/ViewDragHelper;->cancel()V
+	349     (00000576) goto/16              -28c
+
+processTouchEvent-BB@0x57a : 
+	350     (0000057a) nop                  
+	351     (0000057c) packed-switch-payload 0 1 2 3 4 5 6
+

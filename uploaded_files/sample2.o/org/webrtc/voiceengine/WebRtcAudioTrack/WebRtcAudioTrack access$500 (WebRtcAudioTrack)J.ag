@@ -1,0 +1,12 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$500(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)J [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:org.webrtc.voiceengine.WebRtcAudioTrack
+#
+# - return:long
+
+access$500-BB@0x0 : 
+	0       (00000000) iget-wide            v0, v2, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->nativeAudioTrack J
+	1       (00000004) return-wide          v0
+

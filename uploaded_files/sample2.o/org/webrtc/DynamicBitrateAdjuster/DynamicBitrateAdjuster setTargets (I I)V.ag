@@ -1,0 +1,30 @@
+# Lorg/webrtc/DynamicBitrateAdjuster;->setTargets(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:int
+#
+# - return:void
+
+setTargets-BB@0x0 : [ setTargets-BB@0x8 setTargets-BB@0x24 ]
+	0       (00000000) iget                 v0, v4, Lorg/webrtc/DynamicBitrateAdjuster;->targetBitrateBps I
+	1       (00000004) if-lez               v0, +10
+
+setTargets-BB@0x8 : [ setTargets-BB@0x10 setTargets-BB@0x24 ]
+	2       (00000008) iget                 v0, v4, Lorg/webrtc/DynamicBitrateAdjuster;->targetBitrateBps I
+	3       (0000000c) if-ge                v5, v0, +c
+
+setTargets-BB@0x10 : [ setTargets-BB@0x24 ]
+	4       (00000010) iget-wide            v0, v4, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+	5       (00000014) int-to-double        v2, v5
+	6       (00000016) mul-double/2addr     v0, v2
+	7       (00000018) iget                 v2, v4, Lorg/webrtc/DynamicBitrateAdjuster;->targetBitrateBps I
+	8       (0000001c) int-to-double        v2, v2
+	9       (0000001e) div-double/2addr     v0, v2
+	10      (00000020) iput-wide            v0, v4, Lorg/webrtc/DynamicBitrateAdjuster;->deviationBytes D
+
+setTargets-BB@0x24 : 
+	11      (00000024) invoke-super         v4, v5, v6, Lorg/webrtc/BaseBitrateAdjuster;->setTargets(I I)V
+	12      (0000002a) return-void          
+

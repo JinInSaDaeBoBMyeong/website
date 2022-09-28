@@ -1,0 +1,32 @@
+# Landroid/support/v4/widget/ListViewAutoScrollHelper;->scrollTargetBy(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+# - v7:int
+#
+# - return:void
+
+scrollTargetBy-BB@0x0 : [ scrollTargetBy-BB@0x12 scrollTargetBy-BB@0x14 ]
+	0       (00000000) iget-object          v3, v5, Landroid/support/v4/widget/ListViewAutoScrollHelper;->mTarget Landroid/widget/ListView;
+	1       (00000004) invoke-virtual       v3, Landroid/widget/ListView;->getFirstVisiblePosition()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) const/4              v4, -1
+	4       (0000000e) if-ne                v0, v4, +3
+
+scrollTargetBy-BB@0x12 : 
+	5       (00000012) return-void          
+
+scrollTargetBy-BB@0x14 : [ scrollTargetBy-BB@0x22 scrollTargetBy-BB@0x12 ]
+	6       (00000014) const/4              v4, 0
+	7       (00000016) invoke-virtual       v3, v4, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+	8       (0000001c) move-result-object   v1
+	9       (0000001e) if-eqz               v1, -6
+
+scrollTargetBy-BB@0x22 : [ scrollTargetBy-BB@0x12 ]
+	10      (00000022) invoke-virtual       v1, Landroid/view/View;->getTop()I
+	11      (00000028) move-result          v4
+	12      (0000002a) sub-int              v2, v4, v7
+	13      (0000002e) invoke-virtual       v3, v0, v2, Landroid/widget/ListView;->setSelectionFromTop(I I)V
+	14      (00000034) goto                 -11
+

@@ -1,0 +1,22 @@
+# Landroid/support/v4/content/Loader;->onContentChanged()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+onContentChanged-BB@0x0 : [ onContentChanged-BB@0x8 onContentChanged-BB@0x10 ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/v4/content/Loader;->mStarted Z
+	1       (00000004) if-eqz               v0, +6
+
+onContentChanged-BB@0x8 : [ onContentChanged-BB@0xe ]
+	2       (00000008) invoke-virtual       v1, Landroid/support/v4/content/Loader;->forceLoad()V
+
+onContentChanged-BB@0xe : 
+	3       (0000000e) return-void          
+
+onContentChanged-BB@0x10 : [ onContentChanged-BB@0xe ]
+	4       (00000010) const/4              v0, 1
+	5       (00000012) iput-boolean         v0, v1, Landroid/support/v4/content/Loader;->mContentChanged Z
+	6       (00000016) goto                 -4
+

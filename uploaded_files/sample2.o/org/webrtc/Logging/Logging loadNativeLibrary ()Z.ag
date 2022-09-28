@@ -1,0 +1,45 @@
+# Lorg/webrtc/Logging;->loadNativeLibrary()Z [access_flags=private static]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+loadNativeLibrary-BB@0x0 : [ loadNativeLibrary-BB@0xc loadNativeLibrary-BB@0x1e ]
+	0       (00000000) sget-object          v1, Lorg/webrtc/Logging;->nativeLibStatus Lorg/webrtc/Logging$NativeLibStatus;
+	1       (00000004) sget-object          v2, Lorg/webrtc/Logging$NativeLibStatus;->UNINITIALIZED Lorg/webrtc/Logging$NativeLibStatus;
+	2       (00000008) if-ne                v1, v2, +b
+
+loadNativeLibrary-BB@0xc : [ loadNativeLibrary-BB@0x1e ]
+	3       (0000000c) const-string         v1, 'jingle_peerconnection_so'
+	4       (00000010) invoke-static        v1, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+	5       (00000016) sget-object          v1, Lorg/webrtc/Logging$NativeLibStatus;->LOADED Lorg/webrtc/Logging$NativeLibStatus;
+	6       (0000001a) sput-object          v1, Lorg/webrtc/Logging;->nativeLibStatus Lorg/webrtc/Logging$NativeLibStatus;
+	c:1d
+	(Ljava/lang/UnsatisfiedLinkError; -> 2e loadNativeLibrary-BB@0x2e)
+
+loadNativeLibrary-BB@0x1e : [ loadNativeLibrary-BB@0x2a loadNativeLibrary-BB@0x4c ]
+	7       (0000001e) sget-object          v1, Lorg/webrtc/Logging;->nativeLibStatus Lorg/webrtc/Logging$NativeLibStatus;
+	8       (00000022) sget-object          v2, Lorg/webrtc/Logging$NativeLibStatus;->LOADED Lorg/webrtc/Logging$NativeLibStatus;
+	9       (00000026) if-ne                v1, v2, +13
+
+loadNativeLibrary-BB@0x2a : [ loadNativeLibrary-BB@0x2c ]
+	10      (0000002a) const/4              v1, 1
+
+loadNativeLibrary-BB@0x2c : 
+	11      (0000002c) return               v1
+
+loadNativeLibrary-BB@0x2e : [ loadNativeLibrary-BB@0x1e ]
+	12      (0000002e) move-exception       v0
+	13      (00000030) sget-object          v1, Lorg/webrtc/Logging$NativeLibStatus;->FAILED Lorg/webrtc/Logging$NativeLibStatus;
+	14      (00000034) sput-object          v1, Lorg/webrtc/Logging;->nativeLibStatus Lorg/webrtc/Logging$NativeLibStatus;
+	15      (00000038) sget-object          v1, Lorg/webrtc/Logging;->fallbackLogger Ljava/util/logging/Logger;
+	16      (0000003c) sget-object          v2, Ljava/util/logging/Level;->WARNING Ljava/util/logging/Level;
+	17      (00000040) const-string         v3, 'Failed to load jingle_peerconnection_so: '
+	18      (00000044) invoke-virtual       v1, v2, v3, v0, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level; Ljava/lang/String; Ljava/lang/Throwable;)V
+	19      (0000004a) goto                 -16
+
+loadNativeLibrary-BB@0x4c : [ loadNativeLibrary-BB@0x2c ]
+	20      (0000004c) const/4              v1, 0
+	21      (0000004e) goto                 -11
+

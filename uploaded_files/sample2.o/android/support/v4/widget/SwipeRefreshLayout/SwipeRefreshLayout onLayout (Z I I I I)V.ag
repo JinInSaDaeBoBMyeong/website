@@ -1,0 +1,54 @@
+# Landroid/support/v4/widget/SwipeRefreshLayout;->onLayout(Z I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:boolean
+# - v12:int
+# - v13:int
+# - v14:int
+# - v15:int
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0x2c onLayout-BB@0x2e ]
+	0       (00000000) const/4              v9, 0
+	1       (00000002) invoke-virtual       v10, Landroid/support/v4/widget/SwipeRefreshLayout;->getMeasuredWidth()I
+	2       (00000008) move-result          v6
+	3       (0000000a) invoke-virtual       v10, Landroid/support/v4/widget/SwipeRefreshLayout;->getMeasuredHeight()I
+	4       (00000010) move-result          v5
+	5       (00000012) iget-object          v7, v10, Landroid/support/v4/widget/SwipeRefreshLayout;->mProgressBar Landroid/support/v4/widget/SwipeProgressBar;
+	6       (00000016) iget                 v8, v10, Landroid/support/v4/widget/SwipeRefreshLayout;->mProgressBarHeight I
+	7       (0000001a) invoke-virtual       v7, v9, v9, v6, v8, Landroid/support/v4/widget/SwipeProgressBar;->setBounds(I I I I)V
+	8       (00000020) invoke-virtual       v10, Landroid/support/v4/widget/SwipeRefreshLayout;->getChildCount()I
+	9       (00000026) move-result          v7
+	10      (00000028) if-nez               v7, +3
+
+onLayout-BB@0x2c : 
+	11      (0000002c) return-void          
+
+onLayout-BB@0x2e : [ onLayout-BB@0x2c ]
+	12      (0000002e) invoke-virtual       v10, v9, Landroid/support/v4/widget/SwipeRefreshLayout;->getChildAt(I)Landroid/view/View;
+	13      (00000034) move-result-object   v0
+	14      (00000036) invoke-virtual       v10, Landroid/support/v4/widget/SwipeRefreshLayout;->getPaddingLeft()I
+	15      (0000003c) move-result          v2
+	16      (0000003e) iget                 v7, v10, Landroid/support/v4/widget/SwipeRefreshLayout;->mCurrentTargetOffsetTop I
+	17      (00000042) invoke-virtual       v10, Landroid/support/v4/widget/SwipeRefreshLayout;->getPaddingTop()I
+	18      (00000048) move-result          v8
+	19      (0000004a) add-int              v3, v7, v8
+	20      (0000004e) invoke-virtual       v10, Landroid/support/v4/widget/SwipeRefreshLayout;->getPaddingLeft()I
+	21      (00000054) move-result          v7
+	22      (00000056) sub-int              v7, v6, v7
+	23      (0000005a) invoke-virtual       v10, Landroid/support/v4/widget/SwipeRefreshLayout;->getPaddingRight()I
+	24      (00000060) move-result          v8
+	25      (00000062) sub-int              v4, v7, v8
+	26      (00000066) invoke-virtual       v10, Landroid/support/v4/widget/SwipeRefreshLayout;->getPaddingTop()I
+	27      (0000006c) move-result          v7
+	28      (0000006e) sub-int              v7, v5, v7
+	29      (00000072) invoke-virtual       v10, Landroid/support/v4/widget/SwipeRefreshLayout;->getPaddingBottom()I
+	30      (00000078) move-result          v8
+	31      (0000007a) sub-int              v1, v7, v8
+	32      (0000007e) add-int              v7, v2, v4
+	33      (00000082) add-int              v8, v3, v1
+	34      (00000086) invoke-virtual       v0, v2, v3, v7, v8, Landroid/view/View;->layout(I I I I)V
+	35      (0000008c) goto                 -30
+

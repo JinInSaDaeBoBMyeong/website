@@ -1,0 +1,20 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;->stop()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+stop-BB@0x0 : [ stop-BB@0x8 stop-BB@0x18 ]
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;->timer Ljava/util/Timer;
+	1       (00000004) if-eqz               v0, +a
+
+stop-BB@0x8 : [ stop-BB@0x18 ]
+	2       (00000008) iget-object          v0, v1, Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;->timer Ljava/util/Timer;
+	3       (0000000c) invoke-virtual       v0, Ljava/util/Timer;->cancel()V
+	4       (00000012) const/4              v0, 0
+	5       (00000014) iput-object          v0, v1, Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;->timer Ljava/util/Timer;
+
+stop-BB@0x18 : 
+	6       (00000018) return-void          
+

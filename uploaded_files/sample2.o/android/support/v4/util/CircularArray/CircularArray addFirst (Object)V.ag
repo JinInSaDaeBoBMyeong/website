@@ -1,0 +1,27 @@
+# Landroid/support/v4/util/CircularArray;->addFirst(Ljava/lang/Object;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:void
+
+addFirst-BB@0x0 : [ addFirst-BB@0x2a addFirst-BB@0x30 ]
+	0       (00000000) iget                 v0, v2, Landroid/support/v4/util/CircularArray;->mHead I
+	1       (00000004) add-int/lit8         v0, v0, -1
+	2       (00000008) iget                 v1, v2, Landroid/support/v4/util/CircularArray;->mCapacityBitmask I
+	3       (0000000c) and-int/2addr        v0, v1
+	4       (0000000e) iput                 v0, v2, Landroid/support/v4/util/CircularArray;->mHead I
+	5       (00000012) iget-object          v0, v2, Landroid/support/v4/util/CircularArray;->mElements [Ljava/lang/Object;
+	6       (00000016) iget                 v1, v2, Landroid/support/v4/util/CircularArray;->mHead I
+	7       (0000001a) aput-object          v3, v0, v1
+	8       (0000001e) iget                 v0, v2, Landroid/support/v4/util/CircularArray;->mHead I
+	9       (00000022) iget                 v1, v2, Landroid/support/v4/util/CircularArray;->mTail I
+	10      (00000026) if-ne                v0, v1, +5
+
+addFirst-BB@0x2a : [ addFirst-BB@0x30 ]
+	11      (0000002a) invoke-direct        v2, Landroid/support/v4/util/CircularArray;->doubleCapacity()V
+
+addFirst-BB@0x30 : 
+	12      (00000030) return-void          
+

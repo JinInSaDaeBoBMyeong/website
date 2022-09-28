@@ -1,0 +1,14 @@
+# Landroid/support/v4/content/AsyncTaskLoader$LoadTask;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+run-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-boolean         v0, v1, Landroid/support/v4/content/AsyncTaskLoader$LoadTask;->waiting Z
+	2       (00000006) iget-object          v0, v1, Landroid/support/v4/content/AsyncTaskLoader$LoadTask;->this$0 Landroid/support/v4/content/AsyncTaskLoader;
+	3       (0000000a) invoke-virtual       v0, Landroid/support/v4/content/AsyncTaskLoader;->executePendingTask()V
+	4       (00000010) return-void          
+

@@ -1,0 +1,35 @@
+# Ltev/piqgahor/okD0C5;->onResume()V [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+onResume-BB@0x0 : [ onResume-BB@0x2e onResume-BB@0x4e ]
+	0       (00000000) invoke-super         v3, Landroid/app/Activity;->onResume()V
+	1       (00000006) const/16             v0, 23
+	2       (0000000a) new-array            v0, v0, [I
+	3       (0000000e) fill-array-data      v0, +21 (0x50)
+	4       (00000014) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	5       (0000001a) move-result-object   v0
+	6       (0000001c) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	7       (00000022) invoke-static        Ltev/piqgahor/zh7eZ9E;->CVMRpM090()Z
+	8       (00000028) move-result          v0
+	9       (0000002a) if-eqz               v0, +12
+
+onResume-BB@0x2e : [ onResume-BB@0x4e ]
+	10      (0000002e) const/4              v0, 1
+	11      (00000030) invoke-static        v0, Ltev/piqgahor/zh7eZ9E;->QCNZ4fl6z106(Z)V
+	12      (00000036) iget-object          v0, v3, Ltev/piqgahor/okD0C5;->ISUNYW6708 Lorg/webrtc/SurfaceViewRenderer;
+	13      (0000003a) iget-object          v1, v3, Ltev/piqgahor/okD0C5;->wrBSKPe267 Lorg/webrtc/EglBase;
+	14      (0000003e) invoke-virtual       v1, Lorg/webrtc/EglBase;->getEglBaseContext()Lorg/webrtc/EglBase$Context;
+	15      (00000044) move-result-object   v1
+	16      (00000046) const/4              v2, 0
+	17      (00000048) invoke-static        v0, v1, v2, Ltev/piqgahor/zh7eZ9E;->scjlrpZJCgn(Lorg/webrtc/SurfaceViewRenderer; Lorg/webrtc/EglBase$Context; Z)V
+
+onResume-BB@0x4e : 
+	18      (0000004e) return-void          
+
+onResume-BB@0x50 : 
+	19      (00000050) fill-array-data-payload bytearray(b' \x00\x00\x00{\x00\x00\x00w\x00\x00\x00\x85\x00\x00\x00\x82\x00\x00\x00r\x00\x00\x00\x94\x00\x00\x00\x83\x00\x00\x00w\x00\x00\x00\x8e\x00\x00\x00\x84\x00\x00\x00}\x00\x00\x00@\x00\x00\x00r\x00\x00\x00\x85\x00\x00\x00\x93\x00\x00\x00\x95\x00\x00\x00\x8d\x00\x00\x00\x85\x00\x00\x00@\x00\x00\x00A\x00\x00\x00A\x00\x00\x00A\x00\x00\x00') | \x20\x00\x00\x00\x7b\x00\x00\x00\x77\x00\x00\x00\x85\x00\x00\x00\x82\x00\x00\x00\x72\x00\x00\x00\x94\x00\x00\x00\x83\x00\x00\x00\x77\x00\x00\x00\x8e\x00\x00\x00\x84\x00\x00\x00\x7d\x00\x00\x00\x40\x00\x00\x00\x72\x00\x00\x00\x85\x00\x00\x00\x93\x00\x00\x00\x95\x00\x00\x00\x8d\x00\x00\x00\x85\x00\x00\x00\x40\x00\x00\x00\x41\x00\x00\x00\x41\x00\x00\x00\x41\x00\x00\x00
+

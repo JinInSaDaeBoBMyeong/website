@@ -1,0 +1,50 @@
+# Landroid/support/v4/view/ViewPager;->beginFakeDrag()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v10
+#
+# - return:boolean
+
+beginFakeDrag-BB@0x0 : [ beginFakeDrag-BB@0xe beginFakeDrag-BB@0x10 ]
+	0       (00000000) const/4              v9, 1
+	1       (00000002) const/4              v4, 0
+	2       (00000004) const/4              v5, 0
+	3       (00000006) iget-boolean         v2, v10, Landroid/support/v4/view/ViewPager;->mIsBeingDragged Z
+	4       (0000000a) if-eqz               v2, +3
+
+beginFakeDrag-BB@0xe : 
+	5       (0000000e) return               v4
+
+beginFakeDrag-BB@0x10 : [ beginFakeDrag-BB@0x2a beginFakeDrag-BB@0x64 ]
+	6       (00000010) iput-boolean         v9, v10, Landroid/support/v4/view/ViewPager;->mFakeDragging Z
+	7       (00000014) invoke-direct        v10, v9, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
+	8       (0000001a) iput                 v5, v10, Landroid/support/v4/view/ViewPager;->mLastMotionX F
+	9       (0000001e) iput                 v5, v10, Landroid/support/v4/view/ViewPager;->mInitialMotionX F
+	10      (00000022) iget-object          v2, v10, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+	11      (00000026) if-nez               v2, +1f
+
+beginFakeDrag-BB@0x2a : [ beginFakeDrag-BB@0x36 ]
+	12      (0000002a) invoke-static        Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
+	13      (00000030) move-result-object   v2
+	14      (00000032) iput-object          v2, v10, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+
+beginFakeDrag-BB@0x36 : [ beginFakeDrag-BB@0xe ]
+	15      (00000036) invoke-static        Landroid/os/SystemClock;->uptimeMillis()J
+	16      (0000003c) move-result-wide     v0
+	17      (0000003e) move-wide            v2, v0
+	18      (00000040) move                 v6, v5
+	19      (00000042) move                 v7, v4
+	20      (00000044) invoke-static/range  v0 ... v7, Landroid/view/MotionEvent;->obtain(J J I F F I)Landroid/view/MotionEvent;
+	21      (0000004a) move-result-object   v8
+	22      (0000004c) iget-object          v2, v10, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+	23      (00000050) invoke-virtual       v2, v8, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+	24      (00000056) invoke-virtual       v8, Landroid/view/MotionEvent;->recycle()V
+	25      (0000005c) iput-wide            v0, v10, Landroid/support/v4/view/ViewPager;->mFakeDragBeginTime J
+	26      (00000060) move                 v4, v9
+	27      (00000062) goto                 -2a
+
+beginFakeDrag-BB@0x64 : [ beginFakeDrag-BB@0x36 ]
+	28      (00000064) iget-object          v2, v10, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+	29      (00000068) invoke-virtual       v2, Landroid/view/VelocityTracker;->clear()V
+	30      (0000006e) goto                 -1c
+

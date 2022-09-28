@@ -1,0 +1,18 @@
+# Landroid/support/v4/content/Loader;->rollbackContentChanged()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+rollbackContentChanged-BB@0x0 : [ rollbackContentChanged-BB@0x8 rollbackContentChanged-BB@0xe ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/v4/content/Loader;->mProcessingChange Z
+	1       (00000004) if-eqz               v0, +5
+
+rollbackContentChanged-BB@0x8 : [ rollbackContentChanged-BB@0xe ]
+	2       (00000008) const/4              v0, 1
+	3       (0000000a) iput-boolean         v0, v1, Landroid/support/v4/content/Loader;->mContentChanged Z
+
+rollbackContentChanged-BB@0xe : 
+	4       (0000000e) return-void          
+

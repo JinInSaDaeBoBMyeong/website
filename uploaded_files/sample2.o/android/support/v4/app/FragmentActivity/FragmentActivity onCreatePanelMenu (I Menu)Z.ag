@@ -1,0 +1,37 @@
+# Landroid/support/v4/app/FragmentActivity;->onCreatePanelMenu(I Landroid/view/Menu;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+# - v5:android.view.Menu
+#
+# - return:boolean
+
+onCreatePanelMenu-BB@0x0 : [ onCreatePanelMenu-BB@0x4 onCreatePanelMenu-BB@0x34 ]
+	0       (00000000) if-nez               v4, +1a
+
+onCreatePanelMenu-BB@0x4 : [ onCreatePanelMenu-BB@0x2e onCreatePanelMenu-BB@0x30 ]
+	1       (00000004) invoke-super         v3, v4, v5, Landroid/app/Activity;->onCreatePanelMenu(I Landroid/view/Menu;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) iget-object          v1, v3, Landroid/support/v4/app/FragmentActivity;->mFragments Landroid/support/v4/app/FragmentManagerImpl;
+	4       (00000010) invoke-virtual       v3, Landroid/support/v4/app/FragmentActivity;->getMenuInflater()Landroid/view/MenuInflater;
+	5       (00000016) move-result-object   v2
+	6       (00000018) invoke-virtual       v1, v5, v2, Landroid/support/v4/app/FragmentManagerImpl;->dispatchCreateOptionsMenu(Landroid/view/Menu; Landroid/view/MenuInflater;)Z
+	7       (0000001e) move-result          v1
+	8       (00000020) or-int/2addr         v0, v1
+	9       (00000022) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	10      (00000026) const/16             v2, 11
+	11      (0000002a) if-lt                v1, v2, +3
+
+onCreatePanelMenu-BB@0x2e : 
+	12      (0000002e) return               v0
+
+onCreatePanelMenu-BB@0x30 : [ onCreatePanelMenu-BB@0x2e ]
+	13      (00000030) const/4              v0, 1
+	14      (00000032) goto                 -2
+
+onCreatePanelMenu-BB@0x34 : [ onCreatePanelMenu-BB@0x2e ]
+	15      (00000034) invoke-super         v3, v4, v5, Landroid/app/Activity;->onCreatePanelMenu(I Landroid/view/Menu;)Z
+	16      (0000003a) move-result          v0
+	17      (0000003c) goto                 -7
+

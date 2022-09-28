@@ -1,0 +1,27 @@
+# Landroid/support/v4/view/ScaleGestureDetectorCompat;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0xe <clinit>-BB@0x1e ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	2       (00000006) const/16             v1, 19
+	3       (0000000a) if-lt                v0, v1, +a
+
+<clinit>-BB@0xe : [ <clinit>-BB@0x1c ]
+	4       (0000000e) new-instance         v1, Landroid/support/v4/view/ScaleGestureDetectorCompat$ScaleGestureDetectorCompatKitKatImpl;
+	5       (00000012) invoke-direct        v1, v2, Landroid/support/v4/view/ScaleGestureDetectorCompat$ScaleGestureDetectorCompatKitKatImpl;-><init>(Landroid/support/v4/view/ScaleGestureDetectorCompat$1;)V
+	6       (00000018) sput-object          v1, Landroid/support/v4/view/ScaleGestureDetectorCompat;->IMPL Landroid/support/v4/view/ScaleGestureDetectorCompat$ScaleGestureDetectorImpl;
+
+<clinit>-BB@0x1c : 
+	7       (0000001c) return-void          
+
+<clinit>-BB@0x1e : [ <clinit>-BB@0x1c ]
+	8       (0000001e) new-instance         v1, Landroid/support/v4/view/ScaleGestureDetectorCompat$BaseScaleGestureDetectorImpl;
+	9       (00000022) invoke-direct        v1, v2, Landroid/support/v4/view/ScaleGestureDetectorCompat$BaseScaleGestureDetectorImpl;-><init>(Landroid/support/v4/view/ScaleGestureDetectorCompat$1;)V
+	10      (00000028) sput-object          v1, Landroid/support/v4/view/ScaleGestureDetectorCompat;->IMPL Landroid/support/v4/view/ScaleGestureDetectorCompat$ScaleGestureDetectorImpl;
+	11      (0000002c) goto                 -8
+

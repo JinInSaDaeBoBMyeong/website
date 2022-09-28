@@ -1,0 +1,70 @@
+# Landroid/support/v4/widget/ExploreByTouchHelper;->intersectVisibleToUser(Landroid/graphics/Rect;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.graphics.Rect
+#
+# - return:boolean
+
+intersectVisibleToUser-BB@0x0 : [ intersectVisibleToUser-BB@0x6 intersectVisibleToUser-BB@0x12 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) if-eqz               v6, +8
+
+intersectVisibleToUser-BB@0x6 : [ intersectVisibleToUser-BB@0x12 intersectVisibleToUser-BB@0x14 ]
+	2       (00000006) invoke-virtual       v6, Landroid/graphics/Rect;->isEmpty()Z
+	3       (0000000c) move-result          v3
+	4       (0000000e) if-eqz               v3, +3
+
+intersectVisibleToUser-BB@0x12 : 
+	5       (00000012) return               v2
+
+intersectVisibleToUser-BB@0x14 : [ intersectVisibleToUser-BB@0x24 intersectVisibleToUser-BB@0x12 ]
+	6       (00000014) iget-object          v3, v5, Landroid/support/v4/widget/ExploreByTouchHelper;->mView Landroid/view/View;
+	7       (00000018) invoke-virtual       v3, Landroid/view/View;->getWindowVisibility()I
+	8       (0000001e) move-result          v3
+	9       (00000020) if-nez               v3, -7
+
+intersectVisibleToUser-BB@0x24 : [ intersectVisibleToUser-BB@0x30 ]
+	10      (00000024) iget-object          v3, v5, Landroid/support/v4/widget/ExploreByTouchHelper;->mView Landroid/view/View;
+	11      (00000028) invoke-virtual       v3, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+	12      (0000002e) move-result-object   v1
+
+intersectVisibleToUser-BB@0x30 : [ intersectVisibleToUser-BB@0x38 intersectVisibleToUser-BB@0x66 ]
+	13      (00000030) instance-of          v3, v1, Landroid/view/View;
+	14      (00000034) if-eqz               v3, +19
+
+intersectVisibleToUser-BB@0x38 : [ intersectVisibleToUser-BB@0x50 intersectVisibleToUser-BB@0x12 ]
+	15      (00000038) move-object          v0, v1
+	16      (0000003a) check-cast           v0, Landroid/view/View;
+	17      (0000003e) invoke-static        v0, Landroid/support/v4/view/ViewCompat;->getAlpha(Landroid/view/View;)F
+	18      (00000044) move-result          v3
+	19      (00000046) const/4              v4, 0
+	20      (00000048) cmpg-float           v3, v3, v4
+	21      (0000004c) if-lez               v3, -1d
+
+intersectVisibleToUser-BB@0x50 : [ intersectVisibleToUser-BB@0x5c intersectVisibleToUser-BB@0x12 ]
+	22      (00000050) invoke-virtual       v0, Landroid/view/View;->getVisibility()I
+	23      (00000056) move-result          v3
+	24      (00000058) if-nez               v3, -23
+
+intersectVisibleToUser-BB@0x5c : [ intersectVisibleToUser-BB@0x30 ]
+	25      (0000005c) invoke-virtual       v0, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+	26      (00000062) move-result-object   v1
+	27      (00000064) goto                 -1a
+
+intersectVisibleToUser-BB@0x66 : [ intersectVisibleToUser-BB@0x6a intersectVisibleToUser-BB@0x12 ]
+	28      (00000066) if-eqz               v1, -2a
+
+intersectVisibleToUser-BB@0x6a : [ intersectVisibleToUser-BB@0x7e intersectVisibleToUser-BB@0x12 ]
+	29      (0000006a) iget-object          v3, v5, Landroid/support/v4/widget/ExploreByTouchHelper;->mView Landroid/view/View;
+	30      (0000006e) iget-object          v4, v5, Landroid/support/v4/widget/ExploreByTouchHelper;->mTempVisibleRect Landroid/graphics/Rect;
+	31      (00000072) invoke-virtual       v3, v4, Landroid/view/View;->getLocalVisibleRect(Landroid/graphics/Rect;)Z
+	32      (00000078) move-result          v3
+	33      (0000007a) if-eqz               v3, -34
+
+intersectVisibleToUser-BB@0x7e : [ intersectVisibleToUser-BB@0x12 ]
+	34      (0000007e) iget-object          v2, v5, Landroid/support/v4/widget/ExploreByTouchHelper;->mTempVisibleRect Landroid/graphics/Rect;
+	35      (00000082) invoke-virtual       v6, v2, Landroid/graphics/Rect;->intersect(Landroid/graphics/Rect;)Z
+	36      (00000088) move-result          v2
+	37      (0000008a) goto                 -3c
+

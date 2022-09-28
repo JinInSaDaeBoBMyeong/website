@@ -1,0 +1,2 @@
+# Lorg/webrtc/VideoEncoder;->setRateAllocation(Lorg/webrtc/VideoEncoder$BitrateAllocation; I)Lorg/webrtc/VideoCodecStatus; [access_flags=public abstract]
+#

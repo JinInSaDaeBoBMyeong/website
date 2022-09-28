@@ -1,0 +1,61 @@
+# Landroid/support/v4/view/KeyEventCompat$BaseKeyEventVersionImpl;->metaStateFilterDirectionalModifiers(I I I I I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:int
+# - v7:int
+# - v8:int
+# - v9:int
+#
+# - return:int
+
+metaStateFilterDirectionalModifiers-BB@0x0 : [ metaStateFilterDirectionalModifiers-BB@0xc metaStateFilterDirectionalModifiers-BB@0x32 ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v3, 0
+	2       (00000004) and-int              v4, v6, v7
+	3       (00000008) if-eqz               v4, +15
+
+metaStateFilterDirectionalModifiers-BB@0xc : [ metaStateFilterDirectionalModifiers-BB@0xe ]
+	4       (0000000c) move                 v1, v2
+
+metaStateFilterDirectionalModifiers-BB@0xe : [ metaStateFilterDirectionalModifiers-BB@0x1a metaStateFilterDirectionalModifiers-BB@0x36 ]
+	5       (0000000e) or-int               v0, v8, v9
+	6       (00000012) and-int              v4, v6, v0
+	7       (00000016) if-eqz               v4, +10
+
+metaStateFilterDirectionalModifiers-BB@0x1a : [ metaStateFilterDirectionalModifiers-BB@0x1e metaStateFilterDirectionalModifiers-BB@0x42 ]
+	8       (0000001a) if-eqz               v1, +14
+
+metaStateFilterDirectionalModifiers-BB@0x1e : [ metaStateFilterDirectionalModifiers-BB@0x22 metaStateFilterDirectionalModifiers-BB@0x3a ]
+	9       (0000001e) if-eqz               v2, +e
+
+metaStateFilterDirectionalModifiers-BB@0x22 : 
+	10      (00000022) new-instance         v3, Ljava/lang/IllegalArgumentException;
+	11      (00000026) const-string         v4, 'bad arguments'
+	12      (0000002a) invoke-direct        v3, v4, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	13      (00000030) throw                v3
+
+metaStateFilterDirectionalModifiers-BB@0x32 : [ metaStateFilterDirectionalModifiers-BB@0xe ]
+	14      (00000032) move                 v1, v3
+	15      (00000034) goto                 -13
+
+metaStateFilterDirectionalModifiers-BB@0x36 : [ metaStateFilterDirectionalModifiers-BB@0x1a ]
+	16      (00000036) move                 v2, v3
+	17      (00000038) goto                 -f
+
+metaStateFilterDirectionalModifiers-BB@0x3a : [ metaStateFilterDirectionalModifiers-BB@0x40 ]
+	18      (0000003a) xor-int/lit8         v3, v0, -1
+	19      (0000003e) and-int/2addr        v5, v3
+
+metaStateFilterDirectionalModifiers-BB@0x40 : 
+	20      (00000040) return               v5
+
+metaStateFilterDirectionalModifiers-BB@0x42 : [ metaStateFilterDirectionalModifiers-BB@0x46 metaStateFilterDirectionalModifiers-BB@0x40 ]
+	21      (00000042) if-eqz               v2, -1
+
+metaStateFilterDirectionalModifiers-BB@0x46 : [ metaStateFilterDirectionalModifiers-BB@0x40 ]
+	22      (00000046) xor-int/lit8         v3, v7, -1
+	23      (0000004a) and-int/2addr        v5, v3
+	24      (0000004c) goto                 -6
+

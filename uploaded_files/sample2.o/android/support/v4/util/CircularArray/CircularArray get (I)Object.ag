@@ -1,0 +1,30 @@
+# Landroid/support/v4/util/CircularArray;->get(I)Ljava/lang/Object; [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:java.lang.Object
+
+get-BB@0x0 : [ get-BB@0x4 get-BB@0x10 ]
+	0       (00000000) if-ltz               v4, +8
+
+get-BB@0x4 : [ get-BB@0x10 get-BB@0x1c ]
+	1       (00000004) invoke-virtual       v3, Landroid/support/v4/util/CircularArray;->size()I
+	2       (0000000a) move-result          v1
+	3       (0000000c) if-lt                v4, v1, +8
+
+get-BB@0x10 : 
+	4       (00000010) new-instance         v1, Ljava/lang/ArrayIndexOutOfBoundsException;
+	5       (00000014) invoke-direct        v1, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
+	6       (0000001a) throw                v1
+
+get-BB@0x1c : 
+	7       (0000001c) iget                 v1, v3, Landroid/support/v4/util/CircularArray;->mHead I
+	8       (00000020) add-int/2addr        v1, v4
+	9       (00000022) iget                 v2, v3, Landroid/support/v4/util/CircularArray;->mCapacityBitmask I
+	10      (00000026) and-int              v0, v1, v2
+	11      (0000002a) iget-object          v1, v3, Landroid/support/v4/util/CircularArray;->mElements [Ljava/lang/Object;
+	12      (0000002e) aget-object          v1, v1, v0
+	13      (00000032) return-object        v1
+

@@ -1,0 +1,24 @@
+# Landroid/support/v4/view/PagerTitleStrip;->setTextColor(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+#
+# - return:void
+
+setTextColor-BB@0x0 : 
+	0       (00000000) iput                 v5, v4, Landroid/support/v4/view/PagerTitleStrip;->mTextColor I
+	1       (00000004) iget-object          v1, v4, Landroid/support/v4/view/PagerTitleStrip;->mCurrText Landroid/widget/TextView;
+	2       (00000008) invoke-virtual       v1, v5, Landroid/widget/TextView;->setTextColor(I)V
+	3       (0000000e) iget                 v1, v4, Landroid/support/v4/view/PagerTitleStrip;->mNonPrimaryAlpha I
+	4       (00000012) shl-int/lit8         v1, v1, 24
+	5       (00000016) iget                 v2, v4, Landroid/support/v4/view/PagerTitleStrip;->mTextColor I
+	6       (0000001a) const                v3, 16777215 # [2.3509885615147286e-38]
+	7       (00000020) and-int/2addr        v2, v3
+	8       (00000022) or-int               v0, v1, v2
+	9       (00000026) iget-object          v1, v4, Landroid/support/v4/view/PagerTitleStrip;->mPrevText Landroid/widget/TextView;
+	10      (0000002a) invoke-virtual       v1, v0, Landroid/widget/TextView;->setTextColor(I)V
+	11      (00000030) iget-object          v1, v4, Landroid/support/v4/view/PagerTitleStrip;->mNextText Landroid/widget/TextView;
+	12      (00000034) invoke-virtual       v1, v0, Landroid/widget/TextView;->setTextColor(I)V
+	13      (0000003a) return-void          
+

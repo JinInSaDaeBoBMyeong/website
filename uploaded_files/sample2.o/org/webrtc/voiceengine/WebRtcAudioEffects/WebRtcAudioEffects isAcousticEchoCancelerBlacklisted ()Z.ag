@@ -1,0 +1,32 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioEffects;->isAcousticEchoCancelerBlacklisted()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:boolean
+
+isAcousticEchoCancelerBlacklisted-BB@0x0 : [ isAcousticEchoCancelerBlacklisted-BB@0x18 isAcousticEchoCancelerBlacklisted-BB@0x4c ]
+	0       (00000000) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->getBlackListedModelsForAecUsage()Ljava/util/List;
+	1       (00000006) move-result-object   v0
+	2       (00000008) sget-object          v2, Landroid/os/Build;->MODEL Ljava/lang/String;
+	3       (0000000c) invoke-interface     v0, v2, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+	4       (00000012) move-result          v1
+	5       (00000014) if-eqz               v1, +1c
+
+isAcousticEchoCancelerBlacklisted-BB@0x18 : [ isAcousticEchoCancelerBlacklisted-BB@0x4c ]
+	6       (00000018) const-string         v2, 'WebRtcAudioEffects'
+	7       (0000001c) new-instance         v3, Ljava/lang/StringBuilder;
+	8       (00000020) invoke-direct        v3, Ljava/lang/StringBuilder;-><init>()V
+	9       (00000026) sget-object          v4, Landroid/os/Build;->MODEL Ljava/lang/String;
+	10      (0000002a) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (00000030) move-result-object   v3
+	12      (00000032) const-string         v4, ' is blacklisted for HW AEC usage!'
+	13      (00000036) invoke-virtual       v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (0000003c) move-result-object   v3
+	15      (0000003e) invoke-virtual       v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	16      (00000044) move-result-object   v3
+	17      (00000046) invoke-static        v2, v3, Lorg/webrtc/Logging;->w(Ljava/lang/String; Ljava/lang/String;)V
+
+isAcousticEchoCancelerBlacklisted-BB@0x4c : 
+	18      (0000004c) return               v1
+

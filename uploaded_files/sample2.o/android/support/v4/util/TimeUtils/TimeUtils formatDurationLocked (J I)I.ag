@@ -1,0 +1,318 @@
+# Landroid/support/v4/util/TimeUtils;->formatDurationLocked(J I)I [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v20
+# - v21:long
+# - v22:int
+#
+# - return:int
+
+formatDurationLocked-BB@0x0 : [ formatDurationLocked-BB@0xe formatDurationLocked-BB@0x1a ]
+	0       (00000000) sget-object          v4, Landroid/support/v4/util/TimeUtils;->sFormatStr [C
+	1       (00000004) array-length         v4, v4
+	2       (00000006) move/from16          v0, v22
+	3       (0000000a) if-ge                v4, v0, +8
+
+formatDurationLocked-BB@0xe : [ formatDurationLocked-BB@0x1a ]
+	4       (0000000e) move/from16          v0, v22
+	5       (00000012) new-array            v4, v0, [C
+	6       (00000016) sput-object          v4, Landroid/support/v4/util/TimeUtils;->sFormatStr [C
+
+formatDurationLocked-BB@0x1a : [ formatDurationLocked-BB@0x2a formatDurationLocked-BB@0x4e ]
+	7       (0000001a) sget-object          v2, Landroid/support/v4/util/TimeUtils;->sFormatStr [C
+	8       (0000001e) const-wide/16        v6, 0 # [0.0]
+	9       (00000022) cmp-long             v4, v20, v6
+	10      (00000026) if-nez               v4, +14
+
+formatDurationLocked-BB@0x2a : [ formatDurationLocked-BB@0x30 ]
+	11      (0000002a) const/4              v5, 0
+	12      (0000002c) add-int/lit8         v22, v22, -1
+
+formatDurationLocked-BB@0x30 : [ formatDurationLocked-BB@0x38 formatDurationLocked-BB@0x42 ]
+	13      (00000030) move/from16          v0, v22
+	14      (00000034) if-ge                v5, v0, +7
+
+formatDurationLocked-BB@0x38 : [ formatDurationLocked-BB@0x30 ]
+	15      (00000038) const/16             v4, 32
+	16      (0000003c) aput-char            v4, v2, v5
+	17      (00000040) goto                 -8
+
+formatDurationLocked-BB@0x42 : [ formatDurationLocked-BB@0x4c ]
+	18      (00000042) const/16             v4, 48
+	19      (00000046) aput-char            v4, v2, v5
+	20      (0000004a) const/4              v4, 1
+
+formatDurationLocked-BB@0x4c : 
+	21      (0000004c) return               v4
+
+formatDurationLocked-BB@0x4e : [ formatDurationLocked-BB@0x5a formatDurationLocked-BB@0x164 ]
+	22      (0000004e) const-wide/16        v6, 0 # [0.0]
+	23      (00000052) cmp-long             v4, v20, v6
+	24      (00000056) if-lez               v4, +87
+
+formatDurationLocked-BB@0x5a : [ formatDurationLocked-BB@0x5e ]
+	25      (0000005a) const/16             v16, 43
+
+formatDurationLocked-BB@0x5e : [ formatDurationLocked-BB@0x94 formatDurationLocked-BB@0xaa ]
+	26      (0000005e) const-wide/16        v6, 1000 # [1000.0]
+	27      (00000062) rem-long             v6, v20, v6
+	28      (00000066) long-to-int          v13, v6
+	29      (00000068) const-wide/16        v6, 1000 # [1000.0]
+	30      (0000006c) div-long             v6, v20, v6
+	31      (00000070) long-to-double       v6, v6
+	32      (00000072) invoke-static        v6, v7, Ljava/lang/Math;->floor(D)D
+	33      (00000078) move-result-wide     v6
+	34      (0000007a) double-to-int        v0, v6
+	35      (0000007c) move/from16          v17, v0
+	36      (00000080) const/4              v3, 0
+	37      (00000082) const/4              v12, 0
+	38      (00000084) const/4              v14, 0
+	39      (00000086) const                v4, 86400 # [1.210721873176642e-40]
+	40      (0000008c) move/from16          v0, v17
+	41      (00000090) if-le                v0, v4, +d
+
+formatDurationLocked-BB@0x94 : [ formatDurationLocked-BB@0xaa ]
+	42      (00000094) const                v4, 86400 # [1.210721873176642e-40]
+	43      (0000009a) div-int              v3, v17, v4
+	44      (0000009e) const                v4, 86400 # [1.210721873176642e-40]
+	45      (000000a4) mul-int/2addr        v4, v3
+	46      (000000a6) sub-int              v17, v17, v4
+
+formatDurationLocked-BB@0xaa : [ formatDurationLocked-BB@0xb6 formatDurationLocked-BB@0xc6 ]
+	47      (000000aa) const/16             v4, 3600
+	48      (000000ae) move/from16          v0, v17
+	49      (000000b2) if-le                v0, v4, +a
+
+formatDurationLocked-BB@0xb6 : [ formatDurationLocked-BB@0xc6 ]
+	50      (000000b6) move/from16          v0, v17
+	51      (000000ba) div-int/lit16        v12, v0, 3600
+	52      (000000be) mul-int/lit16        v4, v12, 3600
+	53      (000000c2) sub-int              v17, v17, v4
+
+formatDurationLocked-BB@0xc6 : [ formatDurationLocked-BB@0xd2 formatDurationLocked-BB@0xde ]
+	54      (000000c6) const/16             v4, 60
+	55      (000000ca) move/from16          v0, v17
+	56      (000000ce) if-le                v0, v4, +8
+
+formatDurationLocked-BB@0xd2 : [ formatDurationLocked-BB@0xde ]
+	57      (000000d2) div-int/lit8         v14, v17, 60
+	58      (000000d6) mul-int/lit8         v4, v14, 60
+	59      (000000da) sub-int              v17, v17, v4
+
+formatDurationLocked-BB@0xde : [ formatDurationLocked-BB@0xe4 formatDurationLocked-BB@0x186 ]
+	60      (000000de) const/4              v5, 0
+	61      (000000e0) if-eqz               v22, +53
+
+formatDurationLocked-BB@0xe4 : [ formatDurationLocked-BB@0xf8 formatDurationLocked-BB@0x176 ]
+	62      (000000e4) const/4              v4, 1
+	63      (000000e6) const/4              v6, 0
+	64      (000000e8) const/4              v7, 0
+	65      (000000ea) invoke-static        v3, v4, v6, v7, Landroid/support/v4/util/TimeUtils;->accumField(I I Z I)I
+	66      (000000f0) move-result          v15
+	67      (000000f2) const/4              v6, 1
+	68      (000000f4) if-lez               v15, +41
+
+formatDurationLocked-BB@0xf8 : [ formatDurationLocked-BB@0xfa ]
+	69      (000000f8) const/4              v4, 1
+
+formatDurationLocked-BB@0xfa : [ formatDurationLocked-BB@0x10c formatDurationLocked-BB@0x17a ]
+	70      (000000fa) const/4              v7, 2
+	71      (000000fc) invoke-static        v12, v6, v4, v7, Landroid/support/v4/util/TimeUtils;->accumField(I I Z I)I
+	72      (00000102) move-result          v4
+	73      (00000104) add-int/2addr        v15, v4
+	74      (00000106) const/4              v6, 1
+	75      (00000108) if-lez               v15, +39
+
+formatDurationLocked-BB@0x10c : [ formatDurationLocked-BB@0x10e ]
+	76      (0000010c) const/4              v4, 1
+
+formatDurationLocked-BB@0x10e : [ formatDurationLocked-BB@0x120 formatDurationLocked-BB@0x17e ]
+	77      (0000010e) const/4              v7, 2
+	78      (00000110) invoke-static        v14, v6, v4, v7, Landroid/support/v4/util/TimeUtils;->accumField(I I Z I)I
+	79      (00000116) move-result          v4
+	80      (00000118) add-int/2addr        v15, v4
+	81      (0000011a) const/4              v6, 1
+	82      (0000011c) if-lez               v15, +31
+
+formatDurationLocked-BB@0x120 : [ formatDurationLocked-BB@0x122 ]
+	83      (00000120) const/4              v4, 1
+
+formatDurationLocked-BB@0x122 : [ formatDurationLocked-BB@0x13a formatDurationLocked-BB@0x182 ]
+	84      (00000122) const/4              v7, 2
+	85      (00000124) move/from16          v0, v17
+	86      (00000128) invoke-static        v0, v6, v4, v7, Landroid/support/v4/util/TimeUtils;->accumField(I I Z I)I
+	87      (0000012e) move-result          v4
+	88      (00000130) add-int/2addr        v15, v4
+	89      (00000132) const/4              v6, 2
+	90      (00000134) const/4              v7, 1
+	91      (00000136) if-lez               v15, +26
+
+formatDurationLocked-BB@0x13a : [ formatDurationLocked-BB@0x13c ]
+	92      (0000013a) const/4              v4, 3
+
+formatDurationLocked-BB@0x13c : [ formatDurationLocked-BB@0x14a ]
+	93      (0000013c) invoke-static        v13, v6, v7, v4, Landroid/support/v4/util/TimeUtils;->accumField(I I Z I)I
+	94      (00000142) move-result          v4
+	95      (00000144) add-int/lit8         v4, v4, 1
+	96      (00000148) add-int/2addr        v15, v4
+
+formatDurationLocked-BB@0x14a : [ formatDurationLocked-BB@0x152 formatDurationLocked-BB@0x186 ]
+	97      (0000014a) move/from16          v0, v22
+	98      (0000014e) if-ge                v15, v0, +1c
+
+formatDurationLocked-BB@0x152 : [ formatDurationLocked-BB@0x14a ]
+	99      (00000152) const/16             v4, 32
+	100     (00000156) aput-char            v4, v2, v5
+	101     (0000015a) add-int/lit8         v5, v5, 1
+	102     (0000015e) add-int/lit8         v15, v15, 1
+	103     (00000162) goto                 -c
+
+formatDurationLocked-BB@0x164 : [ formatDurationLocked-BB@0x5e ]
+	104     (00000164) const/16             v16, 45
+	105     (00000168) move-wide/from16     v0, v20
+	106     (0000016c) neg-long             v0, v0
+	107     (0000016e) move-wide/from16     v20, v0
+	108     (00000172) goto/16              -8a
+
+formatDurationLocked-BB@0x176 : [ formatDurationLocked-BB@0xfa ]
+	109     (00000176) const/4              v4, 0
+	110     (00000178) goto                 -3f
+
+formatDurationLocked-BB@0x17a : [ formatDurationLocked-BB@0x10e ]
+	111     (0000017a) const/4              v4, 0
+	112     (0000017c) goto                 -37
+
+formatDurationLocked-BB@0x17e : [ formatDurationLocked-BB@0x122 ]
+	113     (0000017e) const/4              v4, 0
+	114     (00000180) goto                 -2f
+
+formatDurationLocked-BB@0x182 : [ formatDurationLocked-BB@0x13c ]
+	115     (00000182) const/4              v4, 0
+	116     (00000184) goto                 -24
+
+formatDurationLocked-BB@0x186 : [ formatDurationLocked-BB@0x196 formatDurationLocked-BB@0x244 ]
+	117     (00000186) aput-char            v16, v2, v5
+	118     (0000018a) add-int/lit8         v5, v5, 1
+	119     (0000018e) move/from16          v18, v5
+	120     (00000192) if-eqz               v22, +59
+
+formatDurationLocked-BB@0x196 : [ formatDurationLocked-BB@0x19a ]
+	121     (00000196) const/16             v19, 1
+
+formatDurationLocked-BB@0x19a : [ formatDurationLocked-BB@0x1b6 formatDurationLocked-BB@0x24a ]
+	122     (0000019a) const/16             v4, 100
+	123     (0000019e) const/4              v6, 0
+	124     (000001a0) const/4              v7, 0
+	125     (000001a2) invoke-static/range  v2 ... v7, Landroid/support/v4/util/TimeUtils;->printField([C I C I Z I)I
+	126     (000001a8) move-result          v5
+	127     (000001aa) const/16             v8, 104
+	128     (000001ae) move/from16          v0, v18
+	129     (000001b2) if-eq                v5, v0, +4c
+
+formatDurationLocked-BB@0x1b6 : [ formatDurationLocked-BB@0x1b8 ]
+	130     (000001b6) const/4              v10, 1
+
+formatDurationLocked-BB@0x1b8 : [ formatDurationLocked-BB@0x1bc formatDurationLocked-BB@0x24e ]
+	131     (000001b8) if-eqz               v19, +4b
+
+formatDurationLocked-BB@0x1bc : [ formatDurationLocked-BB@0x1be ]
+	132     (000001bc) const/4              v11, 2
+
+formatDurationLocked-BB@0x1be : [ formatDurationLocked-BB@0x1d8 formatDurationLocked-BB@0x252 ]
+	133     (000001be) move-object          v6, v2
+	134     (000001c0) move                 v7, v12
+	135     (000001c2) move                 v9, v5
+	136     (000001c4) invoke-static/range  v6 ... v11, Landroid/support/v4/util/TimeUtils;->printField([C I C I Z I)I
+	137     (000001ca) move-result          v5
+	138     (000001cc) const/16             v8, 109
+	139     (000001d0) move/from16          v0, v18
+	140     (000001d4) if-eq                v5, v0, +3f
+
+formatDurationLocked-BB@0x1d8 : [ formatDurationLocked-BB@0x1da ]
+	141     (000001d8) const/4              v10, 1
+
+formatDurationLocked-BB@0x1da : [ formatDurationLocked-BB@0x1de formatDurationLocked-BB@0x256 ]
+	142     (000001da) if-eqz               v19, +3e
+
+formatDurationLocked-BB@0x1de : [ formatDurationLocked-BB@0x1e0 ]
+	143     (000001de) const/4              v11, 2
+
+formatDurationLocked-BB@0x1e0 : [ formatDurationLocked-BB@0x1fa formatDurationLocked-BB@0x25a ]
+	144     (000001e0) move-object          v6, v2
+	145     (000001e2) move                 v7, v14
+	146     (000001e4) move                 v9, v5
+	147     (000001e6) invoke-static/range  v6 ... v11, Landroid/support/v4/util/TimeUtils;->printField([C I C I Z I)I
+	148     (000001ec) move-result          v5
+	149     (000001ee) const/16             v8, 115
+	150     (000001f2) move/from16          v0, v18
+	151     (000001f6) if-eq                v5, v0, +32
+
+formatDurationLocked-BB@0x1fa : [ formatDurationLocked-BB@0x1fc ]
+	152     (000001fa) const/4              v10, 1
+
+formatDurationLocked-BB@0x1fc : [ formatDurationLocked-BB@0x200 formatDurationLocked-BB@0x25e ]
+	153     (000001fc) if-eqz               v19, +31
+
+formatDurationLocked-BB@0x200 : [ formatDurationLocked-BB@0x202 ]
+	154     (00000200) const/4              v11, 2
+
+formatDurationLocked-BB@0x202 : [ formatDurationLocked-BB@0x21c formatDurationLocked-BB@0x262 ]
+	155     (00000202) move-object          v6, v2
+	156     (00000204) move/from16          v7, v17
+	157     (00000208) move                 v9, v5
+	158     (0000020a) invoke-static/range  v6 ... v11, Landroid/support/v4/util/TimeUtils;->printField([C I C I Z I)I
+	159     (00000210) move-result          v5
+	160     (00000212) const/16             v8, 109
+	161     (00000216) const/4              v10, 1
+	162     (00000218) if-eqz               v19, +25
+
+formatDurationLocked-BB@0x21c : [ formatDurationLocked-BB@0x224 formatDurationLocked-BB@0x262 ]
+	163     (0000021c) move/from16          v0, v18
+	164     (00000220) if-eq                v5, v0, +21
+
+formatDurationLocked-BB@0x224 : [ formatDurationLocked-BB@0x226 ]
+	165     (00000224) const/4              v11, 3
+
+formatDurationLocked-BB@0x226 : [ formatDurationLocked-BB@0x4c ]
+	166     (00000226) move-object          v6, v2
+	167     (00000228) move                 v7, v13
+	168     (0000022a) move                 v9, v5
+	169     (0000022c) invoke-static/range  v6 ... v11, Landroid/support/v4/util/TimeUtils;->printField([C I C I Z I)I
+	170     (00000232) move-result          v5
+	171     (00000234) const/16             v4, 115
+	172     (00000238) aput-char            v4, v2, v5
+	173     (0000023c) add-int/lit8         v4, v5, 1
+	174     (00000240) goto/16              -fa
+
+formatDurationLocked-BB@0x244 : [ formatDurationLocked-BB@0x19a ]
+	175     (00000244) const/16             v19, 0
+	176     (00000248) goto                 -57
+
+formatDurationLocked-BB@0x24a : [ formatDurationLocked-BB@0x1b8 ]
+	177     (0000024a) const/4              v10, 0
+	178     (0000024c) goto                 -4a
+
+formatDurationLocked-BB@0x24e : [ formatDurationLocked-BB@0x1be ]
+	179     (0000024e) const/4              v11, 0
+	180     (00000250) goto                 -49
+
+formatDurationLocked-BB@0x252 : [ formatDurationLocked-BB@0x1da ]
+	181     (00000252) const/4              v10, 0
+	182     (00000254) goto                 -3d
+
+formatDurationLocked-BB@0x256 : [ formatDurationLocked-BB@0x1e0 ]
+	183     (00000256) const/4              v11, 0
+	184     (00000258) goto                 -3c
+
+formatDurationLocked-BB@0x25a : [ formatDurationLocked-BB@0x1fc ]
+	185     (0000025a) const/4              v10, 0
+	186     (0000025c) goto                 -30
+
+formatDurationLocked-BB@0x25e : [ formatDurationLocked-BB@0x202 ]
+	187     (0000025e) const/4              v11, 0
+	188     (00000260) goto                 -2f
+
+formatDurationLocked-BB@0x262 : [ formatDurationLocked-BB@0x226 ]
+	189     (00000262) const/4              v11, 0
+	190     (00000264) goto                 -1f
+

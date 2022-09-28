@@ -1,0 +1,41 @@
+# Landroid/support/v4/util/Pools$SimplePool;->release(Ljava/lang/Object;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.Object
+#
+# - return:boolean
+
+release-BB@0x0 : [ release-BB@0xc release-BB@0x1c ]
+	0       (00000000) invoke-direct        v2, v3, Landroid/support/v4/util/Pools$SimplePool;->isInPool(Ljava/lang/Object;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +a
+
+release-BB@0xc : 
+	3       (0000000c) new-instance         v0, Ljava/lang/IllegalStateException;
+	4       (00000010) const-string         v1, 'Already in the pool!'
+	5       (00000014) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	6       (0000001a) throw                v0
+
+release-BB@0x1c : [ release-BB@0x2a release-BB@0x46 ]
+	7       (0000001c) iget                 v0, v2, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize I
+	8       (00000020) iget-object          v1, v2, Landroid/support/v4/util/Pools$SimplePool;->mPool [Ljava/lang/Object;
+	9       (00000024) array-length         v1, v1
+	10      (00000026) if-ge                v0, v1, +10
+
+release-BB@0x2a : [ release-BB@0x44 ]
+	11      (0000002a) iget-object          v0, v2, Landroid/support/v4/util/Pools$SimplePool;->mPool [Ljava/lang/Object;
+	12      (0000002e) iget                 v1, v2, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize I
+	13      (00000032) aput-object          v3, v0, v1
+	14      (00000036) iget                 v0, v2, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize I
+	15      (0000003a) add-int/lit8         v0, v0, 1
+	16      (0000003e) iput                 v0, v2, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize I
+	17      (00000042) const/4              v0, 1
+
+release-BB@0x44 : 
+	18      (00000044) return               v0
+
+release-BB@0x46 : [ release-BB@0x44 ]
+	19      (00000046) const/4              v0, 0
+	20      (00000048) goto                 -2
+

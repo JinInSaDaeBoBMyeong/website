@@ -1,0 +1,11 @@
+# Landroid/support/v4/view/accessibility/AccessibilityManagerCompat;->access$000()Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityManagerVersionImpl; [access_flags=static synthetic]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:android.support.v4.view.accessibility.AccessibilityManagerCompat$AccessibilityManagerVersionImpl
+
+access$000-BB@0x0 : 
+	0       (00000000) sget-object          v0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat;->IMPL Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityManagerVersionImpl;
+	1       (00000004) return-object        v0
+

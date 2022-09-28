@@ -1,0 +1,41 @@
+# Landroid/support/v4/util/SimpleArrayMap;->hashCode()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v9
+#
+# - return:int
+
+hashCode-BB@0x0 : [ hashCode-BB@0x12 ]
+	0       (00000000) iget-object          v1, v9, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	1       (00000004) iget-object          v0, v9, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	2       (00000008) const/4              v3, 0
+	3       (0000000a) const/4              v2, 0
+	4       (0000000c) const/4              v5, 1
+	5       (0000000e) iget                 v4, v9, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+
+hashCode-BB@0x12 : [ hashCode-BB@0x16 hashCode-BB@0x3c ]
+	6       (00000012) if-ge                v2, v4, +15
+
+hashCode-BB@0x16 : [ hashCode-BB@0x22 hashCode-BB@0x32 ]
+	7       (00000016) aget-object          v6, v0, v5
+	8       (0000001a) aget                 v8, v1, v2
+	9       (0000001e) if-nez               v6, +a
+
+hashCode-BB@0x22 : [ hashCode-BB@0x24 ]
+	10      (00000022) const/4              v7, 0
+
+hashCode-BB@0x24 : [ hashCode-BB@0x12 ]
+	11      (00000024) xor-int/2addr        v7, v8
+	12      (00000026) add-int/2addr        v3, v7
+	13      (00000028) add-int/lit8         v2, v2, 1
+	14      (0000002c) add-int/lit8         v5, v5, 2
+	15      (00000030) goto                 -f
+
+hashCode-BB@0x32 : [ hashCode-BB@0x24 ]
+	16      (00000032) invoke-virtual       v6, Ljava/lang/Object;->hashCode()I
+	17      (00000038) move-result          v7
+	18      (0000003a) goto                 -b
+
+hashCode-BB@0x3c : 
+	19      (0000003c) return               v3
+

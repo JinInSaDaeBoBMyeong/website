@@ -1,0 +1,13 @@
+# Landroid/support/v4/app/NotificationCompat$Builder;->setWhen(J)Landroid/support/v4/app/NotificationCompat$Builder; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:long
+#
+# - return:android.support.v4.app.NotificationCompat$Builder
+
+setWhen-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/NotificationCompat$Builder;->mNotification Landroid/app/Notification;
+	1       (00000004) iput-wide            v2, v0, Landroid/app/Notification;->when J
+	2       (00000008) return-object        v1
+

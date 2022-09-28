@@ -1,0 +1,77 @@
+# Landroid/support/v4/app/INotificationSideChannel$Stub;->onTransact(I Landroid/os/Parcel; Landroid/os/Parcel; I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+# - v8:android.os.Parcel
+# - v9:android.os.Parcel
+# - v10:int
+#
+# - return:boolean
+
+onTransact-BB@0x0 : [ D:onTransact-BB@0x8 1:onTransact-BB@0x1e 2:onTransact-BB@0x68 3:onTransact-BB@0x92 1598968902:onTransact-BB@0x12 ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) sparse-switch        v7, +55 (0xac)
+
+onTransact-BB@0x8 : [ onTransact-BB@0x10 ]
+	2       (00000008) invoke-super         v6, v7, v8, v9, v10, Landroid/os/Binder;->onTransact(I Landroid/os/Parcel; Landroid/os/Parcel; I)Z
+	3       (0000000e) move-result          v4
+
+onTransact-BB@0x10 : 
+	4       (00000010) return               v4
+
+onTransact-BB@0x12 : [ onTransact-BB@0x10 ]
+	5       (00000012) const-string         v5, 'android.support.v4.app.INotificationSideChannel'
+	6       (00000016) invoke-virtual       v9, v5, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+	7       (0000001c) goto                 -6
+
+onTransact-BB@0x1e : [ onTransact-BB@0x4c onTransact-BB@0x64 ]
+	8       (0000001e) const-string         v5, 'android.support.v4.app.INotificationSideChannel'
+	9       (00000022) invoke-virtual       v8, v5, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+	10      (00000028) invoke-virtual       v8, Landroid/os/Parcel;->readString()Ljava/lang/String;
+	11      (0000002e) move-result-object   v0
+	12      (00000030) invoke-virtual       v8, Landroid/os/Parcel;->readInt()I
+	13      (00000036) move-result          v1
+	14      (00000038) invoke-virtual       v8, Landroid/os/Parcel;->readString()Ljava/lang/String;
+	15      (0000003e) move-result-object   v2
+	16      (00000040) invoke-virtual       v8, Landroid/os/Parcel;->readInt()I
+	17      (00000046) move-result          v5
+	18      (00000048) if-eqz               v5, +e
+
+onTransact-BB@0x4c : [ onTransact-BB@0x5c ]
+	19      (0000004c) sget-object          v5, Landroid/app/Notification;->CREATOR Landroid/os/Parcelable$Creator;
+	20      (00000050) invoke-interface     v5, v8, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+	21      (00000056) move-result-object   v3
+	22      (00000058) check-cast           v3, Landroid/app/Notification;
+
+onTransact-BB@0x5c : [ onTransact-BB@0x10 ]
+	23      (0000005c) invoke-virtual       v6, v0, v1, v2, v3, Landroid/support/v4/app/INotificationSideChannel$Stub;->notify(Ljava/lang/String; I Ljava/lang/String; Landroid/app/Notification;)V
+	24      (00000062) goto                 -29
+
+onTransact-BB@0x64 : [ onTransact-BB@0x5c ]
+	25      (00000064) const/4              v3, 0
+	26      (00000066) goto                 -5
+
+onTransact-BB@0x68 : [ onTransact-BB@0x10 ]
+	27      (00000068) const-string         v5, 'android.support.v4.app.INotificationSideChannel'
+	28      (0000006c) invoke-virtual       v8, v5, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+	29      (00000072) invoke-virtual       v8, Landroid/os/Parcel;->readString()Ljava/lang/String;
+	30      (00000078) move-result-object   v0
+	31      (0000007a) invoke-virtual       v8, Landroid/os/Parcel;->readInt()I
+	32      (00000080) move-result          v1
+	33      (00000082) invoke-virtual       v8, Landroid/os/Parcel;->readString()Ljava/lang/String;
+	34      (00000088) move-result-object   v2
+	35      (0000008a) invoke-virtual       v6, v0, v1, v2, Landroid/support/v4/app/INotificationSideChannel$Stub;->cancel(Ljava/lang/String; I Ljava/lang/String;)V
+	36      (00000090) goto                 -40
+
+onTransact-BB@0x92 : [ onTransact-BB@0x10 ]
+	37      (00000092) const-string         v5, 'android.support.v4.app.INotificationSideChannel'
+	38      (00000096) invoke-virtual       v8, v5, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+	39      (0000009c) invoke-virtual       v8, Landroid/os/Parcel;->readString()Ljava/lang/String;
+	40      (000000a2) move-result-object   v0
+	41      (000000a4) invoke-virtual       v6, v0, Landroid/support/v4/app/INotificationSideChannel$Stub;->cancelAll(Ljava/lang/String;)V
+	42      (000000aa) goto                 -4d
+
+onTransact-BB@0xac : 
+	43      (000000ac) sparse-switch-payload 1 2 3 5f4e5446
+

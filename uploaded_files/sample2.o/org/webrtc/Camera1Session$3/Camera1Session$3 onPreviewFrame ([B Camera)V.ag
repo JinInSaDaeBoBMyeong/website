@@ -1,0 +1,91 @@
+# Lorg/webrtc/Camera1Session$3;->onPreviewFrame([B Landroid/hardware/Camera;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:byte[]
+# - v11:android.hardware.Camera
+#
+# - return:void
+
+onPreviewFrame-BB@0x0 : [ onPreviewFrame-BB@0x1a onPreviewFrame-BB@0x2a ]
+	0       (00000000) iget-object          v0, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	1       (00000004) invoke-static        v0, Lorg/webrtc/Camera1Session;->access$200(Lorg/webrtc/Camera1Session;)V
+	2       (0000000a) iget-object          v0, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	3       (0000000e) invoke-static        v0, Lorg/webrtc/Camera1Session;->access$1100(Lorg/webrtc/Camera1Session;)Landroid/hardware/Camera;
+	4       (00000014) move-result-object   v0
+	5       (00000016) if-eq                v11, v0, +a
+
+onPreviewFrame-BB@0x1a : [ onPreviewFrame-BB@0x28 ]
+	6       (0000001a) const-string         v0, 'Camera1Session'
+	7       (0000001e) const-string         v1, 'Callback from a different camera. This should never happen.'
+	8       (00000022) invoke-static        v0, v1, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+
+onPreviewFrame-BB@0x28 : 
+	9       (00000028) return-void          
+
+onPreviewFrame-BB@0x2a : [ onPreviewFrame-BB@0x3e onPreviewFrame-BB@0x4e ]
+	10      (0000002a) iget-object          v0, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	11      (0000002e) invoke-static        v0, Lorg/webrtc/Camera1Session;->access$300(Lorg/webrtc/Camera1Session;)Lorg/webrtc/Camera1Session$SessionState;
+	12      (00000034) move-result-object   v0
+	13      (00000036) sget-object          v1, Lorg/webrtc/Camera1Session$SessionState;->RUNNING Lorg/webrtc/Camera1Session$SessionState;
+	14      (0000003a) if-eq                v0, v1, +a
+
+onPreviewFrame-BB@0x3e : [ onPreviewFrame-BB@0x28 ]
+	15      (0000003e) const-string         v0, 'Camera1Session'
+	16      (00000042) const-string         v1, 'Bytebuffer frame captured but camera is no longer running.'
+	17      (00000046) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	18      (0000004c) goto                 -12
+
+onPreviewFrame-BB@0x4e : [ onPreviewFrame-BB@0x72 onPreviewFrame-BB@0xb0 ]
+	19      (0000004e) sget-object          v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS Ljava/util/concurrent/TimeUnit;
+	20      (00000052) invoke-static        Landroid/os/SystemClock;->elapsedRealtime()J
+	21      (00000058) move-result-wide     v2
+	22      (0000005a) invoke-virtual       v0, v2, v3, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+	23      (00000060) move-result-wide     v6
+	24      (00000062) iget-object          v0, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	25      (00000066) invoke-static        v0, Lorg/webrtc/Camera1Session;->access$500(Lorg/webrtc/Camera1Session;)Z
+	26      (0000006c) move-result          v0
+	27      (0000006e) if-nez               v0, +21
+
+onPreviewFrame-BB@0x72 : [ onPreviewFrame-BB@0xb0 ]
+	28      (00000072) sget-object          v0, Ljava/util/concurrent/TimeUnit;->NANOSECONDS Ljava/util/concurrent/TimeUnit;
+	29      (00000076) invoke-static        Ljava/lang/System;->nanoTime()J
+	30      (0000007c) move-result-wide     v2
+	31      (0000007e) iget-object          v1, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	32      (00000082) invoke-static        v1, Lorg/webrtc/Camera1Session;->access$600(Lorg/webrtc/Camera1Session;)J
+	33      (00000088) move-result-wide     v4
+	34      (0000008a) sub-long/2addr       v2, v4
+	35      (0000008c) invoke-virtual       v0, v2, v3, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+	36      (00000092) move-result-wide     v0
+	37      (00000094) long-to-int          v8, v0
+	38      (00000096) invoke-static        Lorg/webrtc/Camera1Session;->access$700()Lorg/webrtc/Histogram;
+	39      (0000009c) move-result-object   v0
+	40      (0000009e) invoke-virtual       v0, v8, Lorg/webrtc/Histogram;->addSample(I)V
+	41      (000000a4) iget-object          v0, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	42      (000000a8) const/4              v1, 1
+	43      (000000aa) invoke-static        v0, v1, Lorg/webrtc/Camera1Session;->access$502(Lorg/webrtc/Camera1Session; Z)Z
+
+onPreviewFrame-BB@0xb0 : [ onPreviewFrame-BB@0x28 ]
+	44      (000000b0) iget-object          v0, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	45      (000000b4) invoke-static        v0, Lorg/webrtc/Camera1Session;->access$100(Lorg/webrtc/Camera1Session;)Lorg/webrtc/CameraSession$Events;
+	46      (000000ba) move-result-object   v0
+	47      (000000bc) iget-object          v1, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	48      (000000c0) iget-object          v2, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	49      (000000c4) invoke-static        v2, Lorg/webrtc/Camera1Session;->access$1000(Lorg/webrtc/Camera1Session;)Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;
+	50      (000000ca) move-result-object   v2
+	51      (000000cc) iget                 v3, v2, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;->width I
+	52      (000000d0) iget-object          v2, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	53      (000000d4) invoke-static        v2, Lorg/webrtc/Camera1Session;->access$1000(Lorg/webrtc/Camera1Session;)Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;
+	54      (000000da) move-result-object   v2
+	55      (000000dc) iget                 v4, v2, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat;->height I
+	56      (000000e0) iget-object          v2, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	57      (000000e4) invoke-static        v2, Lorg/webrtc/Camera1Session;->access$800(Lorg/webrtc/Camera1Session;)I
+	58      (000000ea) move-result          v5
+	59      (000000ec) move-object          v2, v10
+	60      (000000ee) invoke-interface/range v0 ... v7, Lorg/webrtc/CameraSession$Events;->onByteBufferFrameCaptured(Lorg/webrtc/CameraSession; [B I I I J)V
+	61      (000000f4) iget-object          v0, v9, Lorg/webrtc/Camera1Session$3;->this$0 Lorg/webrtc/Camera1Session;
+	62      (000000f8) invoke-static        v0, Lorg/webrtc/Camera1Session;->access$1100(Lorg/webrtc/Camera1Session;)Landroid/hardware/Camera;
+	63      (000000fe) move-result-object   v0
+	64      (00000100) invoke-virtual       v0, v10, Landroid/hardware/Camera;->addCallbackBuffer([B)V
+	65      (00000106) goto                 -6f
+

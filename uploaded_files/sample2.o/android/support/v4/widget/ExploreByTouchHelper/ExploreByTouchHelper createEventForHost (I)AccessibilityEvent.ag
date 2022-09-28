@@ -1,0 +1,15 @@
+# Landroid/support/v4/widget/ExploreByTouchHelper;->createEventForHost(I)Landroid/view/accessibility/AccessibilityEvent; [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:android.view.accessibility.AccessibilityEvent
+
+createEventForHost-BB@0x0 : 
+	0       (00000000) invoke-static        v3, Landroid/view/accessibility/AccessibilityEvent;->obtain(I)Landroid/view/accessibility/AccessibilityEvent;
+	1       (00000006) move-result-object   v0
+	2       (00000008) iget-object          v1, v2, Landroid/support/v4/widget/ExploreByTouchHelper;->mView Landroid/view/View;
+	3       (0000000c) invoke-static        v1, v0, Landroid/support/v4/view/ViewCompat;->onInitializeAccessibilityEvent(Landroid/view/View; Landroid/view/accessibility/AccessibilityEvent;)V
+	4       (00000012) return-object        v0
+

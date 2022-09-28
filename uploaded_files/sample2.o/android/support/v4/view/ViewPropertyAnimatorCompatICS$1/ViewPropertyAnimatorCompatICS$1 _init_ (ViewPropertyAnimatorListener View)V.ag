@@ -1,0 +1,15 @@
+# Landroid/support/v4/view/ViewPropertyAnimatorCompatICS$1;-><init>(Landroid/support/v4/view/ViewPropertyAnimatorListener; Landroid/view/View;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.view.ViewPropertyAnimatorListener
+# - v2:android.view.View
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroid/support/v4/view/ViewPropertyAnimatorCompatICS$1;->val$listener Landroid/support/v4/view/ViewPropertyAnimatorListener;
+	1       (00000004) iput-object          v2, v0, Landroid/support/v4/view/ViewPropertyAnimatorCompatICS$1;->val$view Landroid/view/View;
+	2       (00000008) invoke-direct        v0, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+	3       (0000000e) return-void          
+

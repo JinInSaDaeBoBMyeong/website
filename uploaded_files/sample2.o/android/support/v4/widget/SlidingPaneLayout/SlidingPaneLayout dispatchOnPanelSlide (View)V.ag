@@ -1,0 +1,20 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->dispatchOnPanelSlide(Landroid/view/View;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:void
+
+dispatchOnPanelSlide-BB@0x0 : [ dispatchOnPanelSlide-BB@0x8 dispatchOnPanelSlide-BB@0x16 ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/widget/SlidingPaneLayout;->mPanelSlideListener Landroid/support/v4/widget/SlidingPaneLayout$PanelSlideListener;
+	1       (00000004) if-eqz               v0, +9
+
+dispatchOnPanelSlide-BB@0x8 : [ dispatchOnPanelSlide-BB@0x16 ]
+	2       (00000008) iget-object          v0, v2, Landroid/support/v4/widget/SlidingPaneLayout;->mPanelSlideListener Landroid/support/v4/widget/SlidingPaneLayout$PanelSlideListener;
+	3       (0000000c) iget                 v1, v2, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideOffset F
+	4       (00000010) invoke-interface     v0, v3, v1, Landroid/support/v4/widget/SlidingPaneLayout$PanelSlideListener;->onPanelSlide(Landroid/view/View; F)V
+
+dispatchOnPanelSlide-BB@0x16 : 
+	5       (00000016) return-void          
+

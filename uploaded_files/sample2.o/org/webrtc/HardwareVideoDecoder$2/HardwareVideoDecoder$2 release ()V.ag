@@ -1,0 +1,47 @@
+# Lorg/webrtc/HardwareVideoDecoder$2;->release()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+release-BB@0x0 : [ release-BB@0x14 release-BB@0x58 ]
+	0       (00000000) iget                 v0, v3, Lorg/webrtc/HardwareVideoDecoder$2;->refCount I
+	1       (00000004) add-int/lit8         v0, v0, -1
+	2       (00000008) iput                 v0, v3, Lorg/webrtc/HardwareVideoDecoder$2;->refCount I
+	3       (0000000c) iget                 v0, v3, Lorg/webrtc/HardwareVideoDecoder$2;->refCount I
+	4       (00000010) if-nez               v0, +24
+
+release-BB@0x14 : [ release-BB@0x3a ]
+	5       (00000014) iget-object          v0, v3, Lorg/webrtc/HardwareVideoDecoder$2;->this$0 Lorg/webrtc/HardwareVideoDecoder;
+	6       (00000018) invoke-static        v0, Lorg/webrtc/HardwareVideoDecoder;->access$400(Lorg/webrtc/HardwareVideoDecoder;)Landroid/media/MediaCodec;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) iget                 v1, v3, Lorg/webrtc/HardwareVideoDecoder$2;->val$outputBufferIndex I
+	9       (00000024) const/4              v2, 0
+	10      (00000026) invoke-virtual       v0, v1, v2, Landroid/media/MediaCodec;->releaseOutputBuffer(I Z)V
+	11      (0000002c) iget-object          v0, v3, Lorg/webrtc/HardwareVideoDecoder$2;->this$0 Lorg/webrtc/HardwareVideoDecoder;
+	12      (00000030) invoke-static        v0, Lorg/webrtc/HardwareVideoDecoder;->access$500(Lorg/webrtc/HardwareVideoDecoder;)Ljava/lang/Object;
+	13      (00000036) move-result-object   v1
+	14      (00000038) monitor-enter        v1
+
+release-BB@0x3a : [ release-BB@0x58 ]
+	15      (0000003a) iget-object          v0, v3, Lorg/webrtc/HardwareVideoDecoder$2;->this$0 Lorg/webrtc/HardwareVideoDecoder;
+	16      (0000003e) invoke-static        v0, Lorg/webrtc/HardwareVideoDecoder;->access$610(Lorg/webrtc/HardwareVideoDecoder;)I
+	17      (00000044) iget-object          v0, v3, Lorg/webrtc/HardwareVideoDecoder$2;->this$0 Lorg/webrtc/HardwareVideoDecoder;
+	18      (00000048) invoke-static        v0, Lorg/webrtc/HardwareVideoDecoder;->access$500(Lorg/webrtc/HardwareVideoDecoder;)Ljava/lang/Object;
+	19      (0000004e) move-result-object   v0
+	20      (00000050) invoke-virtual       v0, Ljava/lang/Object;->notifyAll()V
+	21      (00000056) monitor-exit         v1
+	3a:5d
+	(Ljava/lang/Throwable; -> 5a release-BB@0x5a)
+
+release-BB@0x58 : 
+	22      (00000058) return-void          
+	3a:5d
+	(Ljava/lang/Throwable; -> 5a release-BB@0x5a)
+
+release-BB@0x5a : 
+	23      (0000005a) move-exception       v0
+	24      (0000005c) monitor-exit         v1
+	25      (0000005e) throw                v0
+

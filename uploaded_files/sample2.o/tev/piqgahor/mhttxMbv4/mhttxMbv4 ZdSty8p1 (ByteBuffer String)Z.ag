@@ -1,0 +1,32 @@
+# Ltev/piqgahor/mhttxMbv4;->ZdSty8p1(Ljava/nio/ByteBuffer; Ljava/lang/String;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.nio.ByteBuffer
+# - v5:java.lang.String
+#
+# - return:boolean
+
+ZdSty8p1-BB@0x0 : [ ZdSty8p1-BB@0x24 ZdSty8p1-BB@0x32 ]
+	0       (00000000) invoke-virtual       v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	1       (00000006) move-result-object   v2
+	2       (00000008) invoke-virtual       v2, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+	3       (0000000e) move-result-object   v2
+	4       (00000010) invoke-direct        v3, v4, v2, Ltev/piqgahor/mhttxMbv4;->yCEriiBR767(Ljava/nio/ByteBuffer; Ljava/lang/ClassLoader;)Ljava/lang/ClassLoader;
+	5       (00000016) move-result-object   v0
+	6       (00000018) invoke-static        v0, v5, Ltev/piqgahor/IEx3fn07c;->hDlawJbE49(Ljava/lang/ClassLoader; Ljava/lang/String;)Ljava/lang/Object;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) if-eqz               v1, +9
+
+ZdSty8p1-BB@0x24 : [ ZdSty8p1-BB@0x30 ]
+	9       (00000024) check-cast           v1, Ljava/lang/Class;
+	10      (00000028) invoke-direct        v3, v1, Ltev/piqgahor/mhttxMbv4;->ldRg7913(Ljava/lang/Class;)V
+	11      (0000002e) const/4              v2, 1
+
+ZdSty8p1-BB@0x30 : 
+	12      (00000030) return               v2
+
+ZdSty8p1-BB@0x32 : [ ZdSty8p1-BB@0x30 ]
+	13      (00000032) const/4              v2, 0
+	14      (00000034) goto                 -2
+

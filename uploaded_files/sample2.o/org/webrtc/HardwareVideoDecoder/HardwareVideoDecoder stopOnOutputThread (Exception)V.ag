@@ -1,0 +1,16 @@
+# Lorg/webrtc/HardwareVideoDecoder;->stopOnOutputThread(Ljava/lang/Exception;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Exception
+#
+# - return:void
+
+stopOnOutputThread-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/HardwareVideoDecoder;->outputThreadChecker Lorg/webrtc/ThreadUtils$ThreadChecker;
+	1       (00000004) invoke-virtual       v0, Lorg/webrtc/ThreadUtils$ThreadChecker;->checkIsOnValidThread()V
+	2       (0000000a) const/4              v0, 0
+	3       (0000000c) iput-boolean         v0, v1, Lorg/webrtc/HardwareVideoDecoder;->running Z
+	4       (00000010) iput-object          v2, v1, Lorg/webrtc/HardwareVideoDecoder;->shutdownException Ljava/lang/Exception;
+	5       (00000014) return-void          
+

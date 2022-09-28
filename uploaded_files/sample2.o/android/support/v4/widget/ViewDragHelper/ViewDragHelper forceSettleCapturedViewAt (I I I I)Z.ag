@@ -1,0 +1,51 @@
+# Landroid/support/v4/widget/ViewDragHelper;->forceSettleCapturedViewAt(I I I I)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:int
+# - v13:int
+# - v14:int
+# - v15:int
+#
+# - return:boolean
+
+forceSettleCapturedViewAt-BB@0x0 : [ forceSettleCapturedViewAt-BB@0x26 forceSettleCapturedViewAt-BB@0x3c ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-object          v1, v11, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	2       (00000006) invoke-virtual       v1, Landroid/view/View;->getLeft()I
+	3       (0000000c) move-result          v10
+	4       (0000000e) iget-object          v1, v11, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	5       (00000012) invoke-virtual       v1, Landroid/view/View;->getTop()I
+	6       (00000018) move-result          v6
+	7       (0000001a) sub-int              v2, v12, v10
+	8       (0000001e) sub-int              v3, v13, v6
+	9       (00000022) if-nez               v2, +d
+
+forceSettleCapturedViewAt-BB@0x26 : [ forceSettleCapturedViewAt-BB@0x2a forceSettleCapturedViewAt-BB@0x3c ]
+	10      (00000026) if-nez               v3, +b
+
+forceSettleCapturedViewAt-BB@0x2a : [ forceSettleCapturedViewAt-BB@0x3a ]
+	11      (0000002a) iget-object          v1, v11, Landroid/support/v4/widget/ViewDragHelper;->mScroller Landroid/support/v4/widget/ScrollerCompat;
+	12      (0000002e) invoke-virtual       v1, Landroid/support/v4/widget/ScrollerCompat;->abortAnimation()V
+	13      (00000034) invoke-virtual       v11, v0, Landroid/support/v4/widget/ViewDragHelper;->setDragState(I)V
+
+forceSettleCapturedViewAt-BB@0x3a : 
+	14      (0000003a) return               v0
+
+forceSettleCapturedViewAt-BB@0x3c : [ forceSettleCapturedViewAt-BB@0x3a ]
+	15      (0000003c) iget-object          v1, v11, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	16      (00000040) move-object          v0, v11
+	17      (00000042) move                 v4, v14
+	18      (00000044) move                 v5, v15
+	19      (00000046) invoke-direct/range  v0 ... v5, Landroid/support/v4/widget/ViewDragHelper;->computeSettleDuration(Landroid/view/View; I I I I)I
+	20      (0000004c) move-result          v9
+	21      (0000004e) iget-object          v4, v11, Landroid/support/v4/widget/ViewDragHelper;->mScroller Landroid/support/v4/widget/ScrollerCompat;
+	22      (00000052) move                 v5, v10
+	23      (00000054) move                 v7, v2
+	24      (00000056) move                 v8, v3
+	25      (00000058) invoke-virtual/range v4 ... v9, Landroid/support/v4/widget/ScrollerCompat;->startScroll(I I I I I)V
+	26      (0000005e) const/4              v0, 2
+	27      (00000060) invoke-virtual       v11, v0, Landroid/support/v4/widget/ViewDragHelper;->setDragState(I)V
+	28      (00000066) const/4              v0, 1
+	29      (00000068) goto                 -17
+

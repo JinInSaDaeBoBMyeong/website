@@ -1,0 +1,25 @@
+# Landroid/support/v4/app/TaskStackBuilder$TaskStackBuilderImplJellybean;->getPendingIntent(Landroid/content/Context; [Landroid/content/Intent; I I Landroid/os/Bundle;)Landroid/app/PendingIntent; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:android.content.Intent[]
+# - v6:int
+# - v7:int
+# - v8:android.os.Bundle
+#
+# - return:android.app.PendingIntent
+
+getPendingIntent-BB@0x0 : 
+	0       (00000000) const/4              v2, 0
+	1       (00000002) new-instance         v0, Landroid/content/Intent;
+	2       (00000006) aget-object          v1, v5, v2
+	3       (0000000a) invoke-direct        v0, v1, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+	4       (00000010) const                v1, 268484608 # [2.539146038680132e-29]
+	5       (00000016) invoke-virtual       v0, v1, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) aput-object          v0, v5, v2
+	8       (00000022) invoke-static        v4, v6, v5, v7, v8, Landroid/support/v4/app/TaskStackBuilderJellybean;->getActivitiesPendingIntent(Landroid/content/Context; I [Landroid/content/Intent; I Landroid/os/Bundle;)Landroid/app/PendingIntent;
+	9       (00000028) move-result-object   v0
+	10      (0000002a) return-object        v0
+

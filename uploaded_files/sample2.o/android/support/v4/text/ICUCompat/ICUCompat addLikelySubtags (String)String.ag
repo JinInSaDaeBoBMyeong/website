@@ -1,0 +1,14 @@
+# Landroid/support/v4/text/ICUCompat;->addLikelySubtags(Ljava/lang/String;)Ljava/lang/String; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+#
+# - return:java.lang.String
+
+addLikelySubtags-BB@0x0 : 
+	0       (00000000) sget-object          v0, Landroid/support/v4/text/ICUCompat;->IMPL Landroid/support/v4/text/ICUCompat$ICUCompatImpl;
+	1       (00000004) invoke-interface     v0, v1, Landroid/support/v4/text/ICUCompat$ICUCompatImpl;->addLikelySubtags(Ljava/lang/String;)Ljava/lang/String;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

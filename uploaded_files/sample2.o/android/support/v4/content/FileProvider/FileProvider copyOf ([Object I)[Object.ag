@@ -1,0 +1,15 @@
+# Landroid/support/v4/content/FileProvider;->copyOf([Ljava/lang/Object; I)[Ljava/lang/Object; [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object[]
+# - v3:int
+#
+# - return:java.lang.Object[]
+
+copyOf-BB@0x0 : 
+	0       (00000000) const/4              v1, 0
+	1       (00000002) new-array            v0, v3, [Ljava/lang/Object;
+	2       (00000006) invoke-static        v2, v1, v0, v1, v3, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	3       (0000000c) return-object        v0
+

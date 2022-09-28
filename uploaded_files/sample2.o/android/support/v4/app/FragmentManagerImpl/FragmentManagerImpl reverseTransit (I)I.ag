@@ -1,0 +1,30 @@
+# Landroid/support/v4/app/FragmentManagerImpl;->reverseTransit(I)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:int
+
+reverseTransit-BB@0x0 : [ D:reverseTransit-BB@0x8 4097:reverseTransit-BB@0xa 4099:reverseTransit-BB@0x16 8194:reverseTransit-BB@0x10 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) sparse-switch        v1, +d (0x1c)
+
+reverseTransit-BB@0x8 : 
+	2       (00000008) return               v0
+
+reverseTransit-BB@0xa : [ reverseTransit-BB@0x8 ]
+	3       (0000000a) const/16             v0, 8194
+	4       (0000000e) goto                 -3
+
+reverseTransit-BB@0x10 : [ reverseTransit-BB@0x8 ]
+	5       (00000010) const/16             v0, 4097
+	6       (00000014) goto                 -6
+
+reverseTransit-BB@0x16 : [ reverseTransit-BB@0x8 ]
+	7       (00000016) const/16             v0, 4099
+	8       (0000001a) goto                 -9
+
+reverseTransit-BB@0x1c : 
+	9       (0000001c) sparse-switch-payload 1001 1003 2002
+

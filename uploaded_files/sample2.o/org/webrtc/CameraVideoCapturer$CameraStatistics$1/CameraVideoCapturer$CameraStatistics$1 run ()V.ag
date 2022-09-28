@@ -1,0 +1,99 @@
+# Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x70 run-BB@0xf8 ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	2       (00000006) invoke-static        v1, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$000(Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)I
+	3       (0000000c) move-result          v1
+	4       (0000000e) int-to-float         v1, v1
+	5       (00000010) const/high16         v2, 17530 # [1000.0]
+	6       (00000014) mul-float/2addr      v1, v2
+	7       (00000016) const/high16         v2, 17658 # [2000.0]
+	8       (0000001a) div-float/2addr      v1, v2
+	9       (0000001c) invoke-static        v1, Ljava/lang/Math;->round(F)I
+	10      (00000022) move-result          v0
+	11      (00000024) const-string         v1, 'CameraStatistics'
+	12      (00000028) new-instance         v2, Ljava/lang/StringBuilder;
+	13      (0000002c) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	14      (00000032) const-string         v3, 'Camera fps: '
+	15      (00000036) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (0000003c) move-result-object   v2
+	17      (0000003e) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	18      (00000044) move-result-object   v2
+	19      (00000046) const-string         v3, '.'
+	20      (0000004a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000050) move-result-object   v2
+	22      (00000052) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (00000058) move-result-object   v2
+	24      (0000005a) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	25      (00000060) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	26      (00000064) invoke-static        v1, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$000(Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)I
+	27      (0000006a) move-result          v1
+	28      (0000006c) if-nez               v1, +46
+
+run-BB@0x70 : [ run-BB@0x92 run-BB@0x102 ]
+	29      (00000070) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	30      (00000074) invoke-static        v1, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$104(Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)I
+	31      (0000007a) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	32      (0000007e) invoke-static        v1, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$100(Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)I
+	33      (00000084) move-result          v1
+	34      (00000086) mul-int/lit16        v1, v1, 2000
+	35      (0000008a) const/16             v2, 4000
+	36      (0000008e) if-lt                v1, v2, +3a
+
+run-BB@0x92 : [ run-BB@0xa2 run-BB@0x102 ]
+	37      (00000092) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	38      (00000096) invoke-static        v1, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$200(Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;
+	39      (0000009c) move-result-object   v1
+	40      (0000009e) if-eqz               v1, +32
+
+run-BB@0xa2 : [ run-BB@0xc8 run-BB@0xe0 ]
+	41      (000000a2) const-string         v1, 'CameraStatistics'
+	42      (000000a6) const-string         v2, 'Camera freezed.'
+	43      (000000aa) invoke-static        v1, v2, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	44      (000000b0) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	45      (000000b4) invoke-static        v1, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$300(Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)Lorg/webrtc/SurfaceTextureHelper;
+	46      (000000ba) move-result-object   v1
+	47      (000000bc) invoke-virtual       v1, Lorg/webrtc/SurfaceTextureHelper;->isTextureInUse()Z
+	48      (000000c2) move-result          v1
+	49      (000000c4) if-eqz               v1, +e
+
+run-BB@0xc8 : [ run-BB@0xde ]
+	50      (000000c8) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	51      (000000cc) invoke-static        v1, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$200(Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;
+	52      (000000d2) move-result-object   v1
+	53      (000000d4) const-string         v2, 'Camera failure. Client must return video buffers.'
+	54      (000000d8) invoke-interface     v1, v2, Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;->onCameraFreezed(Ljava/lang/String;)V
+
+run-BB@0xde : 
+	55      (000000de) return-void          
+
+run-BB@0xe0 : [ run-BB@0xde ]
+	56      (000000e0) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	57      (000000e4) invoke-static        v1, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$200(Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;
+	58      (000000ea) move-result-object   v1
+	59      (000000ec) const-string         v2, 'Camera failure.'
+	60      (000000f0) invoke-interface     v1, v2, Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;->onCameraFreezed(Ljava/lang/String;)V
+	61      (000000f6) goto                 -c
+
+run-BB@0xf8 : [ run-BB@0x102 ]
+	62      (000000f8) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	63      (000000fc) invoke-static        v1, v4, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$102(Lorg/webrtc/CameraVideoCapturer$CameraStatistics; I)I
+
+run-BB@0x102 : [ run-BB@0xde ]
+	64      (00000102) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	65      (00000106) invoke-static        v1, v4, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$002(Lorg/webrtc/CameraVideoCapturer$CameraStatistics; I)I
+	66      (0000010c) iget-object          v1, v5, Lorg/webrtc/CameraVideoCapturer$CameraStatistics$1;->this$0 Lorg/webrtc/CameraVideoCapturer$CameraStatistics;
+	67      (00000110) invoke-static        v1, Lorg/webrtc/CameraVideoCapturer$CameraStatistics;->access$300(Lorg/webrtc/CameraVideoCapturer$CameraStatistics;)Lorg/webrtc/SurfaceTextureHelper;
+	68      (00000116) move-result-object   v1
+	69      (00000118) invoke-virtual       v1, Lorg/webrtc/SurfaceTextureHelper;->getHandler()Landroid/os/Handler;
+	70      (0000011e) move-result-object   v1
+	71      (00000120) const-wide/16        v2, 2000 # [2000.0]
+	72      (00000124) invoke-virtual       v1, v5, v2, v3, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable; J)Z
+	73      (0000012a) goto                 -26
+

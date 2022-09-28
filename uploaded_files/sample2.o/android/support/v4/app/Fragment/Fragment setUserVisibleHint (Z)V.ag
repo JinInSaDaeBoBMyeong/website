@@ -1,0 +1,39 @@
+# Landroid/support/v4/app/Fragment;->setUserVisibleHint(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:void
+
+setUserVisibleHint-BB@0x0 : [ setUserVisibleHint-BB@0x8 setUserVisibleHint-BB@0x20 ]
+	0       (00000000) iget-boolean         v0, v2, Landroid/support/v4/app/Fragment;->mUserVisibleHint Z
+	1       (00000004) if-nez               v0, +e
+
+setUserVisibleHint-BB@0x8 : [ setUserVisibleHint-BB@0xc setUserVisibleHint-BB@0x20 ]
+	2       (00000008) if-eqz               v3, +c
+
+setUserVisibleHint-BB@0xc : [ setUserVisibleHint-BB@0x16 setUserVisibleHint-BB@0x20 ]
+	3       (0000000c) iget                 v0, v2, Landroid/support/v4/app/Fragment;->mState I
+	4       (00000010) const/4              v1, 4
+	5       (00000012) if-ge                v0, v1, +7
+
+setUserVisibleHint-BB@0x16 : [ setUserVisibleHint-BB@0x20 ]
+	6       (00000016) iget-object          v0, v2, Landroid/support/v4/app/Fragment;->mFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	7       (0000001a) invoke-virtual       v0, v2, Landroid/support/v4/app/FragmentManagerImpl;->performPendingDeferredStart(Landroid/support/v4/app/Fragment;)V
+
+setUserVisibleHint-BB@0x20 : [ setUserVisibleHint-BB@0x28 setUserVisibleHint-BB@0x30 ]
+	8       (00000020) iput-boolean         v3, v2, Landroid/support/v4/app/Fragment;->mUserVisibleHint Z
+	9       (00000024) if-nez               v3, +6
+
+setUserVisibleHint-BB@0x28 : [ setUserVisibleHint-BB@0x2a ]
+	10      (00000028) const/4              v0, 1
+
+setUserVisibleHint-BB@0x2a : 
+	11      (0000002a) iput-boolean         v0, v2, Landroid/support/v4/app/Fragment;->mDeferStart Z
+	12      (0000002e) return-void          
+
+setUserVisibleHint-BB@0x30 : [ setUserVisibleHint-BB@0x2a ]
+	13      (00000030) const/4              v0, 0
+	14      (00000032) goto                 -4
+

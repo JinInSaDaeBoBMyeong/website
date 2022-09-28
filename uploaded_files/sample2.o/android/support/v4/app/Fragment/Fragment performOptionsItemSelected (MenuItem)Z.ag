@@ -1,0 +1,43 @@
+# Landroid/support/v4/app/Fragment;->performOptionsItemSelected(Landroid/view/MenuItem;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.MenuItem
+#
+# - return:boolean
+
+performOptionsItemSelected-BB@0x0 : [ performOptionsItemSelected-BB@0xa performOptionsItemSelected-BB@0x40 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget-boolean         v1, v2, Landroid/support/v4/app/Fragment;->mHidden Z
+	2       (00000006) if-nez               v1, +1d
+
+performOptionsItemSelected-BB@0xa : [ performOptionsItemSelected-BB@0x12 performOptionsItemSelected-BB@0x28 ]
+	3       (0000000a) iget-boolean         v1, v2, Landroid/support/v4/app/Fragment;->mHasMenu Z
+	4       (0000000e) if-eqz               v1, +d
+
+performOptionsItemSelected-BB@0x12 : [ performOptionsItemSelected-BB@0x1a performOptionsItemSelected-BB@0x28 ]
+	5       (00000012) iget-boolean         v1, v2, Landroid/support/v4/app/Fragment;->mMenuVisible Z
+	6       (00000016) if-eqz               v1, +9
+
+performOptionsItemSelected-BB@0x1a : [ performOptionsItemSelected-BB@0x26 performOptionsItemSelected-BB@0x28 ]
+	7       (0000001a) invoke-virtual       v2, v3, Landroid/support/v4/app/Fragment;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+	8       (00000020) move-result          v1
+	9       (00000022) if-eqz               v1, +3
+
+performOptionsItemSelected-BB@0x26 : 
+	10      (00000026) return               v0
+
+performOptionsItemSelected-BB@0x28 : [ performOptionsItemSelected-BB@0x30 performOptionsItemSelected-BB@0x40 ]
+	11      (00000028) iget-object          v1, v2, Landroid/support/v4/app/Fragment;->mChildFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	12      (0000002c) if-eqz               v1, +a
+
+performOptionsItemSelected-BB@0x30 : [ performOptionsItemSelected-BB@0x40 performOptionsItemSelected-BB@0x26 ]
+	13      (00000030) iget-object          v1, v2, Landroid/support/v4/app/Fragment;->mChildFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	14      (00000034) invoke-virtual       v1, v3, Landroid/support/v4/app/FragmentManagerImpl;->dispatchOptionsItemSelected(Landroid/view/MenuItem;)Z
+	15      (0000003a) move-result          v1
+	16      (0000003c) if-nez               v1, -b
+
+performOptionsItemSelected-BB@0x40 : [ performOptionsItemSelected-BB@0x26 ]
+	17      (00000040) const/4              v0, 0
+	18      (00000042) goto                 -e
+

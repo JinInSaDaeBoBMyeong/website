@@ -1,0 +1,22 @@
+# Lorg/webrtc/Camera2Session;->getFrameOrientation()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getFrameOrientation-BB@0x0 : [ getFrameOrientation-BB@0x10 getFrameOrientation-BB@0x14 ]
+	0       (00000000) invoke-direct        v2, Lorg/webrtc/Camera2Session;->getDeviceOrientation()I
+	1       (00000006) move-result          v0
+	2       (00000008) iget-boolean         v1, v2, Lorg/webrtc/Camera2Session;->isCameraFrontFacing Z
+	3       (0000000c) if-nez               v1, +4
+
+getFrameOrientation-BB@0x10 : [ getFrameOrientation-BB@0x14 ]
+	4       (00000010) rsub-int             v0, v0, 360
+
+getFrameOrientation-BB@0x14 : 
+	5       (00000014) iget                 v1, v2, Lorg/webrtc/Camera2Session;->cameraOrientation I
+	6       (00000018) add-int/2addr        v1, v0
+	7       (0000001a) rem-int/lit16        v1, v1, 360
+	8       (0000001e) return               v1
+

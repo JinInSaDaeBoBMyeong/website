@@ -1,0 +1,29 @@
+# Ltev/piqgahor/ctTZ3rUj;->IfMMSz2437()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:void
+
+IfMMSz2437-BB@0x0 : [ IfMMSz2437-BB@0x20 IfMMSz2437-BB@0x2e ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) invoke-virtual       v4, Ltev/piqgahor/ctTZ3rUj;->getWindow()Landroid/view/Window;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) const/16             v1, 1152
+	4       (0000000e) invoke-virtual       v0, v1, Landroid/view/Window;->addFlags(I)V
+	5       (00000014) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	6       (00000018) const/16             v2, 27
+	7       (0000001c) if-lt                v1, v2, +9
+
+IfMMSz2437-BB@0x20 : [ IfMMSz2437-BB@0x2c ]
+	8       (00000020) invoke-virtual       v4, v3, Ltev/piqgahor/ctTZ3rUj;->setTurnScreenOn(Z)V
+	9       (00000026) invoke-virtual       v4, v3, Ltev/piqgahor/ctTZ3rUj;->setShowWhenLocked(Z)V
+
+IfMMSz2437-BB@0x2c : 
+	10      (0000002c) return-void          
+
+IfMMSz2437-BB@0x2e : [ IfMMSz2437-BB@0x2c ]
+	11      (0000002e) const/high16         v1, 104 # [9.550891600431086e-39]
+	12      (00000032) invoke-virtual       v0, v1, Landroid/view/Window;->addFlags(I)V
+	13      (00000038) goto                 -6
+

@@ -1,0 +1,38 @@
+# Landroid/support/v4/app/BackStackRecord;->addOp(Landroid/support/v4/app/BackStackRecord$Op;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.v4.app.BackStackRecord$Op
+#
+# - return:void
+
+addOp-BB@0x0 : [ addOp-BB@0x8 addOp-BB@0x3e ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/app/BackStackRecord;->mHead Landroid/support/v4/app/BackStackRecord$Op;
+	1       (00000004) if-nez               v0, +1d
+
+addOp-BB@0x8 : [ addOp-BB@0x10 ]
+	2       (00000008) iput-object          v2, v1, Landroid/support/v4/app/BackStackRecord;->mTail Landroid/support/v4/app/BackStackRecord$Op;
+	3       (0000000c) iput-object          v2, v1, Landroid/support/v4/app/BackStackRecord;->mHead Landroid/support/v4/app/BackStackRecord$Op;
+
+addOp-BB@0x10 : 
+	4       (00000010) iget                 v0, v1, Landroid/support/v4/app/BackStackRecord;->mEnterAnim I
+	5       (00000014) iput                 v0, v2, Landroid/support/v4/app/BackStackRecord$Op;->enterAnim I
+	6       (00000018) iget                 v0, v1, Landroid/support/v4/app/BackStackRecord;->mExitAnim I
+	7       (0000001c) iput                 v0, v2, Landroid/support/v4/app/BackStackRecord$Op;->exitAnim I
+	8       (00000020) iget                 v0, v1, Landroid/support/v4/app/BackStackRecord;->mPopEnterAnim I
+	9       (00000024) iput                 v0, v2, Landroid/support/v4/app/BackStackRecord$Op;->popEnterAnim I
+	10      (00000028) iget                 v0, v1, Landroid/support/v4/app/BackStackRecord;->mPopExitAnim I
+	11      (0000002c) iput                 v0, v2, Landroid/support/v4/app/BackStackRecord$Op;->popExitAnim I
+	12      (00000030) iget                 v0, v1, Landroid/support/v4/app/BackStackRecord;->mNumOp I
+	13      (00000034) add-int/lit8         v0, v0, 1
+	14      (00000038) iput                 v0, v1, Landroid/support/v4/app/BackStackRecord;->mNumOp I
+	15      (0000003c) return-void          
+
+addOp-BB@0x3e : [ addOp-BB@0x10 ]
+	16      (0000003e) iget-object          v0, v1, Landroid/support/v4/app/BackStackRecord;->mTail Landroid/support/v4/app/BackStackRecord$Op;
+	17      (00000042) iput-object          v0, v2, Landroid/support/v4/app/BackStackRecord$Op;->prev Landroid/support/v4/app/BackStackRecord$Op;
+	18      (00000046) iget-object          v0, v1, Landroid/support/v4/app/BackStackRecord;->mTail Landroid/support/v4/app/BackStackRecord$Op;
+	19      (0000004a) iput-object          v2, v0, Landroid/support/v4/app/BackStackRecord$Op;->next Landroid/support/v4/app/BackStackRecord$Op;
+	20      (0000004e) iput-object          v2, v1, Landroid/support/v4/app/BackStackRecord;->mTail Landroid/support/v4/app/BackStackRecord$Op;
+	21      (00000052) goto                 -21
+

@@ -1,0 +1,32 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioManager;->dispose()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+dispose-BB@0x0 : [ dispose-BB@0x40 dispose-BB@0x42 ]
+	0       (00000000) const-string         v0, 'WebRtcAudioManager'
+	1       (00000004) new-instance         v1, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000e) const-string         v2, 'dispose'
+	4       (00000012) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->getThreadInfo()Ljava/lang/String;
+	7       (00000020) move-result-object   v2
+	8       (00000022) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	11      (00000030) move-result-object   v1
+	12      (00000032) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	13      (00000038) iget-boolean         v0, v3, Lorg/webrtc/voiceengine/WebRtcAudioManager;->initialized Z
+	14      (0000003c) if-nez               v0, +3
+
+dispose-BB@0x40 : 
+	15      (00000040) return-void          
+
+dispose-BB@0x42 : [ dispose-BB@0x40 ]
+	16      (00000042) iget-object          v0, v3, Lorg/webrtc/voiceengine/WebRtcAudioManager;->volumeLogger Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;
+	17      (00000046) invoke-static        v0, Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;->access$100(Lorg/webrtc/voiceengine/WebRtcAudioManager$VolumeLogger;)V
+	18      (0000004c) goto                 -6
+

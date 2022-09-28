@@ -1,0 +1,25 @@
+# Landroid/support/v4/widget/CursorAdapter;-><init>(Landroid/content/Context; Landroid/database/Cursor; Z)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:android.database.Cursor
+# - v4:boolean
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0xa <init>-BB@0x14 ]
+	0       (00000000) invoke-direct        v1, Landroid/widget/BaseAdapter;-><init>()V
+	1       (00000006) if-eqz               v4, +7
+
+<init>-BB@0xa : [ <init>-BB@0xc ]
+	2       (0000000a) const/4              v0, 1
+
+<init>-BB@0xc : 
+	3       (0000000c) invoke-virtual       v1, v2, v3, v0, Landroid/support/v4/widget/CursorAdapter;->init(Landroid/content/Context; Landroid/database/Cursor; I)V
+	4       (00000012) return-void          
+
+<init>-BB@0x14 : [ <init>-BB@0xc ]
+	5       (00000014) const/4              v0, 2
+	6       (00000016) goto                 -5
+

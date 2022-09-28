@@ -1,0 +1,14 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->closePane()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+closePane-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideableView Landroid/view/View;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) invoke-direct        v2, v0, v1, Landroid/support/v4/widget/SlidingPaneLayout;->closePane(Landroid/view/View; I)Z
+	3       (0000000c) move-result          v0
+	4       (0000000e) return               v0
+

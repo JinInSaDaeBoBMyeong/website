@@ -1,0 +1,13 @@
+# Lorg/webrtc/RtpSender;->getParameters()Lorg/webrtc/RtpParameters; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:org.webrtc.RtpParameters
+
+getParameters-BB@0x0 : 
+	0       (00000000) iget-wide            v0, v2, Lorg/webrtc/RtpSender;->nativeRtpSender J
+	1       (00000004) invoke-static        v0, v1, Lorg/webrtc/RtpSender;->nativeGetParameters(J)Lorg/webrtc/RtpParameters;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

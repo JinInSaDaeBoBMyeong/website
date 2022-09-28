@@ -1,0 +1,21 @@
+# Landroid/support/v4/app/LoaderManagerImpl;->installLoader(Landroid/support/v4/app/LoaderManagerImpl$LoaderInfo;)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.v4.app.LoaderManagerImpl$LoaderInfo
+#
+# - return:void
+
+installLoader-BB@0x0 : [ installLoader-BB@0x16 installLoader-BB@0x1c ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/app/LoaderManagerImpl;->mLoaders Landroid/support/v4/util/SparseArrayCompat;
+	1       (00000004) iget                 v1, v3, Landroid/support/v4/app/LoaderManagerImpl$LoaderInfo;->mId I
+	2       (00000008) invoke-virtual       v0, v1, v3, Landroid/support/v4/util/SparseArrayCompat;->put(I Ljava/lang/Object;)V
+	3       (0000000e) iget-boolean         v0, v2, Landroid/support/v4/app/LoaderManagerImpl;->mStarted Z
+	4       (00000012) if-eqz               v0, +5
+
+installLoader-BB@0x16 : [ installLoader-BB@0x1c ]
+	5       (00000016) invoke-virtual       v3, Landroid/support/v4/app/LoaderManagerImpl$LoaderInfo;->start()V
+
+installLoader-BB@0x1c : 
+	6       (0000001c) return-void          
+

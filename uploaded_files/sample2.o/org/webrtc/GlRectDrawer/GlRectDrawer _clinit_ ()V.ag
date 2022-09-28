@@ -1,0 +1,26 @@
+# Lorg/webrtc/GlRectDrawer;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) const/16             v1, 8
+	1       (00000004) new-array            v0, v1, [F
+	2       (00000008) fill-array-data      v0, +16 (0x34)
+	3       (0000000e) invoke-static        v0, Lorg/webrtc/GlUtil;->createFloatBuffer([F)Ljava/nio/FloatBuffer;
+	4       (00000014) move-result-object   v0
+	5       (00000016) sput-object          v0, Lorg/webrtc/GlRectDrawer;->FULL_RECTANGLE_BUF Ljava/nio/FloatBuffer;
+	6       (0000001a) new-array            v0, v1, [F
+	7       (0000001e) fill-array-data      v0, +1f (0x5c)
+	8       (00000024) invoke-static        v0, Lorg/webrtc/GlUtil;->createFloatBuffer([F)Ljava/nio/FloatBuffer;
+	9       (0000002a) move-result-object   v0
+	10      (0000002c) sput-object          v0, Lorg/webrtc/GlRectDrawer;->FULL_RECTANGLE_TEX_BUF Ljava/nio/FloatBuffer;
+	11      (00000030) return-void          
+
+<clinit>-BB@0x32 : 
+	12      (00000032) nop                  
+	13      (00000034) fill-array-data-payload bytearray(b'\x00\x00\x80\xbf\x00\x00\x80\xbf\x00\x00\x80?\x00\x00\x80\xbf\x00\x00\x80\xbf\x00\x00\x80?\x00\x00\x80?\x00\x00\x80?') | \x00\x00\x80\xbf\x00\x00\x80\xbf\x00\x00\x80\x3f\x00\x00\x80\xbf\x00\x00\x80\xbf\x00\x00\x80\x3f\x00\x00\x80\x3f\x00\x00\x80\x3f
+	14      (0000005c) fill-array-data-payload bytearray(b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x80?\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x80?\x00\x00\x80?\x00\x00\x80?') | \x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x80\x3f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x80\x3f\x00\x00\x80\x3f\x00\x00\x80\x3f
+

@@ -1,0 +1,11 @@
+# Lorg/webrtc/WrappedNativeI420Buffer;->getDataU()Ljava/nio/ByteBuffer; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.nio.ByteBuffer
+
+getDataU-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/WrappedNativeI420Buffer;->dataU Ljava/nio/ByteBuffer;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,50 @@
+# Lorg/webrtc/HardwareVideoEncoderFactory;->getForcedKeyFrameIntervalMs(Lorg/webrtc/VideoCodecType; Ljava/lang/String;)I [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:org.webrtc.VideoCodecType
+# - v6:java.lang.String
+#
+# - return:int
+
+getForcedKeyFrameIntervalMs-BB@0x0 : [ getForcedKeyFrameIntervalMs-BB@0x10 getForcedKeyFrameIntervalMs-BB@0x50 ]
+	0       (00000000) const/16             v0, 15000
+	1       (00000004) const/16             v3, 23
+	2       (00000008) sget-object          v1, Lorg/webrtc/VideoCodecType;->VP8 Lorg/webrtc/VideoCodecType;
+	3       (0000000c) if-ne                v5, v1, +22
+
+getForcedKeyFrameIntervalMs-BB@0x10 : [ getForcedKeyFrameIntervalMs-BB@0x20 getForcedKeyFrameIntervalMs-BB@0x50 ]
+	4       (00000010) const-string         v1, 'OMX.qcom.'
+	5       (00000014) invoke-virtual       v6, v1, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+	6       (0000001a) move-result          v1
+	7       (0000001c) if-eqz               v1, +1a
+
+getForcedKeyFrameIntervalMs-BB@0x20 : [ getForcedKeyFrameIntervalMs-BB@0x2c getForcedKeyFrameIntervalMs-BB@0x38 ]
+	8       (00000020) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	9       (00000024) const/16             v2, 21
+	10      (00000028) if-eq                v1, v2, +8
+
+getForcedKeyFrameIntervalMs-BB@0x2c : [ getForcedKeyFrameIntervalMs-BB@0x38 getForcedKeyFrameIntervalMs-BB@0x3a ]
+	11      (0000002c) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	12      (00000030) const/16             v2, 22
+	13      (00000034) if-ne                v1, v2, +3
+
+getForcedKeyFrameIntervalMs-BB@0x38 : 
+	14      (00000038) return               v0
+
+getForcedKeyFrameIntervalMs-BB@0x3a : [ getForcedKeyFrameIntervalMs-BB@0x42 getForcedKeyFrameIntervalMs-BB@0x48 ]
+	15      (0000003a) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	16      (0000003e) if-ne                v1, v3, +5
+
+getForcedKeyFrameIntervalMs-BB@0x42 : [ getForcedKeyFrameIntervalMs-BB@0x38 ]
+	17      (00000042) const/16             v0, 20000
+	18      (00000046) goto                 -7
+
+getForcedKeyFrameIntervalMs-BB@0x48 : [ getForcedKeyFrameIntervalMs-BB@0x50 getForcedKeyFrameIntervalMs-BB@0x38 ]
+	19      (00000048) sget                 v1, Landroid/os/Build$VERSION;->SDK_INT I
+	20      (0000004c) if-gt                v1, v3, -a
+
+getForcedKeyFrameIntervalMs-BB@0x50 : [ getForcedKeyFrameIntervalMs-BB@0x38 ]
+	21      (00000050) const/4              v0, 0
+	22      (00000052) goto                 -d
+

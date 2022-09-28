@@ -1,0 +1,12 @@
+# Lorg/webrtc/EglBase14;->getEglBaseContext()Lorg/webrtc/EglBase$Context; [access_flags=public bridge synthetic]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:org.webrtc.EglBase$Context
+
+getEglBaseContext-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Lorg/webrtc/EglBase14;->getEglBaseContext()Lorg/webrtc/EglBase14$Context;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+

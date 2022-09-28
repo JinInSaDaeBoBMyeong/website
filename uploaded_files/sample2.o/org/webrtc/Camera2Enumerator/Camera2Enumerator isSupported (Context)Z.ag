@@ -1,0 +1,81 @@
+# Lorg/webrtc/Camera2Enumerator;->isSupported(Landroid/content/Context;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v9
+# - v10:android.content.Context
+#
+# - return:boolean
+
+isSupported-BB@0x0 : [ isSupported-BB@0xe isSupported-BB@0x12 ]
+	0       (00000000) const/4              v6, 0
+	1       (00000002) sget                 v5, Landroid/os/Build$VERSION;->SDK_INT I
+	2       (00000006) const/16             v7, 21
+	3       (0000000a) if-ge                v5, v7, +4
+
+isSupported-BB@0xe : [ isSupported-BB@0x10 ]
+	4       (0000000e) move                 v5, v6
+
+isSupported-BB@0x10 : 
+	5       (00000010) return               v5
+
+isSupported-BB@0x12 : [ isSupported-BB@0x22 ]
+	6       (00000012) const-string         v5, 'camera'
+	7       (00000016) invoke-virtual       v10, v5, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	8       (0000001c) move-result-object   v1
+	9       (0000001e) check-cast           v1, Landroid/hardware/camera2/CameraManager;
+
+isSupported-BB@0x22 : [ isSupported-BB@0x2e ]
+	10      (00000022) invoke-virtual       v1, Landroid/hardware/camera2/CameraManager;->getCameraIdList()[Ljava/lang/String;
+	11      (00000028) move-result-object   v0
+	12      (0000002a) array-length         v8, v0
+	13      (0000002c) move                 v7, v6
+	22:53
+	(Landroid/util/AndroidException; -> 68 isSupported-BB@0x68)
+
+isSupported-BB@0x2e : [ isSupported-BB@0x32 isSupported-BB@0x9e ]
+	14      (0000002e) if-ge                v7, v8, +38
+	22:53
+	(Landroid/util/AndroidException; -> 68 isSupported-BB@0x68)
+
+isSupported-BB@0x32 : [ isSupported-BB@0x5c isSupported-BB@0x60 ]
+	15      (00000032) aget-object          v4, v0, v7
+	16      (00000036) invoke-virtual       v1, v4, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
+	17      (0000003c) move-result-object   v2
+	18      (0000003e) sget-object          v5, Landroid/hardware/camera2/CameraCharacteristics;->INFO_SUPPORTED_HARDWARE_LEVEL Landroid/hardware/camera2/CameraCharacteristics$Key;
+	19      (00000042) invoke-virtual       v2, v5, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+	20      (00000048) move-result-object   v5
+	21      (0000004a) check-cast           v5, Ljava/lang/Integer;
+	22      (0000004e) invoke-virtual       v5, Ljava/lang/Integer;->intValue()I
+	23      (00000054) move-result          v5
+	24      (00000056) const/4              v9, 2
+	25      (00000058) if-ne                v5, v9, +4
+
+isSupported-BB@0x5c : [ isSupported-BB@0x10 ]
+	26      (0000005c) move                 v5, v6
+	27      (0000005e) goto                 -27
+
+isSupported-BB@0x60 : [ isSupported-BB@0x2e ]
+	28      (00000060) add-int/lit8         v5, v7, 1
+	29      (00000064) move                 v7, v5
+	30      (00000066) goto                 -1c
+
+isSupported-BB@0x68 : [ isSupported-BB@0x10 ]
+	31      (00000068) move-exception       v3
+	32      (0000006a) const-string         v5, 'Camera2Enumerator'
+	33      (0000006e) new-instance         v7, Ljava/lang/StringBuilder;
+	34      (00000072) invoke-direct        v7, Ljava/lang/StringBuilder;-><init>()V
+	35      (00000078) const-string         v8, 'Camera access exception: '
+	36      (0000007c) invoke-virtual       v7, v8, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	37      (00000082) move-result-object   v7
+	38      (00000084) invoke-virtual       v7, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	39      (0000008a) move-result-object   v7
+	40      (0000008c) invoke-virtual       v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	41      (00000092) move-result-object   v7
+	42      (00000094) invoke-static        v5, v7, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	43      (0000009a) move                 v5, v6
+	44      (0000009c) goto                 -46
+
+isSupported-BB@0x9e : [ isSupported-BB@0x10 ]
+	45      (0000009e) const/4              v5, 1
+	46      (000000a0) goto                 -48
+

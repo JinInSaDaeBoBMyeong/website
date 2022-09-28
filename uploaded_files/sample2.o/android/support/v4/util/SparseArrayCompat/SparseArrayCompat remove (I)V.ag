@@ -1,0 +1,12 @@
+# Landroid/support/v4/util/SparseArrayCompat;->remove(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+#
+# - return:void
+
+remove-BB@0x0 : 
+	0       (00000000) invoke-virtual       v0, v1, Landroid/support/v4/util/SparseArrayCompat;->delete(I)V
+	1       (00000006) return-void          
+

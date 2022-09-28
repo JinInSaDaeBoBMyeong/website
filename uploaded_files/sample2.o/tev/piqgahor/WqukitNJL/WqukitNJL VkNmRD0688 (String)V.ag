@@ -1,0 +1,13 @@
+# Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+#
+# - return:void
+
+VkNmRD0688-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-static        v1, v0, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String; Z)V
+	2       (00000008) return-void          
+

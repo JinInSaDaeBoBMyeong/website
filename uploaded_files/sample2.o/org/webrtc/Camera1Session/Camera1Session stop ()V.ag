@@ -1,0 +1,42 @@
+# Lorg/webrtc/Camera1Session;->stop()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+stop-BB@0x0 : [ stop-BB@0x46 stop-BB@0x76 ]
+	0       (00000000) const-string         v3, 'Camera1Session'
+	1       (00000004) new-instance         v4, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	3       (0000000e) const-string         v5, 'Stop camera1 session on camera '
+	4       (00000012) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	5       (00000018) move-result-object   v4
+	6       (0000001a) iget                 v5, v6, Lorg/webrtc/Camera1Session;->cameraId I
+	7       (0000001e) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v4
+	9       (00000026) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	10      (0000002c) move-result-object   v4
+	11      (0000002e) invoke-static        v3, v4, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	12      (00000034) invoke-direct        v6, Lorg/webrtc/Camera1Session;->checkIsOnCameraThread()V
+	13      (0000003a) iget-object          v3, v6, Lorg/webrtc/Camera1Session;->state Lorg/webrtc/Camera1Session$SessionState;
+	14      (0000003e) sget-object          v4, Lorg/webrtc/Camera1Session$SessionState;->STOPPED Lorg/webrtc/Camera1Session$SessionState;
+	15      (00000042) if-eq                v3, v4, +1a
+
+stop-BB@0x46 : [ stop-BB@0x76 ]
+	16      (00000046) invoke-static        Ljava/lang/System;->nanoTime()J
+	17      (0000004c) move-result-wide     v0
+	18      (0000004e) invoke-direct        v6, Lorg/webrtc/Camera1Session;->stopInternal()V
+	19      (00000054) sget-object          v3, Ljava/util/concurrent/TimeUnit;->NANOSECONDS Ljava/util/concurrent/TimeUnit;
+	20      (00000058) invoke-static        Ljava/lang/System;->nanoTime()J
+	21      (0000005e) move-result-wide     v4
+	22      (00000060) sub-long/2addr       v4, v0
+	23      (00000062) invoke-virtual       v3, v4, v5, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+	24      (00000068) move-result-wide     v4
+	25      (0000006a) long-to-int          v2, v4
+	26      (0000006c) sget-object          v3, Lorg/webrtc/Camera1Session;->camera1StopTimeMsHistogram Lorg/webrtc/Histogram;
+	27      (00000070) invoke-virtual       v3, v2, Lorg/webrtc/Histogram;->addSample(I)V
+
+stop-BB@0x76 : 
+	28      (00000076) return-void          
+

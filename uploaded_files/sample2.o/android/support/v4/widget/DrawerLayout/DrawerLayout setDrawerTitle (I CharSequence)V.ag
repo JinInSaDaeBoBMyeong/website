@@ -1,0 +1,31 @@
+# Landroid/support/v4/widget/DrawerLayout;->setDrawerTitle(I Ljava/lang/CharSequence;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:java.lang.CharSequence
+#
+# - return:void
+
+setDrawerTitle-BB@0x0 : [ setDrawerTitle-BB@0x16 setDrawerTitle-BB@0x1c ]
+	0       (00000000) invoke-static        v2, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+	1       (00000006) move-result          v1
+	2       (00000008) invoke-static        v3, v1, Landroid/support/v4/view/GravityCompat;->getAbsoluteGravity(I I)I
+	3       (0000000e) move-result          v0
+	4       (00000010) const/4              v1, 3
+	5       (00000012) if-ne                v0, v1, +5
+
+setDrawerTitle-BB@0x16 : [ setDrawerTitle-BB@0x1a ]
+	6       (00000016) iput-object          v4, v2, Landroid/support/v4/widget/DrawerLayout;->mTitleLeft Ljava/lang/CharSequence;
+
+setDrawerTitle-BB@0x1a : 
+	7       (0000001a) return-void          
+
+setDrawerTitle-BB@0x1c : [ setDrawerTitle-BB@0x22 setDrawerTitle-BB@0x1a ]
+	8       (0000001c) const/4              v1, 5
+	9       (0000001e) if-ne                v0, v1, -2
+
+setDrawerTitle-BB@0x22 : [ setDrawerTitle-BB@0x1a ]
+	10      (00000022) iput-object          v4, v2, Landroid/support/v4/widget/DrawerLayout;->mTitleRight Ljava/lang/CharSequence;
+	11      (00000026) goto                 -6
+

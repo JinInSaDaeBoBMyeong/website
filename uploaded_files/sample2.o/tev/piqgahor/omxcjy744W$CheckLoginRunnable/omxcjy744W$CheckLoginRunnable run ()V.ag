@@ -1,0 +1,117 @@
+# Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v11
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x12 run-BB@0xbe ]
+	0       (00000000) const/4              v10, 0
+	1       (00000002) const/4              v9, 2
+	2       (00000004) const/4              v8, 1
+	3       (00000006) invoke-static        Ltev/piqgahor/omxcjy744W;->access$0()Ljava/lang/String;
+	4       (0000000c) move-result-object   v4
+	5       (0000000e) if-eqz               v4, +58
+
+run-BB@0x12 : [ run-BB@0x9c run-BB@0xbe ]
+	6       (00000012) invoke-static        Ltev/piqgahor/omxcjy744W;->access$0()Ljava/lang/String;
+	7       (00000018) move-result-object   v4
+	8       (0000001a) iget-object          v5, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->KdqIydaybX28 Ljava/lang/String;
+	9       (0000001e) iget-object          v6, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->YNyyhsT69 Ljava/lang/String;
+	10      (00000022) iget-object          v7, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->pNPswixvln9 Ljava/lang/String;
+	11      (00000026) invoke-static        v4, v5, v6, v7, Ltev/piqgahor/bv55a2UiI;->KqruSw96602(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)J
+	12      (0000002c) move-result-wide     v0
+	13      (0000002e) const/4              v4, 4
+	14      (00000030) new-array            v4, v4, [Ljava/lang/Object;
+	15      (00000034) const/16             v5, 27
+	16      (00000038) new-array            v5, v5, [I
+	17      (0000003c) fill-array-data      v5, +9a (0x170)
+	18      (00000042) invoke-static        v5, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	19      (00000048) move-result-object   v5
+	20      (0000004a) aput-object          v5, v4, v10
+	21      (0000004e) invoke-static        Ltev/piqgahor/omxcjy744W;->access$0()Ljava/lang/String;
+	22      (00000054) move-result-object   v5
+	23      (00000056) aput-object          v5, v4, v8
+	24      (0000005a) const/16             v5, 9
+	25      (0000005e) new-array            v5, v5, [I
+	26      (00000062) fill-array-data      v5, +c1 (0x1e4)
+	27      (00000068) invoke-static        v5, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	28      (0000006e) move-result-object   v5
+	29      (00000070) aput-object          v5, v4, v9
+	30      (00000074) const/4              v5, 3
+	31      (00000076) invoke-static        v0, v1, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+	32      (0000007c) move-result-object   v6
+	33      (0000007e) aput-object          v6, v4, v5
+	34      (00000082) invoke-static        v4, Ltev/piqgahor/WqukitNJL;->mvoGCr4741([Ljava/lang/Object;)Ljava/lang/String;
+	35      (00000088) move-result-object   v4
+	36      (0000008a) invoke-static        v4, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	37      (00000090) const-wide/16        v4, 0 # [0.0]
+	38      (00000094) cmp-long             v4, v0, v4
+	39      (00000098) if-lez               v4, +13
+
+run-BB@0x9c : [ run-BB@0xbe ]
+	40      (0000009c) iget-object          v4, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->CiRvBgcIG88 Landroid/os/Handler;
+	41      (000000a0) invoke-virtual       v4, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
+	42      (000000a6) move-result-object   v2
+	43      (000000a8) iput                 v9, v2, Landroid/os/Message;->arg1 I
+	44      (000000ac) iget-object          v4, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->KdqIydaybX28 Ljava/lang/String;
+	45      (000000b0) iput-object          v4, v2, Landroid/os/Message;->obj Ljava/lang/Object;
+	46      (000000b4) iget-object          v4, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->CiRvBgcIG88 Landroid/os/Handler;
+	47      (000000b8) invoke-virtual       v4, v2, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+run-BB@0xbe : [ run-BB@0x144 run-BB@0x16e ]
+	48      (000000be) new-instance         v4, Ljava/lang/StringBuilder;
+	49      (000000c2) const/16             v5, 42
+	50      (000000c6) new-array            v5, v5, [I
+	51      (000000ca) fill-array-data      v5, +a3 (0x210)
+	52      (000000d0) invoke-static        v5, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	53      (000000d6) move-result-object   v5
+	54      (000000d8) invoke-static        v5, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+	55      (000000de) move-result-object   v5
+	56      (000000e0) invoke-direct        v4, v5, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	57      (000000e6) iget-object          v5, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->KdqIydaybX28 Ljava/lang/String;
+	58      (000000ea) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	59      (000000f0) move-result-object   v4
+	60      (000000f2) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	61      (000000f8) move-result-object   v4
+	62      (000000fa) invoke-static        v4, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	63      (00000100) iget-object          v4, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->KdqIydaybX28 Ljava/lang/String;
+	64      (00000104) iget-object          v5, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->YNyyhsT69 Ljava/lang/String;
+	65      (00000108) invoke-static        v4, v5, Ltev/piqgahor/bv55a2UiI;->LwsJFOGCFaeM57984(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	66      (0000010e) move-result-object   v3
+	67      (00000110) new-array            v4, v9, [Ljava/lang/Object;
+	68      (00000114) const/16             v5, 24
+	69      (00000118) new-array            v5, v5, [I
+	70      (0000011c) fill-array-data      v5, +d2 (0x2c0)
+	71      (00000122) invoke-static        v5, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	72      (00000128) move-result-object   v5
+	73      (0000012a) aput-object          v5, v4, v10
+	74      (0000012e) aput-object          v3, v4, v8
+	75      (00000132) invoke-static        v4, Ltev/piqgahor/WqukitNJL;->mvoGCr4741([Ljava/lang/Object;)Ljava/lang/String;
+	76      (00000138) move-result-object   v4
+	77      (0000013a) invoke-static        v4, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	78      (00000140) if-eqz               v3, +17
+
+run-BB@0x144 : [ run-BB@0x150 run-BB@0x16e ]
+	79      (00000144) invoke-virtual       v3, Ljava/lang/String;->isEmpty()Z
+	80      (0000014a) move-result          v4
+	81      (0000014c) if-nez               v4, +11
+
+run-BB@0x150 : [ run-BB@0x16e ]
+	82      (00000150) iget-object          v4, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->CiRvBgcIG88 Landroid/os/Handler;
+	83      (00000154) invoke-virtual       v4, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
+	84      (0000015a) move-result-object   v2
+	85      (0000015c) iput                 v8, v2, Landroid/os/Message;->arg1 I
+	86      (00000160) iput-object          v3, v2, Landroid/os/Message;->obj Ljava/lang/Object;
+	87      (00000164) iget-object          v4, v11, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->CiRvBgcIG88 Landroid/os/Handler;
+	88      (00000168) invoke-virtual       v4, v2, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+run-BB@0x16e : 
+	89      (0000016e) return-void          
+
+run-BB@0x170 : 
+	90      (00000170) fill-array-data-payload bytearray(b')\x00\x00\x00\x84\x00\x00\x00u\x00\x00\x00\x98\x00\x00\x00\x90\x00\x00\x00\x92\x00\x00\x00\x97\x00\x00\x00\x80\x00\x00\x00\x97\x00\x00\x00\x8d\x00\x00\x00\x86\x00\x00\x00I\x00\x00\x00~\x00\x00\x00|\x00\x00\x00n\x00\x00\x00{\x00\x00\x00\x88\x00\x00\x00q\x00\x00\x00j\x00\x00\x00{\x00\x00\x00m\x00\x00\x00l\x00\x00\x00x\x00\x00\x00m\x00\x00\x00n\x00\x00\x00\x84\x00\x00\x00I\x00\x00\x00') | \x29\x00\x00\x00\x84\x00\x00\x00\x75\x00\x00\x00\x98\x00\x00\x00\x90\x00\x00\x00\x92\x00\x00\x00\x97\x00\x00\x00\x80\x00\x00\x00\x97\x00\x00\x00\x8d\x00\x00\x00\x86\x00\x00\x00\x49\x00\x00\x00\x7e\x00\x00\x00\x7c\x00\x00\x00\x6e\x00\x00\x00\x7b\x00\x00\x00\x88\x00\x00\x00\x71\x00\x00\x00\x6a\x00\x00\x00\x7b\x00\x00\x00\x6d\x00\x00\x00\x6c\x00\x00\x00\x78\x00\x00\x00\x6d\x00\x00\x00\x6e\x00\x00\x00\x84\x00\x00\x00\x49\x00\x00\x00
+	91      (000001e4) fill-array-data-payload bytearray(b')\x00\x00\x00I\x00\x00\x00\x86\x00\x00\x00I\x00\x00\x00\x92\x00\x00\x00\x8d\x00\x00\x00I\x00\x00\x00f\x00\x00\x00I\x00\x00\x00') | \x29\x00\x00\x00\x49\x00\x00\x00\x86\x00\x00\x00\x49\x00\x00\x00\x92\x00\x00\x00\x8d\x00\x00\x00\x49\x00\x00\x00\x66\x00\x00\x00\x49\x00\x00\x00
+	92      (00000210) fill-array-data-payload bytearray(b'\x19\x00\x00\x00t\x00\x00\x00e\x00\x00\x00\x88\x00\x00\x00\x80\x00\x00\x00\x82\x00\x00\x00\x87\x00\x00\x00p\x00\x00\x00\x87\x00\x00\x00}\x00\x00\x00v\x00\x00\x009\x00\x00\x00l\x00\x00\x00\x8d\x00\x00\x00z\x00\x00\x00\x8b\x00\x00\x00\x8d\x00\x00\x009\x00\x00\x00\\\x00\x00\x00\x81\x00\x00\x00~\x00\x00\x00|\x00\x00\x00\x84\x00\x00\x009\x00\x00\x00e\x00\x00\x00\x88\x00\x00\x00\x80\x00\x00\x00\x82\x00\x00\x00\x87\x00\x00\x009\x00\x00\x00]\x00\x00\x00~\x00\x00\x00\x8f\x00\x00\x00\x82\x00\x00\x00|\x00\x00\x00~\x00\x00\x009\x00\x00\x00\x82\x00\x00\x00}\x00\x00\x009\x00\x00\x00V\x00\x00\x009\x00\x00\x00') | \x19\x00\x00\x00\x74\x00\x00\x00\x65\x00\x00\x00\x88\x00\x00\x00\x80\x00\x00\x00\x82\x00\x00\x00\x87\x00\x00\x00\x70\x00\x00\x00\x87\x00\x00\x00\x7d\x00\x00\x00\x76\x00\x00\x00\x39\x00\x00\x00\x6c\x00\x00\x00\x8d\x00\x00\x00\x7a\x00\x00\x00\x8b\x00\x00\x00\x8d\x00\x00\x00\x39\x00\x00\x00\x5c\x00\x00\x00\x81\x00\x00\x00\x7e\x00\x00\x00\x7c\x00\x00\x00\x84\x00\x00\x00\x39\x00\x00\x00\x65\x00\x00\x00\x88\x00\x00\x00\x80\x00\x00\x00\x82\x00\x00\x00\x87\x00\x00\x00\x39\x00\x00\x00\x5d\x00\x00\x00\x7e\x00\x00\x00\x8f\x00\x00\x00\x82\x00\x00\x00\x7c\x00\x00\x00\x7e\x00\x00\x00\x39\x00\x00\x00\x82\x00\x00\x00\x7d\x00\x00\x00\x39\x00\x00\x00\x56\x00\x00\x00\x39\x00\x00\x00
+	93      (000002c0) fill-array-data-payload bytearray(b'\t\x00\x00\x00d\x00\x00\x00U\x00\x00\x00x\x00\x00\x00p\x00\x00\x00r\x00\x00\x00w\x00\x00\x00`\x00\x00\x00w\x00\x00\x00m\x00\x00\x00f\x00\x00\x00)\x00\x00\x00L\x00\x00\x00q\x00\x00\x00n\x00\x00\x00l\x00\x00\x00t\x00\x00\x00U\x00\x00\x00x\x00\x00\x00p\x00\x00\x00r\x00\x00\x00w\x00\x00\x00C\x00\x00\x00)\x00\x00\x00') | \x09\x00\x00\x00\x64\x00\x00\x00\x55\x00\x00\x00\x78\x00\x00\x00\x70\x00\x00\x00\x72\x00\x00\x00\x77\x00\x00\x00\x60\x00\x00\x00\x77\x00\x00\x00\x6d\x00\x00\x00\x66\x00\x00\x00\x29\x00\x00\x00\x4c\x00\x00\x00\x71\x00\x00\x00\x6e\x00\x00\x00\x6c\x00\x00\x00\x74\x00\x00\x00\x55\x00\x00\x00\x78\x00\x00\x00\x70\x00\x00\x00\x72\x00\x00\x00\x77\x00\x00\x00\x43\x00\x00\x00\x29\x00\x00\x00
+

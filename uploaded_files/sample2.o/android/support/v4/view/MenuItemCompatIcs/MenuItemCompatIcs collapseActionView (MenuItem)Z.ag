@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/MenuItemCompatIcs;->collapseActionView(Landroid/view/MenuItem;)Z [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.MenuItem
+#
+# - return:boolean
+
+collapseActionView-BB@0x0 : 
+	0       (00000000) invoke-interface     v1, Landroid/view/MenuItem;->collapseActionView()Z
+	1       (00000006) move-result          v0
+	2       (00000008) return               v0
+

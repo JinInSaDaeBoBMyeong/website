@@ -1,0 +1,29 @@
+# Landroid/support/v4/print/PrintHelper;-><init>(Landroid/content/Context;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x12 <init>-BB@0x22 ]
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) invoke-static        Landroid/support/v4/print/PrintHelper;->systemSupportsPrint()Z
+	2       (0000000c) move-result          v0
+	3       (0000000e) if-eqz               v0, +a
+
+<init>-BB@0x12 : [ <init>-BB@0x20 ]
+	4       (00000012) new-instance         v0, Landroid/support/v4/print/PrintHelper$PrintHelperKitkatImpl;
+	5       (00000016) invoke-direct        v0, v3, Landroid/support/v4/print/PrintHelper$PrintHelperKitkatImpl;-><init>(Landroid/content/Context;)V
+	6       (0000001c) iput-object          v0, v2, Landroid/support/v4/print/PrintHelper;->mImpl Landroid/support/v4/print/PrintHelper$PrintHelperVersionImpl;
+
+<init>-BB@0x20 : 
+	7       (00000020) return-void          
+
+<init>-BB@0x22 : [ <init>-BB@0x20 ]
+	8       (00000022) new-instance         v0, Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;
+	9       (00000026) const/4              v1, 0
+	10      (00000028) invoke-direct        v0, v1, Landroid/support/v4/print/PrintHelper$PrintHelperStubImpl;-><init>(Landroid/support/v4/print/PrintHelper$1;)V
+	11      (0000002e) iput-object          v0, v2, Landroid/support/v4/print/PrintHelper;->mImpl Landroid/support/v4/print/PrintHelper$PrintHelperVersionImpl;
+	12      (00000032) goto                 -9
+

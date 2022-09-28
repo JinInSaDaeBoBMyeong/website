@@ -1,0 +1,22 @@
+# Landroid/support/v4/content/CursorLoader;->onCanceled(Landroid/database/Cursor;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.database.Cursor
+#
+# - return:void
+
+onCanceled-BB@0x0 : [ onCanceled-BB@0x4 onCanceled-BB@0x16 ]
+	0       (00000000) if-eqz               v2, +b
+
+onCanceled-BB@0x4 : [ onCanceled-BB@0x10 onCanceled-BB@0x16 ]
+	1       (00000004) invoke-interface     v2, Landroid/database/Cursor;->isClosed()Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-nez               v0, +5
+
+onCanceled-BB@0x10 : [ onCanceled-BB@0x16 ]
+	4       (00000010) invoke-interface     v2, Landroid/database/Cursor;->close()V
+
+onCanceled-BB@0x16 : 
+	5       (00000016) return-void          
+

@@ -1,0 +1,22 @@
+# Landroid/support/v4/app/RemoteInput$1;->build(Ljava/lang/String; Ljava/lang/CharSequence; [Ljava/lang/CharSequence; Z Landroid/os/Bundle;)Landroid/support/v4/app/RemoteInput; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+# - v8:java.lang.CharSequence
+# - v9:java.lang.CharSequence[]
+# - v10:boolean
+# - v11:android.os.Bundle
+#
+# - return:android.support.v4.app.RemoteInput
+
+build-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/support/v4/app/RemoteInput;
+	1       (00000004) move-object          v1, v7
+	2       (00000006) move-object          v2, v8
+	3       (00000008) move-object          v3, v9
+	4       (0000000a) move                 v4, v10
+	5       (0000000c) move-object          v5, v11
+	6       (0000000e) invoke-direct/range  v0 ... v5, Landroid/support/v4/app/RemoteInput;-><init>(Ljava/lang/String; Ljava/lang/CharSequence; [Ljava/lang/CharSequence; Z Landroid/os/Bundle;)V
+	7       (00000014) return-object        v0
+

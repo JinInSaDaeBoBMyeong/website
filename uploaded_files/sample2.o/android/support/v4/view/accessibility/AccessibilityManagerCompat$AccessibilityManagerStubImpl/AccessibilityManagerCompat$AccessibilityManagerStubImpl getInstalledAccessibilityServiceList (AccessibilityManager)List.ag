@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityManagerStubImpl;->getInstalledAccessibilityServiceList(Landroid/view/accessibility/AccessibilityManager;)Ljava/util/List; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.accessibility.AccessibilityManager
+#
+# - return:java.util.List
+
+getInstalledAccessibilityServiceList-BB@0x0 : 
+	0       (00000000) invoke-static        Ljava/util/Collections;->emptyList()Ljava/util/List;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+

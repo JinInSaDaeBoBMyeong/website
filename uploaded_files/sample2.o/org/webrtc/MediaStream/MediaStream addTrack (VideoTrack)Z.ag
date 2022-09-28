@@ -1,0 +1,27 @@
+# Lorg/webrtc/MediaStream;->addTrack(Lorg/webrtc/VideoTrack;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:org.webrtc.VideoTrack
+#
+# - return:boolean
+
+addTrack-BB@0x0 : [ addTrack-BB@0x14 addTrack-BB@0x22 ]
+	0       (00000000) iget-wide            v0, v4, Lorg/webrtc/MediaStream;->nativeStream J
+	1       (00000004) iget-wide            v2, v5, Lorg/webrtc/VideoTrack;->nativeTrack J
+	2       (00000008) invoke-static        v0, v1, v2, v3, Lorg/webrtc/MediaStream;->nativeAddVideoTrack(J J)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-eqz               v0, +9
+
+addTrack-BB@0x14 : [ addTrack-BB@0x20 ]
+	5       (00000014) iget-object          v0, v4, Lorg/webrtc/MediaStream;->videoTracks Ljava/util/LinkedList;
+	6       (00000018) invoke-virtual       v0, v5, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
+	7       (0000001e) const/4              v0, 1
+
+addTrack-BB@0x20 : 
+	8       (00000020) return               v0
+
+addTrack-BB@0x22 : [ addTrack-BB@0x20 ]
+	9       (00000022) const/4              v0, 0
+	10      (00000024) goto                 -2
+

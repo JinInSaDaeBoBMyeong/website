@@ -1,0 +1,54 @@
+# Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->isConsideredDoubleTap(Landroid/view/MotionEvent; Landroid/view/MotionEvent; Landroid/view/MotionEvent;)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v8
+# - v9:android.view.MotionEvent
+# - v10:android.view.MotionEvent
+# - v11:android.view.MotionEvent
+#
+# - return:boolean
+
+isConsideredDoubleTap-BB@0x0 : [ isConsideredDoubleTap-BB@0xa isConsideredDoubleTap-BB@0xc ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-boolean         v3, v8, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInBiggerTapRegion Z
+	2       (00000006) if-nez               v3, +3
+
+isConsideredDoubleTap-BB@0xa : 
+	3       (0000000a) return               v2
+
+isConsideredDoubleTap-BB@0xc : [ isConsideredDoubleTap-BB@0x2c isConsideredDoubleTap-BB@0xa ]
+	4       (0000000c) invoke-virtual       v11, Landroid/view/MotionEvent;->getEventTime()J
+	5       (00000012) move-result-wide     v4
+	6       (00000014) invoke-virtual       v10, Landroid/view/MotionEvent;->getEventTime()J
+	7       (0000001a) move-result-wide     v6
+	8       (0000001c) sub-long/2addr       v4, v6
+	9       (0000001e) sget                 v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->DOUBLE_TAP_TIMEOUT I
+	10      (00000022) int-to-long          v6, v3
+	11      (00000024) cmp-long             v3, v4, v6
+	12      (00000028) if-gtz               v3, -f
+
+isConsideredDoubleTap-BB@0x2c : [ isConsideredDoubleTap-BB@0x6e isConsideredDoubleTap-BB@0xa ]
+	13      (0000002c) invoke-virtual       v9, Landroid/view/MotionEvent;->getX()F
+	14      (00000032) move-result          v3
+	15      (00000034) float-to-int         v3, v3
+	16      (00000036) invoke-virtual       v11, Landroid/view/MotionEvent;->getX()F
+	17      (0000003c) move-result          v4
+	18      (0000003e) float-to-int         v4, v4
+	19      (00000040) sub-int              v0, v3, v4
+	20      (00000044) invoke-virtual       v9, Landroid/view/MotionEvent;->getY()F
+	21      (0000004a) move-result          v3
+	22      (0000004c) float-to-int         v3, v3
+	23      (0000004e) invoke-virtual       v11, Landroid/view/MotionEvent;->getY()F
+	24      (00000054) move-result          v4
+	25      (00000056) float-to-int         v4, v4
+	26      (00000058) sub-int              v1, v3, v4
+	27      (0000005c) mul-int              v3, v0, v0
+	28      (00000060) mul-int              v4, v1, v1
+	29      (00000064) add-int/2addr        v3, v4
+	30      (00000066) iget                 v4, v8, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapSlopSquare I
+	31      (0000006a) if-ge                v3, v4, -30
+
+isConsideredDoubleTap-BB@0x6e : [ isConsideredDoubleTap-BB@0xa ]
+	32      (0000006e) const/4              v2, 1
+	33      (00000070) goto                 -33
+

@@ -1,0 +1,21 @@
+# Landroid/support/v4/print/PrintHelperKitkat$2$1;-><init>(Landroid/support/v4/print/PrintHelperKitkat$2; Landroid/os/CancellationSignal; Landroid/print/PrintAttributes; Landroid/print/PrintAttributes; Landroid/print/PrintDocumentAdapter$LayoutResultCallback;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.print.PrintHelperKitkat$2
+# - v2:android.os.CancellationSignal
+# - v3:android.print.PrintAttributes
+# - v4:android.print.PrintAttributes
+# - v5:android.print.PrintDocumentAdapter$LayoutResultCallback
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroid/support/v4/print/PrintHelperKitkat$2$1;->this$1 Landroid/support/v4/print/PrintHelperKitkat$2;
+	1       (00000004) iput-object          v2, v0, Landroid/support/v4/print/PrintHelperKitkat$2$1;->val$cancellationSignal Landroid/os/CancellationSignal;
+	2       (00000008) iput-object          v3, v0, Landroid/support/v4/print/PrintHelperKitkat$2$1;->val$newPrintAttributes Landroid/print/PrintAttributes;
+	3       (0000000c) iput-object          v4, v0, Landroid/support/v4/print/PrintHelperKitkat$2$1;->val$oldPrintAttributes Landroid/print/PrintAttributes;
+	4       (00000010) iput-object          v5, v0, Landroid/support/v4/print/PrintHelperKitkat$2$1;->val$layoutResultCallback Landroid/print/PrintDocumentAdapter$LayoutResultCallback;
+	5       (00000014) invoke-direct        v0, Landroid/os/AsyncTask;-><init>()V
+	6       (0000001a) return-void          
+

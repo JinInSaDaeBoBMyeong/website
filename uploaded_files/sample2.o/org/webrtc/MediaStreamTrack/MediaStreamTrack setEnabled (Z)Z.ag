@@ -1,0 +1,14 @@
+# Lorg/webrtc/MediaStreamTrack;->setEnabled(Z)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:boolean
+#
+# - return:boolean
+
+setEnabled-BB@0x0 : 
+	0       (00000000) iget-wide            v0, v2, Lorg/webrtc/MediaStreamTrack;->nativeTrack J
+	1       (00000004) invoke-static        v0, v1, v3, Lorg/webrtc/MediaStreamTrack;->nativeSetEnabled(J Z)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

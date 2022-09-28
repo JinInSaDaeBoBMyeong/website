@@ -1,0 +1,12 @@
+# Landroid/support/v4/content/ModernAsyncTask;->init()V [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+init-BB@0x0 : 
+	0       (00000000) sget-object          v0, Landroid/support/v4/content/ModernAsyncTask;->sHandler Landroid/support/v4/content/ModernAsyncTask$InternalHandler;
+	1       (00000004) invoke-virtual       v0, Landroid/support/v4/content/ModernAsyncTask$InternalHandler;->getLooper()Landroid/os/Looper;
+	2       (0000000a) return-void          
+

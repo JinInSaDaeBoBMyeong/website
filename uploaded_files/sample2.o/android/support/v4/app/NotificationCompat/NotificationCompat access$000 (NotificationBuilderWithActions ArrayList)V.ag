@@ -1,0 +1,13 @@
+# Landroid/support/v4/app/NotificationCompat;->access$000(Landroid/support/v4/app/NotificationBuilderWithActions; Ljava/util/ArrayList;)V [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:android.support.v4.app.NotificationBuilderWithActions
+# - v1:java.util.ArrayList
+#
+# - return:void
+
+access$000-BB@0x0 : 
+	0       (00000000) invoke-static        v0, v1, Landroid/support/v4/app/NotificationCompat;->addActionsToBuilder(Landroid/support/v4/app/NotificationBuilderWithActions; Ljava/util/ArrayList;)V
+	1       (00000006) return-void          
+

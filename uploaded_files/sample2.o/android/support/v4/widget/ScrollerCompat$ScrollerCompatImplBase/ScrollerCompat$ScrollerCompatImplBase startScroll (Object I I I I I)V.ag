@@ -1,0 +1,24 @@
+# Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplBase;->startScroll(Ljava/lang/Object; I I I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.Object
+# - v8:int
+# - v9:int
+# - v10:int
+# - v11:int
+# - v12:int
+#
+# - return:void
+
+startScroll-BB@0x0 : 
+	0       (00000000) move-object          v0, v7
+	1       (00000002) check-cast           v0, Landroid/widget/Scroller;
+	2       (00000006) move                 v1, v8
+	3       (00000008) move                 v2, v9
+	4       (0000000a) move                 v3, v10
+	5       (0000000c) move                 v4, v11
+	6       (0000000e) move                 v5, v12
+	7       (00000010) invoke-virtual/range v0 ... v5, Landroid/widget/Scroller;->startScroll(I I I I I)V
+	8       (00000016) return-void          
+

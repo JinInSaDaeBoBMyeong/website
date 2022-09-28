@@ -1,0 +1,13 @@
+# Lorg/webrtc/VideoFrame;->getHeight()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getHeight-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/VideoFrame;->buffer Lorg/webrtc/VideoFrame$Buffer;
+	1       (00000004) invoke-interface     v0, Lorg/webrtc/VideoFrame$Buffer;->getHeight()I
+	2       (0000000a) move-result          v0
+	3       (0000000c) return               v0
+

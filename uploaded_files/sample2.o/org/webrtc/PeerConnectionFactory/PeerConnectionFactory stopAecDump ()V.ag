@@ -1,0 +1,12 @@
+# Lorg/webrtc/PeerConnectionFactory;->stopAecDump()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+stopAecDump-BB@0x0 : 
+	0       (00000000) iget-wide            v0, v2, Lorg/webrtc/PeerConnectionFactory;->nativeFactory J
+	1       (00000004) invoke-static        v0, v1, Lorg/webrtc/PeerConnectionFactory;->nativeStopAecDump(J)V
+	2       (0000000a) return-void          
+

@@ -1,0 +1,13 @@
+# Lorg/webrtc/CameraCapturer;->access$102(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraCapturer$SwitchState;)Lorg/webrtc/CameraCapturer$SwitchState; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:org.webrtc.CameraCapturer
+# - v1:org.webrtc.CameraCapturer$SwitchState
+#
+# - return:org.webrtc.CameraCapturer$SwitchState
+
+access$102-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Lorg/webrtc/CameraCapturer;->switchState Lorg/webrtc/CameraCapturer$SwitchState;
+	1       (00000004) return-object        v1
+

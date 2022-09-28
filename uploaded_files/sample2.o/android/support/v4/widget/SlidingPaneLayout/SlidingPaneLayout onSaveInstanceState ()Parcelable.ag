@@ -1,0 +1,28 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->onSaveInstanceState()Landroid/os/Parcelable; [access_flags=protected]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:android.os.Parcelable
+
+onSaveInstanceState-BB@0x0 : [ onSaveInstanceState-BB@0x1e onSaveInstanceState-BB@0x2c ]
+	0       (00000000) invoke-super         v3, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
+	1       (00000006) move-result-object   v1
+	2       (00000008) new-instance         v0, Landroid/support/v4/widget/SlidingPaneLayout$SavedState;
+	3       (0000000c) invoke-direct        v0, v1, Landroid/support/v4/widget/SlidingPaneLayout$SavedState;-><init>(Landroid/os/Parcelable;)V
+	4       (00000012) invoke-virtual       v3, Landroid/support/v4/widget/SlidingPaneLayout;->isSlideable()Z
+	5       (00000018) move-result          v2
+	6       (0000001a) if-eqz               v2, +9
+
+onSaveInstanceState-BB@0x1e : [ onSaveInstanceState-BB@0x26 ]
+	7       (0000001e) invoke-virtual       v3, Landroid/support/v4/widget/SlidingPaneLayout;->isOpen()Z
+	8       (00000024) move-result          v2
+
+onSaveInstanceState-BB@0x26 : 
+	9       (00000026) iput-boolean         v2, v0, Landroid/support/v4/widget/SlidingPaneLayout$SavedState;->isOpen Z
+	10      (0000002a) return-object        v0
+
+onSaveInstanceState-BB@0x2c : [ onSaveInstanceState-BB@0x26 ]
+	11      (0000002c) iget-boolean         v2, v3, Landroid/support/v4/widget/SlidingPaneLayout;->mPreservedOpenState Z
+	12      (00000030) goto                 -5
+

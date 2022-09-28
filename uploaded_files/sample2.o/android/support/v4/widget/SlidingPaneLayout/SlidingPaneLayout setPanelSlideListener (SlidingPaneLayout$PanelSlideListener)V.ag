@@ -1,0 +1,12 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->setPanelSlideListener(Landroid/support/v4/widget/SlidingPaneLayout$PanelSlideListener;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.widget.SlidingPaneLayout$PanelSlideListener
+#
+# - return:void
+
+setPanelSlideListener-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroid/support/v4/widget/SlidingPaneLayout;->mPanelSlideListener Landroid/support/v4/widget/SlidingPaneLayout$PanelSlideListener;
+	1       (00000004) return-void          
+

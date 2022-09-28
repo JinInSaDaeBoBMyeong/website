@@ -1,0 +1,56 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioEffects;->setNS(Z)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:boolean
+#
+# - return:boolean
+
+setNS-BB@0x0 : [ setNS-BB@0x4a setNS-BB@0x5e ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) const-string         v1, 'WebRtcAudioEffects'
+	2       (00000006) new-instance         v2, Ljava/lang/StringBuilder;
+	3       (0000000a) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	4       (00000010) const-string         v3, 'setNS('
+	5       (00000014) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001a) move-result-object   v2
+	7       (0000001c) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	8       (00000022) move-result-object   v2
+	9       (00000024) const-string         v3, ')'
+	10      (00000028) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	11      (0000002e) move-result-object   v2
+	12      (00000030) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	13      (00000036) move-result-object   v2
+	14      (00000038) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	15      (0000003e) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioEffects;->canUseNoiseSuppressor()Z
+	16      (00000044) move-result          v1
+	17      (00000046) if-nez               v1, +c
+
+setNS-BB@0x4a : [ setNS-BB@0x5c ]
+	18      (0000004a) const-string         v1, 'WebRtcAudioEffects'
+	19      (0000004e) const-string         v2, 'Platform NS is not supported'
+	20      (00000052) invoke-static        v1, v2, Lorg/webrtc/Logging;->w(Ljava/lang/String; Ljava/lang/String;)V
+	21      (00000058) iput-boolean         v0, v4, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->shouldEnableNs Z
+
+setNS-BB@0x5c : 
+	22      (0000005c) return               v0
+
+setNS-BB@0x5e : [ setNS-BB@0x66 setNS-BB@0x7e ]
+	23      (0000005e) iget-object          v1, v4, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->ns Landroid/media/audiofx/NoiseSuppressor;
+	24      (00000062) if-eqz               v1, +e
+
+setNS-BB@0x66 : [ setNS-BB@0x6e setNS-BB@0x7e ]
+	25      (00000066) iget-boolean         v1, v4, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->shouldEnableNs Z
+	26      (0000006a) if-eq                v5, v1, +a
+
+setNS-BB@0x6e : [ setNS-BB@0x5c ]
+	27      (0000006e) const-string         v1, 'WebRtcAudioEffects'
+	28      (00000072) const-string         v2, "Platform NS state can't be modified while recording"
+	29      (00000076) invoke-static        v1, v2, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	30      (0000007c) goto                 -10
+
+setNS-BB@0x7e : [ setNS-BB@0x5c ]
+	31      (0000007e) iput-boolean         v5, v4, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->shouldEnableNs Z
+	32      (00000082) const/4              v0, 1
+	33      (00000084) goto                 -14
+

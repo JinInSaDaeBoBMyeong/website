@@ -1,0 +1,32 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioEffects;->release()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+release-BB@0x0 : [ release-BB@0x18 release-BB@0x26 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) const-string         v0, 'WebRtcAudioEffects'
+	2       (00000006) const-string         v1, 'release'
+	3       (0000000a) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	4       (00000010) iget-object          v0, v3, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->aec Landroid/media/audiofx/AcousticEchoCanceler;
+	5       (00000014) if-eqz               v0, +9
+
+release-BB@0x18 : [ release-BB@0x26 ]
+	6       (00000018) iget-object          v0, v3, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->aec Landroid/media/audiofx/AcousticEchoCanceler;
+	7       (0000001c) invoke-virtual       v0, Landroid/media/audiofx/AcousticEchoCanceler;->release()V
+	8       (00000022) iput-object          v2, v3, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->aec Landroid/media/audiofx/AcousticEchoCanceler;
+
+release-BB@0x26 : [ release-BB@0x2e release-BB@0x3c ]
+	9       (00000026) iget-object          v0, v3, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->ns Landroid/media/audiofx/NoiseSuppressor;
+	10      (0000002a) if-eqz               v0, +9
+
+release-BB@0x2e : [ release-BB@0x3c ]
+	11      (0000002e) iget-object          v0, v3, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->ns Landroid/media/audiofx/NoiseSuppressor;
+	12      (00000032) invoke-virtual       v0, Landroid/media/audiofx/NoiseSuppressor;->release()V
+	13      (00000038) iput-object          v2, v3, Lorg/webrtc/voiceengine/WebRtcAudioEffects;->ns Landroid/media/audiofx/NoiseSuppressor;
+
+release-BB@0x3c : 
+	14      (0000003c) return-void          
+

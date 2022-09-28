@@ -1,0 +1,21 @@
+# Landroid/support/v4/text/BidiFormatter;->isRtlLocale(Ljava/util/Locale;)Z [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.util.Locale
+#
+# - return:boolean
+
+isRtlLocale-BB@0x0 : [ isRtlLocale-BB@0xe isRtlLocale-BB@0x10 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) invoke-static        v2, Landroid/support/v4/text/TextUtilsCompat;->getLayoutDirectionFromLocale(Ljava/util/Locale;)I
+	2       (00000008) move-result          v1
+	3       (0000000a) if-ne                v1, v0, +3
+
+isRtlLocale-BB@0xe : 
+	4       (0000000e) return               v0
+
+isRtlLocale-BB@0x10 : [ isRtlLocale-BB@0xe ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -2
+

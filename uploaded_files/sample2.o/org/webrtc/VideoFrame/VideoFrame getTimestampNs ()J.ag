@@ -1,0 +1,11 @@
+# Lorg/webrtc/VideoFrame;->getTimestampNs()J [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:long
+
+getTimestampNs-BB@0x0 : 
+	0       (00000000) iget-wide            v0, v2, Lorg/webrtc/VideoFrame;->timestampNs J
+	1       (00000004) return-wide          v0
+

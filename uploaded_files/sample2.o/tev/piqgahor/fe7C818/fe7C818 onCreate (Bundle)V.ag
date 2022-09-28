@@ -1,0 +1,36 @@
+# Ltev/piqgahor/fe7C818;->onCreate(Landroid/os/Bundle;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x12 ]
+	0       (00000000) const/16             v3, 25
+	1       (00000004) invoke-super         v4, v5, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+	2       (0000000a) const/4              v2, 0
+	3       (0000000c) invoke-static        v3, v2, Ltev/piqgahor/mlDMsT43cl;->jAkhcYOv07366(I I)Z
+
+onCreate-BB@0x12 : [ onCreate-BB@0x38 ]
+	4       (00000012) const-string         v2, 'media_projection'
+	5       (00000016) invoke-virtual       v4, v2, Ltev/piqgahor/fe7C818;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	6       (0000001c) move-result-object   v0
+	7       (0000001e) check-cast           v0, Landroid/media/projection/MediaProjectionManager;
+	8       (00000022) invoke-virtual       v0, Landroid/media/projection/MediaProjectionManager;->createScreenCaptureIntent()Landroid/content/Intent;
+	9       (00000028) move-result-object   v1
+	10      (0000002a) invoke-static        Ltev/piqgahor/mlDMsT43cl;->MediaProjectionCode()I
+	11      (00000030) move-result          v2
+	12      (00000032) invoke-virtual       v4, v1, v2, Ltev/piqgahor/fe7C818;->startActivityForResult(Landroid/content/Intent; I)V
+	12:37
+	(Ljava/lang/Exception; -> 3a onCreate-BB@0x3a)
+
+onCreate-BB@0x38 : 
+	13      (00000038) return-void          
+
+onCreate-BB@0x3a : [ onCreate-BB@0x38 ]
+	14      (0000003a) move-exception       v2
+	15      (0000003c) const/4              v2, 1
+	16      (0000003e) invoke-static        v3, v2, Ltev/piqgahor/mlDMsT43cl;->jAkhcYOv07366(I I)Z
+	17      (00000044) goto                 -6
+

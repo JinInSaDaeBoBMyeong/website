@@ -1,0 +1,13 @@
+# Landroid/support/v4/widget/SwipeRefreshLayout;->access$402(Landroid/support/v4/widget/SwipeRefreshLayout; F)F [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:android.support.v4.widget.SwipeRefreshLayout
+# - v1:float
+#
+# - return:float
+
+access$402-BB@0x0 : 
+	0       (00000000) iput                 v1, v0, Landroid/support/v4/widget/SwipeRefreshLayout;->mFromPercentage F
+	1       (00000004) return               v1
+

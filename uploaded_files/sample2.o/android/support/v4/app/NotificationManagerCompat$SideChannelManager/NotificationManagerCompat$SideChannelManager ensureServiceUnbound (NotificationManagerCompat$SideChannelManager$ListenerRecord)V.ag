@@ -1,0 +1,23 @@
+# Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->ensureServiceUnbound(Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.v4.app.NotificationManagerCompat$SideChannelManager$ListenerRecord
+#
+# - return:void
+
+ensureServiceUnbound-BB@0x0 : [ ensureServiceUnbound-BB@0x8 ensureServiceUnbound-BB@0x18 ]
+	0       (00000000) iget-boolean         v0, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->bound Z
+	1       (00000004) if-eqz               v0, +a
+
+ensureServiceUnbound-BB@0x8 : [ ensureServiceUnbound-BB@0x18 ]
+	2       (00000008) iget-object          v0, v1, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->mContext Landroid/content/Context;
+	3       (0000000c) invoke-virtual       v0, v1, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
+	4       (00000012) const/4              v0, 0
+	5       (00000014) iput-boolean         v0, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->bound Z
+
+ensureServiceUnbound-BB@0x18 : 
+	6       (00000018) const/4              v0, 0
+	7       (0000001a) iput-object          v0, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->service Landroid/support/v4/app/INotificationSideChannel;
+	8       (0000001e) return-void          
+

@@ -1,0 +1,13 @@
+# Landroid/support/v4/util/ArrayMap;->removeAll(Ljava/util/Collection;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.util.Collection
+#
+# - return:boolean
+
+removeAll-BB@0x0 : 
+	0       (00000000) invoke-static        v1, v2, Landroid/support/v4/util/MapCollections;->removeAllHelper(Ljava/util/Map; Ljava/util/Collection;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) return               v0
+

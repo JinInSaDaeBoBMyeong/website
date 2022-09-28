@@ -1,0 +1,14 @@
+# Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplBase;->notifyHorizontalEdgeReached(Ljava/lang/Object; I I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+# - v2:int
+# - v3:int
+# - v4:int
+#
+# - return:void
+
+notifyHorizontalEdgeReached-BB@0x0 : 
+	0       (00000000) return-void          
+

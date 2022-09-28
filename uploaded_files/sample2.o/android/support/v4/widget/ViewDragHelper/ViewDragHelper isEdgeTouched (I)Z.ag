@@ -1,0 +1,35 @@
+# Landroid/support/v4/widget/ViewDragHelper;->isEdgeTouched(I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:boolean
+
+isEdgeTouched-BB@0x0 : [ isEdgeTouched-BB@0x8 ]
+	0       (00000000) iget-object          v2, v3, Landroid/support/v4/widget/ViewDragHelper;->mInitialEdgesTouched [I
+	1       (00000004) array-length         v0, v2
+	2       (00000006) const/4              v1, 0
+
+isEdgeTouched-BB@0x8 : [ isEdgeTouched-BB@0xc isEdgeTouched-BB@0x22 ]
+	3       (00000008) if-ge                v1, v0, +d
+
+isEdgeTouched-BB@0xc : [ isEdgeTouched-BB@0x18 isEdgeTouched-BB@0x1c ]
+	4       (0000000c) invoke-virtual       v3, v4, v1, Landroid/support/v4/widget/ViewDragHelper;->isEdgeTouched(I I)Z
+	5       (00000012) move-result          v2
+	6       (00000014) if-eqz               v2, +4
+
+isEdgeTouched-BB@0x18 : [ isEdgeTouched-BB@0x1a ]
+	7       (00000018) const/4              v2, 1
+
+isEdgeTouched-BB@0x1a : 
+	8       (0000001a) return               v2
+
+isEdgeTouched-BB@0x1c : [ isEdgeTouched-BB@0x8 ]
+	9       (0000001c) add-int/lit8         v1, v1, 1
+	10      (00000020) goto                 -c
+
+isEdgeTouched-BB@0x22 : [ isEdgeTouched-BB@0x1a ]
+	11      (00000022) const/4              v2, 0
+	12      (00000024) goto                 -5
+

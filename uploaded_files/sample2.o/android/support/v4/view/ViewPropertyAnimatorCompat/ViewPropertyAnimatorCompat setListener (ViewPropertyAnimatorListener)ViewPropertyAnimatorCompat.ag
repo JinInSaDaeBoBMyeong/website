@@ -1,0 +1,22 @@
+# Landroid/support/v4/view/ViewPropertyAnimatorCompat;->setListener(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.v4.view.ViewPropertyAnimatorListener
+#
+# - return:android.support.v4.view.ViewPropertyAnimatorCompat
+
+setListener-BB@0x0 : [ setListener-BB@0x14 setListener-BB@0x1e ]
+	0       (00000000) iget-object          v1, v2, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->mView Ljava/lang/ref/WeakReference;
+	1       (00000004) invoke-virtual       v1, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Landroid/view/View;
+	4       (00000010) if-eqz               v0, +7
+
+setListener-BB@0x14 : [ setListener-BB@0x1e ]
+	5       (00000014) sget-object          v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->IMPL Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+	6       (00000018) invoke-interface     v1, v0, v3, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->setListener(Landroid/view/View; Landroid/support/v4/view/ViewPropertyAnimatorListener;)V
+
+setListener-BB@0x1e : 
+	7       (0000001e) return-object        v2
+

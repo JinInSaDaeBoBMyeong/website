@@ -1,0 +1,26 @@
+# Landroid/support/v4/app/FragmentManagerImpl;->attachActivity(Landroid/support/v4/app/FragmentActivity; Landroid/support/v4/app/FragmentContainer; Landroid/support/v4/app/Fragment;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.v4.app.FragmentActivity
+# - v4:android.support.v4.app.FragmentContainer
+# - v5:android.support.v4.app.Fragment
+#
+# - return:void
+
+attachActivity-BB@0x0 : [ attachActivity-BB@0x8 attachActivity-BB@0x18 ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/app/FragmentManagerImpl;->mActivity Landroid/support/v4/app/FragmentActivity;
+	1       (00000004) if-eqz               v0, +a
+
+attachActivity-BB@0x8 : 
+	2       (00000008) new-instance         v0, Ljava/lang/IllegalStateException;
+	3       (0000000c) const-string         v1, 'Already attached'
+	4       (00000010) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	5       (00000016) throw                v0
+
+attachActivity-BB@0x18 : 
+	6       (00000018) iput-object          v3, v2, Landroid/support/v4/app/FragmentManagerImpl;->mActivity Landroid/support/v4/app/FragmentActivity;
+	7       (0000001c) iput-object          v4, v2, Landroid/support/v4/app/FragmentManagerImpl;->mContainer Landroid/support/v4/app/FragmentContainer;
+	8       (00000020) iput-object          v5, v2, Landroid/support/v4/app/FragmentManagerImpl;->mParent Landroid/support/v4/app/Fragment;
+	9       (00000024) return-void          
+

@@ -1,0 +1,13 @@
+# Landroid/support/v4/text/BidiFormatter;->access$000(Ljava/util/Locale;)Z [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.util.Locale
+#
+# - return:boolean
+
+access$000-BB@0x0 : 
+	0       (00000000) invoke-static        v1, Landroid/support/v4/text/BidiFormatter;->isRtlLocale(Ljava/util/Locale;)Z
+	1       (00000006) move-result          v0
+	2       (00000008) return               v0
+

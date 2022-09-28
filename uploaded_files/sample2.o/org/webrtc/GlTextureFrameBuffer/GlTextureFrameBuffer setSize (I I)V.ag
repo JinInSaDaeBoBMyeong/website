@@ -1,0 +1,94 @@
+# Lorg/webrtc/GlTextureFrameBuffer;->setSize(I I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:int
+# - v13:int
+#
+# - return:void
+
+setSize-BB@0x0 : [ setSize-BB@0x10 setSize-BB@0x14 ]
+	0       (00000000) const                v10, 36160 # [5.067095246998539e-41]
+	1       (00000006) const/16             v0, 3553
+	2       (0000000a) const/4              v1, 0
+	3       (0000000c) if-eqz               v12, +4
+
+setSize-BB@0x10 : [ setSize-BB@0x14 setSize-BB@0x5a ]
+	4       (00000010) if-nez               v13, +25
+
+setSize-BB@0x14 : 
+	5       (00000014) new-instance         v0, Ljava/lang/IllegalArgumentException;
+	6       (00000018) new-instance         v1, Ljava/lang/StringBuilder;
+	7       (0000001c) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	8       (00000022) const-string         v2, 'Invalid size: '
+	9       (00000026) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v1
+	11      (0000002e) invoke-virtual       v1, v12, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v1
+	13      (00000036) const-string         v2, 'x'
+	14      (0000003a) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	15      (00000040) move-result-object   v1
+	16      (00000042) invoke-virtual       v1, v13, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	17      (00000048) move-result-object   v1
+	18      (0000004a) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	19      (00000050) move-result-object   v1
+	20      (00000052) invoke-direct        v0, v1, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	21      (00000058) throw                v0
+
+setSize-BB@0x5a : [ setSize-BB@0x62 setSize-BB@0x6c ]
+	22      (0000005a) iget                 v2, v11, Lorg/webrtc/GlTextureFrameBuffer;->width I
+	23      (0000005e) if-ne                v12, v2, +7
+
+setSize-BB@0x62 : [ setSize-BB@0x6a setSize-BB@0x6c ]
+	24      (00000062) iget                 v2, v11, Lorg/webrtc/GlTextureFrameBuffer;->height I
+	25      (00000066) if-ne                v13, v2, +3
+
+setSize-BB@0x6a : 
+	26      (0000006a) return-void          
+
+setSize-BB@0x6c : [ setSize-BB@0xe0 setSize-BB@0x112 ]
+	27      (0000006c) iput                 v12, v11, Lorg/webrtc/GlTextureFrameBuffer;->width I
+	28      (00000070) iput                 v13, v11, Lorg/webrtc/GlTextureFrameBuffer;->height I
+	29      (00000074) const                v2, 33984 # [4.762172701161458e-41]
+	30      (0000007a) invoke-static        v2, Landroid/opengl/GLES20;->glActiveTexture(I)V
+	31      (00000080) iget                 v2, v11, Lorg/webrtc/GlTextureFrameBuffer;->textureId I
+	32      (00000084) invoke-static        v0, v2, Landroid/opengl/GLES20;->glBindTexture(I I)V
+	33      (0000008a) iget                 v2, v11, Lorg/webrtc/GlTextureFrameBuffer;->pixelFormat I
+	34      (0000008e) iget                 v6, v11, Lorg/webrtc/GlTextureFrameBuffer;->pixelFormat I
+	35      (00000092) const/16             v7, 5121
+	36      (00000096) const/4              v8, 0
+	37      (00000098) move                 v3, v12
+	38      (0000009a) move                 v4, v13
+	39      (0000009c) move                 v5, v1
+	40      (0000009e) invoke-static/range  v0 ... v8, Landroid/opengl/GLES20;->glTexImage2D(I I I I I I I I Ljava/nio/Buffer;)V
+	41      (000000a4) invoke-static        v0, v1, Landroid/opengl/GLES20;->glBindTexture(I I)V
+	42      (000000aa) const-string         v2, 'GlTextureFrameBuffer setSize'
+	43      (000000ae) invoke-static        v2, Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V
+	44      (000000b4) iget                 v2, v11, Lorg/webrtc/GlTextureFrameBuffer;->frameBufferId I
+	45      (000000b8) invoke-static        v10, v2, Landroid/opengl/GLES20;->glBindFramebuffer(I I)V
+	46      (000000be) const                v2, 36064 # [5.05364278174102e-41]
+	47      (000000c4) iget                 v3, v11, Lorg/webrtc/GlTextureFrameBuffer;->textureId I
+	48      (000000c8) invoke-static        v10, v2, v0, v3, v1, Landroid/opengl/GLES20;->glFramebufferTexture2D(I I I I I)V
+	49      (000000ce) invoke-static        v10, Landroid/opengl/GLES20;->glCheckFramebufferStatus(I)I
+	50      (000000d4) move-result          v9
+	51      (000000d6) const                v0, 36053 # [5.052101353430263e-41]
+	52      (000000dc) if-eq                v9, v0, +1b
+
+setSize-BB@0xe0 : 
+	53      (000000e0) new-instance         v0, Ljava/lang/IllegalStateException;
+	54      (000000e4) new-instance         v1, Ljava/lang/StringBuilder;
+	55      (000000e8) invoke-direct        v1, Ljava/lang/StringBuilder;-><init>()V
+	56      (000000ee) const-string         v2, 'Framebuffer not complete, status: '
+	57      (000000f2) invoke-virtual       v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	58      (000000f8) move-result-object   v1
+	59      (000000fa) invoke-virtual       v1, v9, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	60      (00000100) move-result-object   v1
+	61      (00000102) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	62      (00000108) move-result-object   v1
+	63      (0000010a) invoke-direct        v0, v1, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+	64      (00000110) throw                v0
+
+setSize-BB@0x112 : [ setSize-BB@0x6a ]
+	65      (00000112) invoke-static        v10, v1, Landroid/opengl/GLES20;->glBindFramebuffer(I I)V
+	66      (00000118) goto                 -57
+

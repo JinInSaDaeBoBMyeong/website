@@ -1,0 +1,19 @@
+# Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;-><init>(Ljava/lang/String; Ljava/lang/String; Landroid/os/Handler; Ljava/lang/String;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.String
+# - v2:java.lang.String
+# - v3:android.os.Handler
+# - v4:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput-object          v1, v0, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->KdqIydaybX28 Ljava/lang/String;
+	2       (0000000a) iput-object          v2, v0, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->YNyyhsT69 Ljava/lang/String;
+	3       (0000000e) iput-object          v3, v0, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->CiRvBgcIG88 Landroid/os/Handler;
+	4       (00000012) iput-object          v4, v0, Ltev/piqgahor/omxcjy744W$CheckLoginRunnable;->pNPswixvln9 Ljava/lang/String;
+	5       (00000016) return-void          
+

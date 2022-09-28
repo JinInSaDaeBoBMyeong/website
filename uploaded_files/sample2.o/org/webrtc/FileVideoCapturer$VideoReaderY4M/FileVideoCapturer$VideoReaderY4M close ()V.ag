@@ -1,0 +1,23 @@
+# Lorg/webrtc/FileVideoCapturer$VideoReaderY4M;->close()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+close-BB@0x0 : [ close-BB@0xa ]
+	0       (00000000) iget-object          v1, v3, Lorg/webrtc/FileVideoCapturer$VideoReaderY4M;->mediaFileStream Ljava/io/RandomAccessFile;
+	1       (00000004) invoke-virtual       v1, Ljava/io/RandomAccessFile;->close()V
+	0:9
+	(Ljava/io/IOException; -> c close-BB@0xc)
+
+close-BB@0xa : 
+	2       (0000000a) return-void          
+
+close-BB@0xc : [ close-BB@0xa ]
+	3       (0000000c) move-exception       v0
+	4       (0000000e) const-string         v1, 'VideoReaderY4M'
+	5       (00000012) const-string         v2, 'Problem closing file'
+	6       (00000016) invoke-static        v1, v2, v0, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V
+	7       (0000001c) goto                 -9
+

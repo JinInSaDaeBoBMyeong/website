@@ -1,0 +1,24 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioTrack;->isVolumeFixed()Z [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isVolumeFixed-BB@0x0 : [ isVolumeFixed-BB@0xc isVolumeFixed-BB@0x10 ]
+	0       (00000000) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->runningOnLollipopOrHigher()Z
+	1       (00000006) move-result          v0
+	2       (00000008) if-nez               v0, +4
+
+isVolumeFixed-BB@0xc : [ isVolumeFixed-BB@0xe ]
+	3       (0000000c) const/4              v0, 0
+
+isVolumeFixed-BB@0xe : 
+	4       (0000000e) return               v0
+
+isVolumeFixed-BB@0x10 : [ isVolumeFixed-BB@0xe ]
+	5       (00000010) iget-object          v0, v1, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->audioManager Landroid/media/AudioManager;
+	6       (00000014) invoke-virtual       v0, Landroid/media/AudioManager;->isVolumeFixed()Z
+	7       (0000001a) move-result          v0
+	8       (0000001c) goto                 -7
+

@@ -1,0 +1,57 @@
+# Landroid/support/v4/view/ViewPager;->canScrollHorizontally(I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+#
+# - return:boolean
+
+canScrollHorizontally-BB@0x0 : [ canScrollHorizontally-BB@0xc canScrollHorizontally-BB@0xe ]
+	0       (00000000) const/4              v2, 1
+	1       (00000002) const/4              v3, 0
+	2       (00000004) iget-object          v4, v6, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	3       (00000008) if-nez               v4, +3
+
+canScrollHorizontally-BB@0xc : 
+	4       (0000000c) return               v3
+
+canScrollHorizontally-BB@0xe : [ canScrollHorizontally-BB@0x22 canScrollHorizontally-BB@0x38 ]
+	5       (0000000e) invoke-direct        v6, Landroid/support/v4/view/ViewPager;->getClientWidth()I
+	6       (00000014) move-result          v1
+	7       (00000016) invoke-virtual       v6, Landroid/support/v4/view/ViewPager;->getScrollX()I
+	8       (0000001c) move-result          v0
+	9       (0000001e) if-gez               v7, +d
+
+canScrollHorizontally-BB@0x22 : [ canScrollHorizontally-BB@0x30 canScrollHorizontally-BB@0x34 ]
+	10      (00000022) int-to-float         v4, v1
+	11      (00000024) iget                 v5, v6, Landroid/support/v4/view/ViewPager;->mFirstOffset F
+	12      (00000028) mul-float/2addr      v4, v5
+	13      (0000002a) float-to-int         v4, v4
+	14      (0000002c) if-le                v0, v4, +4
+
+canScrollHorizontally-BB@0x30 : [ canScrollHorizontally-BB@0xc ]
+	15      (00000030) move                 v3, v2
+	16      (00000032) goto                 -13
+
+canScrollHorizontally-BB@0x34 : [ canScrollHorizontally-BB@0x30 ]
+	17      (00000034) move                 v2, v3
+	18      (00000036) goto                 -3
+
+canScrollHorizontally-BB@0x38 : [ canScrollHorizontally-BB@0x3c canScrollHorizontally-BB@0xc ]
+	19      (00000038) if-lez               v7, -16
+
+canScrollHorizontally-BB@0x3c : [ canScrollHorizontally-BB@0x4a canScrollHorizontally-BB@0x4e ]
+	20      (0000003c) int-to-float         v4, v1
+	21      (0000003e) iget                 v5, v6, Landroid/support/v4/view/ViewPager;->mLastOffset F
+	22      (00000042) mul-float/2addr      v4, v5
+	23      (00000044) float-to-int         v4, v4
+	24      (00000046) if-ge                v0, v4, +4
+
+canScrollHorizontally-BB@0x4a : [ canScrollHorizontally-BB@0xc ]
+	25      (0000004a) move                 v3, v2
+	26      (0000004c) goto                 -20
+
+canScrollHorizontally-BB@0x4e : [ canScrollHorizontally-BB@0x4a ]
+	27      (0000004e) move                 v2, v3
+	28      (00000050) goto                 -3
+

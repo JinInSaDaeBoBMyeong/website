@@ -1,0 +1,35 @@
+# Landroid/support/v4/app/BundleUtil;->getBundleArrayFromBundle(Landroid/os/Bundle; Ljava/lang/String;)[Landroid/os/Bundle; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.os.Bundle
+# - v5:java.lang.String
+#
+# - return:android.os.Bundle[]
+
+getBundleArrayFromBundle-BB@0x0 : [ getBundleArrayFromBundle-BB@0x10 getBundleArrayFromBundle-BB@0x14 ]
+	0       (00000000) invoke-virtual       v4, v5, Landroid/os/Bundle;->getParcelableArray(Ljava/lang/String;)[Landroid/os/Parcelable;
+	1       (00000006) move-result-object   v0
+	2       (00000008) instance-of          v2, v0, [Landroid/os/Bundle;
+	3       (0000000c) if-nez               v2, +4
+
+getBundleArrayFromBundle-BB@0x10 : [ getBundleArrayFromBundle-BB@0x14 getBundleArrayFromBundle-BB@0x20 ]
+	4       (00000010) if-nez               v0, +8
+
+getBundleArrayFromBundle-BB@0x14 : [ getBundleArrayFromBundle-BB@0x1e ]
+	5       (00000014) check-cast           v0, [Landroid/os/Bundle;
+	6       (00000018) check-cast           v0, [Landroid/os/Bundle;
+	7       (0000001c) move-object          v1, v0
+
+getBundleArrayFromBundle-BB@0x1e : 
+	8       (0000001e) return-object        v1
+
+getBundleArrayFromBundle-BB@0x20 : [ getBundleArrayFromBundle-BB@0x1e ]
+	9       (00000020) array-length         v2, v0
+	10      (00000022) const-class          v3, [Landroid/os/Bundle;
+	11      (00000026) invoke-static        v0, v2, v3, Ljava/util/Arrays;->copyOf([Ljava/lang/Object; I Ljava/lang/Class;)[Ljava/lang/Object;
+	12      (0000002c) move-result-object   v1
+	13      (0000002e) check-cast           v1, [Landroid/os/Bundle;
+	14      (00000032) invoke-virtual       v4, v5, v1, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String; [Landroid/os/Parcelable;)V
+	15      (00000038) goto                 -d
+

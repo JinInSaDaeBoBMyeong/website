@@ -1,0 +1,12 @@
+# Landroid/support/v4/view/MenuItemCompat$HoneycombMenuVersionImpl;->setOnActionExpandListener(Landroid/view/MenuItem; Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;)Landroid/view/MenuItem; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.MenuItem
+# - v2:android.support.v4.view.MenuItemCompat$OnActionExpandListener
+#
+# - return:android.view.MenuItem
+
+setOnActionExpandListener-BB@0x0 : 
+	0       (00000000) return-object        v1
+

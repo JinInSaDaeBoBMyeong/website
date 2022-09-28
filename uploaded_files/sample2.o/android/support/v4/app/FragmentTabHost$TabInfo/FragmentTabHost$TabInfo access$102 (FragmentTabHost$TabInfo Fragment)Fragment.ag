@@ -1,0 +1,13 @@
+# Landroid/support/v4/app/FragmentTabHost$TabInfo;->access$102(Landroid/support/v4/app/FragmentTabHost$TabInfo; Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/Fragment; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:android.support.v4.app.FragmentTabHost$TabInfo
+# - v1:android.support.v4.app.Fragment
+#
+# - return:android.support.v4.app.Fragment
+
+access$102-BB@0x0 : 
+	0       (00000000) iput-object          v1, v0, Landroid/support/v4/app/FragmentTabHost$TabInfo;->fragment Landroid/support/v4/app/Fragment;
+	1       (00000004) return-object        v1
+

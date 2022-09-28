@@ -1,0 +1,17 @@
+# Landroid/support/v4/text/BidiFormatter$Builder;->initialize(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+initialize-BB@0x0 : 
+	0       (00000000) iput-boolean         v2, v1, Landroid/support/v4/text/BidiFormatter$Builder;->mIsRtlContext Z
+	1       (00000004) invoke-static        Landroid/support/v4/text/BidiFormatter;->access$100()Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) iput-object          v0, v1, Landroid/support/v4/text/BidiFormatter$Builder;->mTextDirectionHeuristicCompat Landroid/support/v4/text/TextDirectionHeuristicCompat;
+	4       (00000010) const/4              v0, 2
+	5       (00000012) iput                 v0, v1, Landroid/support/v4/text/BidiFormatter$Builder;->mFlags I
+	6       (00000016) return-void          
+

@@ -1,0 +1,11 @@
+# Lorg/webrtc/Camera2Session;->access$1800()Lorg/webrtc/Histogram; [access_flags=static synthetic]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:org.webrtc.Histogram
+
+access$1800-BB@0x0 : 
+	0       (00000000) sget-object          v0, Lorg/webrtc/Camera2Session;->camera2StartTimeMsHistogram Lorg/webrtc/Histogram;
+	1       (00000004) return-object        v0
+

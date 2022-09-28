@@ -1,0 +1,12 @@
+# Landroid/support/v4/app/FragmentTabHost$SavedState;-><init>(Landroid/os/Parcelable;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.os.Parcelable
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, v1, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
+	1       (00000006) return-void          
+

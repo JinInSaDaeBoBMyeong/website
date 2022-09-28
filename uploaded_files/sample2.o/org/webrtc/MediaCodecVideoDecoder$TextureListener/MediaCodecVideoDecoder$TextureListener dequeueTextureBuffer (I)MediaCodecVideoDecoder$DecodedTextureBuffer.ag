@@ -1,0 +1,59 @@
+# Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->dequeueTextureBuffer(I)Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:int
+#
+# - return:org.webrtc.MediaCodecVideoDecoder$DecodedTextureBuffer
+
+dequeueTextureBuffer-BB@0x0 : [ dequeueTextureBuffer-BB@0x6 ]
+	0       (00000000) iget-object          v3, v6, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->newFrameLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v3
+
+dequeueTextureBuffer-BB@0x6 : [ dequeueTextureBuffer-BB@0xe dequeueTextureBuffer-BB@0x2a ]
+	2       (00000006) iget-object          v2, v6, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->renderedBuffer Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;
+	3       (0000000a) if-nez               v2, +10
+	6:17
+	(Ljava/lang/Throwable; -> 4a dequeueTextureBuffer-BB@0x4a)
+
+dequeueTextureBuffer-BB@0xe : [ dequeueTextureBuffer-BB@0x12 dequeueTextureBuffer-BB@0x2a ]
+	4       (0000000e) if-lez               v7, +e
+	6:17
+	(Ljava/lang/Throwable; -> 4a dequeueTextureBuffer-BB@0x4a)
+
+dequeueTextureBuffer-BB@0x12 : [ dequeueTextureBuffer-BB@0x1e dequeueTextureBuffer-BB@0x2a ]
+	5       (00000012) invoke-virtual       v6, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->isWaitingForTexture()Z
+	6       (00000018) move-result          v2
+	7       (0000001a) if-eqz               v2, +8
+
+dequeueTextureBuffer-BB@0x1e : [ dequeueTextureBuffer-BB@0x2a ]
+	8       (0000001e) iget-object          v2, v6, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->newFrameLock Ljava/lang/Object;
+	9       (00000022) int-to-long          v4, v7
+	10      (00000024) invoke-virtual       v2, v4, v5, Ljava/lang/Object;->wait(J)V
+	1e:29
+	(Ljava/lang/Throwable; -> 4a dequeueTextureBuffer-BB@0x4a)
+	(Ljava/lang/InterruptedException; -> 38 dequeueTextureBuffer-BB@0x38)
+
+dequeueTextureBuffer-BB@0x2a : 
+	11      (0000002a) iget-object          v1, v6, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->renderedBuffer Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;
+	12      (0000002e) const/4              v2, 0
+	13      (00000030) iput-object          v2, v6, Lorg/webrtc/MediaCodecVideoDecoder$TextureListener;->renderedBuffer Lorg/webrtc/MediaCodecVideoDecoder$DecodedTextureBuffer;
+	14      (00000034) monitor-exit         v3
+	15      (00000036) return-object        v1
+	2a:4d
+	(Ljava/lang/Throwable; -> 4a dequeueTextureBuffer-BB@0x4a)
+
+dequeueTextureBuffer-BB@0x38 : [ dequeueTextureBuffer-BB@0x2a ]
+	16      (00000038) move-exception       v0
+	17      (0000003a) invoke-static        Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+	18      (00000040) move-result-object   v2
+	19      (00000042) invoke-virtual       v2, Ljava/lang/Thread;->interrupt()V
+	20      (00000048) goto                 -f
+	2a:4d
+	(Ljava/lang/Throwable; -> 4a dequeueTextureBuffer-BB@0x4a)
+
+dequeueTextureBuffer-BB@0x4a : 
+	21      (0000004a) move-exception       v2
+	22      (0000004c) monitor-exit         v3
+	23      (0000004e) throw                v2
+

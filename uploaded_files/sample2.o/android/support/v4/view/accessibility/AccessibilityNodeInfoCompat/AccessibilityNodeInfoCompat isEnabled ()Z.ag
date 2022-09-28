@@ -1,0 +1,14 @@
+# Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->isEnabled()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isEnabled-BB@0x0 : 
+	0       (00000000) sget-object          v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->IMPL Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
+	1       (00000004) iget-object          v1, v2, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->mInfo Ljava/lang/Object;
+	2       (00000008) invoke-interface     v0, v1, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->isEnabled(Ljava/lang/Object;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) return               v0
+

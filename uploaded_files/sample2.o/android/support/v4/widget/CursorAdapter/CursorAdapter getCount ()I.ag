@@ -1,0 +1,27 @@
+# Landroid/support/v4/widget/CursorAdapter;->getCount()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getCount-BB@0x0 : [ getCount-BB@0x8 getCount-BB@0x1e ]
+	0       (00000000) iget-boolean         v0, v1, Landroid/support/v4/widget/CursorAdapter;->mDataValid Z
+	1       (00000004) if-eqz               v0, +d
+
+getCount-BB@0x8 : [ getCount-BB@0x10 getCount-BB@0x1e ]
+	2       (00000008) iget-object          v0, v1, Landroid/support/v4/widget/CursorAdapter;->mCursor Landroid/database/Cursor;
+	3       (0000000c) if-eqz               v0, +9
+
+getCount-BB@0x10 : [ getCount-BB@0x1c ]
+	4       (00000010) iget-object          v0, v1, Landroid/support/v4/widget/CursorAdapter;->mCursor Landroid/database/Cursor;
+	5       (00000014) invoke-interface     v0, Landroid/database/Cursor;->getCount()I
+	6       (0000001a) move-result          v0
+
+getCount-BB@0x1c : 
+	7       (0000001c) return               v0
+
+getCount-BB@0x1e : [ getCount-BB@0x1c ]
+	8       (0000001e) const/4              v0, 0
+	9       (00000020) goto                 -2
+

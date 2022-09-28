@@ -1,0 +1,20 @@
+# Landroid/support/v4/util/MapCollections;->getValues()Ljava/util/Collection; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:java.util.Collection
+
+getValues-BB@0x0 : [ getValues-BB@0x8 getValues-BB@0x16 ]
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/util/MapCollections;->mValues Landroid/support/v4/util/MapCollections$ValuesCollection;
+	1       (00000004) if-nez               v0, +9
+
+getValues-BB@0x8 : [ getValues-BB@0x16 ]
+	2       (00000008) new-instance         v0, Landroid/support/v4/util/MapCollections$ValuesCollection;
+	3       (0000000c) invoke-direct        v0, v1, Landroid/support/v4/util/MapCollections$ValuesCollection;-><init>(Landroid/support/v4/util/MapCollections;)V
+	4       (00000012) iput-object          v0, v1, Landroid/support/v4/util/MapCollections;->mValues Landroid/support/v4/util/MapCollections$ValuesCollection;
+
+getValues-BB@0x16 : 
+	5       (00000016) iget-object          v0, v1, Landroid/support/v4/util/MapCollections;->mValues Landroid/support/v4/util/MapCollections$ValuesCollection;
+	6       (0000001a) return-object        v0
+

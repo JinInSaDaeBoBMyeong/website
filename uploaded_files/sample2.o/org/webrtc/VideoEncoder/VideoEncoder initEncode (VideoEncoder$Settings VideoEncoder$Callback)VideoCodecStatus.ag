@@ -1,0 +1,2 @@
+# Lorg/webrtc/VideoEncoder;->initEncode(Lorg/webrtc/VideoEncoder$Settings; Lorg/webrtc/VideoEncoder$Callback;)Lorg/webrtc/VideoCodecStatus; [access_flags=public abstract]
+#

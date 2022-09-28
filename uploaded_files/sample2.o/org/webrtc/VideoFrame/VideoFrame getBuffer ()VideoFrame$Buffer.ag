@@ -1,0 +1,11 @@
+# Lorg/webrtc/VideoFrame;->getBuffer()Lorg/webrtc/VideoFrame$Buffer; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:org.webrtc.VideoFrame$Buffer
+
+getBuffer-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/VideoFrame;->buffer Lorg/webrtc/VideoFrame$Buffer;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,39 @@
+# Lorg/webrtc/VideoEncoder$BitrateAllocation;->getSum()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v9
+#
+# - return:int
+
+getSum-BB@0x0 : [ getSum-BB@0xc ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) const/4              v2, 0
+	2       (00000004) iget-object          v6, v9, Lorg/webrtc/VideoEncoder$BitrateAllocation;->bitratesBbs [[I
+	3       (00000008) array-length         v7, v6
+	4       (0000000a) move                 v5, v4
+
+getSum-BB@0xc : [ getSum-BB@0x10 getSum-BB@0x30 ]
+	5       (0000000c) if-ge                v5, v7, +12
+
+getSum-BB@0x10 : [ getSum-BB@0x18 ]
+	6       (00000010) aget-object          v1, v6, v5
+	7       (00000014) array-length         v8, v1
+	8       (00000016) move                 v3, v4
+
+getSum-BB@0x18 : [ getSum-BB@0x1c getSum-BB@0x28 ]
+	9       (00000018) if-ge                v3, v8, +8
+
+getSum-BB@0x1c : [ getSum-BB@0x18 ]
+	10      (0000001c) aget                 v0, v1, v3
+	11      (00000020) add-int/2addr        v2, v0
+	12      (00000022) add-int/lit8         v3, v3, 1
+	13      (00000026) goto                 -7
+
+getSum-BB@0x28 : [ getSum-BB@0xc ]
+	14      (00000028) add-int/lit8         v3, v5, 1
+	15      (0000002c) move                 v5, v3
+	16      (0000002e) goto                 -11
+
+getSum-BB@0x30 : 
+	17      (00000030) return               v2
+

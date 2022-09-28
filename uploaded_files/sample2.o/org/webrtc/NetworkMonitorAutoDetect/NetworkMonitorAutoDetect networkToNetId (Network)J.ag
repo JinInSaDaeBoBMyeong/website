@@ -1,0 +1,28 @@
+# Lorg/webrtc/NetworkMonitorAutoDetect;->networkToNetId(Landroid/net/Network;)J [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.net.Network
+#
+# - return:long
+
+networkToNetId-BB@0x0 : [ networkToNetId-BB@0xc networkToNetId-BB@0x16 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 23
+	2       (00000008) if-lt                v0, v1, +7
+
+networkToNetId-BB@0xc : [ networkToNetId-BB@0x14 ]
+	3       (0000000c) invoke-virtual       v2, Landroid/net/Network;->getNetworkHandle()J
+	4       (00000012) move-result-wide     v0
+
+networkToNetId-BB@0x14 : 
+	5       (00000014) return-wide          v0
+
+networkToNetId-BB@0x16 : [ networkToNetId-BB@0x14 ]
+	6       (00000016) invoke-virtual       v2, Landroid/net/Network;->toString()Ljava/lang/String;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) invoke-static        v0, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	9       (00000024) move-result          v0
+	10      (00000026) int-to-long          v0, v0
+	11      (00000028) goto                 -a
+

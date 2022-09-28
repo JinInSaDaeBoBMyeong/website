@@ -1,0 +1,17 @@
+# Landroid/support/v4/app/NotificationCompat$Action$1;->build(I Ljava/lang/CharSequence; Landroid/app/PendingIntent; Landroid/os/Bundle; [Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;)Landroid/support/v4/app/NotificationCompatBase$Action; [access_flags=public bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:java.lang.CharSequence
+# - v4:android.app.PendingIntent
+# - v5:android.os.Bundle
+# - v6:android.support.v4.app.RemoteInputCompatBase$RemoteInput[]
+#
+# - return:android.support.v4.app.NotificationCompatBase$Action
+
+build-BB@0x0 : 
+	0       (00000000) invoke-virtual/range v1 ... v6, Landroid/support/v4/app/NotificationCompat$Action$1;->build(I Ljava/lang/CharSequence; Landroid/app/PendingIntent; Landroid/os/Bundle; [Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;)Landroid/support/v4/app/NotificationCompat$Action;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+

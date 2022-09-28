@@ -1,0 +1,14 @@
+# Landroid/support/v4/print/PrintHelper$PrintHelperKitkatImpl;->printBitmap(Ljava/lang/String; Landroid/graphics/Bitmap;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:android.graphics.Bitmap
+#
+# - return:void
+
+printBitmap-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/print/PrintHelper$PrintHelperKitkatImpl;->mPrintHelper Landroid/support/v4/print/PrintHelperKitkat;
+	1       (00000004) invoke-virtual       v0, v2, v3, Landroid/support/v4/print/PrintHelperKitkat;->printBitmap(Ljava/lang/String; Landroid/graphics/Bitmap;)V
+	2       (0000000a) return-void          
+

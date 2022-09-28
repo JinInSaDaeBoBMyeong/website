@@ -1,0 +1,24 @@
+# Ltev/piqgahor/WqukitNJL;->cjUErzxQO836()J [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:long
+
+cjUErzxQO836-BB@0x0 : [ cjUErzxQO836-BB@0x14 cjUErzxQO836-BB@0x16 ]
+	0       (00000000) invoke-static        Ljava/lang/System;->currentTimeMillis()J
+	1       (00000006) move-result-wide     v0
+	2       (00000008) const-wide/16        v2, 0 # [0.0]
+	3       (0000000c) cmp-long             v2, v0, v2
+	4       (00000010) if-lez               v2, +3
+
+cjUErzxQO836-BB@0x14 : 
+	5       (00000014) return-wide          v0
+
+cjUErzxQO836-BB@0x16 : [ cjUErzxQO836-BB@0x14 ]
+	6       (00000016) invoke-static        Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+	7       (0000001c) move-result-object   v2
+	8       (0000001e) invoke-virtual       v2, Ljava/util/Calendar;->getTimeInMillis()J
+	9       (00000024) move-result-wide     v0
+	10      (00000026) goto                 -9
+

@@ -1,0 +1,24 @@
+# Lorg/webrtc/Camera1Session;->getFrameOrientation()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getFrameOrientation-BB@0x0 : [ getFrameOrientation-BB@0x14 getFrameOrientation-BB@0x18 ]
+	0       (00000000) invoke-direct        v2, Lorg/webrtc/Camera1Session;->getDeviceOrientation()I
+	1       (00000006) move-result          v0
+	2       (00000008) iget-object          v1, v2, Lorg/webrtc/Camera1Session;->info Landroid/hardware/Camera$CameraInfo;
+	3       (0000000c) iget                 v1, v1, Landroid/hardware/Camera$CameraInfo;->facing I
+	4       (00000010) if-nez               v1, +4
+
+getFrameOrientation-BB@0x14 : [ getFrameOrientation-BB@0x18 ]
+	5       (00000014) rsub-int             v0, v0, 360
+
+getFrameOrientation-BB@0x18 : 
+	6       (00000018) iget-object          v1, v2, Lorg/webrtc/Camera1Session;->info Landroid/hardware/Camera$CameraInfo;
+	7       (0000001c) iget                 v1, v1, Landroid/hardware/Camera$CameraInfo;->orientation I
+	8       (00000020) add-int/2addr        v1, v0
+	9       (00000022) rem-int/lit16        v1, v1, 360
+	10      (00000026) return               v1
+

@@ -1,0 +1,40 @@
+# Lorg/webrtc/FileVideoCapturer;-><init>(Ljava/lang/String;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:void
+
+<init>-BB@0x0 : [ <init>-BB@0x22 ]
+	0       (00000000) invoke-direct        v4, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v1, Ljava/util/Timer;
+	2       (0000000a) invoke-direct        v1, Ljava/util/Timer;-><init>()V
+	3       (00000010) iput-object          v1, v4, Lorg/webrtc/FileVideoCapturer;->timer Ljava/util/Timer;
+	4       (00000014) new-instance         v1, Lorg/webrtc/FileVideoCapturer$1;
+	5       (00000018) invoke-direct        v1, v4, Lorg/webrtc/FileVideoCapturer$1;-><init>(Lorg/webrtc/FileVideoCapturer;)V
+	6       (0000001e) iput-object          v1, v4, Lorg/webrtc/FileVideoCapturer;->tickTask Ljava/util/TimerTask;
+
+<init>-BB@0x22 : 
+	7       (00000022) new-instance         v1, Lorg/webrtc/FileVideoCapturer$VideoReaderY4M;
+	8       (00000026) invoke-direct        v1, v5, Lorg/webrtc/FileVideoCapturer$VideoReaderY4M;-><init>(Ljava/lang/String;)V
+	9       (0000002c) iput-object          v1, v4, Lorg/webrtc/FileVideoCapturer;->videoReader Lorg/webrtc/FileVideoCapturer$VideoReader;
+	10      (00000030) return-void          
+	22:2f
+	(Ljava/io/IOException; -> 32 <init>-BB@0x32)
+
+<init>-BB@0x32 : 
+	11      (00000032) move-exception       v0
+	12      (00000034) const-string         v1, 'FileVideoCapturer'
+	13      (00000038) new-instance         v2, Ljava/lang/StringBuilder;
+	14      (0000003c) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	15      (00000042) const-string         v3, 'Could not open video file: '
+	16      (00000046) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	17      (0000004c) move-result-object   v2
+	18      (0000004e) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	19      (00000054) move-result-object   v2
+	20      (00000056) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	21      (0000005c) move-result-object   v2
+	22      (0000005e) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	23      (00000064) throw                v0
+

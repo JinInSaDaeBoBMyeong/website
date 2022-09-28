@@ -1,0 +1,14 @@
+# Landroid/support/v4/view/ViewCompat;->setPivotX(Landroid/view/View; F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:float
+#
+# - return:void
+
+setPivotX-BB@0x0 : 
+	0       (00000000) sget-object          v0, Landroid/support/v4/view/ViewCompat;->IMPL Landroid/support/v4/view/ViewCompat$ViewCompatImpl;
+	1       (00000004) invoke-interface     v0, v2, v3, Landroid/support/v4/view/ViewCompat$ViewCompatImpl;->setPivotX(Landroid/view/View; F)V
+	2       (0000000a) return-void          
+

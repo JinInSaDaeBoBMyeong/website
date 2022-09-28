@@ -1,0 +1,27 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->isOpen()Z [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isOpen-BB@0x0 : [ isOpen-BB@0x8 isOpen-BB@0x18 ]
+	0       (00000000) iget-boolean         v0, v2, Landroid/support/v4/widget/SlidingPaneLayout;->mCanSlide Z
+	1       (00000004) if-eqz               v0, +a
+
+isOpen-BB@0x8 : [ isOpen-BB@0x18 isOpen-BB@0x1c ]
+	2       (00000008) iget                 v0, v2, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideOffset F
+	3       (0000000c) const/high16         v1, 16256 # [1.0]
+	4       (00000010) cmpl-float           v0, v0, v1
+	5       (00000014) if-nez               v0, +4
+
+isOpen-BB@0x18 : [ isOpen-BB@0x1a ]
+	6       (00000018) const/4              v0, 1
+
+isOpen-BB@0x1a : 
+	7       (0000001a) return               v0
+
+isOpen-BB@0x1c : [ isOpen-BB@0x1a ]
+	8       (0000001c) const/4              v0, 0
+	9       (0000001e) goto                 -2
+

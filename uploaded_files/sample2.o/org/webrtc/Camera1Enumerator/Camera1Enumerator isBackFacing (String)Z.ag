@@ -1,0 +1,29 @@
+# Lorg/webrtc/Camera1Enumerator;->isBackFacing(Ljava/lang/String;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+#
+# - return:boolean
+
+isBackFacing-BB@0x0 : [ isBackFacing-BB@0x14 isBackFacing-BB@0x20 ]
+	0       (00000000) invoke-static        v3, Lorg/webrtc/Camera1Enumerator;->getCameraIndex(Ljava/lang/String;)I
+	1       (00000006) move-result          v1
+	2       (00000008) invoke-static        v1, Lorg/webrtc/Camera1Enumerator;->getCameraInfo(I)Landroid/hardware/Camera$CameraInfo;
+	3       (0000000e) move-result-object   v0
+	4       (00000010) if-eqz               v0, +8
+
+isBackFacing-BB@0x14 : [ isBackFacing-BB@0x1c isBackFacing-BB@0x20 ]
+	5       (00000014) iget                 v1, v0, Landroid/hardware/Camera$CameraInfo;->facing I
+	6       (00000018) if-nez               v1, +4
+
+isBackFacing-BB@0x1c : [ isBackFacing-BB@0x1e ]
+	7       (0000001c) const/4              v1, 1
+
+isBackFacing-BB@0x1e : 
+	8       (0000001e) return               v1
+
+isBackFacing-BB@0x20 : [ isBackFacing-BB@0x1e ]
+	9       (00000020) const/4              v1, 0
+	10      (00000022) goto                 -2
+

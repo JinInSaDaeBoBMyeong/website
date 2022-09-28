@@ -1,0 +1,66 @@
+# Lorg/webrtc/EglRenderer$4;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x12 run-BB@0x2e ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	2       (00000006) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$800(Lorg/webrtc/EglRenderer;)Lorg/webrtc/RendererCommon$GlDrawer;
+	3       (0000000c) move-result-object   v0
+	4       (0000000e) if-eqz               v0, +10
+
+run-BB@0x12 : [ run-BB@0x2e ]
+	5       (00000012) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	6       (00000016) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$800(Lorg/webrtc/EglRenderer;)Lorg/webrtc/RendererCommon$GlDrawer;
+	7       (0000001c) move-result-object   v0
+	8       (0000001e) invoke-interface     v0, Lorg/webrtc/RendererCommon$GlDrawer;->release()V
+	9       (00000024) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	10      (00000028) invoke-static        v0, v2, Lorg/webrtc/EglRenderer;->access$802(Lorg/webrtc/EglRenderer; Lorg/webrtc/RendererCommon$GlDrawer;)Lorg/webrtc/RendererCommon$GlDrawer;
+
+run-BB@0x2e : [ run-BB@0x50 run-BB@0x6c ]
+	11      (0000002e) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	12      (00000032) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$900(Lorg/webrtc/EglRenderer;)Lorg/webrtc/RendererCommon$YuvUploader;
+	13      (00000038) move-result-object   v0
+	14      (0000003a) invoke-virtual       v0, Lorg/webrtc/RendererCommon$YuvUploader;->release()V
+	15      (00000040) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	16      (00000044) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$1000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/GlTextureFrameBuffer;
+	17      (0000004a) move-result-object   v0
+	18      (0000004c) if-eqz               v0, +10
+
+run-BB@0x50 : [ run-BB@0x6c ]
+	19      (00000050) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	20      (00000054) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$1000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/GlTextureFrameBuffer;
+	21      (0000005a) move-result-object   v0
+	22      (0000005c) invoke-virtual       v0, Lorg/webrtc/GlTextureFrameBuffer;->release()V
+	23      (00000062) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	24      (00000066) invoke-static        v0, v2, Lorg/webrtc/EglRenderer;->access$1002(Lorg/webrtc/EglRenderer; Lorg/webrtc/GlTextureFrameBuffer;)Lorg/webrtc/GlTextureFrameBuffer;
+
+run-BB@0x6c : [ run-BB@0x7c run-BB@0xb8 ]
+	25      (0000006c) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	26      (00000070) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/EglBase;
+	27      (00000076) move-result-object   v0
+	28      (00000078) if-eqz               v0, +20
+
+run-BB@0x7c : [ run-BB@0xb8 ]
+	29      (0000007c) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	30      (00000080) const-string         v1, 'eglBase detach and release.'
+	31      (00000084) invoke-static        v0, v1, Lorg/webrtc/EglRenderer;->access$700(Lorg/webrtc/EglRenderer; Ljava/lang/String;)V
+	32      (0000008a) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	33      (0000008e) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/EglBase;
+	34      (00000094) move-result-object   v0
+	35      (00000096) invoke-virtual       v0, Lorg/webrtc/EglBase;->detachCurrent()V
+	36      (0000009c) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	37      (000000a0) invoke-static        v0, Lorg/webrtc/EglRenderer;->access$000(Lorg/webrtc/EglRenderer;)Lorg/webrtc/EglBase;
+	38      (000000a6) move-result-object   v0
+	39      (000000a8) invoke-virtual       v0, Lorg/webrtc/EglBase;->release()V
+	40      (000000ae) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->this$0 Lorg/webrtc/EglRenderer;
+	41      (000000b2) invoke-static        v0, v2, Lorg/webrtc/EglRenderer;->access$002(Lorg/webrtc/EglRenderer; Lorg/webrtc/EglBase;)Lorg/webrtc/EglBase;
+
+run-BB@0xb8 : 
+	42      (000000b8) iget-object          v0, v3, Lorg/webrtc/EglRenderer$4;->val$eglCleanupBarrier Ljava/util/concurrent/CountDownLatch;
+	43      (000000bc) invoke-virtual       v0, Ljava/util/concurrent/CountDownLatch;->countDown()V
+	44      (000000c2) return-void          
+

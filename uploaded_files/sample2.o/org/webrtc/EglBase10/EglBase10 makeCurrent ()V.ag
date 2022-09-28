@@ -1,0 +1,67 @@
+# Lorg/webrtc/EglBase10;->makeCurrent()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+makeCurrent-BB@0x0 : [ makeCurrent-BB@0x12 makeCurrent-BB@0x22 ]
+	0       (00000000) invoke-direct        v6, Lorg/webrtc/EglBase10;->checkIsNotReleased()V
+	1       (00000006) iget-object          v0, v6, Lorg/webrtc/EglBase10;->eglSurface Ljavax/microedition/khronos/egl/EGLSurface;
+	2       (0000000a) sget-object          v1, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_SURFACE Ljavax/microedition/khronos/egl/EGLSurface;
+	3       (0000000e) if-ne                v0, v1, +a
+
+makeCurrent-BB@0x12 : 
+	4       (00000012) new-instance         v0, Ljava/lang/RuntimeException;
+	5       (00000016) const-string         v1, "No EGLSurface - can't make current"
+	6       (0000001a) invoke-direct        v0, v1, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	7       (00000020) throw                v0
+
+makeCurrent-BB@0x22 : [ makeCurrent-BB@0x28 ]
+	8       (00000022) sget-object          v1, Lorg/webrtc/EglBase;->lock Ljava/lang/Object;
+	9       (00000026) monitor-enter        v1
+
+makeCurrent-BB@0x28 : [ makeCurrent-BB@0x48 makeCurrent-BB@0x94 ]
+	10      (00000028) iget-object          v0, v6, Lorg/webrtc/EglBase10;->egl Ljavax/microedition/khronos/egl/EGL10;
+	11      (0000002c) iget-object          v2, v6, Lorg/webrtc/EglBase10;->eglDisplay Ljavax/microedition/khronos/egl/EGLDisplay;
+	12      (00000030) iget-object          v3, v6, Lorg/webrtc/EglBase10;->eglSurface Ljavax/microedition/khronos/egl/EGLSurface;
+	13      (00000034) iget-object          v4, v6, Lorg/webrtc/EglBase10;->eglSurface Ljavax/microedition/khronos/egl/EGLSurface;
+	14      (00000038) iget-object          v5, v6, Lorg/webrtc/EglBase10;->eglContext Ljavax/microedition/khronos/egl/EGLContext;
+	15      (0000003c) invoke-interface     v0, v2, v3, v4, v5, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay; Ljavax/microedition/khronos/egl/EGLSurface; Ljavax/microedition/khronos/egl/EGLSurface; Ljavax/microedition/khronos/egl/EGLContext;)Z
+	16      (00000042) move-result          v0
+	17      (00000044) if-nez               v0, +28
+	28:91
+	(Ljava/lang/Throwable; -> 8e makeCurrent-BB@0x8e)
+
+makeCurrent-BB@0x48 : 
+	18      (00000048) new-instance         v0, Ljava/lang/RuntimeException;
+	19      (0000004c) new-instance         v2, Ljava/lang/StringBuilder;
+	20      (00000050) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	21      (00000056) const-string         v3, 'eglMakeCurrent failed: 0x'
+	22      (0000005a) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	23      (00000060) move-result-object   v2
+	24      (00000062) iget-object          v3, v6, Lorg/webrtc/EglBase10;->egl Ljavax/microedition/khronos/egl/EGL10;
+	25      (00000066) invoke-interface     v3, Ljavax/microedition/khronos/egl/EGL10;->eglGetError()I
+	26      (0000006c) move-result          v3
+	27      (0000006e) invoke-static        v3, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+	28      (00000074) move-result-object   v3
+	29      (00000076) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	30      (0000007c) move-result-object   v2
+	31      (0000007e) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	32      (00000084) move-result-object   v2
+	33      (00000086) invoke-direct        v0, v2, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	34      (0000008c) throw                v0
+	28:91
+	(Ljava/lang/Throwable; -> 8e makeCurrent-BB@0x8e)
+
+makeCurrent-BB@0x8e : 
+	35      (0000008e) move-exception       v0
+	36      (00000090) monitor-exit         v1
+	37      (00000092) throw                v0
+
+makeCurrent-BB@0x94 : 
+	38      (00000094) monitor-exit         v1
+	39      (00000096) return-void          
+	94:95
+	(Ljava/lang/Throwable; -> 8e makeCurrent-BB@0x8e)
+

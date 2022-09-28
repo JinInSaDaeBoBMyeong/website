@@ -1,0 +1,33 @@
+# Landroid/support/v4/view/PagerTitleStrip;->onLayout(Z I I I I)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:boolean
+# - v5:int
+# - v6:int
+# - v7:int
+# - v8:int
+#
+# - return:void
+
+onLayout-BB@0x0 : [ onLayout-BB@0xa onLayout-BB@0x26 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-object          v1, v3, Landroid/support/v4/view/PagerTitleStrip;->mPager Landroid/support/v4/view/ViewPager;
+	2       (00000006) if-eqz               v1, +10
+
+onLayout-BB@0xa : [ onLayout-BB@0x16 onLayout-BB@0x1a ]
+	3       (0000000a) iget                 v1, v3, Landroid/support/v4/view/PagerTitleStrip;->mLastKnownPositionOffset F
+	4       (0000000e) cmpl-float           v1, v1, v0
+	5       (00000012) if-ltz               v1, +4
+
+onLayout-BB@0x16 : [ onLayout-BB@0x1a ]
+	6       (00000016) iget                 v0, v3, Landroid/support/v4/view/PagerTitleStrip;->mLastKnownPositionOffset F
+
+onLayout-BB@0x1a : [ onLayout-BB@0x26 ]
+	7       (0000001a) iget                 v1, v3, Landroid/support/v4/view/PagerTitleStrip;->mLastKnownCurrentPage I
+	8       (0000001e) const/4              v2, 1
+	9       (00000020) invoke-virtual       v3, v1, v0, v2, Landroid/support/v4/view/PagerTitleStrip;->updateTextPositions(I F Z)V
+
+onLayout-BB@0x26 : 
+	10      (00000026) return-void          
+

@@ -1,0 +1,28 @@
+# Lorg/webrtc/CameraCapturer;->initialize(Lorg/webrtc/SurfaceTextureHelper; Landroid/content/Context; Lorg/webrtc/VideoCapturer$CapturerObserver;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:org.webrtc.SurfaceTextureHelper
+# - v3:android.content.Context
+# - v4:org.webrtc.VideoCapturer$CapturerObserver
+#
+# - return:void
+
+initialize-BB@0x0 : [ initialize-BB@0x10 initialize-BB@0x18 ]
+	0       (00000000) iput-object          v3, v1, Lorg/webrtc/CameraCapturer;->applicationContext Landroid/content/Context;
+	1       (00000004) iput-object          v4, v1, Lorg/webrtc/CameraCapturer;->capturerObserver Lorg/webrtc/VideoCapturer$CapturerObserver;
+	2       (00000008) iput-object          v2, v1, Lorg/webrtc/CameraCapturer;->surfaceHelper Lorg/webrtc/SurfaceTextureHelper;
+	3       (0000000c) if-nez               v2, +6
+
+initialize-BB@0x10 : [ initialize-BB@0x12 ]
+	4       (00000010) const/4              v0, 0
+
+initialize-BB@0x12 : 
+	5       (00000012) iput-object          v0, v1, Lorg/webrtc/CameraCapturer;->cameraThreadHandler Landroid/os/Handler;
+	6       (00000016) return-void          
+
+initialize-BB@0x18 : [ initialize-BB@0x12 ]
+	7       (00000018) invoke-virtual       v2, Lorg/webrtc/SurfaceTextureHelper;->getHandler()Landroid/os/Handler;
+	8       (0000001e) move-result-object   v0
+	9       (00000020) goto                 -7
+

@@ -1,0 +1,41 @@
+# Landroid/support/v4/view/AccessibilityDelegateCompat;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+<clinit>-BB@0x0 : [ <clinit>-BB@0xc <clinit>-BB@0x2c ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 16
+	2       (00000008) if-lt                v0, v1, +12
+
+<clinit>-BB@0xc : [ <clinit>-BB@0x1a ]
+	3       (0000000c) new-instance         v0, Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateJellyBeanImpl;
+	4       (00000010) invoke-direct        v0, Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateJellyBeanImpl;-><init>()V
+	5       (00000016) sput-object          v0, Landroid/support/v4/view/AccessibilityDelegateCompat;->IMPL Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateImpl;
+
+<clinit>-BB@0x1a : 
+	6       (0000001a) sget-object          v0, Landroid/support/v4/view/AccessibilityDelegateCompat;->IMPL Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateImpl;
+	7       (0000001e) invoke-interface     v0, Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateImpl;->newAccessiblityDelegateDefaultImpl()Ljava/lang/Object;
+	8       (00000024) move-result-object   v0
+	9       (00000026) sput-object          v0, Landroid/support/v4/view/AccessibilityDelegateCompat;->DEFAULT_DELEGATE Ljava/lang/Object;
+	10      (0000002a) return-void          
+
+<clinit>-BB@0x2c : [ <clinit>-BB@0x38 <clinit>-BB@0x48 ]
+	11      (0000002c) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	12      (00000030) const/16             v1, 14
+	13      (00000034) if-lt                v0, v1, +a
+
+<clinit>-BB@0x38 : [ <clinit>-BB@0x1a ]
+	14      (00000038) new-instance         v0, Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl;
+	15      (0000003c) invoke-direct        v0, Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateIcsImpl;-><init>()V
+	16      (00000042) sput-object          v0, Landroid/support/v4/view/AccessibilityDelegateCompat;->IMPL Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateImpl;
+	17      (00000046) goto                 -16
+
+<clinit>-BB@0x48 : [ <clinit>-BB@0x1a ]
+	18      (00000048) new-instance         v0, Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateStubImpl;
+	19      (0000004c) invoke-direct        v0, Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateStubImpl;-><init>()V
+	20      (00000052) sput-object          v0, Landroid/support/v4/view/AccessibilityDelegateCompat;->IMPL Landroid/support/v4/view/AccessibilityDelegateCompat$AccessibilityDelegateImpl;
+	21      (00000056) goto                 -1e
+

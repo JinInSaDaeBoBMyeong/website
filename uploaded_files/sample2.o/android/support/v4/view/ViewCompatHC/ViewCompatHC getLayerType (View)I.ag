@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/ViewCompatHC;->getLayerType(Landroid/view/View;)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.View
+#
+# - return:int
+
+getLayerType-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, Landroid/view/View;->getLayerType()I
+	1       (00000006) move-result          v0
+	2       (00000008) return               v0
+

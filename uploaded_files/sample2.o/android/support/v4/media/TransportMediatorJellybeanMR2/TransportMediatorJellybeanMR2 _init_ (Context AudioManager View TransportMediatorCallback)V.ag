@@ -1,0 +1,73 @@
+# Landroid/support/v4/media/TransportMediatorJellybeanMR2;-><init>(Landroid/content/Context; Landroid/media/AudioManager; Landroid/view/View; Landroid/support/v4/media/TransportMediatorCallback;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.Context
+# - v4:android.media.AudioManager
+# - v5:android.view.View
+# - v6:android.support.v4.media.TransportMediatorCallback
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v2, Ljava/lang/Object;-><init>()V
+	1       (00000006) new-instance         v0, Landroid/support/v4/media/TransportMediatorJellybeanMR2$1;
+	2       (0000000a) invoke-direct        v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2$1;-><init>(Landroid/support/v4/media/TransportMediatorJellybeanMR2;)V
+	3       (00000010) iput-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mWindowAttachListener Landroid/view/ViewTreeObserver$OnWindowAttachListener;
+	4       (00000014) new-instance         v0, Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;
+	5       (00000018) invoke-direct        v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2$2;-><init>(Landroid/support/v4/media/TransportMediatorJellybeanMR2;)V
+	6       (0000001e) iput-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mWindowFocusListener Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
+	7       (00000022) new-instance         v0, Landroid/support/v4/media/TransportMediatorJellybeanMR2$3;
+	8       (00000026) invoke-direct        v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2$3;-><init>(Landroid/support/v4/media/TransportMediatorJellybeanMR2;)V
+	9       (0000002c) iput-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mMediaButtonReceiver Landroid/content/BroadcastReceiver;
+	10      (00000030) new-instance         v0, Landroid/support/v4/media/TransportMediatorJellybeanMR2$4;
+	11      (00000034) invoke-direct        v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2$4;-><init>(Landroid/support/v4/media/TransportMediatorJellybeanMR2;)V
+	12      (0000003a) iput-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mAudioFocusChangeListener Landroid/media/AudioManager$OnAudioFocusChangeListener;
+	13      (0000003e) const/4              v0, 0
+	14      (00000040) iput                 v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mPlayState I
+	15      (00000044) iput-object          v3, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mContext Landroid/content/Context;
+	16      (00000048) iput-object          v4, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mAudioManager Landroid/media/AudioManager;
+	17      (0000004c) iput-object          v5, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mTargetView Landroid/view/View;
+	18      (00000050) iput-object          v6, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mTransportCallback Landroid/support/v4/media/TransportMediatorCallback;
+	19      (00000054) new-instance         v0, Ljava/lang/StringBuilder;
+	20      (00000058) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	21      (0000005e) invoke-virtual       v3, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	22      (00000064) move-result-object   v1
+	23      (00000066) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	24      (0000006c) move-result-object   v0
+	25      (0000006e) const-string         v1, ':transport:'
+	26      (00000072) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	27      (00000078) move-result-object   v0
+	28      (0000007a) invoke-static        v2, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+	29      (00000080) move-result          v1
+	30      (00000082) invoke-virtual       v0, v1, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	31      (00000088) move-result-object   v0
+	32      (0000008a) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	33      (00000090) move-result-object   v0
+	34      (00000092) iput-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mReceiverAction Ljava/lang/String;
+	35      (00000096) new-instance         v0, Landroid/content/Intent;
+	36      (0000009a) iget-object          v1, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mReceiverAction Ljava/lang/String;
+	37      (0000009e) invoke-direct        v0, v1, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+	38      (000000a4) iput-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mIntent Landroid/content/Intent;
+	39      (000000a8) iget-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mIntent Landroid/content/Intent;
+	40      (000000ac) invoke-virtual       v3, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+	41      (000000b2) move-result-object   v1
+	42      (000000b4) invoke-virtual       v0, v1, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+	43      (000000ba) new-instance         v0, Landroid/content/IntentFilter;
+	44      (000000be) invoke-direct        v0, Landroid/content/IntentFilter;-><init>()V
+	45      (000000c4) iput-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mReceiverFilter Landroid/content/IntentFilter;
+	46      (000000c8) iget-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mReceiverFilter Landroid/content/IntentFilter;
+	47      (000000cc) iget-object          v1, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mReceiverAction Ljava/lang/String;
+	48      (000000d0) invoke-virtual       v0, v1, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+	49      (000000d6) iget-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mTargetView Landroid/view/View;
+	50      (000000da) invoke-virtual       v0, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+	51      (000000e0) move-result-object   v0
+	52      (000000e2) iget-object          v1, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mWindowAttachListener Landroid/view/ViewTreeObserver$OnWindowAttachListener;
+	53      (000000e6) invoke-virtual       v0, v1, Landroid/view/ViewTreeObserver;->addOnWindowAttachListener(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V
+	54      (000000ec) iget-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mTargetView Landroid/view/View;
+	55      (000000f0) invoke-virtual       v0, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+	56      (000000f6) move-result-object   v0
+	57      (000000f8) iget-object          v1, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mWindowFocusListener Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;
+	58      (000000fc) invoke-virtual       v0, v1, Landroid/view/ViewTreeObserver;->addOnWindowFocusChangeListener(Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;)V
+	59      (00000102) return-void          
+

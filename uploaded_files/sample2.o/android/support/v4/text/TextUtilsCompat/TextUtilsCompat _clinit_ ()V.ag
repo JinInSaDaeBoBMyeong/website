@@ -1,0 +1,19 @@
+# Landroid/support/v4/text/TextUtilsCompat;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Ljava/util/Locale;
+	1       (00000004) const-string         v1, ''
+	2       (00000008) const-string         v2, ''
+	3       (0000000c) invoke-direct        v0, v1, v2, Ljava/util/Locale;-><init>(Ljava/lang/String; Ljava/lang/String;)V
+	4       (00000012) sput-object          v0, Landroid/support/v4/text/TextUtilsCompat;->ROOT Ljava/util/Locale;
+	5       (00000016) const-string         v0, 'Arab'
+	6       (0000001a) sput-object          v0, Landroid/support/v4/text/TextUtilsCompat;->ARAB_SCRIPT_SUBTAG Ljava/lang/String;
+	7       (0000001e) const-string         v0, 'Hebr'
+	8       (00000022) sput-object          v0, Landroid/support/v4/text/TextUtilsCompat;->HEBR_SCRIPT_SUBTAG Ljava/lang/String;
+	9       (00000026) return-void          
+

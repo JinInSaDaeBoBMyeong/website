@@ -1,0 +1,17 @@
+# Landroid/support/v4/view/GravityCompat$GravityCompatImplBase;->apply(I I I Landroid/graphics/Rect; Landroid/graphics/Rect; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+# - v2:int
+# - v3:int
+# - v4:android.graphics.Rect
+# - v5:android.graphics.Rect
+# - v6:int
+#
+# - return:void
+
+apply-BB@0x0 : 
+	0       (00000000) invoke-static        v1, v2, v3, v4, v5, Landroid/view/Gravity;->apply(I I I Landroid/graphics/Rect; Landroid/graphics/Rect;)V
+	1       (00000006) return-void          
+

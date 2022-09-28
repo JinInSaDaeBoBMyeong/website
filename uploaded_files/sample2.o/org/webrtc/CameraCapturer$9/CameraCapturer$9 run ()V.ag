@@ -1,0 +1,14 @@
+# Lorg/webrtc/CameraCapturer$9;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : 
+	0       (00000000) iget-object          v0, v3, Lorg/webrtc/CameraCapturer$9;->this$0 Lorg/webrtc/CameraCapturer;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) iget-object          v2, v3, Lorg/webrtc/CameraCapturer$9;->val$mediaRecoderEventsHandler Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;
+	3       (0000000a) invoke-static        v0, v1, v2, Lorg/webrtc/CameraCapturer;->access$2600(Lorg/webrtc/CameraCapturer; Landroid/media/MediaRecorder; Lorg/webrtc/CameraVideoCapturer$MediaRecorderHandler;)V
+	4       (00000010) return-void          
+

@@ -1,0 +1,20 @@
+# Landroid/support/v4/view/PagerTitleStrip;->getMinHeight()I [access_flags=]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+getMinHeight-BB@0x0 : [ getMinHeight-BB@0xe getMinHeight-BB@0x16 ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-virtual       v2, Landroid/support/v4/view/PagerTitleStrip;->getBackground()Landroid/graphics/drawable/Drawable;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) if-eqz               v0, +6
+
+getMinHeight-BB@0xe : [ getMinHeight-BB@0x16 ]
+	4       (0000000e) invoke-virtual       v0, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+	5       (00000014) move-result          v1
+
+getMinHeight-BB@0x16 : 
+	6       (00000016) return               v1
+

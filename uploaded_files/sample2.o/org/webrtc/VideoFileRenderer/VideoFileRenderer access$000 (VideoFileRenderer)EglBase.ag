@@ -1,0 +1,12 @@
+# Lorg/webrtc/VideoFileRenderer;->access$000(Lorg/webrtc/VideoFileRenderer;)Lorg/webrtc/EglBase; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.VideoFileRenderer
+#
+# - return:org.webrtc.EglBase
+
+access$000-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/VideoFileRenderer;->eglBase Lorg/webrtc/EglBase;
+	1       (00000004) return-object        v0
+

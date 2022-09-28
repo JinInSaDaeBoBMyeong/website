@@ -1,0 +1,72 @@
+# Landroid/support/v4/app/DialogFragment;->onSaveInstanceState(Landroid/os/Bundle;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.os.Bundle
+#
+# - return:void
+
+onSaveInstanceState-BB@0x0 : [ onSaveInstanceState-BB@0xe onSaveInstanceState-BB@0x28 ]
+	0       (00000000) invoke-super         v3, v4, Landroid/support/v4/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
+	1       (00000006) iget-object          v1, v3, Landroid/support/v4/app/DialogFragment;->mDialog Landroid/app/Dialog;
+	2       (0000000a) if-eqz               v1, +f
+
+onSaveInstanceState-BB@0xe : [ onSaveInstanceState-BB@0x1e onSaveInstanceState-BB@0x28 ]
+	3       (0000000e) iget-object          v1, v3, Landroid/support/v4/app/DialogFragment;->mDialog Landroid/app/Dialog;
+	4       (00000012) invoke-virtual       v1, Landroid/app/Dialog;->onSaveInstanceState()Landroid/os/Bundle;
+	5       (00000018) move-result-object   v0
+	6       (0000001a) if-eqz               v0, +7
+
+onSaveInstanceState-BB@0x1e : [ onSaveInstanceState-BB@0x28 ]
+	7       (0000001e) const-string         v1, 'android:savedDialogState'
+	8       (00000022) invoke-virtual       v4, v1, v0, Landroid/os/Bundle;->putBundle(Ljava/lang/String; Landroid/os/Bundle;)V
+
+onSaveInstanceState-BB@0x28 : [ onSaveInstanceState-BB@0x30 onSaveInstanceState-BB@0x3e ]
+	9       (00000028) iget                 v1, v3, Landroid/support/v4/app/DialogFragment;->mStyle I
+	10      (0000002c) if-eqz               v1, +9
+
+onSaveInstanceState-BB@0x30 : [ onSaveInstanceState-BB@0x3e ]
+	11      (00000030) const-string         v1, 'android:style'
+	12      (00000034) iget                 v2, v3, Landroid/support/v4/app/DialogFragment;->mStyle I
+	13      (00000038) invoke-virtual       v4, v1, v2, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+
+onSaveInstanceState-BB@0x3e : [ onSaveInstanceState-BB@0x46 onSaveInstanceState-BB@0x54 ]
+	14      (0000003e) iget                 v1, v3, Landroid/support/v4/app/DialogFragment;->mTheme I
+	15      (00000042) if-eqz               v1, +9
+
+onSaveInstanceState-BB@0x46 : [ onSaveInstanceState-BB@0x54 ]
+	16      (00000046) const-string         v1, 'android:theme'
+	17      (0000004a) iget                 v2, v3, Landroid/support/v4/app/DialogFragment;->mTheme I
+	18      (0000004e) invoke-virtual       v4, v1, v2, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+
+onSaveInstanceState-BB@0x54 : [ onSaveInstanceState-BB@0x5c onSaveInstanceState-BB@0x6a ]
+	19      (00000054) iget-boolean         v1, v3, Landroid/support/v4/app/DialogFragment;->mCancelable Z
+	20      (00000058) if-nez               v1, +9
+
+onSaveInstanceState-BB@0x5c : [ onSaveInstanceState-BB@0x6a ]
+	21      (0000005c) const-string         v1, 'android:cancelable'
+	22      (00000060) iget-boolean         v2, v3, Landroid/support/v4/app/DialogFragment;->mCancelable Z
+	23      (00000064) invoke-virtual       v4, v1, v2, Landroid/os/Bundle;->putBoolean(Ljava/lang/String; Z)V
+
+onSaveInstanceState-BB@0x6a : [ onSaveInstanceState-BB@0x72 onSaveInstanceState-BB@0x80 ]
+	24      (0000006a) iget-boolean         v1, v3, Landroid/support/v4/app/DialogFragment;->mShowsDialog Z
+	25      (0000006e) if-nez               v1, +9
+
+onSaveInstanceState-BB@0x72 : [ onSaveInstanceState-BB@0x80 ]
+	26      (00000072) const-string         v1, 'android:showsDialog'
+	27      (00000076) iget-boolean         v2, v3, Landroid/support/v4/app/DialogFragment;->mShowsDialog Z
+	28      (0000007a) invoke-virtual       v4, v1, v2, Landroid/os/Bundle;->putBoolean(Ljava/lang/String; Z)V
+
+onSaveInstanceState-BB@0x80 : [ onSaveInstanceState-BB@0x8a onSaveInstanceState-BB@0x98 ]
+	29      (00000080) iget                 v1, v3, Landroid/support/v4/app/DialogFragment;->mBackStackId I
+	30      (00000084) const/4              v2, -1
+	31      (00000086) if-eq                v1, v2, +9
+
+onSaveInstanceState-BB@0x8a : [ onSaveInstanceState-BB@0x98 ]
+	32      (0000008a) const-string         v1, 'android:backStackId'
+	33      (0000008e) iget                 v2, v3, Landroid/support/v4/app/DialogFragment;->mBackStackId I
+	34      (00000092) invoke-virtual       v4, v1, v2, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+
+onSaveInstanceState-BB@0x98 : 
+	35      (00000098) return-void          
+

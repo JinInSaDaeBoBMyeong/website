@@ -1,0 +1,22 @@
+# Landroid/support/v4/view/MotionEventCompat$BaseMotionEventVersionImpl;->findPointerIndex(Landroid/view/MotionEvent; I)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.MotionEvent
+# - v3:int
+#
+# - return:int
+
+findPointerIndex-BB@0x0 : [ findPointerIndex-BB@0x4 findPointerIndex-BB@0x8 ]
+	0       (00000000) if-nez               v3, +4
+
+findPointerIndex-BB@0x4 : [ findPointerIndex-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+findPointerIndex-BB@0x6 : 
+	2       (00000006) return               v0
+
+findPointerIndex-BB@0x8 : [ findPointerIndex-BB@0x6 ]
+	3       (00000008) const/4              v0, -1
+	4       (0000000a) goto                 -2
+

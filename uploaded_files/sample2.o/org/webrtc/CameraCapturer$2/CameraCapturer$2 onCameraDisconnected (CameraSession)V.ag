@@ -1,0 +1,54 @@
+# Lorg/webrtc/CameraCapturer$2;->onCameraDisconnected(Lorg/webrtc/CameraSession;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:org.webrtc.CameraSession
+#
+# - return:void
+
+onCameraDisconnected-BB@0x0 : [ onCameraDisconnected-BB@0x18 ]
+	0       (00000000) iget-object          v0, v3, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	1       (00000004) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$000(Lorg/webrtc/CameraCapturer;)V
+	2       (0000000a) iget-object          v0, v3, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	3       (0000000e) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$500(Lorg/webrtc/CameraCapturer;)Ljava/lang/Object;
+	4       (00000014) move-result-object   v1
+	5       (00000016) monitor-enter        v1
+
+onCameraDisconnected-BB@0x18 : [ onCameraDisconnected-BB@0x28 onCameraDisconnected-BB@0x3a ]
+	6       (00000018) iget-object          v0, v3, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	7       (0000001c) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$800(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraSession;
+	8       (00000022) move-result-object   v0
+	9       (00000024) if-eq                v4, v0, +b
+	18:5d
+	(Ljava/lang/Throwable; -> 5a onCameraDisconnected-BB@0x5a)
+
+onCameraDisconnected-BB@0x28 : [ onCameraDisconnected-BB@0x38 ]
+	10      (00000028) const-string         v0, 'CameraCapturer'
+	11      (0000002c) const-string         v2, 'onCameraDisconnected from another session.'
+	12      (00000030) invoke-static        v0, v2, Lorg/webrtc/Logging;->w(Ljava/lang/String; Ljava/lang/String;)V
+	13      (00000036) monitor-exit         v1
+	18:5d
+	(Ljava/lang/Throwable; -> 5a onCameraDisconnected-BB@0x5a)
+
+onCameraDisconnected-BB@0x38 : 
+	14      (00000038) return-void          
+	18:5d
+	(Ljava/lang/Throwable; -> 5a onCameraDisconnected-BB@0x5a)
+
+onCameraDisconnected-BB@0x3a : [ onCameraDisconnected-BB@0x38 ]
+	15      (0000003a) iget-object          v0, v3, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	16      (0000003e) invoke-static        v0, Lorg/webrtc/CameraCapturer;->access$1100(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;
+	17      (00000044) move-result-object   v0
+	18      (00000046) invoke-interface     v0, Lorg/webrtc/CameraVideoCapturer$CameraEventsHandler;->onCameraDisconnected()V
+	19      (0000004c) iget-object          v0, v3, Lorg/webrtc/CameraCapturer$2;->this$0 Lorg/webrtc/CameraCapturer;
+	20      (00000050) invoke-virtual       v0, Lorg/webrtc/CameraCapturer;->stopCapture()V
+	21      (00000056) monitor-exit         v1
+	22      (00000058) goto                 -10
+	18:5d
+	(Ljava/lang/Throwable; -> 5a onCameraDisconnected-BB@0x5a)
+
+onCameraDisconnected-BB@0x5a : 
+	23      (0000005a) move-exception       v0
+	24      (0000005c) monitor-exit         v1
+	25      (0000005e) throw                v0
+

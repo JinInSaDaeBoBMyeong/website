@@ -1,0 +1,32 @@
+# Lorg/webrtc/EglRenderer$6;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x8 run-BB@0x3e ]
+	0       (00000000) iget-object          v1, v6, Lorg/webrtc/EglRenderer$6;->val$drawerParam Lorg/webrtc/RendererCommon$GlDrawer;
+	1       (00000004) if-nez               v1, +1d
+
+run-BB@0x8 : [ run-BB@0x14 ]
+	2       (00000008) iget-object          v1, v6, Lorg/webrtc/EglRenderer$6;->this$0 Lorg/webrtc/EglRenderer;
+	3       (0000000c) invoke-static        v1, Lorg/webrtc/EglRenderer;->access$800(Lorg/webrtc/EglRenderer;)Lorg/webrtc/RendererCommon$GlDrawer;
+	4       (00000012) move-result-object   v0
+
+run-BB@0x14 : 
+	5       (00000014) iget-object          v1, v6, Lorg/webrtc/EglRenderer$6;->this$0 Lorg/webrtc/EglRenderer;
+	6       (00000018) invoke-static        v1, Lorg/webrtc/EglRenderer;->access$1100(Lorg/webrtc/EglRenderer;)Ljava/util/ArrayList;
+	7       (0000001e) move-result-object   v1
+	8       (00000020) new-instance         v2, Lorg/webrtc/EglRenderer$FrameListenerAndParams;
+	9       (00000024) iget-object          v3, v6, Lorg/webrtc/EglRenderer$6;->val$listener Lorg/webrtc/EglRenderer$FrameListener;
+	10      (00000028) iget                 v4, v6, Lorg/webrtc/EglRenderer$6;->val$scale F
+	11      (0000002c) iget-boolean         v5, v6, Lorg/webrtc/EglRenderer$6;->val$applyFpsReduction Z
+	12      (00000030) invoke-direct        v2, v3, v4, v0, v5, Lorg/webrtc/EglRenderer$FrameListenerAndParams;-><init>(Lorg/webrtc/EglRenderer$FrameListener; F Lorg/webrtc/RendererCommon$GlDrawer; Z)V
+	13      (00000036) invoke-virtual       v1, v2, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	14      (0000003c) return-void          
+
+run-BB@0x3e : [ run-BB@0x14 ]
+	15      (0000003e) iget-object          v0, v6, Lorg/webrtc/EglRenderer$6;->val$drawerParam Lorg/webrtc/RendererCommon$GlDrawer;
+	16      (00000042) goto                 -17
+

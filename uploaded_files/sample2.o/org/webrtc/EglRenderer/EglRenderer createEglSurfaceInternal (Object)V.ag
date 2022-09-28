@@ -1,0 +1,15 @@
+# Lorg/webrtc/EglRenderer;->createEglSurfaceInternal(Ljava/lang/Object;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:void
+
+createEglSurfaceInternal-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/EglRenderer;->eglSurfaceCreationRunnable Lorg/webrtc/EglRenderer$EglSurfaceCreation;
+	1       (00000004) invoke-virtual       v0, v2, Lorg/webrtc/EglRenderer$EglSurfaceCreation;->setSurface(Ljava/lang/Object;)V
+	2       (0000000a) iget-object          v0, v1, Lorg/webrtc/EglRenderer;->eglSurfaceCreationRunnable Lorg/webrtc/EglRenderer$EglSurfaceCreation;
+	3       (0000000e) invoke-direct        v1, v0, Lorg/webrtc/EglRenderer;->postToRenderThread(Ljava/lang/Runnable;)V
+	4       (00000014) return-void          
+

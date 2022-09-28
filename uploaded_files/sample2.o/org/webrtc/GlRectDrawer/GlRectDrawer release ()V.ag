@@ -1,0 +1,32 @@
+# Lorg/webrtc/GlRectDrawer;->release()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+release-BB@0x0 : [ release-BB@0x14 ]
+	0       (00000000) iget-object          v1, v3, Lorg/webrtc/GlRectDrawer;->shaders Ljava/util/Map;
+	1       (00000004) invoke-interface     v1, Ljava/util/Map;->values()Ljava/util/Collection;
+	2       (0000000a) move-result-object   v1
+	3       (0000000c) invoke-interface     v1, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+	4       (00000012) move-result-object   v1
+
+release-BB@0x14 : [ release-BB@0x20 release-BB@0x38 ]
+	5       (00000014) invoke-interface     v1, Ljava/util/Iterator;->hasNext()Z
+	6       (0000001a) move-result          v2
+	7       (0000001c) if-eqz               v2, +e
+
+release-BB@0x20 : [ release-BB@0x14 ]
+	8       (00000020) invoke-interface     v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	9       (00000026) move-result-object   v0
+	10      (00000028) check-cast           v0, Lorg/webrtc/GlRectDrawer$Shader;
+	11      (0000002c) iget-object          v2, v0, Lorg/webrtc/GlRectDrawer$Shader;->glShader Lorg/webrtc/GlShader;
+	12      (00000030) invoke-virtual       v2, Lorg/webrtc/GlShader;->release()V
+	13      (00000036) goto                 -11
+
+release-BB@0x38 : 
+	14      (00000038) iget-object          v1, v3, Lorg/webrtc/GlRectDrawer;->shaders Ljava/util/Map;
+	15      (0000003c) invoke-interface     v1, Ljava/util/Map;->clear()V
+	16      (00000042) return-void          
+

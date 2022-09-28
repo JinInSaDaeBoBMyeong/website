@@ -1,0 +1,15 @@
+# Landroid/support/v4/widget/SearchViewCompatHoneycomb;->setOnQueryTextListener(Ljava/lang/Object; Ljava/lang/Object;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:java.lang.Object
+# - v1:java.lang.Object
+#
+# - return:void
+
+setOnQueryTextListener-BB@0x0 : 
+	0       (00000000) check-cast           v0, Landroid/widget/SearchView;
+	1       (00000004) check-cast           v1, Landroid/widget/SearchView$OnQueryTextListener;
+	2       (00000008) invoke-virtual       v0, v1, Landroid/widget/SearchView;->setOnQueryTextListener(Landroid/widget/SearchView$OnQueryTextListener;)V
+	3       (0000000e) return-void          
+

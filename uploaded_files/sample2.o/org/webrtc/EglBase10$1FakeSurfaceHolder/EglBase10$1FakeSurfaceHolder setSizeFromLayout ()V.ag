@@ -1,0 +1,10 @@
+# Lorg/webrtc/EglBase10$1FakeSurfaceHolder;->setSizeFromLayout()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:void
+
+setSizeFromLayout-BB@0x0 : 
+	0       (00000000) return-void          
+

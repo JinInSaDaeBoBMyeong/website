@@ -1,0 +1,32 @@
+# Lorg/webrtc/Camera2Session;->create(Lorg/webrtc/CameraSession$CreateSessionCallback; Lorg/webrtc/CameraSession$Events; Landroid/content/Context; Landroid/hardware/camera2/CameraManager; Lorg/webrtc/SurfaceTextureHelper; Landroid/media/MediaRecorder; Ljava/lang/String; I I I)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v10
+# - v11:org.webrtc.CameraSession$CreateSessionCallback
+# - v12:org.webrtc.CameraSession$Events
+# - v13:android.content.Context
+# - v14:android.hardware.camera2.CameraManager
+# - v15:org.webrtc.SurfaceTextureHelper
+# - v16:android.media.MediaRecorder
+# - v17:java.lang.String
+# - v18:int
+# - v19:int
+# - v20:int
+#
+# - return:void
+
+create-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lorg/webrtc/Camera2Session;
+	1       (00000004) move-object          v1, v11
+	2       (00000006) move-object          v2, v12
+	3       (00000008) move-object          v3, v13
+	4       (0000000a) move-object          v4, v14
+	5       (0000000c) move-object          v5, v15
+	6       (0000000e) move-object/from16   v6, v16
+	7       (00000012) move-object/from16   v7, v17
+	8       (00000016) move/from16          v8, v18
+	9       (0000001a) move/from16          v9, v19
+	10      (0000001e) move/from16          v10, v20
+	11      (00000022) invoke-direct/range  v0 ... v10, Lorg/webrtc/Camera2Session;-><init>(Lorg/webrtc/CameraSession$CreateSessionCallback; Lorg/webrtc/CameraSession$Events; Landroid/content/Context; Landroid/hardware/camera2/CameraManager; Lorg/webrtc/SurfaceTextureHelper; Landroid/media/MediaRecorder; Ljava/lang/String; I I I)V
+	12      (00000028) return-void          
+

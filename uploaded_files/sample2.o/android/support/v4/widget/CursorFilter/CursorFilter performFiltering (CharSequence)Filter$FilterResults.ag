@@ -1,0 +1,32 @@
+# Landroid/support/v4/widget/CursorFilter;->performFiltering(Ljava/lang/CharSequence;)Landroid/widget/Filter$FilterResults; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.CharSequence
+#
+# - return:android.widget.Filter$FilterResults
+
+performFiltering-BB@0x0 : [ performFiltering-BB@0x1a performFiltering-BB@0x2c ]
+	0       (00000000) iget-object          v2, v3, Landroid/support/v4/widget/CursorFilter;->mClient Landroid/support/v4/widget/CursorFilter$CursorFilterClient;
+	1       (00000004) invoke-interface     v2, v4, Landroid/support/v4/widget/CursorFilter$CursorFilterClient;->runQueryOnBackgroundThread(Ljava/lang/CharSequence;)Landroid/database/Cursor;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) new-instance         v1, Landroid/widget/Filter$FilterResults;
+	4       (00000010) invoke-direct        v1, Landroid/widget/Filter$FilterResults;-><init>()V
+	5       (00000016) if-eqz               v0, +b
+
+performFiltering-BB@0x1a : [ performFiltering-BB@0x2a ]
+	6       (0000001a) invoke-interface     v0, Landroid/database/Cursor;->getCount()I
+	7       (00000020) move-result          v2
+	8       (00000022) iput                 v2, v1, Landroid/widget/Filter$FilterResults;->count I
+	9       (00000026) iput-object          v0, v1, Landroid/widget/Filter$FilterResults;->values Ljava/lang/Object;
+
+performFiltering-BB@0x2a : 
+	10      (0000002a) return-object        v1
+
+performFiltering-BB@0x2c : [ performFiltering-BB@0x2a ]
+	11      (0000002c) const/4              v2, 0
+	12      (0000002e) iput                 v2, v1, Landroid/widget/Filter$FilterResults;->count I
+	13      (00000032) const/4              v2, 0
+	14      (00000034) iput-object          v2, v1, Landroid/widget/Filter$FilterResults;->values Ljava/lang/Object;
+	15      (00000038) goto                 -7
+

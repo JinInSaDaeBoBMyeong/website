@@ -1,0 +1,27 @@
+# Landroid/support/v4/widget/SwipeRefreshLayout;->animateOffsetToStartPosition(I Landroid/view/animation/Animation$AnimationListener;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:android.view.animation.Animation$AnimationListener
+#
+# - return:void
+
+animateOffsetToStartPosition-BB@0x0 : 
+	0       (00000000) iput                 v5, v4, Landroid/support/v4/widget/SwipeRefreshLayout;->mFrom I
+	1       (00000004) iget-object          v0, v4, Landroid/support/v4/widget/SwipeRefreshLayout;->mAnimateToStartPosition Landroid/view/animation/Animation;
+	2       (00000008) invoke-virtual       v0, Landroid/view/animation/Animation;->reset()V
+	3       (0000000e) iget-object          v0, v4, Landroid/support/v4/widget/SwipeRefreshLayout;->mAnimateToStartPosition Landroid/view/animation/Animation;
+	4       (00000012) iget                 v1, v4, Landroid/support/v4/widget/SwipeRefreshLayout;->mMediumAnimationDuration I
+	5       (00000016) int-to-long          v2, v1
+	6       (00000018) invoke-virtual       v0, v2, v3, Landroid/view/animation/Animation;->setDuration(J)V
+	7       (0000001e) iget-object          v0, v4, Landroid/support/v4/widget/SwipeRefreshLayout;->mAnimateToStartPosition Landroid/view/animation/Animation;
+	8       (00000022) invoke-virtual       v0, v6, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+	9       (00000028) iget-object          v0, v4, Landroid/support/v4/widget/SwipeRefreshLayout;->mAnimateToStartPosition Landroid/view/animation/Animation;
+	10      (0000002c) iget-object          v1, v4, Landroid/support/v4/widget/SwipeRefreshLayout;->mDecelerateInterpolator Landroid/view/animation/DecelerateInterpolator;
+	11      (00000030) invoke-virtual       v0, v1, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+	12      (00000036) iget-object          v0, v4, Landroid/support/v4/widget/SwipeRefreshLayout;->mTarget Landroid/view/View;
+	13      (0000003a) iget-object          v1, v4, Landroid/support/v4/widget/SwipeRefreshLayout;->mAnimateToStartPosition Landroid/view/animation/Animation;
+	14      (0000003e) invoke-virtual       v0, v1, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+	15      (00000044) return-void          
+

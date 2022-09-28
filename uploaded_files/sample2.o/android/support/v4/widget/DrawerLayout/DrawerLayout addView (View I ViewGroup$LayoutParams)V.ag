@@ -1,0 +1,36 @@
+# Landroid/support/v4/widget/DrawerLayout;->addView(Landroid/view/View; I Landroid/view/ViewGroup$LayoutParams;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:int
+# - v4:android.view.ViewGroup$LayoutParams
+#
+# - return:void
+
+addView-BB@0x0 : [ addView-BB@0x4 addView-BB@0x14 ]
+	0       (00000000) if-gtz               v3, +a
+
+addView-BB@0x4 : [ addView-BB@0x8 addView-BB@0x2e ]
+	1       (00000004) if-gez               v3, +15
+
+addView-BB@0x8 : [ addView-BB@0x14 addView-BB@0x2e ]
+	2       (00000008) invoke-virtual       v1, Landroid/support/v4/widget/DrawerLayout;->getChildCount()I
+	3       (0000000e) move-result          v0
+	4       (00000010) if-lez               v0, +f
+
+addView-BB@0x14 : [ addView-BB@0x26 ]
+	5       (00000014) const/4              v0, 4
+	6       (00000016) invoke-static        v2, v0, Landroid/support/v4/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View; I)V
+	7       (0000001c) iget-object          v0, v1, Landroid/support/v4/widget/DrawerLayout;->mChildAccessibilityDelegate Landroid/support/v4/widget/DrawerLayout$ChildAccessibilityDelegate;
+	8       (00000020) invoke-static        v2, v0, Landroid/support/v4/view/ViewCompat;->setAccessibilityDelegate(Landroid/view/View; Landroid/support/v4/view/AccessibilityDelegateCompat;)V
+
+addView-BB@0x26 : 
+	9       (00000026) invoke-super         v1, v2, v3, v4, Landroid/view/ViewGroup;->addView(Landroid/view/View; I Landroid/view/ViewGroup$LayoutParams;)V
+	10      (0000002c) return-void          
+
+addView-BB@0x2e : [ addView-BB@0x26 ]
+	11      (0000002e) const/4              v0, 1
+	12      (00000030) invoke-static        v2, v0, Landroid/support/v4/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View; I)V
+	13      (00000036) goto                 -8
+

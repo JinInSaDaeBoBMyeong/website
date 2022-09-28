@@ -1,0 +1,37 @@
+# Landroid/support/v4/util/SimpleArrayMap;->ensureCapacity(I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:int
+#
+# - return:void
+
+ensureCapacity-BB@0x0 : [ ensureCapacity-BB@0xc ensureCapacity-BB@0x4c ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) iget-object          v2, v5, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	2       (00000006) array-length         v2, v2
+	3       (00000008) if-ge                v2, v6, +22
+
+ensureCapacity-BB@0xc : [ ensureCapacity-BB@0x22 ensureCapacity-BB@0x42 ]
+	4       (0000000c) iget-object          v1, v5, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	5       (00000010) iget-object          v0, v5, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	6       (00000014) invoke-direct        v5, v6, Landroid/support/v4/util/SimpleArrayMap;->allocArrays(I)V
+	7       (0000001a) iget                 v2, v5, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	8       (0000001e) if-lez               v2, +12
+
+ensureCapacity-BB@0x22 : [ ensureCapacity-BB@0x42 ]
+	9       (00000022) iget-object          v2, v5, Landroid/support/v4/util/SimpleArrayMap;->mHashes [I
+	10      (00000026) iget                 v3, v5, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	11      (0000002a) invoke-static        v1, v4, v2, v4, v3, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	12      (00000030) iget-object          v2, v5, Landroid/support/v4/util/SimpleArrayMap;->mArray [Ljava/lang/Object;
+	13      (00000034) iget                 v3, v5, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	14      (00000038) shl-int/lit8         v3, v3, 1
+	15      (0000003c) invoke-static        v0, v4, v2, v4, v3, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+
+ensureCapacity-BB@0x42 : [ ensureCapacity-BB@0x4c ]
+	16      (00000042) iget                 v2, v5, Landroid/support/v4/util/SimpleArrayMap;->mSize I
+	17      (00000046) invoke-static        v1, v0, v2, Landroid/support/v4/util/SimpleArrayMap;->freeArrays([I [Ljava/lang/Object; I)V
+
+ensureCapacity-BB@0x4c : 
+	18      (0000004c) return-void          
+

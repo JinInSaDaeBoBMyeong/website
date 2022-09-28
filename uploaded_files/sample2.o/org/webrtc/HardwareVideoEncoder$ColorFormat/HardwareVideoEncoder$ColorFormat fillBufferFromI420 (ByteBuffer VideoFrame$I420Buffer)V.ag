@@ -1,0 +1,2 @@
+# Lorg/webrtc/HardwareVideoEncoder$ColorFormat;->fillBufferFromI420(Ljava/nio/ByteBuffer; Lorg/webrtc/VideoFrame$I420Buffer;)V [access_flags=abstract]
+#

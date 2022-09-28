@@ -1,0 +1,204 @@
+# Landroid/support/v4/app/FragmentManagerImpl;->popBackStackState(Landroid/os/Handler; Ljava/lang/String; I I)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:android.os.Handler
+# - v13:java.lang.String
+# - v14:int
+# - v15:int
+#
+# - return:boolean
+
+popBackStackState-BB@0x0 : [ popBackStackState-BB@0xc popBackStackState-BB@0xe ]
+	0       (00000000) const/4              v8, 1
+	1       (00000002) const/4              v9, 0
+	2       (00000004) iget-object          v6, v11, Landroid/support/v4/app/FragmentManagerImpl;->mBackStack Ljava/util/ArrayList;
+	3       (00000008) if-nez               v6, +3
+
+popBackStackState-BB@0xc : 
+	4       (0000000c) return               v9
+
+popBackStackState-BB@0xe : [ popBackStackState-BB@0x12 popBackStackState-BB@0x52 ]
+	5       (0000000e) if-nez               v13, +22
+
+popBackStackState-BB@0x12 : [ popBackStackState-BB@0x16 popBackStackState-BB@0x52 ]
+	6       (00000012) if-gez               v14, +20
+
+popBackStackState-BB@0x16 : [ popBackStackState-BB@0x1e popBackStackState-BB@0x52 ]
+	7       (00000016) and-int/lit8         v6, v15, 1
+	8       (0000001a) if-nez               v6, +1c
+
+popBackStackState-BB@0x1e : [ popBackStackState-BB@0x32 popBackStackState-BB@0xc ]
+	9       (0000001e) iget-object          v6, v11, Landroid/support/v4/app/FragmentManagerImpl;->mBackStack Ljava/util/ArrayList;
+	10      (00000022) invoke-virtual       v6, Ljava/util/ArrayList;->size()I
+	11      (00000028) move-result          v6
+	12      (0000002a) add-int/lit8         v4, v6, -1
+	13      (0000002e) if-ltz               v4, -11
+
+popBackStackState-BB@0x32 : [ popBackStackState-BB@0x4e ]
+	14      (00000032) iget-object          v6, v11, Landroid/support/v4/app/FragmentManagerImpl;->mBackStack Ljava/util/ArrayList;
+	15      (00000036) invoke-virtual       v6, v4, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+	16      (0000003c) move-result-object   v1
+	17      (0000003e) check-cast           v1, Landroid/support/v4/app/BackStackRecord;
+	18      (00000042) invoke-virtual       v1, v8, Landroid/support/v4/app/BackStackRecord;->popFromBackStack(Z)V
+	19      (00000048) invoke-virtual       v11, Landroid/support/v4/app/FragmentManagerImpl;->reportBackStackChanged()V
+
+popBackStackState-BB@0x4e : [ popBackStackState-BB@0xc ]
+	20      (0000004e) move                 v9, v8
+	21      (00000050) goto                 -22
+
+popBackStackState-BB@0x52 : [ popBackStackState-BB@0x58 popBackStackState-BB@0x5c ]
+	22      (00000052) const/4              v3, -1
+	23      (00000054) if-nez               v13, +4
+
+popBackStackState-BB@0x58 : [ popBackStackState-BB@0x5c popBackStackState-BB@0xf8 ]
+	24      (00000058) if-ltz               v14, +50
+
+popBackStackState-BB@0x5c : [ popBackStackState-BB@0x6c ]
+	25      (0000005c) iget-object          v6, v11, Landroid/support/v4/app/FragmentManagerImpl;->mBackStack Ljava/util/ArrayList;
+	26      (00000060) invoke-virtual       v6, Ljava/util/ArrayList;->size()I
+	27      (00000066) move-result          v6
+	28      (00000068) add-int/lit8         v3, v6, -1
+
+popBackStackState-BB@0x6c : [ popBackStackState-BB@0x70 popBackStackState-BB@0x98 ]
+	29      (0000006c) if-ltz               v3, +16
+
+popBackStackState-BB@0x70 : [ popBackStackState-BB@0x84 popBackStackState-BB@0xe6 ]
+	30      (00000070) iget-object          v6, v11, Landroid/support/v4/app/FragmentManagerImpl;->mBackStack Ljava/util/ArrayList;
+	31      (00000074) invoke-virtual       v6, v3, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	32      (0000007a) move-result-object   v1
+	33      (0000007c) check-cast           v1, Landroid/support/v4/app/BackStackRecord;
+	34      (00000080) if-eqz               v13, +33
+
+popBackStackState-BB@0x84 : [ popBackStackState-BB@0x98 popBackStackState-BB@0xe6 ]
+	35      (00000084) invoke-virtual       v1, Landroid/support/v4/app/BackStackRecord;->getName()Ljava/lang/String;
+	36      (0000008a) move-result-object   v6
+	37      (0000008c) invoke-virtual       v13, v6, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	38      (00000092) move-result          v6
+	39      (00000094) if-eqz               v6, +29
+
+popBackStackState-BB@0x98 : [ popBackStackState-BB@0x9c popBackStackState-BB@0xc ]
+	40      (00000098) if-ltz               v3, -46
+
+popBackStackState-BB@0x9c : [ popBackStackState-BB@0xa4 popBackStackState-BB@0xf8 ]
+	41      (0000009c) and-int/lit8         v6, v15, 1
+	42      (000000a0) if-eqz               v6, +2c
+
+popBackStackState-BB@0xa4 : [ popBackStackState-BB@0xa8 ]
+	43      (000000a4) add-int/lit8         v3, v3, -1
+
+popBackStackState-BB@0xa8 : [ popBackStackState-BB@0xac popBackStackState-BB@0xf8 ]
+	44      (000000a8) if-ltz               v3, +28
+
+popBackStackState-BB@0xac : [ popBackStackState-BB@0xc0 popBackStackState-BB@0xd4 ]
+	45      (000000ac) iget-object          v6, v11, Landroid/support/v4/app/FragmentManagerImpl;->mBackStack Ljava/util/ArrayList;
+	46      (000000b0) invoke-virtual       v6, v3, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	47      (000000b6) move-result-object   v1
+	48      (000000b8) check-cast           v1, Landroid/support/v4/app/BackStackRecord;
+	49      (000000bc) if-eqz               v13, +c
+
+popBackStackState-BB@0xc0 : [ popBackStackState-BB@0xd4 popBackStackState-BB@0xe0 ]
+	50      (000000c0) invoke-virtual       v1, Landroid/support/v4/app/BackStackRecord;->getName()Ljava/lang/String;
+	51      (000000c6) move-result-object   v6
+	52      (000000c8) invoke-virtual       v13, v6, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	53      (000000ce) move-result          v6
+	54      (000000d0) if-nez               v6, +8
+
+popBackStackState-BB@0xd4 : [ popBackStackState-BB@0xd8 popBackStackState-BB@0xf8 ]
+	55      (000000d4) if-ltz               v14, +12
+
+popBackStackState-BB@0xd8 : [ popBackStackState-BB@0xe0 popBackStackState-BB@0xf8 ]
+	56      (000000d8) iget                 v6, v1, Landroid/support/v4/app/BackStackRecord;->mIndex I
+	57      (000000dc) if-ne                v14, v6, +e
+
+popBackStackState-BB@0xe0 : [ popBackStackState-BB@0xa8 ]
+	58      (000000e0) add-int/lit8         v3, v3, -1
+	59      (000000e4) goto                 -1e
+
+popBackStackState-BB@0xe6 : [ popBackStackState-BB@0xea popBackStackState-BB@0xf2 ]
+	60      (000000e6) if-ltz               v14, +6
+
+popBackStackState-BB@0xea : [ popBackStackState-BB@0xf2 popBackStackState-BB@0x98 ]
+	61      (000000ea) iget                 v6, v1, Landroid/support/v4/app/BackStackRecord;->mIndex I
+	62      (000000ee) if-eq                v14, v6, -2b
+
+popBackStackState-BB@0xf2 : [ popBackStackState-BB@0x6c ]
+	63      (000000f2) add-int/lit8         v3, v3, -1
+	64      (000000f6) goto                 -45
+
+popBackStackState-BB@0xf8 : [ popBackStackState-BB@0x10c popBackStackState-BB@0xc ]
+	65      (000000f8) iget-object          v6, v11, Landroid/support/v4/app/FragmentManagerImpl;->mBackStack Ljava/util/ArrayList;
+	66      (000000fc) invoke-virtual       v6, Ljava/util/ArrayList;->size()I
+	67      (00000102) move-result          v6
+	68      (00000104) add-int/lit8         v6, v6, -1
+	69      (00000108) if-eq                v3, v6, -7e
+
+popBackStackState-BB@0x10c : [ popBackStackState-BB@0x126 ]
+	70      (0000010c) new-instance         v5, Ljava/util/ArrayList;
+	71      (00000110) invoke-direct        v5, Ljava/util/ArrayList;-><init>()V
+	72      (00000116) iget-object          v6, v11, Landroid/support/v4/app/FragmentManagerImpl;->mBackStack Ljava/util/ArrayList;
+	73      (0000011a) invoke-virtual       v6, Ljava/util/ArrayList;->size()I
+	74      (00000120) move-result          v6
+	75      (00000122) add-int/lit8         v2, v6, -1
+
+popBackStackState-BB@0x126 : [ popBackStackState-BB@0x12a popBackStackState-BB@0x142 ]
+	76      (00000126) if-le                v2, v3, +e
+
+popBackStackState-BB@0x12a : [ popBackStackState-BB@0x126 ]
+	77      (0000012a) iget-object          v6, v11, Landroid/support/v4/app/FragmentManagerImpl;->mBackStack Ljava/util/ArrayList;
+	78      (0000012e) invoke-virtual       v6, v2, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+	79      (00000134) move-result-object   v6
+	80      (00000136) invoke-virtual       v5, v6, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+	81      (0000013c) add-int/lit8         v2, v2, -1
+	82      (00000140) goto                 -d
+
+popBackStackState-BB@0x142 : [ popBackStackState-BB@0x150 ]
+	83      (00000142) invoke-virtual       v5, Ljava/util/ArrayList;->size()I
+	84      (00000148) move-result          v6
+	85      (0000014a) add-int/lit8         v0, v6, -1
+	86      (0000014e) const/4              v2, 0
+
+popBackStackState-BB@0x150 : [ popBackStackState-BB@0x154 popBackStackState-BB@0x1b6 ]
+	87      (00000150) if-gt                v2, v0, +33
+
+popBackStackState-BB@0x154 : [ popBackStackState-BB@0x15c popBackStackState-BB@0x194 ]
+	88      (00000154) sget-boolean         v6, Landroid/support/v4/app/FragmentManagerImpl;->DEBUG Z
+	89      (00000158) if-eqz               v6, +1e
+
+popBackStackState-BB@0x15c : [ popBackStackState-BB@0x194 ]
+	90      (0000015c) const-string         v6, 'FragmentManager'
+	91      (00000160) new-instance         v7, Ljava/lang/StringBuilder;
+	92      (00000164) invoke-direct        v7, Ljava/lang/StringBuilder;-><init>()V
+	93      (0000016a) const-string         v10, 'Popping back stack state: '
+	94      (0000016e) invoke-virtual       v7, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	95      (00000174) move-result-object   v7
+	96      (00000176) invoke-virtual       v5, v2, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	97      (0000017c) move-result-object   v10
+	98      (0000017e) invoke-virtual       v7, v10, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	99      (00000184) move-result-object   v7
+	100     (00000186) invoke-virtual       v7, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	101     (0000018c) move-result-object   v7
+	102     (0000018e) invoke-static        v6, v7, Landroid/util/Log;->v(Ljava/lang/String; Ljava/lang/String;)I
+
+popBackStackState-BB@0x194 : [ popBackStackState-BB@0x1a4 popBackStackState-BB@0x1b2 ]
+	103     (00000194) invoke-virtual       v5, v2, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+	104     (0000019a) move-result-object   v6
+	105     (0000019c) check-cast           v6, Landroid/support/v4/app/BackStackRecord;
+	106     (000001a0) if-ne                v2, v0, +9
+
+popBackStackState-BB@0x1a4 : [ popBackStackState-BB@0x1a6 ]
+	107     (000001a4) move                 v7, v8
+
+popBackStackState-BB@0x1a6 : [ popBackStackState-BB@0x150 ]
+	108     (000001a6) invoke-virtual       v6, v7, Landroid/support/v4/app/BackStackRecord;->popFromBackStack(Z)V
+	109     (000001ac) add-int/lit8         v2, v2, 1
+	110     (000001b0) goto                 -30
+
+popBackStackState-BB@0x1b2 : [ popBackStackState-BB@0x1a6 ]
+	111     (000001b2) move                 v7, v9
+	112     (000001b4) goto                 -7
+
+popBackStackState-BB@0x1b6 : [ popBackStackState-BB@0x4e ]
+	113     (000001b6) invoke-virtual       v11, Landroid/support/v4/app/FragmentManagerImpl;->reportBackStackChanged()V
+	114     (000001bc) goto/16              -b7
+

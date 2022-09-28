@@ -1,0 +1,22 @@
+# Landroid/support/v4/util/CircularArray;->isEmpty()Z [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:boolean
+
+isEmpty-BB@0x0 : [ isEmpty-BB@0xc isEmpty-BB@0x10 ]
+	0       (00000000) iget                 v0, v2, Landroid/support/v4/util/CircularArray;->mHead I
+	1       (00000004) iget                 v1, v2, Landroid/support/v4/util/CircularArray;->mTail I
+	2       (00000008) if-ne                v0, v1, +4
+
+isEmpty-BB@0xc : [ isEmpty-BB@0xe ]
+	3       (0000000c) const/4              v0, 1
+
+isEmpty-BB@0xe : 
+	4       (0000000e) return               v0
+
+isEmpty-BB@0x10 : [ isEmpty-BB@0xe ]
+	5       (00000010) const/4              v0, 0
+	6       (00000012) goto                 -2
+

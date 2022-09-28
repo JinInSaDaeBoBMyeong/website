@@ -1,0 +1,36 @@
+# Lorg/webrtc/EglRenderer$7;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x1e ]
+	0       (00000000) iget-object          v1, v3, Lorg/webrtc/EglRenderer$7;->val$latch Ljava/util/concurrent/CountDownLatch;
+	1       (00000004) invoke-virtual       v1, Ljava/util/concurrent/CountDownLatch;->countDown()V
+	2       (0000000a) iget-object          v1, v3, Lorg/webrtc/EglRenderer$7;->this$0 Lorg/webrtc/EglRenderer;
+	3       (0000000e) invoke-static        v1, Lorg/webrtc/EglRenderer;->access$1100(Lorg/webrtc/EglRenderer;)Ljava/util/ArrayList;
+	4       (00000014) move-result-object   v1
+	5       (00000016) invoke-virtual       v1, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+	6       (0000001c) move-result-object   v0
+
+run-BB@0x1e : [ run-BB@0x2a run-BB@0x4a ]
+	7       (0000001e) invoke-interface     v0, Ljava/util/Iterator;->hasNext()Z
+	8       (00000024) move-result          v1
+	9       (00000026) if-eqz               v1, +12
+
+run-BB@0x2a : [ run-BB@0x42 run-BB@0x1e ]
+	10      (0000002a) invoke-interface     v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+	11      (00000030) move-result-object   v1
+	12      (00000032) check-cast           v1, Lorg/webrtc/EglRenderer$FrameListenerAndParams;
+	13      (00000036) iget-object          v1, v1, Lorg/webrtc/EglRenderer$FrameListenerAndParams;->listener Lorg/webrtc/EglRenderer$FrameListener;
+	14      (0000003a) iget-object          v2, v3, Lorg/webrtc/EglRenderer$7;->val$listener Lorg/webrtc/EglRenderer$FrameListener;
+	15      (0000003e) if-ne                v1, v2, -10
+
+run-BB@0x42 : [ run-BB@0x1e ]
+	16      (00000042) invoke-interface     v0, Ljava/util/Iterator;->remove()V
+	17      (00000048) goto                 -15
+
+run-BB@0x4a : 
+	18      (0000004a) return-void          
+

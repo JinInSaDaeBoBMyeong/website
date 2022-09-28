@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/MarginLayoutParamsCompat$MarginLayoutParamsCompatImplBase;->setMarginEnd(Landroid/view/ViewGroup$MarginLayoutParams; I)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.view.ViewGroup$MarginLayoutParams
+# - v2:int
+#
+# - return:void
+
+setMarginEnd-BB@0x0 : 
+	0       (00000000) iput                 v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin I
+	1       (00000004) return-void          
+

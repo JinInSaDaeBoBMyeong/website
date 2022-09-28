@@ -1,0 +1,14 @@
+# Landroid/support/v4/content/ContextCompatFroyo;->getExternalFilesDir(Landroid/content/Context; Ljava/lang/String;)Ljava/io/File; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Context
+# - v2:java.lang.String
+#
+# - return:java.io.File
+
+getExternalFilesDir-BB@0x0 : 
+	0       (00000000) invoke-virtual       v1, v2, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+	1       (00000006) move-result-object   v0
+	2       (00000008) return-object        v0
+

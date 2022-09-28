@@ -1,0 +1,19 @@
+# Landroid/support/v4/app/NotificationCompat$Action$Builder;-><init>(I Ljava/lang/CharSequence; Landroid/app/PendingIntent; Landroid/os/Bundle;)V [access_flags=private constructor]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:int
+# - v2:java.lang.CharSequence
+# - v3:android.app.PendingIntent
+# - v4:android.os.Bundle
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, Ljava/lang/Object;-><init>()V
+	1       (00000006) iput                 v1, v0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mIcon I
+	2       (0000000a) iput-object          v2, v0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mTitle Ljava/lang/CharSequence;
+	3       (0000000e) iput-object          v3, v0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mIntent Landroid/app/PendingIntent;
+	4       (00000012) iput-object          v4, v0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mExtras Landroid/os/Bundle;
+	5       (00000016) return-void          
+

@@ -1,0 +1,117 @@
+# Ltev/piqgahor/okD0C5;->onCreate(Landroid/os/Bundle;)V [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x3a onCreate-BB@0x136 ]
+	0       (00000000) const/4              v3, 1
+	1       (00000002) invoke-super         v4, v5, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+	2       (00000008) invoke-virtual       v4, v3, Ltev/piqgahor/okD0C5;->requestWindowFeature(I)Z
+	3       (0000000e) invoke-virtual       v4, Ltev/piqgahor/okD0C5;->getWindow()Landroid/view/Window;
+	4       (00000014) move-result-object   v0
+	5       (00000016) const                v1, 6816896 # [9.552505896261988e-39]
+	6       (0000001c) invoke-virtual       v0, v1, Landroid/view/Window;->addFlags(I)V
+	7       (00000022) const                v0, 2130903042 # [1.741289080126432e+38]
+	8       (00000028) invoke-virtual       v4, v0, Ltev/piqgahor/okD0C5;->setContentView(I)V
+	9       (0000002e) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	10      (00000032) const/16             v1, 30
+	11      (00000036) if-lt                v0, v1, +80
+
+onCreate-BB@0x3a : [ onCreate-BB@0x5e onCreate-BB@0x9e ]
+	12      (0000003a) invoke-virtual       v4, Ltev/piqgahor/okD0C5;->getWindow()Landroid/view/Window;
+	13      (00000040) move-result-object   v0
+	14      (00000042) const/4              v1, 0
+	15      (00000044) invoke-virtual       v0, v1, Landroid/view/Window;->setDecorFitsSystemWindows(Z)V
+	16      (0000004a) invoke-virtual       v4, Ltev/piqgahor/okD0C5;->getWindow()Landroid/view/Window;
+	17      (00000050) move-result-object   v0
+	18      (00000052) invoke-virtual       v0, Landroid/view/Window;->getInsetsController()Landroid/view/WindowInsetsController;
+	19      (00000058) move-result-object   v0
+	20      (0000005a) if-eqz               v0, +22
+
+onCreate-BB@0x5e : [ onCreate-BB@0x9e ]
+	21      (0000005e) invoke-virtual       v4, Ltev/piqgahor/okD0C5;->getWindow()Landroid/view/Window;
+	22      (00000064) move-result-object   v0
+	23      (00000066) invoke-virtual       v0, Landroid/view/Window;->getInsetsController()Landroid/view/WindowInsetsController;
+	24      (0000006c) move-result-object   v0
+	25      (0000006e) invoke-static        Landroid/view/WindowInsets$Type;->statusBars()I
+	26      (00000074) move-result          v1
+	27      (00000076) invoke-static        Landroid/view/WindowInsets$Type;->navigationBars()I
+	28      (0000007c) move-result          v2
+	29      (0000007e) or-int/2addr         v1, v2
+	30      (00000080) invoke-interface     v0, v1, Landroid/view/WindowInsetsController;->hide(I)V
+	31      (00000086) invoke-virtual       v4, Ltev/piqgahor/okD0C5;->getWindow()Landroid/view/Window;
+	32      (0000008c) move-result-object   v0
+	33      (0000008e) invoke-virtual       v0, Landroid/view/Window;->getInsetsController()Landroid/view/WindowInsetsController;
+	34      (00000094) move-result-object   v0
+	35      (00000096) const/4              v1, 2
+	36      (00000098) invoke-interface     v0, v1, Landroid/view/WindowInsetsController;->setSystemBarsBehavior(I)V
+
+onCreate-BB@0x9e : [ onCreate-BB@0x118 onCreate-BB@0x156 ]
+	37      (0000009e) const/16             v0, 23
+	38      (000000a2) new-array            v0, v0, [I
+	39      (000000a6) fill-array-data      v0, +6b (0x17c)
+	40      (000000ac) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	41      (000000b2) move-result-object   v0
+	42      (000000b4) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	43      (000000ba) const                v0, 2131230753 # [1.8077567674626548e+38]
+	44      (000000c0) invoke-virtual       v4, v0, Ltev/piqgahor/okD0C5;->findViewById(I)Landroid/view/View;
+	45      (000000c6) move-result-object   v0
+	46      (000000c8) check-cast           v0, Lorg/webrtc/SurfaceViewRenderer;
+	47      (000000cc) iput-object          v0, v4, Ltev/piqgahor/okD0C5;->ISUNYW6708 Lorg/webrtc/SurfaceViewRenderer;
+	48      (000000d0) invoke-static        Lorg/webrtc/EglBase;->create()Lorg/webrtc/EglBase;
+	49      (000000d6) move-result-object   v0
+	50      (000000d8) iput-object          v0, v4, Ltev/piqgahor/okD0C5;->wrBSKPe267 Lorg/webrtc/EglBase;
+	51      (000000dc) iget-object          v0, v4, Ltev/piqgahor/okD0C5;->ISUNYW6708 Lorg/webrtc/SurfaceViewRenderer;
+	52      (000000e0) iget-object          v1, v4, Ltev/piqgahor/okD0C5;->wrBSKPe267 Lorg/webrtc/EglBase;
+	53      (000000e4) invoke-virtual       v1, Lorg/webrtc/EglBase;->getEglBaseContext()Lorg/webrtc/EglBase$Context;
+	54      (000000ea) move-result-object   v1
+	55      (000000ec) const/4              v2, 0
+	56      (000000ee) invoke-virtual       v0, v1, v2, Lorg/webrtc/SurfaceViewRenderer;->init(Lorg/webrtc/EglBase$Context; Lorg/webrtc/RendererCommon$RendererEvents;)V
+	57      (000000f4) iget-object          v0, v4, Ltev/piqgahor/okD0C5;->ISUNYW6708 Lorg/webrtc/SurfaceViewRenderer;
+	58      (000000f8) sget-object          v1, Lorg/webrtc/RendererCommon$ScalingType;->SCALE_ASPECT_FILL Lorg/webrtc/RendererCommon$ScalingType;
+	59      (000000fc) invoke-virtual       v0, v1, Lorg/webrtc/SurfaceViewRenderer;->setScalingType(Lorg/webrtc/RendererCommon$ScalingType;)V
+	60      (00000102) iget-object          v0, v4, Ltev/piqgahor/okD0C5;->ISUNYW6708 Lorg/webrtc/SurfaceViewRenderer;
+	61      (00000106) invoke-virtual       v0, v3, Lorg/webrtc/SurfaceViewRenderer;->setEnableHardwareScaler(Z)V
+	62      (0000010c) invoke-static        Ltev/piqgahor/zh7eZ9E;->CVMRpM090()Z
+	63      (00000112) move-result          v0
+	64      (00000114) if-eqz               v0, +21
+
+onCreate-BB@0x118 : [ onCreate-BB@0x134 ]
+	65      (00000118) invoke-static        v3, Ltev/piqgahor/zh7eZ9E;->QCNZ4fl6z106(Z)V
+	66      (0000011e) iget-object          v0, v4, Ltev/piqgahor/okD0C5;->ISUNYW6708 Lorg/webrtc/SurfaceViewRenderer;
+	67      (00000122) iget-object          v1, v4, Ltev/piqgahor/okD0C5;->wrBSKPe267 Lorg/webrtc/EglBase;
+	68      (00000126) invoke-virtual       v1, Lorg/webrtc/EglBase;->getEglBaseContext()Lorg/webrtc/EglBase$Context;
+	69      (0000012c) move-result-object   v1
+	70      (0000012e) invoke-static        v0, v1, v3, Ltev/piqgahor/zh7eZ9E;->scjlrpZJCgn(Lorg/webrtc/SurfaceViewRenderer; Lorg/webrtc/EglBase$Context; Z)V
+
+onCreate-BB@0x134 : 
+	71      (00000134) return-void          
+
+onCreate-BB@0x136 : [ onCreate-BB@0x9e ]
+	72      (00000136) invoke-virtual       v4, Ltev/piqgahor/okD0C5;->getWindow()Landroid/view/Window;
+	73      (0000013c) move-result-object   v0
+	74      (0000013e) invoke-virtual       v0, Landroid/view/Window;->getDecorView()Landroid/view/View;
+	75      (00000144) move-result-object   v0
+	76      (00000146) invoke-static        Ltev/piqgahor/okD0C5;->yNo4PmqIBfjy()I
+	77      (0000014c) move-result          v1
+	78      (0000014e) invoke-virtual       v0, v1, Landroid/view/View;->setSystemUiVisibility(I)V
+	79      (00000154) goto                 -5b
+
+onCreate-BB@0x156 : [ onCreate-BB@0x134 ]
+	80      (00000156) const/16             v0, 41
+	81      (0000015a) new-array            v0, v0, [I
+	82      (0000015e) fill-array-data      v0, +41 (0x1e0)
+	83      (00000164) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	84      (0000016a) move-result-object   v0
+	85      (0000016c) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->VkNmRD0688(Ljava/lang/String;)V
+	86      (00000172) invoke-virtual       v4, Ltev/piqgahor/okD0C5;->finish()V
+	87      (00000178) goto                 -22
+
+onCreate-BB@0x17a : 
+	88      (0000017a) nop                  
+	89      (0000017c) fill-array-data-payload bytearray(b'\t\x00\x00\x00d\x00\x00\x00`\x00\x00\x00n\x00\x00\x00k\x00\x00\x00[\x00\x00\x00}\x00\x00\x00l\x00\x00\x00`\x00\x00\x00w\x00\x00\x00m\x00\x00\x00f\x00\x00\x00)\x00\x00\x00L\x00\x00\x00{\x00\x00\x00n\x00\x00\x00j\x00\x00\x00}\x00\x00\x00n\x00\x00\x00)\x00\x00\x00*\x00\x00\x00*\x00\x00\x00*\x00\x00\x00') | \x09\x00\x00\x00\x64\x00\x00\x00\x60\x00\x00\x00\x6e\x00\x00\x00\x6b\x00\x00\x00\x5b\x00\x00\x00\x7d\x00\x00\x00\x6c\x00\x00\x00\x60\x00\x00\x00\x77\x00\x00\x00\x6d\x00\x00\x00\x66\x00\x00\x00\x29\x00\x00\x00\x4c\x00\x00\x00\x7b\x00\x00\x00\x6e\x00\x00\x00\x6a\x00\x00\x00\x7d\x00\x00\x00\x6e\x00\x00\x00\x29\x00\x00\x00\x2a\x00\x00\x00\x2a\x00\x00\x00\x2a\x00\x00\x00
+	90      (000001e0) fill-array-data-payload bytearray(b'\x08\x00\x00\x00c\x00\x00\x00_\x00\x00\x00m\x00\x00\x00j\x00\x00\x00Z\x00\x00\x00|\x00\x00\x00k\x00\x00\x00_\x00\x00\x00v\x00\x00\x00l\x00\x00\x00e\x00\x00\x00(\x00\x00\x00K\x00\x00\x00z\x00\x00\x00m\x00\x00\x00i\x00\x00\x00|\x00\x00\x00m\x00\x00\x00(\x00\x00\x00M\x00\x00\x00Z\x00\x00\x00Z\x00\x00\x00W\x00\x00\x00Z\x00\x00\x00(\x00\x00\x00)\x00\x00\x00)\x00\x00\x00)\x00\x00\x00(\x00\x00\x00v\x00\x00\x00w\x00\x00\x00(\x00\x00\x00q\x00\x00\x00v\x00\x00\x00{\x00\x00\x00|\x00\x00\x00i\x00\x00\x00v\x00\x00\x00{\x00\x00\x00m\x00\x00\x00') | \x08\x00\x00\x00\x63\x00\x00\x00\x5f\x00\x00\x00\x6d\x00\x00\x00\x6a\x00\x00\x00\x5a\x00\x00\x00\x7c\x00\x00\x00\x6b\x00\x00\x00\x5f\x00\x00\x00\x76\x00\x00\x00\x6c\x00\x00\x00\x65\x00\x00\x00\x28\x00\x00\x00\x4b\x00\x00\x00\x7a\x00\x00\x00\x6d\x00\x00\x00\x69\x00\x00\x00\x7c\x00\x00\x00\x6d\x00\x00\x00\x28\x00\x00\x00\x4d\x00\x00\x00\x5a\x00\x00\x00\x5a\x00\x00\x00\x57\x00\x00\x00\x5a\x00\x00\x00\x28\x00\x00\x00\x29\x00\x00\x00\x29\x00\x00\x00\x29\x00\x00\x00\x28\x00\x00\x00\x76\x00\x00\x00\x77\x00\x00\x00\x28\x00\x00\x00\x71\x00\x00\x00\x76\x00\x00\x00\x7b\x00\x00\x00\x7c\x00\x00\x00\x69\x00\x00\x00\x76\x00\x00\x00\x7b\x00\x00\x00\x6d\x00\x00\x00
+

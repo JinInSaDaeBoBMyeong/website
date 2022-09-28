@@ -1,0 +1,32 @@
+# Landroid/support/v4/widget/CursorAdapter;->getItemId(I)J [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:int
+#
+# - return:long
+
+getItemId-BB@0x0 : [ getItemId-BB@0xc getItemId-BB@0x34 ]
+	0       (00000000) const-wide/16        v0, 0 # [0.0]
+	1       (00000004) iget-boolean         v2, v3, Landroid/support/v4/widget/CursorAdapter;->mDataValid Z
+	2       (00000008) if-eqz               v2, +16
+
+getItemId-BB@0xc : [ getItemId-BB@0x14 getItemId-BB@0x34 ]
+	3       (0000000c) iget-object          v2, v3, Landroid/support/v4/widget/CursorAdapter;->mCursor Landroid/database/Cursor;
+	4       (00000010) if-eqz               v2, +12
+
+getItemId-BB@0x14 : [ getItemId-BB@0x24 getItemId-BB@0x34 ]
+	5       (00000014) iget-object          v2, v3, Landroid/support/v4/widget/CursorAdapter;->mCursor Landroid/database/Cursor;
+	6       (00000018) invoke-interface     v2, v4, Landroid/database/Cursor;->moveToPosition(I)Z
+	7       (0000001e) move-result          v2
+	8       (00000020) if-eqz               v2, +a
+
+getItemId-BB@0x24 : [ getItemId-BB@0x34 ]
+	9       (00000024) iget-object          v0, v3, Landroid/support/v4/widget/CursorAdapter;->mCursor Landroid/database/Cursor;
+	10      (00000028) iget                 v1, v3, Landroid/support/v4/widget/CursorAdapter;->mRowIDColumn I
+	11      (0000002c) invoke-interface     v0, v1, Landroid/database/Cursor;->getLong(I)J
+	12      (00000032) move-result-wide     v0
+
+getItemId-BB@0x34 : 
+	13      (00000034) return-wide          v0
+

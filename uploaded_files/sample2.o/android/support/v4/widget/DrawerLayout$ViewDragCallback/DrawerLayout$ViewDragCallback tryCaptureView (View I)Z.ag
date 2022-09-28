@@ -1,0 +1,38 @@
+# Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->tryCaptureView(Landroid/view/View; I)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+# - v4:int
+#
+# - return:boolean
+
+tryCaptureView-BB@0x0 : [ tryCaptureView-BB@0x10 tryCaptureView-BB@0x38 ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->this$0 Landroid/support/v4/widget/DrawerLayout;
+	1       (00000004) invoke-virtual       v0, v3, Landroid/support/v4/widget/DrawerLayout;->isDrawerView(Landroid/view/View;)Z
+	2       (0000000a) move-result          v0
+	3       (0000000c) if-eqz               v0, +16
+
+tryCaptureView-BB@0x10 : [ tryCaptureView-BB@0x24 tryCaptureView-BB@0x38 ]
+	4       (00000010) iget-object          v0, v2, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->this$0 Landroid/support/v4/widget/DrawerLayout;
+	5       (00000014) iget                 v1, v2, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->mAbsGravity I
+	6       (00000018) invoke-virtual       v0, v3, v1, Landroid/support/v4/widget/DrawerLayout;->checkDrawerViewAbsoluteGravity(Landroid/view/View; I)Z
+	7       (0000001e) move-result          v0
+	8       (00000020) if-eqz               v0, +c
+
+tryCaptureView-BB@0x24 : [ tryCaptureView-BB@0x34 tryCaptureView-BB@0x38 ]
+	9       (00000024) iget-object          v0, v2, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->this$0 Landroid/support/v4/widget/DrawerLayout;
+	10      (00000028) invoke-virtual       v0, v3, Landroid/support/v4/widget/DrawerLayout;->getDrawerLockMode(Landroid/view/View;)I
+	11      (0000002e) move-result          v0
+	12      (00000030) if-nez               v0, +4
+
+tryCaptureView-BB@0x34 : [ tryCaptureView-BB@0x36 ]
+	13      (00000034) const/4              v0, 1
+
+tryCaptureView-BB@0x36 : 
+	14      (00000036) return               v0
+
+tryCaptureView-BB@0x38 : [ tryCaptureView-BB@0x36 ]
+	15      (00000038) const/4              v0, 0
+	16      (0000003a) goto                 -2
+

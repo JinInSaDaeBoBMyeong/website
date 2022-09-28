@@ -1,0 +1,42 @@
+# Landroid/support/v4/widget/DrawerLayout;->setDrawerLockMode(I Landroid/view/View;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:int
+# - v6:android.view.View
+#
+# - return:void
+
+setDrawerLockMode-BB@0x0 : [ setDrawerLockMode-BB@0xc setDrawerLockMode-BB@0x56 ]
+	0       (00000000) invoke-virtual       v4, v6, Landroid/support/v4/widget/DrawerLayout;->isDrawerView(Landroid/view/View;)Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-nez               v1, +27
+
+setDrawerLockMode-BB@0xc : 
+	3       (0000000c) new-instance         v1, Ljava/lang/IllegalArgumentException;
+	4       (00000010) new-instance         v2, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) const-string         v3, 'View '
+	7       (0000001e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000024) move-result-object   v2
+	9       (00000026) invoke-virtual       v2, v6, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) const-string         v3, ' is not a '
+	12      (00000032) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000038) move-result-object   v2
+	14      (0000003a) const-string         v3, 'drawer with appropriate layout_gravity'
+	15      (0000003e) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000044) move-result-object   v2
+	17      (00000046) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	18      (0000004c) move-result-object   v2
+	19      (0000004e) invoke-direct        v1, v2, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+	20      (00000054) throw                v1
+
+setDrawerLockMode-BB@0x56 : 
+	21      (00000056) invoke-virtual       v6, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	22      (0000005c) move-result-object   v1
+	23      (0000005e) check-cast           v1, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	24      (00000062) iget                 v0, v1, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->gravity I
+	25      (00000066) invoke-virtual       v4, v5, v0, Landroid/support/v4/widget/DrawerLayout;->setDrawerLockMode(I I)V
+	26      (0000006c) return-void          
+

@@ -1,0 +1,37 @@
+# Lorg/webrtc/MediaCodecUtils;->codecSupportsType(Landroid/media/MediaCodecInfo; Lorg/webrtc/VideoCodecType;)Z [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:android.media.MediaCodecInfo
+# - v7:org.webrtc.VideoCodecType
+#
+# - return:boolean
+
+codecSupportsType-BB@0x0 : [ codecSupportsType-BB@0xe ]
+	0       (00000000) const/4              v1, 0
+	1       (00000002) invoke-virtual       v6, Landroid/media/MediaCodecInfo;->getSupportedTypes()[Ljava/lang/String;
+	2       (00000008) move-result-object   v3
+	3       (0000000a) array-length         v4, v3
+	4       (0000000c) move                 v2, v1
+
+codecSupportsType-BB@0xe : [ codecSupportsType-BB@0x12 codecSupportsType-BB@0x2c ]
+	5       (0000000e) if-ge                v2, v4, +f
+
+codecSupportsType-BB@0x12 : [ codecSupportsType-BB@0x2a codecSupportsType-BB@0x2e ]
+	6       (00000012) aget-object          v0, v3, v2
+	7       (00000016) invoke-virtual       v7, Lorg/webrtc/VideoCodecType;->mimeType()Ljava/lang/String;
+	8       (0000001c) move-result-object   v5
+	9       (0000001e) invoke-virtual       v5, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	10      (00000024) move-result          v5
+	11      (00000026) if-eqz               v5, +4
+
+codecSupportsType-BB@0x2a : [ codecSupportsType-BB@0x2c ]
+	12      (0000002a) const/4              v1, 1
+
+codecSupportsType-BB@0x2c : 
+	13      (0000002c) return               v1
+
+codecSupportsType-BB@0x2e : [ codecSupportsType-BB@0xe ]
+	14      (0000002e) add-int/lit8         v2, v2, 1
+	15      (00000032) goto                 -12
+

@@ -1,0 +1,15 @@
+# Landroid/support/v4/util/ArrayMap$1;->colSetValue(I Ljava/lang/Object;)Ljava/lang/Object; [access_flags=protected]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:int
+# - v3:java.lang.Object
+#
+# - return:java.lang.Object
+
+colSetValue-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/util/ArrayMap$1;->this$0 Landroid/support/v4/util/ArrayMap;
+	1       (00000004) invoke-virtual       v0, v2, v3, Landroid/support/v4/util/ArrayMap;->setValueAt(I Ljava/lang/Object;)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) return-object        v0
+

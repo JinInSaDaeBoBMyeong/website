@@ -1,0 +1,32 @@
+# Lorg/webrtc/GlUtil;->checkNoGLES2Error(Ljava/lang/String;)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:java.lang.String
+#
+# - return:void
+
+checkNoGLES2Error-BB@0x0 : [ checkNoGLES2Error-BB@0xc checkNoGLES2Error-BB@0x46 ]
+	0       (00000000) invoke-static        Landroid/opengl/GLES20;->glGetError()I
+	1       (00000006) move-result          v0
+	2       (00000008) if-eqz               v0, +1f
+
+checkNoGLES2Error-BB@0xc : 
+	3       (0000000c) new-instance         v1, Ljava/lang/RuntimeException;
+	4       (00000010) new-instance         v2, Ljava/lang/StringBuilder;
+	5       (00000014) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	6       (0000001a) invoke-virtual       v2, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	7       (00000020) move-result-object   v2
+	8       (00000022) const-string         v3, ': GLES20 error: '
+	9       (00000026) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	10      (0000002c) move-result-object   v2
+	11      (0000002e) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	12      (00000034) move-result-object   v2
+	13      (00000036) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	14      (0000003c) move-result-object   v2
+	15      (0000003e) invoke-direct        v1, v2, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	16      (00000044) throw                v1
+
+checkNoGLES2Error-BB@0x46 : 
+	17      (00000046) return-void          
+

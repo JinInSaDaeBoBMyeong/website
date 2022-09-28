@@ -1,0 +1,49 @@
+# Lorg/webrtc/EglBase14;->isEGL14Supported()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:boolean
+
+isEGL14Supported-BB@0x0 : [ isEGL14Supported-BB@0x42 isEGL14Supported-BB@0x64 ]
+	0       (00000000) const/16             v5, 18
+	1       (00000004) const/4              v1, 1
+	2       (00000006) const/4              v2, 0
+	3       (00000008) const-string         v3, 'EglBase14'
+	4       (0000000c) new-instance         v0, Ljava/lang/StringBuilder;
+	5       (00000010) invoke-direct        v0, Ljava/lang/StringBuilder;-><init>()V
+	6       (00000016) const-string         v4, 'SDK version: '
+	7       (0000001a) invoke-virtual       v0, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	8       (00000020) move-result-object   v0
+	9       (00000022) sget                 v4, Lorg/webrtc/EglBase14;->CURRENT_SDK_VERSION I
+	10      (00000026) invoke-virtual       v0, v4, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	11      (0000002c) move-result-object   v0
+	12      (0000002e) const-string         v4, '. isEGL14Supported: '
+	13      (00000032) invoke-virtual       v0, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	14      (00000038) move-result-object   v4
+	15      (0000003a) sget                 v0, Lorg/webrtc/EglBase14;->CURRENT_SDK_VERSION I
+	16      (0000003e) if-lt                v0, v5, +13
+
+isEGL14Supported-BB@0x42 : [ isEGL14Supported-BB@0x44 ]
+	17      (00000042) move                 v0, v1
+
+isEGL14Supported-BB@0x44 : [ isEGL14Supported-BB@0x62 isEGL14Supported-BB@0x68 ]
+	18      (00000044) invoke-virtual       v4, v0, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	19      (0000004a) move-result-object   v0
+	20      (0000004c) invoke-virtual       v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	21      (00000052) move-result-object   v0
+	22      (00000054) invoke-static        v3, v0, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	23      (0000005a) sget                 v0, Lorg/webrtc/EglBase14;->CURRENT_SDK_VERSION I
+	24      (0000005e) if-lt                v0, v5, +5
+
+isEGL14Supported-BB@0x62 : 
+	25      (00000062) return               v1
+
+isEGL14Supported-BB@0x64 : [ isEGL14Supported-BB@0x44 ]
+	26      (00000064) move                 v0, v2
+	27      (00000066) goto                 -11
+
+isEGL14Supported-BB@0x68 : [ isEGL14Supported-BB@0x62 ]
+	28      (00000068) move                 v1, v2
+	29      (0000006a) goto                 -4
+

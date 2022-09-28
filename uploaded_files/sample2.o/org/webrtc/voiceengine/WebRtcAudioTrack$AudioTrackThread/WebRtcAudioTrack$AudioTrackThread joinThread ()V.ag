@@ -1,0 +1,29 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->joinThread()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+joinThread-BB@0x0 : [ joinThread-BB@0x6 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-boolean         v0, v1, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->keepAlive Z
+
+joinThread-BB@0x6 : [ joinThread-BB@0x12 joinThread-BB@0x1e ]
+	2       (00000006) invoke-virtual       v1, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->isAlive()Z
+	3       (0000000c) move-result          v0
+	4       (0000000e) if-eqz               v0, +8
+
+joinThread-BB@0x12 : [ joinThread-BB@0x6 ]
+	5       (00000012) invoke-virtual       v1, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->join()V
+	6       (00000018) goto                 -9
+	12:17
+	(Ljava/lang/InterruptedException; -> 1a joinThread-BB@0x1a)
+
+joinThread-BB@0x1a : [ joinThread-BB@0x6 ]
+	7       (0000001a) move-exception       v0
+	8       (0000001c) goto                 -b
+
+joinThread-BB@0x1e : 
+	9       (0000001e) return-void          
+

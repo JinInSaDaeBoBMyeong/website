@@ -1,0 +1,48 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioEffects;->canUseAcousticEchoCanceler()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v3
+#
+# - return:boolean
+
+canUseAcousticEchoCanceler-BB@0x0 : [ canUseAcousticEchoCanceler-BB@0xc canUseAcousticEchoCanceler-BB@0x64 ]
+	0       (00000000) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioEffects;->isAcousticEchoCancelerSupported()Z
+	1       (00000006) move-result          v1
+	2       (00000008) if-eqz               v1, +2e
+
+canUseAcousticEchoCanceler-BB@0xc : [ canUseAcousticEchoCanceler-BB@0x18 canUseAcousticEchoCanceler-BB@0x64 ]
+	3       (0000000c) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->useWebRtcBasedAcousticEchoCanceler()Z
+	4       (00000012) move-result          v1
+	5       (00000014) if-nez               v1, +28
+
+canUseAcousticEchoCanceler-BB@0x18 : [ canUseAcousticEchoCanceler-BB@0x24 canUseAcousticEchoCanceler-BB@0x64 ]
+	6       (00000018) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioEffects;->isAcousticEchoCancelerBlacklisted()Z
+	7       (0000001e) move-result          v1
+	8       (00000020) if-nez               v1, +22
+
+canUseAcousticEchoCanceler-BB@0x24 : [ canUseAcousticEchoCanceler-BB@0x30 canUseAcousticEchoCanceler-BB@0x64 ]
+	9       (00000024) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioEffects;->isAcousticEchoCancelerExcludedByUUID()Z
+	10      (0000002a) move-result          v1
+	11      (0000002c) if-nez               v1, +1c
+
+canUseAcousticEchoCanceler-BB@0x30 : [ canUseAcousticEchoCanceler-BB@0x32 ]
+	12      (00000030) const/4              v0, 1
+
+canUseAcousticEchoCanceler-BB@0x32 : 
+	13      (00000032) const-string         v1, 'WebRtcAudioEffects'
+	14      (00000036) new-instance         v2, Ljava/lang/StringBuilder;
+	15      (0000003a) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	16      (00000040) const-string         v3, 'canUseAcousticEchoCanceler: '
+	17      (00000044) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004a) move-result-object   v2
+	19      (0000004c) invoke-virtual       v2, v0, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+	20      (00000052) move-result-object   v2
+	21      (00000054) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	22      (0000005a) move-result-object   v2
+	23      (0000005c) invoke-static        v1, v2, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	24      (00000062) return               v0
+
+canUseAcousticEchoCanceler-BB@0x64 : [ canUseAcousticEchoCanceler-BB@0x32 ]
+	25      (00000064) const/4              v0, 0
+	26      (00000066) goto                 -1a
+

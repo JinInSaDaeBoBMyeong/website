@@ -1,0 +1,30 @@
+# Landroid/support/v4/app/ActivityOptionsCompat;->makeThumbnailScaleUpAnimation(Landroid/view/View; Landroid/graphics/Bitmap; I I)Landroid/support/v4/app/ActivityOptionsCompat; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+# - v3:android.graphics.Bitmap
+# - v4:int
+# - v5:int
+#
+# - return:android.support.v4.app.ActivityOptionsCompat
+
+makeThumbnailScaleUpAnimation-BB@0x0 : [ makeThumbnailScaleUpAnimation-BB@0xc makeThumbnailScaleUpAnimation-BB@0x20 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 16
+	2       (00000008) if-lt                v0, v1, +c
+
+makeThumbnailScaleUpAnimation-BB@0xc : [ makeThumbnailScaleUpAnimation-BB@0x1e ]
+	3       (0000000c) new-instance         v0, Landroid/support/v4/app/ActivityOptionsCompat$ActivityOptionsImplJB;
+	4       (00000010) invoke-static        v2, v3, v4, v5, Landroid/support/v4/app/ActivityOptionsCompatJB;->makeThumbnailScaleUpAnimation(Landroid/view/View; Landroid/graphics/Bitmap; I I)Landroid/support/v4/app/ActivityOptionsCompatJB;
+	5       (00000016) move-result-object   v1
+	6       (00000018) invoke-direct        v0, v1, Landroid/support/v4/app/ActivityOptionsCompat$ActivityOptionsImplJB;-><init>(Landroid/support/v4/app/ActivityOptionsCompatJB;)V
+
+makeThumbnailScaleUpAnimation-BB@0x1e : 
+	7       (0000001e) return-object        v0
+
+makeThumbnailScaleUpAnimation-BB@0x20 : [ makeThumbnailScaleUpAnimation-BB@0x1e ]
+	8       (00000020) new-instance         v0, Landroid/support/v4/app/ActivityOptionsCompat;
+	9       (00000024) invoke-direct        v0, Landroid/support/v4/app/ActivityOptionsCompat;-><init>()V
+	10      (0000002a) goto                 -6
+

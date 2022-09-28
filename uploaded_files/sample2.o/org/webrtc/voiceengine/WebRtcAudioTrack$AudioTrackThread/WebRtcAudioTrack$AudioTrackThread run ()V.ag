@@ -1,0 +1,237 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->run()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+run-BB@0x0 : [ run-BB@0x46 ]
+	0       (00000000) const/4              v4, 1
+	1       (00000002) const/4              v5, 0
+	2       (00000004) const/16             v3, -19
+	3       (00000008) invoke-static        v3, Landroid/os/Process;->setThreadPriority(I)V
+	4       (0000000e) const-string         v3, 'WebRtcAudioTrack'
+	5       (00000012) new-instance         v6, Ljava/lang/StringBuilder;
+	6       (00000016) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	7       (0000001c) const-string         v7, 'AudioTrackThread'
+	8       (00000020) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	9       (00000026) move-result-object   v6
+	10      (00000028) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->getThreadInfo()Ljava/lang/String;
+	11      (0000002e) move-result-object   v7
+	12      (00000030) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	13      (00000036) move-result-object   v6
+	14      (00000038) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	15      (0000003e) move-result-object   v6
+	16      (00000040) invoke-static        v3, v6, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+
+run-BB@0x46 : [ run-BB@0x72 run-BB@0x1cc ]
+	17      (00000046) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	18      (0000004a) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$000(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Landroid/media/AudioTrack;
+	19      (00000050) move-result-object   v3
+	20      (00000052) invoke-virtual       v3, Landroid/media/AudioTrack;->play()V
+	21      (00000058) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	22      (0000005c) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$000(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Landroid/media/AudioTrack;
+	23      (00000062) move-result-object   v3
+	24      (00000064) invoke-virtual       v3, Landroid/media/AudioTrack;->getPlayState()I
+	25      (0000006a) move-result          v3
+	26      (0000006c) const/4              v6, 3
+	27      (0000006e) if-ne                v3, v6, +af
+	46:79
+	(Ljava/lang/IllegalStateException; -> 1d2 run-BB@0x1d2)
+
+run-BB@0x72 : [ run-BB@0x74 ]
+	28      (00000072) move                 v3, v4
+	46:79
+	(Ljava/lang/IllegalStateException; -> 1d2 run-BB@0x1d2)
+
+run-BB@0x74 : [ run-BB@0x8e ]
+	29      (00000074) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$100(Z)V
+	30      (0000007a) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	31      (0000007e) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$400(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Ljava/nio/ByteBuffer;
+	32      (00000084) move-result-object   v3
+	33      (00000086) invoke-virtual       v3, Ljava/nio/ByteBuffer;->capacity()I
+	34      (0000008c) move-result          v2
+
+run-BB@0x8e : [ run-BB@0x96 run-BB@0x240 ]
+	35      (0000008e) iget-boolean         v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->keepAlive Z
+	36      (00000092) if-eqz               v3, +d7
+
+run-BB@0x96 : [ run-BB@0xc4 run-BB@0x218 ]
+	37      (00000096) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	38      (0000009a) iget-object          v6, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	39      (0000009e) invoke-static        v6, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$500(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)J
+	40      (000000a4) move-result-wide     v6
+	41      (000000a6) invoke-static        v3, v2, v6, v7, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$600(Lorg/webrtc/voiceengine/WebRtcAudioTrack; I J)V
+	42      (000000ac) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	43      (000000b0) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$400(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Ljava/nio/ByteBuffer;
+	44      (000000b6) move-result-object   v3
+	45      (000000b8) invoke-virtual       v3, Ljava/nio/ByteBuffer;->remaining()I
+	46      (000000be) move-result          v3
+	47      (000000c0) if-gt                v2, v3, +ac
+
+run-BB@0xc4 : [ run-BB@0xc6 ]
+	48      (000000c4) move                 v3, v4
+
+run-BB@0xc6 : [ run-BB@0xd8 run-BB@0x11a ]
+	49      (000000c6) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$100(Z)V
+	50      (000000cc) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$700()Z
+	51      (000000d2) move-result          v3
+	52      (000000d4) if-eqz               v3, +23
+
+run-BB@0xd8 : [ run-BB@0x11a ]
+	53      (000000d8) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	54      (000000dc) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$400(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Ljava/nio/ByteBuffer;
+	55      (000000e2) move-result-object   v3
+	56      (000000e4) invoke-virtual       v3, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
+	57      (000000ea) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	58      (000000ee) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$400(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Ljava/nio/ByteBuffer;
+	59      (000000f4) move-result-object   v3
+	60      (000000f6) iget-object          v6, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	61      (000000fa) invoke-static        v6, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$800(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)[B
+	62      (00000100) move-result-object   v6
+	63      (00000102) invoke-virtual       v3, v6, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
+	64      (00000108) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	65      (0000010c) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$400(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Ljava/nio/ByteBuffer;
+	66      (00000112) move-result-object   v3
+	67      (00000114) invoke-virtual       v3, v5, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+run-BB@0x11a : [ run-BB@0x128 run-BB@0x21e ]
+	68      (0000011a) const/4              v0, 0
+	69      (0000011c) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->runningOnLollipopOrHigher()Z
+	70      (00000122) move-result          v3
+	71      (00000124) if-eqz               v3, +7d
+
+run-BB@0x128 : [ run-BB@0x148 ]
+	72      (00000128) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	73      (0000012c) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$000(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Landroid/media/AudioTrack;
+	74      (00000132) move-result-object   v3
+	75      (00000134) iget-object          v6, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	76      (00000138) invoke-static        v6, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$400(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Ljava/nio/ByteBuffer;
+	77      (0000013e) move-result-object   v6
+	78      (00000140) invoke-direct        v8, v3, v6, v2, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->writeOnLollipop(Landroid/media/AudioTrack; Ljava/nio/ByteBuffer; I)I
+	79      (00000146) move-result          v0
+
+run-BB@0x148 : [ run-BB@0x14c run-BB@0x1b6 ]
+	80      (00000148) if-eq                v0, v2, +37
+
+run-BB@0x14c : [ run-BB@0x182 run-BB@0x1b6 ]
+	81      (0000014c) const-string         v3, 'WebRtcAudioTrack'
+	82      (00000150) new-instance         v6, Ljava/lang/StringBuilder;
+	83      (00000154) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	84      (0000015a) const-string         v7, 'AudioTrack.write failed: '
+	85      (0000015e) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	86      (00000164) move-result-object   v6
+	87      (00000166) invoke-virtual       v6, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	88      (0000016c) move-result-object   v6
+	89      (0000016e) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	90      (00000174) move-result-object   v6
+	91      (00000176) invoke-static        v3, v6, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	92      (0000017c) const/4              v3, -3
+	93      (0000017e) if-ne                v0, v3, +1c
+
+run-BB@0x182 : [ run-BB@0x1b6 ]
+	94      (00000182) iput-boolean         v5, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->keepAlive Z
+	95      (00000186) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	96      (0000018a) new-instance         v6, Ljava/lang/StringBuilder;
+	97      (0000018e) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	98      (00000194) const-string         v7, 'AudioTrack.write failed: '
+	99      (00000198) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	100     (0000019e) move-result-object   v6
+	101     (000001a0) invoke-virtual       v6, v0, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+	102     (000001a6) move-result-object   v6
+	103     (000001a8) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	104     (000001ae) move-result-object   v6
+	105     (000001b0) invoke-static        v3, v6, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$900(Lorg/webrtc/voiceengine/WebRtcAudioTrack; Ljava/lang/String;)V
+
+run-BB@0x1b6 : [ run-BB@0x8e ]
+	106     (000001b6) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	107     (000001ba) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$400(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Ljava/nio/ByteBuffer;
+	108     (000001c0) move-result-object   v3
+	109     (000001c2) invoke-virtual       v3, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+	110     (000001c8) goto/16              -9d
+
+run-BB@0x1cc : [ run-BB@0x74 ]
+	111     (000001cc) move                 v3, v5
+	112     (000001ce) goto/16              -ad
+
+run-BB@0x1d2 : [ run-BB@0x216 ]
+	113     (000001d2) move-exception       v1
+	114     (000001d4) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	115     (000001d8) new-instance         v4, Ljava/lang/StringBuilder;
+	116     (000001dc) invoke-direct        v4, Ljava/lang/StringBuilder;-><init>()V
+	117     (000001e2) const-string         v5, 'AudioTrack.play failed: '
+	118     (000001e6) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	119     (000001ec) move-result-object   v4
+	120     (000001ee) invoke-virtual       v1, Ljava/lang/IllegalStateException;->getMessage()Ljava/lang/String;
+	121     (000001f4) move-result-object   v5
+	122     (000001f6) invoke-virtual       v4, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	123     (000001fc) move-result-object   v4
+	124     (000001fe) invoke-virtual       v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	125     (00000204) move-result-object   v4
+	126     (00000206) invoke-static        v3, v4, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$200(Lorg/webrtc/voiceengine/WebRtcAudioTrack; Ljava/lang/String;)V
+	127     (0000020c) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	128     (00000210) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$300(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)V
+
+run-BB@0x216 : 
+	129     (00000216) return-void          
+
+run-BB@0x218 : [ run-BB@0xc6 ]
+	130     (00000218) move                 v3, v5
+	131     (0000021a) goto/16              -aa
+
+run-BB@0x21e : [ run-BB@0x148 ]
+	132     (0000021e) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	133     (00000222) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$000(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Landroid/media/AudioTrack;
+	134     (00000228) move-result-object   v3
+	135     (0000022a) iget-object          v6, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	136     (0000022e) invoke-static        v6, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$400(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Ljava/nio/ByteBuffer;
+	137     (00000234) move-result-object   v6
+	138     (00000236) invoke-direct        v8, v3, v6, v2, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->writePreLollipop(Landroid/media/AudioTrack; Ljava/nio/ByteBuffer; I)I
+	139     (0000023c) move-result          v0
+	140     (0000023e) goto                 -7b
+
+run-BB@0x240 : [ run-BB@0x252 ]
+	141     (00000240) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	142     (00000244) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$000(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Landroid/media/AudioTrack;
+	143     (0000024a) move-result-object   v3
+	144     (0000024c) invoke-virtual       v3, Landroid/media/AudioTrack;->stop()V
+	240:251
+	(Ljava/lang/IllegalStateException; -> 284 run-BB@0x284)
+
+run-BB@0x252 : [ run-BB@0x26a run-BB@0x2c0 ]
+	145     (00000252) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	146     (00000256) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$000(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Landroid/media/AudioTrack;
+	147     (0000025c) move-result-object   v3
+	148     (0000025e) invoke-virtual       v3, Landroid/media/AudioTrack;->getPlayState()I
+	149     (00000264) move-result          v3
+	150     (00000266) if-ne                v3, v4, +2d
+
+run-BB@0x26a : [ run-BB@0x216 ]
+	151     (0000026a) invoke-static        v4, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$100(Z)V
+	152     (00000270) iget-object          v3, v8, Lorg/webrtc/voiceengine/WebRtcAudioTrack$AudioTrackThread;->this$0 Lorg/webrtc/voiceengine/WebRtcAudioTrack;
+	153     (00000274) invoke-static        v3, Lorg/webrtc/voiceengine/WebRtcAudioTrack;->access$000(Lorg/webrtc/voiceengine/WebRtcAudioTrack;)Landroid/media/AudioTrack;
+	154     (0000027a) move-result-object   v3
+	155     (0000027c) invoke-virtual       v3, Landroid/media/AudioTrack;->flush()V
+	156     (00000282) goto                 -36
+
+run-BB@0x284 : [ run-BB@0x252 ]
+	157     (00000284) move-exception       v1
+	158     (00000286) const-string         v3, 'WebRtcAudioTrack'
+	159     (0000028a) new-instance         v6, Ljava/lang/StringBuilder;
+	160     (0000028e) invoke-direct        v6, Ljava/lang/StringBuilder;-><init>()V
+	161     (00000294) const-string         v7, 'AudioTrack.stop failed: '
+	162     (00000298) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	163     (0000029e) move-result-object   v6
+	164     (000002a0) invoke-virtual       v1, Ljava/lang/IllegalStateException;->getMessage()Ljava/lang/String;
+	165     (000002a6) move-result-object   v7
+	166     (000002a8) invoke-virtual       v6, v7, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	167     (000002ae) move-result-object   v6
+	168     (000002b0) invoke-virtual       v6, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	169     (000002b6) move-result-object   v6
+	170     (000002b8) invoke-static        v3, v6, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	171     (000002be) goto                 -36
+
+run-BB@0x2c0 : [ run-BB@0x26a ]
+	172     (000002c0) move                 v4, v5
+	173     (000002c2) goto                 -2c
+

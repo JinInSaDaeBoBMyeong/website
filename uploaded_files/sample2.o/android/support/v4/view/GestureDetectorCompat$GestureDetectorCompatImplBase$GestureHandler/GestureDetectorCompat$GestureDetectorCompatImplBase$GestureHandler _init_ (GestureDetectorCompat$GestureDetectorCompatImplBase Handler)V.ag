@@ -1,0 +1,16 @@
+# Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase$GestureHandler;-><init>(Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase; Landroid/os/Handler;)V [access_flags=constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.v4.view.GestureDetectorCompat$GestureDetectorCompatImplBase
+# - v3:android.os.Handler
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) iput-object          v2, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase$GestureHandler;->this$0 Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;
+	1       (00000004) invoke-virtual       v3, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) invoke-direct        v1, v0, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+	4       (00000012) return-void          
+

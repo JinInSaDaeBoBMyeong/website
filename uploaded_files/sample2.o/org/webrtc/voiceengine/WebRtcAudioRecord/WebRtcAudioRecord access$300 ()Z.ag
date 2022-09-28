@@ -1,0 +1,11 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioRecord;->access$300()Z [access_flags=static synthetic]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:boolean
+
+access$300-BB@0x0 : 
+	0       (00000000) sget-boolean         v0, Lorg/webrtc/voiceengine/WebRtcAudioRecord;->microphoneMute Z
+	1       (00000004) return               v0
+

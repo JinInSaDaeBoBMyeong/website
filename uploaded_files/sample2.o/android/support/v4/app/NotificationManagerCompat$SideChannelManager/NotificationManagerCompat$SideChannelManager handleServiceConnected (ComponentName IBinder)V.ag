@@ -1,0 +1,27 @@
+# Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->handleServiceConnected(Landroid/content/ComponentName; Landroid/os/IBinder;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.content.ComponentName
+# - v4:android.os.IBinder
+#
+# - return:void
+
+handleServiceConnected-BB@0x0 : [ handleServiceConnected-BB@0x14 handleServiceConnected-BB@0x2c ]
+	0       (00000000) iget-object          v1, v2, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->mRecordMap Ljava/util/Map;
+	1       (00000004) invoke-interface     v1, v3, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;
+	4       (00000010) if-eqz               v0, +e
+
+handleServiceConnected-BB@0x14 : [ handleServiceConnected-BB@0x2c ]
+	5       (00000014) invoke-static        v4, Landroid/support/v4/app/INotificationSideChannel$Stub;->asInterface(Landroid/os/IBinder;)Landroid/support/v4/app/INotificationSideChannel;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) iput-object          v1, v0, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->service Landroid/support/v4/app/INotificationSideChannel;
+	8       (00000020) const/4              v1, 0
+	9       (00000022) iput                 v1, v0, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;->retryCount I
+	10      (00000026) invoke-direct        v2, v0, Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager;->processListenerQueue(Landroid/support/v4/app/NotificationManagerCompat$SideChannelManager$ListenerRecord;)V
+
+handleServiceConnected-BB@0x2c : 
+	11      (0000002c) return-void          
+

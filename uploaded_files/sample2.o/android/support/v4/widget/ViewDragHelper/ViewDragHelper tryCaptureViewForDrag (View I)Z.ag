@@ -1,0 +1,39 @@
+# Landroid/support/v4/widget/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View; I)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+# - v4:int
+#
+# - return:boolean
+
+tryCaptureViewForDrag-BB@0x0 : [ tryCaptureViewForDrag-BB@0xa tryCaptureViewForDrag-BB@0x14 ]
+	0       (00000000) const/4              v0, 1
+	1       (00000002) iget-object          v1, v2, Landroid/support/v4/widget/ViewDragHelper;->mCapturedView Landroid/view/View;
+	2       (00000006) if-ne                v3, v1, +7
+
+tryCaptureViewForDrag-BB@0xa : [ tryCaptureViewForDrag-BB@0x12 tryCaptureViewForDrag-BB@0x14 ]
+	3       (0000000a) iget                 v1, v2, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	4       (0000000e) if-ne                v1, v4, +3
+
+tryCaptureViewForDrag-BB@0x12 : 
+	5       (00000012) return               v0
+
+tryCaptureViewForDrag-BB@0x14 : [ tryCaptureViewForDrag-BB@0x18 tryCaptureViewForDrag-BB@0x34 ]
+	6       (00000014) if-eqz               v3, +10
+
+tryCaptureViewForDrag-BB@0x18 : [ tryCaptureViewForDrag-BB@0x28 tryCaptureViewForDrag-BB@0x34 ]
+	7       (00000018) iget-object          v1, v2, Landroid/support/v4/widget/ViewDragHelper;->mCallback Landroid/support/v4/widget/ViewDragHelper$Callback;
+	8       (0000001c) invoke-virtual       v1, v3, v4, Landroid/support/v4/widget/ViewDragHelper$Callback;->tryCaptureView(Landroid/view/View; I)Z
+	9       (00000022) move-result          v1
+	10      (00000024) if-eqz               v1, +8
+
+tryCaptureViewForDrag-BB@0x28 : [ tryCaptureViewForDrag-BB@0x12 ]
+	11      (00000028) iput                 v4, v2, Landroid/support/v4/widget/ViewDragHelper;->mActivePointerId I
+	12      (0000002c) invoke-virtual       v2, v3, v4, Landroid/support/v4/widget/ViewDragHelper;->captureChildView(Landroid/view/View; I)V
+	13      (00000032) goto                 -10
+
+tryCaptureViewForDrag-BB@0x34 : [ tryCaptureViewForDrag-BB@0x12 ]
+	14      (00000034) const/4              v0, 0
+	15      (00000036) goto                 -12
+

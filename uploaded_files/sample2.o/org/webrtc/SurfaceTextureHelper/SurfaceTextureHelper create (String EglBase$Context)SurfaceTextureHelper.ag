@@ -1,0 +1,24 @@
+# Lorg/webrtc/SurfaceTextureHelper;->create(Ljava/lang/String; Lorg/webrtc/EglBase$Context;)Lorg/webrtc/SurfaceTextureHelper; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:java.lang.String
+# - v4:org.webrtc.EglBase$Context
+#
+# - return:org.webrtc.SurfaceTextureHelper
+
+create-BB@0x0 : 
+	0       (00000000) new-instance         v1, Landroid/os/HandlerThread;
+	1       (00000004) invoke-direct        v1, v3, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+	2       (0000000a) invoke-virtual       v1, Landroid/os/HandlerThread;->start()V
+	3       (00000010) new-instance         v0, Landroid/os/Handler;
+	4       (00000014) invoke-virtual       v1, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+	5       (0000001a) move-result-object   v2
+	6       (0000001c) invoke-direct        v0, v2, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+	7       (00000022) new-instance         v2, Lorg/webrtc/SurfaceTextureHelper$1;
+	8       (00000026) invoke-direct        v2, v4, v0, v3, Lorg/webrtc/SurfaceTextureHelper$1;-><init>(Lorg/webrtc/EglBase$Context; Landroid/os/Handler; Ljava/lang/String;)V
+	9       (0000002c) invoke-static        v0, v2, Lorg/webrtc/ThreadUtils;->invokeAtFrontUninterruptibly(Landroid/os/Handler; Ljava/util/concurrent/Callable;)Ljava/lang/Object;
+	10      (00000032) move-result-object   v2
+	11      (00000034) check-cast           v2, Lorg/webrtc/SurfaceTextureHelper;
+	12      (00000038) return-object        v2
+

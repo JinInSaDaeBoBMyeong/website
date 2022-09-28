@@ -1,0 +1,11 @@
+# Landroid/support/v4/content/CursorLoader;->getUri()Landroid/net/Uri; [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:android.net.Uri
+
+getUri-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/content/CursorLoader;->mUri Landroid/net/Uri;
+	1       (00000004) return-object        v0
+

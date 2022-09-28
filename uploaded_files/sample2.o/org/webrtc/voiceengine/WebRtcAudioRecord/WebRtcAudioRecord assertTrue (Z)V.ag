@@ -1,0 +1,20 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioRecord;->assertTrue(Z)V [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+assertTrue-BB@0x0 : [ assertTrue-BB@0x4 assertTrue-BB@0x14 ]
+	0       (00000000) if-nez               v2, +a
+
+assertTrue-BB@0x4 : 
+	1       (00000004) new-instance         v0, Ljava/lang/AssertionError;
+	2       (00000008) const-string         v1, 'Expected condition to be true'
+	3       (0000000c) invoke-direct        v0, v1, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+	4       (00000012) throw                v0
+
+assertTrue-BB@0x14 : 
+	5       (00000014) return-void          
+

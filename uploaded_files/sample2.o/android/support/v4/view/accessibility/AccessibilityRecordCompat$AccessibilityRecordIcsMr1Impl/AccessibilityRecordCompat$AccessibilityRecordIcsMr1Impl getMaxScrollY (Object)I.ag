@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl;->getMaxScrollY(Ljava/lang/Object;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.Object
+#
+# - return:int
+
+getMaxScrollY-BB@0x0 : 
+	0       (00000000) invoke-static        v2, Landroid/support/v4/view/accessibility/AccessibilityRecordCompatIcsMr1;->getMaxScrollY(Ljava/lang/Object;)I
+	1       (00000006) move-result          v0
+	2       (00000008) return               v0
+

@@ -1,0 +1,25 @@
+# Landroid/support/v4/widget/ContentLoadingProgressBar;-><init>(Landroid/content/Context; Landroid/util/AttributeSet;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.content.Context
+# - v5:android.util.AttributeSet
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) const/4              v2, 0
+	1       (00000002) invoke-direct        v3, v4, v5, v2, Landroid/widget/ProgressBar;-><init>(Landroid/content/Context; Landroid/util/AttributeSet; I)V
+	2       (00000008) const-wide/16        v0, -1 # [-1.0]
+	3       (0000000c) iput-wide            v0, v3, Landroid/support/v4/widget/ContentLoadingProgressBar;->mStartTime J
+	4       (00000010) iput-boolean         v2, v3, Landroid/support/v4/widget/ContentLoadingProgressBar;->mPostedHide Z
+	5       (00000014) iput-boolean         v2, v3, Landroid/support/v4/widget/ContentLoadingProgressBar;->mPostedShow Z
+	6       (00000018) iput-boolean         v2, v3, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDismissed Z
+	7       (0000001c) new-instance         v0, Landroid/support/v4/widget/ContentLoadingProgressBar$1;
+	8       (00000020) invoke-direct        v0, v3, Landroid/support/v4/widget/ContentLoadingProgressBar$1;-><init>(Landroid/support/v4/widget/ContentLoadingProgressBar;)V
+	9       (00000026) iput-object          v0, v3, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDelayedHide Ljava/lang/Runnable;
+	10      (0000002a) new-instance         v0, Landroid/support/v4/widget/ContentLoadingProgressBar$2;
+	11      (0000002e) invoke-direct        v0, v3, Landroid/support/v4/widget/ContentLoadingProgressBar$2;-><init>(Landroid/support/v4/widget/ContentLoadingProgressBar;)V
+	12      (00000034) iput-object          v0, v3, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDelayedShow Ljava/lang/Runnable;
+	13      (00000038) return-void          
+

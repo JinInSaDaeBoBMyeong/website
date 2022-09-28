@@ -1,0 +1,21 @@
+# Landroid/support/v4/os/ParcelableCompat;->newCreator(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.v4.os.ParcelableCompatCreatorCallbacks
+#
+# - return:android.os.Parcelable$Creator
+
+newCreator-BB@0x0 : [ newCreator-BB@0xc newCreator-BB@0x12 ]
+	0       (00000000) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	1       (00000004) const/16             v1, 13
+	2       (00000008) if-lt                v0, v1, +5
+
+newCreator-BB@0xc : [ newCreator-BB@0x12 ]
+	3       (0000000c) invoke-static        v2, Landroid/support/v4/os/ParcelableCompatCreatorHoneycombMR2Stub;->instantiate(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
+
+newCreator-BB@0x12 : 
+	4       (00000012) new-instance         v0, Landroid/support/v4/os/ParcelableCompat$CompatCreator;
+	5       (00000016) invoke-direct        v0, v2, Landroid/support/v4/os/ParcelableCompat$CompatCreator;-><init>(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)V
+	6       (0000001c) return-object        v0
+

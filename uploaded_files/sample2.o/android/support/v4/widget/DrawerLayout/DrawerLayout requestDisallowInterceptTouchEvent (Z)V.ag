@@ -1,0 +1,20 @@
+# Landroid/support/v4/widget/DrawerLayout;->requestDisallowInterceptTouchEvent(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:boolean
+#
+# - return:void
+
+requestDisallowInterceptTouchEvent-BB@0x0 : [ requestDisallowInterceptTouchEvent-BB@0xe requestDisallowInterceptTouchEvent-BB@0x16 ]
+	0       (00000000) invoke-super         v1, v2, Landroid/view/ViewGroup;->requestDisallowInterceptTouchEvent(Z)V
+	1       (00000006) iput-boolean         v2, v1, Landroid/support/v4/widget/DrawerLayout;->mDisallowInterceptRequested Z
+	2       (0000000a) if-eqz               v2, +6
+
+requestDisallowInterceptTouchEvent-BB@0xe : [ requestDisallowInterceptTouchEvent-BB@0x16 ]
+	3       (0000000e) const/4              v0, 1
+	4       (00000010) invoke-virtual       v1, v0, Landroid/support/v4/widget/DrawerLayout;->closeDrawers(Z)V
+
+requestDisallowInterceptTouchEvent-BB@0x16 : 
+	5       (00000016) return-void          
+

@@ -1,0 +1,53 @@
+# Landroid/support/v4/text/TextUtilsCompat;->getLayoutDirectionFromLocale(Ljava/util/Locale;)I [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.util.Locale
+#
+# - return:int
+
+getLayoutDirectionFromLocale-BB@0x0 : [ getLayoutDirectionFromLocale-BB@0x4 getLayoutDirectionFromLocale-BB@0x5e ]
+	0       (00000000) if-eqz               v2, +2f
+
+getLayoutDirectionFromLocale-BB@0x4 : [ getLayoutDirectionFromLocale-BB@0x14 getLayoutDirectionFromLocale-BB@0x5e ]
+	1       (00000004) sget-object          v1, Landroid/support/v4/text/TextUtilsCompat;->ROOT Ljava/util/Locale;
+	2       (00000008) invoke-virtual       v2, v1, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
+	3       (0000000e) move-result          v1
+	4       (00000010) if-nez               v1, +27
+
+getLayoutDirectionFromLocale-BB@0x14 : [ getLayoutDirectionFromLocale-BB@0x30 getLayoutDirectionFromLocale-BB@0x3a ]
+	5       (00000014) invoke-virtual       v2, Ljava/util/Locale;->toString()Ljava/lang/String;
+	6       (0000001a) move-result-object   v1
+	7       (0000001c) invoke-static        v1, Landroid/support/v4/text/ICUCompat;->addLikelySubtags(Ljava/lang/String;)Ljava/lang/String;
+	8       (00000022) move-result-object   v1
+	9       (00000024) invoke-static        v1, Landroid/support/v4/text/ICUCompat;->getScript(Ljava/lang/String;)Ljava/lang/String;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) if-nez               v0, +7
+
+getLayoutDirectionFromLocale-BB@0x30 : [ getLayoutDirectionFromLocale-BB@0x38 ]
+	12      (00000030) invoke-static        v2, Landroid/support/v4/text/TextUtilsCompat;->getLayoutDirectionFromFirstChar(Ljava/util/Locale;)I
+	13      (00000036) move-result          v1
+
+getLayoutDirectionFromLocale-BB@0x38 : 
+	14      (00000038) return               v1
+
+getLayoutDirectionFromLocale-BB@0x3a : [ getLayoutDirectionFromLocale-BB@0x4a getLayoutDirectionFromLocale-BB@0x5a ]
+	15      (0000003a) sget-object          v1, Landroid/support/v4/text/TextUtilsCompat;->ARAB_SCRIPT_SUBTAG Ljava/lang/String;
+	16      (0000003e) invoke-virtual       v0, v1, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	17      (00000044) move-result          v1
+	18      (00000046) if-nez               v1, +a
+
+getLayoutDirectionFromLocale-BB@0x4a : [ getLayoutDirectionFromLocale-BB@0x5a getLayoutDirectionFromLocale-BB@0x5e ]
+	19      (0000004a) sget-object          v1, Landroid/support/v4/text/TextUtilsCompat;->HEBR_SCRIPT_SUBTAG Ljava/lang/String;
+	20      (0000004e) invoke-virtual       v0, v1, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	21      (00000054) move-result          v1
+	22      (00000056) if-eqz               v1, +4
+
+getLayoutDirectionFromLocale-BB@0x5a : [ getLayoutDirectionFromLocale-BB@0x38 ]
+	23      (0000005a) const/4              v1, 1
+	24      (0000005c) goto                 -12
+
+getLayoutDirectionFromLocale-BB@0x5e : [ getLayoutDirectionFromLocale-BB@0x38 ]
+	25      (0000005e) const/4              v1, 0
+	26      (00000060) goto                 -14
+

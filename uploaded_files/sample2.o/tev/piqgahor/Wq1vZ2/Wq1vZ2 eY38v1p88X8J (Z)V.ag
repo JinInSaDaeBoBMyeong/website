@@ -1,0 +1,32 @@
+# Ltev/piqgahor/Wq1vZ2;->eY38v1p88X8J(Z)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:boolean
+#
+# - return:void
+
+eY38v1p88X8J-BB@0x0 : 
+	0       (00000000) const/4              v5, 1
+	1       (00000002) const/4              v6, 0
+	2       (00000004) iget-object          v0, v7, Ltev/piqgahor/Wq1vZ2;->uptmhR4 Ljava/lang/Object;
+	3       (00000008) iget-object          v1, v7, Ltev/piqgahor/Wq1vZ2;->BWZYcs9 Ljava/lang/Class;
+	4       (0000000c) const/16             v2, 16
+	5       (00000010) new-array            v2, v2, [I
+	6       (00000014) fill-array-data      v2, +1a (0x48)
+	7       (0000001a) invoke-static        v2, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	8       (00000020) move-result-object   v2
+	9       (00000022) new-array            v3, v5, [Ljava/lang/Class;
+	10      (00000026) sget-object          v4, Ljava/lang/Boolean;->TYPE Ljava/lang/Class;
+	11      (0000002a) aput-object          v4, v3, v6
+	12      (0000002e) new-array            v4, v5, [Ljava/lang/Object;
+	13      (00000032) invoke-static        v8, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+	14      (00000038) move-result-object   v5
+	15      (0000003a) aput-object          v5, v4, v6
+	16      (0000003e) invoke-static        v0, v1, v2, v3, v4, Ltev/piqgahor/IEx3fn07c;->hDlawJbE49(Ljava/lang/Object; Ljava/lang/Class; Ljava/lang/String; [Ljava/lang/Class; [Ljava/lang/Object;)Ljava/lang/Object;
+	17      (00000044) return-void          
+
+eY38v1p88X8J-BB@0x46 : 
+	18      (00000046) nop                  
+	19      (00000048) fill-array-data-payload bytearray(b'\x1c\x00\x00\x00s\x00\x00\x00\x81\x00\x00\x00~\x00\x00\x00n\x00\x00\x00\x90\x00\x00\x00\x7f\x00\x00\x00s\x00\x00\x00\x8a\x00\x00\x00\x80\x00\x00\x00o\x00\x00\x00\x84\x00\x00\x00\x8b\x00\x00\x00\x93\x00\x00\x00\x81\x00\x00\x00\x80\x00\x00\x00') | \x1c\x00\x00\x00\x73\x00\x00\x00\x81\x00\x00\x00\x7e\x00\x00\x00\x6e\x00\x00\x00\x90\x00\x00\x00\x7f\x00\x00\x00\x73\x00\x00\x00\x8a\x00\x00\x00\x80\x00\x00\x00\x6f\x00\x00\x00\x84\x00\x00\x00\x8b\x00\x00\x00\x93\x00\x00\x00\x81\x00\x00\x00\x80\x00\x00\x00
+

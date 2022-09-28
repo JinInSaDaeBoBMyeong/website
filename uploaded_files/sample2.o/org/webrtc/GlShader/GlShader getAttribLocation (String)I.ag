@@ -1,0 +1,45 @@
+# Lorg/webrtc/GlShader;->getAttribLocation(Ljava/lang/String;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:java.lang.String
+#
+# - return:int
+
+getAttribLocation-BB@0x0 : [ getAttribLocation-BB@0xa getAttribLocation-BB@0x1a ]
+	0       (00000000) iget                 v1, v4, Lorg/webrtc/GlShader;->program I
+	1       (00000004) const/4              v2, -1
+	2       (00000006) if-ne                v1, v2, +a
+
+getAttribLocation-BB@0xa : 
+	3       (0000000a) new-instance         v1, Ljava/lang/RuntimeException;
+	4       (0000000e) const-string         v2, 'The program has been released'
+	5       (00000012) invoke-direct        v1, v2, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	6       (00000018) throw                v1
+
+getAttribLocation-BB@0x1a : [ getAttribLocation-BB@0x2a getAttribLocation-BB@0x68 ]
+	7       (0000001a) iget                 v1, v4, Lorg/webrtc/GlShader;->program I
+	8       (0000001e) invoke-static        v1, v5, Landroid/opengl/GLES20;->glGetAttribLocation(I Ljava/lang/String;)I
+	9       (00000024) move-result          v0
+	10      (00000026) if-gez               v0, +21
+
+getAttribLocation-BB@0x2a : 
+	11      (0000002a) new-instance         v1, Ljava/lang/RuntimeException;
+	12      (0000002e) new-instance         v2, Ljava/lang/StringBuilder;
+	13      (00000032) invoke-direct        v2, Ljava/lang/StringBuilder;-><init>()V
+	14      (00000038) const-string         v3, "Could not locate '"
+	15      (0000003c) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	16      (00000042) move-result-object   v2
+	17      (00000044) invoke-virtual       v2, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	18      (0000004a) move-result-object   v2
+	19      (0000004c) const-string         v3, "' in program"
+	20      (00000050) invoke-virtual       v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	21      (00000056) move-result-object   v2
+	22      (00000058) invoke-virtual       v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	23      (0000005e) move-result-object   v2
+	24      (00000060) invoke-direct        v1, v2, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+	25      (00000066) throw                v1
+
+getAttribLocation-BB@0x68 : 
+	26      (00000068) return               v0
+

@@ -1,0 +1,31 @@
+# Lorg/webrtc/voiceengine/WebRtcAudioManager;->getLowLatencyOutputFramesPerBuffer()I [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v4
+#
+# - return:int
+
+getLowLatencyOutputFramesPerBuffer-BB@0x0 : [ getLowLatencyOutputFramesPerBuffer-BB@0x1e getLowLatencyOutputFramesPerBuffer-BB@0x20 ]
+	0       (00000000) const/16             v1, 256
+	1       (00000004) invoke-direct        v4, Lorg/webrtc/voiceengine/WebRtcAudioManager;->isLowLatencyOutputSupported()Z
+	2       (0000000a) move-result          v2
+	3       (0000000c) invoke-static        v2, Lorg/webrtc/voiceengine/WebRtcAudioManager;->assertTrue(Z)V
+	4       (00000012) invoke-static        Lorg/webrtc/voiceengine/WebRtcAudioUtils;->runningOnJellyBeanMR1OrHigher()Z
+	5       (00000018) move-result          v2
+	6       (0000001a) if-nez               v2, +3
+
+getLowLatencyOutputFramesPerBuffer-BB@0x1e : 
+	7       (0000001e) return               v1
+
+getLowLatencyOutputFramesPerBuffer-BB@0x20 : [ getLowLatencyOutputFramesPerBuffer-BB@0x34 getLowLatencyOutputFramesPerBuffer-BB@0x1e ]
+	8       (00000020) iget-object          v2, v4, Lorg/webrtc/voiceengine/WebRtcAudioManager;->audioManager Landroid/media/AudioManager;
+	9       (00000024) const-string         v3, 'android.media.property.OUTPUT_FRAMES_PER_BUFFER'
+	10      (00000028) invoke-virtual       v2, v3, Landroid/media/AudioManager;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+	11      (0000002e) move-result-object   v0
+	12      (00000030) if-eqz               v0, -9
+
+getLowLatencyOutputFramesPerBuffer-BB@0x34 : [ getLowLatencyOutputFramesPerBuffer-BB@0x1e ]
+	13      (00000034) invoke-static        v0, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+	14      (0000003a) move-result          v1
+	15      (0000003c) goto                 -f
+

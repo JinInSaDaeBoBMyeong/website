@@ -1,0 +1,12 @@
+# Landroid/support/v4/widget/SlidingPaneLayout;->access$400(Landroid/support/v4/widget/SlidingPaneLayout;)Landroid/view/View; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.widget.SlidingPaneLayout
+#
+# - return:android.view.View
+
+access$400-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/widget/SlidingPaneLayout;->mSlideableView Landroid/view/View;
+	1       (00000004) return-object        v0
+

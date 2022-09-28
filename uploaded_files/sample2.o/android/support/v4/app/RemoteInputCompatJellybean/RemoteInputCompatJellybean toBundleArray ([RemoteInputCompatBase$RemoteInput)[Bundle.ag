@@ -1,0 +1,34 @@
+# Landroid/support/v4/app/RemoteInputCompatJellybean;->toBundleArray([Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;)[Landroid/os/Bundle; [access_flags=static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.v4.app.RemoteInputCompatBase$RemoteInput[]
+#
+# - return:android.os.Bundle[]
+
+toBundleArray-BB@0x0 : [ toBundleArray-BB@0x4 toBundleArray-BB@0x8 ]
+	0       (00000000) if-nez               v3, +4
+
+toBundleArray-BB@0x4 : [ toBundleArray-BB@0x6 ]
+	1       (00000004) const/4              v0, 0
+
+toBundleArray-BB@0x6 : 
+	2       (00000006) return-object        v0
+
+toBundleArray-BB@0x8 : [ toBundleArray-BB@0x10 ]
+	3       (00000008) array-length         v2, v3
+	4       (0000000a) new-array            v0, v2, [Landroid/os/Bundle;
+	5       (0000000e) const/4              v1, 0
+
+toBundleArray-BB@0x10 : [ toBundleArray-BB@0x16 toBundleArray-BB@0x6 ]
+	6       (00000010) array-length         v2, v3
+	7       (00000012) if-ge                v1, v2, -6
+
+toBundleArray-BB@0x16 : [ toBundleArray-BB@0x10 ]
+	8       (00000016) aget-object          v2, v3, v1
+	9       (0000001a) invoke-static        v2, Landroid/support/v4/app/RemoteInputCompatJellybean;->toBundle(Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;)Landroid/os/Bundle;
+	10      (00000020) move-result-object   v2
+	11      (00000022) aput-object          v2, v0, v1
+	12      (00000026) add-int/lit8         v1, v1, 1
+	13      (0000002a) goto                 -d
+

@@ -1,0 +1,434 @@
+# Landroid/support/v4/view/ViewPager;->onTouchEvent(Landroid/view/MotionEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v28
+# - v29:android.view.MotionEvent
+#
+# - return:boolean
+
+onTouchEvent-BB@0x0 : [ onTouchEvent-BB@0x10 onTouchEvent-BB@0x16 ]
+	0       (00000000) move-object/from16   v0, v28
+	1       (00000004) iget-boolean         v0, v0, Landroid/support/v4/view/ViewPager;->mFakeDragging Z
+	2       (00000008) move/from16          v24, v0
+	3       (0000000c) if-eqz               v24, +5
+
+onTouchEvent-BB@0x10 : [ onTouchEvent-BB@0x14 ]
+	4       (00000010) const/16             v24, 1
+
+onTouchEvent-BB@0x14 : 
+	5       (00000014) return               v24
+
+onTouchEvent-BB@0x16 : [ onTouchEvent-BB@0x22 onTouchEvent-BB@0x34 ]
+	6       (00000016) invoke-virtual/range v29, Landroid/view/MotionEvent;->getAction()I
+	7       (0000001c) move-result          v24
+	8       (0000001e) if-nez               v24, +b
+
+onTouchEvent-BB@0x22 : [ onTouchEvent-BB@0x2e onTouchEvent-BB@0x34 ]
+	9       (00000022) invoke-virtual/range v29, Landroid/view/MotionEvent;->getEdgeFlags()I
+	10      (00000028) move-result          v24
+	11      (0000002a) if-eqz               v24, +5
+
+onTouchEvent-BB@0x2e : [ onTouchEvent-BB@0x14 ]
+	12      (0000002e) const/16             v24, 0
+	13      (00000032) goto                 -f
+
+onTouchEvent-BB@0x34 : [ onTouchEvent-BB@0x44 onTouchEvent-BB@0x5c ]
+	14      (00000034) move-object/from16   v0, v28
+	15      (00000038) iget-object          v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	16      (0000003c) move-object/from16   v24, v0
+	17      (00000040) if-eqz               v24, +e
+
+onTouchEvent-BB@0x44 : [ onTouchEvent-BB@0x5c onTouchEvent-BB@0x62 ]
+	18      (00000044) move-object/from16   v0, v28
+	19      (00000048) iget-object          v0, v0, Landroid/support/v4/view/ViewPager;->mAdapter Landroid/support/v4/view/PagerAdapter;
+	20      (0000004c) move-object/from16   v24, v0
+	21      (00000050) invoke-virtual/range v24, Landroid/support/v4/view/PagerAdapter;->getCount()I
+	22      (00000056) move-result          v24
+	23      (00000058) if-nez               v24, +5
+
+onTouchEvent-BB@0x5c : [ onTouchEvent-BB@0x14 ]
+	24      (0000005c) const/16             v24, 0
+	25      (00000060) goto                 -26
+
+onTouchEvent-BB@0x62 : [ onTouchEvent-BB@0x72 onTouchEvent-BB@0x86 ]
+	26      (00000062) move-object/from16   v0, v28
+	27      (00000066) iget-object          v0, v0, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+	28      (0000006a) move-object/from16   v24, v0
+	29      (0000006e) if-nez               v24, +c
+
+onTouchEvent-BB@0x72 : [ onTouchEvent-BB@0x86 ]
+	30      (00000072) invoke-static        Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
+	31      (00000078) move-result-object   v24
+	32      (0000007a) move-object/from16   v0, v24
+	33      (0000007e) move-object/from16   v1, v28
+	34      (00000082) iput-object          v0, v1, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+
+onTouchEvent-BB@0x86 : [ D:onTouchEvent-BB@0xb8 0:onTouchEvent-BB@0xc8 1:onTouchEvent-BB@0x31e 2:onTouchEvent-BB@0x152 3:onTouchEvent-BB@0x496 4:onTouchEvent-BB@0xb8 5:onTouchEvent-BB@0x51e 6:onTouchEvent-BB@0x55a ]
+	35      (00000086) move-object/from16   v0, v28
+	36      (0000008a) iget-object          v0, v0, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+	37      (0000008e) move-object/from16   v24, v0
+	38      (00000092) move-object/from16   v0, v24
+	39      (00000096) move-object/from16   v1, v29
+	40      (0000009a) invoke-virtual       v0, v1, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+	41      (000000a0) invoke-virtual/range v29, Landroid/view/MotionEvent;->getAction()I
+	42      (000000a6) move-result          v5
+	43      (000000a8) const/4              v11, 0
+	44      (000000aa) and-int/lit16        v0, v5, 255
+	45      (000000ae) move/from16          v24, v0
+	46      (000000b2) packed-switch        v24, +275 (0x59c)
+
+onTouchEvent-BB@0xb8 : [ onTouchEvent-BB@0xbc onTouchEvent-BB@0xc2 ]
+	47      (000000b8) if-eqz               v11, +5
+
+onTouchEvent-BB@0xbc : [ onTouchEvent-BB@0xc2 ]
+	48      (000000bc) invoke-static/range  v28, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
+
+onTouchEvent-BB@0xc2 : [ onTouchEvent-BB@0x14 ]
+	49      (000000c2) const/16             v24, 1
+	50      (000000c6) goto                 -59
+
+onTouchEvent-BB@0xc8 : [ onTouchEvent-BB@0xb8 ]
+	51      (000000c8) move-object/from16   v0, v28
+	52      (000000cc) iget-object          v0, v0, Landroid/support/v4/view/ViewPager;->mScroller Landroid/widget/Scroller;
+	53      (000000d0) move-object/from16   v24, v0
+	54      (000000d4) invoke-virtual/range v24, Landroid/widget/Scroller;->abortAnimation()V
+	55      (000000da) const/16             v24, 0
+	56      (000000de) move/from16          v0, v24
+	57      (000000e2) move-object/from16   v1, v28
+	58      (000000e6) iput-boolean         v0, v1, Landroid/support/v4/view/ViewPager;->mPopulatePending Z
+	59      (000000ea) invoke-virtual/range v28, Landroid/support/v4/view/ViewPager;->populate()V
+	60      (000000f0) invoke-virtual/range v29, Landroid/view/MotionEvent;->getX()F
+	61      (000000f6) move-result          v24
+	62      (000000f8) move/from16          v0, v24
+	63      (000000fc) move-object/from16   v1, v28
+	64      (00000100) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mInitialMotionX F
+	65      (00000104) move/from16          v0, v24
+	66      (00000108) move-object/from16   v1, v28
+	67      (0000010c) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionX F
+	68      (00000110) invoke-virtual/range v29, Landroid/view/MotionEvent;->getY()F
+	69      (00000116) move-result          v24
+	70      (00000118) move/from16          v0, v24
+	71      (0000011c) move-object/from16   v1, v28
+	72      (00000120) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mInitialMotionY F
+	73      (00000124) move/from16          v0, v24
+	74      (00000128) move-object/from16   v1, v28
+	75      (0000012c) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionY F
+	76      (00000130) const/16             v24, 0
+	77      (00000134) move-object/from16   v0, v29
+	78      (00000138) move/from16          v1, v24
+	79      (0000013c) invoke-static        v0, v1, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	80      (00000142) move-result          v24
+	81      (00000144) move/from16          v0, v24
+	82      (00000148) move-object/from16   v1, v28
+	83      (0000014c) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mActivePointerId I
+	84      (00000150) goto                 -4c
+
+onTouchEvent-BB@0x152 : [ onTouchEvent-BB@0x162 onTouchEvent-BB@0x2a6 ]
+	85      (00000152) move-object/from16   v0, v28
+	86      (00000156) iget-boolean         v0, v0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged Z
+	87      (0000015a) move/from16          v24, v0
+	88      (0000015e) if-nez               v24, +a4
+
+onTouchEvent-BB@0x162 : [ onTouchEvent-BB@0x1e4 onTouchEvent-BB@0x2a6 ]
+	89      (00000162) move-object/from16   v0, v28
+	90      (00000166) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mActivePointerId I
+	91      (0000016a) move/from16          v24, v0
+	92      (0000016e) move-object/from16   v0, v29
+	93      (00000172) move/from16          v1, v24
+	94      (00000176) invoke-static        v0, v1, Landroid/support/v4/view/MotionEventCompat;->findPointerIndex(Landroid/view/MotionEvent; I)I
+	95      (0000017c) move-result          v15
+	96      (0000017e) move-object/from16   v0, v29
+	97      (00000182) invoke-static        v0, v15, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	98      (00000188) move-result          v20
+	99      (0000018a) move-object/from16   v0, v28
+	100     (0000018e) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mLastMotionX F
+	101     (00000192) move/from16          v24, v0
+	102     (00000196) sub-float            v24, v20, v24
+	103     (0000019a) invoke-static/range  v24, Ljava/lang/Math;->abs(F)F
+	104     (000001a0) move-result          v21
+	105     (000001a2) move-object/from16   v0, v29
+	106     (000001a6) invoke-static        v0, v15, Landroid/support/v4/view/MotionEventCompat;->getY(Landroid/view/MotionEvent; I)F
+	107     (000001ac) move-result          v22
+	108     (000001ae) move-object/from16   v0, v28
+	109     (000001b2) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mLastMotionY F
+	110     (000001b6) move/from16          v24, v0
+	111     (000001ba) sub-float            v24, v22, v24
+	112     (000001be) invoke-static/range  v24, Ljava/lang/Math;->abs(F)F
+	113     (000001c4) move-result          v23
+	114     (000001c6) move-object/from16   v0, v28
+	115     (000001ca) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mTouchSlop I
+	116     (000001ce) move/from16          v24, v0
+	117     (000001d2) move/from16          v0, v24
+	118     (000001d6) int-to-float         v0, v0
+	119     (000001d8) move/from16          v24, v0
+	120     (000001dc) cmpl-float           v24, v21, v24
+	121     (000001e0) if-lez               v24, +63
+
+onTouchEvent-BB@0x1e4 : [ onTouchEvent-BB@0x1ec onTouchEvent-BB@0x2a6 ]
+	122     (000001e4) cmpl-float           v24, v21, v23
+	123     (000001e8) if-lez               v24, +5f
+
+onTouchEvent-BB@0x1ec : [ onTouchEvent-BB@0x22a onTouchEvent-BB@0x2f6 ]
+	124     (000001ec) const/16             v24, 1
+	125     (000001f0) move/from16          v0, v24
+	126     (000001f4) move-object/from16   v1, v28
+	127     (000001f8) iput-boolean         v0, v1, Landroid/support/v4/view/ViewPager;->mIsBeingDragged Z
+	128     (000001fc) const/16             v24, 1
+	129     (00000200) move-object/from16   v0, v28
+	130     (00000204) move/from16          v1, v24
+	131     (00000208) invoke-direct        v0, v1, Landroid/support/v4/view/ViewPager;->requestParentDisallowInterceptTouchEvent(Z)V
+	132     (0000020e) move-object/from16   v0, v28
+	133     (00000212) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mInitialMotionX F
+	134     (00000216) move/from16          v24, v0
+	135     (0000021a) sub-float            v24, v20, v24
+	136     (0000021e) const/16             v25, 0
+	137     (00000222) cmpl-float           v24, v24, v25
+	138     (00000226) if-lez               v24, +68
+
+onTouchEvent-BB@0x22a : [ onTouchEvent-BB@0x250 ]
+	139     (0000022a) move-object/from16   v0, v28
+	140     (0000022e) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mInitialMotionX F
+	141     (00000232) move/from16          v24, v0
+	142     (00000236) move-object/from16   v0, v28
+	143     (0000023a) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mTouchSlop I
+	144     (0000023e) move/from16          v25, v0
+	145     (00000242) move/from16          v0, v25
+	146     (00000246) int-to-float         v0, v0
+	147     (00000248) move/from16          v25, v0
+	148     (0000024c) add-float            v24, v24, v25
+
+onTouchEvent-BB@0x250 : [ onTouchEvent-BB@0x298 onTouchEvent-BB@0x2a6 ]
+	149     (00000250) move/from16          v0, v24
+	150     (00000254) move-object/from16   v1, v28
+	151     (00000258) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionX F
+	152     (0000025c) move/from16          v0, v22
+	153     (00000260) move-object/from16   v1, v28
+	154     (00000264) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionY F
+	155     (00000268) const/16             v24, 1
+	156     (0000026c) move-object/from16   v0, v28
+	157     (00000270) move/from16          v1, v24
+	158     (00000274) invoke-direct        v0, v1, Landroid/support/v4/view/ViewPager;->setScrollState(I)V
+	159     (0000027a) const/16             v24, 1
+	160     (0000027e) move-object/from16   v0, v28
+	161     (00000282) move/from16          v1, v24
+	162     (00000286) invoke-direct        v0, v1, Landroid/support/v4/view/ViewPager;->setScrollingCacheEnabled(Z)V
+	163     (0000028c) invoke-virtual/range v28, Landroid/support/v4/view/ViewPager;->getParent()Landroid/view/ViewParent;
+	164     (00000292) move-result-object   v14
+	165     (00000294) if-eqz               v14, +9
+
+onTouchEvent-BB@0x298 : [ onTouchEvent-BB@0x2a6 ]
+	166     (00000298) const/16             v24, 1
+	167     (0000029c) move/from16          v0, v24
+	168     (000002a0) invoke-interface     v14, v0, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+onTouchEvent-BB@0x2a6 : [ onTouchEvent-BB@0x2b6 onTouchEvent-BB@0xb8 ]
+	169     (000002a6) move-object/from16   v0, v28
+	170     (000002aa) iget-boolean         v0, v0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged Z
+	171     (000002ae) move/from16          v24, v0
+	172     (000002b2) if-eqz               v24, -fd
+
+onTouchEvent-BB@0x2b6 : [ onTouchEvent-BB@0xb8 ]
+	173     (000002b6) move-object/from16   v0, v28
+	174     (000002ba) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mActivePointerId I
+	175     (000002be) move/from16          v24, v0
+	176     (000002c2) move-object/from16   v0, v29
+	177     (000002c6) move/from16          v1, v24
+	178     (000002ca) invoke-static        v0, v1, Landroid/support/v4/view/MotionEventCompat;->findPointerIndex(Landroid/view/MotionEvent; I)I
+	179     (000002d0) move-result          v6
+	180     (000002d2) move-object/from16   v0, v29
+	181     (000002d6) invoke-static        v0, v6, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	182     (000002dc) move-result          v20
+	183     (000002de) move-object/from16   v0, v28
+	184     (000002e2) move/from16          v1, v20
+	185     (000002e6) invoke-direct        v0, v1, Landroid/support/v4/view/ViewPager;->performDrag(F)Z
+	186     (000002ec) move-result          v24
+	187     (000002ee) or-int               v11, v11, v24
+	188     (000002f2) goto/16              -11d
+
+onTouchEvent-BB@0x2f6 : [ onTouchEvent-BB@0x250 ]
+	189     (000002f6) move-object/from16   v0, v28
+	190     (000002fa) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mInitialMotionX F
+	191     (000002fe) move/from16          v24, v0
+	192     (00000302) move-object/from16   v0, v28
+	193     (00000306) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mTouchSlop I
+	194     (0000030a) move/from16          v25, v0
+	195     (0000030e) move/from16          v0, v25
+	196     (00000312) int-to-float         v0, v0
+	197     (00000314) move/from16          v25, v0
+	198     (00000318) sub-float            v24, v24, v25
+	199     (0000031c) goto                 -66
+
+onTouchEvent-BB@0x31e : [ onTouchEvent-BB@0x32e onTouchEvent-BB@0xb8 ]
+	200     (0000031e) move-object/from16   v0, v28
+	201     (00000322) iget-boolean         v0, v0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged Z
+	202     (00000326) move/from16          v24, v0
+	203     (0000032a) if-eqz               v24, -139
+
+onTouchEvent-BB@0x32e : [ onTouchEvent-BB@0xb8 ]
+	204     (0000032e) move-object/from16   v0, v28
+	205     (00000332) iget-object          v0, v0, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+	206     (00000336) move-object/from16   v18, v0
+	207     (0000033a) const/16             v24, 1000
+	208     (0000033e) move-object/from16   v0, v28
+	209     (00000342) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mMaximumVelocity I
+	210     (00000346) move/from16          v25, v0
+	211     (0000034a) move/from16          v0, v25
+	212     (0000034e) int-to-float         v0, v0
+	213     (00000350) move/from16          v25, v0
+	214     (00000354) move-object/from16   v0, v18
+	215     (00000358) move/from16          v1, v24
+	216     (0000035c) move/from16          v2, v25
+	217     (00000360) invoke-virtual       v0, v1, v2, Landroid/view/VelocityTracker;->computeCurrentVelocity(I F)V
+	218     (00000366) move-object/from16   v0, v28
+	219     (0000036a) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mActivePointerId I
+	220     (0000036e) move/from16          v24, v0
+	221     (00000372) move-object/from16   v0, v18
+	222     (00000376) move/from16          v1, v24
+	223     (0000037a) invoke-static        v0, v1, Landroid/support/v4/view/VelocityTrackerCompat;->getXVelocity(Landroid/view/VelocityTracker; I)F
+	224     (00000380) move-result          v24
+	225     (00000382) move/from16          v0, v24
+	226     (00000386) float-to-int         v10, v0
+	227     (00000388) const/16             v24, 1
+	228     (0000038c) move/from16          v0, v24
+	229     (00000390) move-object/from16   v1, v28
+	230     (00000394) iput-boolean         v0, v1, Landroid/support/v4/view/ViewPager;->mPopulatePending Z
+	231     (00000398) invoke-direct/range  v28, Landroid/support/v4/view/ViewPager;->getClientWidth()I
+	232     (0000039e) move-result          v19
+	233     (000003a0) invoke-virtual/range v28, Landroid/support/v4/view/ViewPager;->getScrollX()I
+	234     (000003a6) move-result          v16
+	235     (000003a8) invoke-direct/range  v28, Landroid/support/v4/view/ViewPager;->infoForCurrentScrollPosition()Landroid/support/v4/view/ViewPager$ItemInfo;
+	236     (000003ae) move-result-object   v8
+	237     (000003b0) iget                 v7, v8, Landroid/support/v4/view/ViewPager$ItemInfo;->position I
+	238     (000003b4) move/from16          v0, v16
+	239     (000003b8) int-to-float         v0, v0
+	240     (000003ba) move/from16          v24, v0
+	241     (000003be) move/from16          v0, v19
+	242     (000003c2) int-to-float         v0, v0
+	243     (000003c4) move/from16          v25, v0
+	244     (000003c8) div-float            v24, v24, v25
+	245     (000003cc) iget                 v0, v8, Landroid/support/v4/view/ViewPager$ItemInfo;->offset F
+	246     (000003d0) move/from16          v25, v0
+	247     (000003d4) sub-float            v24, v24, v25
+	248     (000003d8) iget                 v0, v8, Landroid/support/v4/view/ViewPager$ItemInfo;->widthFactor F
+	249     (000003dc) move/from16          v25, v0
+	250     (000003e0) div-float            v13, v24, v25
+	251     (000003e4) move-object/from16   v0, v28
+	252     (000003e8) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mActivePointerId I
+	253     (000003ec) move/from16          v24, v0
+	254     (000003f0) move-object/from16   v0, v29
+	255     (000003f4) move/from16          v1, v24
+	256     (000003f8) invoke-static        v0, v1, Landroid/support/v4/view/MotionEventCompat;->findPointerIndex(Landroid/view/MotionEvent; I)I
+	257     (000003fe) move-result          v6
+	258     (00000400) move-object/from16   v0, v29
+	259     (00000404) invoke-static        v0, v6, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	260     (0000040a) move-result          v20
+	261     (0000040c) move-object/from16   v0, v28
+	262     (00000410) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mInitialMotionX F
+	263     (00000414) move/from16          v24, v0
+	264     (00000418) sub-float            v24, v20, v24
+	265     (0000041c) move/from16          v0, v24
+	266     (00000420) float-to-int         v0, v0
+	267     (00000422) move/from16          v17, v0
+	268     (00000426) move-object/from16   v0, v28
+	269     (0000042a) move/from16          v1, v17
+	270     (0000042e) invoke-direct        v0, v7, v13, v10, v1, Landroid/support/v4/view/ViewPager;->determineTargetPage(I F I I)I
+	271     (00000434) move-result          v12
+	272     (00000436) const/16             v24, 1
+	273     (0000043a) const/16             v25, 1
+	274     (0000043e) move-object/from16   v0, v28
+	275     (00000442) move/from16          v1, v24
+	276     (00000446) move/from16          v2, v25
+	277     (0000044a) invoke-virtual       v0, v12, v1, v2, v10, Landroid/support/v4/view/ViewPager;->setCurrentItemInternal(I Z Z I)V
+	278     (00000450) const/16             v24, -1
+	279     (00000454) move/from16          v0, v24
+	280     (00000458) move-object/from16   v1, v28
+	281     (0000045c) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mActivePointerId I
+	282     (00000460) invoke-direct/range  v28, Landroid/support/v4/view/ViewPager;->endDrag()V
+	283     (00000466) move-object/from16   v0, v28
+	284     (0000046a) iget-object          v0, v0, Landroid/support/v4/view/ViewPager;->mLeftEdge Landroid/support/v4/widget/EdgeEffectCompat;
+	285     (0000046e) move-object/from16   v24, v0
+	286     (00000472) invoke-virtual/range v24, Landroid/support/v4/widget/EdgeEffectCompat;->onRelease()Z
+	287     (00000478) move-result          v24
+	288     (0000047a) move-object/from16   v0, v28
+	289     (0000047e) iget-object          v0, v0, Landroid/support/v4/view/ViewPager;->mRightEdge Landroid/support/v4/widget/EdgeEffectCompat;
+	290     (00000482) move-object/from16   v25, v0
+	291     (00000486) invoke-virtual/range v25, Landroid/support/v4/widget/EdgeEffectCompat;->onRelease()Z
+	292     (0000048c) move-result          v25
+	293     (0000048e) or-int               v11, v24, v25
+	294     (00000492) goto/16              -1ed
+
+onTouchEvent-BB@0x496 : [ onTouchEvent-BB@0x4a6 onTouchEvent-BB@0xb8 ]
+	295     (00000496) move-object/from16   v0, v28
+	296     (0000049a) iget-boolean         v0, v0, Landroid/support/v4/view/ViewPager;->mIsBeingDragged Z
+	297     (0000049e) move/from16          v24, v0
+	298     (000004a2) if-eqz               v24, -1f5
+
+onTouchEvent-BB@0x4a6 : [ onTouchEvent-BB@0xb8 ]
+	299     (000004a6) move-object/from16   v0, v28
+	300     (000004aa) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mCurItem I
+	301     (000004ae) move/from16          v24, v0
+	302     (000004b2) const/16             v25, 1
+	303     (000004b6) const/16             v26, 0
+	304     (000004ba) const/16             v27, 0
+	305     (000004be) move-object/from16   v0, v28
+	306     (000004c2) move/from16          v1, v24
+	307     (000004c6) move/from16          v2, v25
+	308     (000004ca) move/from16          v3, v26
+	309     (000004ce) move/from16          v4, v27
+	310     (000004d2) invoke-direct        v0, v1, v2, v3, v4, Landroid/support/v4/view/ViewPager;->scrollToItem(I Z I Z)V
+	311     (000004d8) const/16             v24, -1
+	312     (000004dc) move/from16          v0, v24
+	313     (000004e0) move-object/from16   v1, v28
+	314     (000004e4) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mActivePointerId I
+	315     (000004e8) invoke-direct/range  v28, Landroid/support/v4/view/ViewPager;->endDrag()V
+	316     (000004ee) move-object/from16   v0, v28
+	317     (000004f2) iget-object          v0, v0, Landroid/support/v4/view/ViewPager;->mLeftEdge Landroid/support/v4/widget/EdgeEffectCompat;
+	318     (000004f6) move-object/from16   v24, v0
+	319     (000004fa) invoke-virtual/range v24, Landroid/support/v4/widget/EdgeEffectCompat;->onRelease()Z
+	320     (00000500) move-result          v24
+	321     (00000502) move-object/from16   v0, v28
+	322     (00000506) iget-object          v0, v0, Landroid/support/v4/view/ViewPager;->mRightEdge Landroid/support/v4/widget/EdgeEffectCompat;
+	323     (0000050a) move-object/from16   v25, v0
+	324     (0000050e) invoke-virtual/range v25, Landroid/support/v4/widget/EdgeEffectCompat;->onRelease()Z
+	325     (00000514) move-result          v25
+	326     (00000516) or-int               v11, v24, v25
+	327     (0000051a) goto/16              -231
+
+onTouchEvent-BB@0x51e : [ onTouchEvent-BB@0xb8 ]
+	328     (0000051e) invoke-static/range  v29, Landroid/support/v4/view/MotionEventCompat;->getActionIndex(Landroid/view/MotionEvent;)I
+	329     (00000524) move-result          v9
+	330     (00000526) move-object/from16   v0, v29
+	331     (0000052a) invoke-static        v0, v9, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	332     (00000530) move-result          v20
+	333     (00000532) move/from16          v0, v20
+	334     (00000536) move-object/from16   v1, v28
+	335     (0000053a) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionX F
+	336     (0000053e) move-object/from16   v0, v29
+	337     (00000542) invoke-static        v0, v9, Landroid/support/v4/view/MotionEventCompat;->getPointerId(Landroid/view/MotionEvent; I)I
+	338     (00000548) move-result          v24
+	339     (0000054a) move/from16          v0, v24
+	340     (0000054e) move-object/from16   v1, v28
+	341     (00000552) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mActivePointerId I
+	342     (00000556) goto/16              -24f
+
+onTouchEvent-BB@0x55a : [ onTouchEvent-BB@0xb8 ]
+	343     (0000055a) invoke-direct/range  v28 ... v29, Landroid/support/v4/view/ViewPager;->onSecondaryPointerUp(Landroid/view/MotionEvent;)V
+	344     (00000560) move-object/from16   v0, v28
+	345     (00000564) iget                 v0, v0, Landroid/support/v4/view/ViewPager;->mActivePointerId I
+	346     (00000568) move/from16          v24, v0
+	347     (0000056c) move-object/from16   v0, v29
+	348     (00000570) move/from16          v1, v24
+	349     (00000574) invoke-static        v0, v1, Landroid/support/v4/view/MotionEventCompat;->findPointerIndex(Landroid/view/MotionEvent; I)I
+	350     (0000057a) move-result          v24
+	351     (0000057c) move-object/from16   v0, v29
+	352     (00000580) move/from16          v1, v24
+	353     (00000584) invoke-static        v0, v1, Landroid/support/v4/view/MotionEventCompat;->getX(Landroid/view/MotionEvent; I)F
+	354     (0000058a) move-result          v24
+	355     (0000058c) move/from16          v0, v24
+	356     (00000590) move-object/from16   v1, v28
+	357     (00000594) iput                 v0, v1, Landroid/support/v4/view/ViewPager;->mLastMotionX F
+	358     (00000598) goto/16              -270
+
+onTouchEvent-BB@0x59c : 
+	359     (0000059c) packed-switch-payload 0 1 2 3 4 5 6
+

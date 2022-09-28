@@ -1,0 +1,20 @@
+# Lorg/webrtc/SurfaceTextureHelper;->stopListening()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+stopListening-BB@0x0 : 
+	0       (00000000) const-string         v0, 'SurfaceTextureHelper'
+	1       (00000004) const-string         v1, 'stopListening()'
+	2       (00000008) invoke-static        v0, v1, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	3       (0000000e) iget-object          v0, v2, Lorg/webrtc/SurfaceTextureHelper;->handler Landroid/os/Handler;
+	4       (00000012) iget-object          v1, v2, Lorg/webrtc/SurfaceTextureHelper;->setListenerRunnable Ljava/lang/Runnable;
+	5       (00000016) invoke-virtual       v0, v1, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+	6       (0000001c) iget-object          v0, v2, Lorg/webrtc/SurfaceTextureHelper;->handler Landroid/os/Handler;
+	7       (00000020) new-instance         v1, Lorg/webrtc/SurfaceTextureHelper$4;
+	8       (00000024) invoke-direct        v1, v2, Lorg/webrtc/SurfaceTextureHelper$4;-><init>(Lorg/webrtc/SurfaceTextureHelper;)V
+	9       (0000002a) invoke-static        v0, v1, Lorg/webrtc/ThreadUtils;->invokeAtFrontUninterruptibly(Landroid/os/Handler; Ljava/lang/Runnable;)V
+	10      (00000030) return-void          
+

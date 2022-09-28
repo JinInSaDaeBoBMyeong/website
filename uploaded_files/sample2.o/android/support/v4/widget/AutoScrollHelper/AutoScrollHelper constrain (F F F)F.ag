@@ -1,0 +1,29 @@
+# Landroid/support/v4/widget/AutoScrollHelper;->constrain(F F F)F [access_flags=private static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:float
+# - v2:float
+# - v3:float
+#
+# - return:float
+
+constrain-BB@0x0 : [ constrain-BB@0x8 constrain-BB@0xa ]
+	0       (00000000) cmpl-float           v0, v1, v3
+	1       (00000004) if-lez               v0, +3
+
+constrain-BB@0x8 : 
+	2       (00000008) return               v3
+
+constrain-BB@0xa : [ constrain-BB@0x12 constrain-BB@0x16 ]
+	3       (0000000a) cmpg-float           v0, v1, v2
+	4       (0000000e) if-gez               v0, +4
+
+constrain-BB@0x12 : [ constrain-BB@0x8 ]
+	5       (00000012) move                 v3, v2
+	6       (00000014) goto                 -6
+
+constrain-BB@0x16 : [ constrain-BB@0x8 ]
+	7       (00000016) move                 v3, v1
+	8       (00000018) goto                 -8
+

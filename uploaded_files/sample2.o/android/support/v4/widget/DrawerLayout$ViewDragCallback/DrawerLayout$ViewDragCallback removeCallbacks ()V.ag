@@ -1,0 +1,13 @@
+# Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->removeCallbacks()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+removeCallbacks-BB@0x0 : 
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->this$0 Landroid/support/v4/widget/DrawerLayout;
+	1       (00000004) iget-object          v1, v2, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->mPeekRunnable Ljava/lang/Runnable;
+	2       (00000008) invoke-virtual       v0, v1, Landroid/support/v4/widget/DrawerLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
+	3       (0000000e) return-void          
+

@@ -1,0 +1,16 @@
+# Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->hashCode()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:int
+
+hashCode-BB@0x0 : 
+	0       (00000000) const                v0, 65537 # [9.183689745645554e-41]
+	1       (00000006) iget                 v1, v2, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->min I
+	2       (0000000a) mul-int/2addr        v0, v1
+	3       (0000000c) add-int/lit8         v0, v0, 1
+	4       (00000010) iget                 v1, v2, Lorg/webrtc/CameraEnumerationAndroid$CaptureFormat$FramerateRange;->max I
+	5       (00000014) add-int/2addr        v0, v1
+	6       (00000016) return               v0
+

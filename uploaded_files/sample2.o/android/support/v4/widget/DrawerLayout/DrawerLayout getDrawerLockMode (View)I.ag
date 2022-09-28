@@ -1,0 +1,32 @@
+# Landroid/support/v4/widget/DrawerLayout;->getDrawerLockMode(Landroid/view/View;)I [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.View
+#
+# - return:int
+
+getDrawerLockMode-BB@0x0 : [ getDrawerLockMode-BB@0xe getDrawerLockMode-BB@0x14 ]
+	0       (00000000) invoke-virtual       v2, v3, Landroid/support/v4/widget/DrawerLayout;->getDrawerViewAbsoluteGravity(Landroid/view/View;)I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, 3
+	3       (0000000a) if-ne                v0, v1, +5
+
+getDrawerLockMode-BB@0xe : [ getDrawerLockMode-BB@0x12 ]
+	4       (0000000e) iget                 v1, v2, Landroid/support/v4/widget/DrawerLayout;->mLockModeLeft I
+
+getDrawerLockMode-BB@0x12 : 
+	5       (00000012) return               v1
+
+getDrawerLockMode-BB@0x14 : [ getDrawerLockMode-BB@0x1a getDrawerLockMode-BB@0x20 ]
+	6       (00000014) const/4              v1, 5
+	7       (00000016) if-ne                v0, v1, +5
+
+getDrawerLockMode-BB@0x1a : [ getDrawerLockMode-BB@0x12 ]
+	8       (0000001a) iget                 v1, v2, Landroid/support/v4/widget/DrawerLayout;->mLockModeRight I
+	9       (0000001e) goto                 -6
+
+getDrawerLockMode-BB@0x20 : [ getDrawerLockMode-BB@0x12 ]
+	10      (00000020) const/4              v1, 0
+	11      (00000022) goto                 -8
+

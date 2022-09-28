@@ -1,0 +1,20 @@
+# Landroid/support/v4/util/LongSparseArray;->keyAt(I)J [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+#
+# - return:long
+
+keyAt-BB@0x0 : [ keyAt-BB@0x8 keyAt-BB@0xe ]
+	0       (00000000) iget-boolean         v0, v2, Landroid/support/v4/util/LongSparseArray;->mGarbage Z
+	1       (00000004) if-eqz               v0, +5
+
+keyAt-BB@0x8 : [ keyAt-BB@0xe ]
+	2       (00000008) invoke-direct        v2, Landroid/support/v4/util/LongSparseArray;->gc()V
+
+keyAt-BB@0xe : 
+	3       (0000000e) iget-object          v0, v2, Landroid/support/v4/util/LongSparseArray;->mKeys [J
+	4       (00000012) aget-wide            v0, v0, v3
+	5       (00000016) return-wide          v0
+

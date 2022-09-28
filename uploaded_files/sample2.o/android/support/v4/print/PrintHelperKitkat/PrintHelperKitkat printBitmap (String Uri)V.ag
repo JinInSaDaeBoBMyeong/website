@@ -1,0 +1,46 @@
+# Landroid/support/v4/print/PrintHelperKitkat;->printBitmap(Ljava/lang/String; Landroid/net/Uri;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:java.lang.String
+# - v9:android.net.Uri
+#
+# - return:void
+
+printBitmap-BB@0x0 : [ printBitmap-BB@0x40 printBitmap-BB@0x5a ]
+	0       (00000000) iget                 v2, v7, Landroid/support/v4/print/PrintHelperKitkat;->mScaleMode I
+	1       (00000004) new-instance         v3, Landroid/support/v4/print/PrintHelperKitkat$2;
+	2       (00000008) invoke-direct        v3, v7, v8, v9, v2, Landroid/support/v4/print/PrintHelperKitkat$2;-><init>(Landroid/support/v4/print/PrintHelperKitkat; Ljava/lang/String; Landroid/net/Uri; I)V
+	3       (0000000e) iget-object          v5, v7, Landroid/support/v4/print/PrintHelperKitkat;->mContext Landroid/content/Context;
+	4       (00000012) const-string         v6, 'print'
+	5       (00000016) invoke-virtual       v5, v6, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+	6       (0000001c) move-result-object   v4
+	7       (0000001e) check-cast           v4, Landroid/print/PrintManager;
+	8       (00000022) new-instance         v1, Landroid/print/PrintAttributes$Builder;
+	9       (00000026) invoke-direct        v1, Landroid/print/PrintAttributes$Builder;-><init>()V
+	10      (0000002c) iget                 v5, v7, Landroid/support/v4/print/PrintHelperKitkat;->mColorMode I
+	11      (00000030) invoke-virtual       v1, v5, Landroid/print/PrintAttributes$Builder;->setColorMode(I)Landroid/print/PrintAttributes$Builder;
+	12      (00000036) iget                 v5, v7, Landroid/support/v4/print/PrintHelperKitkat;->mOrientation I
+	13      (0000003a) const/4              v6, 1
+	14      (0000003c) if-ne                v5, v6, +f
+
+printBitmap-BB@0x40 : [ printBitmap-BB@0x4a ]
+	15      (00000040) sget-object          v5, Landroid/print/PrintAttributes$MediaSize;->UNKNOWN_LANDSCAPE Landroid/print/PrintAttributes$MediaSize;
+	16      (00000044) invoke-virtual       v1, v5, Landroid/print/PrintAttributes$Builder;->setMediaSize(Landroid/print/PrintAttributes$MediaSize;)Landroid/print/PrintAttributes$Builder;
+
+printBitmap-BB@0x4a : 
+	17      (0000004a) invoke-virtual       v1, Landroid/print/PrintAttributes$Builder;->build()Landroid/print/PrintAttributes;
+	18      (00000050) move-result-object   v0
+	19      (00000052) invoke-virtual       v4, v8, v3, v0, Landroid/print/PrintManager;->print(Ljava/lang/String; Landroid/print/PrintDocumentAdapter; Landroid/print/PrintAttributes;)Landroid/print/PrintJob;
+	20      (00000058) return-void          
+
+printBitmap-BB@0x5a : [ printBitmap-BB@0x64 printBitmap-BB@0x4a ]
+	21      (0000005a) iget                 v5, v7, Landroid/support/v4/print/PrintHelperKitkat;->mOrientation I
+	22      (0000005e) const/4              v6, 2
+	23      (00000060) if-ne                v5, v6, -b
+
+printBitmap-BB@0x64 : [ printBitmap-BB@0x4a ]
+	24      (00000064) sget-object          v5, Landroid/print/PrintAttributes$MediaSize;->UNKNOWN_PORTRAIT Landroid/print/PrintAttributes$MediaSize;
+	25      (00000068) invoke-virtual       v1, v5, Landroid/print/PrintAttributes$Builder;->setMediaSize(Landroid/print/PrintAttributes$MediaSize;)Landroid/print/PrintAttributes$Builder;
+	26      (0000006e) goto                 -12
+

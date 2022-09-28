@@ -1,0 +1,12 @@
+# Lorg/webrtc/CameraCapturer;->access$1500(Lorg/webrtc/CameraCapturer;)Lorg/webrtc/CameraEnumerator; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.CameraCapturer
+#
+# - return:org.webrtc.CameraEnumerator
+
+access$1500-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/CameraCapturer;->cameraEnumerator Lorg/webrtc/CameraEnumerator;
+	1       (00000004) return-object        v0
+

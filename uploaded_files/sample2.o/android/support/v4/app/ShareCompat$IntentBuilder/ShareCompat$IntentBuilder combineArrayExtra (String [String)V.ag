@@ -1,0 +1,39 @@
+# Landroid/support/v4/app/ShareCompat$IntentBuilder;->combineArrayExtra(Ljava/lang/String; [Ljava/lang/String;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:java.lang.String
+# - v8:java.lang.String[]
+#
+# - return:void
+
+combineArrayExtra-BB@0x0 : [ combineArrayExtra-BB@0x16 combineArrayExtra-BB@0x3a ]
+	0       (00000000) const/4              v4, 0
+	1       (00000002) invoke-virtual       v6, Landroid/support/v4/app/ShareCompat$IntentBuilder;->getIntent()Landroid/content/Intent;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) invoke-virtual       v0, v7, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
+	4       (00000010) move-result-object   v1
+	5       (00000012) if-eqz               v1, +14
+
+combineArrayExtra-BB@0x16 : [ combineArrayExtra-BB@0x18 ]
+	6       (00000016) array-length         v2, v1
+
+combineArrayExtra-BB@0x18 : [ combineArrayExtra-BB@0x24 combineArrayExtra-BB@0x2a ]
+	7       (00000018) array-length         v5, v8
+	8       (0000001a) add-int/2addr        v5, v2
+	9       (0000001c) new-array            v3, v5, [Ljava/lang/String;
+	10      (00000020) if-eqz               v1, +5
+
+combineArrayExtra-BB@0x24 : [ combineArrayExtra-BB@0x2a ]
+	11      (00000024) invoke-static        v1, v4, v3, v4, v2, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+
+combineArrayExtra-BB@0x2a : 
+	12      (0000002a) array-length         v5, v8
+	13      (0000002c) invoke-static        v8, v4, v3, v2, v5, Ljava/lang/System;->arraycopy(Ljava/lang/Object; I Ljava/lang/Object; I I)V
+	14      (00000032) invoke-virtual       v0, v7, v3, Landroid/content/Intent;->putExtra(Ljava/lang/String; [Ljava/lang/String;)Landroid/content/Intent;
+	15      (00000038) return-void          
+
+combineArrayExtra-BB@0x3a : [ combineArrayExtra-BB@0x18 ]
+	16      (0000003a) move                 v2, v4
+	17      (0000003c) goto                 -12
+

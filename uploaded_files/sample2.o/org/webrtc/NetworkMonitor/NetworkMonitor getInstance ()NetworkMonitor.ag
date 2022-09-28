@@ -1,0 +1,20 @@
+# Lorg/webrtc/NetworkMonitor;->getInstance()Lorg/webrtc/NetworkMonitor; [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v0
+#
+# - return:org.webrtc.NetworkMonitor
+
+getInstance-BB@0x0 : [ getInstance-BB@0x8 getInstance-BB@0x16 ]
+	0       (00000000) sget-object          v0, Lorg/webrtc/NetworkMonitor;->instance Lorg/webrtc/NetworkMonitor;
+	1       (00000004) if-nez               v0, +9
+
+getInstance-BB@0x8 : [ getInstance-BB@0x16 ]
+	2       (00000008) new-instance         v0, Lorg/webrtc/NetworkMonitor;
+	3       (0000000c) invoke-direct        v0, Lorg/webrtc/NetworkMonitor;-><init>()V
+	4       (00000012) sput-object          v0, Lorg/webrtc/NetworkMonitor;->instance Lorg/webrtc/NetworkMonitor;
+
+getInstance-BB@0x16 : 
+	5       (00000016) sget-object          v0, Lorg/webrtc/NetworkMonitor;->instance Lorg/webrtc/NetworkMonitor;
+	6       (0000001a) return-object        v0
+

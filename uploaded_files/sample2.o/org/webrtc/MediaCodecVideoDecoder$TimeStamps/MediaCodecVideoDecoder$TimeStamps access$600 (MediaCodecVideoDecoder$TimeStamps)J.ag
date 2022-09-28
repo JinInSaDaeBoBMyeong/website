@@ -1,0 +1,12 @@
+# Lorg/webrtc/MediaCodecVideoDecoder$TimeStamps;->access$600(Lorg/webrtc/MediaCodecVideoDecoder$TimeStamps;)J [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:org.webrtc.MediaCodecVideoDecoder$TimeStamps
+#
+# - return:long
+
+access$600-BB@0x0 : 
+	0       (00000000) iget-wide            v0, v2, Lorg/webrtc/MediaCodecVideoDecoder$TimeStamps;->decodeStartTimeMs J
+	1       (00000004) return-wide          v0
+

@@ -1,0 +1,37 @@
+# Landroid/support/v4/app/NotificationCompatJellybean;->addBigPictureStyle(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor; Ljava/lang/CharSequence; Z Ljava/lang/CharSequence; Landroid/graphics/Bitmap; Landroid/graphics/Bitmap; Z)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.support.v4.app.NotificationBuilderWithBuilderAccessor
+# - v4:java.lang.CharSequence
+# - v5:boolean
+# - v6:java.lang.CharSequence
+# - v7:android.graphics.Bitmap
+# - v8:android.graphics.Bitmap
+# - v9:boolean
+#
+# - return:void
+
+addBigPictureStyle-BB@0x0 : [ addBigPictureStyle-BB@0x26 addBigPictureStyle-BB@0x2c ]
+	0       (00000000) new-instance         v1, Landroid/app/Notification$BigPictureStyle;
+	1       (00000004) invoke-interface     v3, Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
+	2       (0000000a) move-result-object   v2
+	3       (0000000c) invoke-direct        v1, v2, Landroid/app/Notification$BigPictureStyle;-><init>(Landroid/app/Notification$Builder;)V
+	4       (00000012) invoke-virtual       v1, v4, Landroid/app/Notification$BigPictureStyle;->setBigContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;
+	5       (00000018) move-result-object   v1
+	6       (0000001a) invoke-virtual       v1, v7, Landroid/app/Notification$BigPictureStyle;->bigPicture(Landroid/graphics/Bitmap;)Landroid/app/Notification$BigPictureStyle;
+	7       (00000020) move-result-object   v0
+	8       (00000022) if-eqz               v9, +5
+
+addBigPictureStyle-BB@0x26 : [ addBigPictureStyle-BB@0x2c ]
+	9       (00000026) invoke-virtual       v0, v8, Landroid/app/Notification$BigPictureStyle;->bigLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$BigPictureStyle;
+
+addBigPictureStyle-BB@0x2c : [ addBigPictureStyle-BB@0x30 addBigPictureStyle-BB@0x36 ]
+	10      (0000002c) if-eqz               v5, +5
+
+addBigPictureStyle-BB@0x30 : [ addBigPictureStyle-BB@0x36 ]
+	11      (00000030) invoke-virtual       v0, v6, Landroid/app/Notification$BigPictureStyle;->setSummaryText(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;
+
+addBigPictureStyle-BB@0x36 : 
+	12      (00000036) return-void          
+

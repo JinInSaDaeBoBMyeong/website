@@ -1,0 +1,23 @@
+# Landroid/support/v4/widget/SwipeProgressBar;->drawTrigger(Landroid/graphics/Canvas; I I)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:android.graphics.Canvas
+# - v6:int
+# - v7:int
+#
+# - return:void
+
+drawTrigger-BB@0x0 : 
+	0       (00000000) iget-object          v0, v4, Landroid/support/v4/widget/SwipeProgressBar;->mPaint Landroid/graphics/Paint;
+	1       (00000004) iget                 v1, v4, Landroid/support/v4/widget/SwipeProgressBar;->mColor1 I
+	2       (00000008) invoke-virtual       v0, v1, Landroid/graphics/Paint;->setColor(I)V
+	3       (0000000e) int-to-float         v0, v6
+	4       (00000010) int-to-float         v1, v7
+	5       (00000012) int-to-float         v2, v6
+	6       (00000014) iget                 v3, v4, Landroid/support/v4/widget/SwipeProgressBar;->mTriggerPercentage F
+	7       (00000018) mul-float/2addr      v2, v3
+	8       (0000001a) iget-object          v3, v4, Landroid/support/v4/widget/SwipeProgressBar;->mPaint Landroid/graphics/Paint;
+	9       (0000001e) invoke-virtual       v5, v0, v1, v2, v3, Landroid/graphics/Canvas;->drawCircle(F F F Landroid/graphics/Paint;)V
+	10      (00000024) return-void          
+

@@ -1,0 +1,31 @@
+# Lorg/webrtc/MediaCodecVideoDecoder;->isVp8HwSupported()Z [access_flags=public static]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:boolean
+
+isVp8HwSupported-BB@0x0 : [ isVp8HwSupported-BB@0x14 isVp8HwSupported-BB@0x2c ]
+	0       (00000000) sget-object          v0, Lorg/webrtc/MediaCodecVideoDecoder;->hwDecoderDisabledTypes Ljava/util/Set;
+	1       (00000004) const-string         v1, 'video/x-vnd.on2.vp8'
+	2       (00000008) invoke-interface     v0, v1, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+	3       (0000000e) move-result          v0
+	4       (00000010) if-nez               v0, +e
+
+isVp8HwSupported-BB@0x14 : [ isVp8HwSupported-BB@0x28 isVp8HwSupported-BB@0x2c ]
+	5       (00000014) const-string         v0, 'video/x-vnd.on2.vp8'
+	6       (00000018) sget-object          v1, Lorg/webrtc/MediaCodecVideoDecoder;->supportedVp8HwCodecPrefixes [Ljava/lang/String;
+	7       (0000001c) invoke-static        v0, v1, Lorg/webrtc/MediaCodecVideoDecoder;->findDecoder(Ljava/lang/String; [Ljava/lang/String;)Lorg/webrtc/MediaCodecVideoDecoder$DecoderProperties;
+	8       (00000022) move-result-object   v0
+	9       (00000024) if-eqz               v0, +4
+
+isVp8HwSupported-BB@0x28 : [ isVp8HwSupported-BB@0x2a ]
+	10      (00000028) const/4              v0, 1
+
+isVp8HwSupported-BB@0x2a : 
+	11      (0000002a) return               v0
+
+isVp8HwSupported-BB@0x2c : [ isVp8HwSupported-BB@0x2a ]
+	12      (0000002c) const/4              v0, 0
+	13      (0000002e) goto                 -2
+

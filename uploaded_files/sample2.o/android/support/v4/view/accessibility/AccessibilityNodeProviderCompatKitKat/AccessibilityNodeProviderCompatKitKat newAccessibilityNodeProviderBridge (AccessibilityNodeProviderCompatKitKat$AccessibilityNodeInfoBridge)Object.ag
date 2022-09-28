@@ -1,0 +1,13 @@
+# Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat;->newAccessibilityNodeProviderBridge(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge;)Ljava/lang/Object; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.support.v4.view.accessibility.AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge
+#
+# - return:java.lang.Object
+
+newAccessibilityNodeProviderBridge-BB@0x0 : 
+	0       (00000000) new-instance         v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$1;
+	1       (00000004) invoke-direct        v0, v1, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$1;-><init>(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatKitKat$AccessibilityNodeInfoBridge;)V
+	2       (0000000a) return-object        v0
+

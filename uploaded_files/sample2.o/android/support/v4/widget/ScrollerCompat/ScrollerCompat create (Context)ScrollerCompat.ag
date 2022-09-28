@@ -1,0 +1,14 @@
+# Landroid/support/v4/widget/ScrollerCompat;->create(Landroid/content/Context;)Landroid/support/v4/widget/ScrollerCompat; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:android.content.Context
+#
+# - return:android.support.v4.widget.ScrollerCompat
+
+create-BB@0x0 : 
+	0       (00000000) const/4              v0, 0
+	1       (00000002) invoke-static        v1, v0, Landroid/support/v4/widget/ScrollerCompat;->create(Landroid/content/Context; Landroid/view/animation/Interpolator;)Landroid/support/v4/widget/ScrollerCompat;
+	2       (00000008) move-result-object   v0
+	3       (0000000a) return-object        v0
+

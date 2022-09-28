@@ -1,0 +1,23 @@
+# Landroid/support/v4/view/ViewPager;->endDrag()V [access_flags=private]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:void
+
+endDrag-BB@0x0 : [ endDrag-BB@0x12 endDrag-BB@0x22 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iput-boolean         v0, v1, Landroid/support/v4/view/ViewPager;->mIsBeingDragged Z
+	2       (00000006) iput-boolean         v0, v1, Landroid/support/v4/view/ViewPager;->mIsUnableToDrag Z
+	3       (0000000a) iget-object          v0, v1, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+	4       (0000000e) if-eqz               v0, +a
+
+endDrag-BB@0x12 : [ endDrag-BB@0x22 ]
+	5       (00000012) iget-object          v0, v1, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+	6       (00000016) invoke-virtual       v0, Landroid/view/VelocityTracker;->recycle()V
+	7       (0000001c) const/4              v0, 0
+	8       (0000001e) iput-object          v0, v1, Landroid/support/v4/view/ViewPager;->mVelocityTracker Landroid/view/VelocityTracker;
+
+endDrag-BB@0x22 : 
+	9       (00000022) return-void          
+

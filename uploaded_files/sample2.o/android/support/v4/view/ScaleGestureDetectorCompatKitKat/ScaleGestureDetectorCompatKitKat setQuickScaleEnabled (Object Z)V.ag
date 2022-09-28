@@ -1,0 +1,14 @@
+# Landroid/support/v4/view/ScaleGestureDetectorCompatKitKat;->setQuickScaleEnabled(Ljava/lang/Object; Z)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:java.lang.Object
+# - v1:boolean
+#
+# - return:void
+
+setQuickScaleEnabled-BB@0x0 : 
+	0       (00000000) check-cast           v0, Landroid/view/ScaleGestureDetector;
+	1       (00000004) invoke-virtual       v0, v1, Landroid/view/ScaleGestureDetector;->setQuickScaleEnabled(Z)V
+	2       (0000000a) return-void          
+

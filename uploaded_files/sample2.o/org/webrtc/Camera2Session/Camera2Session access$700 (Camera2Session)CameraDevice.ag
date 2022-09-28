@@ -1,0 +1,12 @@
+# Lorg/webrtc/Camera2Session;->access$700(Lorg/webrtc/Camera2Session;)Landroid/hardware/camera2/CameraDevice; [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:org.webrtc.Camera2Session
+#
+# - return:android.hardware.camera2.CameraDevice
+
+access$700-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Lorg/webrtc/Camera2Session;->cameraDevice Landroid/hardware/camera2/CameraDevice;
+	1       (00000004) return-object        v0
+

@@ -1,0 +1,20 @@
+# Lorg/webrtc/CameraCapturer;->reportCameraSwitchError(Ljava/lang/String; Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:java.lang.String
+# - v3:org.webrtc.CameraVideoCapturer$CameraSwitchHandler
+#
+# - return:void
+
+reportCameraSwitchError-BB@0x0 : [ reportCameraSwitchError-BB@0xe reportCameraSwitchError-BB@0x14 ]
+	0       (00000000) const-string         v0, 'CameraCapturer'
+	1       (00000004) invoke-static        v0, v2, Lorg/webrtc/Logging;->e(Ljava/lang/String; Ljava/lang/String;)V
+	2       (0000000a) if-eqz               v3, +5
+
+reportCameraSwitchError-BB@0xe : [ reportCameraSwitchError-BB@0x14 ]
+	3       (0000000e) invoke-interface     v3, v2, Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;->onCameraSwitchError(Ljava/lang/String;)V
+
+reportCameraSwitchError-BB@0x14 : 
+	4       (00000014) return-void          
+

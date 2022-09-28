@@ -1,0 +1,39 @@
+# Landroid/support/v4/app/Fragment;->performCreateOptionsMenu(Landroid/view/Menu; Landroid/view/MenuInflater;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.view.Menu
+# - v4:android.view.MenuInflater
+#
+# - return:boolean
+
+performCreateOptionsMenu-BB@0x0 : [ performCreateOptionsMenu-BB@0xa performCreateOptionsMenu-BB@0x38 ]
+	0       (00000000) const/4              v0, 0
+	1       (00000002) iget-boolean         v1, v2, Landroid/support/v4/app/Fragment;->mHidden Z
+	2       (00000006) if-nez               v1, +19
+
+performCreateOptionsMenu-BB@0xa : [ performCreateOptionsMenu-BB@0x12 performCreateOptionsMenu-BB@0x22 ]
+	3       (0000000a) iget-boolean         v1, v2, Landroid/support/v4/app/Fragment;->mHasMenu Z
+	4       (0000000e) if-eqz               v1, +a
+
+performCreateOptionsMenu-BB@0x12 : [ performCreateOptionsMenu-BB@0x1a performCreateOptionsMenu-BB@0x22 ]
+	5       (00000012) iget-boolean         v1, v2, Landroid/support/v4/app/Fragment;->mMenuVisible Z
+	6       (00000016) if-eqz               v1, +6
+
+performCreateOptionsMenu-BB@0x1a : [ performCreateOptionsMenu-BB@0x22 ]
+	7       (0000001a) const/4              v0, 1
+	8       (0000001c) invoke-virtual       v2, v3, v4, Landroid/support/v4/app/Fragment;->onCreateOptionsMenu(Landroid/view/Menu; Landroid/view/MenuInflater;)V
+
+performCreateOptionsMenu-BB@0x22 : [ performCreateOptionsMenu-BB@0x2a performCreateOptionsMenu-BB@0x38 ]
+	9       (00000022) iget-object          v1, v2, Landroid/support/v4/app/Fragment;->mChildFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	10      (00000026) if-eqz               v1, +9
+
+performCreateOptionsMenu-BB@0x2a : [ performCreateOptionsMenu-BB@0x38 ]
+	11      (0000002a) iget-object          v1, v2, Landroid/support/v4/app/Fragment;->mChildFragmentManager Landroid/support/v4/app/FragmentManagerImpl;
+	12      (0000002e) invoke-virtual       v1, v3, v4, Landroid/support/v4/app/FragmentManagerImpl;->dispatchCreateOptionsMenu(Landroid/view/Menu; Landroid/view/MenuInflater;)Z
+	13      (00000034) move-result          v1
+	14      (00000036) or-int/2addr         v0, v1
+
+performCreateOptionsMenu-BB@0x38 : 
+	15      (00000038) return               v0
+

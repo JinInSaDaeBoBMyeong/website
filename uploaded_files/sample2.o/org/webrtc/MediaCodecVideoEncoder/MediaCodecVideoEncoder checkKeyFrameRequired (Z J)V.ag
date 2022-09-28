@@ -1,0 +1,74 @@
+# Lorg/webrtc/MediaCodecVideoEncoder;->checkKeyFrameRequired(Z J)V [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v11
+# - v12:boolean
+# - v13:long
+#
+# - return:void
+
+checkKeyFrameRequired-BB@0x0 : [ checkKeyFrameRequired-BB@0x1e checkKeyFrameRequired-BB@0x22 ]
+	0       (00000000) const-wide/16        v8, 0 # [0.0]
+	1       (00000004) const-wide/16        v4, 500 # [500.0]
+	2       (00000008) add-long/2addr       v4, v12
+	3       (0000000a) const-wide/16        v6, 1000 # [1000.0]
+	4       (0000000e) div-long             v2, v4, v6
+	5       (00000012) iget-wide            v4, v10, Lorg/webrtc/MediaCodecVideoEncoder;->lastKeyFrameMs J
+	6       (00000016) cmp-long             v4, v4, v8
+	7       (0000001a) if-gez               v4, +4
+
+checkKeyFrameRequired-BB@0x1e : [ checkKeyFrameRequired-BB@0x22 ]
+	8       (0000001e) iput-wide            v2, v10, Lorg/webrtc/MediaCodecVideoEncoder;->lastKeyFrameMs J
+
+checkKeyFrameRequired-BB@0x22 : [ checkKeyFrameRequired-BB@0x28 checkKeyFrameRequired-BB@0x48 ]
+	9       (00000022) const/4              v1, 0
+	10      (00000024) if-nez               v11, +12
+
+checkKeyFrameRequired-BB@0x28 : [ checkKeyFrameRequired-BB@0x34 checkKeyFrameRequired-BB@0x48 ]
+	11      (00000028) iget-wide            v4, v10, Lorg/webrtc/MediaCodecVideoEncoder;->forcedKeyFrameMs J
+	12      (0000002c) cmp-long             v4, v4, v8
+	13      (00000030) if-lez               v4, +c
+
+checkKeyFrameRequired-BB@0x34 : [ checkKeyFrameRequired-BB@0x46 checkKeyFrameRequired-BB@0x48 ]
+	14      (00000034) iget-wide            v4, v10, Lorg/webrtc/MediaCodecVideoEncoder;->lastKeyFrameMs J
+	15      (00000038) iget-wide            v6, v10, Lorg/webrtc/MediaCodecVideoEncoder;->forcedKeyFrameMs J
+	16      (0000003c) add-long/2addr       v4, v6
+	17      (0000003e) cmp-long             v4, v2, v4
+	18      (00000042) if-lez               v4, +3
+
+checkKeyFrameRequired-BB@0x46 : [ checkKeyFrameRequired-BB@0x48 ]
+	19      (00000046) const/4              v1, 1
+
+checkKeyFrameRequired-BB@0x48 : [ checkKeyFrameRequired-BB@0x4c checkKeyFrameRequired-BB@0x50 ]
+	20      (00000048) if-nez               v11, +4
+
+checkKeyFrameRequired-BB@0x4c : [ checkKeyFrameRequired-BB@0x50 checkKeyFrameRequired-BB@0x86 ]
+	21      (0000004c) if-eqz               v1, +1d
+
+checkKeyFrameRequired-BB@0x50 : [ checkKeyFrameRequired-BB@0x54 checkKeyFrameRequired-BB@0x88 ]
+	22      (00000050) if-eqz               v11, +1c
+
+checkKeyFrameRequired-BB@0x54 : [ checkKeyFrameRequired-BB@0x62 ]
+	23      (00000054) const-string         v4, 'MediaCodecVideoEncoder'
+	24      (00000058) const-string         v5, 'Sync frame request'
+	25      (0000005c) invoke-static        v4, v5, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+
+checkKeyFrameRequired-BB@0x62 : [ checkKeyFrameRequired-BB@0x86 ]
+	26      (00000062) new-instance         v0, Landroid/os/Bundle;
+	27      (00000066) invoke-direct        v0, Landroid/os/Bundle;-><init>()V
+	28      (0000006c) const-string         v4, 'request-sync'
+	29      (00000070) const/4              v5, 0
+	30      (00000072) invoke-virtual       v0, v4, v5, Landroid/os/Bundle;->putInt(Ljava/lang/String; I)V
+	31      (00000078) iget-object          v4, v10, Lorg/webrtc/MediaCodecVideoEncoder;->mediaCodec Landroid/media/MediaCodec;
+	32      (0000007c) invoke-virtual       v4, v0, Landroid/media/MediaCodec;->setParameters(Landroid/os/Bundle;)V
+	33      (00000082) iput-wide            v2, v10, Lorg/webrtc/MediaCodecVideoEncoder;->lastKeyFrameMs J
+
+checkKeyFrameRequired-BB@0x86 : 
+	34      (00000086) return-void          
+
+checkKeyFrameRequired-BB@0x88 : [ checkKeyFrameRequired-BB@0x62 ]
+	35      (00000088) const-string         v4, 'MediaCodecVideoEncoder'
+	36      (0000008c) const-string         v5, 'Sync frame forced'
+	37      (00000090) invoke-static        v4, v5, Lorg/webrtc/Logging;->d(Ljava/lang/String; Ljava/lang/String;)V
+	38      (00000096) goto                 -1a
+

@@ -1,0 +1,13 @@
+# Landroid/support/v4/content/CursorLoader;->onCanceled(Ljava/lang/Object;)V [access_flags=public bridge synthetic]
+#
+# Parameters:
+# - local registers: v0...v0
+# - v1:java.lang.Object
+#
+# - return:void
+
+onCanceled-BB@0x0 : 
+	0       (00000000) check-cast           v1, Landroid/database/Cursor;
+	1       (00000004) invoke-virtual       v0, v1, Landroid/support/v4/content/CursorLoader;->onCanceled(Landroid/database/Cursor;)V
+	2       (0000000a) return-void          
+

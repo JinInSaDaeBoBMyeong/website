@@ -1,0 +1,45 @@
+# Landroid/support/v4/media/TransportPerformer;->onMediaButtonDown(I Landroid/view/KeyEvent;)Z [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:int
+# - v4:android.view.KeyEvent
+#
+# - return:boolean
+
+onMediaButtonDown-BB@0x0 : [ D:onMediaButtonDown-BB@0x8 79:onMediaButtonDown-BB@0x22 85:onMediaButtonDown-BB@0x22 86:onMediaButtonDown-BB@0x1a 126:onMediaButtonDown-BB@0xa 127:onMediaButtonDown-BB@0x12 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) sparse-switch        v3, +1f (0x40)
+
+onMediaButtonDown-BB@0x8 : 
+	2       (00000008) return               v1
+
+onMediaButtonDown-BB@0xa : [ onMediaButtonDown-BB@0x8 ]
+	3       (0000000a) invoke-virtual       v2, Landroid/support/v4/media/TransportPerformer;->onStart()V
+	4       (00000010) goto                 -4
+
+onMediaButtonDown-BB@0x12 : [ onMediaButtonDown-BB@0x8 ]
+	5       (00000012) invoke-virtual       v2, Landroid/support/v4/media/TransportPerformer;->onPause()V
+	6       (00000018) goto                 -8
+
+onMediaButtonDown-BB@0x1a : [ onMediaButtonDown-BB@0x8 ]
+	7       (0000001a) invoke-virtual       v2, Landroid/support/v4/media/TransportPerformer;->onStop()V
+	8       (00000020) goto                 -c
+
+onMediaButtonDown-BB@0x22 : [ onMediaButtonDown-BB@0x2e onMediaButtonDown-BB@0x36 ]
+	9       (00000022) invoke-virtual       v2, Landroid/support/v4/media/TransportPerformer;->onIsPlaying()Z
+	10      (00000028) move-result          v0
+	11      (0000002a) if-eqz               v0, +6
+
+onMediaButtonDown-BB@0x2e : [ onMediaButtonDown-BB@0x8 ]
+	12      (0000002e) invoke-virtual       v2, Landroid/support/v4/media/TransportPerformer;->onPause()V
+	13      (00000034) goto                 -16
+
+onMediaButtonDown-BB@0x36 : [ onMediaButtonDown-BB@0x8 ]
+	14      (00000036) invoke-virtual       v2, Landroid/support/v4/media/TransportPerformer;->onStart()V
+	15      (0000003c) goto                 -1a
+
+onMediaButtonDown-BB@0x3e : 
+	16      (0000003e) nop                  
+	17      (00000040) sparse-switch-payload 4f 55 56 7e 7f
+

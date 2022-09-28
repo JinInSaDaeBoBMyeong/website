@@ -1,0 +1,36 @@
+# Landroid/support/v4/widget/SimpleCursorAdapter;->convertToString(Landroid/database/Cursor;)Ljava/lang/CharSequence; [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:android.database.Cursor
+#
+# - return:java.lang.CharSequence
+
+convertToString-BB@0x0 : [ convertToString-BB@0x8 convertToString-BB@0x16 ]
+	0       (00000000) iget-object          v0, v2, Landroid/support/v4/widget/SimpleCursorAdapter;->mCursorToStringConverter Landroid/support/v4/widget/SimpleCursorAdapter$CursorToStringConverter;
+	1       (00000004) if-eqz               v0, +9
+
+convertToString-BB@0x8 : [ convertToString-BB@0x14 ]
+	2       (00000008) iget-object          v0, v2, Landroid/support/v4/widget/SimpleCursorAdapter;->mCursorToStringConverter Landroid/support/v4/widget/SimpleCursorAdapter$CursorToStringConverter;
+	3       (0000000c) invoke-interface     v0, v3, Landroid/support/v4/widget/SimpleCursorAdapter$CursorToStringConverter;->convertToString(Landroid/database/Cursor;)Ljava/lang/CharSequence;
+	4       (00000012) move-result-object   v0
+
+convertToString-BB@0x14 : 
+	5       (00000014) return-object        v0
+
+convertToString-BB@0x16 : [ convertToString-BB@0x20 convertToString-BB@0x2e ]
+	6       (00000016) iget                 v0, v2, Landroid/support/v4/widget/SimpleCursorAdapter;->mStringConversionColumn I
+	7       (0000001a) const/4              v1, -1
+	8       (0000001c) if-le                v0, v1, +9
+
+convertToString-BB@0x20 : [ convertToString-BB@0x14 ]
+	9       (00000020) iget                 v0, v2, Landroid/support/v4/widget/SimpleCursorAdapter;->mStringConversionColumn I
+	10      (00000024) invoke-interface     v3, v0, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+	11      (0000002a) move-result-object   v0
+	12      (0000002c) goto                 -c
+
+convertToString-BB@0x2e : [ convertToString-BB@0x14 ]
+	13      (0000002e) invoke-super         v2, v3, Landroid/support/v4/widget/ResourceCursorAdapter;->convertToString(Landroid/database/Cursor;)Ljava/lang/CharSequence;
+	14      (00000034) move-result-object   v0
+	15      (00000036) goto                 -11
+

@@ -1,0 +1,17 @@
+# Landroid/support/v4/app/BackStackRecord;-><init>(Landroid/support/v4/app/FragmentManagerImpl;)V [access_flags=public constructor]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.support.v4.app.FragmentManagerImpl
+#
+# - return:void
+
+<init>-BB@0x0 : 
+	0       (00000000) invoke-direct        v1, Landroid/support/v4/app/FragmentTransaction;-><init>()V
+	1       (00000006) const/4              v0, 1
+	2       (00000008) iput-boolean         v0, v1, Landroid/support/v4/app/BackStackRecord;->mAllowAddToBackStack Z
+	3       (0000000c) const/4              v0, -1
+	4       (0000000e) iput                 v0, v1, Landroid/support/v4/app/BackStackRecord;->mIndex I
+	5       (00000012) iput-object          v2, v1, Landroid/support/v4/app/BackStackRecord;->mManager Landroid/support/v4/app/FragmentManagerImpl;
+	6       (00000016) return-void          
+

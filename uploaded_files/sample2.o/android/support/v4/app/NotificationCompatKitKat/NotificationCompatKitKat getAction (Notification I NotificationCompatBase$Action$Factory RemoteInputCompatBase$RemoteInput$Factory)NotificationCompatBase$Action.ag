@@ -1,0 +1,36 @@
+# Landroid/support/v4/app/NotificationCompatKitKat;->getAction(Landroid/app/Notification; I Landroid/support/v4/app/NotificationCompatBase$Action$Factory; Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput$Factory;)Landroid/support/v4/app/NotificationCompatBase$Action; [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v7
+# - v8:android.app.Notification
+# - v9:int
+# - v10:android.support.v4.app.NotificationCompatBase$Action$Factory
+# - v11:android.support.v4.app.RemoteInputCompatBase$RemoteInput$Factory
+#
+# - return:android.support.v4.app.NotificationCompatBase$Action
+
+getAction-BB@0x0 : [ getAction-BB@0x1e getAction-BB@0x2a ]
+	0       (00000000) iget-object          v0, v8, Landroid/app/Notification;->actions [Landroid/app/Notification$Action;
+	1       (00000004) aget-object          v6, v0, v9
+	2       (00000008) const/4              v5, 0
+	3       (0000000a) iget-object          v0, v8, Landroid/app/Notification;->extras Landroid/os/Bundle;
+	4       (0000000e) const-string         v1, 'android.support.actionExtras'
+	5       (00000012) invoke-virtual       v0, v1, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
+	6       (00000018) move-result-object   v7
+	7       (0000001a) if-eqz               v7, +8
+
+getAction-BB@0x1e : [ getAction-BB@0x2a ]
+	8       (0000001e) invoke-virtual       v7, v9, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+	9       (00000024) move-result-object   v5
+	10      (00000026) check-cast           v5, Landroid/os/Bundle;
+
+getAction-BB@0x2a : 
+	11      (0000002a) iget                 v2, v6, Landroid/app/Notification$Action;->icon I
+	12      (0000002e) iget-object          v3, v6, Landroid/app/Notification$Action;->title Ljava/lang/CharSequence;
+	13      (00000032) iget-object          v4, v6, Landroid/app/Notification$Action;->actionIntent Landroid/app/PendingIntent;
+	14      (00000036) move-object          v0, v10
+	15      (00000038) move-object          v1, v11
+	16      (0000003a) invoke-static/range  v0 ... v5, Landroid/support/v4/app/NotificationCompatJellybean;->readAction(Landroid/support/v4/app/NotificationCompatBase$Action$Factory; Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput$Factory; I Ljava/lang/CharSequence; Landroid/app/PendingIntent; Landroid/os/Bundle;)Landroid/support/v4/app/NotificationCompatBase$Action;
+	17      (00000040) move-result-object   v0
+	18      (00000042) return-object        v0
+

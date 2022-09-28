@@ -1,0 +1,21 @@
+# Landroid/support/v4/media/TransportMediatorJellybeanMR2;->stopPlaying()V [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+stopPlaying-BB@0x0 : [ stopPlaying-BB@0xa stopPlaying-BB@0x18 ]
+	0       (00000000) const/4              v1, 1
+	1       (00000002) iget                 v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mPlayState I
+	2       (00000006) if-eq                v0, v1, +9
+
+stopPlaying-BB@0xa : [ stopPlaying-BB@0x18 ]
+	3       (0000000a) iput                 v1, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mPlayState I
+	4       (0000000e) iget-object          v0, v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->mRemoteControl Landroid/media/RemoteControlClient;
+	5       (00000012) invoke-virtual       v0, v1, Landroid/media/RemoteControlClient;->setPlaybackState(I)V
+
+stopPlaying-BB@0x18 : 
+	6       (00000018) invoke-virtual       v2, Landroid/support/v4/media/TransportMediatorJellybeanMR2;->dropAudioFocus()V
+	7       (0000001e) return-void          
+

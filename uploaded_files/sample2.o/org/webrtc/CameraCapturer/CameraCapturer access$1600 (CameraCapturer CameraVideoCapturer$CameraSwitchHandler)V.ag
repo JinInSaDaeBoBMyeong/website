@@ -1,0 +1,13 @@
+# Lorg/webrtc/CameraCapturer;->access$1600(Lorg/webrtc/CameraCapturer; Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;)V [access_flags=static synthetic]
+#
+# Parameters:
+# - local registers: v0...v-1
+# - v0:org.webrtc.CameraCapturer
+# - v1:org.webrtc.CameraVideoCapturer$CameraSwitchHandler
+#
+# - return:void
+
+access$1600-BB@0x0 : 
+	0       (00000000) invoke-direct        v0, v1, Lorg/webrtc/CameraCapturer;->switchCameraInternal(Lorg/webrtc/CameraVideoCapturer$CameraSwitchHandler;)V
+	1       (00000006) return-void          
+

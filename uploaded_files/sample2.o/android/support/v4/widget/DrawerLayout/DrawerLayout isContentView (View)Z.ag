@@ -1,0 +1,25 @@
+# Landroid/support/v4/widget/DrawerLayout;->isContentView(Landroid/view/View;)Z [access_flags=]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:android.view.View
+#
+# - return:boolean
+
+isContentView-BB@0x0 : [ isContentView-BB@0x14 isContentView-BB@0x18 ]
+	0       (00000000) invoke-virtual       v2, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+	1       (00000006) move-result-object   v0
+	2       (00000008) check-cast           v0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;
+	3       (0000000c) iget                 v0, v0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->gravity I
+	4       (00000010) if-nez               v0, +4
+
+isContentView-BB@0x14 : [ isContentView-BB@0x16 ]
+	5       (00000014) const/4              v0, 1
+
+isContentView-BB@0x16 : 
+	6       (00000016) return               v0
+
+isContentView-BB@0x18 : [ isContentView-BB@0x16 ]
+	7       (00000018) const/4              v0, 0
+	8       (0000001a) goto                 -2
+

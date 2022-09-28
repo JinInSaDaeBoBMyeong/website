@@ -1,0 +1,37 @@
+# Landroid/support/v4/view/ViewPager;->enableLayers(Z)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v5
+# - v6:boolean
+#
+# - return:void
+
+enableLayers-BB@0x0 : [ enableLayers-BB@0xa ]
+	0       (00000000) invoke-virtual       v5, Landroid/support/v4/view/ViewPager;->getChildCount()I
+	1       (00000006) move-result          v0
+	2       (00000008) const/4              v1, 0
+
+enableLayers-BB@0xa : [ enableLayers-BB@0xe enableLayers-BB@0x2e ]
+	3       (0000000a) if-ge                v1, v0, +12
+
+enableLayers-BB@0xe : [ enableLayers-BB@0x12 enableLayers-BB@0x2a ]
+	4       (0000000e) if-eqz               v6, +e
+
+enableLayers-BB@0x12 : [ enableLayers-BB@0x14 ]
+	5       (00000012) const/4              v2, 2
+
+enableLayers-BB@0x14 : [ enableLayers-BB@0xa ]
+	6       (00000014) invoke-virtual       v5, v1, Landroid/support/v4/view/ViewPager;->getChildAt(I)Landroid/view/View;
+	7       (0000001a) move-result-object   v3
+	8       (0000001c) const/4              v4, 0
+	9       (0000001e) invoke-static        v3, v2, v4, Landroid/support/v4/view/ViewCompat;->setLayerType(Landroid/view/View; I Landroid/graphics/Paint;)V
+	10      (00000024) add-int/lit8         v1, v1, 1
+	11      (00000028) goto                 -f
+
+enableLayers-BB@0x2a : [ enableLayers-BB@0x14 ]
+	12      (0000002a) const/4              v2, 0
+	13      (0000002c) goto                 -c
+
+enableLayers-BB@0x2e : 
+	14      (0000002e) return-void          
+

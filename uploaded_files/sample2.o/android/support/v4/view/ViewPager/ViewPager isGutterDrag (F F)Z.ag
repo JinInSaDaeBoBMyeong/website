@@ -1,0 +1,43 @@
+# Landroid/support/v4/view/ViewPager;->isGutterDrag(F F)Z [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:float
+# - v5:float
+#
+# - return:boolean
+
+isGutterDrag-BB@0x0 : [ isGutterDrag-BB@0x10 isGutterDrag-BB@0x18 ]
+	0       (00000000) const/4              v2, 0
+	1       (00000002) iget                 v0, v3, Landroid/support/v4/view/ViewPager;->mGutterSize I
+	2       (00000006) int-to-float         v0, v0
+	3       (00000008) cmpg-float           v0, v4, v0
+	4       (0000000c) if-gez               v0, +6
+
+isGutterDrag-BB@0x10 : [ isGutterDrag-BB@0x18 isGutterDrag-BB@0x38 ]
+	5       (00000010) cmpl-float           v0, v5, v2
+	6       (00000014) if-gtz               v0, +12
+
+isGutterDrag-BB@0x18 : [ isGutterDrag-BB@0x30 isGutterDrag-BB@0x3c ]
+	7       (00000018) invoke-virtual       v3, Landroid/support/v4/view/ViewPager;->getWidth()I
+	8       (0000001e) move-result          v0
+	9       (00000020) iget                 v1, v3, Landroid/support/v4/view/ViewPager;->mGutterSize I
+	10      (00000024) sub-int/2addr        v0, v1
+	11      (00000026) int-to-float         v0, v0
+	12      (00000028) cmpl-float           v0, v4, v0
+	13      (0000002c) if-lez               v0, +8
+
+isGutterDrag-BB@0x30 : [ isGutterDrag-BB@0x38 isGutterDrag-BB@0x3c ]
+	14      (00000030) cmpg-float           v0, v5, v2
+	15      (00000034) if-gez               v0, +4
+
+isGutterDrag-BB@0x38 : [ isGutterDrag-BB@0x3a ]
+	16      (00000038) const/4              v0, 1
+
+isGutterDrag-BB@0x3a : 
+	17      (0000003a) return               v0
+
+isGutterDrag-BB@0x3c : [ isGutterDrag-BB@0x3a ]
+	18      (0000003c) const/4              v0, 0
+	19      (0000003e) goto                 -2
+

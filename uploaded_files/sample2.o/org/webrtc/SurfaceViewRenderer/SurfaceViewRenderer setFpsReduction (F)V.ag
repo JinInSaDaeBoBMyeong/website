@@ -1,0 +1,40 @@
+# Lorg/webrtc/SurfaceViewRenderer;->setFpsReduction(F)V [access_flags=public]
+#
+# Parameters:
+# - local registers: v0...v2
+# - v3:float
+#
+# - return:void
+
+setFpsReduction-BB@0x0 : [ setFpsReduction-BB@0x10 setFpsReduction-BB@0x24 ]
+	0       (00000000) iget-object          v1, v2, Lorg/webrtc/SurfaceViewRenderer;->layoutLock Ljava/lang/Object;
+	1       (00000004) monitor-enter        v1
+	2       (00000006) const/4              v0, 0
+	3       (00000008) cmpl-float           v0, v3, v0
+	4       (0000000c) if-nez               v0, +c
+
+setFpsReduction-BB@0x10 : [ setFpsReduction-BB@0x12 ]
+	5       (00000010) const/4              v0, 1
+
+setFpsReduction-BB@0x12 : 
+	6       (00000012) iput-boolean         v0, v2, Lorg/webrtc/SurfaceViewRenderer;->isRenderingPaused Z
+	7       (00000016) monitor-exit         v1
+	8       (00000018) iget-object          v0, v2, Lorg/webrtc/SurfaceViewRenderer;->eglRenderer Lorg/webrtc/EglRenderer;
+	9       (0000001c) invoke-virtual       v0, v3, Lorg/webrtc/EglRenderer;->setFpsReduction(F)V
+	10      (00000022) return-void          
+	12:17
+	(Ljava/lang/Throwable; -> 28 setFpsReduction-BB@0x28)
+
+setFpsReduction-BB@0x24 : [ setFpsReduction-BB@0x12 ]
+	11      (00000024) const/4              v0, 0
+	12      (00000026) goto                 -a
+
+setFpsReduction-BB@0x28 : [ setFpsReduction-BB@0x2a ]
+	13      (00000028) move-exception       v0
+
+setFpsReduction-BB@0x2a : 
+	14      (0000002a) monitor-exit         v1
+	15      (0000002c) throw                v0
+	2a:2b
+	(Ljava/lang/Throwable; -> 28 setFpsReduction-BB@0x28)
+

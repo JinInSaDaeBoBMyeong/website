@@ -1,0 +1,15 @@
+# Landroid/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl;->getThreadStatsTag()I [access_flags=public]
+#
+# Parameters:
+# local registers: v0...v1
+#
+# - return:int
+
+getThreadStatsTag-BB@0x0 : 
+	0       (00000000) iget-object          v0, v1, Landroid/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl;->mThreadSocketTags Ljava/lang/ThreadLocal;
+	1       (00000004) invoke-virtual       v0, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) check-cast           v0, Landroid/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl$SocketTags;
+	4       (00000010) iget                 v0, v0, Landroid/support/v4/net/TrafficStatsCompat$BaseTrafficStatsCompatImpl$SocketTags;->statsTag I
+	5       (00000014) return               v0
+

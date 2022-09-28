@@ -1,0 +1,383 @@
+# Ltev/piqgahor/omxcjy744W;->hHQDdgL1076(Landroid/content/Context;)V [access_flags=private]
+#
+# Parameters:
+# - local registers: v0...v25
+# - v26:android.content.Context
+#
+# - return:void
+
+hHQDdgL1076-BB@0x0 : [ hHQDdgL1076-BB@0x1c hHQDdgL1076-BB@0x1e ]
+	0       (00000000) move-object/from16   v0, v25
+	1       (00000004) iget                 v0, v0, Ltev/piqgahor/omxcjy744W;->wkrQ7654 I
+	2       (00000008) move/from16          v23, v0
+	3       (0000000c) const/16             v24, 3
+	4       (00000010) move/from16          v0, v23
+	5       (00000014) move/from16          v1, v24
+	6       (00000018) if-ne                v0, v1, +3
+
+hHQDdgL1076-BB@0x1c : 
+	7       (0000001c) return-void          
+
+hHQDdgL1076-BB@0x1e : [ hHQDdgL1076-BB@0x3a hHQDdgL1076-BB@0x334 ]
+	8       (0000001e) invoke-static/range  v26, Ltev/piqgahor/mlDMsT43cl;->xXgSuZwrVM88263(Landroid/content/Context;)I
+	9       (00000024) move-result          v11
+	10      (00000026) and-int/lit8         v23, v11, 2
+	11      (0000002a) const/16             v24, 2
+	12      (0000002e) move/from16          v0, v23
+	13      (00000032) move/from16          v1, v24
+	14      (00000036) if-ne                v0, v1, +17f
+
+hHQDdgL1076-BB@0x3a : [ hHQDdgL1076-BB@0x3c ]
+	15      (0000003a) const/4              v8, 1
+
+hHQDdgL1076-BB@0x3c : [ hHQDdgL1076-BB@0x50 hHQDdgL1076-BB@0x33a ]
+	16      (0000003c) and-int/lit8         v23, v11, 4
+	17      (00000040) const/16             v24, 4
+	18      (00000044) move/from16          v0, v23
+	19      (00000048) move/from16          v1, v24
+	20      (0000004c) if-ne                v0, v1, +177
+
+hHQDdgL1076-BB@0x50 : [ hHQDdgL1076-BB@0x52 ]
+	21      (00000050) const/4              v10, 1
+
+hHQDdgL1076-BB@0x52 : [ hHQDdgL1076-BB@0x66 hHQDdgL1076-BB@0x340 ]
+	22      (00000052) and-int/lit8         v23, v11, 8
+	23      (00000056) const/16             v24, 8
+	24      (0000005a) move/from16          v0, v23
+	25      (0000005e) move/from16          v1, v24
+	26      (00000062) if-ne                v0, v1, +16f
+
+hHQDdgL1076-BB@0x66 : [ hHQDdgL1076-BB@0x68 ]
+	27      (00000066) const/4              v7, 1
+
+hHQDdgL1076-BB@0x68 : [ hHQDdgL1076-BB@0x7c hHQDdgL1076-BB@0x346 ]
+	28      (00000068) and-int/lit8         v23, v11, 16
+	29      (0000006c) const/16             v24, 16
+	30      (00000070) move/from16          v0, v23
+	31      (00000074) move/from16          v1, v24
+	32      (00000078) if-ne                v0, v1, +167
+
+hHQDdgL1076-BB@0x7c : [ hHQDdgL1076-BB@0x7e ]
+	33      (0000007c) const/4              v9, 1
+
+hHQDdgL1076-BB@0x7e : [ hHQDdgL1076-BB@0x92 hHQDdgL1076-BB@0x34c ]
+	34      (0000007e) and-int/lit8         v23, v11, 32
+	35      (00000082) const/16             v24, 32
+	36      (00000086) move/from16          v0, v23
+	37      (0000008a) move/from16          v1, v24
+	38      (0000008e) if-ne                v0, v1, +15f
+
+hHQDdgL1076-BB@0x92 : [ hHQDdgL1076-BB@0x96 ]
+	39      (00000092) const/16             v20, 1
+
+hHQDdgL1076-BB@0x96 : [ hHQDdgL1076-BB@0xaa hHQDdgL1076-BB@0x354 ]
+	40      (00000096) and-int/lit8         v23, v11, 64
+	41      (0000009a) const/16             v24, 64
+	42      (0000009e) move/from16          v0, v23
+	43      (000000a2) move/from16          v1, v24
+	44      (000000a6) if-ne                v0, v1, +157
+
+hHQDdgL1076-BB@0xaa : [ hHQDdgL1076-BB@0xae ]
+	45      (000000aa) const/16             v18, 1
+
+hHQDdgL1076-BB@0xae : [ hHQDdgL1076-BB@0xc6 hHQDdgL1076-BB@0x35c ]
+	46      (000000ae) and-int/lit16        v0, v11, 128
+	47      (000000b2) move/from16          v23, v0
+	48      (000000b6) const/16             v24, 128
+	49      (000000ba) move/from16          v0, v23
+	50      (000000be) move/from16          v1, v24
+	51      (000000c2) if-ne                v0, v1, +14d
+
+hHQDdgL1076-BB@0xc6 : [ hHQDdgL1076-BB@0xc8 ]
+	52      (000000c6) const/4              v4, 1
+
+hHQDdgL1076-BB@0xc8 : [ hHQDdgL1076-BB@0xe0 hHQDdgL1076-BB@0x362 ]
+	53      (000000c8) and-int/lit16        v0, v11, 256
+	54      (000000cc) move/from16          v23, v0
+	55      (000000d0) const/16             v24, 256
+	56      (000000d4) move/from16          v0, v23
+	57      (000000d8) move/from16          v1, v24
+	58      (000000dc) if-ne                v0, v1, +143
+
+hHQDdgL1076-BB@0xe0 : [ hHQDdgL1076-BB@0xe4 ]
+	59      (000000e0) const/16             v19, 1
+
+hHQDdgL1076-BB@0xe4 : [ hHQDdgL1076-BB@0xe8 hHQDdgL1076-BB@0x36a ]
+	60      (000000e4) if-nez               v8, +143
+
+hHQDdgL1076-BB@0xe8 : [ hHQDdgL1076-BB@0xec hHQDdgL1076-BB@0x36a ]
+	61      (000000e8) if-nez               v10, +141
+
+hHQDdgL1076-BB@0xec : [ hHQDdgL1076-BB@0xf0 hHQDdgL1076-BB@0x36a ]
+	62      (000000ec) if-nez               v7, +13f
+
+hHQDdgL1076-BB@0xf0 : [ hHQDdgL1076-BB@0xf4 hHQDdgL1076-BB@0x36a ]
+	63      (000000f0) if-nez               v9, +13d
+
+hHQDdgL1076-BB@0xf4 : [ hHQDdgL1076-BB@0xf8 hHQDdgL1076-BB@0x36a ]
+	64      (000000f4) if-nez               v20, +13b
+
+hHQDdgL1076-BB@0xf8 : [ hHQDdgL1076-BB@0xfc hHQDdgL1076-BB@0x36a ]
+	65      (000000f8) if-nez               v18, +139
+
+hHQDdgL1076-BB@0xfc : [ hHQDdgL1076-BB@0x100 hHQDdgL1076-BB@0x36a ]
+	66      (000000fc) if-nez               v19, +137
+
+hHQDdgL1076-BB@0x100 : [ hHQDdgL1076-BB@0x102 ]
+	67      (00000100) const/4              v15, 0
+
+hHQDdgL1076-BB@0x102 : [ hHQDdgL1076-BB@0x120 hHQDdgL1076-BB@0x370 ]
+	68      (00000102) const                v23, 2131230721 # [1.8077502770915816e+38]
+	69      (00000108) move-object/from16   v0, v25
+	70      (0000010c) move/from16          v1, v23
+	71      (00000110) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->findViewById(I)Landroid/view/View;
+	72      (00000116) move-result-object   v13
+	73      (00000118) check-cast           v13, Landroid/widget/TextView;
+	74      (0000011c) if-eqz               v15, +12a
+
+hHQDdgL1076-BB@0x120 : [ hHQDdgL1076-BB@0x140 ]
+	75      (00000120) const                v23, 2131099655 # [1.7811669341204595e+38]
+	76      (00000126) move-object/from16   v0, v25
+	77      (0000012a) move/from16          v1, v23
+	78      (0000012e) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->getString(I)Ljava/lang/String;
+	79      (00000134) move-result-object   v23
+	80      (00000136) move-object/from16   v0, v23
+	81      (0000013a) invoke-virtual       v13, v0, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+hHQDdgL1076-BB@0x140 : [ hHQDdgL1076-BB@0x144 hHQDdgL1076-BB@0x18c ]
+	82      (00000140) if-nez               v15, +26
+
+hHQDdgL1076-BB@0x144 : [ hHQDdgL1076-BB@0x160 hHQDdgL1076-BB@0x18c ]
+	83      (00000144) move-object/from16   v0, v25
+	84      (00000148) iget                 v0, v0, Ltev/piqgahor/omxcjy744W;->wkrQ7654 I
+	85      (0000014c) move/from16          v23, v0
+	86      (00000150) const/16             v24, 4
+	87      (00000154) move/from16          v0, v23
+	88      (00000158) move/from16          v1, v24
+	89      (0000015c) if-ne                v0, v1, +18
+
+hHQDdgL1076-BB@0x160 : [ hHQDdgL1076-BB@0x18c ]
+	90      (00000160) const                v23, 2131099657 # [1.7811673397686516e+38]
+	91      (00000166) move-object/from16   v0, v25
+	92      (0000016a) move/from16          v1, v23
+	93      (0000016e) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->getString(I)Ljava/lang/String;
+	94      (00000174) move-result-object   v23
+	95      (00000176) const/16             v24, 1
+	96      (0000017a) move-object/from16   v0, v25
+	97      (0000017e) move-object/from16   v1, v23
+	98      (00000182) move/from16          v2, v24
+	99      (00000186) invoke-direct        v0, v1, v2, Ltev/piqgahor/omxcjy744W;->wlWiGSVH3310(Ljava/lang/String; Z)V
+
+hHQDdgL1076-BB@0x18c : [ hHQDdgL1076-BB@0x1aa hHQDdgL1076-BB@0x394 ]
+	100     (0000018c) const                v23, 2131230722 # [1.8077504799156777e+38]
+	101     (00000192) move-object/from16   v0, v25
+	102     (00000196) move/from16          v1, v23
+	103     (0000019a) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->findViewById(I)Landroid/view/View;
+	104     (000001a0) move-result-object   v21
+	105     (000001a2) check-cast           v21, Landroid/widget/Button;
+	106     (000001a6) if-eqz               v8, +f7
+
+hHQDdgL1076-BB@0x1aa : [ hHQDdgL1076-BB@0x1ae ]
+	107     (000001aa) const/16             v23, 0
+
+hHQDdgL1076-BB@0x1ae : [ hHQDdgL1076-BB@0x1da hHQDdgL1076-BB@0x39c ]
+	108     (000001ae) move-object/from16   v0, v21
+	109     (000001b2) move/from16          v1, v23
+	110     (000001b6) invoke-virtual       v0, v1, Landroid/widget/Button;->setVisibility(I)V
+	111     (000001bc) const                v23, 2131230723 # [1.8077506827397737e+38]
+	112     (000001c2) move-object/from16   v0, v25
+	113     (000001c6) move/from16          v1, v23
+	114     (000001ca) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->findViewById(I)Landroid/view/View;
+	115     (000001d0) move-result-object   v5
+	116     (000001d2) check-cast           v5, Landroid/widget/Button;
+	117     (000001d6) if-eqz               v10, +e3
+
+hHQDdgL1076-BB@0x1da : [ hHQDdgL1076-BB@0x1de ]
+	118     (000001da) const/16             v23, 0
+
+hHQDdgL1076-BB@0x1de : [ hHQDdgL1076-BB@0x206 hHQDdgL1076-BB@0x3a4 ]
+	119     (000001de) move/from16          v0, v23
+	120     (000001e2) invoke-virtual       v5, v0, Landroid/widget/Button;->setVisibility(I)V
+	121     (000001e8) const                v23, 2131230724 # [1.8077508855638697e+38]
+	122     (000001ee) move-object/from16   v0, v25
+	123     (000001f2) move/from16          v1, v23
+	124     (000001f6) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->findViewById(I)Landroid/view/View;
+	125     (000001fc) move-result-object   v14
+	126     (000001fe) check-cast           v14, Landroid/widget/Button;
+	127     (00000202) if-eqz               v7, +d1
+
+hHQDdgL1076-BB@0x206 : [ hHQDdgL1076-BB@0x20a ]
+	128     (00000206) const/16             v23, 0
+
+hHQDdgL1076-BB@0x20a : [ hHQDdgL1076-BB@0x232 hHQDdgL1076-BB@0x3ac ]
+	129     (0000020a) move/from16          v0, v23
+	130     (0000020e) invoke-virtual       v14, v0, Landroid/widget/Button;->setVisibility(I)V
+	131     (00000214) const                v23, 2131230725 # [1.8077510883879658e+38]
+	132     (0000021a) move-object/from16   v0, v25
+	133     (0000021e) move/from16          v1, v23
+	134     (00000222) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->findViewById(I)Landroid/view/View;
+	135     (00000228) move-result-object   v16
+	136     (0000022a) check-cast           v16, Landroid/widget/Button;
+	137     (0000022e) if-eqz               v9, +bf
+
+hHQDdgL1076-BB@0x232 : [ hHQDdgL1076-BB@0x236 ]
+	138     (00000232) const/16             v23, 0
+
+hHQDdgL1076-BB@0x236 : [ hHQDdgL1076-BB@0x262 hHQDdgL1076-BB@0x3b4 ]
+	139     (00000236) move-object/from16   v0, v16
+	140     (0000023a) move/from16          v1, v23
+	141     (0000023e) invoke-virtual       v0, v1, Landroid/widget/Button;->setVisibility(I)V
+	142     (00000244) const                v23, 2131230726 # [1.8077512912120618e+38]
+	143     (0000024a) move-object/from16   v0, v25
+	144     (0000024e) move/from16          v1, v23
+	145     (00000252) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->findViewById(I)Landroid/view/View;
+	146     (00000258) move-result-object   v17
+	147     (0000025a) check-cast           v17, Landroid/widget/Button;
+	148     (0000025e) if-eqz               v20, +ab
+
+hHQDdgL1076-BB@0x262 : [ hHQDdgL1076-BB@0x266 ]
+	149     (00000262) const/16             v23, 0
+
+hHQDdgL1076-BB@0x266 : [ hHQDdgL1076-BB@0x292 hHQDdgL1076-BB@0x3bc ]
+	150     (00000266) move-object/from16   v0, v17
+	151     (0000026a) move/from16          v1, v23
+	152     (0000026e) invoke-virtual       v0, v1, Landroid/widget/Button;->setVisibility(I)V
+	153     (00000274) const                v23, 2131230727 # [1.807751494036158e+38]
+	154     (0000027a) move-object/from16   v0, v25
+	155     (0000027e) move/from16          v1, v23
+	156     (00000282) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->findViewById(I)Landroid/view/View;
+	157     (00000288) move-result-object   v22
+	158     (0000028a) check-cast           v22, Landroid/widget/Button;
+	159     (0000028e) if-eqz               v18, +97
+
+hHQDdgL1076-BB@0x292 : [ hHQDdgL1076-BB@0x296 ]
+	160     (00000292) const/16             v23, 0
+
+hHQDdgL1076-BB@0x296 : [ hHQDdgL1076-BB@0x2ba hHQDdgL1076-BB@0x3c4 ]
+	161     (00000296) invoke-virtual/range v22 ... v23, Landroid/widget/Button;->setVisibility(I)V
+	162     (0000029c) const                v23, 2131230728 # [1.807751696860254e+38]
+	163     (000002a2) move-object/from16   v0, v25
+	164     (000002a6) move/from16          v1, v23
+	165     (000002aa) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->findViewById(I)Landroid/view/View;
+	166     (000002b0) move-result-object   v12
+	167     (000002b2) check-cast           v12, Landroid/widget/Button;
+	168     (000002b6) if-eqz               v4, +87
+
+hHQDdgL1076-BB@0x2ba : [ hHQDdgL1076-BB@0x2be ]
+	169     (000002ba) const/16             v23, 0
+
+hHQDdgL1076-BB@0x2be : [ hHQDdgL1076-BB@0x2dc hHQDdgL1076-BB@0x304 ]
+	170     (000002be) move/from16          v0, v23
+	171     (000002c2) invoke-virtual       v12, v0, Landroid/widget/Button;->setVisibility(I)V
+	172     (000002c8) sget                 v23, Landroid/os/Build$VERSION;->SDK_INT I
+	173     (000002cc) const/16             v24, 21
+	174     (000002d0) move/from16          v0, v23
+	175     (000002d4) move/from16          v1, v24
+	176     (000002d8) if-lt                v0, v1, +16
+
+hHQDdgL1076-BB@0x2dc : [ hHQDdgL1076-BB@0x304 ]
+	177     (000002dc) const                v23, 2131230737 # [1.8077535222771182e+38]
+	178     (000002e2) move-object/from16   v0, v25
+	179     (000002e6) move/from16          v1, v23
+	180     (000002ea) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->findViewById(I)Landroid/view/View;
+	181     (000002f0) move-result-object   v3
+	182     (000002f2) check-cast           v3, Landroid/widget/Button;
+	183     (000002f6) const/16             v23, 0
+	184     (000002fa) move/from16          v0, v23
+	185     (000002fe) invoke-virtual       v3, v0, Landroid/widget/Button;->setVisibility(I)V
+
+hHQDdgL1076-BB@0x304 : [ hHQDdgL1076-BB@0x322 hHQDdgL1076-BB@0x3cc ]
+	186     (00000304) const                v23, 2131230729 # [1.80775189968435e+38]
+	187     (0000030a) move-object/from16   v0, v25
+	188     (0000030e) move/from16          v1, v23
+	189     (00000312) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->findViewById(I)Landroid/view/View;
+	190     (00000318) move-result-object   v6
+	191     (0000031a) check-cast           v6, Landroid/widget/Button;
+	192     (0000031e) if-eqz               v19, +57
+
+hHQDdgL1076-BB@0x322 : [ hHQDdgL1076-BB@0x326 ]
+	193     (00000322) const/16             v23, 0
+
+hHQDdgL1076-BB@0x326 : [ hHQDdgL1076-BB@0x1c ]
+	194     (00000326) move/from16          v0, v23
+	195     (0000032a) invoke-virtual       v6, v0, Landroid/widget/Button;->setVisibility(I)V
+	196     (00000330) goto/16              -18a
+
+hHQDdgL1076-BB@0x334 : [ hHQDdgL1076-BB@0x3c ]
+	197     (00000334) const/4              v8, 0
+	198     (00000336) goto/16              -17d
+
+hHQDdgL1076-BB@0x33a : [ hHQDdgL1076-BB@0x52 ]
+	199     (0000033a) const/4              v10, 0
+	200     (0000033c) goto/16              -175
+
+hHQDdgL1076-BB@0x340 : [ hHQDdgL1076-BB@0x68 ]
+	201     (00000340) const/4              v7, 0
+	202     (00000342) goto/16              -16d
+
+hHQDdgL1076-BB@0x346 : [ hHQDdgL1076-BB@0x7e ]
+	203     (00000346) const/4              v9, 0
+	204     (00000348) goto/16              -165
+
+hHQDdgL1076-BB@0x34c : [ hHQDdgL1076-BB@0x96 ]
+	205     (0000034c) const/16             v20, 0
+	206     (00000350) goto/16              -15d
+
+hHQDdgL1076-BB@0x354 : [ hHQDdgL1076-BB@0xae ]
+	207     (00000354) const/16             v18, 0
+	208     (00000358) goto/16              -155
+
+hHQDdgL1076-BB@0x35c : [ hHQDdgL1076-BB@0xc8 ]
+	209     (0000035c) const/4              v4, 0
+	210     (0000035e) goto/16              -14b
+
+hHQDdgL1076-BB@0x362 : [ hHQDdgL1076-BB@0xe4 ]
+	211     (00000362) const/16             v19, 0
+	212     (00000366) goto/16              -141
+
+hHQDdgL1076-BB@0x36a : [ hHQDdgL1076-BB@0x102 ]
+	213     (0000036a) const/4              v15, 1
+	214     (0000036c) goto/16              -135
+
+hHQDdgL1076-BB@0x370 : [ hHQDdgL1076-BB@0x140 ]
+	215     (00000370) const                v23, 2131099654 # [1.7811667312963635e+38]
+	216     (00000376) move-object/from16   v0, v25
+	217     (0000037a) move/from16          v1, v23
+	218     (0000037e) invoke-virtual       v0, v1, Ltev/piqgahor/omxcjy744W;->getString(I)Ljava/lang/String;
+	219     (00000384) move-result-object   v23
+	220     (00000386) move-object/from16   v0, v23
+	221     (0000038a) invoke-virtual       v13, v0, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+	222     (00000390) goto/16              -128
+
+hHQDdgL1076-BB@0x394 : [ hHQDdgL1076-BB@0x1ae ]
+	223     (00000394) const/16             v23, 8
+	224     (00000398) goto/16              -f5
+
+hHQDdgL1076-BB@0x39c : [ hHQDdgL1076-BB@0x1de ]
+	225     (0000039c) const/16             v23, 8
+	226     (000003a0) goto/16              -e1
+
+hHQDdgL1076-BB@0x3a4 : [ hHQDdgL1076-BB@0x20a ]
+	227     (000003a4) const/16             v23, 8
+	228     (000003a8) goto/16              -cf
+
+hHQDdgL1076-BB@0x3ac : [ hHQDdgL1076-BB@0x236 ]
+	229     (000003ac) const/16             v23, 8
+	230     (000003b0) goto/16              -bd
+
+hHQDdgL1076-BB@0x3b4 : [ hHQDdgL1076-BB@0x266 ]
+	231     (000003b4) const/16             v23, 8
+	232     (000003b8) goto/16              -a9
+
+hHQDdgL1076-BB@0x3bc : [ hHQDdgL1076-BB@0x296 ]
+	233     (000003bc) const/16             v23, 8
+	234     (000003c0) goto/16              -95
+
+hHQDdgL1076-BB@0x3c4 : [ hHQDdgL1076-BB@0x2be ]
+	235     (000003c4) const/16             v23, 8
+	236     (000003c8) goto/16              -85
+
+hHQDdgL1076-BB@0x3cc : [ hHQDdgL1076-BB@0x326 ]
+	237     (000003cc) const/16             v23, 8
+	238     (000003d0) goto                 -55
+
