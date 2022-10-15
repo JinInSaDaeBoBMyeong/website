@@ -55,7 +55,7 @@ write_ws.append(api_list)
 write_wb.save('apilist.xlsx')
 
 file2 = open('apioutput.csv','w')
-file3 = open('apilist.csv', 'r')
+file3 = open('apilist.xlsx', 'r')
 
 lines = file3.readlines(100000)  # 10만 줄을 한 번에 읽음 
                                 # user가 설정할 수 있음

@@ -1,16 +1,19 @@
-# 주어진 코드
+import openpyxl
+import pandas as pd
+#file2 = open('apioutput.csv','w')
+filename = "apilist.xlsx" #파일명
+df = pd.read_excel(filename)
+for api in df.columns:
+    print(api)
+# file3 = open('apilist.xlsx', 'r')
 
-line = input('Enter two words> ')
+# lines = file3.readlines(100000)  # 10만 줄을 한 번에 읽음 
+#                                 # user가 설정할 수 있음
+# lines = list(set(lines))
+# lines.sort()
 
-words = line.split(' ')
-word1 = words[0] # edit this (첫번째 단어)
-word2 = words[1] # edit this (두번째 단어))
+# for line in lines:
+#     file2.write(line)
 
-if word1 > word2:
-    print( '{} > {}'.format(word1, word2) )
-    
-elif word1 < word2:
-    print( '{} < {}'.format(word1, word2) )
-    
-else:
-    print( '{} == {}'.format(word1, word2) )
+# file2.close()
+# file3.close()
