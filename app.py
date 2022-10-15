@@ -8,6 +8,9 @@ from myaccounts import Myaccounts
 import andro as a
 import modeltest as m
 import pandas as pd
+import hashlib
+import pdfkit
+import aspose.words as aw
 
 UPLOAD_FOLDER = 'uploaded_files'
 TABLE_FOLDER = 'uploaded_tables'
@@ -65,10 +68,24 @@ def analyze(filename):
     products_list = [perm_csv]
     df = pd.DataFrame (products_list, columns = m.malpermissionlist()[0])
     res = m.analyze(df)
+    sha1 = sha1_for_largefile(f"uploaded_files/%s" % filename, blocksize=8192)
+    n = os.path.getsize(f"uploaded_files/%s" % filename)                     # 킬로바이트 단위로
+    filesize = f"%.2f MB" % (n / (1024.0 * 1024.0))  # 메가바이트 단위로
     if res:
-        return redirect('/#malicious')
+        filetype = "Malicious"
+        family = "Not yet"
+        return render_template('result.html',filename=filename,sha1=sha1,filesize=filesize,filetype=filetype,family=family)
     else:
-        return redirect('/#benign')
+        filetype = "Benign"
+        family = "Not yet"
+        f = open(f"%s.html"%filename,'w')
+        f.write(render_template('result.html',filename=filename,sha1=sha1,filesize=filesize,filetype=filetype,family=family))
+        f.close()
+        doc = aw.Document(f"%s.html"%filename)
+        doc.save(f"%s.pdf"%filename)
+        pdfkit.from_file(f"%s.html"%filename, 'output.pdf')  
+        return render_template('benign.html',filename=filename,sha1=sha1,filesize=filesize,filetype=filetype,family=family)
+
         
     
 
@@ -118,6 +135,21 @@ def draw_plot(m1,m2,m3,m4,m5):
         )
     )
     return str(fig.to_json())
+
+
+def sha1_for_largefile(filepath, blocksize=8192):
+    sha_1 = hashlib.sha1()
+    try:
+        f = open(filepath, "rb")
+    except IOError as e:
+        print("file open error", e)
+        return
+    while True:
+        buf = f.read(blocksize)
+        if not buf:
+            break
+        sha_1.update(buf)
+    return sha_1.hexdigest()
 
 
 
