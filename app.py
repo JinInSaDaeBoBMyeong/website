@@ -10,7 +10,7 @@ import modeltest as m
 import pandas as pd
 import hashlib
 import pdfkit
-import aspose.words as aw
+#import aspose.words as aw
 import models
 
 UPLOAD_FOLDER = 'uploaded_files'
@@ -69,6 +69,11 @@ def analyze(filename):
         rf_result = 'benign'
     else:
         rf_result = 'malign'
+        
+    if models.dec_predict(f"uploaded_files/%s" % filename) == 'benign':
+        dec_result = 'benign'
+    else:
+        dec_result = 'malign'
     
     
     
@@ -90,7 +95,7 @@ def analyze(filename):
         # doc = aw.Document(f"%s.html"%filename)
         # doc.save(f"%s.pdf"%filename)
         # pdfkit.from_file(f"%s.html"%filename, 'output.pdf')  
-    return render_template('benign.html',filename=filename,sha1=sha1,filesize=filesize,filetype=filetype,family=family,svm = svm_result,rf = rf_result)
+    return render_template('benign.html',filename=filename,sha1=sha1,filesize=filesize,filetype=filetype,family=family,svm = svm_result,rf = rf_result,dt=dec_result)
 
         
     

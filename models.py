@@ -4,6 +4,9 @@ from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import classification_report, confusion_matrix 
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+import xgboost as xgb
+from xgboost import XGBClassifier
 from androguard.core.bytecodes.apk import APK
 import warnings
 warnings.filterwarnings(action='ignore')
@@ -24,6 +27,9 @@ with open('svc_new.pkl', 'rb') as file:
 with open('randomfrorest_new.pkl','rb') as file:
   rf = pickle.load(file)
 
+with open('decisiontree_new.pkl','rb') as file:
+  decisiontree= pickle.load(file)
+
 def svm_predict(apk):
   vector = {}
   a = APK(apk)
@@ -40,15 +46,26 @@ def rf_predict(apk):
   vector = {}
   a = APK(apk)
   perm = a.get_permissions()
-  print(perm)
   for d in pe:
     if d in perm:
       vector[d]=1
     else:
       vector[d]=0
   input = [ v for v in vector.values() ]
-  return grid.predict([input])
+  return rf.predict([input])
+
+def dec_predict(apk):
+  vector = {}
+  a = APK(apk)
+  perm = a.get_permissions()
+  for d in pe:
+    if d in perm:
+      vector[d]=1
+    else:
+      vector[d]=0
+  input = [ v for v in vector.values() ]
+  return decisiontree.predict([input])
 
 # test
 # malign apk
-rf_predict('uploaded_files/sample.apk')
+dec_predict('uploaded_files/sample.apk')
